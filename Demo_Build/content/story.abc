@@ -9,7 +9,7 @@
 		The blowing, hot wind scorches the
 surface of both the earth and your
 skin as you walk aimlessly in the
-desert, thirsty for water.[sfx Heavy_footsteps_01.mp3]
+desert, thirsty for water
 [Pause]
 You've reached the top of a little
 sand hill. It grants you some height
@@ -17,7 +17,6 @@ advantage and now you can see what's
 around you.
 	*then
 		-> Tutorial
-
 @Tutorial
 	*say
 		You can say, look left or look right.
@@ -108,6 +107,7 @@ some water? Choose a location to go to.
 		hear store {
 			-> Store
 		}
+
 @Store
 	*say
 		Upon approaching the general store,
