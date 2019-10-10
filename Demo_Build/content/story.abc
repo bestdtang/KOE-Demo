@@ -17,6 +17,7 @@ advantage and now you can see what's
 around you.
 	*then
 		-> Tutorial
+
 @Tutorial
 	*say
 		You can say, look left or look right.
@@ -100,14 +101,13 @@ in front of you: a general store, the
 mayor's office. Could any of them have 
 some water? Choose a location to go to.
 	*then
-				hear mayor's office {
+		hear mayor's office {
 			-> Other Buildings
 		}
 
-		hear go to the store {
+		hear store {
 			-> Store
 		}
-
 @Store
 	*say
 		Upon approaching the general store,
