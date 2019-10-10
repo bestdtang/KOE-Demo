@@ -13,7 +13,7 @@
 	"default": {
 		"ask-profile-name": "default",
 
-		"aws-profile-name": "default",
+		"aws-profile-name": "ask_cli_default",
 
 		"skill-invocation-name": "Demo Build",
 
