@@ -9,15 +9,14 @@
 		The blowing, hot wind scorches the
 surface of both the earth and your
 skin as you walk aimlessly in the
-desert, thirsty for water.
+desert, thirsty for water.[sfx Heavy_footsteps_01.mp3]
 [Pause]
 You've reached the top of a little
 sand hill. It grants you some height
 advantage and now you can see what's
 around you.
 	*then
-				-> Tutorial
-
+		-> Tutorial
 @Tutorial
 	*say
 		You can say, look left or look right.
@@ -152,29 +151,29 @@ downstairs.
 @Shopkeeper
 	*say
 		[Man]
-Who is this person? Why did you bring 
+Who is this person? Why did you bring  
 a stranger that looks like a dying 
-cactus to this place?[/Accent End]
-[Kid]
-Relax, papa. He's just a traveler. And 
-he needs water. A lot of water.[/Kid]
-[Man]
-Water? Hah! I got lots of water. As if 
-water would do anything to wash this 
-stench away.[/Accent End]
-[Pause]
-The young boy's father handed you a 
-big glass of water.
-[Man]
-Hey- don't worry. I know it smells bad 
-in here. But I assure you, the water is clean.[/Accent End]
-[Pause]
-Sometimes when appropriate, you can 
-use an item. Since the father handed 
-you a glass of water, you can try saying, 
+cactus to this place?[/Accent End] 
+[Kid] 
+Relax, papa. He's just a traveler. And  
+he needs water. A lot of water.[/Kid] 
+[Man] 
+Water? Hah! I got lots of water. As if  
+water would do anything to wash this  
+stench away.[/Accent End] 
+[Pause] 
+The young boy's father handed you a  
+big glass of water. 
+[Man] 
+Hey- don't worry. I know it smells bad  
+in here. But I assure you, the water is clean.[/Accent End] 
+[Pause] 
+Sometimes when appropriate, you can  
+use an item. Since the father handed  
+you a glass of water, you can try saying,  
 "drink water".
 	*then
-				hear drink water {
+		hear drink water {
 			-> Finding Out
 		}
 
@@ -219,6 +218,7 @@ for a taste of it
 So traveler, what brings you here?[/Accent End]
 	*then
 		-> End
+
 @End
 	*say
 		[LongLong Pause][Man]
