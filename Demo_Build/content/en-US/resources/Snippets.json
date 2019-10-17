@@ -7,6 +7,7 @@
   "Man": "<voice name='Brian'>",
   "/Accent End": "</voice>",
   "LongLong Pause": "<break time='4s'/>",
-  "footstep_fx": "<audio src='https://koetest.s3.amazonaws.com/new_demo/Heavy+footsteps_01.mp3'/>",
-  "foot": "<audio src='https://koetest.s3.amazonaws.com/new_demo/Heavy+footsteps_01.mp3'/>"
+  "footstep": "<audio src='https://koetest.s3.amazonaws.com/new_demo/Heavy_footsteps_01.mp3'/>",
+  "MrsChilirosa": " <voice name=\"Kimberly\">",
+  "Mayor": "<voice name=\"Joey\">"
 }
