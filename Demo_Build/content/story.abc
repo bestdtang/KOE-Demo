@@ -262,13 +262,12 @@ and it could be all yours. In the
 meantime, you can look around the
 store. No worries.[/Accent End]
 It seems like they really need your help.
-    *reprompt
-        It seems like they really need your help.
+	*reprompt
+		Say yes to help.
 	*then
 		hear yes, sure {
 			-> Decide to Help
 		}
-
 @Other Buildings
 	*say
 		The mayor's office is closed today. Do you want to go to the general store instead?
@@ -672,6 +671,7 @@ attention.
         hear C, about the town, the town {
             -> Ask Mayor The Town
         }
+
 @Ask Mayor How He knows
 	*say
         [Mayor]
