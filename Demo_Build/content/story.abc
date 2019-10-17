@@ -322,9 +322,9 @@ attention.
 	    hear more, ask for more {
 	        -> More Sauce
 	    }
-		
+
 @One Bottle of Sauce
-    *say
+	*say
         [Man] 
         One bottle of Super-Duper Hot Blue Pepper Sauce, coming right up! [/Accent End]
         <audio src='https://koetest.s3.amazonaws.com/new_demo_stereo/findingThings1.mp3'/>
@@ -345,9 +345,9 @@ attention.
         hear ask more, ask more about Mrs Chilirosa {
             -> Ask more about Chilirosa
         }
-        
+
 @Ask more about Chilirosa
-    *say
+	*say
         [Man] 
         She's a stubborn old lady who works at the hair salon down the street. Like the mayor, she also has a craving for spicy things. [/Accent End]
         [Kid] 
@@ -362,9 +362,9 @@ attention.
         hear ask again {
             -> Ask more about Chilirosa
         }
-        
+
 @Leave the Store
-    *say
+	*say
         Just as you are about to leave the store, the shopkeeper stops you.
         [Man]
         Wait wait. The desert is hot and wide. Don't want you to starve or get thirsty out there. Take these.[/Accent End]
@@ -373,9 +373,9 @@ attention.
         You step out of the store. 
     *then
         -> The Cross
-        
+
 @The Cross
-    *say
+	*say
         There are a few things that you may want to check: A signpost, the mayor's office to your left, or you can go find the beauty salon. 
     *then 
         hear signpost, check the signpost {
@@ -387,15 +387,15 @@ attention.
         hear beauty salon, go find the beauty salon {
             -> Beauty Salon
         }
-        
-@Signpost        
-    *say
+
+@Signpost
+	*say
         You come forward to the signpost across the lonely street. There are a few items on it. It reads: the right leads to the mayor's office, Chilirosa's Beauty Salon, and the Eastern exit of the town. You've also noticed that there are a few strings of ivy tangling around the signpost. They look surprisingly healthy.
     *then
         -> The Cross
 
 @Mayor's Office
-    *say
+	*say
         You arrived at the mayor's office. It's the seemingly largest building in the town, and it's doors are shut tight and locked. Beside the door is a trash can full of empty bottles. 
         [Pause]
         Now you can: Knock, bash, or try to open the door, check out the trash can, or go to another location.
@@ -412,36 +412,36 @@ attention.
         hear go to another location, another location {
             -> The Cross
         }
-        
+
 @Knock On Mayor's Office
-    *say
+	*say
         You knocked on the door, but nobody answers.
     *then
         -> Mayor's Office
-        
+
 @Bash On Mayor's Office
-    *say
+	*say
         You bashed heavily on the door, but nothing happened.
     *then   
         -> Mayor's Office
-        
+
 @Check Out the Trash Can
-    *say
+	*say
         You checked out the trash can, but it's empty.
     *then
         -> Mayor's Office
-        
+
 @Beauty Salon
-    *say
+	*say
         You started walking towards the end of the street.
         <audio src='https://koetest.s3.amazonaws.com/new_demo_stereo/windBlowing1.mp3'/>
         Nothing but the sandy gusts of wind blow into your ears. No-one is visible on the street. The buildings on the way look pretty modern, but they are all coated with a thick layer of dust. While you're on your way, you noticed something peculiar in the corner of one of the buildings. It's a patch of green. 
         <audio src='https://koetest.s3.amazonaws.com/new_demo_stereo/footsteps2.mp3'/>
     *then
         -> Arrive Beauty Salon
-        
-@Arrive Beauty Salon        
-    *say
+
+@Arrive Beauty Salon
+	*say
         You've now arrived at Chilirosa's Beauty Salon. It's clearly outdated design makes it stand out from other establishments on the street.
         Now you can: Knock on the door, bash on the door, open the door directly, or check on the green patch before.
     *then
@@ -457,9 +457,9 @@ attention.
         hear check the green patch before, green patch {
             -> check the Green Patch
         }
-        
-@Knock On Beauty Salon 
-    *say
+
+@Knock On Beauty Salon
+	*say
         You gently knocked on the door.
         <audio src='https://koetest.s3.amazonaws.com/new_demo_stereo/flowfootsteps.mp3'/>
         [MrsChilirosa]
@@ -472,7 +472,7 @@ attention.
         -> Meet Mrs Chilirosa
 
 @Bash On Beauty Salon
-    *say
+	*say
         You bashed on the door.
         //<audio src='https://koetest.s3.amazonaws.com/new_demo_stereo/peopleWalkingFast.mp3'/>
         [MrsChilirosa]
@@ -483,9 +483,9 @@ attention.
             -> Meet Mrs Chilirosa with flower
         }
         -> Meet Mrs Chilirosa
-        
-@Meet Mrs Chilirosa with flower        
-    *say
+
+@Meet Mrs Chilirosa with flower
+	*say
         [MrsChilirosa]
         Oh, my! Is THAT for me?[/Accent End]
     *recap
@@ -495,9 +495,9 @@ attention.
         hear yes, sure {
             -> Give Mrs Chilirosa the flower
         }
-    
+
 @Give Mrs Chilirosa the flower
-    *say
+	*say
         [MrsChilirosa]
         Why, thank you, dear... What's your name? [/Accent End]
         <amazon:effect name="whispered">say your name!</amazon:effect>.
@@ -510,9 +510,9 @@ attention.
         hear {playerName}, my name is {playerName} {
             -> Answer Your Name
         }
-        
+
 @Answer Your Name
-    *say
+	*say
         [MrsChilirosa]
         Oh, thank you, dear {playerName}. Come in, come in. We've haven't had guests in quite a while. [/Accent End]
         Mrs. Chilirosa smells the rose with all her breath. 
@@ -522,7 +522,7 @@ attention.
         -> Meet Mrs Chilirosa
 
 @Meet Mrs Chilirosa
-    *say
+	*say
         Now, it's time to tell her about the sauce. You can try to say "Ask about the sauce".
     *recap
         You can try to say "Ask about the sauce".
@@ -532,9 +532,9 @@ attention.
         hear ask about the sauce {
             -> Ask about the Sauce
         }
-        
-        @Ask about the Sauce
-    *say
+
+@Ask about the Sauce
+	*say
         [MrsChilirosa]
         Ah yes, the Super-Duper Hot Blue Pepper Sauce. I can't eat with out it. It's my fountain of life. I need it for my breakfast, lunch and supper! People don't understand the beauty of the sauce, but that's ok! That means I'll only have to share it with the few that understands. Ho, ho, ho! But, you see, it's kind of hard to get it around this area, so I just wanted to ask why you needed the sauce. [/Accent End]
         So we have two plans here: Plan A, You tell her how you like the sauce; Plan B, tell her that you need it to get the mayor's attention. Which plan you wanna go?
@@ -549,7 +549,7 @@ attention.
         }
 
 @Tell Mrs Chilirose you like the Sauce
-    *say
+	*say
         [MrsChilirosa]
         Oh! Really? but why? [/Accent End]
         Ok. Now make up a good reason why you like the sauce. You can say the sentence start with [Pause]"My reason is"
@@ -563,37 +563,36 @@ attention.
         }
 
 @Tell Mrs Chilirose you like the Sauce 2
-    *say
+	*say
         [MrsChilirosa]
         I can't believe it! It's another friend who appreciates Super-Duper Sauce like I do! Ho, ho, ho! Today has been the best day in years! Here. You can have the rest. [/Accent End]
         She gleefully hands over the hot sauce to you. You exit the building.
     *then
         -> Get the Hot Sauce
-        
-        
+
 @Tell Mrs Chilirose Honestly
-    *say
+	*say
         [MrsChilirosa]
         Hmmm. I see. Truly, the town isn't seeing anyone over these years, just because of this smell. Ew! It reminds me of exactly someone who had this smell a few years back. Anyways, if I can help you get rid of this smell, I'll help however I can. Here, take it.[/Accent End]
         She hands over the hot sauce to you. You exit the building.
     *then
         -> Get the Hot Sauce
-        
+
 @Open the Beauty Salon Directly
-    *say
+	*say
         you tried to open the door directly, but it's not opening
     *then
         -> Arrive Beauty Salon
 
 @check the Green Patch
-    *say
+	*say
         You walk back to the patch of green sitting in the corner of a building. Oh dear, in a dry desert like this, you found a rose with a bright red color on it. You pick up the rose and hold it in your hand.
     *then 
         flag flower
         -> Arrive Beauty Salon
-    
-    @Get the Hot Sauce
-    *say
+
+@Get the Hot Sauce
+	*say
         Now you have the hot sauce. You can try getting the mayor's attention. But how?
         Wave to the window on the streets? Or shout at the mayor? 
     *reprompt
@@ -607,14 +606,15 @@ attention.
         hear shout, shout at the mayor {
             -> Shout At the Mayor
         }
+
 @Wave To the Window
-    *say 
+	*say 
         You waved to the window, but nothing happened.
     *then 
         -> Get the Hot Sauce
 
 @Shout At the Mayor
-    *say
+	*say
         Ok then. Shout something loud and clear so that the mayor can hear you. You have 4 seconds to do that. Now let's shout!
         [LongLongPause]
         <audio src='s3://koetest/new_demo_stereo/openWindows.mp3'/>
@@ -641,29 +641,30 @@ attention.
         }
 
 @Agree to Help the Mayor
-    *say
-        [Mayor]
-        Wait. Are you saying that you're willing to help us get rid of this disgusting smell? Oh please, sit down, sit down.[/Accnet End] 
-        You sit down on the old couch in the mayor's office. The couch releases a spicy smell that stings. 
-        [Mayor] 
-        So, the legend out there says there's a precious gem hidden in the valleys to the East, and that the precious gem is the key ingredient to lifting the curse. [/Accent End]
-        <audio src='https://koetest.s3.amazonaws.com/new_demo_stereo/windBlowing2.mp3'/>
-        [Mayor]
-        What the don't know, is that the cavern is guarded by puzzles and challenges. But what's beyond that- nobody knows. Nobody remembers.[/Accent End]
-    *then
-        -> Ask the Mayor
-        
+	*say
+		[Mayor]Wait. Are you saying that you're willing to help us get rid of this disgusting smell? Oh please, sit down, sit down[/Accent End]
+
+        You sit down on the old couch in the mayor's office. The couch releases a spicy smell that stings.  
+      
+  [Mayor]
+        So, the legend out there says there's a precious gem hidden in the valleys to the East, and that the precious gem is the key ingredient to lifting the curse.[/Accent End]
+        <audio src="https://koetest.s3.amazonaws.com/new_demo_stereo/windBlowing2.mp3"/> 
+
+    [Mayor]    that the don't know, is that the cavern is guarded by puzzles and challenges. But what's beyond that- nobody knows. Nobody remembers[/Accent End]
+	*then
+		-> Ask the Mayor
+
 @Ask the Mayor
-    *say
-        You can ask about how he knows all this, about the cave, or about the town itself. 
-    *recap
-        Well, the options are: A. ask about how he knows all this; B. ask about the cave; C. ask about the town it self.
-    *then
-        if cave and town {
+	*say
+		You can ask about how he knows all this, about the cave, or about the town itself.
+	*recap
+		Well, the options are: A. ask about how he knows all this; B. ask about the cave; C. ask about the town it self.
+	*then
+		if cave and town {
             -> Before Leave For the Cave
         }
-        hear A, how he knows all this {
-            -> Ask Mayor How He knows
+		hear A, how he knows all this {
+			-> Ask Mayor How He knows
         }
         hear B, about the cave, the cave {
             -> Ask Mayor The Cave
@@ -671,24 +672,23 @@ attention.
         hear C, about the town, the town {
             -> Ask Mayor The Town
         }
-    
-    @Ask Mayor How He knows
-    *say
+@Ask Mayor How He knows
+	*say
         [Mayor]
         A while ago we sent our best people to go and retrieve the stone. When they returned, they were covered in smell even nastier than what we have in the town. But what's worse was that they could barely remember anything. The doctor said that probably the smell was too unbearable that they passed out at some point and lost all the memory. This is all they could remember.[/Accent End]
     *then
         -> Ask the Mayor
-    
-    @Ask Mayor The Cave
-    *say
+
+@Ask Mayor The Cave
+	*say
         [Mayor]
         Well, there's not much to talk about the cave, other than it's hidden in the valleys to the East... wait. Ah, yes, nearly missed this: It is said that there were plant roots that lead into the cave. A real miracle since green is sparse in the desert.[/Accent End]
     *then
         flag cave
         -> Ask the Mayor
-        
-    @Ask Mayor The Town
-    *say
+
+@Ask Mayor The Town
+	*say
         [Mayor]
         We were once a happy little town in the desert. At one point it even became a tourist spot! It's crazy to think that people would come from everywhere, just to get a taste of our famous dish, Shawarma.[/Accent End]
         Do you want to continue on this subject? Or ask him about something else?
@@ -701,9 +701,9 @@ attention.
         hear no, ask him about something else {
             -> Ask the Mayor
         }
-        
-        @Continue Ask Mayor The Town
-    *say
+
+@Continue Ask Mayor The Town
+	*say
         [mayor]
         Speaking of which, this reminds me of a character, yes, quite a character in our town. [/Accent End]
         The mayor pauses to sip a cup of water. He also spreads some of the hot sauce on his nose. 
@@ -718,9 +718,9 @@ attention.
     *then
         flag town
         -> Ask the Mayor
-        
-@Before Leave For the Cave 
-    *say
+
+@Before Leave For the Cave
+	*say
         and you can also heave for the cave.
     *recap
         Well, the options are: A. leave for the cave; B. ask mayor about something else
@@ -733,15 +733,15 @@ attention.
         }
 
 @Leave the Cave
-    *say
+	*say
         [Mayor]
             I hope that these information are useful to you. We're all looking forward to seeing the town coming back to life some day. Good luck! [/Accent End]
         You leave the mayor's office, back on to the streets. As you head East for you journeys, you look back again at the small town, still suffering from the bad smell. You also see the boy from the general store waving at you as you stretch into the horizon in the East. 
     *then
         >> END
-    
+
 @More Sauce
-    *say
+	*say
         The shopkeeper seems not happy about that, maybe we should ask for one bottle for this time?
     *then
 		hear yes, sure {
@@ -750,9 +750,10 @@ attention.
 		hear no {
 			-> More Sauce
 		}
-    
+
 @global append
-    *then
+	*then
         hear restart, start over {
             >> RESTART
-        }    
+        }
+
