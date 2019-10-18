@@ -54,21 +54,9 @@
 
 @Around
 	*say
-		You're at the entrance of the town. Some small buildings align on the sides of the street, but all of their 
-doors are shut tight. Only a few 
-people are walking on the streets, but 
-it's almost as if they're trying to 
-avoid having any eye-contact with you.
-[Pause]
-There are a few establishments right 
-in front of you: a general store, the 
-mayor's office. Could any of them have 
-some water? Choose a location to go to.
+		You're at the entrance of the town. Some small buildings align on the sides of the street, but all of their doors are shut tight. Only a few people are walking on the streets, but it's almost as if they're trying to avoid having any eye-contact with you. [Pause] There are a few establishments right in front of you: a general store, the mayor's office. Could any of them have some water? Choose a location to go to.
 	*reprompt
-		There are a few establishments right 
-in front of you: a general store, the 
-mayor's office. Could any of them have 
-some water? Choose a location to go to.
+		There are a few establishments right in front of you: a general store, the mayor's office. Could any of them have some water? Choose a location to go to.
 	*then
 		hear mayor's office {
 			-> Other Buildings
@@ -80,16 +68,7 @@ some water? Choose a location to go to.
 
 @Store
 	*say
-		Upon approaching the general store,
-you see a boy. He wears a red coat,
-and you can see "surprised"
-written all over his face.
-[Pause][Kid]
-You are a new face here. Do you need
-help? You don't look well.[/Kid]
-[Pause]
-Maybe he has water. You can probably
-ask if there's water. When you need something, you can say "ask for something". Try saying "ask for water"
+		Upon approaching the general store, you see a boy. He wears a red coat, and you can see "surprised" written all over his face. [Pause][Kid] You are a new face here. Do you need help? You don't look well.[/Kid] [Pause] Maybe he has water. You can probably ask if there's water. When you need something, you can say "ask for something". Try saying "ask for water"
 	*then
 		hear ask for water {
 			-> Boy
@@ -97,51 +76,30 @@ ask if there's water. When you need something, you can say "ask for something". 
 
 @Boy
 	*say
-		You asked the boy for some water. [Kid]
-I can help you with that. But I must 
-warn you- that situations in the house 
-aren't exactly desirable.[/Kid]
-The boy takes you around the building 
-and enters the store from the 
-backdoor.
-[Pause]
-Oh dear it was far from being 
-desirable. The air in the store was 
-nothing of this world. It's foul and 
-revolting. Each step you take is like 
-a deeper dive into the bowels of a 
-carnivorous beast.
-[Pause][Kid]
-Yeah. Told you. Papa![/Kid]
-The boy calls his father to come 
-downstairs.
+		You asked the boy for some water. 
+		[Kid] 
+		I can help you with that. But I must warn you- that situations in the house aren't exactly desirable.[/Kid] 
+		The boy takes you around the building and enters the store from the backdoor. [Pause] Oh dear it was far from being desirable. The air in the store was nothing of this world. It's foul and revolting. Each step you take is like a deeper dive into the bowels of a carnivorous beast. [Pause]
+		[Kid] 
+		Yeah. Told you. Papa![/Kid] 
+		The boy calls his father to come downstairs.
 	*then
 		-> Shopkeeper
 
 @Shopkeeper
 	*say
 		[Man]
-Who is this person? Why did you bring  
-a stranger that looks like a dying 
-cactus to this place?[/Accent End] 
-[Kid] 
-Relax, papa. He's just a traveler. And  
-he needs water. A lot of water.[/Kid] 
-[Man] 
-Water? Hah! I got lots of water. As if  
-water would do anything to wash this  
-stench away.[/Accent End] 
-[Pause] 
-The young boy's father handed you a  
-big glass of water. 
-[Man] 
-Hey- don't worry. I know it smells bad  
-in here. But I assure you, the water is clean.[/Accent End] 
-[Pause] 
-Sometimes when appropriate, you can  
-use an item. Since the father handed  
-you a glass of water, you can try saying,  
-"drink water".
+        Who is this person? Why did you bring a stranger that looks like a dying cactus to this place?[/Accent End] 
+        [Kid] 
+        Relax, papa. He's just a traveler. And he needs water. A lot of water.[/Kid] 
+        [Man] 
+        Water? Hah! I got lots of water. As if water would do anything to wash this stench away.[/Accent End] 
+        [Pause] 
+        The young boy's father handed you a big glass of water. 
+        [Man] 
+        Hey- don't worry. I know it smells bad in here. But I assure you, the water is clean.[/Accent End] 
+        [Pause] 
+        Sometimes when appropriate, you can use an item. Since the father handed you a glass of water, you can try saying, "drink water".
 	*then
 		hear drink water {
 			-> Finding Out
@@ -149,29 +107,17 @@ you a glass of water, you can try saying,
 
 @Finding Out
 	*say
-		The father has given you his word that
-the water is clean for drinking. But
-even without his promise you'd still
-chug the whole glass of water,
-bottoms-up.
-[Pause]
-The desert in your body is no more.
-Right now it is a lagoon of spring
-water, cool splashes of comfort
-travels to every corner of your body,
-like ice on melting lava. It's almost
-as if you could hear the hiss.
-[Man]
-Feel better? You really looked like
-the desert's going to get you.[/Accent End]
-Now it's just the stench that's really
-giving you a headache.
-[Pause]
-[Man]Sorry for the bad manners back there.
-It's just this town has never since a
-single visitor for a long time. Not
-after the incident.[/Accent End]
-You can talk to him by saying “talk to the shopkeeper”
+		The father has given you his word that the water is clean for drinking. But even without his promise you'd still chug the whole glass of water, bottoms-up.
+        [Pause]
+        The desert in your body is no more. Right now it is a lagoon of spring water, cool splashes of comfort travels to every corner of your body, like ice on melting lava. It's almost as if you could hear the hiss.
+        [Man]
+        Feel better? You really looked like the desert's going to get you.[/Accent End] 
+        Now it's just the stench that's really
+        giving you a headache.
+        [Pause]
+        [Man]
+        Sorry for the bad manners back there. It's just this town has never since a single visitor for a long time. Not after the incident.[/Accent End]
+        You can talk to him by saying “talk to the shopkeeper”
 	*reprompt
 		You can talk to him by saying talk to the shopkeeper
 	*recap
@@ -183,46 +129,26 @@ You can talk to him by saying “talk to the shopkeeper”
 
 @Ask Shopkeeper
 	*say
-		[Man]while ago the town was famed
-for our Ambrosia. People would come
-all the way from cities to this desert town
-for a taste of it
-[Pause]
-So traveler, what brings you here?[/Accent End]
+		[Man]while ago the town was famed for our Ambrosia. People would come all the way from cities to this desert town for a taste of it [Pause] So traveler, what brings you here?[/Accent End]
 	*then
 		-> Ask for Help
 
 @Ask for Help
 	*say
-		[LongPause][Man]
-Hmm, interesting reason to make you 
-come here. Anyways, this is a desert 
-so you could imagine it never rains 
-here- until that night.
-[Pause]
-On that night. We've seen the greatest
-thunderstorm of the town's history,
-but no-one anticipated what came
-after.[/Accent End]
-[Kid]
-And then the next morning, my dad
-started sweating like a cow. So did
-everyone else. But not me.[/Kid]
-[Man]
-Yeah. We were like broken
-faucets. But what's worse was what
-happens afterwards- that's right. the
-stench. This stench. It kept everyone
-from talking to each other. It drove
-tourists away. And now, no-one wants
-to come to our town anymore.[/Accent End]
-[Pause]
-The shopkeeper points to a poster on the left wall. It has some dust and the colors have started to fade away, but it's still pretty clear. 
-[Man]
-The mayor believed that it's a curse. He was trying to find people to help. Even set up a great reward for anyone who lifts the curse. 
-[Pause]
-Say, since you're here, why don't you help us? There's a lucrative treasure, and it could be all yours. In the meantime, you can look around the store. No worries.[/Accent End]
-It seems like they really need your help. Do you want to help them?
+		[LongPause]
+		[Man] 
+		Hmm, interesting reason to make you come here. Anyways, this is a desert so you could imagine it never rains here- until that night. [Pause] On that night. We've seen the greatest thunderstorm of the town's history, but no-one anticipated what came after.[/Accent End]
+        [Kid]
+        And then the next morning, my dad started sweating like a cow. So did everyone else. But not me.[/Kid]
+        [Man]
+        Yeah. We were like broken faucets. But what's worse was what happens afterwards- that's right. the stench. This stench. It kept everyone from talking to each other. It drove tourists away. And now, no-one wants to come to our town anymore.[/Accent End]
+        [Pause]
+        The shopkeeper points to a poster on the left wall. It has some dust and the colors have started to fade away, but it's still pretty clear. 
+        [Man]
+        The mayor believed that it's a curse. He was trying to find people to help. Even set up a great reward for anyone who lifts the curse. 
+        [Pause]
+        Say, since you're here, why don't you help us? There's a lucrative treasure, and it could be all yours. In the meantime, you can look around the store. No worries.[/Accent End]
+        It seems like they really need your help. Do you want to help them?
     *reprompt
         It seems like they really need your help.
     *recap 
