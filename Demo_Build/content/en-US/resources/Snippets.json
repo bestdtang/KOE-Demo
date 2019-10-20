@@ -9,5 +9,6 @@
   "footstep": "<audio src='https://koetest.s3.amazonaws.com/new_demo/Heavy_footsteps_01.mp3'/>",
   "MrsChilirosa": " <voice name=\"Kimberly\">",
   "Mayor": "<voice name=\"Joey\">",
-  "LongPause": "<break time='4s'/>"
+  "LongPause": "<break time='4s'/>",
+  "gulp": ""
 }

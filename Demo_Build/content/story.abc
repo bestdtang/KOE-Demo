@@ -1,24 +1,24 @@
 @start
 	*say
-		Start demo now. 
+		Greetings, explorer. Welcome to the Desert Adventurer experience.
 	*then
 		-> Lost in Desert
 
 @Lost in Desert
 	*say
-	    The blowing, hot wind scorches the surface of both the earth and your skin as you walk aimlessly in the desert, thirsty for water. [Pause][footstep] You've reached the top of a little sand hill. It grants you some height advantage and now you can see what's around you.
+	    The blowing, hot wind scorches the surface of both the earth and your skin as you walk aimlessly in the desert, thirsty for water. [Pause] [gulp] [footstep] In the middle of the hot desert, you found a rusty, old signpost. It has two arrows pointing to the right and the left, but their names have faded away.
 	*then
-		-> Tutorial
+	-> Tutorial 1: Direction Questions
 
-@Tutorial
+@Tutorial 1: Direction Questions
 	*say
-		You can say, look left or look right.
+		[DirectionQuestionSE] When you hear this sound, you will be deciding which path, or direction, to take. In this case, try saying: "go to the left", or "go to the right".
 	*then
-		hear look left, look front, look behind {
-			-> Look Front Left Behind
+		hear go to the left {
+			-> Look Left
 		}
 
-		hear look right {
+		hear go to the right {
 			-> Look Right
 		}
 	*reprompt
@@ -28,11 +28,31 @@
 
 @Look Right
 	*say
-		There's nothing special to your right except the endless desert. Wait! You see a few freckles on the yellow surface of Earth. [Pause] It shines under the burning sun! You squint your eyes and look closer. it's a small town! There might be water there. [Pause] You can go to a place by saying go to that place. Try saying go to the town.
+		You wiped your face with your dry hands and decided to turn right. Then, you keep treading the sea of powdered rocks wearily.
 	*then
 		hear go to the town {
-			-> Go to Town
+			-> Tutorial 1A: Check Around
 		}
+
+@Tutorial 1A: Check Around
+    *say
+        You walked under the hot sun until you've reached the top of a little sand hill. It grants you some height advantage and now you can see what's around you. [Pause] [DirectionQuestionSE] Sometimes, paths aren't obvious at first glance, like now. You can check around first by saying "check what's around me." Go on, give it a go.
+    *then
+        hear check around me {
+            -> Check Around the Hill
+        }
+    *reprompt
+        You can check around by saying "check what's around me".
+
+@Check Around the Hill
+    *say 
+       You looked around, like a compass slowly spinning. You don't find anything particularly interesting- wait, you see a few freckles on the yellow surfaces of Earth. [BlingSE] It shines under the burning sun! You squint your eyes and look closer. it's a town! It's a town! [pause] There's a good chance that they have some water there.
+    *then
+        hear go to the town {
+             -> Go to Town
+         }
+     *reprompt
+        You might want to go to a location?
 
 @Go to Town
 	*say
@@ -169,14 +189,11 @@
 			-> Around
 		}
 
-@Look Front Left Behind
+@Look Left
 	*say
-		Except the blurry horizon infinitely far away 
-and the endless yellow, there's 
-nothing special that catches your 
-attention.
+		You wiped your face with your dry hands and decided to turn left. Then, you keep treading the sea of powdered rocks wearily.
 	*then
-		-> Tutorial
+		-> Tutorial 1A: Check Around
 
 @Decide to Help
 	*say
