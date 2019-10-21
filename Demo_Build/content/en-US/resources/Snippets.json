@@ -10,5 +10,8 @@
   "MrsChilirosa": " <voice name=\"Kimberly\">",
   "Mayor": "<voice name=\"Joey\">",
   "LongPause": "<break time='4s'/>",
-  "gulp": ""
+  "gulp": "",
+  "DirectionQuestionSound": "<audio src='https://koetest.s3.amazonaws.com/new_demo_stereo/SoundEditing_mixdown.mp3'/>",
+  "ConversationQuestionSound": "<audio src=\"https://koetest.s3.amazonaws.com/new_demo_stereo/conversation_question.mp3\"/>",
+  "Action": "<audio src=\"https://koetest.s3.amazonaws.com/new_demo_stereo/action_question.mp3\"/>"
 }
