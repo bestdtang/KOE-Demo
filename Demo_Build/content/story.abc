@@ -1,6 +1,6 @@
 @start
 	*say
-		Greetings, explorer. Welcome to the Desert Adventurer experienc。
+		Greetings, explorer. Welcome to the Desert Adventurer experience.
 	*then
 		-> Lost in Desert
 
@@ -116,18 +116,11 @@ For example, right now you can say:
 	*say
 		You asked the boy for some water. 
 		[Kid] 
-	I can help you with that. But I must 
-warn you- that situations in the house 
-aren't exactly desirable. In a sense.[/Kid] 
+	    I can help you with that. But I must warn you- that situations in the house aren't exactly desirable. In a sense.[/Kid] 
 		The boy takes you around the building and enters the store from the backdoor. [Pause] Oh dear it was far from being desirable. The air in the store was nothing of this world. It's foul and revolting. Each step you take is like a deeper dive into the bowels of a carnivorous beast. [Pause]
 		[Kid] 
 		Yeah. Told you. Papa![/Kid] 
-		A bald, middle-aged man that looks
-like in his fifties are slowly walks
-down the stairs. Small pieces of
-tissue paper are rolled and stuck in
-his nose. He looks like he could use
-some more sunshine.
+		A bald, middle-aged man that looks like in his fifties are slowly walks down the stairs. Small pieces of tissue paper are rolled and stuck in his nose. He looks like he could use some more sunshine.
 	*then
 		-> Shopkeeper
 
@@ -142,16 +135,10 @@ some more sunshine.
         [Pause] 
         The young boy's father handed you a big glass of water. 
         [Man] 
-       Hey- dont worry. I know it smells bad 
-in here. But I assure you, the water 
-is clean. Go on, drink up. Ahh. Yes, the water is fresh and good.[/Accent End]
-[Pause]
-[Action]
-Sometimes when appropriate, you can
-use an item, perform an action, or do
-nothing. For this instance, you can
-either say: "use water", or "do
-nothing".
+        Hey- dont worry. I know it smells bad in here. But I assure you, the water is clean. Go on, drink up. Ahh. Yes, the water is fresh and good.[/Accent End]
+        [Pause]
+        [Action]
+        Sometimes when appropriate, you can use an item, perform an action, or do nothing. For this instance, you can either say: "use water", or "do nothing".
 	*then
 		hear drink water, use water, use the water {
 			-> Finding Out
@@ -160,41 +147,22 @@ nothing".
 			-> Don't Drink
 		}
 	*recap
-		Sometimes when appropriate, you can
-use an item, perform an action, or do
-nothing. For this instance, you can
-either say: "use water", or "do
-nothing".
+		Sometimes when appropriate, you can use an item, perform an action, or do nothing. For this instance, you can either say: "use water", or "do nothing". 
 	*reprompt
-		Sometimes when appropriate, you can
-use an item, perform an action, or do
-nothing. For this instance, you can
-either say: "use water", or "do
-nothing".
+		Sometimes when appropriate, you can use an item, perform an action, or do nothing. For this instance, you can either say: "use water", or "do nothing".
 
 @Don't Drink
 	*say
-		You hold the glass of water at your
-hand, but you don't drink from it.
-[Man]
-Hmmm.
-[/Accent End]
-The shopkeeper looks at the glass of
-water. He looks down on the dusty
-floor.
-[Man]
-Suit yourself. Thought you were really
-thirsty.
-[/Accent End]
-At least you're in the shade, so
-you're starting to feel a little bit
-less thirsty. But still, the stench is
-unbearable.
-[Man]
-Maybe the smell even went in the
-water, but we just don't know. Heh. It
-wasn't like this before the incident.
-[/Accent End][ActionQuestionSound]
+		You hold the glass of water at your hand, but you don't drink from it. 
+    [Man]
+    Hmmmm. [/Accent End]
+    The shopkeeper looks at the glass of water. He looks down on the dusty floor.
+    [Man]
+    Suit yourself. Thought you were really thirsty. [/Accent End]
+    At least you're in the shade, so you're starting to feel a little bit less thirsty. But still, the stench is unbearable.
+    [Man]
+    Maybe the smell even went in the water, but we just don't know. Heh. It wasn't like this before the incident. [/Accent End]
+    [ActionQuestionSound]
 	*recap
 		Try say use water.
 	*reprompt
@@ -228,10 +196,7 @@ wasn't like this before the incident.
 
 @Ask Shopkeeper
 	*say
-		[Man]A while ago the town was famed
-for our Shawarma. People would come
-all the way from cities to this dune
-for a taste of it.[Pause] Say, what's your name?[/Accent End]
+		[Man]A while ago the town was famed for our Shawarma. People would come all the way from cities to this dune for a taste of it.[Pause] Say, what's your name?[/Accent End]
 	*then
 	slot playerName01 to 'AMAZON.US_FIRST_NAME'
 		hear {playerName01}, my name is {playerName01} {
@@ -241,8 +206,7 @@ for a taste of it.[Pause] Say, what's your name?[/Accent End]
 @Ask for Help
 	*say
 		[Man] 
-		That's a rare name around here. Anyway, 
-{playerName01}  this is a desert so you could imagine it never rains here- until that night. [Pause] On that night. We've seen the greatest thunderstorm of the town's history, but no-one anticipated what came after.[/Accent End]
+		That's a rare name around here. Anyway, {playerName01}  this is a desert so you could imagine it never rains here- until that night. [Pause] On that night. We've seen the greatest thunderstorm of the town's history, but no-one anticipated what came after.[/Accent End]
         [Kid]
         And then the next morning, my dad started sweating like a cow. So did everyone else. But not me.[/Kid]
         [Man]
@@ -265,16 +229,10 @@ for a taste of it.[Pause] Say, what's your name?[/Accent End]
 
 @Mayor Office
 	*say
-		You've arrived at the mayor's office.
-It's the largest building in the town,
-but it's doors and windows are tightly
-shut and locked. When you get close to
-the front door, there's a sharp smell
-of hot pepper.
-
-Looks like there's no way in.
-
-[DirectionQuestionSound]
+		You've arrived at the mayor's office. It's the largest building in the town, but it's doors and windows are tightly shut and locked. When you get close to the front door, there's a sharp smell of hot pepper. Looks like there's no way in. If you don't know where to go, remember to say "What's around me".
+    *recap
+        If you don't know where to go, remember to say "What's around me".
+    [DirectionQuestionSound]
 	*then
 		hear store, general store, go to the general store {
 			-> Store
@@ -322,10 +280,10 @@ Looks like there's no way in.
 	*recap
 		Ask for one, or ask more about the sauce.
 	*then
-		hear one, ask for one {
+		hear one, ask for one, ask one {
 	        -> One Bottle of Sauce
 	    }
-	    hear more, ask for more {
+	    hear more, ask for more, ask more {
 	        -> More Sauce
 	    }
 
