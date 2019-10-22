@@ -28,17 +28,15 @@
 
 @Look Right
 	*say
-		You wiped your face with your dry hands and decided to turn right. Then, you keep treading the sea of powdered rocks wearily.
+		You wiped your face with your dry hands and decided to turn right. Then, you keep treading the sea of powdered rocks wearily. 
 	*then
-		hear go to the town {
-			-> Tutorial 1A: Check Around
-		}
+		-> Tutorial 1A: Check Around
 
 @Tutorial 1A: Check Around
 	*say
-		You walked under the hot sun until you have reached the top of a little sand hill. It grants you some height advantage and now you can see what's around you. [Pause] [DirectionQuestionSound]Sometimes, paths aren't obvious at first glance, like now. You can check around first by saying check what's around me. Go on, give it a go.
+		You walked under the hot sun until you have reached the top of a little sand hill. It grants you some height advantage and now you can see what's around you. [Pause] [DirectionQuestionSound]Sometimes, paths aren't obvious at first glance, like now. You can check around first by saying what's around me. Go on, give it a go.
 	*then
-		hear check around me {
+		hear what's around me, around me {
             -> Check Around the Hill
         }
 	*reprompt
@@ -103,10 +101,7 @@
 
 @Store
 	*say
-		You go to the general store. Upon approaching the general store, you see a boy. He wears a red coat, and you can see "surprised" written all over his face. [Pause][Kid] You are a new face here. Do you need help? You don't look well.[/Kid] [Pause] Maybe he has water. You can probably ask if there's water. [ConversationQuestionSound]When you hear this sound, you decide
-what to say to the other person next.
-For example, right now you can say:
-/"ask the boy for water/". Try it.
+		You go to the general store. Upon approaching the general store, you see a boy. He wears a red coat, and you can see "surprised" written all over his face. [Pause][Kid] You are a new face here. Do you need help? You don't look well.[/Kid] [Pause] Maybe he has water. You can probably ask if there's water. [ConversationQuestionSound]When you hear this sound, you decide what to say to the other person next. For example, right now you can say: ask the boy for water. Try it.
 	*then
 		hear ask for water, ask the boy, ask the boy for water {
 			-> Boy
@@ -197,16 +192,17 @@ For example, right now you can say:
 @Ask Shopkeeper
 	*say
 		[Man]A while ago the town was famed for our Shawarma. People would come all the way from cities to this dune for a taste of it.[Pause] Say, what's your name?[/Accent End]
+		[ConversationQuestionSound]
 	*then
-	slot playerName01 to 'AMAZON.US_FIRST_NAME'
-		hear {playerName01}, my name is {playerName01} {
+	    slot playerName_ to 'AMAZON.US_FIRST_NAME'
+		hear {playerName_}, my name is {playerName_} {
 			-> Ask for Help
 		}
 
 @Ask for Help
 	*say
 		[Man] 
-		That's a rare name around here. Anyway, {playerName01}  this is a desert so you could imagine it never rains here- until that night. [Pause] On that night. We've seen the greatest thunderstorm of the town's history, but no-one anticipated what came after.[/Accent End]
+		That's a rare name around here. Anyway, {playerName_},  this is a desert so you could imagine it never rains here- until that night. [Pause] On that night. We've seen the greatest thunderstorm of the town's history, but no-one anticipated what came after.[/Accent End]
         [Kid]
         And then the next morning, my dad started sweating like a cow. So did everyone else. But not me.[/Kid]
         [Man]
@@ -324,10 +320,10 @@ For example, right now you can say:
 	*recap
 		Now you can leave the store, or ask again
 	*then
-		hear leave the store {
+		hear leave the store, leave {
             -> Leave the Store
         }
-        hear ask again {
+        hear ask again, ask {
             -> Ask more about Chilirosa
         }
 
@@ -406,6 +402,7 @@ For example, right now you can say:
         Nothing but the sandy gusts of wind blow into your ears. No-one is visible on the street. The buildings on the way look pretty modern, but they are all coated with a thick layer of dust. While you're on your way, you noticed something peculiar in the corner of one of the buildings. It's a patch of green. 
         //<audio src='https://koetest.s3.amazonaws.com/new_demo_stereo/footsteps2.mp3'/>
 	*then
+	    unflag flower
 		-> Arrive Beauty Salon
 
 @Arrive Beauty Salon
@@ -422,7 +419,7 @@ For example, right now you can say:
         hear open the door directly {
             -> Open the Beauty Salon Directly
         }
-        hear check the green patch before, green patch {
+        hear check the green patch before, green patch, check {
             -> check the Green Patch
         }
 
@@ -504,7 +501,7 @@ For example, right now you can say:
 @Ask about the Sauce
 	*say
 		[MrsChilirosa]
-        Ah yes, the Super-Duper Hot Blue Pepper Sauce. I can't eat with out it. It's my fountain of life. I need it for my breakfast, lunch and supper! People don't understand the beauty of the sauce, but that's ok! That means I'll only have to share it with the few that understands. Ho, ho, ho! But, you see, it's kind of hard to get it around this area, so I just wanted to ask why you needed the sauce. [/Accent End]
+        Ah yes, the Super-Duper Hot Blue Pepper Sauce. I can't eat with out it. It's my fountain of life. I need it for my breakfast, lunch and supper! People don't understand the beauty of the sauce, but that's ok! That means I'll only have to share it with the few that understands. Hohoho! But, you see, it's kind of hard to get it around this area, so I just wanted to ask why you needed the sauce. [/Accent End]
         [ConversationQuestionSound]So we have two plans here: Plan A, You tell her how you like the sauce; Plan B, tell her that you need it to get the mayor's attention. Which plan you wanna go?
 	*recap
 		We have two plans here: Plan A, You tell her how you like the sauce; Plan B, tell her that you need it to get the mayor's attention. Which plan you wanna go?
@@ -585,7 +582,7 @@ For example, right now you can say:
 	*say
 		Ok then. Shout something loud and clear so that the mayor can hear you. Now let's shout![ConversationQuestionSound]
 	*recap
-		Seems like he is not interested in what you said. Shout something else?[ConversationQuestionSound]
+		Seems like he is not interested in what you said. Shout something else? maybe mention that you have the super duper hot pepper sauce? [ConversationQuestionSound]
 	*reprompt
 		Ok then. Shout something loud and clear so that the mayor can hear you. Now let's shout![ConversationQuestionSound]
 	*then
@@ -623,12 +620,14 @@ For example, right now you can say:
 
         You sit down on the old couch in the mayor's office. The couch releases a spicy smell that stings.  
       
-  [Mayor]
+    [Mayor]
         So, the legend out there says there's a precious gem hidden in the valleys to the East, and that the precious gem is the key ingredient to lifting the curse.[/Accent End]
         //<audio src="https://koetest.s3.amazonaws.com/new_demo_stereo/windBlowing2.mp3"/> 
 
     [Mayor]    that the don't know, is that the cavern is guarded by puzzles and challenges. But what's beyond that- nobody knows. Nobody remembers[/Accent End]
 	*then
+	    unflag cave
+	    unflag town
 		-> Ask the Mayor
 
 @Ask the Mayor
@@ -712,7 +711,7 @@ For example, right now you can say:
 	*say
 		[Mayor]
             I hope that these information are useful to you. We're all looking forward to seeing the town coming back to life some day. Good luck! [/Accent End]
-        You leave the mayor's office, back on to the streets. As you head East for you journeys, you look back again at the small town, still suffering from the bad smell. You also see the boy from the general store waving at you as you stretch into the horizon in the East.
+        You leave the mayor's office, back on to the streets. As you head East for you journeys, you look back again at the small town, still suffering from the bad smell. You also see the boy from the general store waving at you as you stretch into the horizon in the East. This is the end of this demo. Thanks for playing!
 	*then
 		>> END
 
@@ -734,5 +733,8 @@ For example, right now you can say:
         }
         hear jump to saloon {
             -> Leave the Store
+        }
+        hear get the hot sauce, I have your sauce, I have the hot sauce {
+            -> Get the Hot Sauce
         }
 
