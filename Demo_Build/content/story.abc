@@ -1,7 +1,21 @@
+@resume
+    *say
+        Welcome back! Do you want to continue your story from where you last left
+        off?
+    *then
+        hear yes {
+            >> RESUME
+        }
+
+        hear no {
+            -> start
+        }
+
 @start
 	*say
 		Greetings, explorer. Welcome to the Desert Adventurer experience.
 	*then
+    	set currentLocation as 'desert'
 		-> Lost in Desert
 
 @Lost in Desert
@@ -46,9 +60,10 @@
 
 @Check Around the Hill
 	*say
-		You looked around, like a compass slowly spinning. You don't find anything particularly interesting- wait, you see a few freckles on the yellow surfaces of Earth. [BlingSE] It shines under the burning sun! You squint your eyes and look closer. it's a town! It's a town! [pause] There's a good chance that they have some water there.[DirectionQuestionSound]
+		You looked around, like a compass slowly spinning. You don't find anything particularly interesting- wait, you see a few freckles on the yellow surfaces of Earth. It shines under the burning sun! You squint your eyes and look closer. it's a town! It's a town! [pause] There's a good chance that they have some water there.[DirectionQuestionSound]
 	*then
 		hear go to the town {
+		    set currentLocation as 'town'
              -> Go to Town
          }
 	*reprompt
@@ -64,24 +79,24 @@
 
 @Town
 	*say
-		The urge of cold water passing through dry lungs has dragged your weary feet to the entrance of the town. You thought the townspeople would step forward immediately to help a thirsty traveler, but instead... [Pause] No-one came. What's happening? [DirectionQuestionSound]At any moment, you can ask to check the environment. Try saying: "what's around me?"
+		The urge of cold water passing through dry lungs has dragged your weary feet to the entrance of the town. You thought the townspeople would step forward immediately to help a thirsty traveler, but instead... [Pause] No-one came. What's happening? [DirectionQuestionSound] you can ask to check the environment. Try saying: "what's around me?"
 	*recap
-		At any moment, you can ask to check the environment. Try saying: "what's around me?"
+		you can ask to check the environment. Try saying: "what's around me?"
+	*reprompt
+		you can ask to check the environment. Try saying: "what's around me?"
 	*then
 		hear what's around me {
 			-> Around 
 		}
-	*reprompt
-		At any moment, you can ask to check the environment. Try saying: "what's around me?"
 
 @Around
 	*say
 		You're at the entrance of the town. Some small buildings align on the sides of the street, but all of their doors are shut tight. Only a few people are walking on the streets, but it's almost as if they're trying to avoid having any eye-contact with you.
 	*reprompt
 		There are a few establishments right in front of you: a general store, the mayor's office. Could any of them have some water? Choose a location to go to.
-	*then
-		*recap
+	*recap
 		There are a few establishments right in front of you: a general store, the mayor's office. Could any of them have some water? Choose a location to go to.
+	*then
 		-> Around_1
 
 @Around_1
@@ -93,9 +108,11 @@
 		There are a few establishments right in front of you: a general store, the mayor's office. Could any of them have some water? Choose a location to go to.
 	*then
 		hear mayor's office, office, mayor, go to mayor's office {
+		    set currentLocation as 'mayors office'
 			-> Mayor Office
 		}
 		hear general store, general, store, go to the general store {
+		    set currentLocation as 'general store'
 			-> Store
 		}
 
@@ -336,6 +353,7 @@
         //<audio src='https://koetest.s3.amazonaws.com/new_demo_stereo/doorOpen1.mp3'/>
         You step out of the store.
 	*then
+	    set currentLocation as 'a cross'
 		-> The Cross
 
 @The Cross
@@ -343,12 +361,15 @@
 		[DirectionQuestionSound]There are a few things that you may want to check: A signpost, the mayor's office to your left, or you can go find the beauty salon.
 	*then
 		hear signpost, check the signpost {
+		    set currentLocation as 'signpost'
             -> Signpost
         }
         hear mayor's office, check mayor's office {
+            set currentLocation as 'mayors office'
             -> Mayor's Office
         }
         hear beauty salon, go find the beauty salon {
+            set currentLocation as 'outside of the beauty saloon'
             -> Beauty Salon
         }
 
@@ -362,7 +383,7 @@
 	*say
 		You arrived at the mayor's office. It's the seemingly largest building in the town, and it's doors are shut tight and locked. Beside the door is a trash can full of empty bottles. 
         [Pause]
-     [Action]   Now you can: Knock, bash, or try to open the door, check out the trash can, or go to another location.
+        [Action]   Now you can: Knock, bash, or try to open the door, check out the trash can, or go to another location.
 	*then
 		hear knock {
             -> Knock On Mayor's Office
@@ -374,6 +395,7 @@
             -> Check Out the Trash Can
         }
         hear go to another location, another location {
+            set currentLocation as 'a cross'
             -> The Cross
         }
 
@@ -411,9 +433,11 @@
         [Action]Now you can: Knock on the door, bash on the door, open the door directly, or check on the green patch before.
 	*then
 		hear knock, knock on the door {
+		    set currentLocation as 'inside of the beaty saloon'
             -> Knock On Beauty Salon
         }
         hear bash, bash on the door {
+            set currentLocation as 'inside of the beaty saloon'
             -> Bash On Beauty Salon
         }
         hear open the door directly {
@@ -541,6 +565,7 @@
         Hmmm. I see. Truly, the town isn't seeing anyone over these years, just because of this smell. Ew! It reminds me of exactly someone who had this smell a few years back. Anyways, if I can help you get rid of this smell, I'll help however I can. Here, take it.[/Accent End]
         She hands over the hot sauce to you. You exit the building.
 	*then
+	    set currentLocation as 'mayors office'
 		-> Get the Hot Sauce
 
 @Open the Beauty Salon Directly
@@ -735,6 +760,28 @@
             -> Leave the Store
         }
         hear get the hot sauce, I have your sauce, I have the hot sauce {
+            set currentLocation as 'Mayors Office'
             -> Get the Hot Sauce
         }
-
+        hear where am I, current location, tell me my location {
+            -> Where am I
+        }
+        hear help {
+            -> Help
+        }
+        
+@Where am I
+    *say
+        Now you are in {currentLocation}.
+    *then
+        >> BACK
+        
+@Help
+    *say
+        Here is what you can do: 
+            if you wanna know your current location, say: where am I; 
+            if you wanna restart the game, say: restart; 
+            if you wanna skip to the saloon scene, say: jump to saloon;
+            if you wanna skip to the mayor's office scene, say: get the hot sauce.
+    *then 
+        >> BACK
