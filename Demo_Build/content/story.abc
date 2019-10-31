@@ -707,6 +707,7 @@
         hear B, b, ask, ask mayor about something else, something else {
             -> Ask Mayor The Cave
         }
+
 @Leave the Cave
 	*say
 		[Mayor]
@@ -737,4 +738,451 @@
         hear get the hot sauce, I have your sauce, I have the hot sauce {
             -> Get the Hot Sauce
         }
+
+@puzzle_help
+	*say
+		If you are far away from the right direction. The flower will sing this song. [DirSound_Small]
+If you are close to the right direction, the flower will sing. [DirSound_MRight]
+If you are on the right direction, the flower will sing. [DirSound_Large]
+
+@PuzzleDemoStart
+	*say
+		[Voice_Start_Man]Here, If you are going to the cave, that is in the foggy forest. You must take this compass, and the leading flower. If you are lost, the compass will show you the direction and the flower will point you the way to the cave. If you sprinkle a little bit dust on the leading flower. It will chase the smell and bring you to wherever the dust is from. look, here is the dust I grab from my garden. Now, I will show you how to use it. [Voice_End][Action_Sound] Try say, use the dust on the leading flower.
+	*recap
+		[Action_Sound] Try say, use the dust on the leading flower.
+	*reprompt
+		[Action_Sound] Try say, use the dust on the leading flower.
+	*then
+		hear use the dust on the leading flower {
+			-> TutorialStart
+		}
+@TutorialStart
+	*say
+		You use the dust on the leading flower. [Voice_Start_Man] See, the flower is reacting to it. Now, you are standing in the middle of my tent. You can hold the flower and look at four different directions, east, south, west, north.[Voice_End]
+[Action_Sound]Try say, look south.
+	*then
+		hear look south, look at south {
+			-> TutorialSouth
+		}
+	*recap
+		[Action_Sound]Try say, look south.
+	*reprompt
+		[Action_Sound]Try say, look south.
+
+@TutorialSouth
+	*say
+		You are looking at the south. [Voice_Start_Man]
+Listen, the leading flower is singing you the way .[Voice_End][DirSound_Small][Voice_Start_Man]This song means that the direction you are looking is far away from the right direction.  [Voice_End]
+[Action_Sound] Now, try say look west.
+	*then
+		hear look west {
+			-> TutorialWest
+		}
+	*recap
+		[Action_Sound] Now, try say look west.
+	*reprompt
+		[Action_Sound] Now, try say look west.
+
+@TutorialWest
+	*say
+		You are looking at the west.
+[DirSound_MRight]
+[Voice_Start_Man] This song means you are close to the right direction. [Voice_End][Action_Sound]
+	*recap
+		You can say look east or look north.
+	*reprompt
+		You can say look east or look north.
+	*then
+		hear look north {
+			-> TutorialNorth
+		}
+
+		hear look east {
+			-> TutorialEast
+		}
+
+@TutorialEast
+	*say
+		You are looking east. You are facing a wall.
+	*recap
+		[Action_Sound]You can say look north.
+	*reprompt
+		[Action_Sound]You can say look north.
+	*then
+		hear Look north {
+			-> TutorialNorth
+		}
+
+@TutorialNorth
+	*say
+		You are looking north.
+[DirSound_Large]
+[Voice_Start_Man]
+This song means you are right looking at the way out! Go toward that direction and you are free! [Voice_End]
+[Action_Sound]
+Try say, go to north.
+	*then
+		hear go to north {
+			-> TutorialEnd
+		}
+
+@TutorialEnd
+	*say
+		[Voice_Start_Man] Hey, congrats! Now you are in my garden, do you understand how to use  the leading flower?[Voice_End][Conversation_Sound]
+	*then
+		hear yes {
+			-> TutorialEnd_1
+		}
+
+		hear no {
+			-> TutorialAgain
+		}
+
+@TutorialAgain
+	*say
+		[Voice_Start_Man]Ok... No worry, I can put you back to my tent, and show you again. Do you wanna learn again?[Voice_End][Conversation_Sound]
+	*then
+		hear yes {
+			-> TutorialStart
+		}
+		hear no {
+			-> TutorialEnd_1
+		}
+
+@TutorialEnd_1
+	*say
+		[Voice_Start_Man] Ok, cool. It's simple to use, right? Here, take this bottle of soil. I grab it from the cave you are looking for. And. You are ready to go! With the leading flower, you should be able to walk across the forest! [Voice_End]
+	*then
+		-> PuzzleStart
+
+@PuzzleStart
+	*say
+		You thank the man and continute your journey. [Footsteps]Couple minutes later, you are standing in front of the foggy forest.[Action_Sound]
+	*recap
+		[Action_Sound] Try use the dust on the flower
+	*reprompt
+		[Action_Sound] Try use the dust on the flower
+	*then
+				hear use the dust on the flower {
+			-> PuzzleStartfromPA
+		}
+
+@PuzzleStartfromPA
+	*say
+		You use the dust on the flower. The flower is reacting to it. Now you can look to different directions.[Action_Sound]
+	*recap
+		[Action_Sound] You can look east, look south, look west and look north.
+	*reprompt
+		[Action_Sound] You can look east, look south, look west and look north.
+	*then
+		-> PA_positiono
+
+@PA_position
+	*say
+		
+	*then
+		hear look south, go south {
+			-> PA_s
+		}
+		hear look west, go west {
+			-> PA_w
+		}
+		hear look north {
+			-> PA_n
+		}
+		hear look east {
+			-> PA_e
+		}
+		hear go to east {
+			-> PB_positiono
+		}
+		hear go to north {
+			-> PE_positiono
+		}
+	*recap
+		[Action_Sound] You can look east, look south, look west and look north.
+	*reprompt
+		[Action_Sound] You can look east, look south, look west and look north.
+
+@PB_positiono
+	*say
+		[Footsteps] You come to a new spot.
+	*then
+		-> PB_position
+
+@PD_position
+	*say
+		
+	*then
+		hear look north, go to north, go north {
+			-> PD_n
+		}
+
+		hear look east {
+			-> PD_e
+		}
+
+		hear look south {
+			-> PD_s
+		}
+
+		hear look west, go to west {
+			-> PD_w
+		}
+		hear go to east {
+			-> PE_positiono
+		}
+		hear go to south {
+			-> PA_positiono
+		}
+	*recap
+		[Action_Sound] You can look east, look south, look west and look north.
+	*reprompt
+		[Action_Sound] You can look east, look south, look west and look north.
+
+@PD_w
+	*say
+		You are looking west. The trees block the way.
+	*then
+		-> PD_position
+
+@PD_s
+	*say
+		You are looking south. [DirSound_MLeft]
+	*then
+		-> PD_position
+
+@PD_e
+	*say
+		You are looking east. [DirSound_Large]
+	*then
+		-> PD_position
+
+@PD_n
+	*say
+		You are looking north. The trees block the way.
+	*then
+		-> PD_position
+
+@PB_position
+	*say
+		
+	*then
+		hear look north {
+			-> PB_n
+		}
+
+		hear look east {
+			-> PB_e
+		}
+
+		hear look south, go south {
+			-> PB_s
+		}
+
+		hear look west {
+			-> PB_w
+		}
+		hear go to west {
+			-> PA_positiono
+		}
+
+		hear go to east {
+			-> PC_positiono
+		}
+
+		hear go to north {
+			-> PE_positiono
+		}
+	*recap
+		[Action_Sound] You can look east, look south, look west and look north.
+	*reprompt
+		[Action_Sound] You can look east, look south, look west and look north.
+
+@PC_positiono
+	*say
+		[Footsteps] You come to a new spot.
+	*then
+		-> PC_position
+
+@PE_positiono
+	*say
+		[Footsteps] You come to a new spot.
+	*then
+		-> PE_position
+
+@PD_positiono
+	*say
+		[Footsteps]
+	*then
+		-> PD_position
+
+@PA_positiono
+	*say
+		
+	*then
+		-> PA_position
+
+@PE_position
+	*say
+		
+	*then
+				hear look north, go north, go to north {
+			-> PE_n
+		}
+
+		hear look east {
+			-> PE_e
+		}
+
+		hear look south {
+			-> PE_s
+		}
+
+		hear look west {
+			-> PE_w
+		}
+		hear go to west {
+			-> PD_positiono
+		}
+		hear go to south {
+			-> PB_positiono
+		}
+		hear go to east {
+			-> Out
+		}
+	*recap
+		[Action_Sound] You can look east, look south, look west and look north.
+	*reprompt
+		[Action_Sound] You can look east, look south, look west and look north.
+
+@PE_w
+	*say
+		You are looking west. [DirSound_Small]
+	*then
+		-> PE_position
+
+@PE_s
+	*say
+		You are looking south. [DirSound_MLeft]
+	*then
+		-> PE_position
+
+@PE_e
+	*say
+		You are looking east. [DirSound_Large]
+	*then
+		-> PE_position
+
+@PE_n
+	*say
+		You are looking north. The trees block the way.
+	*then
+		-> PE_position
+
+@PC_position
+	*say
+		
+	*then
+		hear look north {
+			-> PC_n
+		}
+
+		hear look east, go to east {
+			-> PC_e
+		}
+
+		hear look south, go to south {
+			-> PC_s
+		}
+
+		hear look west {
+			-> PC_w
+		}
+		hear go to north {
+			-> Out
+		}
+		hear go to west {
+			-> PB_positiono
+		}
+	*recap
+		[Action_Sound] You can look east, look south, look west and look north.
+	*reprompt
+		[Action_Sound] You can look east, look south, look west and look north.
+
+@Out
+	*say
+		You see a cave.
+
+@PC_w
+	*say
+		You are looking west. [DirSound_MRight]
+	*then
+		-> PC_position
+
+@PC_s
+	*say
+		You are looking south. The trees block the way.
+	*then
+		-> PC_position
+
+@PC_e
+	*say
+		You are looking east. The trees block the way.
+	*then
+		-> PC_position
+
+@PC_n
+	*say
+		You are looking north. [DirSound_Large]
+	*then
+		-> PC_position
+
+@PB_w
+	*say
+		you are look west. [DirSound_Small]
+	*then
+		-> PB_position
+
+@PB_s
+	*say
+		You are looking south. The trees block the way.
+	*then
+		-> PB_position
+
+@PB_e
+	*say
+		You are looking east. [DirSound_MLeft]
+	*then
+		-> PB_position
+
+@PB_n
+	*say
+		You are looking north. [DirSound_MRight]
+	*then
+		-> PB_position
+
+@PA_w
+	*say
+		You are looking west. [DirSound_Small] But, the trees block the way.
+	*then
+		-> PA_position
+
+@PA_s
+	*say
+		You are looking south. That is the entrance you came.
+	*then
+		-> PA_position
+
+@PA_e
+	*say
+		You are looking east. [DirSound_MLeft]
+	*then
+		-> PA_position
+
+@PA_n
+	*say
+		You are looking north. [DirSound_MRight]
+	*then
+		-> PA_position
 
