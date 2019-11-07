@@ -21,5 +21,7 @@
   "Action_Sound": "<audio src=\"https://koetest.s3.amazonaws.com/new_demo_stereo/action_question.mp3\"/>",
   "Conversation_Sound": "<audio src=\"https://koetest.s3.amazonaws.com/new_demo_stereo/conversation_question.mp3\"/>",
   "Footsteps": "<audio src=\"https://koetest.s3.amazonaws.com/puzzle_demo/footsteps2.mp3\"/>",
-  "EOA": "</voice>"
+  "EOA": "</voice>",
+  "Short_Pause": "<break time='0.2s'/>",
+  "Long_Pause": "<break time='0.8s'/>"
 }
