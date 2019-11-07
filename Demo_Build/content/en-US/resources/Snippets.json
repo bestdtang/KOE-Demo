@@ -5,13 +5,11 @@
   "/Kid": "</voice>",
   "Pause": "<break time='0.5s'/>",
   "Man": "<voice name='Brian'>",
-  "/Accent End": "</voice>",
   "footstep": "<audio src='https://koetest.s3.amazonaws.com/new_demo/Heavy_footsteps_01.mp3'/>",
   "MrsChilirosa": " <voice name=\"Kimberly\">",
   "Mayor": "<voice name=\"Joey\">",
   "LongPause": "<break time='4s'/>",
- 
-"DirectionQuestionSound": "<audio src='https://koetest.s3.amazonaws.com/new_demo_stereo/SoundEditing_mixdown.mp3'/>",
+  "DirectionQuestionSound": "<audio src='https://koetest.s3.amazonaws.com/new_demo_stereo/SoundEditing_mixdown.mp3'/>",
   "ConversationQuestionSound": "<audio src=\"https://koetest.s3.amazonaws.com/new_demo_stereo/conversation_question.mp3\"/>",
   "Action": "<audio src=\"https://koetest.s3.amazonaws.com/new_demo_stereo/action_question.mp3'/>",
   "DirSound_Small": "<audio src='https://koetest.s3.amazonaws.com/puzzle_demo/sound_hint_s.mp3'/>",
@@ -22,5 +20,6 @@
   "Voice_Start_Man": "<voice name=\"Joey\">",
   "Action_Sound": "<audio src=\"https://koetest.s3.amazonaws.com/new_demo_stereo/action_question.mp3\"/>",
   "Conversation_Sound": "<audio src=\"https://koetest.s3.amazonaws.com/new_demo_stereo/conversation_question.mp3\"/>",
-  "Footsteps": "<audio src=\"https://koetest.s3.amazonaws.com/puzzle_demo/footsteps2.mp3\"/>"
+  "Footsteps": "<audio src=\"https://koetest.s3.amazonaws.com/puzzle_demo/footsteps2.mp3\"/>",
+  "EOA": "</voice>"
 }

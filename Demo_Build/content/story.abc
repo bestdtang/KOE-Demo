@@ -20,7 +20,7 @@
 
 @Lost in Desert
 	*say
-		The blowing, hot wind scorches the surface of both the earth and your skin as you walk aimlessly in the desert, thirsty for water. [Pause] [gulp] [footstep] In the middle of the hot desert, you found a rusty, old signpost. It has two arrows pointing to the right and the left, but their names have faded away.
+		The blowing, hot wind scorches the surface of both the earth and your skin as you walk aimlessly in the desert, thirsty for water. [Pause] [footstep] In the middle of the hot desert, you found a rusty, old signpost. It has two arrows pointing to the right and the left, but their names have faded away.
 	*then
 		-> Tutorial 1: Direction Questions
 
@@ -139,15 +139,15 @@
 @Shopkeeper
 	*say
 		[Man]
-        Who is this person? Why did you bring a stranger that looks like a dying cactus to this place?[/Accent End] 
+        Who is this person? Why did you bring a stranger that looks like a dying cactus to this place?[EOA] 
         [Kid] 
         Relax, papa. He's just a traveler. And he needs water. A lot of water.[/Kid] 
         [Man] 
-        Water? Hah! I got lots of water. As if water would do anything to wash this stench away.[/Accent End] 
+        Water? Hah! I got lots of water. As if water would do anything to wash this stench away.[EOA] 
         [Pause] 
         The young boy's father handed you a big glass of water. 
         [Man] 
-        Hey- dont worry. I know it smells bad in here. But I assure you, the water is clean. Go on, drink up. Ahh. Yes, the water is fresh and good.[/Accent End]
+        Hey- dont worry. I know it smells bad in here. But I assure you, the water is clean. Go on, drink up. Ahh. Yes, the water is fresh and good.[EOA]
         [Pause]
         [Action]
         Sometimes when appropriate, you can use an item, perform an action, or do nothing. For this instance, you can either say: "use water", or "do nothing".
@@ -167,13 +167,13 @@
 	*say
 		You hold the glass of water at your hand, but you don't drink from it. 
     [Man]
-    Hmmmm. [/Accent End]
+    Hmmmm. [EOA]
     The shopkeeper looks at the glass of water. He looks down on the dusty floor.
     [Man]
-    Suit yourself. Thought you were really thirsty. [/Accent End]
+    Suit yourself. Thought you were really thirsty. [EOA]
     At least you're in the shade, so you're starting to feel a little bit less thirsty. But still, the stench is unbearable.
     [Man]
-    Maybe the smell even went in the water, but we just don't know. Heh. It wasn't like this before the incident. [/Accent End]
+    Maybe the smell even went in the water, but we just don't know. Heh. It wasn't like this before the incident. [EOA]
     [ActionQuestionSound]
 	*recap
 		Try say use water.
@@ -190,12 +190,12 @@
         [Pause]
         The desert in your body is no more. Right now it is a lagoon of spring water, cool splashes of comfort travels to every corner of your body, like ice on melting lava. It's almost as if you could hear the hiss.
         [Man]
-        Feel better? You really looked like the desert's going to get you.[/Accent End] 
+        Feel better? You really looked like the desert's going to get you.[EOA] 
         Now it's just the stench that's really
         giving you a headache.
         [Pause]
         [Man]
-        Sorry for the bad manners back there. It's just this town has never since a single visitor for a long time. Not after the incident.[/Accent End]
+        Sorry for the bad manners back there. It's just this town has never since a single visitor for a long time. Not after the incident.[EOA]
         [ConversationQuestionSound]You should ask him.
 	*reprompt
 		You can talk to him by saying talk to the shopkeeper
@@ -208,7 +208,7 @@
 
 @Ask Shopkeeper
 	*say
-		[Man]A while ago the town was famed for our Shawarma. People would come all the way from cities to this dune for a taste of it.[Pause] Say, what's your name?[/Accent End]
+		[Man]A while ago the town was famed for our Shawarma. People would come all the way from cities to this dune for a taste of it.[Pause] Say, what's your name?[EOA]
 		[ConversationQuestionSound]
 	*then
 	    slot playerName_ to 'AMAZON.US_FIRST_NAME'
@@ -219,17 +219,17 @@
 @Ask for Help
 	*say
 		[Man] 
-		That's a rare name around here. Anyway, {playerName_},  this is a desert so you could imagine it never rains here- until that night. [Pause] On that night. We've seen the greatest thunderstorm of the town's history, but no-one anticipated what came after.[/Accent End]
+		That's a rare name around here. Anyway, {playerName_},  this is a desert so you could imagine it never rains here- until that night. [Pause] On that night. We've seen the greatest thunderstorm of the town's history, but no-one anticipated what came after.[EOA]
         [Kid]
         And then the next morning, my dad started sweating like a cow. So did everyone else. But not me.[/Kid]
         [Man]
-        Yeah. We were like broken faucets. But what's worse was what happens afterwards- that's right. the stench. This stench. It kept everyone from talking to each other. It drove tourists away. And now, no-one wants to come to our town anymore.[/Accent End]
+        Yeah. We were like broken faucets. But what's worse was what happens afterwards- that's right. the stench. This stench. It kept everyone from talking to each other. It drove tourists away. And now, no-one wants to come to our town anymore.[EOA]
         [Pause]
         The shopkeeper points to a poster on the left wall. It has some dust and the colors have started to fade away, but it's still pretty clear. 
         [Man]
         The mayor believed that it's a curse. He was trying to find people to help. Even set up a great reward for anyone who lifts the curse. 
         [Pause]
-        Say, since you're here, why don't you help us? There's a lucrative treasure, and it could be all yours. In the meantime, you can look around the store. No worries.[/Accent End]
+        Say, since you're here, why don't you help us? There's a lucrative treasure, and it could be all yours. In the meantime, you can look around the store. No worries.[EOA]
         It seems like they really need your help. Do you want to help them?
 	*reprompt
 		It seems like they really need your help.
@@ -267,72 +267,97 @@
 @Decide to Help
 	*say
 		[Man]
-	    Ha-haaah! This is our lucky day, son. Finally a person who is willing to help us. Well, I guess I shouldn't be keeping here for too long, eh? [/Accent End]
+	    Ha-haaah! This is our lucky day, son. Finally a person who is willing to help us. Well, I guess I shouldn't be keeping here for too long, eh? [EOA]
 		[Kid] 
-		But papa, you haven't told him anything about how to solve the problem. [/Accent End]
-		[Man] 
-		Huh? Oh wait...Ah, yes, yes, yes. Must've been the heat and the stench, now I'm just rusty. Rusty! [/Accent End]
-		The shopkeeper scratches his bald head. 
-		[Man] 
-		Yes... about where the problem is... hmmmm... let me think... [/Accent End]
-		[Kid] 
-		Papa, do you really know what the problem is? [/Accent End]
-		[Man] 
-		Ahh. Well, I've only heard stories and tales, but I guess I should let you know. [/Accent End]
-		[Man] 
-		So it all happened on one night... [/Accent End]
-		[Kid] 
-		You've already said that. [/Accent End]
+		But papa, you haven't told him anything about how to solve the problem. [EOA]
 		[Man]
-		Oh have I? Oh yes, yes. Anyways, legend has it that a mysterious stone is the key ingredient of lifting this curse. It also says that it's buried deep in the a secret cavern in the valleys to the East. [Pause] Anyways, this is all I have. I know it's not much... hey, perhaps you can go ask if the mayor knows anything more. After all, he's the who put up this poster. Maybe he knows more.[/Accent End]
+		Oh yes, yes. hey, perhaps you can go ask if the mayor knows anything more. After all, he's the who put up this poster. Maybe he knows more.[EOA]
 		[Kid] 
-		But the mayor is also locking himself up. No-one has seen him for a while. [/Accent End]
+		But the mayor is also locking himself up. No-one has seen him for a while. [EOA]
 		[Man] 
-		Ha! This, my son, is when being the owner of the ONLY general store in the town comes in handy-- Kungh kungh, you see, the mayor has a secret craving for Super-Duper Hot Blue Pepper Sauce. And guess who's selling it? Me! Ha haaah! [/Accent End]
-		Ask for one, or ask more about the sauce.
+		Ha! This, my son, is when being the owner of the ONLY general store in the town comes in handy-- Kungh kungh, you see, the mayor has a secret craving for Super-Duper Hot Blue Pepper Sauce. And guess who's selling it? Me! Ha haaah! [EOA]
+	*then
+	    -> Decide to Help 2
+	    
+@Decide to Help 2
+    *say
+        [ConversationQuestionSound]
+		You can ask about the mayor, ask about the sauce, or ask for one bottle
 	*recap
-		Ask for one, or ask more about the sauce.
+		You can ask about the mayor, ask about the sauce, or ask for one bottle
 	*then
 		hear one, ask for one, ask one {
 	        -> One Bottle of Sauce
 	    }
-	    hear more, ask for more, ask more {
-	        -> More Sauce
+	    hear ask about the mayor, about the mayor, the mayor {
+	        -> Ask Shopkeeper About the Mayor
 	    }
+	    hear ask about the sauce, about the sauce, the sauce {
+	        -> Ask Shopkeeper About the Sauce
+	    }
+	    
+@Ask Shopkeeper About the Mayor
+    *say
+        [Man]
+        The mayor has a strange craving for hot sauce. The mayor has turned down guests since the incident. The mayor didn't do anything to help the town either. Nobody knows if he's even in his office anymore. [EOA]
+    *then 
+        >> BACK
+
+@Ask Shopkeeper About the Sauce
+    *say
+        [Man]
+        I can only say, the hot sauce is really hot, and it looks blue. Like the gas stoves you see in your kitchen, hot, hot, hot! [EOA]
+    *then       
+        >> BACK
 
 @One Bottle of Sauce
 	*say
 		[Man]  
-        One bottle of Super-Duper Hot Blue Pepper Sauce, coming right up! [/Accent End] 
+        One bottle of Super-Duper Hot Blue Pepper Sauce, coming right up! [EOA] 
         <audio src="https://koetest.s3.amazonaws.com/new_demo_stereo/findingThings1.mp3"/> 
         [Man]  
-        Hmmm, where is it? [/Accent End] 
+        Hmmm, where is it? [EOA] 
         <audio src="https://koetest.s3.amazonaws.com/new_demo_stereo/findingThings2.mp3"/> 
         [Kid]  
-        Dad, didn't you just sell one to the Mrs. Chilirosa yesterday? [/Accent End] 
+        Dad, didn't you just sell one to the Mrs. Chilirosa yesterday? [EOA] 
         [Man]  
-        Hmm, Oh yes, yes! I did sold one to her. Oh dear. I guess that's our last bottle in a while. Next batch is not coming in a week, and I need to drive all the way out of town to get it because they can't stand our stench! [/Accent End] 
+        Hmm, Oh yes, yes! I did sold one to her. Oh dear. I guess that's our last bottle in a while. Next batch is not coming in a week, and I need to drive all the way out of town to get it because they can't stand our stench! [EOA] 
         [Kid]  
-        Stop murmuring, dad. Anyways, if you go ask Mrs. Chilirosa, she might have still have some left for you.[/Accent End] 
-        Now you can leave the store, or ask more about Mrs. Chilirosa.
+        Stop murmuring, dad. Anyways, if you go ask Mrs. Chilirosa, she might have still have some left for you.[EOA] 
+    *then 
+        -> One Bottle of Sauce 2
+        
+@One Bottle of Sauce 2
+    *say
+        Now you can leave the store, see what else does the shopkeeper sell, or ask more about Mrs. Chilirosa.
 	*recap
 		Now you can leave the store, or ask more about Mrs. Chilirosa.
 	*then
-		hear leave the store {
+		hear leave the store, leave {
             -> Leave the Store
         }
-        hear ask more, ask more about Mrs Chilirosa {
+        hear what else, sell, what else do you sell {
+            -> What Else Do You Sell
+        }
+        hear ask more, ask more about Mrs Chilirosa, Misses Chilirosa, she, where {
             -> Ask more about Chilirosa
         }
+
+@What Else Do You Sell
+    *say
+        [Man]
+        Well, not so much... [EOA]
+    *then
+        >> BACK
 
 @Ask more about Chilirosa
 	*say
 		[Man] 
-        She's a stubborn old lady who works at the hair salon down the street. Like the mayor, she also has a craving for spicy things. [/Accent End]
+        She's a stubborn old lady who works at the hair salon down the street. Like the mayor, she also has a craving for spicy things. [EOA]
         [Kid] 
-        Yeah! All my friends who visited her shop came out with hair that smelled spicy for days! [/Accent End]
+        Yeah! All my friends who visited her shop came out with hair that smelled spicy for days! [EOA]
         [Man] 
-        But I know what she also likes. As funny as it may sound, she also likes roses. But I doubt you'll be finding any of them around. Not in this desert.[/Accent End]
+        But I know what she also likes. As funny as it may sound, she also likes roses. But I doubt you'll be finding any of them around. Not in this desert.[EOA]
         Now you can leave the store, or ask again
 	*recap
 		Now you can leave the store, or ask again
@@ -348,9 +373,9 @@
 	*say
 		Just as you are about to leave the store, the shopkeeper stops you.
         [Man]
-        Wait wait. The desert is hot and wide. Don't want you to starve or get thirsty out there. Take these.[/Accent End]
+        Wait wait. The desert is hot and wide. Don't want you to starve or get thirsty out there. Take these. [EOA]
         The shopkeeper gives you a big bread and a full canteen of water. They both look edible, but at the same time the stench attaches to them. 
-        //<audio src='https://koetest.s3.amazonaws.com/new_demo_stereo/doorOpen1.mp3'/>
+        <audio src='https://koetest.s3.amazonaws.com/new_demo_stereo/doorOpen2.mp3'/>
         You step out of the store.
 	*then
 	    set currentLocation as 'a cross'
@@ -381,8 +406,7 @@
 
 @Mayor's Office
 	*say
-		You arrived at the mayor's office. It's the seemingly largest building in the town, and it's doors are shut tight and locked. Beside the door is a trash can full of empty bottles. 
-        [Pause]
+		You're at the mayor's office. The doors are shut tight, and they seem like their locked. Somehow with the stench, it also smells very spicy. Besides knocking on the door, the office is so big that you probably need to shout to get his attention. What will you do?
         [Action]   Now you can: Knock, bash, or try to open the door, check out the trash can, or go to another location.
 	*then
 		hear knock {
@@ -421,15 +445,16 @@
 	*say
 		You started walking towards the end of the street.
         //<audio src='https://koetest.s3.amazonaws.com/new_demo_stereo/windBlowing1.mp3'/>
-        Nothing but the sandy gusts of wind blow into your ears. No-one is visible on the street. The buildings on the way look pretty modern, but they are all coated with a thick layer of dust. While you're on your way, you noticed something peculiar in the corner of one of the buildings. It's a patch of green. 
-        //<audio src='https://koetest.s3.amazonaws.com/new_demo_stereo/footsteps2.mp3'/>
+        Nothing but the sandy gusts of wind blow into your ears. No-one is visible on the street. The buildings on the way look pretty modern, but they are all coated with a thick layer of dust. While you're on your way, you noticed something peculiar in the corner of one of the buildings. It's a patch of green.
+        <audio src='https://koetest.s3.amazonaws.com/new_demo_stereo/footsteps2.mp3'/>
 	*then
 	    unflag flower
+	    unflag angry
 		-> Arrive Beauty Salon
 
 @Arrive Beauty Salon
 	*say
-		You've now arrived at Chilirosa's Beauty Salon. It's clearly outdated design makes it stand out from other establishments on the street.
+		You're at the front door of the beauty salon. Looks like its doors are shut tight, but they don't look locked, and you hear the sounds of radio inside. Anyways, you should talk to her, but what should you do?
         [Action]Now you can: Knock on the door, bash on the door, open the door directly, or check on the green patch before.
 	*then
 		hear knock, knock on the door {
@@ -449,13 +474,50 @@
 
 @Knock On Beauty Salon
 	*say
-		You gently knocked on the door.
-        //<audio src='https://koetest.s3.amazonaws.com/new_demo_stereo/flowfootsteps.mp3'/>
-        [MrsChilirosa]
-        Alright, alright, coming.[/Accent End]
-        //<audio src='https://koetest.s3.amazonaws.com/new_demo_stereo/doorOpen2.mp3'/>
+		No one responds. Knock again or knock harder?[Action_Sound]
+	*recap
+	    You can try knock again or knock harder
 	*then
-		if flower {
+	    hear knock again, again{
+	        -> Knock On Beauty Salon 2
+	    }
+	    hear knock harder, harder, bash {
+	        -> Bash On Beauty Salon
+	    }
+
+@Knock On Beauty Salon 2
+    *say
+        You hear a crank in the house, but still no response. [Action_Sound]
+    *recap
+	    You can try knock again or knock harder.
+    *then
+        hear knock again, again {
+            flag angry
+            -> Chilirosa Annoyed
+        }
+
+@Chilirosa Annoyed
+    *say
+        <audio src='https://koetest.s3.amazonaws.com/new_demo_stereo/peopleWalkingFast.mp3'/>
+        [MrsChilirosa]
+        Yes? What do you want?[EOA] 
+        <audio src='https://koetest.s3.amazonaws.com/new_demo_stereo/doorOpen2.mp3'/>
+    *then 
+        if flower {
+            unflag angry
+            -> Meet Mrs Chilirosa with flower
+        }
+        -> Meet Mrs Chilirosa
+    
+@Chilirosa Angered
+     *say
+        <audio src='https://koetest.s3.amazonaws.com/new_demo_stereo/peopleWalkingFast.mp3'/>
+        [MrsChilirosa]
+        WHATTT? Show some manners![EOA] 
+        <audio src='https://koetest.s3.amazonaws.com/new_demo_stereo/doorOpen2.mp3'/>
+    *then 
+        if flower {
+            unflag angry
             -> Meet Mrs Chilirosa with flower
         }
         -> Meet Mrs Chilirosa
@@ -463,35 +525,59 @@
 @Bash On Beauty Salon
 	*say
 		You bashed on the door.
-        //<audio src='https://koetest.s3.amazonaws.com/new_demo_stereo/peopleWalkingFast.mp3'/>
-        [MrsChilirosa]
-        Show some respect! Don't you have any manners?[/Accent End]
-        //<audio src='https://koetest.s3.amazonaws.com/new_demo_stereo/doorOpen2.mp3'/>
 	*then
-		if flower {
-            -> Meet Mrs Chilirosa with flower
-        }
-        -> Meet Mrs Chilirosa
+	    flag angry
+		-> Chilirosa Angered
 
 @Meet Mrs Chilirosa with flower
 	*say
 		[MrsChilirosa]
-        Oh, my! Is THAT for me?[/Accent End]
+        Oh, my! Is THAT for me?[EOA]
 	*recap
 		[MrsChilirosa]
-        I believe it is for me, right?[/Accent End]
+        I believe it is for me, right?[EOA]
 	*then
 		hear yes, sure {
             -> Give Mrs Chilirosa the flower
+        }
+        hear no, nope {
+            -> Chilirosa Bargains
+        }
+
+@Chilirosa Bargains
+    *say
+        [MrsChilirosa]
+        Please, roses are very hard to find in this stinky town. I can pay you.[EOA] [ConversationQuestionSound]
+    *then
+        hear yes, sure {
+            -> Give Mrs Chilirosa the flower
+        }
+        hear Hot Sauce {
+            -> Chilirosa Give Hot Sauce
+        }
+        hear no, nope {
+            flag angry
+            -> Chilirosa No Rose Annoyed
+        }
+
+@Chilirosa No Rose Annoyed
+    *say
+        [MrsChilirosa]
+        What do you want? If you have nothing else please leave. This town is already a skunk and I would appreciate if you close the door to stop the stinky air coming in.[EOA] 
+        [ConversationQuestionSound] 
+        Now you can ask about the hot sauce, or leave.
+    *then
+        hear ask about the hot sauce, the sauce, hot sauce {
+            -> Ask about the Sauce
         }
 
 @Give Mrs Chilirosa the flower
 	*say
 		[MrsChilirosa]
-        Why, thank you, dear... What's your name? [/Accent End]
+        Why, thank you, dear... What's your name? [EOA]
         <amazon:effect name="whispered">say your name!</amazon:effect>.
 	*recap
-		<amazon:effect name="whispered">say your name!</amazon:effect>.
+		maybe try a more common one?
 	*reprompt
 		<amazon:effect name="whispered">say your name!</amazon:effect>.
 	*then
@@ -503,58 +589,61 @@
 @Answer Your Name
 	*say
 		[MrsChilirosa]
-        Oh, thank you, dear {playerName}. Come in, come in. We've haven't had guests in quite a while. [/Accent End]
-        Mrs. Chilirosa smells the rose with all her breath. 
-        [MrsChilirosa]
-        Ho, ho, ho, what a wonderful smell. Now, tell me, dear, what kind of hairstyle are we looking for today? [/Accent End]
+        Oh, thank you, dear {playerName}. What can I give you in exchange? [EOA]
 	*then
 		-> Meet Mrs Chilirosa
 
 @Meet Mrs Chilirosa
 	*say
-		[ConversationQuestionSound]Now, it's time to tell her about the sauce. You can try to say "Ask about the sauce".
+		[ConversationQuestionSound]Now, it's time to ask her about the sauce. 
 	*recap
 		You can try to say "Ask about the sauce".
 	*reprompt
-		She is waiting for your response, just say:"Ask about the sauce"
+		She is waiting for your response.
 	*then
-		hear ask about the sauce {
+		hear ask about the sauce, the sauce, hot sauce {
+            if angry{
+                -> Ask about the Sauce 1
+            }
             -> Ask about the Sauce
         }
 
+@Ask about the Sauce 1
+    *say
+        [MrsChilirosa]
+        yeah, what about it? You want it? [EOA]
+        [ConversationQuestionSound]
+    *then
+        hear yes, sure {
+            -> Ask about the Sauce
+        }
+        
 @Ask about the Sauce
-	*say
+    *say
 		[MrsChilirosa]
-        Ah yes, the Super-Duper Hot Blue Pepper Sauce. I can't eat with out it. It's my fountain of life. I need it for my breakfast, lunch and supper! People don't understand the beauty of the sauce, but that's ok! That means I'll only have to share it with the few that understands. Hohoho! But, you see, it's kind of hard to get it around this area, so I just wanted to ask why you needed the sauce. [/Accent End]
+        Give me a reason why you need hot sauce. You want hot sauce because? [EOA]
         [ConversationQuestionSound]So we have two plans here: Plan A, You tell her how you like the sauce; Plan B, tell her that you need it to get the mayor's attention. Which plan you wanna go?
 	*recap
-		We have two plans here: Plan A, You tell her how you like the sauce; Plan B, tell her that you need it to get the mayor's attention. Which plan you wanna go?
+		We have two plans here: Plan A, make up a reason and lie; Plan B, tell her that you need it to get the mayor's attention. Which plan you wanna go?
 	*then
-		hear A, plan A, tell her how I like the sauce, like the sauce {
+		hear A, plan A, make up, reason, lie {
             -> Tell Mrs Chilirose you like the Sauce
         }
 		hear B, plan B, tell her that I need it to get the mayor's attention, need {
 			-> Tell Mrs Chilirose Honestly
         }
-
+        
+// todo        
 @Tell Mrs Chilirose you like the Sauce
 	*say
-		[MrsChilirosa]
-        Oh! Really? but why? [/Accent End]
-        Ok. Now make up a good reason why you like the sauce. You can say the sentence start with [Pause]"My reason is"
-	*recap
-		Now make up a good reason why you like the sauce. You can say the sentence start with [Pause]"My reason is"
-	*reprompt
-		Ok. Now make up a good reason why you like the sauce. You can say the sentence start with [Pause]"My reason is"
+        Ok. Now make up a good reason why you like the sauce. You can say the sentence start with [Pause]"My reason is"[LongPause]
 	*then
-		hear my reason is {
-            -> Tell Mrs Chilirose you like the Sauce 2
-        }
+		-> Tell Mrs Chilirose you like the Sauce 2
 
 @Tell Mrs Chilirose you like the Sauce 2
 	*say
 		[MrsChilirosa]
-        I can't believe it! It's another friend who appreciates Super-Duper Sauce like I do! Ho, ho, ho! Today has been the best day in years! Here. You can have the rest. [/Accent End]
+        Hmmmm... Weird reason, but ok. [EOA]
         She gleefully hands over the hot sauce to you. You exit the building.
 	*then
 		-> Get the Hot Sauce
@@ -562,7 +651,14 @@
 @Tell Mrs Chilirose Honestly
 	*say
 		[MrsChilirosa]
-        Hmmm. I see. Truly, the town isn't seeing anyone over these years, just because of this smell. Ew! It reminds me of exactly someone who had this smell a few years back. Anyways, if I can help you get rid of this smell, I'll help however I can. Here, take it.[/Accent End]
+        Don't mention the mayor to me. He's been dominating all the hot sauce. but seeing that you're not a hot sauce, i guess you have a good reason to meet him. I'll give you half a bottle.
+    *then
+        -> Chilirosa Give Hot Sauce
+		
+@Chilirosa Give Hot Sauce
+    *say
+        [MrsChilirosa]
+        Here is the hot sauce, take it.[EOA]
         She hands over the hot sauce to you. You exit the building.
 	*then
 	    set currentLocation as 'mayors office'
@@ -570,9 +666,9 @@
 
 @Open the Beauty Salon Directly
 	*say
-		you tried to open the door directly, but it's not opening
+		you tried to open the door directly, you entered! Then you noticed there is a hot sauce on the desk. That's it! you took it quietly and sneaked out.
 	*then
-		-> Arrive Beauty Salon
+		-> Get the Hot Sauce
 
 @check the Green Patch
 	*say
@@ -583,12 +679,12 @@
 
 @Get the Hot Sauce
 	*say
-		Now you have the hot sauce. You can try getting the mayor's attention. But how?
-        [Action]Wave to the window on the streets? Or shout at the mayor?
+		You're at the mayor's office. The doors are shut tight, and they seem like their locked. Somehow with the stench, it also smells very spicy. Besides knocking on the door, the office is so big that you probably need to shout to get his attention. What will you do?
+        [Action]Knock on the door? Or shout to the his attention?
 	*reprompt
-		What should we do? Wave to the window on the streets? Or shout at the mayor?
+		What should we do? Knock on the door? Or shout at the mayor?
 	*recap
-		Wave to the window on the streets? Or shout at the mayor?
+		Knock on the door? Or shout at the mayor?
 	*then
 		hear wave to the window, wave {
             -> Wave To the Window
@@ -597,12 +693,20 @@
             -> Shout At the Mayor
         }
 
+Get the Hot Sauce 1
+
 @Wave To the Window
 	*say
-		You waved to the window, but nothing happened.
+		You knocked the door, but no-one responded. You need to make a bigger noise. [Action_Sound]
+	*reprompt
+	    It seems that shout at the mayor is the only way to get his attention
+    *recap
+	    It seems that shout at the mayor is the only way to get his attention
 	*then
-		-> Get the Hot Sauce
-
+	    hear shout, shout at the mayor {
+	        -> Shout At the Mayor
+	    }
+		
 @Shout At the Mayor
 	*say
 		Ok then. Shout something loud and clear so that the mayor can hear you. Now let's shout![ConversationQuestionSound]
@@ -618,52 +722,87 @@
 @Shout At the Mayor_1
 	*say
 		[Mayor]
-        Who's shouting?! Did I just hear Super-Duper Hot Blue Pepper Sauce![/Accent End]
-        The mayor finds you below his window. 
-        [Mayor] 
-        Say, you said you have super-duper hot blue sauce? Come in! Door's unlocked. Remember to shut the door on your way in! [/Accent End]
-        You enter the mayor's office, and shut the door swiftly as come indoors. There is a different smell in this house. You don't smell the stench anymore; rather, it is replaced with the strong, spicy scent of the hot sauce. As you make your way to the mayor's room, you find that hot sauce is being spilled all over the place. Hallways, corners and especially under doors. 
-
-        [Mayor]
-        Ah. Welcome. I see that you've brought some hot sauce for me?[/Accent End]
-        You hand over the sauce. The mayor quickly jerks open the bottle cap, and walks hastily to one of the doors and pours the sauce under it. 
-        [Mayor]
-        You see. I actually don't like the sauce. I use it only to block off smell. This fog of evilness has been surrounding this town for so long that I almost forgot when it happened. Say, why did you come?[/Accent End]
-        Let me see... you come here because you need more information on the smell. right?
+        Oh, thank you for bringing me the hot sauce. What brings you here?[EOA] [ConversationQuestionSound]
 	*then
-		hear yes, right {
-			-> Agree to Help the Mayor
+		hear smell, incident, help {
+			-> Mayor Talks More About the Incident
+		}
+		hear who are you{
+		    -> Mayor Self Introduction
 		}
 	*recap
-		Wait, you come here because you need more information on the smell. right?
+		you come here because you need more information on the smell. right?
 	*reprompt
 		Wait, you come here because you need more information on the smell. right?
 
+@Mayor Talks More About the Incident
+    *say
+        [Mayor]
+        Yes. There is a cave that we know to the Eastern valleys, but all we know is that the cave is guarded by puzzles and challenges. But what's beyond that nobody knows.[EOA]
+    *reprompt
+        you can ask about: the cave, puzzles, eastern valleys, the town, or leave to the cave
+    *then
+        hear cave, about the cave {
+            -> Ask Mayor The Cave
+        }
+        hear puzzles, challenges {
+            -> Ask Mayor Challenges
+        }
+        hear valleys, eastern valleys {
+            -> Ask Mayor the valleys
+        }
+        hear town, about the town {
+            -> Ask Mayor The Town
+        }
+        hear leave, leave to the cave {
+            -> Leave the Cave
+        }
+
+@Ask Mayor the valleys
+    *say
+        [Mayor]
+        The Eastern valleys is a long way from here. You better bring food and water or else you'll not make it.[EOA]
+    *then 
+        >> BACK
+        
+@Ask Mayor Challenges
+    *say
+        [Mayor]
+        We sent our best guys into the cave, and all they could remember when they returned was they were lost in a forest.[EOA]
+    *then 
+        >> BACK
+        
+@Mayor Self Introduction
+    *say
+        [Mayor]
+        I'm the Mayor. [EOA]
+    *then 
+        >> BACK
+
+//not using
 @Agree to Help the Mayor
 	*say
-		[Mayor]Wait. Are you saying that you're willing to help us get rid of this disgusting smell? Oh please, sit down, sit down[/Accent End]
+		[Mayor]Wait. Are you saying that you're willing to help us get rid of this disgusting smell? Oh please, sit down, sit down[EOA]
 
         You sit down on the old couch in the mayor's office. The couch releases a spicy smell that stings.  
       
     [Mayor]
-        So, the legend out there says there's a precious gem hidden in the valleys to the East, and that the precious gem is the key ingredient to lifting the curse.[/Accent End]
+        So, the legend out there says there's a precious gem hidden in the valleys to the East, and that the precious gem is the key ingredient to lifting the curse.[EOA]
         //<audio src="https://koetest.s3.amazonaws.com/new_demo_stereo/windBlowing2.mp3"/> 
 
-    [Mayor]    that the don't know, is that the cavern is guarded by puzzles and challenges. But what's beyond that- nobody knows. Nobody remembers[/Accent End]
+    [Mayor]    that the don't know, is that the cavern is guarded by puzzles and challenges. But what's beyond that- nobody knows. Nobody remembers[EOA]
 	*then
 	    unflag cave
 	    unflag town
 		-> Ask the Mayor
 
+//not using
 @Ask the Mayor
 	*say
 		[ConversationQuestionSound]You can ask about how he knows all this, about the cave, or about the town itself.
 	*recap
 		Well, the options are: A. ask about how he knows all this; B. ask about the cave; C. ask about the town it self.
 	*then
-		if cave and town {
-            -> Before Leave For the Cave
-        }
 		hear A, a, how he knows all this, all this {
 			-> Ask Mayor How He knows
         }
@@ -674,52 +813,46 @@
             -> Ask Mayor The Town
         }
 
+//not using
 @Ask Mayor How He knows
 	*say
 		[Mayor]
-        A while ago we sent our best people to go and retrieve the stone. When they returned, they were covered in smell even nastier than what we have in the town. But what's worse was that they could barely remember anything. The doctor said that probably the smell was too unbearable that they passed out at some point and lost all the memory. This is all they could remember.[/Accent End]
+        A while ago we sent our best people to go and retrieve the stone. When they returned, they were covered in smell even nastier than what we have in the town. But what's worse was that they could barely remember anything. The doctor said that probably the smell was too unbearable that they passed out at some point and lost all the memory. This is all they could remember.[EOA]
 	*then
-		-> Ask the Mayor
+		>> BACK
 
 @Ask Mayor The Cave
 	*say
 		[Mayor]
-        Well, there's not much to talk about the cave, other than it's hidden in the valleys to the East... wait. Ah, yes, nearly missed this: It is said that there were plant roots that lead into the cave. A real miracle since green is sparse in the desert.[/Accent End]
+        Strangely, some plant roots lead into the cave.[EOA]
 	*then
-		flag cave
-        -> Ask the Mayor
+        >> BACK
 
 @Ask Mayor The Town
 	*say
 		[Mayor]
-        We were once a happy little town in the desert. At one point it even became a tourist spot! It's crazy to think that people would come from everywhere, just to get a taste of our famous dish, Shawarma.[/Accent End]
-      [ConversationQuestionSound]  Do you want to continue on this subject? Or ask him about something else?
-	*recap
-		You can answer yes or no. Do you want to continue on this subject?
-	*then
-		hear yes, sure, of course {
-            -> Continue Ask Mayor The Town
-        }
-        hear no, ask, ask him about something else {
-            -> Ask the Mayor
-        }
+        The town has a story. I think it's the alchemist who did it.[EOA]
+    *then 
+        >> BACK
 
+//not using
 @Continue Ask Mayor The Town
 	*say
 		[mayor]
-        Speaking of which, this reminds me of a character, yes, quite a character in our town. [/Accent End]
+        Speaking of which, this reminds me of a character, yes, quite a character in our town. [EOA]
         The mayor pauses to sip a cup of water. He also spreads some of the hot sauce on his nose. 
         [Mayor] 
-        We had this guy who worked in one of the most famous Shawarma places in town. Everything was normal except he sweats a lot, and a lot. It's like he wasn't born for the desert. [/Accent End]
+        We had this guy who worked in one of the most famous Shawarma places in town. Everything was normal except he sweats a lot, and a lot. It's like he wasn't born for the desert. [EOA]
         The hot sauce made the mayor to sweat a little bit, as he tries to wipe of some of them from his cheeks.
         [Mayor]
-        But it doesn't just stop there. Oh dear, he has this odor. It was offending the guests. A great embarrassment. [/Accent End]
+        But it doesn't just stop there. Oh dear, he has this odor. It was offending the guests. A great embarrassment. [EOA]
         The mayor leans back and waves his hands while he talks. 
-        [Mayor] So, in the end, we had to make him leave. That's just a story. I don't know if anyone has hired him again, but that was just some time before this smell found its way into the town. [/Accent End]
+        [Mayor] So, in the end, we had to make him leave. That's just a story. I don't know if anyone has hired him again, but that was just some time before this smell found its way into the town. [EOA]
 	*then
 		flag town
         -> Ask the Mayor
 
+//not using
 @Before Leave For the Cave
 	*say
 		and you can also heave for the cave.[DirectionQuestionSound]
@@ -732,13 +865,21 @@
         hear B, b, ask, ask mayor about something else, something else {
             -> Ask Mayor The Cave
         }
+        
 @Leave the Cave
 	*say
 		[Mayor]
-            I hope that these information are useful to you. We're all looking forward to seeing the town coming back to life some day. Good luck! [/Accent End]
-        You leave the mayor's office, back on to the streets. As you head East for you journeys, you look back again at the small town, still suffering from the bad smell. You also see the boy from the general store waving at you as you stretch into the horizon in the East. This is the end of this demo. Thanks for playing!
+        I hope that these information are useful to you. We're all looking forward to seeing the town coming back to life some day. Good luck! [EOA]
+        You leave the mayor's office, back on to the streets. The shopkeeper stands outside.
+        [Man]
+        are you leaving? bring some of these with you. If you're ready, the horse over there is ready for you; but if you're tired, take some rest. [EOA]
+        
 	*then
-		>> END
+	    hear rest, take some rest {
+	        >>END
+	    }
+	    // act 3 will be finished tmr
+		>>END
 
 @More Sauce
 	*say
@@ -862,18 +1003,18 @@ Listen, the leading flower is singing you the way .[Voice_End][DirSound_Small][V
 	*reprompt
 		[Action_Sound]You can say look north.
 	*then
-		hear Look north {
+		hear look north {
 			-> TutorialNorth
 		}
 
 @TutorialNorth
 	*say
 		You are looking north.
-[DirSound_Large]
-[Voice_Start_Man]
-This song means you are right looking at the way out! Go toward that direction and you are free! [Voice_End]
-[Action_Sound]
-Try say, go to north.
+        [DirSound_Large]
+        [Voice_Start_Man]
+        This song means you are right looking at the way out! Go toward that direction and you are free! [Voice_End]
+        [Action_Sound]
+        Try say, go to north.
 	*then
 		hear go to north {
 			-> TutorialEnd
