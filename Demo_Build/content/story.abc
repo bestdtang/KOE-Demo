@@ -3,9 +3,10 @@
         Welcome back! Do you want to continue your story from where you last left
         off?
     *then
-        hear yes {
+        hear yes,sure {
             >> RESUME
         }
+        
 
         hear no {
             -> start
@@ -13,14 +14,14 @@
 
 @start
 	*say
-		Greetings, explorer. Welcome to the Desert Adventurer experience.
+		Greetings, explorer. [Short_Pause] Welcome to the Desert Adventurer experience!
 	*then
     	set currentLocation as 'desert'
 		-> Lost in Desert
 
 @Lost in Desert
 	*say
-		The blowing, hot wind scorches the surface of both the earth and your skin as you walk aimlessly in the desert, thirsty for water. [Pause] [footstep] In the middle of the hot desert, you found a rusty, old signpost. It has two arrows pointing to the right and the left, but their names have faded away.
+		The blowing, hot wind scorches the surface of both the earth and your skin. You walk aimlessly in the desert, thirsty for water. [Pause] [footstep] In the middle of the hot desert, you found a rusty, old signpost. It has two arrows pointing to the right and the left. However, the letters have faded away.
 	*then
 		-> Tutorial 1: Direction Questions
 
@@ -48,7 +49,7 @@
 
 @Tutorial 1A: Check Around
 	*say
-		You walked under the hot sun until you have reached the top of a little sand hill. It grants you some height advantage and now you can see what's around you. [Pause] [DirectionQuestionSound]Sometimes, paths aren't obvious at first glance, like now. You can check around first by saying what's around me. Go on, give it a go.
+		You walked under the hot sun until you have reached the top of a little sand hill. It grants you some height advantage. Now you can see what's around you. [Pause] [DirectionQuestionSound]Sometimes, paths aren't obvious at first glance just like now. You can check around first by saying what's around me. Go on, give it a go.
 	*then
 		hear what's around me, around me {
             -> Check Around the Hill
@@ -60,7 +61,7 @@
 
 @Check Around the Hill
 	*say
-		You looked around, like a compass slowly spinning. You don't find anything particularly interesting- wait, you see a few freckles on the yellow surfaces of Earth. It shines under the burning sun! You squint your eyes and look closer. it's a town! It's a town! [pause] There's a good chance that they have some water there.[DirectionQuestionSound]
+		You look around, like a compass slowly spinning. You don't find anything particularly interesting. [Pause] Wait! You see a few freckles on the yellow surfaces of Earth. It shines under the burning sun! You squint your eyes and look closer. [Pause] <emphasis level="reduced">It's a town!</emphasis> [Short_Pause] There's a good chance that they have some water there.[DirectionQuestionSound]
 	*then
 		hear go to the town {
 		    set currentLocation as 'town'
@@ -79,7 +80,7 @@
 
 @Town
 	*say
-		The urge of cold water passing through dry lungs has dragged your weary feet to the entrance of the town. You thought the townspeople would step forward immediately to help a thirsty traveler, but instead... [Pause] No-one came. What's happening? [DirectionQuestionSound] you can ask to check the environment. Try saying: "what's around me?"
+		The urge of cold water passing through dry lungs has dragged your weary feet to the entrance of the town. You thought the townspeople would step forward immediately to help a thirsty traveler, but instead. [Short_Pause] No-one came. What's happening? [DirectionQuestionSound] you can ask to check the environment. Try saying: "what's around me?"
 	*recap
 		you can ask to check the environment. Try saying: "what's around me?"
 	*reprompt
@@ -91,21 +92,21 @@
 
 @Around
 	*say
-		You're at the entrance of the town. Some small buildings align on the sides of the street, but all of their doors are shut tight. Only a few people are walking on the streets, but it's almost as if they're trying to avoid having any eye-contact with you.
+		You're at the entrance of the town. Some small buildings align on the sides of the street. But all of their doors are shut tight. Only a few people are walking on the streets. It's almost as if they're trying to avoid having eye-contact with you.
 	*reprompt
-		There are a few establishments right in front of you: a general store, the mayor's office. Could any of them have some water? Choose a location to go to.
+		There are a few establishments right in front of you. a general store and the mayor's office. Could any of them have some water? Choose a location to go to.
 	*recap
-		There are a few establishments right in front of you: a general store, the mayor's office. Could any of them have some water? Choose a location to go to.
+		There are a few establishments right in front of you. a general store and the mayor's office. Could any of them have some water? Choose a location to go to.
 	*then
 		-> Around_1
 
 @Around_1
 	*say
-		There are a few establishments right in front of you: a general store, the mayor's office. Could any of them have some water? [DirectionQuestionSound]
+		There are a few establishments right in front of you. A general store and the mayor's office. Could any of them have some water? [DirectionQuestionSound]
 	*recap
-		There are a few establishments right in front of you: a general store, the mayor's office. Could any of them have some water? Choose a location to go to.
+		There are a few establishments right in front of you. A general store and the mayor's office. Could any of them have some water? [Short_Pause] Choose a location to go to.
 	*reprompt
-		There are a few establishments right in front of you: a general store, the mayor's office. Could any of them have some water? Choose a location to go to.
+		There are a few establishments right in front of you. A general store and the mayor's office. Could any of them have some water? [Short_Pause] Choose a location to go to.
 	*then
 		hear mayor's office, office, mayor, go to mayor's office {
 		    set currentLocation as 'mayors office'
@@ -118,7 +119,7 @@
 
 @Store
 	*say
-		You go to the general store. Upon approaching the general store, you see a boy. He wears a red coat, and you can see "surprised" written all over his face. [Pause][Kid] You are a new face here. Do you need help? You don't look well.[/Kid] [Pause] Maybe he has water. You can probably ask if there's water. [ConversationQuestionSound]When you hear this sound, you decide what to say to the other person next. For example, right now you can say: ask the boy for water. Try it.
+		Upon approaching the general store, you see a boy. He wears a red coat, and you can see surprised written all over his face. [Long_Pause][Kid] You are a new face here. Do you need help? [Short_Pause] You don't look well.[/Kid] [Long_Pause] Maybe the little boy has water. You can ask if there's water. [ConversationQuestionSound] When you hear this sound, you decide what to say to the other person next. For example, right now you can say: ask the boy for water. [Short_Pause] Try it!
 	*then
 		hear ask for water, ask the boy, ask the boy for water {
 			-> Boy
@@ -128,52 +129,52 @@
 	*say
 		You asked the boy for some water. 
 		[Kid] 
-	    I can help you with that. But I must warn you- that situations in the house aren't exactly desirable. In a sense.[/Kid] 
-		The boy takes you around the building and enters the store from the backdoor. [Pause] Oh dear it was far from being desirable. The air in the store was nothing of this world. It's foul and revolting. Each step you take is like a deeper dive into the bowels of a carnivorous beast. [Pause]
+	    I can help you with that. [Short_Pause] But I must warn you. [Short_Pause] Situations in the house aren't exactly desirable. [Short_Pause] In a sense.[/Kid] [Pause]
+		The boy takes you around the building and enters the store from the backdoor. [Pause] Oh dear. [Pause] It is far from being desirable. The air in the store is nothing of this world. It's foul and revolting. Each step you take is like a deeper dive into the bowels of a carnivorous beast. [Pause]
 		[Kid] 
-		Yeah. Told you. Papa![/Kid] 
-		A bald, middle-aged man that looks like in his fifties are slowly walks down the stairs. Small pieces of tissue paper are rolled and stuck in his nose. He looks like he could use some more sunshine.
+		Yeah. Told you. Papa! [Pause] [/Kid] 
+		[Pause] A bald, middle-aged man that looks like in his fifties are slowly walks down the stairs. [Pause] Small pieces of tissue paper are rolled and stuck in his nose. He looks like he could use some more sunshine.
 	*then
 		-> Shopkeeper
 
 @Shopkeeper
 	*say
 		[Man]
-        Who is this person? Why did you bring a stranger that looks like a dying cactus to this place?[EOA] 
+        Who is this person? [Pause] Why did you bring a stranger that looks like a dying cactus to this place? [EOA] 
         [Kid] 
-        Relax, papa. He's just a traveler. And he needs water. A lot of water.[/Kid] 
+        [Pause]Relax, papa. He's just a traveler. And he needs water. [Pause]A lot of water.[/Kid] 
         [Man] 
-        Water? Hah! I got lots of water. As if water would do anything to wash this stench away.[EOA] 
+        Water? [Pause] Hah! I got lots of water. As if water would do anything to wash this stench away.[EOA] 
         [Pause] 
         The young boy's father handed you a big glass of water. 
         [Man] 
-        Hey- dont worry. I know it smells bad in here. But I assure you, the water is clean. Go on, drink up. Ahh. Yes, the water is fresh and good.[EOA]
+        Hey. [Pause] Don't worry. I know it smells bad in here. But I assure you, the water is clean. [Pause] Go on, drink up. Ahh. Yes, the water is fresh and good.[EOA]
         [Pause]
         [Action]
-        Sometimes when appropriate, you can use an item, perform an action, or do nothing. For this instance, you can either say: "use water", or "do nothing".
+        Sometimes when appropriate, you can use an item, perform an action, or do nothing. For this instance, you can either say: [Short_Pause] use water or do nothing.
 	*then
-		hear drink water, use water, use the water {
+		hear drink water, use water, use the water, water {
 			-> Finding Out
 		}
 		hear don't drink the water, don't, no, do nothing {
 			-> Don't Drink
 		}
 	*recap
-		Sometimes when appropriate, you can use an item, perform an action, or do nothing. For this instance, you can either say: "use water", or "do nothing". 
+		Sometimes when appropriate, you can use an item, perform an action, or do nothing. For this instance, you can either say: [Short_Pause] "use water", or "do nothing". 
 	*reprompt
-		Sometimes when appropriate, you can use an item, perform an action, or do nothing. For this instance, you can either say: "use water", or "do nothing".
+		Sometimes when appropriate, you can use an item, perform an action, or do nothing. For this instance, you can either say: [Short_Pause] "use water", or "do nothing".
 
 @Don't Drink
 	*say
-		You hold the glass of water at your hand, but you don't drink from it. 
+		You hold the glass of water at your hand, but you don't drink from it. [Pause]
     [Man]
-    Hmmmm. [EOA]
+    <emphasis level="strong">Hmmmm.</emphasis> [Pause] [EOA]
     The shopkeeper looks at the glass of water. He looks down on the dusty floor.
     [Man]
     Suit yourself. Thought you were really thirsty. [EOA]
-    At least you're in the shade, so you're starting to feel a little bit less thirsty. But still, the stench is unbearable.
+    [Long_Pause] At least you're in the shade, so you're starting to feel a little bit less thirsty. But still, the stench is unbearable.
     [Man]
-    Maybe the smell even went in the water, but we just don't know. Heh. It wasn't like this before the incident. [EOA]
+    Maybe the smell even went in the water, but we just don't know. [Long_Pause] It wasn't like this before the incident. [EOA]
     [ActionQuestionSound]
 	*recap
 		Try say use water.
@@ -182,6 +183,9 @@
 	*then
 		hear use water, drink water {
 			-> Finding Out
+		}
+		hear talk to the shopkeeper, what incident, incident, ask about the incident, ask, talk, talk to the shopkeeper, ask papa {
+			-> Ask Shopkeeper
 		}
 
 @Finding Out
@@ -208,7 +212,7 @@
 
 @Ask Shopkeeper
 	*say
-		[Man]A while ago the town was famed for our Shawarma. People would come all the way from cities to this dune for a taste of it.[Pause] Say, what's your name?[EOA]
+		[Man]A while ago the town was famed for our Shawarma. People would come all the way from cities to this dune for a taste of it.[Pause] By the way. What's your name, traveler?[EOA]
 		[ConversationQuestionSound]
 	*then
 	    slot playerName_ to 'AMAZON.US_FIRST_NAME'
@@ -219,17 +223,17 @@
 @Ask for Help
 	*say
 		[Man] 
-		That's a rare name around here. Anyway, {playerName_},  this is a desert so you could imagine it never rains here- until that night. [Pause] On that night. We've seen the greatest thunderstorm of the town's history, but no-one anticipated what came after.[EOA]
+		That's a rare name around here. [Pause] Anyway, {playerName_},  this is a desert so you could imagine it never rains here [Short_Pause] until that night. [Pause] On that night. We've seen the greatest thunderstorm of the town's history, [Short_Pause] but no-one anticipated what came after.[EOA]
         [Kid]
-        And then the next morning, my dad started sweating like a cow. So did everyone else. But not me.[/Kid]
+        [Long_Pause] And then the next morning, my dad started sweating like a cow. So did everyone else. But not me.[/Kid]
         [Man]
-        Yeah. We were like broken faucets. But what's worse was what happens afterwards- that's right. the stench. This stench. It kept everyone from talking to each other. It drove tourists away. And now, no-one wants to come to our town anymore.[EOA]
+        Yeah. [Pause] We were like broken faucets. But what's worse was what happens afterward. [Short_Pause]That's right. the stench. This stench. It kept everyone from talking to each other. It drove tourists away. And now, no-one wants to come to our town anymore.[EOA]
         [Pause]
         The shopkeeper points to a poster on the left wall. It has some dust and the colors have started to fade away, but it's still pretty clear. 
         [Man]
-        The mayor believed that it's a curse. He was trying to find people to help. Even set up a great reward for anyone who lifts the curse. 
+        The mayor believed that it's a curse from some spell caster. He was trying to find people to help. Even set up a great reward for anyone who lifts the curse. 
         [Pause]
-        Say, since you're here, why don't you help us? There's a lucrative treasure, and it could be all yours. In the meantime, you can look around the store. No worries.[EOA]
+        Since you're here, why don't you help us? [Short_Pause] There's a lucrative treasure, and it could be all yours. In the meantime, you can look around the store. No worries.[EOA]
         It seems like they really need your help. Do you want to help them?
 	*reprompt
 		It seems like they really need your help.
@@ -242,9 +246,9 @@
 
 @Mayor Office
 	*say
-		You've arrived at the mayor's office. It's the largest building in the town, but it's doors and windows are tightly shut and locked. When you get close to the front door, there's a sharp smell of hot pepper. Looks like there's no way in. If you don't know where to go, remember to say "What's around me".
+		You've arrived at the mayor's office. It's the largest building in the town, but it's doors and windows are tightly shut and locked. [Short_Pause] When you get close to the front door, there's a sharp smell of hot pepper. Looks like there's no way in. [Pause] If you don't know where to go, remember to say What's around me.
     *recap
-        If you don't know where to go, remember to say "What's around me".
+        If you don't know where to go, remember to say What's around me.
     [DirectionQuestionSound]
 	*then
 		hear store, general store, go to the general store {
@@ -260,22 +264,22 @@
 
 @Look Left
 	*say
-		You wiped your face with your dry hands and decided to turn left. Then, you keep treading the sea of powdered rocks wearily.
+		You wipe your face with your dry hands and decide to turn left. [Pause] Then, you keep treading the sea of powdered rocks wearily.
 	*then
 		-> Tutorial 1A: Check Around
 
 @Decide to Help
 	*say
 		[Man]
-	    Ha-haaah! This is our lucky day, son. Finally a person who is willing to help us. Well, I guess I shouldn't be keeping here for too long, eh? [EOA]
+	    Ha-haaah! [Pause] This is our lucky day, son. Finally a person who is willing to help us. Well, I guess I shouldn't be keeping here for too long, eh? [EOA]
 		[Kid] 
 		But papa, you haven't told him anything about how to solve the problem. [EOA]
 		[Man]
 		Oh yes, yes. hey, perhaps you can go ask if the mayor knows anything more. After all, he's the who put up this poster. Maybe he knows more.[EOA]
 		[Kid] 
-		But the mayor is also locking himself up. No-one has seen him for a while. [EOA]
+		But the mayor is also locking himself up. No one has seen him for a while. [EOA]
 		[Man] 
-		Ha! This, my son, is when being the owner of the ONLY general store in the town comes in handy-- Kungh kungh, you see, the mayor has a secret craving for Super-Duper Hot Blue Pepper Sauce. And guess who's selling it? Me! Ha haaah! [EOA]
+		Ha! This, my son, is when being the owner of the ONLY general store in the town comes in handy [Short_Pause] Kungh kungh, you see, the mayor has a secret craving for Super-Duper Hot Blue Pepper Sauce. [Short_Pause] And guess who's selling it? Me! Ha haaah! [EOA]
 	*then
 	    -> Decide to Help 2
 	    
@@ -299,14 +303,14 @@
 @Ask Shopkeeper About the Mayor
     *say
         [Man]
-        The mayor has a strange craving for hot sauce. The mayor has turned down guests since the incident. The mayor didn't do anything to help the town either. Nobody knows if he's even in his office anymore. [EOA]
+        The mayor has a strange craving for hot sauce. The mayor has turned down guests since the incident. [Short_Pause] The mayor didn't do anything to help the town either. Nobody knows if he's even in his office anymore. [EOA]
     *then 
         >> BACK
 
 @Ask Shopkeeper About the Sauce
     *say
         [Man]
-        I can only say, the hot sauce is really hot, and it looks blue. Like the gas stoves you see in your kitchen, hot, hot, hot! [EOA]
+        I can only say, the hot sauce is really hot, [Short_Pause] and it looks blue. Like the gas stoves you see in your kitchen, hot, hot, hot! [EOA]
     *then       
         >> BACK
 
@@ -321,17 +325,17 @@
         [Kid]  
         Dad, didn't you just sell one to the Mrs. Chilirosa yesterday? [EOA] 
         [Man]  
-        Hmm, Oh yes, yes! I did sold one to her. Oh dear. I guess that's our last bottle in a while. Next batch is not coming in a week, and I need to drive all the way out of town to get it because they can't stand our stench! [EOA] 
+        Hmm, Oh yes, yes! I did sold one to her. [Short_Pause] Oh dear. I guess that's our last bottle in a while. Next batch is not coming in a week, and I need to drive all the way out of town to get it because they can't stand our stench! [EOA] 
         [Kid]  
-        Stop murmuring, dad. Anyways, if you go ask Mrs. Chilirosa, she might have still have some left for you.[EOA] 
+        Stop murmuring, dad. [Short_Pause] Anyways, if you go ask Mrs. Chilirosa, she might have still have some left for you.[EOA] 
     *then 
         -> One Bottle of Sauce 2
         
 @One Bottle of Sauce 2
     *say
-        Now you can leave the store, see what else does the shopkeeper sell, or ask more about Mrs. Chilirosa.
+        Now you can leave the store or see what else does the shopkeeper sell, or ask more about Mrs. Chilirosa.
 	*recap
-		Now you can leave the store, or ask more about Mrs. Chilirosa.
+		Now you can leave the store or ask more about Mrs. Chilirosa.
 	*then
 		hear leave the store, leave {
             -> Leave the Store
@@ -357,7 +361,7 @@
         [Kid] 
         Yeah! All my friends who visited her shop came out with hair that smelled spicy for days! [EOA]
         [Man] 
-        But I know what she also likes. As funny as it may sound, she also likes roses. But I doubt you'll be finding any of them around. Not in this desert.[EOA]
+        But I know what she also likes. [Short_Pause] As funny as it may sound, she also likes roses. But I doubt you'll be finding any of them around. Not in this desert.[EOA]
         Now you can leave the store, or ask again
 	*recap
 		Now you can leave the store, or ask again
@@ -400,7 +404,7 @@
 
 @Signpost
 	*say
-		You come forward to the signpost across the lonely street. There are a few items on it. It reads: the right leads to the mayor's office, Chilirosa's Beauty Salon, and the Eastern exit of the town. You've also noticed that there are a few strings of ivy tangling around the signpost. They look surprisingly healthy.
+		You come forward to the signpost across the lonely street. There are a few items on it. [Short_Pause] It reads: the right leads to the mayor's office, Chilirosa's Beauty Salon, and the Eastern exit of the town. You've also noticed that there are a few strings of ivy tangling around the signpost. They look surprisingly healthy.
 	*then
 		-> The Cross
 
@@ -445,7 +449,7 @@
 	*say
 		You started walking towards the end of the street.
         //<audio src='https://koetest.s3.amazonaws.com/new_demo_stereo/windBlowing1.mp3'/>
-        Nothing but the sandy gusts of wind blow into your ears. No-one is visible on the street. The buildings on the way look pretty modern, but they are all coated with a thick layer of dust. While you're on your way, you noticed something peculiar in the corner of one of the buildings. It's a patch of green.
+        Nothing but the sandy gusts of wind blow into your ears. No one is visible on the street. The buildings on the way look pretty modern, but they are all coated with a thick layer of dust. While you're on your way, you noticed something peculiar in the corner of one of the buildings. It's a patch of green.
         <audio src='https://koetest.s3.amazonaws.com/new_demo_stereo/footsteps2.mp3'/>
 	*then
 	    unflag flower
@@ -643,7 +647,7 @@
 @Tell Mrs Chilirose you like the Sauce 2
 	*say
 		[MrsChilirosa]
-        Hmmmm... Weird reason, but ok. [EOA]
+        Hmmmm. [Short_Pause] Weird reason, but ok. [EOA]
         She gleefully hands over the hot sauce to you. You exit the building.
 	*then
 		-> Get the Hot Sauce
@@ -761,14 +765,14 @@ Get the Hot Sauce 1
 @Ask Mayor the valleys
     *say
         [Mayor]
-        The Eastern valleys is a long way from here. You better bring food and water or else you'll not make it.[EOA]
+        The Eastern valleys is a long way from here. You better bring food and water. Or else you'll not make it.[EOA]
     *then 
         >> BACK
         
 @Ask Mayor Challenges
     *say
         [Mayor]
-        We sent our best guys into the cave, and all they could remember when they returned was they were lost in a forest.[EOA]
+        We sent our best guys into the cave. [Short_Pause] All they could remember when they returned was they were lost in a forest.[EOA]
     *then 
         >> BACK
         
@@ -782,7 +786,7 @@ Get the Hot Sauce 1
 //not using
 @Agree to Help the Mayor
 	*say
-		[Mayor]Wait. Are you saying that you're willing to help us get rid of this disgusting smell? Oh please, sit down, sit down[EOA]
+		[Mayor]Wait. [Short_Pause] Are you saying that you're willing to help us get rid of this disgusting smell? Oh please, sit down, sit down[EOA]
 
         You sit down on the old couch in the mayor's office. The couch releases a spicy smell that stings.  
       
@@ -839,7 +843,7 @@ Get the Hot Sauce 1
 @Continue Ask Mayor The Town
 	*say
 		[mayor]
-        Speaking of which, this reminds me of a character, yes, quite a character in our town. [EOA]
+        Speaking of which, [Short_Pause] this reminds me of a character, [Short_Pause] yes, quite a character in our town. [EOA]
         The mayor pauses to sip a cup of water. He also spreads some of the hot sauce on his nose. 
         [Mayor] 
         We had this guy who worked in one of the most famous Shawarma places in town. Everything was normal except he sweats a lot, and a lot. It's like he wasn't born for the desert. [EOA]
@@ -1270,7 +1274,7 @@ Get the Hot Sauce 1
         hear enter puzzle {
             -> PuzzleDemoStart
         }
-        hear puzzle hint{
+        hear puzzle hint, hint {
             -> puzzle_help
         }
         
@@ -1283,10 +1287,10 @@ Get the Hot Sauce 1
 @Help
     *say
         Here is what you can do: 
-            if you wanna know your current location, say: where am I; 
-            if you wanna restart the game, say: restart; 
-            if you wanna skip to the saloon scene, say: jump to saloon;
-            if you wanna skip to the mayor's office scene, say: get the hot sauce.
+            if you want to know your current location, say: where am I; 
+            if you want to restart the whole game, say: restart; 
+            if you want to revisit the saloon scene, say: jump to saloon.
+            if you want to revisit the mayor's office scene, say: get the hot sauce.
     *then 
         >> BACK
 
@@ -1298,41 +1302,41 @@ If you are on the right direction, the flower will sing. [DirSound_Large]
 
 @PuzzleDemoStart
 	*say
-		[Voice_Start_Man]Here, If you are going to the cave, that is in the foggy forest. You must take this compass, and the leading flower. If you are lost, the compass will show you the direction and the flower will point you the way to the cave. If you sprinkle a little bit dust on the leading flower. It will chase the smell and bring you to wherever the dust is from. look, here is the dust I grab from my garden. Now, I will show you how to use it. [Voice_End][Action_Sound] Try say, use the dust on the leading flower.
+		[Voice_Start_Man]Here, If you are going to the cave in the foggy forest, you must take this compass, and the leading flower. If you are lost, the compass will show you the direction and the flower will point you the way to the cave. If you sprinkle a little dust on the leading flower. It will trace origin of smell and bring you to where the dust comes from. look, here is the dust I grab from my garden. Now, I will show you how to use it. [Voice_End][Action_Sound] Try say, use the dust on the leading flower.
 	*recap
-		[Action_Sound] Try say, use the dust on the leading flower.
+		[Action_Sound] Try saying, use dust on the leading flower.
 	*reprompt
-		[Action_Sound] Try say, use the dust on the leading flower.
+		[Action_Sound] Try saying, use dust on the leading flower.
 	*then
-		hear use the dust on the leading flower {
+		hear use dust on the leading flower {
 			-> TutorialStart
 		}
 @TutorialStart
 	*say
-		You use the dust on the leading flower. [Voice_Start_Man] See, the flower is reacting to it. Now, you are standing in the middle of my tent. You can hold the flower and look at four different directions, east, south, west, north.[Voice_End]
+		You just used the dust on the leading flower. [Voice_Start_Man] See. [Short_Pause] The flower is responding to it. Right now you are standing at the center of my tent. You can hold the flower and look at four different directions, north, east, south, west.[Voice_End]
 [Action_Sound]Try say, look south.
 	*then
 		hear look south, look at south {
 			-> TutorialSouth
 		}
 	*recap
-		[Action_Sound]Try say, look south.
+		[Action_Sound]Try saying, look south.
 	*reprompt
-		[Action_Sound]Try say, look south.
+		[Action_Sound]Try saying, look south.
 
 @TutorialSouth
 	*say
 		You are looking at the south. [Voice_Start_Man]
-Listen, the leading flower is singing you the way .[Voice_End][DirSound_Small][Voice_Start_Man]This song means that the direction you are looking is far away from the right direction.  [Voice_End]
-[Action_Sound] Now, try say look west.
+Listen, the leading flower is singing you the way .[Voice_End][DirSound_Small][Voice_Start_Man]This means the direction you are looking is far away from the right direction.  [Voice_End]
+[Action_Sound] Now, try saying look west.
 	*then
 		hear look west {
 			-> TutorialWest
 		}
 	*recap
-		[Action_Sound] Now, try say look west.
+		[Action_Sound] Now, try saying look west.
 	*reprompt
-		[Action_Sound] Now, try say look west.
+		[Action_Sound] Now, try saying look west.
 
 @TutorialWest
 	*say
@@ -1369,7 +1373,7 @@ Listen, the leading flower is singing you the way .[Voice_End][DirSound_Small][V
 		You are looking north.
         [DirSound_Large]
         [Voice_Start_Man]
-        This song means you are right looking at the way out! Go toward that direction and you are free! [Voice_End]
+        This song means you are right looking at the way out! Go to that direction and you will be free! [Voice_End]
         [Action_Sound]
         Try say, go to north.
 	*then
@@ -1379,7 +1383,7 @@ Listen, the leading flower is singing you the way .[Voice_End][DirSound_Small][V
 
 @TutorialEnd
 	*say
-		[Voice_Start_Man] Hey, congrats! Now you are in my garden, do you understand how to use  the leading flower?[Voice_End][Conversation_Sound]
+		[Voice_Start_Man] Hey, congrats! Now you are in my garden, do you understand how to use the leading flower now?[Voice_End][Conversation_Sound]
 	*then
 		hear yes {
 			-> TutorialEnd_1
@@ -1391,7 +1395,7 @@ Listen, the leading flower is singing you the way .[Voice_End][DirSound_Small][V
 
 @TutorialAgain
 	*say
-		[Voice_Start_Man]Ok... No worry, I can put you back to my tent, and show you again. Do you wanna learn again?[Voice_End][Conversation_Sound]
+		[Voice_Start_Man] [Short_Pause] No worries. I can put you back to my tent, and show you again how to use the leading flower. We can go through it again if you want. Do you want to do that?[Voice_End][Conversation_Sound]
 	*then
 		hear yes {
 			-> TutorialStart
@@ -1402,29 +1406,29 @@ Listen, the leading flower is singing you the way .[Voice_End][DirSound_Small][V
 
 @TutorialEnd_1
 	*say
-		[Voice_Start_Man] Ok, cool. It's simple to use, right? Here, take this bottle of soil. I grab it from the cave you are looking for. And. You are ready to go! With the leading flower, you should be able to walk across the forest! [Voice_End]
+		[Voice_Start_Man] Ok, cool. It's simple to use, right? [Short_Pause] Here. Take this bottle of dust. I took it from the cave you are looking for a long time ago. [Short_Pause] You are ready to go! With the leading flower, you should be able to walk across the forest! [Voice_End]
 	*then
 		-> PuzzleStart
 
 @PuzzleStart
 	*say
-		You thank the man and continute your journey. <audio src="https://koetest.s3.amazonaws.com/puzzle_demo/footsteps2.mp3"/>Couple minutes later, you are standing in front of the foggy forest.[Action_Sound]
+		You thanked the man and continute your journey. <audio src="https://koetest.s3.amazonaws.com/puzzle_demo/footsteps2.mp3"/> Several minutes later, you are standing in front of the foggy forest.[Action_Sound]
 	*recap
-		[Action_Sound] Try use the dust on the flower
+		[Action_Sound] Try saying use the dust on the flower
 	*reprompt
-		[Action_Sound] Try use the dust on the flower
+		[Action_Sound] Try saying use the dust on the flower
 	*then
-		hear use the dust on the flower {
+		hear use the dust on the flower, use  dust on the flower {
 			-> PuzzleStartfromPA
 		}
 
 @PuzzleStartfromPA
 	*say
-		You use the dust on the flower. The flower is reacting to it. Now you can look to different directions.[Action_Sound]
+		You just used the dust on the flower. The flower is responding to it. Now you can look to different directions.[Action_Sound]
 	*recap
-		[Action_Sound] You can look east, look south, look west and look north.
+		[Action_Sound] You can look north, look east, look south, and look west.
 	*reprompt
-		[Action_Sound] You can look east, look south, look west and look north.
+		[Action_Sound] You can look north, look east, look south, and look west.
 	*then
 		-> PA_positiono
 
@@ -1451,9 +1455,9 @@ Listen, the leading flower is singing you the way .[Voice_End][DirSound_Small][V
 			-> PE_positiono
 		}
 	*recap
-		[Action_Sound] You can look east, look south, look west and look north.
+		[Action_Sound] You can look north, look east, look south, and look west.
 	*reprompt
-		[Action_Sound] You can look east, look south, look west and look north.
+		[Action_Sound] You can look north, look east, look south, and look west.
 
 @PB_positiono
 	*say
@@ -1487,13 +1491,13 @@ Listen, the leading flower is singing you the way .[Voice_End][DirSound_Small][V
 			-> PA_positiono
 		}
 	*recap
-		[Action_Sound] You can look east, look south, look west and look north.
+		[Action_Sound] You can look north, look east, look south, and look west.
 	*reprompt
-		[Action_Sound] You can look east, look south, look west and look north.
+		[Action_Sound] You can look north, look east, look south, and look west.
 
 @PD_w
 	*say
-		You are looking west. The trees block the way.
+		You are looking west. The trees block your way.
 	*then
 		-> PD_position
 
@@ -1511,7 +1515,7 @@ Listen, the leading flower is singing you the way .[Voice_End][DirSound_Small][V
 
 @PD_n
 	*say
-		You are looking north. The trees block the way.
+		You are looking north. The trees block your way.
 	*then
 		-> PD_position
 
@@ -1546,9 +1550,9 @@ Listen, the leading flower is singing you the way .[Voice_End][DirSound_Small][V
 			-> PE_positiono
 		}
 	*recap
-		[Action_Sound] You can look east, look south, look west and look north.
+		[Action_Sound] You can look north, look east, look south, and look west.
 	*reprompt
-		[Action_Sound] You can look east, look south, look west and look north.
+		[Action_Sound] You can look north, look east, look south, and look west.
 
 @PC_positiono
 	*say
@@ -1603,9 +1607,9 @@ Listen, the leading flower is singing you the way .[Voice_End][DirSound_Small][V
 			-> Out
 		}
 	*recap
-		[Action_Sound] You can look east, look south, look west and look north.
+		[Action_Sound] You can look north, look east, look south, and look west.
 	*reprompt
-		[Action_Sound] You can look east, look south, look west and look north.
+		[Action_Sound] You can look north, look east, look south, and look west.
 
 @PE_w
 	*say
@@ -1627,7 +1631,7 @@ Listen, the leading flower is singing you the way .[Voice_End][DirSound_Small][V
 
 @PE_n
 	*say
-		You are looking north. The trees block the way.
+		You are looking north. The trees block your way.
 	*then
 		-> PE_position
 
@@ -1657,9 +1661,9 @@ Listen, the leading flower is singing you the way .[Voice_End][DirSound_Small][V
 			-> PB_positiono
 		}
 	*recap
-		[Action_Sound] You can look east, look south, look west and look north.
+		[Action_Sound] You can look north, look east, look south, and look west.
 	*reprompt
-		[Action_Sound] You can look east, look south, look west and look north.
+		[Action_Sound] You can look north, look east, look south, and look west.
 
 @Out
 	*say
@@ -1673,13 +1677,13 @@ Listen, the leading flower is singing you the way .[Voice_End][DirSound_Small][V
 
 @PC_s
 	*say
-		You are looking south. The trees block the way.
+		You are looking south. The trees block your way.
 	*then
 		-> PC_position
 
 @PC_e
 	*say
-		You are looking east. The trees block the way.
+		You are looking east. The trees block your way.
 	*then
 		-> PC_position
 
@@ -1697,7 +1701,7 @@ Listen, the leading flower is singing you the way .[Voice_End][DirSound_Small][V
 
 @PB_s
 	*say
-		You are looking south. The trees block the way.
+		You are looking south. The trees block your way.
 	*then
 		-> PB_position
 
@@ -1715,7 +1719,7 @@ Listen, the leading flower is singing you the way .[Voice_End][DirSound_Small][V
 
 @PA_w
 	*say
-		You are looking west. [DirSound_Small] But, the trees block the way.
+		You are looking west. [DirSound_Small] The trees block your way.
 	*then
 		-> PA_position
 
