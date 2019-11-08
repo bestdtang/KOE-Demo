@@ -22,10 +22,7 @@
   "Conversation_Sound": "<audio src=\"https://koetest.s3.amazonaws.com/new_demo_stereo/conversation_question.mp3\"/>",
   "Footsteps": "<audio src=\"https://koetest.s3.amazonaws.com/puzzle_demo/footsteps2.mp3\"/>",
   "EOA": "</voice>",
-<<<<<<< HEAD
-  "SeedTrader": "<voice name='Matthew'>"
-=======
+  "SeedTrader": "<voice name='Matthew'>",
   "Short_Pause": "<break time='0.2s'/>",
   "Long_Pause": "<break time='0.8s'/>"
->>>>>>> 1b3ea99bd714bce42accc241c04d203bba19c186
 }
