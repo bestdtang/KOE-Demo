@@ -888,7 +888,7 @@ Get the Hot Sauce 1
 
 @Been Walking For Days
     *say
-        You've been walking for days, but still no sign of valleys, only desert. A sandstorm appears and you are trapped. You fell to the ground and slowly you lose consciousness. The last thing you remember is a mysterious figure saving you.
+        You've been walking for days, but still no sign of valleys, only desert. [Pause] A sandstorm appears and you are trapped. You fell to the ground and slowly you lose consciousness. [Pause] The last thing you remember is a mysterious figure saving you.
     *then
         -> Waking Up In An Empty Tent
         
@@ -949,7 +949,7 @@ Get the Hot Sauce 1
 @Help the Person
     *say
         [SeedTrader]
-        Is someone there! Thank God! You need to save me from this cowplant. [EOA]
+        Is someone there? [Short_Pause] Thank God! You need to save me from this cowplant. [EOA]
     *then
         hear how, how to save {
             -> MysMan Explains
@@ -979,7 +979,7 @@ Get the Hot Sauce 1
 @MysMan Introduces Himself
     *say
         [SeedTrader]
-        I'm Luke, and I found you in the sandstorm. In the desert, I sell seeds, and plants and other fascinating little gimmicks that can be found nowhere else but here. [EOA]
+        I'm Luke, and I found you in the sandstorm. [Short_Pause] In the desert, I sell seeds, and plants and other fascinating little gimmicks that can be found nowhere else but here. [EOA]
         
         Luke grabs you back into the tent and shows you all of his merchandise.
     *then
@@ -995,7 +995,7 @@ Get the Hot Sauce 1
         hear yes, sure {
             -> More About the Seed
         }
-        hear no, leav {
+        hear no, leave {
             -> MysMan Says Wait
         }
         hear how to get to the cave, the cave {
@@ -1011,7 +1011,7 @@ Get the Hot Sauce 1
 @MysMan Says Wait
     *say
         [SeedTrader]
-        Wait wait wait! [EOA]
+        Wait [Short_Pause] wait [Short_Pause] wait! [EOA]
     *then
         if anotherItem{
             -> Next Item
@@ -1102,7 +1102,7 @@ Get the Hot Sauce 1
 @MysMan Story Plot 2
     *say
         [SeedTrader]
-        Well, that's right. They never tell you the whole story. The alchemist caused the incident, and I was beside him when he did it. I didn't stop him, that's why I've banished myself out here, alone. I know why you're here, and I can tell you about the puzzles in the cave. [EOA] [Pause]
+        Well, that's right. They never tell you the whole story. [Short_Pause] The alchemist caused the incident, and I was beside him when he did it. I didn't stop him, that's why I've banished myself out here, alone. I know why you're here, and I can tell you about the puzzles in the cave. [EOA] [Pause]
     *then
         -> Luke Explains the Cave 2
         
@@ -1114,16 +1114,16 @@ Get the Hot Sauce 1
         
 @One Last Thing
     *say
-        Luke goes to a locked chest and retrieves a purple seed.
+        Luke goes to a locked chest and retrieves a purple seed.[Pause]
         [SeedTrader]
-        this is the seed that is required to lift the curse. I've been finding it for years but now I have not the courage to face him. You need to bring the seed to him. [EOA]
+        this is the seed that is required to lift the curse. I've been finding it for years, [Short_Pause] but now I have not the courage to face him. You need to bring the seed to him.[Pause] [EOA]
     *then
         -> End of ACT III, 1&2
 
 @End of ACT III, 1&2
     *say
         [SeedTrader]
-        The day is not young. You must go before the sandstorm catches you again. Keeping going to the East and you'll soon find the valley and the caves. By the way, when you do meet the alchemist, tell him I'm sorry. [EOA]
+        The day is not young. You must go before the sandstorm catches you again. Keeping going to the East and you'll soon find the valley and the caves. [Long_Pause] By the way, when you do meet the alchemist, tell him I'm sorry. [EOA]
     *then
         //todo: to next ACT4
         >>END
@@ -1131,7 +1131,7 @@ Get the Hot Sauce 1
 @MysMan Says Wait I Know
     *say
         [SeedTrader]
-        Wait! Stop. You can't leave. If you leave, you won't make it to the end of the cave. [Pause] Let me try this again. Yes, I know why you're here. You're here because you want to make it to the end of the cave. You're here because you needed the citrine to lift the curse. And I'm the only way who knows how. [EOA]
+        Wait! Stop. [Short_Pause] You can't leave. If you leave, you won't make it to the end of the cave. [Pause] Let me try this again. Yes, I know why you're here. You're here because you want to make it to the end of the cave. You're here because you needed the citrine to lift the curse. And I'm the only way who knows how. [EOA]
     *then
         hear how did you know, how {
             -> Luke Explains How He Knows
@@ -1143,14 +1143,14 @@ Get the Hot Sauce 1
 @Luke Explains How He Knows
     *say
         [SeedTrader]
-        Ever since the town was hit by the curse, I've been out here, searching for ingredients that could help get rid of it. I've also been back to the town, rarely though. And from my knowledge on the alchemist and how the mayor describes it, I can more or less understand the cave's puzzles. [EOA]
+        Ever since the town was hit by the curse, I've been out here. I'm searching for ingredients that could help get rid of it. I've also been back to the town, rarely though. And from my knowledge on the alchemist and how the mayor describes it, I can more or less understand the cave's puzzles. [EOA]
     *then
         -> Luke Explains Plot 3
 
 @Luke Explains Plot 3
     *say
         [SeedTrader]
-        I know because you come from the West and there is only one reason for anybody to find and enter the cave. But I know all of this because, I was once a part of the story. [EOA]
+        I know because you come from the West, [Short_Pause] and there is only one reason for anybody to find and enter the cave. [Pause] But I know all of this because I was once a part of the story. [EOA]
     *then
         hear why, why don't you go {
             -> Luke Explains Why He Can't Go plot 3
@@ -1162,7 +1162,7 @@ Get the Hot Sauce 1
 @Luke Explains Why He Can't Go plot 3
     *say
         [SeedTrader]
-        Well, he wouldn't be too glad to see me if I have all these merchandise with me. I've all the ingredients that he wants.[EOA]
+        Well, [Short_Pause] he wouldn't be too glad to see me if I have all these merchandise with me. I've all the ingredients that he wants.[EOA]
     *then
         hear what are the puzzles, the puzzles {
             -> Luke Explains How the Puzzle Works Plot 3
@@ -1193,7 +1193,7 @@ Get the Hot Sauce 1
 @End of ACT III, 3
     *say
         [SeedTrader]
-        I don't think I'm able to keep you here longer. If you do meet the alchemist in the end, I would imagine that he demanded the name of this seed, so remember to tell him. [EOA]
+        I don't think I'm able to keep you here longer. If you do meet the alchemist in the end, I would imagine that he demanded the name of this seed, so remember to tell him.It's called EUREKA [EOA]
     *then
         // todo: link to ACT IV
         >> END
@@ -1201,9 +1201,9 @@ Get the Hot Sauce 1
 @MysMan Spills the Tea
     *say
         [SeedTrader]
-        Yes, this plan emits a very strange scent. So strange that it can.. it can.. pollute the water.[EOA]
+        Yes, this plan emits a very strange scent. So strange that it can pollute the water.[EOA]
         
-        Luke silences for a long 3 seconds.
+        Luke silences for a long 3 seconds.[Pause] You can ask his to tell you more.
     *then
         hear what happened, tell me more {
             -> Mysman Tells the Story Plot 4
@@ -1212,7 +1212,7 @@ Get the Hot Sauce 1
 @Mysman Tells the Story Plot 4
     *say
         [SeedTrader]
-        It's nothing. Some time ago, a friend of mine was experimenting with this plant. He believes that he can transform the smell of this plant into the loveliest scent the world has ever seen. But he failed, very hard. The scent became so bad that he ran away over night. His whereabouts are unknown. You on the other hand, I know what you want. Yes, you want to go to the cave, don't you. Some town in the west needs your help. I've heard travelers here and there trying to get into the cave, and I've seen it myself too. I know what the puzzle is. [EOA]
+        It's nothing. Some time ago, a friend of mine was experimenting with this plant. He believes that he can transform the smell of this plant into the loveliest scent the world has ever seen. But he failed, very hard. The scent became so bad that he ran away over night. His whereabouts are unknown. You [Short_Pause] on the other hand, I know what you want. Yes, you want to go to the cave, don't you. Some town in the west needs your help. I've heard travelers here and there trying to get into the cave, and I've seen it myself too. I know what the puzzle is. [EOA]
     *then
         hear what is the puzzle, tell me more, the puzzle {
             -> Luke Explains How the Puzzle Works Plot 4
@@ -1231,7 +1231,7 @@ Get the Hot Sauce 1
 @Luke Explains Why He Can't Go plot 4
     *say
         [SeedTrader]
-        Legend has it that a mysterious alchemist guards the most inner part of the cave. I wouldn't want to risk my own safety. [EOA]
+        Legend has it that a mysterious alchemist guards the most inner part of the cave. [Pause] I wouldn't want to risk my own safety. [EOA]
     *then
         hear what is the puzzle, the puzzles, the puzzle {
             -> Luke Explains How the Puzzle Works Plot 4
@@ -1248,7 +1248,7 @@ Get the Hot Sauce 1
 @End of ACT III, 4
     *say
         [SeedTrader]
-        I don't think I'm able to keep you here longer. If you do meet the alchemist in the end, I would imagine that he demanded the name of this seed, so remember to tell him. [EOA]
+        I don't think I'm able to keep you here longer. [Pause] If you do meet the alchemist in the end, I would imagine that he demanded the name of this seed, so remember to tell him. [EOA]
     *then
         // todo: link to ACT IV
         >> END
