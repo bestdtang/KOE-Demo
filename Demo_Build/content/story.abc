@@ -878,20 +878,377 @@ Get the Hot Sauce 1
 	    hear rest, take some rest {
 	        >>END
 	    }
-	    // act 3 will be finished tmr
-		>>END
+	    hear ready {
+	        -> Been Walking For Days
+	    }
 
-@More Sauce
-	*say
-		The shopkeeper seems not happy about that, maybe we should ask for one bottle for this time?
-	*then
-		hear yes, sure {
-			-> One Bottle of Sauce
-		}
-		hear no {
-			-> More Sauce
-		}
+@Been Walking For Days
+    *say
+        You've been walking for days, but still no sign of valleys, only desert. A sandstorm appears and you are trapped. You fell to the ground and slowly you lose consciousness. The last thing you remember is a mysterious figure saving you.
+    *then
+        -> Waking Up In An Empty Tent
+        
+@Waking Up In An Empty Tent
+    *say
+        You wake up to finding yourself in atent. You also hear some noise coming from outside.
+    *then
+        hear look around, around {
+            -> Details of the Tent
+        }
+        hear leave, leave the tent {
+            -> Leave the Tent
+        }
+        
+@Details of the Tent
+    *say
+        It's a tent with many vials and plants.
+    *then
+        >> BACK
 
+@Leave the Tent
+    *say
+        You're still in the desert. Beside the tent there is a mysterious plant wobbling around, and it's chewing a person. You can also hear someone yelling for help from the plant.
+    *then
+        hear check if there is anything I can throw, throw {
+            -> Look Around
+        }
+        hear What is the thing, examine the thing {
+            -> Examine the Thing
+        }
+        hear Help the person, help him {
+            -> Help the Person
+        }
+        hear Leave {
+            -> Warning to Leave
+        }
+
+@Look Around
+    *say
+        You looked around. But found nothing.
+    *then
+        >> BACK
+
+@Warning to Leave
+    *say
+        [SeedTrader]
+        I know why you're here, you need me! Don't leave me in this cowplant. [EOA]
+        Are you sure you want to leave the man? Maybe we need to help him out.
+    *then
+        >> BACK
+
+@Examine the Thing
+    *say
+        It looks like a cow's head, but it has sharp teeth.
+    *then 
+        >> BACK
+        
+@Help the Person
+    *say
+        [SeedTrader]
+        Is someone there! Thank God! You need to save me from this cowplant. [EOA]
+    *then
+        hear how, how to save {
+            -> MysMan Explains
+        }
+        -> MysMan Explains
+
+@MysMan Explains
+    *say
+        [SeedTrader]
+        You need to milk the cowplant. [EOA]
+    *then 
+        hear milk, milk the cowplant {  
+            -> MysMan Saved
+        }
+
+@MysMan Saved
+    *say
+        [SeedTrader]
+        Thanks.  What's your name? [EOA]
+    *then
+        slot playerName__ to 'AMAZON.US_FIRST_NAME'
+        
+        hear {playerName__}, my name is {playerName__} {
+            -> MysMan Introduces Himself
+        }
+
+@MysMan Introduces Himself
+    *say
+        [SeedTrader]
+        I'm Luke, and I found you in the sandstorm. In the desert, I sell seeds, and plants and other fascinating little gimmicks that can be found nowhere else but here. [EOA]
+        
+        Luke grabs you back into the tent and shows you all of his merchandise.
+    *then
+        unflag anotherItem
+        -> MysMan Introduces Himself 2
+        
+@MysMan Introduces Himself 2
+    *say
+        [SeedTrader]
+        This is a seed that grows more seeds. Would you like to know how it works? [EOA]
+        
+    *then 
+        hear yes, sure {
+            -> More About the Seed
+        }
+        hear no, leav {
+            -> MysMan Says Wait
+        }
+        hear how to get to the cave, the cave {
+            -> Another Item
+        }
+        
+@More About the Seed
+    *say
+        this is the place holder.
+    *then 
+        >> BACK
+
+@MysMan Says Wait
+    *say
+        [SeedTrader]
+        Wait wait wait! [EOA]
+    *then
+        if anotherItem{
+            -> Next Item
+        }
+        -> Another Item
+        
+@Another Item
+    *say
+        [SeedTrader]
+        How about this? It's a plant that glows when there's sunlight. If there is no sun, it doesn't glow.[EOA]
+    *then
+        flag anotherItem
+        hear tell me more, more {
+            -> More About the Glowing Plant
+        }
+        hear about the cave, the cave {
+            -> Next Item
+        }
+        hear leave {
+            -> MysMan Says Wait
+        }
+    
+@More About the Glowing Plant
+    *say
+        this is the place holder
+    *then
+        hear about the cave, the cave {
+            -> Next Item
+        }
+        hear leave {
+            -> MysMan Says Wait
+        }
+    
+@Next Item
+    *say
+        [SeedTrader]
+        plant that has something to do with the Alchemist here [EOA]
+    *then
+        hear about the cave {
+            -> MysMan Says Stop
+        }
+        hear leave {
+            -> MysMan Says Wait I Know
+        }
+        hear more about the plant, the plant {
+            -> MysMan Spills the Tea
+        }
+        
+@MysMan Says Stop
+    *say
+        [SeedTrader]
+        Stop talking about the cave! [EOA]
+
+        Luke collapses on his sleeping bag.
+
+        [SeedTrader]
+        I'm sorry. It's just that I've actually waited so long for someone like you to finally come and enter the cave. [EOA]
+    *then
+        hear it's OK, OK, alright, fine {
+            -> MysMan Story
+        }
+        
+@MysMan Story
+    *say
+        [SeedTrader]
+        Do you know why the town was cursed? [EOA]
+    *then
+        hear yes {
+            -> MysMan Story Plot 1
+        }
+        hear no {
+            -> MysMan Story Plot 2
+        }
+        
+@MysMan Story Plot 1        
+    *say    
+        [SeedTrader]
+        Well, yeah. The alchemist did it, or so they say. But the truth is, I turned him in. I told the townsfolk that it was the alchemist's doing. I betrayed him. I was scared. I know why you're here. You need to get to the cave. I know how. [EOA] [Pause]
+    *then
+        -> Luke Explains the Cave 1
+        
+@Luke Explains the Cave 1
+    *say
+        this is another place holder. (insert puzzle details here)
+    *then
+        -> One Last Thing
+        
+@MysMan Story Plot 2
+    *say
+        [SeedTrader]
+        Well, that's right. They never tell you the whole story. The alchemist caused the incident, and I was beside him when he did it. I didn't stop him, that's why I've banished myself out here, alone. I know why you're here, and I can tell you about the puzzles in the cave. [EOA] [Pause]
+    *then
+        -> Luke Explains the Cave 2
+        
+@Luke Explains the Cave 2
+    *say
+        this is another place holder. (insert puzzle details here)
+    *then
+        -> One Last Thing
+        
+@One Last Thing
+    *say
+        Luke goes to a locked chest and retrieves a purple seed.
+        [SeedTrader]
+        this is the seed that is required to lift the curse. I've been finding it for years but now I have not the courage to face him. You need to bring the seed to him. [EOA]
+    *then
+        -> End of ACT III, 1&2
+
+@End of ACT III, 1&2
+    *say
+        [SeedTrader]
+        The day is not young. You must go before the sandstorm catches you again. Keeping going to the East and you'll soon find the valley and the caves. By the way, when you do meet the alchemist, tell him I'm sorry. [EOA]
+    *then
+        //todo: to next ACT4
+        >>END
+    
+@MysMan Says Wait I Know
+    *say
+        [SeedTrader]
+        Wait! Stop. You can't leave. If you leave, you won't make it to the end of the cave. [Pause] Let me try this again. Yes, I know why you're here. You're here because you want to make it to the end of the cave. You're here because you needed the citrine to lift the curse. And I'm the only way who knows how. [EOA]
+    *then
+        hear how did you know, how {
+            -> Luke Explains How He Knows
+        }
+        hear cave, about the cave {
+            -> LUke Tells the Cave No BG
+        }
+
+@Luke Explains How He Knows
+    *say
+        [SeedTrader]
+        Ever since the town was hit by the curse, I've been out here, searching for ingredients that could help get rid of it. I've also been back to the town, rarely though. And from my knowledge on the alchemist and how the mayor describes it, I can more or less understand the cave's puzzles. [EOA]
+    *then
+        -> Luke Explains Plot 3
+
+@Luke Explains Plot 3
+    *say
+        [SeedTrader]
+        I know because you come from the West and there is only one reason for anybody to find and enter the cave. But I know all of this because, I was once a part of the story. [EOA]
+    *then
+        hear why, why don't you go {
+            -> Luke Explains Why He Can't Go plot 3
+        }
+        hear what are the puzzles, the puzzles {
+            -> Luke Explains How the Puzzle Works Plot 3
+        }
+        
+@Luke Explains Why He Can't Go plot 3
+    *say
+        [SeedTrader]
+        Well, he wouldn't be too glad to see me if I have all these merchandise with me. I've all the ingredients that he wants.[EOA]
+    *then
+        hear what are the puzzles, the puzzles {
+            -> Luke Explains How the Puzzle Works Plot 3
+        }
+        
+@Luke Explains How the Puzzle Works Plot 3
+    *say
+        [SeedTrader]
+        this is a place holder for the puzzles [EOA]
+    *then
+        -> One More Thing Plot 3
+        
+@LUke Tells the Cave No BG
+    *say
+        [SeedTrader]
+        this is the place holder for the maze [EOA]
+    *then  
+        -> One More Thing Plot 3
+        
+@One More Thing Plot 3
+    *say
+        Luke goes to a locked chest and retrieves a purple seed.
+        [SeedTrader]
+        I've been also researching for this curse, and it looks you will also need this seed to lift it. This seed is called the EUREKA seed. Take it with you. [EOA]
+    *then
+        -> End of ACT III, 3
+        
+@End of ACT III, 3
+    *say
+        [SeedTrader]
+        I don't think I'm able to keep you here longer. If you do meet the alchemist in the end, I would imagine that he demanded the name of this seed, so remember to tell him. [EOA]
+    *then
+        // todo: link to ACT IV
+        >> END
+        
+@MysMan Spills the Tea
+    *say
+        [SeedTrader]
+        Yes, this plan emits a very strange scent. So strange that it can.. it can.. pollute the water.[EOA]
+        
+        Luke silences for a long 3 seconds.
+    *then
+        hear what happened, tell me more {
+            -> Mysman Tells the Story Plot 4
+        }
+        
+@Mysman Tells the Story Plot 4
+    *say
+        [SeedTrader]
+        It's nothing. Some time ago, a friend of mine was experimenting with this plant. He believes that he can transform the smell of this plant into the loveliest scent the world has ever seen. But he failed, very hard. The scent became so bad that he ran away over night. His whereabouts are unknown. You on the other hand, I know what you want. Yes, you want to go to the cave, don't you. Some town in the west needs your help. I've heard travelers here and there trying to get into the cave, and I've seen it myself too. I know what the puzzle is. [EOA]
+    *then
+        hear what is the puzzle, tell me more, the puzzle {
+            -> Luke Explains How the Puzzle Works Plot 4
+        }
+        hear why didn't you enter the cave, why, you {
+            -> Luke Explains Why He Can't Go plot 4
+        }
+        
+@Luke Explains How the Puzzle Works Plot 4
+    *say
+        [SeedTrader]
+        this is a place holder for the puzzles [EOA]
+    *then
+        -> One Last Thing Plot 4
+        
+@Luke Explains Why He Can't Go plot 4
+    *say
+        [SeedTrader]
+        Legend has it that a mysterious alchemist guards the most inner part of the cave. I wouldn't want to risk my own safety. [EOA]
+    *then
+        hear what is the puzzle, the puzzles, the puzzle {
+            -> Luke Explains How the Puzzle Works Plot 4
+        }
+        
+@One Last Thing Plot 4
+    *say
+        Luke goes to a locked chest and retrieves a purple seed.
+        [SeedTrader]
+        I've been also researching for this curse, and it looks you will also need this seed to lift it. This seed is called the EUREKA seed. Take it with you. [EOA]
+    *then
+        -> End of ACT III, 4
+        
+@End of ACT III, 4
+    *say
+        [SeedTrader]
+        I don't think I'm able to keep you here longer. If you do meet the alchemist in the end, I would imagine that he demanded the name of this seed, so remember to tell him. [EOA]
+    *then
+        // todo: link to ACT IV
+        >> END
+        
 @global append
 	*then
 		hear restart, start over {
