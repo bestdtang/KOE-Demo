@@ -1,5 +1,5 @@
 @resume
-    *say
+	*say
         Welcome back! Do you want to continue your story from where you last left
         off?
     *then
@@ -282,9 +282,9 @@
 		Ha! This, my son, is when being the owner of the ONLY general store in the town comes in handy [Short_Pause] Kungh kungh, you see, the mayor has a secret craving for Super-Duper Hot Blue Pepper Sauce. [Short_Pause] And guess who's selling it? Me! Ha haaah! [EOA]
 	*then
 	    -> Decide to Help 2
-	    
+
 @Decide to Help 2
-    *say
+	*say
         [ConversationQuestionSound]
 		You can ask about the mayor, ask about the sauce, or ask for one bottle
 	*recap
@@ -299,16 +299,16 @@
 	    hear ask about the sauce, about the sauce, the sauce {
 	        -> Ask Shopkeeper About the Sauce
 	    }
-	    
+
 @Ask Shopkeeper About the Mayor
-    *say
+	*say
         [Man]
         The mayor has a strange craving for hot sauce. The mayor has turned down guests since the incident. [Short_Pause] The mayor didn't do anything to help the town either. Nobody knows if he's even in his office anymore. [EOA]
     *then 
         >> BACK
 
 @Ask Shopkeeper About the Sauce
-    *say
+	*say
         [Man]
         I can only say, the hot sauce is really hot, [Short_Pause] and it looks blue. Like the gas stoves you see in your kitchen, hot, hot, hot! [EOA]
     *then       
@@ -330,9 +330,9 @@
         Stop murmuring, dad. [Short_Pause] Anyways, if you go ask Mrs. Chilirosa, she might have still have some left for you.[EOA] 
     *then 
         -> One Bottle of Sauce 2
-        
+
 @One Bottle of Sauce 2
-    *say
+	*say
         Now you can leave the store or see what else does the shopkeeper sell, or ask more about Mrs. Chilirosa.
 	*recap
 		Now you can leave the store or ask more about Mrs. Chilirosa.
@@ -348,7 +348,7 @@
         }
 
 @What Else Do You Sell
-    *say
+	*say
         [Man]
         Well, not so much... [EOA]
     *then
@@ -469,8 +469,8 @@
             set currentLocation as 'inside of the beaty saloon'
             -> Bash On Beauty Salon
         }
-        hear open the door directly {
-            -> Open the Beauty Salon Directly
+		hear open the door directly {
+			-> chilirosa_steal_puzzle_start
         }
         hear check the green patch before, green patch, check {
             -> check the Green Patch
@@ -490,7 +490,7 @@
 	    }
 
 @Knock On Beauty Salon 2
-    *say
+	*say
         You hear a crank in the house, but still no response. [Action_Sound]
     *recap
 	    You can try knock again or knock harder.
@@ -501,7 +501,7 @@
         }
 
 @Chilirosa Annoyed
-    *say
+	*say
         <audio src='https://koetest.s3.amazonaws.com/new_demo_stereo/peopleWalkingFast.mp3'/>
         [MrsChilirosa]
         Yes? What do you want?[EOA] 
@@ -512,9 +512,9 @@
             -> Meet Mrs Chilirosa with flower
         }
         -> Meet Mrs Chilirosa
-    
+
 @Chilirosa Angered
-     *say
+	*say
         <audio src='https://koetest.s3.amazonaws.com/new_demo_stereo/peopleWalkingFast.mp3'/>
         [MrsChilirosa]
         WHATTT? Show some manners![EOA] 
@@ -549,7 +549,7 @@
         }
 
 @Chilirosa Bargains
-    *say
+	*say
         [MrsChilirosa]
         Please, roses are very hard to find in this stinky town. I can pay you.[EOA] [ConversationQuestionSound]
     *then
@@ -565,7 +565,7 @@
         }
 
 @Chilirosa No Rose Annoyed
-    *say
+	*say
         [MrsChilirosa]
         What do you want? If you have nothing else please leave. This town is already a skunk and I would appreciate if you close the door to stop the stinky air coming in.[EOA] 
         [ConversationQuestionSound] 
@@ -613,7 +613,7 @@
         }
 
 @Ask about the Sauce 1
-    *say
+	*say
         [MrsChilirosa]
         yeah, what about it? You want it? [EOA]
         [ConversationQuestionSound]
@@ -621,9 +621,9 @@
         hear yes, sure {
             -> Ask about the Sauce
         }
-        
+
 @Ask about the Sauce
-    *say
+	*say
 		[MrsChilirosa]
         Give me a reason why you need hot sauce. You want hot sauce because? [EOA]
         [ConversationQuestionSound]So we have two plans here: Plan A, You tell her how you like the sauce; Plan B, tell her that you need it to get the mayor's attention. Which plan you wanna go?
@@ -637,7 +637,8 @@
 			-> Tell Mrs Chilirose Honestly
         }
         
-// todo        
+// todo
+
 @Tell Mrs Chilirose you like the Sauce
 	*say
         Ok. Now make up a good reason why you like the sauce. You can say the sentence start with [Pause]"My reason is"[LongPause]
@@ -658,9 +659,9 @@
         Don't mention the mayor to me. He's been dominating all the hot sauce. but seeing that you're not a hot sauce, i guess you have a good reason to meet him. I'll give you half a bottle.
     *then
         -> Chilirosa Give Hot Sauce
-		
+
 @Chilirosa Give Hot Sauce
-    *say
+	*say
         [MrsChilirosa]
         Here is the hot sauce, take it.[EOA]
         She hands over the hot sauce to you. You exit the building.
@@ -710,7 +711,7 @@ Get the Hot Sauce 1
 	    hear shout, shout at the mayor {
 	        -> Shout At the Mayor
 	    }
-		
+
 @Shout At the Mayor
 	*say
 		Ok then. Shout something loud and clear so that the mayor can hear you. Now let's shout![ConversationQuestionSound]
@@ -740,7 +741,7 @@ Get the Hot Sauce 1
 		Wait, you come here because you need more information on the smell. right?
 
 @Mayor Talks More About the Incident
-    *say
+	*say
         [Mayor]
         Yes. There is a cave that we know to the Eastern valleys, but all we know is that the cave is guarded by puzzles and challenges. But what's beyond that nobody knows.[EOA]
     *reprompt
@@ -763,27 +764,28 @@ Get the Hot Sauce 1
         }
 
 @Ask Mayor the valleys
-    *say
+	*say
         [Mayor]
         The Eastern valleys is a long way from here. You better bring food and water. Or else you'll not make it.[EOA]
     *then 
         >> BACK
-        
+
 @Ask Mayor Challenges
-    *say
+	*say
         [Mayor]
         We sent our best guys into the cave. [Short_Pause] All they could remember when they returned was they were lost in a forest.[EOA]
     *then 
         >> BACK
-        
+
 @Mayor Self Introduction
-    *say
+	*say
         [Mayor]
         I'm the Mayor. [EOA]
     *then 
         >> BACK
 
 //not using
+
 @Agree to Help the Mayor
 	*say
 		[Mayor]Wait. [Short_Pause] Are you saying that you're willing to help us get rid of this disgusting smell? Oh please, sit down, sit down[EOA]
@@ -801,6 +803,7 @@ Get the Hot Sauce 1
 		-> Ask the Mayor
 
 //not using
+
 @Ask the Mayor
 	*say
 		[ConversationQuestionSound]You can ask about how he knows all this, about the cave, or about the town itself.
@@ -818,6 +821,7 @@ Get the Hot Sauce 1
         }
 
 //not using
+
 @Ask Mayor How He knows
 	*say
 		[Mayor]
@@ -840,6 +844,7 @@ Get the Hot Sauce 1
         >> BACK
 
 //not using
+
 @Continue Ask Mayor The Town
 	*say
 		[mayor]
@@ -857,6 +862,7 @@ Get the Hot Sauce 1
         -> Ask the Mayor
 
 //not using
+
 @Before Leave For the Cave
 	*say
 		and you can also heave for the cave.[DirectionQuestionSound]
@@ -869,7 +875,7 @@ Get the Hot Sauce 1
         hear B, b, ask, ask mayor about something else, something else {
             -> Ask Mayor The Cave
         }
-        
+
 @Leave the Cave
 	*say
 		[Mayor]
@@ -887,13 +893,13 @@ Get the Hot Sauce 1
 	    }
 
 @Been Walking For Days
-    *say
+	*say
         You've been walking for days, but still no sign of valleys, only desert. [Pause] A sandstorm appears and you are trapped. You fell to the ground and slowly you lose consciousness. [Pause] The last thing you remember is a mysterious figure saving you.
     *then
         -> Waking Up In An Empty Tent
-        
+
 @Waking Up In An Empty Tent
-    *say
+	*say
         You wake up to finding yourself in atent. You also hear some noise coming from outside.
     *then
         hear look around, around {
@@ -902,15 +908,15 @@ Get the Hot Sauce 1
         hear leave, leave the tent {
             -> Leave the Tent
         }
-        
+
 @Details of the Tent
-    *say
+	*say
         It's a tent with many vials and plants.
     *then
         >> BACK
 
 @Leave the Tent
-    *say
+	*say
         You're still in the desert. Beside the tent there is a mysterious plant wobbling around, and it's chewing a person. You can also hear someone yelling for help from the plant.
     *then
         hear check if there is anything I can throw, throw {
@@ -927,13 +933,13 @@ Get the Hot Sauce 1
         }
 
 @Look Around
-    *say
+	*say
         You looked around. But found nothing.
     *then
         >> BACK
 
 @Warning to Leave
-    *say
+	*say
         [SeedTrader]
         I know why you're here, you need me! Don't leave me in this cowplant. [EOA]
         Are you sure you want to leave the man? Maybe we need to help him out.
@@ -941,13 +947,13 @@ Get the Hot Sauce 1
         >> BACK
 
 @Examine the Thing
-    *say
+	*say
         It looks like a cow's head, but it has sharp teeth.
     *then 
         >> BACK
-        
+
 @Help the Person
-    *say
+	*say
         [SeedTrader]
         Is someone there? [Short_Pause] Thank God! You need to save me from this cowplant. [EOA]
     *then
@@ -957,7 +963,7 @@ Get the Hot Sauce 1
         -> MysMan Explains
 
 @MysMan Explains
-    *say
+	*say
         [SeedTrader]
         You need to milk the cowplant. [EOA]
     *then 
@@ -966,7 +972,7 @@ Get the Hot Sauce 1
         }
 
 @MysMan Saved
-    *say
+	*say
         [SeedTrader]
         Thanks.  What's your name? [EOA]
     *then
@@ -977,7 +983,7 @@ Get the Hot Sauce 1
         }
 
 @MysMan Introduces Himself
-    *say
+	*say
         [SeedTrader]
         I'm Luke, and I found you in the sandstorm. [Short_Pause] In the desert, I sell seeds, and plants and other fascinating little gimmicks that can be found nowhere else but here. [EOA]
         
@@ -988,9 +994,9 @@ Get the Hot Sauce 1
         unflag plot3
         unflag plot4
         -> MysMan Introduces Himself 2
-        
+
 @MysMan Introduces Himself 2
-    *say
+	*say
         [SeedTrader]
         This is a seed that grows more seeds. Would you like to know how it works? [EOA]
         
@@ -1004,15 +1010,15 @@ Get the Hot Sauce 1
         hear how to get to the cave, the cave {
             -> Another Item
         }
-        
+
 @More About the Seed
-    *say
+	*say
         this is the place holder.
     *then 
         >> BACK
 
 @MysMan Says Wait
-    *say
+	*say
         [SeedTrader]
         Wait [Short_Pause] wait [Short_Pause] wait! [EOA]
     *then
@@ -1020,9 +1026,9 @@ Get the Hot Sauce 1
             -> Next Item
         }
         -> Another Item
-        
+
 @Another Item
-    *say
+	*say
         [SeedTrader]
         How about this? It's a plant that glows when there's sunlight. If there is no sun, it doesn't glow.[EOA]
     *then
@@ -1036,9 +1042,9 @@ Get the Hot Sauce 1
         hear leave {
             -> MysMan Says Wait
         }
-    
+
 @More About the Glowing Plant
-    *say
+	*say
         this is the place holder
     *then
         hear about the cave, the cave {
@@ -1047,9 +1053,9 @@ Get the Hot Sauce 1
         hear leave {
             -> MysMan Says Wait
         }
-    
+
 @Next Item
-    *say
+	*say
         [SeedTrader]
         plant that has something to do with the Alchemist here [EOA]
     *then
@@ -1062,9 +1068,9 @@ Get the Hot Sauce 1
         hear more about the plant, the plant {
             -> MysMan Spills the Tea
         }
-        
+
 @MysMan Says Stop
-    *say
+	*say
         [SeedTrader]
         Stop talking about the cave! [EOA]
 
@@ -1076,9 +1082,9 @@ Get the Hot Sauce 1
         hear it's OK, OK, alright, fine {
             -> MysMan Story
         }
-        
+
 @MysMan Story
-    *say
+	*say
         [SeedTrader]
         Do you know why the town was cursed? [EOA]
     *then
@@ -1088,35 +1094,35 @@ Get the Hot Sauce 1
         hear no {
             -> MysMan Story Plot 2
         }
-        
-@MysMan Story Plot 1        
-    *say    
+
+@MysMan Story Plot 1
+	*say    
         [SeedTrader]
         Well, yeah. The alchemist did it, or so they say. But the truth is, I turned him in. I told the townsfolk that it was the alchemist's doing. I betrayed him. I was scared. I know why you're here. You need to get to the cave. I know how. [EOA] [Pause]
     *then
         -> Luke Explains the Cave 1
-        
+
 @Luke Explains the Cave 1
-    *say
+	*say
         this is another place holder. (insert puzzle details here)
     *then
         -> One Last Thing
-        
+
 @MysMan Story Plot 2
-    *say
+	*say
         [SeedTrader]
         Well, that's right. They never tell you the whole story. [Short_Pause] The alchemist caused the incident, and I was beside him when he did it. I didn't stop him, that's why I've banished myself out here, alone. I know why you're here, and I can tell you about the puzzles in the cave. [EOA] [Pause]
     *then
         -> Luke Explains the Cave 2
-        
+
 @Luke Explains the Cave 2
-    *say
+	*say
         this is another place holder. (insert puzzle details here)
     *then
         -> One Last Thing
-        
+
 @One Last Thing
-    *say
+	*say
         Luke goes to a locked chest and retrieves a purple seed.[Pause]
         [SeedTrader]
         this is the seed that is required to lift the curse. I've been finding it for years, [Short_Pause] but now I have not the courage to face him. You need to bring the seed to him.[Pause] [EOA]
@@ -1125,15 +1131,15 @@ Get the Hot Sauce 1
         -> End of ACT III, 1&2
 
 @End of ACT III, 1&2
-    *say
+	*say
         [SeedTrader]
         The day is not young. You must go before the sandstorm catches you again. Keeping going to the East and you'll soon find the valley and the caves. [Long_Pause] By the way, when you do meet the alchemist, tell him I'm sorry. [EOA]
     *then
         //todo: to next ACT4
         >>END
-    
+
 @MysMan Says Wait I Know
-    *say
+	*say
         [SeedTrader]
         Wait! Stop. [Short_Pause] You can't leave. If you leave, you won't make it to the end of the cave. [Pause] Let me try this again. Yes, I know why you're here. You're here because you want to make it to the end of the cave. You're here because you needed the citrine to lift the curse. And I'm the only way who knows how. [EOA]
     *then
@@ -1145,14 +1151,14 @@ Get the Hot Sauce 1
         }
 
 @Luke Explains How He Knows
-    *say
+	*say
         [SeedTrader]
         Ever since the town was hit by the curse, I've been out here. I'm searching for ingredients that could help get rid of it. I've also been back to the town, rarely though. And from my knowledge on the alchemist and how the mayor describes it, I can more or less understand the cave's puzzles. [EOA]
     *then
         -> Luke Explains Plot 3
 
 @Luke Explains Plot 3
-    *say
+	*say
         [SeedTrader]
         I know because you come from the West, [Short_Pause] and there is only one reason for anybody to find and enter the cave. [Pause] But I know all of this because I was once a part of the story. [EOA]
     *then
@@ -1162,49 +1168,49 @@ Get the Hot Sauce 1
         hear what are the puzzles, the puzzles {
             -> Luke Explains How the Puzzle Works Plot 3
         }
-        
+
 @Luke Explains Why He Can't Go plot 3
-    *say
+	*say
         [SeedTrader]
         Well, [Short_Pause] he wouldn't be too glad to see me if I have all these merchandise with me. I've all the ingredients that he wants.[EOA]
     *then
         hear what are the puzzles, the puzzles {
             -> Luke Explains How the Puzzle Works Plot 3
         }
-        
+
 @Luke Explains How the Puzzle Works Plot 3
-    *say
+	*say
         [SeedTrader]
         this is a place holder for the puzzles [EOA]
     *then
         -> One More Thing Plot 3
-        
+
 @LUke Tells the Cave No BG
-    *say
+	*say
         [SeedTrader]
         this is the place holder for the maze [EOA]
     *then  
         -> One More Thing Plot 3
-        
+
 @One More Thing Plot 3
-    *say
+	*say
         Luke goes to a locked chest and retrieves a purple seed.
         [SeedTrader]
         I've been also researching for this curse, and it looks you will also need this seed to lift it. This seed is called the EUREKA seed. Take it with you. [EOA]
     *then
     flag plot3
         -> End of ACT III, 3
-        
+
 @End of ACT III, 3
-    *say
+	*say
         [SeedTrader]
         I don't think I'm able to keep you here longer. If you do meet the alchemist in the end, I would imagine that he demanded the name of this seed, so remember to tell him.It's called EUREKA [EOA]
     *then
         // todo: link to ACT IV
         >> END
-        
+
 @MysMan Spills the Tea
-    *say
+	*say
         [SeedTrader]
         Yes, this plan emits a very strange scent. So strange that it can pollute the water.[EOA]
         
@@ -1213,9 +1219,9 @@ Get the Hot Sauce 1
         hear what happened, tell me more {
             -> Mysman Tells the Story Plot 4
         }
-        
+
 @Mysman Tells the Story Plot 4
-    *say
+	*say
         [SeedTrader]
         It's nothing. Some time ago, a friend of mine was experimenting with this plant. He believes that he can transform the smell of this plant into the loveliest scent the world has ever seen. But he failed, very hard. The scent became so bad that he ran away over night. His whereabouts are unknown. You [Short_Pause] on the other hand, I know what you want. Yes, you want to go to the cave, don't you. Some town in the west needs your help. I've heard travelers here and there trying to get into the cave, and I've seen it myself too. I know what the puzzle is. [EOA]
     *then
@@ -1225,40 +1231,40 @@ Get the Hot Sauce 1
         hear why didn't you enter the cave, why, you {
             -> Luke Explains Why He Can't Go plot 4
         }
-        
+
 @Luke Explains How the Puzzle Works Plot 4
-    *say
+	*say
         [SeedTrader]
         this is a place holder for the puzzles [EOA]
     *then
         -> One Last Thing Plot 4
-        
+
 @Luke Explains Why He Can't Go plot 4
-    *say
+	*say
         [SeedTrader]
         Legend has it that a mysterious alchemist guards the most inner part of the cave. [Pause] I wouldn't want to risk my own safety. [EOA]
     *then
         hear what is the puzzle, the puzzles, the puzzle {
             -> Luke Explains How the Puzzle Works Plot 4
         }
-        
+
 @One Last Thing Plot 4
-    *say
+	*say
         Luke goes to a locked chest and retrieves a purple seed.
         [SeedTrader]
         I've been also researching for this curse, and it looks you will also need this seed to lift it. This seed is called the EUREKA seed. Take it with you. [EOA]
     *then
         flag plot4
         -> End of ACT III, 4
-        
+
 @End of ACT III, 4
-    *say
+	*say
         [SeedTrader]
         I don't think I'm able to keep you here longer. [Pause] If you do meet the alchemist in the end, I would imagine that he demanded the name of this seed, so remember to tell him. [EOA]
     *then
         // todo: link to ACT IV
         >> END
-        
+
 @global append
 	*then
 		hear restart, start over {
@@ -1277,21 +1283,21 @@ Get the Hot Sauce 1
         hear help {
             -> Help
         }
-        hear enter puzzle {
-            -> PuzzleDemoStart
-        }
-        hear puzzle hint, hint {
-            -> puzzle_help
-        }
-        
+        //hear enter puzzle {
+        //    -> PuzzleDemoStart
+        //}
+        //hear puzzle hint, hint {
+        //   -> puzzle_help
+        //}
+
 @Where am I
-    *say
+	*say
         Now you are in {currentLocation}.
     *then
         >> BACK
-        
+
 @Help
-    *say
+	*say
         Here is what you can do: 
             if you want to know your current location, say: where am I; 
             if you want to restart the whole game, say: restart; 
@@ -1300,457 +1306,11 @@ Get the Hot Sauce 1
     *then 
         >> BACK
 
-@puzzle_help
-	*say
-		If you are far away from the right direction. The flower will sing this song. [DirSound_Small]
-If you are close to the right direction, the flower will sing. [DirSound_MRight]
-If you are on the right direction, the flower will sing. [DirSound_Large]
-
-@PuzzleDemoStart
-	*say
-		[Voice_Start_Man]Here, If you are going to the cave in the foggy forest, you must take this compass, and the leading flower. If you are lost, the compass will show you the direction and the flower will point you the way to the cave. If you sprinkle a little dust on the leading flower. It will trace origin of smell and bring you to where the dust comes from. look, here is the dust I grab from my garden. Now, I will show you how to use it. [Voice_End][Action_Sound] Try say, use the dust on the leading flower.
-	*recap
-		[Action_Sound] Try saying, use dust on the leading flower.
-	*reprompt
-		[Action_Sound] Try saying, use dust on the leading flower.
-	*then
-		hear use dust on the leading flower {
-			-> TutorialStart
-		}
-@TutorialStart
-	*say
-		You just used the dust on the leading flower. [Voice_Start_Man] See. [Short_Pause] The flower is responding to it. Right now you are standing at the center of my tent. You can hold the flower and look at four different directions, north, east, south, west.[Voice_End]
-[Action_Sound]Try say, look south.
-	*then
-		hear look south, look at south {
-			-> TutorialSouth
-		}
-	*recap
-		[Action_Sound]Try saying, look south.
-	*reprompt
-		[Action_Sound]Try saying, look south.
-
-@TutorialSouth
-	*say
-		You are looking at the south. [Voice_Start_Man]
-Listen, the leading flower is singing you the way .[Voice_End][DirSound_Small][Voice_Start_Man]This means the direction you are looking is far away from the right direction.  [Voice_End]
-[Action_Sound] Now, try saying look west.
-	*then
-		hear look west {
-			-> TutorialWest
-		}
-	*recap
-		[Action_Sound] Now, try saying look west.
-	*reprompt
-		[Action_Sound] Now, try saying look west.
-
-@TutorialWest
-	*say
-		You are looking at the west.
-[DirSound_MRight]
-[Voice_Start_Man] This song means you are close to the right direction. [Voice_End][Action_Sound]
-	*recap
-		You can say look east or look north.
-	*reprompt
-		You can say look east or look north.
-	*then
-		hear look north {
-			-> TutorialNorth
-		}
-
-		hear look east {
-			-> TutorialEast
-		}
-
-@TutorialEast
-	*say
-		You are looking east. You are facing a wall.
-	*recap
-		[Action_Sound]You can say look north.
-	*reprompt
-		[Action_Sound]You can say look north.
-	*then
-		hear look north {
-			-> TutorialNorth
-		}
-
-@TutorialNorth
-	*say
-		You are looking north.
-        [DirSound_Large]
-        [Voice_Start_Man]
-        This song means you are right looking at the way out! Go to that direction and you will be free! [Voice_End]
-        [Action_Sound]
-        Try say, go to north.
-	*then
-		hear go to north {
-			-> TutorialEnd
-		}
-
-@TutorialEnd
-	*say
-		[Voice_Start_Man] Hey, congrats! Now you are in my garden, do you understand how to use the leading flower now?[Voice_End][Conversation_Sound]
-	*then
-		hear yes {
-			-> TutorialEnd_1
-		}
-
-		hear no {
-			-> TutorialAgain
-		}
-
-@TutorialAgain
-	*say
-		[Voice_Start_Man] [Short_Pause] No worries. I can put you back to my tent, and show you again how to use the leading flower. We can go through it again if you want. Do you want to do that?[Voice_End][Conversation_Sound]
-	*then
-		hear yes {
-			-> TutorialStart
-		}
-		hear no {
-			-> TutorialEnd_1
-		}
-
-@TutorialEnd_1
-	*say
-		[Voice_Start_Man] Ok, cool. It's simple to use, right? [Short_Pause] Here. Take this bottle of dust. I took it from the cave you are looking for a long time ago. [Short_Pause] You are ready to go! With the leading flower, you should be able to walk across the forest! [Voice_End]
-	*then
-		-> PuzzleStart
-
-@PuzzleStart
-	*say
-		You thanked the man and continute your journey. <audio src="https://koetest.s3.amazonaws.com/puzzle_demo/footsteps2.mp3"/> Several minutes later, you are standing in front of the foggy forest.[Action_Sound]
-	*recap
-		[Action_Sound] Try saying use the dust on the flower
-	*reprompt
-		[Action_Sound] Try saying use the dust on the flower
-	*then
-		hear use the dust on the flower, use  dust on the flower {
-			-> PuzzleStartfromPA
-		}
-
-@PuzzleStartfromPA
-	*say
-		You just used the dust on the flower. The flower is responding to it. Now you can look to different directions.[Action_Sound]
-	*recap
-		[Action_Sound] You can look north, look east, look south, and look west.
-	*reprompt
-		[Action_Sound] You can look north, look east, look south, and look west.
-	*then
-		-> PA_positiono
-
-@PA_position
-	*say
-		
-	*then
-		hear look south, go south {
-			-> PA_s
-		}
-		hear look west, go west {
-			-> PA_w
-		}
-		hear look north {
-			-> PA_n
-		}
-		hear look east {
-			-> PA_e
-		}
-		hear go to east {
-			-> PB_positiono
-		}
-		hear go to north {
-			-> PE_positiono
-		}
-	*recap
-		[Action_Sound] You can look north, look east, look south, and look west.
-	*reprompt
-		[Action_Sound] You can look north, look east, look south, and look west.
-
-@PB_positiono
-	*say
-		<audio src="https://koetest.s3.amazonaws.com/puzzle_demo/footsteps2.mp3"/> You come to a new spot.
-	*then
-		-> PB_position
-
-@PD_position
-	*say
-		
-	*then
-		hear look north, go to north, go north {
-			-> PD_n
-		}
-
-		hear look east {
-			-> PD_e
-		}
-
-		hear look south {
-			-> PD_s
-		}
-
-		hear look west, go to west {
-			-> PD_w
-		}
-		hear go to east {
-			-> PE_positiono
-		}
-		hear go to south {
-			-> PA_positiono
-		}
-	*recap
-		[Action_Sound] You can look north, look east, look south, and look west.
-	*reprompt
-		[Action_Sound] You can look north, look east, look south, and look west.
-
-@PD_w
-	*say
-		You are looking west. The trees block your way.
-	*then
-		-> PD_position
-
-@PD_s
-	*say
-		You are looking south. [DirSound_MLeft]
-	*then
-		-> PD_position
-
-@PD_e
-	*say
-		You are looking east. [DirSound_Large]
-	*then
-		-> PD_position
-
-@PD_n
-	*say
-		You are looking north. The trees block your way.
-	*then
-		-> PD_position
-
-@PB_position
-	*say
-		
-	*then
-		hear look north {
-			-> PB_n
-		}
-
-		hear look east {
-			-> PB_e
-		}
-
-		hear look south, go south {
-			-> PB_s
-		}
-
-		hear look west {
-			-> PB_w
-		}
-		hear go to west {
-			-> PA_positiono
-		}
-
-		hear go to east {
-			-> PC_positiono
-		}
-
-		hear go to north {
-			-> PE_positiono
-		}
-	*recap
-		[Action_Sound] You can look north, look east, look south, and look west.
-	*reprompt
-		[Action_Sound] You can look north, look east, look south, and look west.
-
-@PC_positiono
-	*say
-		<audio src="https://koetest.s3.amazonaws.com/puzzle_demo/footsteps2.mp3"/> You come to a new spot.
-	*then
-		-> PC_position
-
-@PE_positiono
-	*say
-		<audio src="https://koetest.s3.amazonaws.com/puzzle_demo/footsteps2.mp3"/> You come to a new spot.
-	*then
-		-> PE_position
-
-@PD_positiono
-	*say
-		<audio src="https://koetest.s3.amazonaws.com/puzzle_demo/footsteps2.mp3"/>
-	*then
-		-> PD_position
-
-@PA_positiono
-	*say
-		
-	*then
-		-> PA_position
-
-@PE_position
-	*say
-		
-	*then
-		hear look north, go north, go to north {
-			-> PE_n
-		}
-
-		hear look east {
-			-> PE_e
-		}
-
-		hear look south {
-			-> PE_s
-		}
-
-		hear look west {
-			-> PE_w
-		}
-		hear go to west {
-			-> PD_positiono
-		}
-		hear go to south {
-			-> PB_positiono
-		}
-		hear go to east {
-			-> Out
-		}
-	*recap
-		[Action_Sound] You can look north, look east, look south, and look west.
-	*reprompt
-		[Action_Sound] You can look north, look east, look south, and look west.
-
-@PE_w
-	*say
-		You are looking west. [DirSound_Small]
-	*then
-		-> PE_position
-
-@PE_s
-	*say
-		You are looking south. [DirSound_MLeft]
-	*then
-		-> PE_position
-
-@PE_e
-	*say
-		You are looking east. [DirSound_Large]
-	*then
-		-> PE_position
-
-@PE_n
-	*say
-		You are looking north. The trees block your way.
-	*then
-		-> PE_position
-
-@PC_position
-	*say
-		
-	*then
-		hear look north {
-			-> PC_n
-		}
-
-		hear look east, go to east {
-			-> PC_e
-		}
-
-		hear look south, go to south {
-			-> PC_s
-		}
-
-		hear look west {
-			-> PC_w
-		}
-		hear go to north {
-			-> Out
-		}
-		hear go to west {
-			-> PB_positiono
-		}
-	*recap
-		[Action_Sound] You can look north, look east, look south, and look west.
-	*reprompt
-		[Action_Sound] You can look north, look east, look south, and look west.
-
-@Out
-	*say
-		You see a cave.
-
-@PC_w
-	*say
-		You are looking west. [DirSound_MRight]
-	*then
-		-> PC_position
-
-@PC_s
-	*say
-		You are looking south. The trees block your way.
-	*then
-		-> PC_position
-
-@PC_e
-	*say
-		You are looking east. The trees block your way.
-	*then
-		-> PC_position
-
-@PC_n
-	*say
-		You are looking north. [DirSound_Large]
-	*then
-		-> PC_position
-
-@PB_w
-	*say
-		you are look west. [DirSound_Small]
-	*then
-		-> PB_position
-
-@PB_s
-	*say
-		You are looking south. The trees block your way.
-	*then
-		-> PB_position
-
-@PB_e
-	*say
-		You are looking east. [DirSound_MLeft]
-	*then
-		-> PB_position
-
-@PB_n
-	*say
-		You are looking north. [DirSound_MRight]
-	*then
-		-> PB_position
-
-@PA_w
-	*say
-		You are looking west. [DirSound_Small] The trees block your way.
-	*then
-		-> PA_position
-
-@PA_s
-	*say
-		You are looking south. That is the entrance you came.
-	*then
-		-> PA_position
-
-@PA_e
-	*say
-		You are looking east. [DirSound_MLeft]
-	*then
-		-> PA_position
-
-@PA_n
-	*say
-		You are looking north. [DirSound_MRight]
-	*then
-		-> PA_position
-
 
 //TODO: ACT V Start
+
 @Arrival At The Inner Cave
-    *say
+	*say
         You see the oasis, and a floating gem in the middle. It's the citrine. You see an old man looking at you.
         [Alchemist]
         Oh my, o my o my omy, the first person to visit my glorious palace in the deep caverns. You must be really tired, aren't you?[EOA] [LongPause]
@@ -1758,7 +1318,7 @@ Listen, the leading flower is singing you the way .[Voice_End][DirSound_Small][V
         -> Alchemist Grabs You
 
 @Alchemist Grabs You
-    *say
+	*say
         [Alchemist] 
         You must excuse my attitude, but I must show you the way to my hut, where you will get some rest while I finish up stuff out here. [EOA]
 
@@ -1771,15 +1331,15 @@ Listen, the leading flower is singing you the way .[Voice_End][DirSound_Small][V
     
     *then
         ->Escape The Room
-        
+
 @Escape The Room
-    *say
+	*say
         Escape the room details here.
     *then
         -> Exit The Room
-        
+
 @Exit The Room
-    *say
+	*say
         [Alchemist] 
         AH! [EOA]
 
@@ -1800,9 +1360,9 @@ Listen, the leading flower is singing you the way .[Voice_End][DirSound_Small][V
         hear hand him the eureka plant, the plant {
             -> Alchemist Asks More
         }
-        
+
 @Join The Alchemist At the Cauldron
-    *say
+	*say
         [Alchemist] 
         Here we go! [EOA]
 
@@ -1816,9 +1376,9 @@ Listen, the leading flower is singing you the way .[Voice_End][DirSound_Small][V
         hear hand him the eureka seed, eureka, plant {
             -> Alchemist Asks More
         }
-        
+
 @Alchemist Asks Again
-    *say
+	*say
         Are you sure? You might get something that you seek.
     *then
         hear yes, sure {
@@ -1827,16 +1387,16 @@ Listen, the leading flower is singing you the way .[Voice_End][DirSound_Small][V
         hear no {
             -> Alchemist Teel You to Stay Here
         }
-        
+
 @Alchemist Teel You to Stay Here
-    *say
+	*say
         [Alchemist]
         Oh well, I guess that you're just afraid of explosions. It's ok. Just stay here and watch.[EOA]
     *then
         -> Alchemist Performs At the Cauldron And Fails
-        
+
 @Alchemist Performs At the Cauldron And Fails
-    *say
+	*say
         [Alchemist] 
         Here we go! [EOA]
 
@@ -1851,8 +1411,8 @@ Listen, the leading flower is singing you the way .[Voice_End][DirSound_Small][V
             -> Alchemist Asks More
         }
 
-@Alchemist Asks 
-    *say
+@Alchemist Asks
+	*say
         [Alchemist] 
         Wait, who gave you this seed?[EOA]
     *then
@@ -1864,7 +1424,7 @@ Listen, the leading flower is singing you the way .[Voice_End][DirSound_Small][V
         }
 
 @Alchemist Questions About Luke
-    *say
+	*say
         [Alchemist] 
         What? Luke sent you this seed? LUKE SENT YOU THIS SEED? Oh, now he knows how to be an apprentice? To not stab his master in the back? Did he tell you about what happened? [EOA]
     *then 
@@ -1874,9 +1434,9 @@ Listen, the leading flower is singing you the way .[Voice_End][DirSound_Small][V
         hear no {
             -> None of It Matters Anyway
         }
-        
+
 @Alchemist Continues to Scold Luke
-    *say
+	*say
         [Alchemist] 
         So you know, right? Unbelievable. What else did he say?[EOA]
     *then
@@ -1890,9 +1450,9 @@ Listen, the leading flower is singing you the way .[Voice_End][DirSound_Small][V
         hear anything else {
             -> Alchemist Scolds Luke For His Weird Behaviour
         }
-        
+
 @Alchemist Asks What Luke Says Again
-    *say
+	*say
         [Alchemist]
         What? [EOA]
     *then
@@ -1908,21 +1468,21 @@ Listen, the leading flower is singing you the way .[Voice_End][DirSound_Small][V
         }
 
 @Alchemist Scolds Luke Thrice
-    *say
+	*say
         [Alchemist] 
         Hmph. This Mandrake, well he ought to give it to me. Now, let me end this curse, come with me. [EOA]
     *then
         -> Alchemist Brews Potion
 
 @Alchemist Scolds Luke For His Weird Behaviour
-    *say    
+	*say    
         [Alchemist] 
         What? That doesn't sound like what he would have said. Anyways, I deserve this Mandrake. I will end this crisis once and for all. [EOA]
     *then
         -> Alchemist Brews Potion
 
 @Alchemist Sits Down
-    *say
+	*say
         [Alchemist] 
         Oh. [EOA]
 
@@ -1937,23 +1497,23 @@ Listen, the leading flower is singing you the way .[Voice_End][DirSound_Small][V
         hear no {
             -> Alchemist Smirks And Accepts
         }
-        
+
 @Alchemist Accepts
-    *say
+	*say
         [Alchemist] 
         Oh pal. How long have I waited you. Come, let's finish this potion and end this curse once and for all. [EOA]
     *then
         -> Alchemist Brews Potion
 
 @Alchemist Smirks And Accepts
-    *say
+	*say
         [Alchemist]
         Ha. This has to be him. Let's finish this once and for all, shall we? [EOA]
     *then
         -> Alchemist Brews Potion
 
 @None of It Matters Anyway
-    *say
+	*say
         [Alchemist] 
         So what, did he say anything? [EOA]
     *then
@@ -1967,16 +1527,16 @@ Listen, the leading flower is singing you the way .[Voice_End][DirSound_Small][V
         hear anything else {
             -> Alchemist Scolds Luke For His Weird Behaviour
         }
-        
+
 @Alchemist Questions About the Seed
-    *say
+	*say
         [Alchemist] 
         Do you even know what this seed is? This seed is called the Glimmerbrook Mandrake, and is impossible to come by anywhere around. This person you meet, must be also a great alchemist and botanist. Hard to find this thing around here. Come, let's see if this works. [EOA]
     *then
         -> Alchemist Brews Potion
 
 @Alchemist Asks More
-    *say
+	*say
         [Alchemist] 
         What? This is called Eureka? Did the guy who gave you this told you that it's called Eureka? [EOA]
     *then
@@ -1986,9 +1546,9 @@ Listen, the leading flower is singing you the way .[Voice_End][DirSound_Small][V
         hear no {
             -> Alchemist Smirks
         }
-        
+
 @Alchemist Realizes
-    *say
+	*say
         [Alchemist] 
         Oh. [EOA]
 
@@ -1999,14 +1559,14 @@ Listen, the leading flower is singing you the way .[Voice_End][DirSound_Small][V
         -> Alchemist Brews Potion
 
 @Alchemist Smirks
-    *say
+	*say
         [Alchemist]
         Ha. It's funny because Eureka is a word that I use a lot with my old friend back in the day. Well, until that night when the incident happened. Could be just a happy accident, though. This seed is not called Eureka, but Glimmerbrook Mandrake. This person you meet, must be also a great alchemist and botanist. Hard to find this thing around here. Come, let's see if this works. [EOA]
     *then
         -> Alchemist Brews Potion
-        
+
 @Alchemist Brews Potion
-    *say
+	*say
         [Alchemist] 
         Let's do this.[EOA]
 
@@ -2017,9 +1577,9 @@ Listen, the leading flower is singing you the way .[Voice_End][DirSound_Small][V
         
     *then
         -> Return Back To Town
-        
+
 @Return Back To Town
-    *say
+	*say
         The alchemist returns and apologizes everyone, and fixes the town.
     *then
         if plot12 {
@@ -2029,18 +1589,347 @@ Listen, the leading flower is singing you the way .[Voice_End][DirSound_Small][V
             -> Luke Watches From the Distance
         }
         -> Luke Is Nowhere To Be Found
-        
+
+@chilirosa_steal_puzzle_start
+	*say
+		You want to sneak into Ms. Chilirosa's house to grab the hot sauce, do you?
+	*then
+		hear yes {
+			-> chilirosa_door
+		}
+		hear no {
+			-> Arrive Beauty Salon
+		}
+
+@chilirosa_steal_puzzle_again
+	*say
+		You are in front of Ms. Chilirosa's house. Do you want to sneak in again?
+	*then
+		hear Yes, Sure {
+			-> chilirosa_door
+		}
+
+@chilirosa_door
+	*say
+		You decided to sneek into Ms. Chilirosa's home to steal the hot sauce. You opened up the the door carefully, and sneaked into the hallway.  [Action_Sound]At anytime, you can say look around me to explore the rooms.
+	*then
+		hear look around me, look around the hallway {
+			-> chilirosa_hallway_around
+		}
+
+@chilirosa_hallway_around
+	*say
+		You are in the hallway. There is a closet standing next to you, the main door behind you, and two rooms infront of you. There are, the living room, and the kitchen. Where is the sauce? And where is the Ms. Chilirosa? [Action_Sound]You can view different things and rooms from the hallway to see more details.
+	*then
+		-> chilirosa_hallway_interation
+
+@chilirosa_hallway_interation
+	*say
+		
+	*then
+		hear view the door {
+			-> chilirosa_hallway_viewdoor
+		}
+
+		hear view the closet {
+			-> chilirosa_hallway_viewcloset
+		}
+
+		hear view living room {
+			-> chilirosa_hallway_viewliving
+		}
+
+		hear view kitchen {
+			-> chilirosa_hallway_viewkitchen
+		}
+		hear go to kitchen, kitchen {
+		    if turn_kettle{
+		        -> chilirosa_kitchen_caught_kettle
+		    }
+		    if turn_pot and !hide{
+		        -> chilirosa_kitchen_pot_back
+		    }
+		    if turn_pot and hide {
+		        -> chilirosa_kitchen_caught
+		    }
+			-> chilirosa_kitchen_goto
+		}
+		hear look around, look around me {
+			-> chilirosa_hallway_around
+		}
+		hear leave, leave from the door {
+			-> chilirosa_steal_puzzle_start
+		}
+		hear hide in the closet {
+		    if !turn_pot and !turn_kettle{
+			    -> chilirosa_hallway_hidenormal
+			}
+			if turn_pot and turn_kettle{
+			    unflag turn_pot
+			    unflag turn_kettle
+			    -> chilirosa_hallway_hidepotkettle
+			}
+			if turn_pot{
+			    flag hide
+			    -> chilirosa_hallway_hidepot
+			}
+			if turn_kettle{
+			    unflag turn_kettle
+			    -> chilirosa_hallway_hidekettle
+			}
+		}
+		hear go to the living room {
+		    if turn_pot and hide{
+			    -> chilirosa_living_goto
+			}
+			else{
+			    -> chilirosa_living_caught
+		    }
+		}
+	*recap
+		[Action_Sound]You can view different objects to see more details, or look around.
+	*reprompt
+		[Action_Sound]You can view different objects to see more details, or look around.
+
+@chilirosa_kitchen_pot_back
+	*say
+		You go to the kitchen. The pot is been heaten up. It will boiling dry soon, and the pot will be burnt. You need to leave the kitchen right now. Otherwise, you will be caught.
+	*then
+		hear go to hallway {
+			-> chilirosa_hallway_pot_caught
+		}
+	*recap
+		[Action_Sound] You should go to hallway.
+	*reprompt
+		[Action_Sound] You should go to hallway.
+
+@chilirosa_hallway_pot_caught
+	*say
+		As soon as you arrive the hallway. The soup is been boiled dry and the pot is burnt. Ms. Chilirosa smells it and comes over. You are caught. She throws you out of her house. You waste a lot of time going back and forth.
+	*then
+		-> chilirosa_steal_puzzle_again
+
+@chilirosa_kitchen_caught_kettle
+	*say
+		You go to the kitchen. At the time you just arrived, the kettle rings. It takes so short of time for the kettle to ring. Ms. Chilirosa hears it, comes over. You are caught. She throws you out of her house.
+	*then
+		-> chilirosa_steal_puzzle_again
+
+@chilirosa_hallway_hidekettle
+	*say
+		You hide into the closet. Right after you close the closet, the kettle starts to ring. Ms. Chilirosa hears it, walks pass the hallway to the kitchen, and turns the kettle off. She then goes back to the living room, and muttering. You come out of the closet.
+	*then
+		-> chilirosa_hallway_interation
+
+@chilirosa_hallway_hidepotkettle
+	*say
+		You hide into the closet. Right after you close the door, the kettle starts to ring. Ms. Chilirosa hears it, walks pass the hallway to the kitchen. She turns the  kettle off and finds that the pot is also on. The soup is not boiling dry yet. She turns the pot off, then goes back to the living room, and muttering. Haering that, you come out of the closet.
+	*then
+		-> chilirosa_hallway_interation
+
+@chilirosa_living_caught
+	*say
+		You go to the living room. Ms. Chilirosa is right here. You are caught. She throws you out of her house. Make sure you observe the room first, before you go in.
+	*then
+		-> chilirosa_steal_puzzle_again
+
+@chilirosa_living_goto
+	*say
+		You go to the living room.
+	*then
+		-> chilirosa_living_around
+
+@chilirosa_living_around
+	*say
+		You are in the living room. From the living room, you can see Ms. Chilirosa's bedroom. The important is, beside you, the hot sauce is right on the table.
+	*then
+		-> chilirosa_living_interaction
+
+@chilirosa_living_interaction
+	*recap
+		[Action_Sound]You should take the hot sauce.
+	*reprompt
+		[Action_Sound] You should take the hot sauce.
+	*then
+		hear take the sauce, take sauce, take hot sauce {
+			-> chilirosa_living_takesauce
+		}
+
+@chilirosa_hallway_out
+	*say
+		You go to the hallway, with the hot sauce you want. Taking a peek at Ms. chilirosa, she is still cleaning up the soup that was splited everywhere. You leave her house from the door. Congrats!
+	*then
+				-> chilirosa_puzzle_end
+
+@chilirosa_puzzle_end
+	*then
+	-> Get the Hot Sauce
+
+@chilirosa_living_takesauce
+	*say
+		You take the hot sauce. And now, go to the hallway and leave from there.
+	*then
+		hear go to hallway, go to the hallway {
+			-> chilirosa_hallway_out
+		}
+
+@chilirosa_hallway_hidepot
+	*say
+		You hide in the closet. After awhile you hear that the soup is fully boiled, and dries. And then you smell the smoke. The pot is burnt. So does Ms. Chilirosa. She rushes from the living room, across the hallway, and goes to the kitchen. Hearing that, you come out of the closet.
+	*then
+		-> chilirosa_hallway_interation
+
+@chilirosa_hallway_hidenormal
+	*say
+		You hide in the closet. Nothing happened. So you come out of the closet.
+	*then
+		-> chilirosa_hallway_interation
+
+@chilirosa_kitchen_caught
+	*say
+		You go the the kitchen. Ms. Chilirosa is right in the kitchen. You are caught.
+	*then
+		-> chilirosa_steal_puzzle_again
+
+@chilirosa_kitchen_goto
+	*say
+		You go to the kitchen.
+	*then
+		-> chilirosa_kitchen_around
+
+@chilirosa_kitchen_interaction
+	*say
+		
+	*then
+		hear view watertap {
+			-> chilirosa_kitchen_viewwatertap
+		}
+
+		hear view pot {
+			-> chilirosa_kitchen_viewpot
+		}
+
+		hear look around {
+			-> chilirosa_kitchen_around
+		}
+
+		hear view kettle {
+			-> chilirosa_kitchen_viewkettle
+		}
+		hear go to hallway, hallway {
+		    if caught{
+		        -> chilirosa_hallway_caught
+		    }
+			    -> chilirosa_hallway_goto
+		}
+		hear turn on watertap, turn on water {
+			-> chilirosa_kitchen_turnwater
+		}
+		hear turn on pot {
+			-> chilirosa_kitchen_turnpot
+		}
+		hear turn on the kettle, turn on kettle {
+			-> chilirosa_kitchen_turnkettle
+		}
+	*recap
+		You can view different objects, look around, or go to the hallway.
+	*reprompt
+		You can view different objects, look around, or go to the hallway.
+
+@chilirosa_kitchen_turnkettle
+	*say
+		You turn on the kettle. The water starts to boil.
+	*then
+		flag turn_kettle
+	    -> chilirosa_kitchen_interaction
+
+@chilirosa_hallway_goto
+	*say
+		You go to the hallway
+	*then
+		-> chilirosa_hallway_around
+
+@chilirosa_kitchen_turnpot
+	*say
+		You turn on the pot. The pot starts to heat up.
+	*then
+		flag turn_pot
+	    -> chilirosa_kitchen_interaction
+
+@chilirosa_kitchen_turnwater
+	*say
+		You turn on the watertap. Water starts to flow. Ms. Chilirosa hears it and starts to come over.
+	*then
+		flag caught
+		-> chilirosa_kitchen_interaction
+
+@chilirosa_hallway_caught
+	*say
+		You go to the hallway. Ms. Chilirosa is right there. The watertap makes noise so immediately that you don't have time to hide. You are caught. And thrown out of her house.
+	*then
+		-> chilirosa_steal_puzzle_again
+
+@chilirosa_kitchen_viewkettle
+	*say
+		You view the kettle on the right. It is full of water. And it's still warm. If you turn on the kettle, after a short amount of time, water is fully boiled, it will ring. [Action_Sound] You can turn on the kettle.
+	*then
+		-> chilirosa_kitchen_interaction
+
+@chilirosa_kitchen_around
+	*say
+		You are in the kitchen. From the kitchen, you can only see the hallway you came from. Inside the kitchen, there is a pair of stoves. On the left there is a pot, and on the right there is a kettle. A watertap is on your side.  But, you didn't find the hot sauce in the kitchen. [Action_Sound]
+	*then
+		-> chilirosa_kitchen_interaction
+
+@chilirosa_kitchen_viewpot
+	*say
+		You view the pot on the left. Open up the cover carefully, you see a little soup in it. The pot is cold. If you turn on the pot, the soup will boiling dry while it's heaten up and the pot will be burnt. [Action_Sound] You can turn on the pot.
+	*then
+		-> chilirosa_kitchen_interaction
+
+@chilirosa_kitchen_viewwatertap
+	*say
+		You view the watertap. You are sure that if you open it, it will make a huge noise. [Action_Sound] You can turn on the water.
+	*then
+		-> chilirosa_kitchen_interaction
+
+@chilirosa_hallway_viewkitchen
+	*say
+		You view the kitchen. No body is in the kitchen. Some containers are on the stove. [Action_Sound] You can go to the kitchen if you want.
+	*then
+		-> chilirosa_hallway_interation
+
+@chilirosa_hallway_viewliving
+	*say
+		You view the living room. Ms. Chilirosa is sitting next to the table and having her lunch. She is sprinkling sauce on her pasta. That is, the hot sauce you want. [Action_Sound] You can go to living room at anytime, but she is in the living room right now, you should do something to lead her away first.
+	*then
+		-> chilirosa_hallway_interation
+
+@chilirosa_hallway_viewcloset
+	*say
+		You view the closet. It's a large closet. You opened up the closet, a bunch of clothes are hanging in the closet. Suprisely it's large enough for you to hide in. [Action_Sound] If you want to hide in the closet, you can say hide in the closet.
+	*then
+		-> chilirosa_hallway_interation
+
+@chilirosa_hallway_viewdoor
+	*say
+		You view the door. That's the door you sneaked in from. [Action_Sound]If you want to give up of stealing the hot sauce, you can come to the hallway and say leave from the door.
+	*then
+		-> chilirosa_hallway_interation
+
 @Luke Returns
-    *say
+	*say
         Luke returns and apologizes to the alchemist.
     *then 
         >>END
+
 @Luke Watches From the Distance
-    *say
+	*say
         In the disance, you see Luke quietly watching
     *then
         >>END
+
 @Luke Is Nowhere To Be Found
-    *then
+	*then
         >>END
-        
+
