@@ -24,5 +24,6 @@
   "EOA": "</voice>",
   "SeedTrader": "<voice name='Matthew'>",
   "Short_Pause": "<break time='0.2s'/>",
-  "Long_Pause": "<break time='0.8s'/>"
+  "Long_Pause": "<break time='0.8s'/>",
+  "Alchemist": "<voice name='Russell'>"
 }

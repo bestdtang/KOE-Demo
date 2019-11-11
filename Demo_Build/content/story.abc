@@ -984,6 +984,9 @@ Get the Hot Sauce 1
         Luke grabs you back into the tent and shows you all of his merchandise.
     *then
         unflag anotherItem
+        unflag plot12
+        unflag plot3
+        unflag plot4
         -> MysMan Introduces Himself 2
         
 @MysMan Introduces Himself 2
@@ -1118,6 +1121,7 @@ Get the Hot Sauce 1
         [SeedTrader]
         this is the seed that is required to lift the curse. I've been finding it for years, [Short_Pause] but now I have not the courage to face him. You need to bring the seed to him.[Pause] [EOA]
     *then
+        flag plot12
         -> End of ACT III, 1&2
 
 @End of ACT III, 1&2
@@ -1188,6 +1192,7 @@ Get the Hot Sauce 1
         [SeedTrader]
         I've been also researching for this curse, and it looks you will also need this seed to lift it. This seed is called the EUREKA seed. Take it with you. [EOA]
     *then
+    flag plot3
         -> End of ACT III, 3
         
 @End of ACT III, 3
@@ -1243,6 +1248,7 @@ Get the Hot Sauce 1
         [SeedTrader]
         I've been also researching for this curse, and it looks you will also need this seed to lift it. This seed is called the EUREKA seed. Take it with you. [EOA]
     *then
+        flag plot4
         -> End of ACT III, 4
         
 @End of ACT III, 4
@@ -1741,3 +1747,300 @@ Listen, the leading flower is singing you the way .[Voice_End][DirSound_Small][V
 	*then
 		-> PA_position
 
+
+//TODO: ACT V Start
+@Arrival At The Inner Cave
+    *say
+        You see the oasis, and a floating gem in the middle. It's the citrine. You see an old man looking at you.
+        [Alchemist]
+        Oh my, o my o my omy, the first person to visit my glorious palace in the deep caverns. You must be really tired, aren't you?[EOA] [LongPause]
+    *then
+        -> Alchemist Grabs You
+
+@Alchemist Grabs You
+    *say
+        [Alchemist] 
+        You must excuse my attitude, but I must show you the way to my hut, where you will get some rest while I finish up stuff out here. [EOA]
+
+        He grabs you firmly on the arm and you both quickly enter the hut. He sits you on a tiny little chair, then quickly exits the room.
+
+        [Alchemist] 
+        Just wait for a second, will you? [EOA]
+
+        He shuts the door.
+    
+    *then
+        ->Escape The Room
+        
+@Escape The Room
+    *say
+        Escape the room details here.
+    *then
+        -> Exit The Room
+        
+@Exit The Room
+    *say
+        [Alchemist] 
+        AH! [EOA]
+
+        You find the alchemist in your face. He is scared as you suddenly open the door.
+
+        [Alchemist] 
+        Sorry, it's been a long time since I've seen anyone else. You're the first one to enter the cave, and I don't know how to act, so I locked you in. I'm working on the last step to my latest work, care to join? [EOA]
+    *then
+        hear yes, sure {
+            -> Join The Alchemist At the Cauldron
+        }
+        hear no, nope {
+            -> Alchemist Asks Again
+        }
+        hear hand him the seed, the seed {
+            -> Alchemist Asks
+        }
+        hear hand him the eureka plant, the plant {
+            -> Alchemist Asks More
+        }
+        
+@Join The Alchemist At the Cauldron
+    *say
+        [Alchemist] 
+        Here we go! [EOA]
+
+        The cauldron explodes. Nothing was made. It was a failure. The alchemist looks at you and cries
+
+        [Alchemist] Why? I thought I had everything right. I was supposed to be ready on the day you arrive. What ingredient am I missing? [EOA]
+    *then
+        hear hand him the seed, the seed {
+            -> Alchemist Asks
+        }
+        hear hand him the eureka seed, eureka, plant {
+            -> Alchemist Asks More
+        }
+        
+@Alchemist Asks Again
+    *say
+        Are you sure? You might get something that you seek.
+    *then
+        hear yes, sure {
+            -> Join The Alchemist At the Cauldron
+        }
+        hear no {
+            -> Alchemist Teel You to Stay Here
+        }
+        
+@Alchemist Teel You to Stay Here
+    *say
+        [Alchemist]
+        Oh well, I guess that you're just afraid of explosions. It's ok. Just stay here and watch.[EOA]
+    *then
+        -> Alchemist Performs At the Cauldron And Fails
+        
+@Alchemist Performs At the Cauldron And Fails
+    *say
+        [Alchemist] 
+        Here we go! [EOA]
+
+        The cauldron explodes. Nothing was made. It was a failure. The alchemist looks at you and cries
+
+        [Alchemist] Why? I thought I had everything right. I was supposed to be ready on the day you arrive. What ingredient am I missing? [EOA]
+    *then
+        hear hand him the seed, the seed {
+            -> Alchemist Asks
+        }
+        hear hand him the eureka seed, eureka, plant {
+            -> Alchemist Asks More
+        }
+
+@Alchemist Asks 
+    *say
+        [Alchemist] 
+        Wait, who gave you this seed?[EOA]
+    *then
+        hear luke {
+            -> Alchemist Questions About Luke
+        }
+        hear desert trader {
+            -> Alchemist Questions About the Seed
+        }
+
+@Alchemist Questions About Luke
+    *say
+        [Alchemist] 
+        What? Luke sent you this seed? LUKE SENT YOU THIS SEED? Oh, now he knows how to be an apprentice? To not stab his master in the back? Did he tell you about what happened? [EOA]
+    *then 
+        hear yes {
+            -> Alchemist Continues to Scold Luke
+        }
+        hear no {
+            -> None of It Matters Anyway
+        }
+        
+@Alchemist Continues to Scold Luke
+    *say
+        [Alchemist] 
+        So you know, right? Unbelievable. What else did he say?[EOA]
+    *then
+        hear sorry {
+            -> Alchemist Asks What Luke Says Again
+        }
+        hear nothing {
+            -> Alchemist Scolds Luke Thrice
+        }
+        //TODO: update this part; shouldn't be 'anything else'
+        hear anything else {
+            -> Alchemist Scolds Luke For His Weird Behaviour
+        }
+        
+@Alchemist Asks What Luke Says Again
+    *say
+        [Alchemist]
+        What? [EOA]
+    *then
+        hear sorry {
+            -> Alchemist Sits Down
+        }
+        hear nothing {
+            -> Alchemist Scolds Luke Thrice
+        }
+        //TODO: update this part; shouldn't be 'anything else'
+        hear anything else {
+            -> Alchemist Scolds Luke For His Weird Behaviour
+        }
+
+@Alchemist Scolds Luke Thrice
+    *say
+        [Alchemist] 
+        Hmph. This Mandrake, well he ought to give it to me. Now, let me end this curse, come with me. [EOA]
+    *then
+        -> Alchemist Brews Potion
+
+@Alchemist Scolds Luke For His Weird Behaviour
+    *say    
+        [Alchemist] 
+        What? That doesn't sound like what he would have said. Anyways, I deserve this Mandrake. I will end this crisis once and for all. [EOA]
+    *then
+        -> Alchemist Brews Potion
+
+@Alchemist Sits Down
+    *say
+        [Alchemist] 
+        Oh. [EOA]
+
+        He goes back to the hut and looks at his photo with Luke.
+
+        [Alchemist] 
+        After all this time, huh? You know, we used to be partners. I mean, he is still an apprentice to me, but we act like partners. We used to say to each other Eureka! When we succeeded on our experiment. You said this seed was from him? [EOA]
+    *then
+        hear yes, sure {
+            -> Alchemist Accepts
+        }
+        hear no {
+            -> Alchemist Smirks And Accepts
+        }
+        
+@Alchemist Accepts
+    *say
+        [Alchemist] 
+        Oh pal. How long have I waited you. Come, let's finish this potion and end this curse once and for all. [EOA]
+    *then
+        -> Alchemist Brews Potion
+
+@Alchemist Smirks And Accepts
+    *say
+        [Alchemist]
+        Ha. This has to be him. Let's finish this once and for all, shall we? [EOA]
+    *then
+        -> Alchemist Brews Potion
+
+@None of It Matters Anyway
+    *say
+        [Alchemist] 
+        So what, did he say anything? [EOA]
+    *then
+        hear sorry {
+            -> Alchemist Asks What Luke Says Again
+        }
+        hear nothing {
+            -> Alchemist Scolds Luke Thrice
+        }
+        //TODO: update this part; shouldn't be 'anything else'
+        hear anything else {
+            -> Alchemist Scolds Luke For His Weird Behaviour
+        }
+        
+@Alchemist Questions About the Seed
+    *say
+        [Alchemist] 
+        Do you even know what this seed is? This seed is called the Glimmerbrook Mandrake, and is impossible to come by anywhere around. This person you meet, must be also a great alchemist and botanist. Hard to find this thing around here. Come, let's see if this works. [EOA]
+    *then
+        -> Alchemist Brews Potion
+
+@Alchemist Asks More
+    *say
+        [Alchemist] 
+        What? This is called Eureka? Did the guy who gave you this told you that it's called Eureka? [EOA]
+    *then
+        hear yes {
+            -> Alchemist Realizes
+        }
+        hear no {
+            -> Alchemist Smirks
+        }
+        
+@Alchemist Realizes
+    *say
+        [Alchemist] 
+        Oh. [EOA]
+
+        The alchemist pauses for a second.
+
+        [Alchemist] Oh, partner. Why don't you just come to me directly? Well, my partner back in the day and I used to use this word a lot when we made progress. And I know it was him that you met, because this plant is not called Eureka, but a Glimmerbrook Mandrake. If he gave this to you, it means that this is the ingredient I'm missing. Come, let's finish this. [EOA]
+    *then
+        -> Alchemist Brews Potion
+
+@Alchemist Smirks
+    *say
+        [Alchemist]
+        Ha. It's funny because Eureka is a word that I use a lot with my old friend back in the day. Well, until that night when the incident happened. Could be just a happy accident, though. This seed is not called Eureka, but Glimmerbrook Mandrake. This person you meet, must be also a great alchemist and botanist. Hard to find this thing around here. Come, let's see if this works. [EOA]
+    *then
+        -> Alchemist Brews Potion
+        
+@Alchemist Brews Potion
+    *say
+        [Alchemist] 
+        Let's do this.[EOA]
+
+        He brews the potion. Suddenly the skies are filled with dark clouds, then it starts pouring rain. But it was not stinky rain. Conversely, it washes away the stench.
+
+        [Alchemist] 
+        Eureka! Quick. We must bring back this potion the town instantly. [EOA]
+        
+    *then
+        -> Return Back To Town
+        
+@Return Back To Town
+    *say
+        The alchemist returns and apologizes everyone, and fixes the town.
+    *then
+        if plot12 {
+            -> Luke Returns
+        }
+        if plot3 {
+            -> Luke Watches From the Distance
+        }
+        -> Luke Is Nowhere To Be Found
+        
+@Luke Returns
+    *say
+        Luke returns and apologizes to the alchemist.
+    *then 
+        >>END
+@Luke Watches From the Distance
+    *say
+        In the disance, you see Luke quietly watching
+    *then
+        >>END
+@Luke Is Nowhere To Be Found
+    *then
+        >>END
+        
