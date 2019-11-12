@@ -1717,13 +1717,13 @@ Get the Hot Sauce 1
 
 @chilirosa_hallway_hidekettle
 	*say
-		You hide into the closet. Right after you close the closet, the kettle starts to whistle. Misses Chilirosa hears it, walks pass the hallway to the kitchen, and turns the kettle off. She then goes back to the living room, muttering about the stench. You come out of the closet. You should find a way to leave her in the kitchen for a longer time.
+		You hide into the closet. Right after you close the closet, the kettle starts to whistle. Misses Chilirosa hears it, walks past the hallway to the kitchen, and turns the kettle off. She then goes back to the living room, muttering about the stench. You come out of the closet. You should find a way to leave her in the kitchen for a longer time.
 	*then
 		-> chilirosa_hallway_interation
 
 @chilirosa_hallway_hidepotkettle
 	*say
-		You hide into the closet. Right after you close the door, the kettle starts to whistle. Misses Chilirosa hears it, walks pass the hallway to the kitchen. She turns the kettle off and finds that the pot is also on. The soup is not boiling dry yet. She turns the pot off, then goes back to the living room. Hearing that, you come out of the closet. You should find a way to leave her in the kitchen for a longer time.
+		You hide into the closet. Right after you close the door, the kettle starts to whistle. Misses Chilirosa hears it, walks past the hallway to the kitchen. She turns the kettle off and finds that the pot is also on. The soup is not boiling dry yet. She turns the pot off, then goes back to the living room. Hearing that, you come out of the closet. You should find a way to leave her in the kitchen for a longer time.
 	*then
 		-> chilirosa_hallway_interation
 @chilirosa_living_caught
@@ -1902,11 +1902,11 @@ Get the Hot Sauce 1
 
 @chilirosa_kitchen_viewpot_boil
 	*say
-		You view the pot. It's been heaten up. The soup will be boiled dry soon and the pot will be burnt.
+		You look at the pot. It's cooking on the stove. The soup will be boiled dry soon and the pot will be burnt.
 
 @chilirosa_kitchen_caught_pot_stay
 	*say
-		The soup is been boiled dry and the pot is burnt. Misses Chilirosa comes over to check on the stove but finds you instead. You are caught. She throws you out of her house.
+		The soup has been boiled dry and the pot is burnt. Misses Chilirosa comes over to check on the stove but finds you instead. You are caught. She throws you out of her house.
 
 @chilirosa_kitchen_caught_kettle_stay
 	*say
