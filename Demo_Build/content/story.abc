@@ -729,14 +729,14 @@ Get the Hot Sauce 1
 		[Mayor]
         Oh, thank you for bringing me the hot sauce. What brings you here?[EOA] [ConversationQuestionSound]
 	*then
-		hear smell, incident, help {
+				hear smell, incident, help, yes, right {
 			-> Mayor Talks More About the Incident
 		}
 		hear who are you{
 		    -> Mayor Self Introduction
 		}
 	*recap
-		you come here because you need more information on the smell. right?
+		You come here because you need more information on the smell. right?
 	*reprompt
 		Wait, you come here because you need more information on the smell. right?
 
@@ -1619,30 +1619,29 @@ Get the Hot Sauce 1
 
 @chilirosa_hallway_around
 	*say
-		You are in the hallway. There is a closet standing next to you, the main door behind you, and two rooms in front of you. They are, the living room, and the kitchen. Where is the sauce? And where is Misses Chilirosa? [Action_Sound]You can look at different things and rooms from the hallway to see more details.
+		You are in the hallway. There is a closet standing next to you, the main door behind you, and two rooms in front of you. They are, the living room, and the kitchen. Where is the sauce? And where is Misses Chilirosa? [Action_Sound]You can view different things and rooms from the hallway to see more details.
 	*then
 		-> chilirosa_hallway_interation
-
 @chilirosa_hallway_interation
 	*say
 		
 	*then
-		hear look at the door {
+		hear view the door, look at the door {
 			-> chilirosa_hallway_viewdoor
 		}
 
-		hear look at the closet {
+		hear view the closet, look at the closet {
 			-> chilirosa_hallway_viewcloset
 		}
 
-		hear look at the living room {
+		hear view the living room, look at the living room {
 			-> chilirosa_hallway_viewliving
 		}
 
-		hear look at kitchen {
+		hear view the kitchen, look at kitchen {
 			-> chilirosa_hallway_viewkitchen
 		}
-		hear go to kitchen, kitchen {
+		hear go to kitchen {
 		    if turn_kettle{
 		        -> chilirosa_kitchen_caught_kettle_back
 		    }
@@ -1687,9 +1686,9 @@ Get the Hot Sauce 1
 		    }
 		}
 	*recap
-		[Action_Sound]You can look at different objects to see more details, or look around.
+		[Action_Sound]You can view different objects, view different rooms to see more details, or look around.
 	*reprompt
-		[Action_Sound]You can look at different objects to see more details, or look around.
+		[Action_Sound]You can view different objects, view different rooms to see more details, or look around.
 
 @chilirosa_kitchen_pot_back
 	*say
@@ -1726,6 +1725,7 @@ Get the Hot Sauce 1
 		You hide into the closet. Right after you close the door, the kettle starts to whistle. Misses Chilirosa hears it, walks past the hallway to the kitchen. She turns the kettle off and finds that the pot is also on. The soup is not boiling dry yet. She turns the pot off, then goes back to the living room. Hearing that, you come out of the closet. You should find a way to leave her in the kitchen for a longer time.
 	*then
 		-> chilirosa_hallway_interation
+
 @chilirosa_living_caught
 	*say
 		You go to the living room. Misses Chilirosa is right there. You are caught. She throws you out of her house. Make sure you observe the room first, before you go in.
@@ -1858,7 +1858,7 @@ Get the Hot Sauce 1
 		    }
 			-> chilirosa_kitchen_caught_turnwater
 		}
-		hear turn on pot {
+		hear turn on the pot, turn on pot {
 		    if pot_count is 1{
 		        -> chilirosa_kitchen_caught_pot_stay
 		    }
