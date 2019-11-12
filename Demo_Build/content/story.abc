@@ -51,7 +51,7 @@
 	*say
 		You walked under the hot sun until you have reached the top of a little sand hill. It grants you some height advantage. Now you can see what's around you. [Pause] [DirectionQuestionSound]Sometimes, paths aren't obvious at first glance just like now. You can check around first by saying what's around me. Go on, give it a go.
 	*then
-		hear what is around me, around me {
+		hear what's around me,check, what is around me, check what's around me, around me {
             -> Check Around the Hill
         }
 	*reprompt
@@ -119,9 +119,9 @@
 
 @Store
 	*say
-		Upon approaching the general store, you see a boy. He wears a red coat, and you can see surprised written all over his face. [Long_Pause][Kid] You are a new face here. Do you need help? [Short_Pause] You don't look well.[/Kid] [Long_Pause] Maybe the little boy has water. You can ask if there's water. [ConversationQuestionSound] When you hear this sound, you decide what to say to the other person next. For example, right now you can say: ask the boy for water. [Short_Pause] Try it!
+		Upon approaching the general store, you see a boy. He wears a red coat, and you can see surprised written all over his face. [Long_Pause][Kid] You are a new face here. Do you need help? [Short_Pause] You don't look well.[/Kid] [Long_Pause] Maybe the little boy has water. You can ask if there's water. [ConversationQuestionSound] When you hear this sound, you decide what to say to the other person next. For example, right now you can ask the boy for water. [Short_Pause] Try it!
 	*then
-		hear ask for water, ask the boy, ask the boy for water {
+		hear do you have water, ask for water, ask the boy, ask the boy for water {
 			-> Boy
 		}
 
@@ -131,8 +131,8 @@
 		[Kid] 
 	    I can help you with that. [Short_Pause] But I must warn you. [Short_Pause] Situations in the house aren't exactly desirable. [Short_Pause] In a sense.[/Kid] [Pause]
 		The boy takes you around the building and enters the store from the backdoor. [Pause] Oh dear. [Pause] It is far from being desirable. The air in the store is nothing of this world. It's foul and revolting. Each step you take is like a deeper dive into the bowels of a carnivorous beast. [Pause]
-		[Kid] 
-		Yeah. Told you Papa! [Pause] [/Kid] 
+		[Kid]
+		Yeah. Told you! [Pause] [/Kid] 
 		[Pause] A bald, middle-aged man that looks like in his fifties are slowly walks down the stairs. [Pause] Small pieces of tissue paper are rolled and stuck in his nose. He looks like he could use some more sunshine.
 	*then
 		-> Shopkeeper
@@ -212,7 +212,9 @@
 
 @Ask Shopkeeper
 	*say
-		[Man]A while ago the town was famed for our Shawarma. People would come all the way from cities to this dune for a taste of it.[Pause] By the way. What's your name, traveler?[EOA]
+		[Man]A while ago the town was famed for our Shawarma. People would come all the way from cities to this dune for a taste of it.[Pause] 
+		//By the way. What's your name, traveler?
+		[EOA]
 		[ConversationQuestionSound]
 	*then
 		//slot playerName_ to 'AMAZON.US_FIRST_NAME'
@@ -275,7 +277,7 @@
 		[Kid] 
 		But papa, you haven't told him anything about how to solve the problem. [EOA]
 		[Man]
-		Oh yes, yes. hey, perhaps you can go ask if the mayor knows anything more. After all, he's the who put up this poster. Maybe he knows more.[EOA]
+		Oh yes, yes. hey, perhaps you can go ask if the mayor knows anything more. After all, he's the one put up this poster. Maybe he knows more.[EOA]
 		[Kid] 
 		But the mayor is also locking himself up. No one has seen him for a while. [EOA]
 		[Man] 
@@ -292,6 +294,7 @@
 	*then
 		hear one, ask for one, ask one {
 	        -> One Bottle of Sauce
+	        // TODO: fix the loop
 	    }
 	    hear ask about the mayor, about the mayor, the mayor {
 	        -> Ask Shopkeeper About the Mayor
@@ -325,7 +328,7 @@
         [Kid]  
         Dad, didn't you just sell one to the Mrs. Chilirosa yesterday? [EOA] 
         [Man]  
-        Hmm, Oh yes, yes! I did sold one to her. [Short_Pause] Oh dear. I guess that's our last bottle in a while. Next batch is not coming in a week, and I need to drive all the way out of town to get it because they can't stand our stench! [EOA] 
+        Hmm, Oh yes, yes! I did sell one to her. [Short_Pause] Oh dear. I guess that's our last bottle in a while. Next batch is not coming in a week, and I need to drive all the way out of town to get it because they can't stand our stench! [EOA] 
         [Kid]  
         Stop murmuring, dad. [Short_Pause] Anyways, if you go ask Mrs. Chilirosa, she might have still have some left for you.[EOA]
 	*then
@@ -343,7 +346,7 @@
         hear what else, sell, what else do you sell {
             -> What Else Do You Sell
         }
-        hear ask more, ask more about Mrs Chilirosa, Misses Chilirosa, she, where {
+        hear ask more, tell me more, ask more about Mrs Chilirosa, Misses Chilirosa, she, where {
             -> Ask more about Chilirosa
         }
 
@@ -389,7 +392,7 @@
 	*say
 		[DirectionQuestionSound]There are a few things that you may want to check: A signpost, the mayor's office to your left, or you can go find the beauty salon.
 	*then
-		hear signpost, check the signpost {
+		hear signpost, check the signpost, read the signpost {
 		    set currentLocation as 'signpost'
             -> Signpost
         }
@@ -397,7 +400,7 @@
             set currentLocation as 'mayors office'
             -> Mayor's Office
         }
-        hear beauty salon, go find the beauty salon {
+        hear salon,beauty salon, go find the beauty salon, find the beauty salon {
             set currentLocation as 'outside of the beauty saloon'
             -> Beauty Salon
         }
@@ -410,7 +413,7 @@
 
 @Mayor's Office
 	*say
-		You're at the mayor's office. The doors are shut tight, and they seem like their locked. Somehow with the stench, it also smells very spicy. Besides knocking on the door, the office is so big that you probably need to shout to get his attention. What will you do?
+		You're at the mayor's office. The doors are shut tight, and they seem like their locked. Somehow with the stench, it also smells very spicy. Besides knocking on the door, the office is so big that you probably need to shout to get his attention. 
         [Action]   Now you can: Knock, bash, or try to open the door, check out the trash can, or go to another location.
 	*then
 		hear knock {
@@ -482,10 +485,10 @@
 	*recap
 		You can try knock again or knock harder
 	*then
-		hear again{
+		hear again, know again{
 	        -> Knock On Beauty Salon 2
 	    }
-	    hear harder, bash {
+	    hear harder, bash, know harder {
 	        -> Bash On Beauty Salon
 	    }
 
@@ -629,14 +632,14 @@
 	*say
 		[MrsChilirosa]
         Give me a reason why you need hot sauce. You want hot sauce because? [EOA]
-        [ConversationQuestionSound]So we have two plans here: Plan A, You tell her how you like the sauce; Plan B, tell her that you need it to get the mayor's attention. Which plan you do you want to go?
+        [ConversationQuestionSound] So we have two plans here: Plan A, You tell her how you like the sauce; Plan B, tell her that you need it to get the mayor's attention. Which plan you do you want to go?
 	*recap
-		We have two plans here: Plan A, make up a reason and lie; Plan B, tell her that you need it to get the mayor's attention. Which plan you do you want to go?
+		We have two plans here: First one, make up a reason and lie. Second one, tell her that you need it to get the mayor's attention. Which plan you do you want to go?
 	*then
-		hear A, plan A, make up, reason, lie {
+		hear A, first, make up, reason, lie {
             -> Tell Mrs Chilirose you like the Sauce
         }
-		hear B, plan B, tell her that I need it to get the mayor's attention, need {
+		hear B, second, tell her that I need it to get the mayor's attention, need {
 			-> Tell Mrs Chilirose Honestly
         }
         
@@ -1757,7 +1760,7 @@ Get the Hot Sauce 1
 	*reprompt
 		[Action_Sound] You should take the hot sauce.
 	*then
-		hear take the sauce, take sauce, take hot sauce, take it {
+		hear take the sauce, take sauce, take hot sauce, take the hot sauce, take it {
 			-> chilirosa_living_takesauce
 		}
 
@@ -1984,7 +1987,7 @@ Get the Hot Sauce 1
 
 @chilirosa_hallway_viewkitchen
 	*say
-		You view the kitchen. No body is in the kitchen. Some containers are on the stove. [Action_Sound] You can go to the kitchen if you want.
+		You view the kitchen. No one is in the kitchen. Some containers are on the stove. [Action_Sound] You can go to the kitchen if you want.
 	*then
 		-> chilirosa_hallway_interation
 
