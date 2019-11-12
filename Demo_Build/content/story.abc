@@ -14,7 +14,7 @@
 
 @start
 	*say
-		Greetings, explorer. [Short_Pause] Welcome to the Desert Adventurer experience!
+		Greetings, explorer. [Short_Pause] Welcome to the Desert Traveler experience!
 	*then
 		set currentLocation as 'desert'
 		-> Lost in Desert
@@ -51,7 +51,7 @@
 	*say
 		You walked under the hot sun until you have reached the top of a little sand hill. It grants you some height advantage. Now you can see what's around you. [Pause] [DirectionQuestionSound]Sometimes, paths aren't obvious at first glance just like now. You can check around first by saying what's around me. Go on, give it a go.
 	*then
-		hear what's around me, around me {
+		hear what is around me, around me {
             -> Check Around the Hill
         }
 	*reprompt
@@ -132,7 +132,7 @@
 	    I can help you with that. [Short_Pause] But I must warn you. [Short_Pause] Situations in the house aren't exactly desirable. [Short_Pause] In a sense.[/Kid] [Pause]
 		The boy takes you around the building and enters the store from the backdoor. [Pause] Oh dear. [Pause] It is far from being desirable. The air in the store is nothing of this world. It's foul and revolting. Each step you take is like a deeper dive into the bowels of a carnivorous beast. [Pause]
 		[Kid] 
-		Yeah. Told you. Papa! [Pause] [/Kid] 
+		Yeah. Told you Papa! [Pause] [/Kid] 
 		[Pause] A bald, middle-aged man that looks like in his fifties are slowly walks down the stairs. [Pause] Small pieces of tissue paper are rolled and stuck in his nose. He looks like he could use some more sunshine.
 	*then
 		-> Shopkeeper
@@ -215,15 +215,15 @@
 		[Man]A while ago the town was famed for our Shawarma. People would come all the way from cities to this dune for a taste of it.[Pause] By the way. What's your name, traveler?[EOA]
 		[ConversationQuestionSound]
 	*then
-		slot playerName_ to 'AMAZON.US_FIRST_NAME'
-		hear {playerName_}, my name is {playerName_} {
+		//slot playerName_ to 'AMAZON.US_FIRST_NAME'
+		//hear {playerName_}, my name is {playerName_} {
 			-> Ask for Help
-		}
+		//}
 
 @Ask for Help
 	*say
 		[Man] 
-		That's a rare name around here. [Pause] Anyway, {playerName_},  this is a desert so you could imagine it never rains here [Short_Pause] until that night. [Pause] On that night. We've seen the greatest thunderstorm of the town's history, [Short_Pause] but no-one anticipated what came after.[EOA]
+		That's a rare name around here. [Pause] Anyway, this is a desert so you could imagine it never rains here [Short_Pause] until that night. [Pause] On that night. We've seen the greatest thunderstorm of the town's history, [Short_Pause] but no-one anticipated what came after.[EOA]
         [Kid]
         [Long_Pause] And then the next morning, my dad started sweating like a cow. So did everyone else. But not me.[/Kid]
         [Man]
@@ -254,7 +254,7 @@
 		hear store, general store, go to the general store {
 			-> Store
 		}
-		hear what is around me {
+		hear what is around me,around me {
 			-> Around_1
 		}
 	*recap
@@ -585,15 +585,16 @@
 	*reprompt
 		<amazon:effect name="whispered">say your name!</amazon:effect>.
 	*then
-		slot playerName to 'AMAZON.US_FIRST_NAME'
-		hear {playerName}, my name is {playerName} {
+		//slot playerName to 'AMAZON.US_FIRST_NAME'
+		//hear {playerName}, my name is {playerName} {
 			-> Answer Your Name
-        }
+        //}
 
 @Answer Your Name
 	*say
 		[MrsChilirosa]
-        Oh, thank you, dear {playerName}. What can I give you in exchange? [EOA]
+        //Oh, thank you, dear {playerName}. 
+        What can I give you in exchange? [EOA]
 	*then
 		-> Meet Mrs Chilirosa
 
@@ -975,11 +976,11 @@ Get the Hot Sauce 1
 		[SeedTrader]
         Thanks.  What's your name? [EOA]
 	*then
-		slot playerName__ to 'AMAZON.US_FIRST_NAME'
+		//slot playerName__ to 'AMAZON.US_FIRST_NAME'
         
-        hear {playerName__}, my name is {playerName__} {
+        //hear {playerName__}, my name is {playerName__} {
             -> MysMan Introduces Himself
-        }
+        //}
 
 @MysMan Introduces Himself
 	*say
@@ -1617,7 +1618,7 @@ Get the Hot Sauce 1
 	*say
 		You decided to sneak into Misses Chilirosa's home to steal the hot sauce. You open the the door carefully, and sneak into the hallway.  [Action_Sound]At anytime, you can say look around me to explore the rooms.
 	*then
-		hear look around me, look around the hallway {
+		hear look around me, look around the hallway, around me {
 			-> chilirosa_hallway_around
 		}
 
