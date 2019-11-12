@@ -131,9 +131,8 @@
 		[Kid] 
 	    I can help you with that. [Short_Pause] But I must warn you. [Short_Pause] Situations in the house aren't exactly desirable. [Short_Pause] In a sense.[/Kid] [Pause]
 		The boy takes you around the building and enters the store from the backdoor. [Pause] Oh dear. [Pause] It is far from being desirable. The air in the store is nothing of this world. It's foul and revolting. Each step you take is like a deeper dive into the bowels of a carnivorous beast. [Pause]
-		[Kid]
-		Yeah. Told you! [Pause] [/Kid] 
-		[Pause] A bald, middle-aged man that looks like in his fifties are slowly walks down the stairs. [Pause] Small pieces of tissue paper are rolled and stuck in his nose. He looks like he could use some more sunshine.
+		[Kid] Yeah. Told you! [Pause] [/Kid] 
+		[Pause] A bald, middle-aged man that looks like in his fifties are slowly walks down the stairs. [Kid] Papa! [Pause] [/Kid] Small pieces of tissue paper are rolled and stuck in his nose. He looks like he could use some more sunshine.
 	*then
 		-> Shopkeeper
 
@@ -979,7 +978,9 @@ Get the Hot Sauce 1
 @MysMan Saved
 	*say
 		[SeedTrader]
-        Thanks.  What's your name? [EOA]
+        Thanks.  
+        //What's your name? 
+        [EOA]
 	*then
 		//slot playerName__ to 'AMAZON.US_FIRST_NAME'
         
@@ -1629,7 +1630,7 @@ Get the Hot Sauce 1
 
 @chilirosa_hallway_around
 	*say
-		You are in the hallway. There is a closet standing next to you, the main door behind you, and two rooms in front of you. They are, the living room, and the kitchen. Where is the sauce? And where is Misses Chilirosa? [Action_Sound]You can view different things and rooms from the hallway to see more details.
+		You are in the hallway. There is a closet standing next to you, the main door behind you, and two rooms in front of you. They are, the living room, and the kitchen. [Action_Sound]You can view different things and rooms from the hallway to see more details.
 	*then
 		-> chilirosa_hallway_interation
 @chilirosa_hallway_interation
