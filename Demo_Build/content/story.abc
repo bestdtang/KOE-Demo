@@ -1591,6 +1591,10 @@ Get the Hot Sauce 1
 		You want to sneak into Misses Chilirosa's house to grab the hot sauce, do you?
 	*then
 		hear yes {
+		    set pot_count as 0
+		    unflag turn_pot
+		    unflag turn_kettle
+		    unflag hide
 			-> chilirosa_door
 		}
 		hear no {
