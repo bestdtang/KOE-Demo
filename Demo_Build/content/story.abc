@@ -458,7 +458,7 @@
 
 @Arrive Beauty Salon
 	*say
-		You're at the front door of the beauty salon. Looks like its doors are shut tight, but they don't look locked, and you hear the sounds of radio inside. Anyways, you should talk to her, but what should you do?
+		You're at the front door of the beauty salon. It looks like someone's house except there's a sign at front. Looks like its doors are shut tight, but they don't look locked, and you hear the sounds of radio inside. Anyways, you should talk to her, but what should you do?
         [Action]Now you can: Knock on the door, bash on the door, open the door directly, or check on the green patch before.
 	*then
 		hear knock, knock on the door {
@@ -482,10 +482,10 @@
 	*recap
 		You can try knock again or knock harder
 	*then
-		hear knock again, again{
+		hear again{
 	        -> Knock On Beauty Salon 2
 	    }
-	    hear knock harder, harder, bash {
+	    hear harder, bash {
 	        -> Bash On Beauty Salon
 	    }
 
@@ -578,12 +578,14 @@
 @Give Mrs Chilirosa the flower
 	*say
 		[MrsChilirosa]
-        Why, thank you, dear... What's your name? [EOA]
-        <amazon:effect name="whispered">say your name!</amazon:effect>.
+        Why, thank you, dear... 
+        //What's your name? 
+        [EOA]
+        //<amazon:effect name="whispered">say your name!</amazon:effect>.
 	*recap
-		maybe try a more common one?
+		//maybe try a more common one?
 	*reprompt
-		<amazon:effect name="whispered">say your name!</amazon:effect>.
+		//<amazon:effect name="whispered">say your name!</amazon:effect>.
 	*then
 		//slot playerName to 'AMAZON.US_FIRST_NAME'
 		//hear {playerName}, my name is {playerName} {
@@ -627,9 +629,9 @@
 	*say
 		[MrsChilirosa]
         Give me a reason why you need hot sauce. You want hot sauce because? [EOA]
-        [ConversationQuestionSound]So we have two plans here: Plan A, You tell her how you like the sauce; Plan B, tell her that you need it to get the mayor's attention. Which plan you wanna go?
+        [ConversationQuestionSound]So we have two plans here: Plan A, You tell her how you like the sauce; Plan B, tell her that you need it to get the mayor's attention. Which plan you do you want to go?
 	*recap
-		We have two plans here: Plan A, make up a reason and lie; Plan B, tell her that you need it to get the mayor's attention. Which plan you wanna go?
+		We have two plans here: Plan A, make up a reason and lie; Plan B, tell her that you need it to get the mayor's attention. Which plan you do you want to go?
 	*then
 		hear A, plan A, make up, reason, lie {
             -> Tell Mrs Chilirose you like the Sauce
@@ -744,7 +746,7 @@ Get the Hot Sauce 1
 @Mayor Talks More About the Incident
 	*say
 		[Mayor]
-        Yes. There is a cave that we know to the Eastern valleys, but all we know is that the cave is guarded by puzzles and challenges. But what's beyond that nobody knows.[EOA]
+        Yes. There is a cave that we know to the Eastern valleys, but all we know is that the cave is guarded by puzzles and challenges. But what's beyond that nobody knows.you can ask about: the cave, puzzles, eastern valleys, the town, or leave to the cave[EOA]
 	*reprompt
 		you can ask about: the cave, puzzles, eastern valleys, the town, or leave to the cave
 	*then
@@ -883,12 +885,12 @@ Get the Hot Sauce 1
         I hope that these information are useful to you. We're all looking forward to seeing the town coming back to life some day. Good luck! [EOA]
         You leave the mayor's office, back on to the streets. The shopkeeper stands outside.
         [Man]
-        are you leaving? bring some of these with you. If you're ready, the horse over there is ready for you; but if you're tired, take some rest. [EOA]
+        are you leaving? bring some of these with you. If you're ready, the horse over there is ready for you; but if you are tired. take some rest. Would you like to leave or take some rest?[EOA]
 	*then
 		hear rest, take some rest {
 	        >>END
 	    }
-	    hear ready {
+	    hear ready,leave {
 	        -> Been Walking For Days
 	    }
 
