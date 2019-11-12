@@ -212,7 +212,9 @@
 
 @Ask Shopkeeper
 	*say
-		[Man]A while ago the town was famed for our Shawarma. People would come all the way from cities to this dune for a taste of it.[Pause] By the way. What's your name, traveler?[EOA]
+		[Man]A while ago the town was famed for our Shawarma. People would come all the way from cities to this dune for a taste of it.[Pause] 
+		//By the way. What's your name, traveler?
+		[EOA]
 		[ConversationQuestionSound]
 	*then
 		//slot playerName_ to 'AMAZON.US_FIRST_NAME'
@@ -223,7 +225,8 @@
 @Ask for Help
 	*say
 		[Man] 
-		That's a rare name around here. [Pause] Anyway, this is a desert so you could imagine it never rains here [Short_Pause] until that night. [Pause] On that night. We've seen the greatest thunderstorm of the town's history, [Short_Pause] but no-one anticipated what came after.[EOA]
+		//That's a rare name around here. [Pause] 
+		Anyway, this is a desert so you could imagine it never rains here [Short_Pause] until that night. [Pause] On that night. We've seen the greatest thunderstorm of the town's history, [Short_Pause] but no-one anticipated what came after.[EOA]
         [Kid]
         [Long_Pause] And then the next morning, my dad started sweating like a cow. So did everyone else. But not me.[/Kid]
         [Man]
@@ -362,7 +365,7 @@
         Yeah! All my friends who visited her shop came out with hair that smelled spicy for days! [EOA]
         [Man] 
         But I know what she also likes. [Short_Pause] As funny as it may sound, she also likes roses. But I doubt you'll be finding any of them around. Not in this desert.[EOA]
-        Now you can leave the store, or ask again
+       [Action_Sound] Now you can leave the store, or ask again
 	*recap
 		Now you can leave the store, or ask again
 	*then
@@ -372,7 +375,6 @@
         hear ask again, ask {
             -> Ask more about Chilirosa
         }
-
 @Leave the Store
 	*say
 		Just as you are about to leave the store, the shopkeeper stops you.
@@ -470,11 +472,20 @@
             -> Bash On Beauty Salon
         }
 		hear open the door directly {
-			-> chilirosa_steal_puzzle_start
+			-> Open the Beauty Salon Directly
         }
         hear check the green patch before, green patch, check {
+            if flower{
+                -> Check the Green Patch Again
+            }
             -> check the Green Patch
         }
+
+@Check the Green Patch Again
+	*say
+		You walk back to the patch of green sitting in the corner of a building. You've picked up a rose from here before.
+	*then
+		-> Arrive Beauty Salon
 
 @Knock On Beauty Salon
 	*say
@@ -674,13 +685,13 @@
 
 @Open the Beauty Salon Directly
 	*say
-		you tried to open the door directly, you entered! Then you noticed there is a hot sauce on the desk. That's it! you took it quietly and sneaked out.
+		You tried to open the door directly, you entered! Then you noticed that the beauty salon is connect to Misses Chilirosa's house.
 	*then
-		-> Get the Hot Sauce
+		-> chilirosa_steal_puzzle_start
 
 @check the Green Patch
 	*say
-		You walk back to the patch of green sitting in the corner of a building. Oh dear, in a dry desert like this, you found a rose with a bright red color on it. You pick up the rose and hold it in your hand.
+		You walk back to the patch of green sitting in the corner of a building. Oh dear, in a dry desert like this, you found a rose with a bright red color on it. You pick up the rose and hold it in your hand. 
 	*then
 		flag flower
         -> Arrive Beauty Salon
@@ -732,7 +743,7 @@ Get the Hot Sauce 1
 		[Mayor]
         Oh, thank you for bringing me the hot sauce. What brings you here?[EOA] [ConversationQuestionSound]
 	*then
-				hear smell, incident, help, yes, right {
+		hear smell, incident, help, yes, right {
 			-> Mayor Talks More About the Incident
 		}
 		hear who are you{
@@ -976,7 +987,9 @@ Get the Hot Sauce 1
 @MysMan Saved
 	*say
 		[SeedTrader]
-        Thanks.  What's your name? [EOA]
+        Thanks.  
+        //What's your name? 
+        [EOA]
 	*then
 		//slot playerName__ to 'AMAZON.US_FIRST_NAME'
         
@@ -1629,6 +1642,7 @@ Get the Hot Sauce 1
 		You are in the hallway. There is a closet standing next to you, the main door behind you, and two rooms in front of you. They are, the living room, and the kitchen. Where is the sauce? And where is Misses Chilirosa? [Action_Sound]You can view different things and rooms from the hallway to see more details.
 	*then
 		-> chilirosa_hallway_interation
+
 @chilirosa_hallway_interation
 	*say
 		
