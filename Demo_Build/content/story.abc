@@ -124,6 +124,10 @@
 		hear do you have water, ask for water, ask the boy, ask the boy for water {
 			-> Boy
 		}
+	*recap
+		Try ask the boy for water
+	*reprompt
+		 Try ask the boy for water
 
 @Boy
 	*say
@@ -224,7 +228,8 @@
 @Ask for Help
 	*say
 		[Man] 
-		That's a rare name around here. [Pause] Anyway, this is a desert so you could imagine it never rains here [Short_Pause] until that night. [Pause] On that night. We've seen the greatest thunderstorm of the town's history, [Short_Pause] but no-one anticipated what came after.[EOA]
+		//That's a rare name around here. 
+		[Pause] Anyway, this is a desert so you could imagine it never rains here [Short_Pause] until that night. [Pause] On that night. We've seen the greatest thunderstorm of the town's history, [Short_Pause] but no-one anticipated what came after.[EOA]
         [Kid]
         [Long_Pause] And then the next morning, my dad started sweating like a cow. So did everyone else. But not me.[/Kid]
         [Man]
@@ -301,6 +306,8 @@
 	    hear ask about the sauce, about the sauce, the sauce {
 	        -> Ask Shopkeeper About the Sauce
 	    }
+	*reprompt
+		You can ask about the mayor, ask about the sauce, or ask for one bottle
 
 @Ask Shopkeeper About the Mayor
 	*say
@@ -403,6 +410,10 @@
             set currentLocation as 'outside of the beauty saloon'
             -> Beauty Salon
         }
+	*recap
+		[DirectionQuestionSound]There are a few things that you may want to check: A signpost, the mayor's office to your left, or you can go find the beauty salon.
+	*reprompt
+		[DirectionQuestionSound]There are a few things that you may want to check: A signpost, the mayor's office to your left, or you can go find the beauty salon.
 
 @Signpost
 	*say
@@ -481,9 +492,10 @@
 @Beauty Salon
 	*say
 		You started walking towards the end of the street.
-        //<audio src='https://koetest.s3.amazonaws.com/new_demo_stereo/windBlowing1.mp3'/>
+
         Nothing but the sandy gusts of wind blow into your ears. No one is visible on the street. The buildings on the way look pretty modern, but they are all coated with a thick layer of dust. While you're on your way, you noticed something peculiar in the corner of one of the buildings. It's a patch of green.
-        <audio src='https://koetest.s3.amazonaws.com/new_demo_stereo/footsteps2.mp3'/>
+        <audio src="https://koetest.s3.amazonaws.com/new_demo_stereo/footsteps2.mp3"/>
+You're at the front door of the beauty salon. Looks like its doors are shut tight, but they don't look locked, and you hear the sounds of radio inside. Anyways, you should talk to her, but what should you do?
 	*then
 		unflag flower
 	    unflag angry
@@ -491,8 +503,7 @@
 
 @Arrive Beauty Salon
 	*say
-		You're at the front door of the beauty salon. Looks like its doors are shut tight, but they don't look locked, and you hear the sounds of radio inside. Anyways, you should talk to her, but what should you do?
-        [Action]Now you can: Knock on the door, bash on the door, open the door directly, or check on the green patch before.
+		[Action]Now you can: Knock on the door, bash on the door, open the door directly, or check on the green patch before.
 	*then
 		hear knock, knock on the door {
 		    set currentLocation as 'inside of the beaty saloon'
@@ -508,6 +519,10 @@
         hear check the green patch before, green patch, check {
             -> check the Green Patch
         }
+	*recap
+		[Action]Now you can: Knock on the door, bash on the door, open the door directly, or check on the green patch before.
+	*reprompt
+		[Action]Now you can: Knock on the door, bash on the door, open the door directly, or check on the green patch before.
 
 @Knock On Beauty Salon
 	*say
@@ -735,14 +750,14 @@
 @Get the Hot Sauce
 	*say
 		You're at the mayor's office. The doors are shut tight, and they seem like their locked. Somehow with the stench, it also smells very spicy. Besides knocking on the door, the office is so big that you probably need to shout to get his attention. What will you do?
-        [Action]Knock on the door? Or shout to the his attention?
+        [Action]Wave to the window? Or shout to the his attention?
 	*reprompt
-		What should we do? Knock on the door? Or shout at the mayor?
+		Wave to the window? Or shout at the mayor?
 	*recap
-		Knock on the door? Or shout at the mayor?
+		Wave to the window? Or shout at the mayor?
 	*then
 		hear wave to the window, wave {
-            -> Wave To the Window
+			-> Wave To the Window
         }
         hear shout, shout at the mayor {
             -> Shout At the Mayor
@@ -1345,6 +1360,7 @@ Get the Hot Sauce 1
 		hear jump to leading flower {
 			-> End of ACT III, 1&2
 		}
+
 @Where am I
 	*say
 		Now you are in {currentLocation}.
@@ -1703,7 +1719,7 @@ Get the Hot Sauce 1
 		hear view the kitchen, look at kitchen {
 			-> chilirosa_hallway_viewkitchen
 		}
-		hear go to kitchen {
+		hear go to the kitchen, go to kitchen {
 		    if turn_kettle{
 		        -> chilirosa_kitchen_caught_kettle_back
 		    }
@@ -1739,7 +1755,7 @@ Get the Hot Sauce 1
 			    -> chilirosa_hallway_hidekettle
 			}
 		}
-		hear go to the living room {
+		hear go to the living room, go to living room {
 		    if turn_pot and hide{
 			    -> chilirosa_living_goto
 			}
@@ -1756,7 +1772,7 @@ Get the Hot Sauce 1
 	*say
 		You go to the kitchen. The pot is been heaten up. It will boil dry soon, and the pot will be burnt. You need to leave the kitchen right now. Otherwise, you will be caught.
 	*then
-		hear go to hallway {
+		hear go to the hallway, go to hallway {
 			-> chilirosa_hallway_pot_caught
 		}
 	*recap
