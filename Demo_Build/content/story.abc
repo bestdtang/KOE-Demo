@@ -272,11 +272,11 @@
 @Decide to Help
 	*say
 		[Man]
-	    Ha-haaah! [Pause] This is our lucky day, son. Finally a person who is willing to help us. Well, I guess I shouldn't be keeping here for too long, eh? [EOA]
+	    Ha-haaah! [Pause] This is our lucky day, son. Finally a person who is willing to help us. Well, I guess I shouldn't be keeping you here for too long eh? [EOA]
 		[Kid] 
 		But papa, you haven't told him anything about how to solve the problem. [EOA]
 		[Man]
-		Oh yes, yes. hey, perhaps you can go ask if the mayor knows anything more. After all, he's the one put up this poster. Maybe he knows more.[EOA]
+		Oh yes, yes. hey, perhaps you can go ask if the mayor knows anything more. After all, he's the one who put up this poster. Maybe he knows more.[EOA]
 		[Kid] 
 		But the mayor is also locking himself up. No one has seen him for a while. [EOA]
 		[Man] 
@@ -305,16 +305,26 @@
 @Ask Shopkeeper About the Mayor
 	*say
 		[Man]
-        The mayor has a strange craving for hot sauce. The mayor has turned down guests since the incident. [Short_Pause] The mayor didn't do anything to help the town either. Nobody knows if he's even in his office anymore. [EOA]
-	*then
-		>> BACK
+        The mayor has a strange craving for hot sauce. The mayor has turned down guests since the incident. [Short_Pause] The mayor didn't do anything to help the town either. Nobody knows if he's even in his office anymore. What else would you like to know?[EOA] You can ask about the sauce, or ask for one bottle.
+    *then
+        hear one, ask for one, ask one {
+            -> One Bottle of Sauce
+        }
+        hear ask about the sauce, about the sauce, the sauce {
+            -> Ask Shopkeeper About the Sauce
+        }
 
 @Ask Shopkeeper About the Sauce
 	*say
 		[Man]
-        I can only say, the hot sauce is really hot, [Short_Pause] and it looks blue. Like the gas stoves you see in your kitchen, hot, hot, hot! [EOA]
+        I can only say, the hot sauce is really hot, [Short_Pause] and it looks blue. Like the gas stoves you see in your kitchen, hot, hot, hot! Hmm, what else would you like to know?[EOA] You can ask about the mayor, or ask for one bottle.
 	*then
-		>> BACK
+        hear one, ask for one, ask one {
+            -> One Bottle of Sauce
+        }
+        hear ask about the mayor, about the mayor, the mayor {
+            -> Ask Shopkeeper About the Mayor
+        }
 
 @One Bottle of Sauce
 	*say
@@ -325,36 +335,26 @@
         Hmmm, where is it? [EOA] 
         <audio src="https://koetest.s3.amazonaws.com/new_demo_stereo/findingThings2.mp3"/> 
         [Kid]  
-        Dad, didn't you just sell one to the Mrs. Chilirosa yesterday? [EOA] 
+        Dad, didn't you just sell one to Mrs. Chilirosa yesterday? [EOA] 
         [Man]  
         Hmm, Oh yes, yes! I did sell one to her. [Short_Pause] Oh dear. I guess that's our last bottle in a while. Next batch is not coming in a week, and I need to drive all the way out of town to get it because they can't stand our stench! [EOA] 
         [Kid]  
-        Stop murmuring, dad. [Short_Pause] Anyways, if you go ask Mrs. Chilirosa, she might have still have some left for you.[EOA]
+        Stop murmuring, dad. [Short_Pause] Anyways, if you go ask Mrs. Chilirosa, she might still have some left for you.[EOA]
 	*then
 		-> One Bottle of Sauce 2
 
 @One Bottle of Sauce 2
 	*say
-		Now you can leave the store or see what else does the shopkeeper sell, or ask more about Mrs. Chilirosa.
+		Now you can leave the store, or ask more about Mrs. Chilirosa.
 	*recap
 		Now you can leave the store or ask more about Mrs. Chilirosa.
 	*then
 		hear leave the store, leave {
             -> Leave the Store
         }
-        hear what else, sell, what else do you sell {
-            -> What Else Do You Sell
-        }
         hear ask more, tell me more, ask more about Mrs Chilirosa, Misses Chilirosa, she, where {
             -> Ask more about Chilirosa
         }
-
-@What Else Do You Sell
-	*say
-		[Man]
-        Well, not so much... [EOA]
-	*then
-		>> BACK
 
 @Ask more about Chilirosa
 	*say
