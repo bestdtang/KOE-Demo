@@ -734,7 +734,7 @@ Get the Hot Sauce 1
 		[Mayor]
         Oh, thank you for bringing me the hot sauce. What brings you here?[EOA] [ConversationQuestionSound]
 	*then
-				hear smell, incident, help, yes, right {
+		hear smell, incident, help, yes, right {
 			-> Mayor Talks More About the Incident
 		}
 		hear who are you{
@@ -1140,8 +1140,7 @@ Get the Hot Sauce 1
 		[SeedTrader]
         The day is not young. You must go before the sandstorm catches you again. Keeping going to the East and you'll soon find the valley and the caves. [Long_Pause] By the way, when you do meet the alchemist, tell him I'm sorry. [EOA]
 	*then
-		//todo: to next ACT4
-        >>END
+        -> End of ACT III, all
 
 @MysMan Says Wait I Know
 	*say
@@ -1211,8 +1210,7 @@ Get the Hot Sauce 1
 		[SeedTrader]
         I don't think I'm able to keep you here longer. If you do meet the alchemist in the end, I would imagine that he demanded the name of this seed, so remember to tell him.It's called EUREKA [EOA]
 	*then
-		// todo: link to ACT IV
-        >> END
+        -> End of ACT III, all
 
 @MysMan Spills the Tea
 	*say
@@ -1267,8 +1265,13 @@ Get the Hot Sauce 1
 		[SeedTrader]
         I don't think I'm able to keep you here longer. [Pause] If you do meet the alchemist in the end, I would imagine that he demanded the name of this seed, so remember to tell him. [EOA]
 	*then
-		// todo: link to ACT IV
-        >> END
+		-> End of ACT III, all
+
+@End of ACT III, all
+	*say
+		[SeedTrader] Wait, wait![EOA]
+	*then
+		-> leading_beforestart
 
 @global append
 	*then
@@ -1633,6 +1636,7 @@ Get the Hot Sauce 1
 		You are in the hallway. There is a closet standing next to you, the main door behind you, and two rooms in front of you. They are, the living room, and the kitchen. [Action_Sound]You can view different things and rooms from the hallway to see more details.
 	*then
 		-> chilirosa_hallway_interation
+
 @chilirosa_hallway_interation
 	*say
 		
@@ -2025,4 +2029,469 @@ Get the Hot Sauce 1
 @Luke Is Nowhere To Be Found
 	*then
 		>>END
+		
+		
+		
+		
+//Leading flower puzzle-----------------------------------------------------------------------------------
+
+@leading_beforestart
+	*say
+		
+	*then
+		-> leading_start
+
+@leading_puzzle_help
+	*say
+		If you are far away from the right direction. The flower will sing this song. [DirSound_Small]
+If you are close to the right direction, the flower will sing. [DirSound_MRight]
+If you are on the right direction, the flower will sing. [DirSound_Large]
+
+@leading_start
+	*say
+		[SeedTrader]
+		Here, If you are going to the oasis, that is in the center of the sandstorm. You must take this compass, and the leading flower. If you are lost, the compass will show you the direction and the flower will point you the way to the oasis. If you sprinkle a little bit dust on the leading flower. It will chase the smell and bring you to wherever the dust is from. look, here is the dust I grab from my garden. Now, I will show you how to use it. [Voice_End][Action_Sound] Try say, use the dust on the leading flower.
+	*recap
+		[Action_Sound] Try say, use the dust on the leading flower.
+	*reprompt
+		[Action_Sound] Try say, use the dust on the leading flower.
+	*then
+		hear use the dust on the leading flower {
+			-> leading_tutorial_start
+		}
+
+@leading_tutorial_start
+	*say
+		You use the dust on the leading flower. [SeedTrader] See, the flower is reacting to it. Now, you are standing in the middle of my tent. You can hold the flower and look at four different directions, east, south, west, north.[Voice_End]
+[Action_Sound]Try say, look south.
+	*then
+		hear look south, look at south {
+			-> leading_tutorial_south
+		}
+	*recap
+		[Action_Sound]Try say, look south.
+	*reprompt
+		[Action_Sound]Try say, look south.
+
+@leading_tutorial_south
+	*say
+		You are looking at the south. [SeedTrader]
+Listen, the leading flower is singing you the way .[Voice_End][DirSound_Small][SeedTrader]This song means that the direction you are looking is far away from the right direction.  [Voice_End]
+[Action_Sound] Now, try say look west.
+	*then
+		hear look west {
+			-> leading_tutorial_west
+		}
+	*recap
+		[Action_Sound] Now, try say look west.
+	*reprompt
+		[Action_Sound] Now, try say look west.
+
+@leading_tutorial_west
+	*say
+		You are looking at the west.
+[DirSound_MRight]
+[SeedTrader] This song means you are close to the right direction. [Voice_End][Action_Sound]
+	*recap
+		You can say look east or look north.
+	*reprompt
+		You can say look east or look north.
+	*then
+		hear look north {
+			-> leading_tutorial_north
+		}
+
+		hear look east {
+			-> leading_tutorial_east
+		}
+
+@leading_tutorial_east
+	*say
+		You are looking east. You are facing a wall.
+	*recap
+		[Action_Sound]You can say look north.
+	*reprompt
+		[Action_Sound]You can say look north.
+	*then
+		hear Look north {
+			-> leading_tutorial_north
+		}
+
+@leading_tutorial_north
+	*say
+		You are looking north.
+[DirSound_Large]
+[SeedTrader]
+This song means you are right looking at the way out! Go toward that direction and you are free! [Voice_End]
+[Action_Sound]
+Try say, go to north.
+	*then
+		hear go to north {
+			-> leading_tutorial_end
+		}
+
+@leading_tutorial_end
+	*say
+		[SeedTrader] Hey, congrats! Now you are in my garden, do you understand how to use  the leading flower?[Voice_End][Conversation_Sound]
+	*then
+		hear yes {
+			-> leading_tutorial_end_1
+		}
+
+		hear no {
+			-> leading_tutorial_again
+		}
+
+@leading_tutorial_again
+	*say
+		[SeedTrader]Ok... No worry, I can put you back to my tent, and show you again. Do you wanna learn again?[Voice_End][Conversation_Sound]
+	*then
+		hear yes {
+			-> leading_tutorial_start
+		}
+		hear no {
+			-> leading_tutorial_end_1
+		}
+
+@leading_tutorial_end_1
+	*say
+		[SeedTrader] Ok, cool. It's simple to use, right? Here, take this bottle of dust. I grab it from the oasis you are looking for. And. You are ready to go! With the leading flower, you should be able to walk across the sandstorm! [Voice_End]
+	*then
+		-> leading_puzzle_start
+
+@leading_puzzle_start
+	*say
+		You thank the man and continute your journey. [Footsteps]Couple minutes later, you are standing in front of the sandstorm. You should use the dust on the flower before you go into the sandstorm. [Action_Sound]
+	*recap
+		[Action_Sound] Try use the dust on the flower
+	*reprompt
+		[Action_Sound] Try use the dust on the flower
+	*then
+				hear use the dust on the flower, use , use dust {
+			-> leading_puzzle_start_from_pa
+		}
+
+@leading_puzzle_start_from_pa
+	*say
+		You use the dust on the flower. The flower is reacting to it. Now you can look to different directions.[Action_Sound]
+	*recap
+		[Action_Sound] You can look east, look south, look west and look north.
+	*reprompt
+		[Action_Sound] You can look east, look south, look west and look north.
+	*then
+		-> leading_pa_positiono
+
+@leading_pa_position
+	*say
+		
+	*then
+		hear look south, go south {
+			-> leading_pa_s
+		}
+		hear look west, go west {
+			-> leading_pa_w
+		}
+		hear look north {
+			-> leading_pa_n
+		}
+		hear look east {
+			-> leading_pa_e
+		}
+		hear go to east {
+			-> leading_pb_positiono
+		}
+		hear go to north {
+			-> leading_pe_positiono
+		}
+	*recap
+		[Action_Sound] You can look east, look south, look west and look north.
+	*reprompt
+		[Action_Sound] You can look east, look south, look west and look north.
+
+@leading_pb_positiono
+	*say
+		[Footsteps] You come to a new spot.
+	*then
+		-> leading_pb_position
+
+@leading_pd_position
+	*say
+		
+	*then
+		hear look north, go to north, go north {
+			-> leading_pd_n
+		}
+
+		hear look east {
+			-> leading_pd_e
+		}
+
+		hear look south {
+			-> leading_pd_s
+		}
+
+		hear look west, go to west {
+			-> leading_pd_w
+		}
+		hear go to east {
+			-> leading_pe_positiono
+		}
+		hear go to south {
+			-> leading_pa_positiono
+		}
+	*recap
+		[Action_Sound] You can look east, look south, look west and look north.
+	*reprompt
+		[Action_Sound] You can look east, look south, look west and look north.
+
+@leading_pd_w
+	*say
+		You are looking west. The stones block the way.
+	*then
+		-> leading_pd_position
+
+@leading_pd_s
+	*say
+		You are looking south. [DirSound_MLeft]
+	*then
+		-> leading_pd_position
+
+@leading_pd_e
+	*say
+		You are looking east. [DirSound_Large]
+	*then
+		-> leading_pd_position
+
+@leading_pd_n
+	*say
+		You are looking north. The stones block the way.
+	*then
+		-> leading_pd_position
+
+@leading_pb_position
+	*say
+		
+	*then
+		hear look north {
+			-> leading_pb_n
+		}
+
+		hear look east {
+			-> leading_pb_e
+		}
+
+		hear look south, go south {
+			-> leading_pb_s
+		}
+
+		hear look west {
+			-> leading_pb_w
+		}
+		hear go to west {
+			-> leading_pa_positiono
+		}
+
+		hear go to east {
+			-> leading_pc_positiono
+		}
+
+		hear go to north {
+			-> leading_pe_positiono
+		}
+	*recap
+		[Action_Sound] You can look east, look south, look west and look north.
+	*reprompt
+		[Action_Sound] You can look east, look south, look west and look north.
+
+@leading_pc_positiono
+	*say
+		[Footsteps] You come to a new spot.
+	*then
+		-> leading_pc_position
+
+@leading_pe_positiono
+	*say
+		[Footsteps] You come to a new spot.
+	*then
+		-> leading_pe_position
+
+@leading_pd_positiono
+	*say
+		[Footsteps]
+	*then
+		-> leading_pd_position
+
+@leading_pa_positiono
+	*say
+		
+	*then
+		-> leading_pa_position
+
+@leading_pe_position
+	*say
+		
+	*then
+		hear look north, go north, go to north {
+			-> leading_pe_n
+		}
+
+		hear look east {
+			-> leading_pe_e
+		}
+
+		hear look south {
+			-> leading_pe_s
+		}
+
+		hear look west {
+			-> leading_pe_w
+		}
+		hear go to west {
+			-> leading_pd_positiono
+		}
+		hear go to south {
+			-> leading_pb_positiono
+		}
+		hear go to east {
+			-> leading_pc_out
+		}
+	*recap
+		[Action_Sound] You can look east, look south, look west and look north.
+	*reprompt
+		[Action_Sound] You can look east, look south, look west and look north.
+
+@leading_pe_w
+	*say
+		You are looking west. [DirSound_Small]
+	*then
+		-> leading_pe_position
+
+@leading_pe_s
+	*say
+		You are looking south. [DirSound_MLeft]
+	*then
+		-> leading_pe_position
+
+@leading_pe_e
+	*say
+		You are looking east. [DirSound_Large]
+	*then
+		-> leading_pe_position
+
+@leading_pe_n
+	*say
+		You are looking north. The stones block the way.
+	*then
+		-> leading_pe_position
+
+@leading_pc_position
+	*say
+		
+	*then
+		hear look north {
+			-> leading_pc_n
+		}
+
+		hear look east, go to east {
+			-> leading_pc_e
+		}
+
+		hear look south, go to south {
+			-> leading_pc_s
+		}
+
+		hear look west {
+			-> leading_pc_w
+		}
+		hear go to north {
+			-> leading_pc_out
+		}
+		hear go to west {
+			-> leading_pb_positiono
+		}
+	*recap
+		[Action_Sound] You can look east, look south, look west and look north.
+	*reprompt
+		[Action_Sound] You can look east, look south, look west and look north.
+
+@leading_pc_out
+	*say
+		Your sight becomes clear.
+	*then
+				-> leading_puzzle_done
+@leading_puzzle_done
+	*then
+	-> Arrival At The Inner Cave
+
+@leading_pc_w
+	*say
+		You are looking west. [DirSound_MRight]
+	*then
+		-> leading_pc_position
+
+@leading_pc_s
+	*say
+		You are looking south. The stones block the way.
+	*then
+		-> leading_pc_position
+
+@leading_pc_e
+	*say
+		You are looking east. The stones block the way.
+	*then
+		-> leading_pc_position
+
+@leading_pc_n
+	*say
+		You are looking north. [DirSound_Large]
+	*then
+		-> leading_pc_position
+
+@leading_pb_w
+	*say
+		you are look west. [DirSound_Small]
+	*then
+		-> leading_pb_position
+
+@leading_pb_s
+	*say
+		You are looking south. The stones block the way.
+	*then
+		-> leading_pb_position
+
+@leading_pb_e
+	*say
+		You are looking east. [DirSound_MLeft]
+	*then
+		-> leading_pb_position
+
+@leading_pb_n
+	*say
+		You are looking north. [DirSound_MRight]
+	*then
+		-> leading_pb_position
+
+@leading_pa_w
+	*say
+		You are looking west. [DirSound_Small] But, the stones block the way.
+	*then
+		-> leading_pa_position
+
+@leading_pa_s
+	*say
+		You are looking south. That is the entrance you came.
+	*then
+		-> leading_pa_position
+
+@leading_pa_e
+	*say
+		You are looking east. [DirSound_MLeft]
+	*then
+		-> leading_pa_position
+
+@leading_pa_n
+	*say
+		You are looking north. [DirSound_MRight]
+	*then
+		-> leading_pa_position
 
