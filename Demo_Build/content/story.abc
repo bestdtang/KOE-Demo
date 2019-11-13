@@ -731,6 +731,7 @@
 		Now you can: Knock on the door, bash on the door, or open the door directly. [Action]
 	*reprompt
 		Now you can: Knock on the door, bash on the door, or open the door directly. [Action]
+
 @Get the Hot Sauce
 	*say
 		You're at the mayor's office. The doors are shut tight, and they seem like their locked. Somehow with the stench, it also smells very spicy. Besides knocking on the door, the office is so big that you probably need to shout to get his attention. What will you do?
@@ -1252,7 +1253,7 @@ Get the Hot Sauce 1
 @End of ACT III, 3
 	*say
 		[SeedTrader]
-        I don't think I'm able to keep you here longer. If you do meet the alchemist in the end, I would imagine that he demanded the name of this seed, so remember to tell him.It's called EUREKA [EOA]
+        I don't think I'm able to keep you here longer. If you do meet the alchemist in the end, I would imagine that he demanded the name of this seed, so remember to tell him. It's called EUREKA [EOA]
 	*then
 		-> End of ACT III, all
 
@@ -1313,7 +1314,7 @@ Get the Hot Sauce 1
 
 @End of ACT III, all
 	*say
-		[SeedTrader] Wait, wait![EOA]
+		[LongPause][SeedTrader] Wait, wait![EOA]
 	*then
 		-> leading_beforestart
 
@@ -1341,7 +1342,9 @@ Get the Hot Sauce 1
         //hear puzzle hint, hint {
         //   -> puzzle_help
         //}
-
+		hear jump to leading flower {
+			-> End of ACT III, 1&2
+		}
 @Where am I
 	*say
 		Now you are in {currentLocation}.
