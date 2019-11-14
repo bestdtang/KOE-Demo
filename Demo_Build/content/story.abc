@@ -153,8 +153,7 @@
         [Man] 
         Hey. [Pause] Don't worry. I know it smells bad in here. But I assure you, the water is clean. [Pause] Go on, drink up. Ahh. Yes, the water is fresh and good.[EOA]
         [Pause]
-        [Action]
-        Sometimes when appropriate, you can use an item, perform an action, or do nothing. For this instance, you can either say: [Short_Pause] use water or do nothing.
+        Sometimes when appropriate, you can use an item, perform an action, or do nothing. For this instance, you can either say: [Short_Pause] use water or do nothing.[Action]
 	*then
 		hear drink water, use water, use the water, water {
 			-> Finding Out
@@ -438,7 +437,7 @@
 @Mayor's Office
 	*say
 		You're at the mayor's office. The doors are shut tight, and they seem like their locked. Somehow with the stench, it also smells very spicy. Besides knocking on the door, the office is so big that you probably need to shout to get his attention. 
-        [Action]   Now you can: Knock, bash, or try to open the door, check out the trash can, or go to another location.
+           Now you can: Knock, bash, or try to open the door, check out the trash can, or go to another location. [Action]
 	*then
 		hear knock {
             -> Knock On Mayor's Office
@@ -503,7 +502,7 @@ You're at the front door of the beauty salon. Looks like its doors are shut tigh
 
 @Arrive Beauty Salon
 	*say
-		[Action]Now you can: Knock on the door, bash on the door, open the door directly, or check on the green patch before.
+		Now you can: Knock on the door, bash on the door, open the door directly, or check on the green patch before.[Action]
 	*then
 		hear knock, knock on the door {
 		    set currentLocation as 'inside of the beaty saloon'
@@ -520,20 +519,20 @@ You're at the front door of the beauty salon. Looks like its doors are shut tigh
             -> check the Green Patch
         }
 	*recap
-		[Action]Now you can: Knock on the door, bash on the door, open the door directly, or check on the green patch before.
+		Now you can: Knock on the door, bash on the door, open the door directly, or check on the green patch before.[Action]
 	*reprompt
-		[Action]Now you can: Knock on the door, bash on the door, open the door directly, or check on the green patch before.
+		Now you can: Knock on the door, bash on the door, open the door directly, or check on the green patch before.[Action]
 
 @Knock On Beauty Salon
 	*say
-		No one responds. Knock again or knock harder?[Action_Sound]
+		No one responds. Knock again or bash on the door?[Action_Sound]
 	*recap
 		You can try knock again or knock harder
 	*then
-		hear again, know again{
+		hear knock, knock again{
 	        -> Knock On Beauty Salon 2
 	    }
-	    hear harder, bash, know harder {
+	    hear bash, know harder, bash on the door {
 	        -> Bash On Beauty Salon
 	    }
 
@@ -749,8 +748,7 @@ You're at the front door of the beauty salon. Looks like its doors are shut tigh
 
 @Get the Hot Sauce
 	*say
-		You're at the mayor's office. The doors are shut tight, and they seem like their locked. Somehow with the stench, it also smells very spicy. Besides knocking on the door, the office is so big that you probably need to shout to get his attention. What will you do?
-        [Action]Wave to the window? Or shout to the his attention?
+		You're at the mayor's office. The doors are shut tight, and they seem like their locked. Somehow with the stench, it also smells very spicy. Besides knocking on the door, the office is so big that you probably need to shout to get his attention. Do you want to wave to the window, or shout to the his attention?[Action]
 	*reprompt
 		Wave to the window? Or shout at the mayor?
 	*recap
@@ -1688,7 +1686,7 @@ Get the Hot Sauce 1
 
 @chilirosa_door
 	*say
-		You decided to sneak into Misses Chilirosa's house to steal the hot sauce. You open the the door carefully, and sneak into the hallway. Suprisely, it connects to her house.  [Action_Sound]At anytime, you can say look around me to explore the rooms.
+		You decided to sneak into Misses Chilirosa's house to steal the hot sauce. You open the the door carefully, and sneak into the hallway. Suprisely, it connects to her house.At anytime, you can say look around me to explore the rooms. [Action_Sound]
 	*then
 		hear look around me, look around the hallway, around me {
 			-> chilirosa_hallway_around
@@ -1696,7 +1694,7 @@ Get the Hot Sauce 1
 
 @chilirosa_hallway_around
 	*say
-		You are in the hallway. There is a closet standing next to you, the main door behind you, and two rooms in front of you. They are, the living room, and the kitchen. [Action_Sound]You can view different things and rooms from the hallway to see more details.
+		You are in the hallway. There is a closet standing next to you, the main door behind you, and two rooms in front of you. They are, the living room, and the kitchen. You can view different things and rooms from the hallway to see more details. [Action_Sound]
 	*then
 		-> chilirosa_hallway_interation
 
@@ -1764,9 +1762,9 @@ Get the Hot Sauce 1
 		    }
 		}
 	*recap
-		[Action_Sound]You can view different objects, view different rooms to see more details, or look around.
+		You can view different objects, view different rooms to see more details, or look around.[Action_Sound]
 	*reprompt
-		[Action_Sound]You can view different objects, view different rooms to see more details, or look around.
+		You can view different objects, view different rooms to see more details, or look around.[Action_Sound]
 
 @chilirosa_kitchen_pot_back
 	*say
@@ -1776,9 +1774,9 @@ Get the Hot Sauce 1
 			-> chilirosa_hallway_pot_caught
 		}
 	*recap
-		[Action_Sound] You should go to hallway.
+		You should go to hallway.[Action_Sound] 
 	*reprompt
-		[Action_Sound] You should go to hallway.
+		You should go to hallway.[Action_Sound] 
 
 @chilirosa_hallway_pot_caught
 	*say
@@ -1824,9 +1822,9 @@ Get the Hot Sauce 1
 
 @chilirosa_living_interaction
 	*recap
-		[Action_Sound]You should take the hot sauce.
+		You should take the hot sauce.[Action_Sound]
 	*reprompt
-		[Action_Sound] You should take the hot sauce.
+		You should take the hot sauce.[Action_Sound] 
 	*then
 		hear take the sauce, take sauce, take hot sauce, take the hot sauce, take it {
 			-> chilirosa_living_takesauce
@@ -2031,7 +2029,7 @@ Get the Hot Sauce 1
 
 @chilirosa_kitchen_viewkettle
 	*say
-		You view the kettle on the right. It is full of water. And it's quite hot. If you turn on the kettle, the kettle will whistle almost immediately. [Action_Sound] You can turn on the kettle.
+		You view the kettle on the right. It is full of water. And it's quite hot. If you turn on the kettle, the kettle will whistle almost immediately. You can turn on the kettle.[Action_Sound]
 	*then
 		-> chilirosa_kitchen_interaction
 
@@ -2043,25 +2041,25 @@ Get the Hot Sauce 1
 
 @chilirosa_kitchen_viewpot
 	*say
-		You view the pot on the left. Open up the cover carefully, you see a little bit of soup left in it. The pot is cold. If you turn on the pot, the soup will boil and dry, and the pot will be burnt. [Action_Sound] You can turn on the pot.
+		You view the pot on the left. Open up the cover carefully, you see a little bit of soup left in it. The pot is cold. If you turn on the pot, the soup will boil and dry, and the pot will be burnt. You can turn on the pot.[Action_Sound] 
 	*then
 		-> chilirosa_kitchen_interaction
 
 @chilirosa_kitchen_viewwatertap
 	*say
-		You view the watertap. You are sure that if you open it, it will make some noise. [Action_Sound] You can turn on the water.
+		You view the watertap. You are sure that if you open it, it will make some noise.  You can turn on the water.[Action_Sound]
 	*then
 		-> chilirosa_kitchen_interaction
 
 @chilirosa_hallway_viewkitchen
 	*say
-		You view the kitchen. No one is in the kitchen. Some containers are on the stove. [Action_Sound] You can go to the kitchen if you want.
+		You view the kitchen. No one is in the kitchen. Some containers are on the stove. You can go to the kitchen if you want.[Action_Sound] 
 	*then
 		-> chilirosa_hallway_interation
 
 @chilirosa_hallway_viewliving
 	*say
-		You view the living room. Misses Chilirosa is sitting next to the table and having her lunch. She is sprinkling sauce on her pasta. That's it! That's the hot sauce you want. [Action_Sound] You can go to living room at anytime, but she is in it right now, you should do something to distract her away first.
+		You view the living room. Misses Chilirosa is sitting next to the table and having her lunch. She is sprinkling sauce on her pasta. That's it! That's the hot sauce you want.  You can go to living room at anytime, but she is in it right now, you should do something to distract her away first.[Action_Sound]
 	*then
 		-> chilirosa_hallway_interation
 
@@ -2073,7 +2071,7 @@ Get the Hot Sauce 1
 
 @chilirosa_hallway_viewdoor
 	*say
-		You view the door. That's the door you sneaked in from. [Action_Sound]If you want to give up on stealing the hot sauce, you can come to the hallway and say leave from the door.
+		You view the door. That's the door you sneaked in from. If you want to give up on stealing the hot sauce, you can come to the hallway and say leave from the door.[Action_Sound]
 	*then
 		-> chilirosa_hallway_interation
 
@@ -2113,11 +2111,11 @@ If you are on the right direction, the flower will sing. [DirSound_Large]
 @leading_start
 	*say
 		[SeedTrader]
-		Here, If you are going to the oasis, that is in the center of the sandstorm. You must take this compass, and the leading flower. If you are lost, the compass will show you the direction and the flower will point you the way to the oasis. If you sprinkle a little bit dust on the leading flower. It will chase the smell and bring you to wherever the dust is from. look, here is the dust I grab from my garden. Now, I will show you how to use it. [Voice_End][Action_Sound] Try say, use the dust on the leading flower.
+		Here, If you are going to the oasis, that is in the center of the sandstorm. You must take this compass, and the leading flower. If you are lost, the compass will show you the direction and the flower will point you the way to the oasis. If you sprinkle a little bit dust on the leading flower. It will chase the smell and bring you to wherever the dust is from. look, here is the dust I grab from my garden. Now, I will show you how to use it. [Voice_End]Try say, use the dust on the leading flower. [Action_Sound] 
 	*recap
-		[Action_Sound] Try say, use the dust on the leading flower.
+		Try say, use the dust on the leading flower.[Action_Sound] 
 	*reprompt
-		[Action_Sound] Try say, use the dust on the leading flower.
+		Try say, use the dust on the leading flower.[Action_Sound] 
 	*then
 		hear use the dust on the leading flower {
 			-> leading_tutorial_start
@@ -2126,15 +2124,15 @@ If you are on the right direction, the flower will sing. [DirSound_Large]
 @leading_tutorial_start
 	*say
 		You use the dust on the leading flower. [SeedTrader] See, the flower is reacting to it. Now, you are standing in the middle of my tent. You can hold the flower and look at four different directions, east, south, west, north.[Voice_End]
-[Action_Sound]Try say, look south.
+Try say, look south.[Action_Sound]
 	*then
 		hear look south, look at south {
 			-> leading_tutorial_south
 		}
 	*recap
-		[Action_Sound]Try say, look south.
+		Try say, look south.[Action_Sound]
 	*reprompt
-		[Action_Sound]Try say, look south.
+		Try say, look south.[Action_Sound]
 
 @leading_tutorial_south
 	*say
@@ -2146,9 +2144,9 @@ Listen, the leading flower is singing you the way .[Voice_End][DirSound_Small][S
 			-> leading_tutorial_west
 		}
 	*recap
-		[Action_Sound] Now, try say look west.
+		Now, try say look west.[Action_Sound] 
 	*reprompt
-		[Action_Sound] Now, try say look west.
+		Now, try say look west.[Action_Sound]
 
 @leading_tutorial_west
 	*say
@@ -2172,9 +2170,9 @@ Listen, the leading flower is singing you the way .[Voice_End][DirSound_Small][S
 	*say
 		You are looking east. You are facing a wall.
 	*recap
-		[Action_Sound]You can say look north.
+		You can say look north.[Action_Sound]
 	*reprompt
-		[Action_Sound]You can say look north.
+		You can say look north.[Action_Sound]
 	*then
 		hear Look north {
 			-> leading_tutorial_north
@@ -2186,8 +2184,7 @@ Listen, the leading flower is singing you the way .[Voice_End][DirSound_Small][S
 [DirSound_Large]
 [SeedTrader]
 This song means you are right looking at the way out! Go toward that direction and you are free! [Voice_End]
-[Action_Sound]
-Try say, go to north.
+Try say, go to north.[Action_Sound]
 	*then
 		hear go to north {
 			-> leading_tutorial_end
@@ -2226,9 +2223,9 @@ Try say, go to north.
 	*say
 		You thank the man and continute your journey. [Footsteps]Couple minutes later, you are standing in front of the sandstorm. You should use the dust on the flower before you go into the sandstorm. [Action_Sound]
 	*recap
-		[Action_Sound] Try use the dust on the flower
+		 Try use the dust on the flower [Action_Sound]
 	*reprompt
-		[Action_Sound] Try use the dust on the flower
+		Try use the dust on the flower [Action_Sound] 
 	*then
 		hear use the dust on the flower, use , use dust {
 			-> leading_puzzle_start_from_pa
@@ -2238,9 +2235,9 @@ Try say, go to north.
 	*say
 		You use the dust on the flower. The flower is reacting to it. Now you can look to different directions.[Action_Sound]
 	*recap
-		[Action_Sound] You can look east, look south, look west and look north.
+		You can look east, look south, look west and look north.[Action_Sound] 
 	*reprompt
-		[Action_Sound] You can look east, look south, look west and look north.
+		You can look east, look south, look west and look north.[Action_Sound] 
 	*then
 		-> leading_pa_positiono
 
@@ -2267,9 +2264,9 @@ Try say, go to north.
 			-> leading_pe_positiono
 		}
 	*recap
-		[Action_Sound] You can look east, look south, look west and look north.
+		You can look east, look south, look west and look north.[Action_Sound] 
 	*reprompt
-		[Action_Sound] You can look east, look south, look west and look north.
+		You can look east, look south, look west and look north.[Action_Sound] 
 
 @leading_pb_positiono
 	*say
@@ -2303,9 +2300,9 @@ Try say, go to north.
 			-> leading_pa_positiono
 		}
 	*recap
-		[Action_Sound] You can look east, look south, look west and look north.
+		You can look east, look south, look west and look north.[Action_Sound]
 	*reprompt
-		[Action_Sound] You can look east, look south, look west and look north.
+		You can look east, look south, look west and look north.[Action_Sound]
 
 @leading_pd_w
 	*say
@@ -2362,9 +2359,9 @@ Try say, go to north.
 			-> leading_pe_positiono
 		}
 	*recap
-		[Action_Sound] You can look east, look south, look west and look north.
+		You can look east, look south, look west and look north.[Action_Sound] 
 	*reprompt
-		[Action_Sound] You can look east, look south, look west and look north.
+		You can look east, look south, look west and look north.[Action_Sound] 
 
 @leading_pc_positiono
 	*say
@@ -2419,9 +2416,9 @@ Try say, go to north.
 			-> leading_pc_out
 		}
 	*recap
-		[Action_Sound] You can look east, look south, look west and look north.
+		You can look east, look south, look west and look north.[Action_Sound]
 	*reprompt
-		[Action_Sound] You can look east, look south, look west and look north.
+		You can look east, look south, look west and look north.[Action_Sound] 
 
 @leading_pe_w
 	*say
@@ -2473,9 +2470,9 @@ Try say, go to north.
 			-> leading_pb_positiono
 		}
 	*recap
-		[Action_Sound] You can look east, look south, look west and look north.
+		You can look east, look south, look west and look north.[Action_Sound]
 	*reprompt
-		[Action_Sound] You can look east, look south, look west and look north.
+		You can look east, look south, look west and look north.[Action_Sound]
 
 @leading_pc_out
 	*say
