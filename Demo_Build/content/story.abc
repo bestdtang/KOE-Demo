@@ -127,7 +127,7 @@
 	*recap
 		Try ask the boy for water
 	*reprompt
-		 Try ask the boy for water
+		Try ask the boy for water
 
 @Boy
 	*say
@@ -461,7 +461,7 @@
 @Mayor's Office_anotherlocation
 	*say
 		There are a few other things that you may want to check: A signpost, or you can go find the beauty salon.
-	*then	
+	*then
 		hear salon, beauty salon, go to beauty salon, go find the beauty salon {
 	    	set currentLocation as 'outside of the beauty saloon'
 			-> Beauty Salon
@@ -1359,6 +1359,7 @@ Get the Hot Sauce 1
 		hear start flower puzzle {
 			-> End of ACT III, 1&2
 		}
+
 @Where am I
 	*say
 		Now you are in {currentLocation}.
@@ -1774,7 +1775,7 @@ Get the Hot Sauce 1
 			-> chilirosa_hallway_pot_caught
 		}
 	*recap
-		You should go to hallway.[Action_Sound] 
+		You should go to hallway.[Action_Sound]
 	*reprompt
 		You should go to hallway.[Action_Sound]
 
@@ -1824,7 +1825,7 @@ Get the Hot Sauce 1
 	*recap
 		You should take the hot sauce.[Action_Sound]
 	*reprompt
-		You should take the hot sauce.[Action_Sound] 
+		You should take the hot sauce.[Action_Sound]
 	*then
 		hear take the sauce, take sauce, take hot sauce, take the hot sauce, take it {
 			-> chilirosa_living_takesauce
@@ -2041,7 +2042,7 @@ Get the Hot Sauce 1
 
 @chilirosa_kitchen_viewpot
 	*say
-		You view the pot on the left. Open up the cover carefully, you see a little bit of soup left in it. The pot is cold. If you turn on the pot, the soup will boil and dry, and the pot will be burnt. You can turn on the pot.[Action_Sound] 
+		You view the pot on the left. Open up the cover carefully, you see a little bit of soup left in it. The pot is cold. If you turn on the pot, the soup will boil and dry, and the pot will be burnt. You can turn on the pot.[Action_Sound]
 	*then
 		-> chilirosa_kitchen_interaction
 
@@ -2053,7 +2054,7 @@ Get the Hot Sauce 1
 
 @chilirosa_hallway_viewkitchen
 	*say
-		You view the kitchen. No one is in the kitchen. Some containers are on the stove. You can go to the kitchen if you want.[Action_Sound] 
+		You view the kitchen. No one is in the kitchen. Some containers are on the stove. You can go to the kitchen if you want.[Action_Sound]
 	*then
 		-> chilirosa_hallway_interation
 
@@ -2223,7 +2224,12 @@ Try say, go north.[Action]
 	*say
 		[SeedTrader] Ok, cool. It's simple to use, right? Here, take this bottle of dust. I grab it from the oasis you are looking for. And. You are ready to go! With the leading flower, you should be able to walk across the sandstorm! [EOA]
 	*then
-		-> leading_puzzle_start
+				-> ActFour_Start_Fromhere
+@ActFour_Start_Fromhere
+	*say
+		Act four start
+	*then
+	-> leading_puzzle_start
 
 @leading_puzzle_start
 	*say
@@ -2253,8 +2259,6 @@ Try say, go north.[Action]
 
 @leading_a_goto
 	*say
-		
-	*then
 
 @leading_a_position
 	*then
@@ -2757,7 +2761,7 @@ Try say, go north.[Action]
 
 @leading_h_east
 	*say
-		You are looking east. [DirSound_Small] You see the outer edge of the sandstorm. That's definitely now the right way. 
+		You are looking east. [DirSound_Small] You see the outer edge of the sandstorm. That's definitely now the right way.
 	*then
 		-> leading_h_position
 
@@ -3267,5 +3271,5 @@ Try say, go north.[Action]
 	*say
 		Your sight becomes clear. You see the oasis.
 	*then
-	    -> Arrival At The Inner Cave
+		-> Arrival At The Inner Cave
 
