@@ -27,7 +27,7 @@
 
 @Tutorial 1: Direction Questions
 	*say
-		[DirectionQuestionSound]When you hear this sound, you will be deciding which path, or direction, to take. In this case, try saying: go to the left, or go to the right.
+		[Direction]When you hear this sound, you will be deciding which path, or direction, to take. In this case, try saying: go to the left, or go to the right.
 	*then
 		hear go to the left {
 			-> Look Left
@@ -49,7 +49,7 @@
 
 @Tutorial 1A: Check Around
 	*say
-		You walked under the hot sun until you have reached the top of a little sand hill. It grants you some height advantage. Now you can see what's around you. [Pause] [DirectionQuestionSound]Sometimes, paths aren't obvious at first glance just like now. You can check around first by saying what's around me. Go on, give it a go.
+		You walked under the hot sun until you have reached the top of a little sand hill. It grants you some height advantage. Now you can see what's around you. [Pause] [Direction]Sometimes, paths aren't obvious at first glance just like now. You can check around first by saying what's around me. Go on, give it a go.
 	*then
 		hear what's around me,check, what is around me, check what's around me, around me {
             -> Check Around the Hill
@@ -61,7 +61,7 @@
 
 @Check Around the Hill
 	*say
-		You look around, like a compass slowly spinning. You don't find anything particularly interesting. [Pause] Wait! You see a few freckles on the yellow surfaces of Earth. It shines under the burning sun! You squint your eyes and look closer. [Pause] <emphasis level="reduced">It's a town!</emphasis> [Short_Pause] There's a good chance that they have some water there.[DirectionQuestionSound]
+		You look around, like a compass slowly spinning. You don't find anything particularly interesting. [Pause] Wait! You see a few freckles on the yellow surfaces of Earth. It shines under the burning sun! You squint your eyes and look closer. [Pause] <emphasis level="reduced">It's a town!</emphasis> [Short_Pause] There's a good chance that they have some water there.[Direction]
 	*then
 		hear go to the town, go towards the town, town, the town {
 		    set currentLocation as 'town'
@@ -80,7 +80,7 @@
 
 @Town
 	*say
-		The urge of cold water passing through dry lungs has dragged your weary feet to the entrance of the town. You thought the townspeople would step forward immediately to help a thirsty traveler, but instead. [Short_Pause] No-one came. What's happening? [DirectionQuestionSound] you can ask to check the environment. Try saying: "what's around me?"
+		The urge of cold water passing through dry lungs has dragged your weary feet to the entrance of the town. You thought the townspeople would step forward immediately to help a thirsty traveler, but instead. [Short_Pause] No-one came. What's happening? [Direction] you can ask to check the environment. Try saying: "what's around me?"
 	*recap
 		you can ask to check the environment. Try saying: "what's around me?"
 	*reprompt
@@ -102,7 +102,7 @@
 
 @Around_1
 	*say
-		There are a few establishments right in front of you. A general store and the mayor's office. Could any of them have some water? [DirectionQuestionSound]
+		There are a few establishments right in front of you. A general store and the mayor's office. Could any of them have some water? [Direction]
 	*recap
 		There are a few establishments right in front of you. A general store and the mayor's office. Could any of them have some water? [Short_Pause] Choose a location to go to.
 	*reprompt
@@ -119,7 +119,7 @@
 
 @Store
 	*say
-		Upon approaching the general store, you see a boy. He wears a red coat, and you can see surprised written all over his face. [Long_Pause][Kid] You are a new face here. Do you need help? [Short_Pause] You don't look well.[/Kid] [Long_Pause] Maybe the little boy has water. You can ask if there's water. [ConversationQuestionSound] When you hear this sound, you decide what to say to the other person next. For example, right now you can ask the boy for water. [Short_Pause] Try it!
+		Upon approaching the general store, you see a boy. He wears a red coat, and you can see surprised written all over his face. [Long_Pause][Kid] You are a new face here. Do you need help? [Short_Pause] You don't look well.[/Kid] [Long_Pause] Maybe the little boy has water. You can ask if there's water. [Conversation] When you hear this sound, you decide what to say to the other person next. For example, right now you can ask the boy for water. [Short_Pause] Try it!
 	*then
 		hear water, can I have some water, can you give me water, do you have water, do you have any water, ask for water, ask the boy, ask the boy for water {
 			-> Boy
@@ -202,7 +202,7 @@
         [Pause]
         [Man]
         Sorry for the bad manners back there. It's just this town has never since a single visitor for a long time. Not after the incident.[EOA]
-        [ConversationQuestionSound]You should ask him.
+        [Conversation]You should ask him.
 	*reprompt
 		You can talk to him by saying talk to the shopkeeper
 	*recap
@@ -217,7 +217,7 @@
 		[Man]A while ago the town was famed for our Shawarma. People would come all the way from cities to this dune for a taste of it.[Pause] 
 		//By the way. What's your name, traveler?
 		[EOA]
-		[ConversationQuestionSound]
+		[Conversation]
 	*then
 		//slot playerName_ to 'AMAZON.US_FIRST_NAME'
 		//hear {playerName_}, my name is {playerName_} {
@@ -254,7 +254,7 @@
 		You've arrived at the mayor's office. It's the largest building in the town, but it's doors and windows are tightly shut and locked. [Short_Pause] When you get close to the front door, there's a sharp smell of hot pepper. Looks like there's no way in. [Pause] If you don't know where to go, remember to say What's around me.
 	*recap
 		If you don't know where to go, remember to say What's around me.
-    [DirectionQuestionSound]
+    [Direction]
 	*then
 		hear store, general store, go to the general store {
 			-> Store
@@ -292,7 +292,7 @@
 
 @Decide to Help 2
 	*say
-		[ConversationQuestionSound]
+		[Conversation]
 		You can ask about the mayor, ask about the sauce, or ask for one bottle
 	*recap
 		You can ask about the mayor, ask about the sauce, or ask for one bottle
@@ -396,7 +396,7 @@
 
 @The Cross
 	*say
-		[DirectionQuestionSound]There are a few things that you may want to check: A signpost, the mayor's office to your left, or you can go find the beauty salon.
+		[Direction]There are a few things that you may want to check: A signpost, the mayor's office to your left, or you can go find the beauty salon.
 	*then
 		hear signpost, check the signpost, read the signpost {
 		    set currentLocation as 'signpost'
@@ -411,9 +411,9 @@
             -> Beauty Salon
         }
 	*recap
-		[DirectionQuestionSound]There are a few things that you may want to check: A signpost, the mayor's office to your left, or you can go find the beauty salon.
+		[Direction]There are a few things that you may want to check: A signpost, the mayor's office to your left, or you can go find the beauty salon.
 	*reprompt
-		[DirectionQuestionSound]There are a few things that you may want to check: A signpost, the mayor's office to your left, or you can go find the beauty salon.
+		[Direction]There are a few things that you may want to check: A signpost, the mayor's office to your left, or you can go find the beauty salon.
 
 @Signpost
 	*say
@@ -599,7 +599,7 @@ You're at the front door of the beauty salon. Looks like its doors are shut tigh
 @Chilirosa Bargains
 	*say
 		[MrsChilirosa]
-        Please, roses are very hard to find in this stinky town. I can pay you.[EOA] [ConversationQuestionSound]
+        Please, roses are very hard to find in this stinky town. I can pay you.[EOA] [Conversation]
 	*then
 		hear yes, sure {
             -> Give Mrs Chilirosa the flower
@@ -616,7 +616,7 @@ You're at the front door of the beauty salon. Looks like its doors are shut tigh
 	*say
 		[MrsChilirosa]
         What do you want? If you have nothing else please leave. This town is already a skunk and I would appreciate if you close the door to stop the stinky air coming in.[EOA] 
-        [ConversationQuestionSound] 
+        [Conversation] 
         Now you can ask about the hot sauce, or leave.
 	*then
 		hear ask about the hot sauce, the sauce, hot sauce {
@@ -650,7 +650,7 @@ You're at the front door of the beauty salon. Looks like its doors are shut tigh
 
 @Meet Mrs Chilirosa
 	*say
-		[ConversationQuestionSound]Now, it's time to ask her about the sauce.
+		[Conversation]Now, it's time to ask her about the sauce.
 	*recap
 		You can try to say "Ask about the sauce".
 	*reprompt
@@ -667,7 +667,7 @@ You're at the front door of the beauty salon. Looks like its doors are shut tigh
 	*say
 		[MrsChilirosa]
         yeah, what about it? You want it? [EOA]
-        [ConversationQuestionSound]
+        [Conversation]
 	*then
 		hear yes, sure {
             -> Ask about the Sauce
@@ -677,7 +677,7 @@ You're at the front door of the beauty salon. Looks like its doors are shut tigh
 	*say
 		[MrsChilirosa]
         Give me a reason why you need hot sauce. You want hot sauce because? [EOA]
-        [ConversationQuestionSound] So we have two plans here: first plan, You tell her how you like the sauce. second plan. tell her that you need it to get the mayor's attention. Which plan you do you want to go?
+        [Conversation] So we have two plans here: first plan, You tell her how you like the sauce. second plan. tell her that you need it to get the mayor's attention. Which plan you do you want to go?
 	*recap
 		We have two plans here: First one, make up a reason and lie. Second one, tell her that you need it to get the mayor's attention. Which plan you do you want to go?
 	*then
@@ -778,11 +778,11 @@ Get the Hot Sauce 1
 
 @Shout At the Mayor
 	*say
-		Ok then. Shout something loud and clear so that the mayor can hear you. Now let's shout![ConversationQuestionSound]
+		Ok then. Shout something loud and clear so that the mayor can hear you. Now let's shout![Conversation]
 	*recap
-		Seems like he is not interested in what you said. Shout something else? maybe mention that you have the super duper hot pepper sauce? [ConversationQuestionSound]
+		Seems like he is not interested in what you said. Shout something else? maybe mention that you have the super duper hot pepper sauce? [Conversation]
 	*reprompt
-		Ok then. Shout something loud and clear so that the mayor can hear you. Now let's shout![ConversationQuestionSound]
+		Ok then. Shout something loud and clear so that the mayor can hear you. Now let's shout![Conversation]
 	*then
 		hear super duper hot blue pepper sauce, sauce, hot , pepper, super duper, hot sauce, pepper sauce {
 			-> Shout At the Mayor_1
@@ -791,7 +791,7 @@ Get the Hot Sauce 1
 @Shout At the Mayor_1
 	*say
 		[Mayor]
-        Oh, thank you for bringing me the hot sauce. What brings you here?[EOA] [ConversationQuestionSound]
+        Oh, thank you for bringing me the hot sauce. What brings you here?[EOA] [Conversation]
 	*then
 		hear smell, incident, help, yes, right {
 			-> Mayor Talks More About the Incident
@@ -870,7 +870,7 @@ Get the Hot Sauce 1
 
 @Ask the Mayor
 	*say
-		[ConversationQuestionSound]You can ask about how he knows all this, about the cave, or about the town itself.
+		[Conversation]You can ask about how he knows all this, about the cave, or about the town itself.
 	*recap
 		Well, the options are: A. ask about how he knows all this; B. ask about the cave; C. ask about the town it self.
 	*then
@@ -929,7 +929,7 @@ Get the Hot Sauce 1
 
 @Before Leave For the Cave
 	*say
-		and you can also heave for the cave.[DirectionQuestionSound]
+		and you can also heave for the cave.[Direction]
 	*recap
 		Well, the options are: A. leave for the cave; B. ask mayor about something else
 	*then
@@ -1793,13 +1793,13 @@ Get the Hot Sauce 1
 
 @chilirosa_hallway_hidekettle
 	*say
-		You hide into the closet. Right after you close the closet, the kettle starts to whistle. Misses Chilirosa hears it, walks past the hallway to the kitchen, and turns the kettle off. She then goes back to the living room, muttering about the stench. You come out of the closet. You should find a way to leave her in the kitchen for a longer time.
+		You hide into the closet.[Chilirosa_hide] Right after you close the closet, the kettle starts to whistle. Misses Chilirosa hears it, walks past the hallway to the kitchen, and turns the kettle off. She then goes back to the living room, muttering about the stench. You come out of the closet. You should find a way to leave her in the kitchen for a longer time.
 	*then
 		-> chilirosa_hallway_interation
 
 @chilirosa_hallway_hidepotkettle
 	*say
-		You hide into the closet. Right after you close the door, the kettle starts to whistle. Misses Chilirosa hears it, walks past the hallway to the kitchen. She turns the kettle off and finds that the pot is also on. The soup is not boiling dry yet. She turns the pot off, then goes back to the living room. Hearing that, you come out of the closet. You should find a way to leave her in the kitchen for a longer time.
+		You hide into the closet. [Chilirosa_hide]Right after you close the door, the kettle starts to whistle. Misses Chilirosa hears it, walks past the hallway to the kitchen. She turns the kettle off and finds that the pot is also on. The soup is not boiling dry yet. She turns the pot off, then goes back to the living room. Hearing that, you come out of the closet. You should find a way to leave her in the kitchen for a longer time.
 	*then
 		-> chilirosa_hallway_interation
 
@@ -1851,13 +1851,13 @@ Get the Hot Sauce 1
 
 @chilirosa_hallway_hidepot
 	*say
-		You hide in the closet. After a while you hear that the soup is bubbling, and gradually dries up. The next thing you smell is the mixture of the stench and the smoke. The pot is burnt. Misses Chilirosa rushes in from the living room, across the hallway, in to the kitchen. Hearing that, you come out of the closet.
+		You hide in the closet.[Chilirosa_hide] After a while you hear that the soup is bubbling, and gradually dries up. The next thing you smell is the mixture of the stench and the smoke. The pot is burnt. Misses Chilirosa rushes in from the living room, across the hallway, in to the kitchen. Hearing that, you come out of the closet.
 	*then
 		-> chilirosa_hallway_interation
 
 @chilirosa_hallway_hidenormal
 	*say
-		You hide in the closet. Nothing happened for a bit. So you come out of the closet.
+		You hide in the closet.[Chilirosa_hide] Nothing happened for a bit. So you come out of the closet.
 	*then
 		-> chilirosa_hallway_interation
 
@@ -2002,7 +2002,7 @@ Get the Hot Sauce 1
 
 @chilirosa_kitchen_turnkettle
 	*say
-		You turn on the kettle. The water starts to boil.
+		You turn on the kettle.[Chilirosa_startfire] The water starts to boil.
 	*then
 		flag turn_kettle
 	    -> chilirosa_kitchen_interaction
@@ -2015,7 +2015,7 @@ Get the Hot Sauce 1
 
 @chilirosa_kitchen_turnpot
 	*say
-		You turn on the pot. The pot starts to heat up.
+		You turn on the pot.[Chilirosa_startfire] The pot starts to heat up.
 	*then
 		flag turn_pot
 		set pot_count to 0
@@ -2094,7 +2094,8 @@ Get the Hot Sauce 1
 		
 		
 		
-		
+
+    
 //Leading flower puzzle-----------------------------------------------------------------------------------
 
 @leading_beforestart
@@ -2112,50 +2113,49 @@ If you are on the right direction, the flower will sing. [DirSound_Large]
 @leading_start
 	*say
 		[SeedTrader]
-		Here, If you are going to the oasis, that is in the center of the sandstorm. You must take this compass, and the leading flower. If you are lost, the compass will show you the direction and the flower will point you the way to the oasis. If you sprinkle a little bit dust on the leading flower. It will chase the smell and bring you to wherever the dust is from. look, here is the dust I grab from my garden. Now, I will show you how to use it. [Voice_End]Try say, use the dust on the leading flower. [Action_Sound] 
+		Here, If you are going to the oasis, that is in the center of the sandstorm. You must take this compass, and the leading flower. If you are lost, the compass will show you the direction and the flower will point you the way to the oasis. If you sprinkle a little bit dust on the leading flower. It will chase the smell and bring you to wherever the dust is from. look, here is the dust I grab from my garden. Now, I will show you how to use it. Try use the dust on the leading flower. [EOA] [Action]
 	*recap
-		Try say, use the dust on the leading flower.[Action_Sound] 
+		Try use the dust on the leading flower. [Action]
 	*reprompt
-		Try say, use the dust on the leading flower.[Action_Sound] 
+		Try use the dust on the leading flower. [Action]
 	*then
 		hear use the dust on the leading flower {
 			-> leading_tutorial_start
 		}
-
 @leading_tutorial_start
 	*say
-		You use the dust on the leading flower. [SeedTrader] See, the flower is reacting to it. Now, you are standing in the middle of my tent. You can hold the flower and look at four different directions, east, south, west, north.[Voice_End]
-Try say, look south.[Action_Sound]
+		You use the dust on the leading flower. [SeedTrader] See, the flower is reacting to it. Now, you are standing in the middle of my tent. You can hold the flower and look at four different directions, east, south, west, north.[EOA]
+Try say, look south. [Action]
 	*then
 		hear look south, look at south {
 			-> leading_tutorial_south
 		}
 	*recap
-		Try say, look south.[Action_Sound]
+		Try say, look south. [Action]
 	*reprompt
-		Try say, look south.[Action_Sound]
+		Try say, look south. [Action]
 
 @leading_tutorial_south
 	*say
 		You are looking at the south. [SeedTrader]
-Listen, the leading flower is singing you the way .[Voice_End][DirSound_Small][SeedTrader]This song means that the direction you are looking is far away from the right direction.  [Voice_End]
-[Action_Sound] Now, try say look west.
+Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTrader]This song means that the direction you are looking is far away from the right direction.  [EOA]
+ Now, try say look west. [Action]
 	*then
 		hear look west {
 			-> leading_tutorial_west
 		}
 	*recap
-		Now, try say look west.[Action_Sound] 
+		Now, try say look west.[Action]
 	*reprompt
-		Now, try say look west.[Action_Sound]
+		Now, try say look west.[Action]
 
 @leading_tutorial_west
 	*say
 		You are looking at the west.
 [DirSound_MRight]
-[SeedTrader] This song means you are close to the right direction. [Voice_End][Action_Sound]
+[SeedTrader] This song means you are close to the right direction. [EOA]
 	*recap
-		You can say look east or look north.
+		You can say look east or look north. [Action]
 	*reprompt
 		You can say look east or look north.
 	*then
@@ -2171,11 +2171,11 @@ Listen, the leading flower is singing you the way .[Voice_End][DirSound_Small][S
 	*say
 		You are looking east. You are facing a wall.
 	*recap
-		You can say look north.[Action_Sound]
+		You can say look north.
 	*reprompt
-		You can say look north.[Action_Sound]
+		You can say look north.
 	*then
-		hear Look north {
+		hear look north {
 			-> leading_tutorial_north
 		}
 
@@ -2184,16 +2184,21 @@ Listen, the leading flower is singing you the way .[Voice_End][DirSound_Small][S
 		You are looking north.
 [DirSound_Large]
 [SeedTrader]
-This song means you are right looking at the way out! Go toward that direction and you are free! [Voice_End]
-Try say, go to north.[Action_Sound]
+This song means you are right looking at the way out! Go toward that direction and you are free! [EOA]
+
+Try say, go north.[Action]
 	*then
-		hear go to north {
+		hear go north {
 			-> leading_tutorial_end
 		}
+	*recap
+		Try say, go north.[Action]
+	*reprompt
+		Try say, go north.[Action]
 
 @leading_tutorial_end
 	*say
-		[SeedTrader] Hey, congrats! Now you are in my garden, do you understand how to use  the leading flower?[Voice_End][Conversation_Sound]
+		[SeedTrader] Hey, congrats! Now you are in my garden, do you understand how to use  the leading flower?[EOA][Conversation]
 	*then
 		hear yes {
 			-> leading_tutorial_end_1
@@ -2205,7 +2210,7 @@ Try say, go to north.[Action_Sound]
 
 @leading_tutorial_again
 	*say
-		[SeedTrader]Ok... No worry, I can put you back to my tent, and show you again. Do you wanna learn again?[Voice_End][Conversation_Sound]
+		[SeedTrader]Ok... No worry, I can put you back to my tent, and show you again. Do you wanna learn again?[EOA][Conversation]
 	*then
 		hear yes {
 			-> leading_tutorial_start
@@ -2216,344 +2221,1051 @@ Try say, go to north.[Action_Sound]
 
 @leading_tutorial_end_1
 	*say
-		[SeedTrader] Ok, cool. It's simple to use, right? Here, take this bottle of dust. I grab it from the oasis you are looking for. And. You are ready to go! With the leading flower, you should be able to walk across the sandstorm! [Voice_End]
+		[SeedTrader] Ok, cool. It's simple to use, right? Here, take this bottle of dust. I grab it from the oasis you are looking for. And. You are ready to go! With the leading flower, you should be able to walk across the sandstorm! [EOA]
 	*then
 		-> leading_puzzle_start
 
 @leading_puzzle_start
 	*say
-		You thank the man and continute your journey. [Footsteps]Couple minutes later, you are standing in front of the sandstorm. You should use the dust on the flower before you go into the sandstorm. [Action_Sound]
+		You thank the man and continute your journey. [Footsteps]Couple minutes later, you are standing in front of the sandstorm. You take out the leading flower. [Action]
 	*recap
-		 Try use the dust on the flower [Action_Sound]
+		Try use the dust on the flower[Action]
 	*reprompt
-		Try use the dust on the flower [Action_Sound] 
+		You should use the dust on the leading flower before you go into the sandstorm. [Action]
 	*then
 		hear use the dust on the flower, use , use dust {
-			-> leading_puzzle_start_from_pa
+			-> leading_puzzle_start_from_a
+		}
+		hear use the dust on the flower, use, use dust, use the dust on the leading flower {
+			-> leading_puzzle_start_from_a
 		}
 
-@leading_puzzle_start_from_pa
+@leading_puzzle_start_from_a
 	*say
-		You use the dust on the flower. The flower is reacting to it. Now you can look to different directions.[Action_Sound]
+		You use the dust on the flower. The flower is reacting to it. Now you can look to different directions.
 	*recap
-		You can look east, look south, look west and look north.[Action_Sound] 
+		You can look east, look south, look west and look north. [Action] [Action]
 	*reprompt
-		You can look east, look south, look west and look north.[Action_Sound] 
+		You can look east, look south, look west and look north. [Action] [Action]
 	*then
-		-> leading_pa_positiono
+		//Node _a_
+		-> leading_a_position
 
-@leading_pa_position
+@leading_a_goto
 	*say
 		
 	*then
-		hear look south, go south {
-			-> leading_pa_s
+
+@leading_a_position
+	*then
+		hear look north, look at north {
+			-> leading_a_north
 		}
-		hear look west, go west {
-			-> leading_pa_w
+
+		hear look east, look at east {
+			-> leading_a_east
 		}
-		hear look north {
-			-> leading_pa_n
+
+		hear look south, look at south, go south, go to south {
+			-> leading_a_south
 		}
-		hear look east {
-			-> leading_pa_e
+
+		hear look west, look at west, go west, go to west {
+			-> leading_a_west
 		}
-		hear go to east {
-			-> leading_pb_positiono
+		
+		hear go north, go to north {
+			-> leading_e_goto
 		}
-		hear go to north {
-			-> leading_pe_positiono
+		
+		hear go east, go to east {
+			-> leading_b_goto
 		}
 	*recap
-		You can look east, look south, look west and look north.[Action_Sound] 
+		You can look east, look south, look west and look north. [Action]
 	*reprompt
-		You can look east, look south, look west and look north.[Action_Sound] 
+		You can look east, look south, look west and look north. [Action]
 
-@leading_pb_positiono
+@leading_a_north
 	*say
-		[Footsteps] You come to a new spot.
+		You are looking north.[DirSound_MRight]
 	*then
-		-> leading_pb_position
+		-> leading_a_position
 
-@leading_pd_position
+@leading_a_east
 	*say
+		You are looking east.[DirSound_MLeft]
+	*then
+		-> leading_a_position
+
+@leading_a_south
+	*say
+		You are looking south.[DirSound_Small] That's the entrance you came in before.
+	*then
+		-> leading_a_position
+
+@leading_a_west
+	*say
+		You are looking west.[DirSound_Small] You see the outer edge of the sandstorm. That's definitely now the right way.
+	*then
+		-> leading_a_position
+        
+//Node _b_
+@leading_b_goto
+	*say
+		[Footsteps] Couple minutes later. You come to a new spot.
+	*then
+		-> leading_b_position
+
+@leading_b_position
+	*then
+		hear look north, look at north, go north, go to north {
+			-> leading_b_north
+		}
+
+		hear look east, look at east {
+			-> leading_b_east
+		}
+
+		hear look south, look at south, go to south, go south {
+			-> leading_b_south
+		}
+
+		hear look west, look at west {
+			-> leading_b_west
+		}
 		
-	*then
-		hear look north, go to north, go north {
-			-> leading_pd_n
+		hear go east, go to east {
+			-> leading_c_goto
 		}
-
-		hear look east {
-			-> leading_pd_e
-		}
-
-		hear look south {
-			-> leading_pd_s
-		}
-
-		hear look west, go to west {
-			-> leading_pd_w
-		}
-		hear go to east {
-			-> leading_pe_positiono
-		}
-		hear go to south {
-			-> leading_pa_positiono
+		
+		hear go west, go to west {
+			-> leading_a_goto
 		}
 	*recap
-		You can look east, look south, look west and look north.[Action_Sound]
+		You can look east, look south, look west and look north. [Action]
 	*reprompt
-		You can look east, look south, look west and look north.[Action_Sound]
+		You can look east, look south, look west and look north. [Action]
 
-@leading_pd_w
+@leading_b_north
 	*say
-		You are looking west. The stones block the way.
+		You are looking north. [DirSound_MRight] A dead forest blocks the way.
 	*then
-		-> leading_pd_position
+		-> leading_b_position
 
-@leading_pd_s
+@leading_b_east
 	*say
-		You are looking south. [DirSound_MLeft]
+		You are looking east. [DirSound_MLeft]
 	*then
-		-> leading_pd_position
+		-> leading_b_position
 
-@leading_pd_e
+@leading_b_south
 	*say
-		You are looking east. [DirSound_Large]
+		You are looking south. [DirSound_Small] You see the outer edge of the sandstorm. That's definitely now the right way.
 	*then
-		-> leading_pd_position
+		-> leading_b_position
 
-@leading_pd_n
-	*say
-		You are looking north. The stones block the way.
-	*then
-		-> leading_pd_position
-
-@leading_pb_position
-	*say
-		
-	*then
-		hear look north {
-			-> leading_pb_n
-		}
-
-		hear look east {
-			-> leading_pb_e
-		}
-
-		hear look south, go south {
-			-> leading_pb_s
-		}
-
-		hear look west {
-			-> leading_pb_w
-		}
-		hear go to west {
-			-> leading_pa_positiono
-		}
-
-		hear go to east {
-			-> leading_pc_positiono
-		}
-
-		hear go to north {
-			-> leading_pe_positiono
-		}
-	*recap
-		You can look east, look south, look west and look north.[Action_Sound] 
-	*reprompt
-		You can look east, look south, look west and look north.[Action_Sound] 
-
-@leading_pc_positiono
-	*say
-		[Footsteps] You come to a new spot.
-	*then
-		-> leading_pc_position
-
-@leading_pe_positiono
-	*say
-		[Footsteps] You come to a new spot.
-	*then
-		-> leading_pe_position
-
-@leading_pd_positiono
-	*say
-		[Footsteps]
-	*then
-		-> leading_pd_position
-
-@leading_pa_positiono
-	*say
-		
-	*then
-		-> leading_pa_position
-
-@leading_pe_position
-	*say
-		
-	*then
-		hear look north, go north, go to north {
-			-> leading_pe_n
-		}
-
-		hear look east {
-			-> leading_pe_e
-		}
-
-		hear look south {
-			-> leading_pe_s
-		}
-
-		hear look west {
-			-> leading_pe_w
-		}
-		hear go to west {
-			-> leading_pd_positiono
-		}
-		hear go to south {
-			-> leading_pb_positiono
-		}
-		hear go to east {
-			-> leading_pc_out
-		}
-	*recap
-		You can look east, look south, look west and look north.[Action_Sound]
-	*reprompt
-		You can look east, look south, look west and look north.[Action_Sound] 
-
-@leading_pe_w
+@leading_b_west
 	*say
 		You are looking west. [DirSound_Small]
 	*then
-		-> leading_pe_position
+		-> leading_b_position
 
-@leading_pe_s
+//Node _c_
+
+@leading_c_goto
 	*say
-		You are looking south. [DirSound_MLeft]
+		[Footsteps] Couple minutes later. You come to a new spot.
 	*then
-		-> leading_pe_position
+		-> leading_c_position
 
-@leading_pe_e
-	*say
-		You are looking east. [DirSound_Large]
+@leading_c_position
 	*then
-		-> leading_pe_position
+		hear look north, look at north {
+			-> leading_c_north
+		}
 
-@leading_pe_n
-	*say
-		You are looking north. The stones block the way.
-	*then
-		-> leading_pe_position
+		hear look east, look at east {
+			-> leading_c_east
+		}
 
-@leading_pc_position
-	*say
+		hear look south, look at south, go south, go to south {
+			-> leading_c_south
+		}
+
+		hear look west, look at west {
+			-> leading_c_west
+		}
 		
-	*then
-		hear look north {
-			-> leading_pc_n
+		hear go north, go to north {
+			-> leading_g_goto
 		}
-
-		hear look east, go to east {
-			-> leading_pc_e
+		
+		hear go east, go to east {
+			-> leading_g_goto
 		}
-
-		hear look south, go to south {
-			-> leading_pc_s
-		}
-
-		hear look west {
-			-> leading_pc_w
-		}
-		hear go to north {
-			-> leading_pc_out
-		}
-		hear go to west {
-			-> leading_pb_positiono
+		
+		hear go west, go to west {
+			-> leading_c_goto
 		}
 	*recap
-		You can look east, look south, look west and look north.[Action_Sound]
+		You can look east, look south, look west and look north. [Action]
 	*reprompt
-		You can look east, look south, look west and look north.[Action_Sound]
+		You can look east, look south, look west and look north. [Action]
 
-@leading_pc_out
+@leading_c_north
 	*say
-		Your sight becomes clear.
+		You are looking north.[DirSound_Large]
 	*then
-		-> leading_puzzle_done
+		-> leading_c_position
 
-@leading_puzzle_done
+@leading_c_east
+	*say
+		You are looking east.[DirSound_MLeft]
 	*then
-		-> Arrival At The Inner Cave
+		-> leading_c_position
 
-@leading_pc_w
+@leading_c_south
+	*say
+		You are looking south.[DirSound_Small] You see the outer edge of the sandstorm. That's definitely now the right way.
+	*then
+		-> leading_c_position
+
+@leading_c_west
 	*say
 		You are looking west. [DirSound_MRight]
 	*then
-		-> leading_pc_position
+		-> leading_c_position
 
-@leading_pc_s
+//Node _d_
+
+@leading_d_goto
 	*say
-		You are looking south. The stones block the way.
+		[Footsteps] Couple minutes later. You come to a new spot.
 	*then
-		-> leading_pc_position
+		-> leading_d_position
 
-@leading_pc_e
+@leading_d_position
+	*then
+		hear look north, look at north {
+			-> leading_d_north
+		}
+
+		hear look east, look at east, go east, go to east {
+			-> leading_d_east
+		}
+
+		hear look south, look at south, go south, go to south {
+			-> leading_d_south
+		}
+
+		hear look west, look at west {
+			-> leading_d_west
+		}
+		
+		hear go north, go to north {
+			-> leading_h_goto
+		}
+		
+		hear go west, go to west {
+			-> leading_c_goto
+		}
+	*recap
+		You can look east, look south, look west and look north. [Action]
+	*reprompt
+		You can look east, look south, look west and look north. [Action]
+
+@leading_d_north
 	*say
-		You are looking east. The stones block the way.
+		You are looking north. [DirSound_MLeft]
 	*then
-		-> leading_pc_position
+		-> leading_d_position
 
-@leading_pc_n
+@leading_d_east
 	*say
-		You are looking north. [DirSound_Large]
+		You are looking east. [DirSound_Small] You see the outer edge of the sandstorm. That's definitely now the right way.
 	*then
-		-> leading_pc_position
+		-> leading_d_position
 
-@leading_pb_w
+@leading_d_south
 	*say
-		you are look west. [DirSound_Small]
+		You are looking south. [DirSound_Small] You see the outer edge of the sandstorm. That's definitely now the right way.
 	*then
-		-> leading_pb_position
+		-> leading_d_position
 
-@leading_pb_s
+@leading_d_west
 	*say
-		You are looking south. The stones block the way.
+		You are looking west. [DirSound_MRight]
 	*then
-		-> leading_pb_position
+		-> leading_d_position
 
-@leading_pb_e
+//Node _e_
+
+@leading_e_goto
 	*say
-		You are looking east. [DirSound_MLeft]
+		[Footsteps] Couple minutes later. You come to a new spot.
 	*then
-		-> leading_pb_position
+		-> leading_e_position
 
-@leading_pb_n
+@leading_e_position
+	*then
+		hear look north, look at north {
+			-> leading_e_north
+		}
+
+		hear look east, look at east {
+			-> leading_e_east
+		}
+
+		hear look south, look at south {
+			-> leading_e_south
+		}
+
+		hear look west, look at west, go west, go to west {
+			-> leading_e_west
+		}
+		
+		hear go north, go to north {
+			-> leading_i_goto
+		}
+		
+		hear go east, go to east {
+			-> leading_f_goto
+		}
+		
+		hear go south, go to south {
+			-> leading_a_goto
+		}
+	*recap
+		You can look east, look south, look west and look north. [Action]
+	*reprompt
+		You can look east, look south, look west and look north. [Action]
+
+@leading_e_north
 	*say
 		You are looking north. [DirSound_MRight]
 	*then
-		-> leading_pb_position
+		-> leading_e_position
 
-@leading_pa_w
-	*say
-		You are looking west. [DirSound_Small] But, the stones block the way.
-	*then
-		-> leading_pa_position
-
-@leading_pa_s
-	*say
-		You are looking south. That is the entrance you came.
-	*then
-		-> leading_pa_position
-
-@leading_pa_e
+@leading_e_east
 	*say
 		You are looking east. [DirSound_MLeft]
 	*then
-		-> leading_pa_position
+		-> leading_e_position
 
-@leading_pa_n
+@leading_e_south
+	*say
+		You are looking south. [DirSound_Small]
+	*then
+		-> leading_e_position
+
+@leading_e_west
+	*say
+		You are looking west. [DirSound_Small] You see the outer edge of the sandstorm. That's definitely now the right way.
+	*then
+		-> leading_e_position
+
+
+//Node _f_
+
+@leading_f_goto
+	*say
+		[Footsteps] Couple minutes later. You come to a new spot.
+	*then
+		-> leading_f_position
+
+@leading_f_position
+	*then
+		hear look north, look at north {
+			-> leading_f_north
+		}
+
+		hear look east, look at east {
+			-> leading_f_east
+		}
+
+		hear look south, look at south, go south, go to south {
+			-> leading_f_south
+		}
+
+		hear look west, look at west {
+			-> leading_f_west
+		}
+		
+		hear go north, go to north {
+			-> leading_j_goto
+		}
+		
+		hear go east, go to east {
+			-> leading_g_goto
+		}
+		
+		hear go west, go to west {
+			-> leading_e_goto
+		}
+	*recap
+		You can look east, look south, look west and look north. [Action]
+	*reprompt
+		You can look east, look south, look west and look north. [Action]
+
+@leading_f_north
 	*say
 		You are looking north. [DirSound_MRight]
 	*then
-		-> leading_pa_position
+		-> leading_f_position
+
+@leading_f_east
+	*say
+		You are looking east. [DirSound_MLeft]
+	*then
+		-> leading_f_position
+
+@leading_f_south
+	*say
+		You are looking south. [DirSound_Small] A dead forest blocks the way.
+	*then
+		-> leading_f_position
+
+@leading_f_west
+	*say
+		You are looking west. [DirSound_Small]
+	*then
+		-> leading_f_position
+
+//Node _g_
+
+@leading_g_goto
+	*say
+		[Footsteps] Couple minutes later. You come to a new spot.
+	*then
+		-> leading_g_position
+
+@leading_g_position
+	*then
+		hear look north, look at north {
+			-> leading_g_north
+		}
+
+		hear look east, look at east {
+			-> leading_g_east
+		}
+
+		hear look south, look at south {
+			-> leading_g_south
+		}
+
+		hear look west, look at west {
+			-> leading_g_west
+		}
+		
+		hear go north, go to north {
+			-> leading_g_north
+		}
+		
+		hear go east, go to east {
+			-> leading_h_goto
+		}
+		
+		hear go south, go to south {
+			-> leading_c_goto
+		}
+		
+		hear go west, go to west {
+			-> leading_f_goto
+		}
+	*recap
+		You can look east, look south, look west and look north. [Action]
+	*reprompt
+		You can look east, look south, look west and look north. [Action]
+
+@leading_g_north
+	*say
+		You are looking north. [DirSound_Large] A pond of water blocks the way. Look across the pond, you can almost see some greens.
+	*then
+		-> leading_g_position
+
+@leading_g_east
+	*say
+		You are looking east. [DirSound_MLeft]
+	*then
+		-> leading_g_position
+
+@leading_g_south
+	*say
+		You are looking south. [DirSound_Small]
+	*then
+		-> leading_g_position
+
+@leading_g_west
+	*say
+		You are looking west. [DirSound_MRight]
+	*then
+		-> leading_g_position
+
+//Node _h_
+
+@leading_h_goto
+	*say
+		[Footsteps] Couple minutes later. You come to a new spot.
+	*then
+		-> leading_h_position
+
+@leading_h_position
+	*then
+		hear look north, look at north {
+			-> leading_h_north
+		}
+
+		hear look east, look at east {
+			-> leading_h_east
+		}
+
+		hear look south, look at south {
+			-> leading_h_south
+		}
+
+		hear look west, look at west {
+			-> leading_h_west
+		}
+		
+		hear go north, go to north {
+			-> leading_l_goto
+		}
+		
+		hear go east, go to east {
+			-> leading_e_east
+		}
+		
+		hear go south, go to south {
+			-> leading_d_goto
+		}
+		
+		hear go west, go to west {
+			-> leading_g_goto
+		}
+	*recap
+		You can look east, look south, look west and look north. [Action]
+	*reprompt
+		You can look east, look south, look west and look north. [Action]
+
+@leading_h_north
+	*say
+		You are looking north. [DirSound_MLeft]
+	*then
+		-> leading_h_position
+
+@leading_h_east
+	*say
+		You are looking east. [DirSound_Small] You see the outer edge of the sandstorm. That's definitely now the right way. 
+	*then
+		-> leading_h_position
+
+@leading_h_south
+	*say
+		You are looking south. [DirSound_Small]
+	*then
+		-> leading_h_position
+
+@leading_h_west
+	*say
+		You are looking west. [DirSound_MRight]
+	*then
+		-> leading_h_position
+
+//Node _i_
+
+@leading_i_goto
+	*say
+		[Footsteps] Couple minutes later. You come to a new spot.
+	*then
+		-> leading_i_position
+
+@leading_i_position
+	*then
+		hear look north, look at north {
+			-> leading_i_north
+		}
+
+		hear look east, look at east {
+			-> leading_i_east
+		}
+
+		hear look south, look at south {
+			-> leading_i_south
+		}
+
+		hear look west, look at west {
+			-> leading_i_west
+		}
+		
+		hear go north, go to north {
+			-> leading_m_goto
+		}
+		
+		hear go east, go to east {
+			-> leading_j_goto
+		}
+		
+		hear go south, go to south {
+			-> leading_e_goto
+		}
+		
+		hear go west, go to west {
+			-> leading_i_west
+		}
+	*recap
+		You can look east, look south, look west and look north. [Action]
+	*reprompt
+		You can look east, look south, look west and look north. [Action]
+
+@leading_i_north
+	*say
+		You are looking north. [DirSound_MRight]
+	*then
+		-> leading_i_position
+
+@leading_i_east
+	*say
+		You are looking east. [DirSound_Large]
+	*then
+		-> leading_i_position
+
+@leading_i_south
+	*say
+		You are looking south. [DirSound_MLeft]
+	*then
+		-> leading_i_position
+
+@leading_i_west
+	*say
+		You are looking west. [DirSound_Small] You see the outer edge of the sandstorm. That's definitely now the right way.
+	*then
+		-> leading_i_position
+
+//Node _j_
+
+@leading_j_goto
+	*say
+		[Footsteps] Couple minutes later. You come to a new spot.
+	*then
+		-> leading_j_position
+
+@leading_j_position
+	*then
+		hear look north, look at north {
+			-> leading_j_north
+		}
+
+		hear look east, look at east {
+			-> leading_j_east
+		}
+
+		hear look south, look at south {
+			-> leading_j_south
+		}
+
+		hear look west, look at west {
+			-> leading_j_west
+		}
+		
+		hear go north, go to north {
+			-> leading_j_north
+		}
+		
+		hear go east, go to east {
+			-> leading_j_east
+		}
+		
+		hear go south, go to south {
+			-> leading_f_goto
+		}
+		
+		hear go west, go to west {
+			-> leading_i_goto
+		}
+	*recap
+		You can look east, look south, look west and look north. [Action]
+	*reprompt
+		You can look east, look south, look west and look north. [Action]
+
+@leading_j_north
+	*say
+		You are looking north. [DirSound_MRight] A large field of cactus blocks the way.
+	*then
+		-> leading_j_position
+
+@leading_j_east
+	*say
+		You are looking east. [DirSound_Large] A huge sandhill blocks the way.
+	*then
+		-> leading_j_position
+
+@leading_j_south
+	*say
+		You are looking south. [DirSound_MLeft]
+	*then
+		-> leading_j_position
+
+@leading_j_west
+	*say
+		You are looking west. [DirSound_Small]
+	*then
+		-> leading_j_position
+
+//Node _l_
+
+@leading_l_goto
+	*say
+		[Footsteps] Couple minutes later. You come to a new spot.
+	*then
+		-> leading_l_position
+
+@leading_l_position
+	*then
+		hear look north, look at north {
+			-> leading_l_north
+		}
+
+		hear look east, look at east {
+			-> leading_l_east
+		}
+
+		hear look south, look at south {
+			-> leading_l_south
+		}
+
+		hear look west, look at west {
+			-> leading_l_west
+		}
+		
+		hear go north, go to north {
+			-> leading_p_goto
+		}
+		
+		hear go east, go to east {
+			-> leading_l_east
+		}
+		
+		hear go south, go to south {
+			-> leading_h_goto
+		}
+		
+		hear go west, go to west {
+			-> leading_find_oasis
+		}
+	*recap
+		You can look east, look south, look west and look north. [Action]
+	*reprompt
+		You can look east, look south, look west and look north. [Action]
+
+@leading_l_north
+	*say
+		You are looking north. [DirSound_MLeft]
+	*then
+		-> leading_l_position
+
+@leading_l_east
+	*say
+		You are looking east. [DirSound_Small] You see the outer edge of the sandstorm. That's definitely now the right way.
+	*then
+		-> leading_l_position
+
+@leading_l_south
+	*say
+		You are looking south. [DirSound_MRight]
+	*then
+		-> leading_l_position
+
+@leading_l_west
+	*say
+		You are looking west. [DirSound_Large]
+	*then
+		-> leading_l_position
+
+//Node _m_
+
+@leading_m_goto
+	*say
+		[Footsteps] Couple minutes later. You come to a new spot.
+	*then
+		-> leading_m_position
+
+@leading_m_position
+	*then
+		hear look north, look at north {
+			-> leading_m_north
+		}
+
+		hear look east, look at east {
+			-> leading_m_east
+		}
+
+		hear look south, look at south {
+			-> leading_m_south
+		}
+
+		hear look west, look at west {
+			-> leading_m_west
+		}
+		
+		hear go north, go to north {
+			-> leading_m_north
+		}
+		
+		hear go east, go to east {
+			-> leading_n_goto
+		}
+		
+		hear go south, go to south {
+			-> leading_i_goto
+		}
+		
+		hear go west, go to west {
+			-> leading_m_west
+		}
+	*recap
+		You can look east, look south, look west and look north. [Action]
+	*reprompt
+		You can look east, look south, look west and look north. [Action]
+
+@leading_m_north
+	*say
+		You are looking north. [DirSound_Small] You see the outer edge of the sandstorm. That's definitely now the right way.
+	*then
+		-> leading_m_position
+
+@leading_m_east
+	*say
+		You are looking east. [DirSound_MRight]
+	*then
+		-> leading_m_position
+
+@leading_m_south
+	*say
+		You are looking south. [DirSound_MLeft]
+	*then
+		-> leading_m_position
+
+@leading_m_west
+	*say
+		You are looking west. [DirSound_Small] You see the outer edge of the sandstorm. That's definitely now the right way.
+	*then
+		-> leading_m_position
+
+//Node _n_
+
+@leading_n_goto
+	*say
+		[Footsteps] Couple minutes later. You come to a new spot.
+	*then
+		-> leading_n_position
+
+@leading_n_position
+	*then
+		hear look north, look at north {
+			-> leading_n_north
+		}
+
+		hear look east, look at east {
+			-> leading_n_east
+		}
+
+		hear look south, look at south {
+			-> leading_n_south
+		}
+
+		hear look west, look at west {
+			-> leading_n_west
+		}
+		
+		hear go north, go to north {
+			-> leading_n_north
+		}
+		
+		hear go east, go to east {
+			-> leading_o_goto
+		}
+		
+		hear go south, go to south {
+			-> leading_n_south
+		}
+		
+		hear go west, go to west {
+			-> leading_m_goto
+		}
+	*recap
+		You can look east, look south, look west and look north. [Action]
+	*reprompt
+		You can look east, look south, look west and look north. [Action]
+
+@leading_n_north
+	*say
+		You are looking north. [DirSound_Small] You see the outer edge of the sandstorm. That's definitely now the right way.
+	*then
+		-> leading_n_position
+
+@leading_n_east
+	*say
+		You are looking east. [DirSound_MRight]
+	*then
+		-> leading_n_position
+
+@leading_n_south
+	*say
+		You are looking south. [DirSound_MLeft] A large field of cactus blocks the way.
+	*then
+		-> leading_n_position
+
+@leading_n_west
+	*say
+		You are looking west. [DirSound_Small]
+	*then
+		-> leading_n_position
+
+//Node _o_
+
+@leading_o_goto
+	*say
+		[Footsteps] Couple minutes later. You come to a new spot.
+	*then
+		-> leading_o_position
+
+@leading_o_position
+	*then
+		hear look north, look at north {
+			-> leading_o_north
+		}
+
+		hear look east, look at east {
+			-> leading_o_east
+		}
+
+		hear look south, look at south {
+			-> leading_o_south
+		}
+
+		hear look west, look at west {
+			-> leading_o_west
+		}
+		
+		hear go north, go to north {
+			-> leading_o_north
+		}
+		
+		hear go east, go to east {
+			-> leading_p_goto
+		}
+		
+		hear go south, go to south {
+			-> leading_find_oasis
+		}
+		
+		hear go west, go to west {
+			-> leading_n_goto
+		}
+	*recap
+		You can look east, look south, look west and look north. [Action]
+	*reprompt
+		You can look east, look south, look west and look north. [Action]
+
+@leading_o_north
+	*say
+		You are looking north. [DirSound_Small] You see the outer edge of the sandstorm. That's definitely now the right way.
+	*then
+		-> leading_o_position
+
+@leading_o_east
+	*say
+		You are looking east. [DirSound_MRight]
+	*then
+		-> leading_o_position
+
+@leading_o_south
+	*say
+		You are looking south. [DirSound_Large]
+	*then
+		-> leading_o_position
+
+@leading_o_west
+	*say
+		You are looking west. [DirSound_MLeft]
+	*then
+		-> leading_o_position
+
+//Node _p_
+
+@leading_p_goto
+	*say
+		[Footsteps] Couple minutes later. You come to a new spot.
+	*then
+		-> leading_p_position
+
+@leading_p_position
+	*then
+		hear look north, look at north {
+			-> leading_p_north
+		}
+
+		hear look east, look at east {
+			-> leading_p_east
+		}
+
+		hear look south, look at south {
+			-> leading_p_south
+		}
+
+		hear look west, look at west {
+			-> leading_p_west
+		}
+		
+		hear go north, go to north {
+			-> leading_p_north
+		}
+		
+		hear go east, go to east {
+			-> leading_p_east
+		}
+		
+		hear go south, go to south {
+			-> leading_l_goto
+		}
+		
+		hear go west, go to west {
+			-> leading_o_goto
+		}
+	*recap
+		You can look east, look south, look west and look north. [Action]
+	*reprompt
+		You can look east, look south, look west and look north. [Action]
+
+@leading_p_north
+	*say
+		You are looking north. [DirSound_Small] You see the outer edge of the sandstorm. That's definitely now the right way.
+	*then
+		-> leading_p_position
+
+@leading_p_east
+	*say
+		You are looking east. [DirSound_Small] You see the outer edge of the sandstorm. That's definitely now the right way.
+	*then
+		-> leading_p_position
+
+@leading_p_south
+	*say
+		You are looking south. [DirSound_MRight]
+	*then
+		-> leading_p_position
+
+@leading_p_west
+	*say
+		You are looking west. [DirSound_MLeft]
+	*then
+		-> leading_p_position
+
+@leading_find_oasis
+	*say
+		Your sight becomes clear. You see the oasis.
+	*then
+	    -> Arrival At The Inner Cave
+
 
