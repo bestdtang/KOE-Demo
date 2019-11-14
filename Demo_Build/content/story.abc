@@ -1356,10 +1356,9 @@ Get the Hot Sauce 1
         //hear puzzle hint, hint {
         //   -> puzzle_help
         //}
-		hear jump to leading flower {
+		hear start flower puzzle {
 			-> End of ACT III, 1&2
 		}
-
 @Where am I
 	*say
 		Now you are in {currentLocation}.
@@ -1777,7 +1776,7 @@ Get the Hot Sauce 1
 	*recap
 		You should go to hallway.[Action_Sound] 
 	*reprompt
-		You should go to hallway.[Action_Sound] 
+		You should go to hallway.[Action_Sound]
 
 @chilirosa_hallway_pot_caught
 	*say
@@ -2122,6 +2121,7 @@ If you are on the right direction, the flower will sing. [DirSound_Large]
 		hear use the dust on the leading flower {
 			-> leading_tutorial_start
 		}
+
 @leading_tutorial_start
 	*say
 		You use the dust on the leading flower. [SeedTrader] See, the flower is reacting to it. Now, you are standing in the middle of my tent. You can hold the flower and look at four different directions, east, south, west, north.[EOA]
@@ -2311,6 +2311,7 @@ Try say, go north.[Action]
 		-> leading_a_position
         
 //Node _b_
+
 @leading_b_goto
 	*say
 		[Footsteps] Couple minutes later. You come to a new spot.
@@ -3267,5 +3268,4 @@ Try say, go north.[Action]
 		Your sight becomes clear. You see the oasis.
 	*then
 	    -> Arrival At The Inner Cave
-
 
