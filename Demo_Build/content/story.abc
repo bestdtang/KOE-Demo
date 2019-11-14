@@ -63,7 +63,7 @@
 	*say
 		You look around, like a compass slowly spinning. You don't find anything particularly interesting. [Pause] Wait! You see a few freckles on the yellow surfaces of Earth. It shines under the burning sun! You squint your eyes and look closer. [Pause] <emphasis level="reduced">It's a town!</emphasis> [Short_Pause] There's a good chance that they have some water there.[DirectionQuestionSound]
 	*then
-		hear go to the town {
+		hear go to the town, go towards the town, town, the town {
 		    set currentLocation as 'town'
              -> Go to Town
          }
@@ -121,7 +121,7 @@
 	*say
 		Upon approaching the general store, you see a boy. He wears a red coat, and you can see surprised written all over his face. [Long_Pause][Kid] You are a new face here. Do you need help? [Short_Pause] You don't look well.[/Kid] [Long_Pause] Maybe the little boy has water. You can ask if there's water. [ConversationQuestionSound] When you hear this sound, you decide what to say to the other person next. For example, right now you can ask the boy for water. [Short_Pause] Try it!
 	*then
-		hear do you have water, ask for water, ask the boy, ask the boy for water {
+		hear water, can I have some water, can you give me water, do you have water, do you have any water, ask for water, ask the boy, ask the boy for water {
 			-> Boy
 		}
 	*recap
@@ -230,9 +230,9 @@
 		//That's a rare name around here. 
 		[Pause] Anyway, this is a desert so you could imagine it never rains here [Short_Pause] until that night. [Pause] On that night. We've seen the greatest thunderstorm of the town's history, [Short_Pause] but no-one anticipated what came after.[EOA]
         [Kid]
-        [Long_Pause] And then the next morning, my dad started sweating like a cow. So did everyone else. But not me.[/Kid]
+        [Long_Pause] And then the next morning, my dad started sweating like a cow. So did everyone else. [/Kid]
         [Man]
-        Yeah. [Pause] We were like broken faucets. But what's worse was what happens afterward. [Short_Pause]That's right. the stench. This stench. It kept everyone from talking to each other. It drove tourists away. And now, no-one wants to come to our town anymore.[EOA]
+        Yeah. [Pause] What's worse was what happens afterward. [Short_Pause]That's right.The stench. This stench. It kept everyone from talking to each other. It drove tourists away. And now, no-one wants to come to our town anymore.[EOA]
         [Pause]
         The shopkeeper points to a poster on the left wall. It has some dust and the colors have started to fade away, but it's still pretty clear. 
         [Man]
@@ -265,7 +265,7 @@
 	*recap
 		Pick the other place
 	*reprompt
-		Pick a place you want to go to
+		If you don't know where to go, remember to say What's around me. Then you can pick a place you want to go to
 
 @Look Left
 	*say
@@ -276,7 +276,7 @@
 @Decide to Help
 	*say
 		[Man]
-	    Ha-haaah! [Pause] This is our lucky day, son. Finally a person who is willing to help us. Well, I guess I shouldn't be keeping you here for too long eh? [EOA]
+	    This is our lucky day, son. Finally a person who is willing to help us. Well, I guess I shouldn't be keeping you here for too long eh? [EOA]
 		[Kid] 
 		But papa, you haven't told him anything about how to solve the problem. [EOA]
 		[Man]
@@ -285,6 +285,8 @@
 		But the mayor is also locking himself up. No one has seen him for a while. [EOA]
 		[Man] 
 		Ha! This, my son, is when being the owner of the ONLY general store in the town comes in handy [Short_Pause] Kungh kungh, you see, the mayor has a secret craving for Super-Duper Hot Blue Pepper Sauce. [Short_Pause] And guess who's selling it? Me! Ha haaah! [EOA]
+	*recap
+		Pick the other place
 	*then
 		-> Decide to Help 2
 
@@ -295,9 +297,8 @@
 	*recap
 		You can ask about the mayor, ask about the sauce, or ask for one bottle
 	*then
-		hear one, ask for one, ask one {
+		hear buy, buy a bottle, can I have a bottle of hot sauce, could I, can you, can I, one, ask for one bottle, ask one, please give me {
 	        -> One Bottle of Sauce
-	        // TODO: fix the loop
 	    }
 	    hear ask about the mayor, about the mayor, the mayor {
 	        -> Ask Shopkeeper About the Mayor
@@ -313,7 +314,7 @@
 		[Man]
         The mayor has a strange craving for hot sauce. The mayor has turned down guests since the incident. [Short_Pause] The mayor didn't do anything to help the town either. Nobody knows if he's even in his office anymore. What else would you like to know?[EOA] You can ask about the sauce, or ask for one bottle.
 	*then
-		hear one, ask for one, ask one {
+		hear buy, buy a bottle, can I have a bottle of hot sauce, could I, can you, can I, one, ask for one bottle, ask one, please give me  {
             -> One Bottle of Sauce
         }
         hear ask about the sauce, about the sauce, the sauce {
@@ -325,7 +326,7 @@
 		[Man]
         I can only say, the hot sauce is really hot, [Short_Pause] and it looks blue. Like the gas stoves you see in your kitchen, hot, hot, hot! Hmm, what else would you like to know?[EOA] You can ask about the mayor, or ask for one bottle.
 	*then
-		hear one, ask for one, ask one {
+		hear buy, buy a bottle, can I have a bottle of hot sauce, could I, can you, can I, one, ask for one bottle, ask one, please give me  {
             -> One Bottle of Sauce
         }
         hear ask about the mayor, about the mayor, the mayor {
@@ -358,7 +359,7 @@
 		hear leave the store, leave {
             -> Leave the Store
         }
-        hear ask more, tell me more, ask more about Mrs Chilirosa, Misses Chilirosa, she, where {
+        hear ask more, tell me more about, ask more about Mrs Chilirosa, Misses Chilirosa, she, where {
             -> Ask more about Chilirosa
         }
 
@@ -422,11 +423,11 @@
 		    set currentLocation as 'outside of the beauty saloon'
 			-> Beauty Salon
 		}
-		hear Mayor's office, left, go to mayor's office {
+		hear Mayor's office, left, go to mayor's office,office {
 		    set currentLocation as 'mayors office'
 			-> Mayor's Office
 		}
-		hear check the signpost again, again, check again {
+		hear signpost,check the signpost again, again, check again {
 			-> Signpost
 		}
 	*recap
@@ -676,14 +677,14 @@ You're at the front door of the beauty salon. Looks like its doors are shut tigh
 	*say
 		[MrsChilirosa]
         Give me a reason why you need hot sauce. You want hot sauce because? [EOA]
-        [ConversationQuestionSound] So we have two plans here: Plan A, You tell her how you like the sauce; Plan B, tell her that you need it to get the mayor's attention. Which plan you do you want to go?
+        [ConversationQuestionSound] So we have two plans here: first plan, You tell her how you like the sauce. second plan. tell her that you need it to get the mayor's attention. Which plan you do you want to go?
 	*recap
 		We have two plans here: First one, make up a reason and lie. Second one, tell her that you need it to get the mayor's attention. Which plan you do you want to go?
 	*then
-		hear A, first, make up, reason, lie {
+		hear one, first, make up, reason, lie {
             -> Tell Mrs Chilirose you like the Sauce
         }
-		hear B, second, tell her that I need it to get the mayor's attention, need {
+		hear two, second, tell her that I need it to get the mayor's attention, need {
 			-> Tell Mrs Chilirose Honestly
         }
         
