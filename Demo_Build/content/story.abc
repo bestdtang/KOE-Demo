@@ -3859,9 +3859,15 @@ Try say, go north.[Action]
 			-> cowplant_puzzle_tent_view_man
 		}
 		hear look at the notebook {
+		    if getnotebook{
+		        -> cowplant_puzzle_tent_note_already
+		    }
 			-> cowplant_puzzle_tent_view_notebook
 		}
 		hear pick up the notebook {
+		    if getnotebook{
+		        -> cowplant_puzzle_tent_note_already
+		    }
 		    flag getnotebook
 		    set currentplace to 0
 			-> cowplant_puzzle_tent_pickup_notebook
@@ -3879,10 +3885,17 @@ Try say, go north.[Action]
 		hear look at the door {
 			-> cowplant_puzzle_tent_view_door
 		}
+
 	*recap
 		You can look around, look at different things, or go outside. [Action]
 	*reprompt
 		You can look around, look at different things, or go outside. [Action]
+
+@cowplant_puzzle_tent_note_already
+	*say
+		You already pucked up the notebook. You can search keywords by open notebook.
+	*then
+	    -> cowplant_puzzle_tent_interaction
 
 @cowplant_puzzle_tent_view_man_out
 	*say
@@ -4501,14 +4514,6 @@ different things to see more details.
 		hear travel back {
 			-> escape_puzzle_stand_portal_travelback
 		}
-
-		hear go to scene escape_puzzle_stand_portal_realm_1 {
-			-> escape_puzzle_stand_portal_realm_1
-		}
-
-@escape_puzzle_stand_portal_realm_1
-	*say
-		Replace with your content.
 
 @escape_puzzle_stand_portal_alien
 	*say
