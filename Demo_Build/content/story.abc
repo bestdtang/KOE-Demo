@@ -1072,24 +1072,31 @@ Get the Hot Sauce 1
 @MysMan Introduces Himself
 	*say
 		[SeedTrader]
-        my name is Luke, nothing but a humble merchant in the desert selling seeds and plants and other fascinating little gimmicks that be found nowhere else but in my awesome tent. [EOA]
+        my name is Luke, nothing but a humble merchant in the desert. I sell seeds and plants. I also sell other fascinating little gimmicks that be found nowhere else but in my awesome tent. [EOA]
         
         Luke looks at the sun for a bit.
         
         [SeedTrader]
-        The sun sure is hot. Let's head back in to the tent first, shall we? [EOA]
+        The sun sure is hot. Let's head back in to the tent first.[Pause] [EOA]
     
-        Luke walks with you back into the tent.
+        You hesitated a little because you still have to find your way to the cave. You still followed him.
         
         [SeedTrader]
         Hmm. That wasn't very clever for you to travel through the sandstorm like that. You may have become a part of the desert, you know. [EOA]
         
         As he enters the tent, he jumps into the center of tent, like a graceful dancer.
         
-        [SeedTrader]
-        Welcome, to Luke's tent of peculiar collections. Would you be interested in any of the items I have? Would you be interested in a seed that grows nothing but more seeds? [EOA]
+        You are inside Luke's tent. There is a giant brown seed on the table beside you. 
+
         
-        Don't forget, you need to get to the cave, fast. What should you ask?
+        [SeedTrader]
+        //Welcome, to Luke's tent of peculiar collections. 
+        //Would you be interested in any of the items I have? 
+        //Would you be interested in a seed that grows nothing but more seeds? 
+        [EOA]
+        
+        //Don't forget, you need to get to the cave, fast. 
+        //What should you ask?
         
 	*then
 		unflag anotherItem
@@ -1100,21 +1107,21 @@ Get the Hot Sauce 1
 
 @MysMan Introduces Himself 2
 	*say
-		[SeedTrader]
-        This is a seed that grows more seeds. Would you like to know how it works? [EOA]
+		//[SeedTrader]
+        //This is a seed that grows more seeds. Would you like to know how it works? [EOA]
         
-        You can ask more about the plant, ask how to get to the cave. You can even simply leave.
+        You can ask more about the seed or ask how to get to the cave. You can also thank him and leave.
         
 	*reprompt
-        You can ask more about the plant, ask how to get to the cave. You can even simply leave.
+        You can ask more about the seed or ask how to get to the cave. You can also thank him and leave.
 	*then
-		hear yes, sure {
+		hear seed, tell me more about the seed {
             -> More About the Seed
         }
-        hear no, leave {
+        hear thank him and leave, no, leave {
             -> MysMan Says Wait
         }
-        hear how to get to the cave, the cave {
+        hear how to get to the cave, the cave, cave {
             -> Another Item
         }
 
@@ -1123,7 +1130,7 @@ Get the Hot Sauce 1
 	    [SeedTrader]
 		Ah, yes. This is a seed that makes more seeds. No plant roots, no flowers, just... seeds! I personally use it for seasoning. A great match for all dishes, even junk food. [EOA]
 		
-		Luke eagerly waits for your response.
+		//Luke eagerly waits for your response.
 
 	*then
 		>> BACK
@@ -1131,7 +1138,7 @@ Get the Hot Sauce 1
 @MysMan Says Wait
 	*say
 		[SeedTrader]
-        Wait [Short_Pause] wait [Short_Pause] wait!  What did I miss? [EOA]
+        Wait, wait, wait! What did I miss? [EOA]
 	*then
 		if anotherItem{
             -> Next Item
@@ -1143,35 +1150,39 @@ Get the Hot Sauce 1
 		[SeedTrader]
         Uh, how about this? This is a plant that glows in the day! [EOA]
        
-        He takes out a small flower that glows strongly in the tent. What will you ask?
+        He takes out a small flower that glows strongly in the tent. 
+        
+        You can ask more about the flower or ask how to get to the cave. You can also thank him and leave.
        
     *reprompt
-        You can ask more about the plant, ask how to get to the cave. You can even simply leave.
+        You can ask more about the flower or ask how to get to the cave. You can also thank him and leave.
         
 	*then
 		flag anotherItem
-        hear tell me more, more {
+        hear ask more about the flower, tell me more, more, flower, tell me more about the flower {
             -> More About the Glowing Plant
         }
         hear about the cave, the cave {
             -> Next Item
         }
-        hear leave {
+        hear go, leave, thank him and leave, leave {
             -> MysMan Says Wait
         }
 
 @More About the Glowing Plant
 	*say
 	    [SeedTrader]
-		Ha! Glad that you've asked. This plant is a tremendous existence in our world. It glows when there's sunlight. If there is no sun, it doesn't glow! Ha! Isn't it fascinating? [EOA]
+		Ha! Glad that you've asked. This plant is a tremendous existence in our world. It glows when there's sunlight. If there is no sun, it doesn't glow! Ha! [EOA]
+		
+		You can ask how to get to the cave. You can also thank him and leave.
 		
 	*reprompt
-	    You can ask how to get to the cave. You can even simply leave.
+	    You can ask how to get to the cave. You can also thank him and leave.
 	*then
-		hear about the cave, the cave {
+		hear how to get to the cave, about the cave, the cave {
             -> Next Item
         }
-        hear leave {
+        hear leave, thank him and leave {
             -> MysMan Says Wait
         }
 
@@ -1181,8 +1192,10 @@ Get the Hot Sauce 1
 		
 		[SeedTrader]
         There! Found you. This, oh my dear, is a rare find out here in the desert. This, is a stinky plant. [EOA]
-        
-        He seems really unsettled, but not because of the plant he's holding up to you. What will you ask?
+    
+        He seems really unsettled, but not because of the plant he's holding up to you. 
+    *reprompt
+	    You can ask how to get to the cave. You can also thank him and leave.
 	*then
 		hear about the cave {
             -> MysMan Says Stop
