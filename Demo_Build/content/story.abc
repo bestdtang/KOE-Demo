@@ -2081,6 +2081,7 @@ Get the Hot Sauce 1
 			if turn_pot and turn_kettle{
 			    unflag turn_pot
 			    unflag turn_kettle
+		        set pot_count as 0
 			    -> chilirosa_hallway_hidepotkettle
 			}
 			if turn_pot{
@@ -2139,6 +2140,7 @@ Get the Hot Sauce 1
 	*say
 		You hide into the closet. [Chilirosa_hide]Right after you close the door, the kettle starts to whistle. Misses Chilirosa hears it, walks past the hallway to the kitchen. She turns the kettle off and finds that the pot is also on. The soup is not boiling dry yet. She turns the pot off, then goes back to the living room. Hearing that, you come out of the closet. You should find a way to leave her in the kitchen for a longer time.
 	*then
+	    
 		-> chilirosa_hallway_interation
 
 @chilirosa_living_caught
