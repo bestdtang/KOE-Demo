@@ -23,11 +23,11 @@
         }
 
 @Quit Game
-    *say
+	*say
         OK. Bye~
     *then
         >> END
-        
+
 @Lost in Desert
 	*say
 		The blowing, hot wind scorches the surface of both the earth and your skin. You walk aimlessly in the desert, thirsty for water. [Pause] [footstep] In the middle of the hot desert, you found a rusty, old signpost. It has two arrows pointing to the right and the left. However, the letters have faded away.
@@ -981,7 +981,7 @@ Get the Hot Sauce 1
         
         You feel like you were being carried onto a bed, so you close your eyes and let yourself drift away.
 	*then
-		-> Waking Up In An Empty Tent
+	-> cowplant_puzzle_start
 
 @Waking Up In An Empty Tent
 	*say
@@ -1067,7 +1067,6 @@ Get the Hot Sauce 1
 		//slot playerName__ to 'AMAZON.US_FIRST_NAME'
         
         //hear {playerName__}, my name is {playerName__} {
-            -> MysMan Introduces Himself
         //}
 
 @MysMan Introduces Himself
@@ -1278,18 +1277,14 @@ Get the Hot Sauce 1
         
         [SeedTrader]
         Now. You will use this flower and guide yourself to garden, which is in the center of this maze. First, say to the flower [Pause] "Lead me to the garden." [EOA]
-        
-        The flower suddenly stands up straight, like it has awoken from some sleep.
-        
-        [SeedTrader]
-        Good. Then, grab some dust from the ground and sprinkle it on the flower. You use the dust on the leading flower. [EOA]
-        The flower gently shakes for a second. 
-        
-        [SeedTrader]
-        Great. That means the flower has locked on to the scent of a garden, and knows how to get to it now. Hold the flower and look at four directions: East, South, West, and North. [EOA]
-
+	*recap
+		Try to say, lead me to the garden.
+	*reprompt
+	    Try to say, lead me to the garden.
 	*then
-		-> leading_start
+	    hear lead me to the garden{
+	    -> leading_start
+	    }
 
 @MysMan Story Plot 2
 	*say
@@ -1603,7 +1598,6 @@ Get the Hot Sauce 1
             -> Quit Game
         }
 
-
 @End of ACT III, 4
 	*say
 		//(Sound Effect: Horse Neighing)
@@ -1627,7 +1621,7 @@ Get the Hot Sauce 1
 
 @End of ACT III, all
 	*then
-		-> leading_puzzle_start
+		-> Luke Explains the Cave
 
 @global append
 	*then
@@ -1659,6 +1653,7 @@ Get the Hot Sauce 1
 		hear jump to flower puzzle {
 			-> End of ACT III, 1&2
 		}
+
 @Test Audio
 	*say
 		ACT 3 test start
@@ -1701,7 +1696,8 @@ Get the Hot Sauce 1
 		6 <audio src='https://koetest.s3.amazonaws.com/actionsounds/as06.mp3'/>
 
 	*then
-		>> BACK		
+		>> BACK
+
 @Where am I
 	*say
 		Now you are in {currentLocation}.
@@ -1745,16 +1741,16 @@ Get the Hot Sauce 1
 
 @Escape The Room
 	*say
-		Escape the room details here.
+		
 	*then
-		-> Exit The Room
+		-> escape_puzzle_intro
 
 @Exit The Room
 	*say
 		[Alchemist] 
         AH! [EOA]
 
-        You find the alchemist in your face. He is scared as you suddenly open the door.
+        You find the alchemist in your face. He is scared as you suddenly appearing.
 
         [Alchemist] 
         Sorry, it's been a long time since I've seen anyone else. You're the first one to enter the cave, and I don't know how to act, so I locked you in. I'm working on the last step to my latest work, care to join? [EOA]
@@ -2454,21 +2450,26 @@ If you are on the right direction, the flower will sing. [DirSound_Large]
 
 @leading_start
 	*say
-		[SeedTrader]
-		Here, If you are going to the oasis, that is in the center of the sandstorm. You must take this compass, and the leading flower. If you are lost, the compass will show you the direction and the flower will point you the way to the oasis. If you sprinkle a little bit dust on the leading flower. It will chase the smell and bring you to wherever the dust is from. look, here is the dust I grab from my garden. Now, I will show you how to use it. Try use the dust on the leading flower. [EOA] [Action]
+		The flower suddenly stands up straight, like it has awoken from some sleep.
+        
+        [SeedTrader]
+        Good. Then, grab some dust from the ground and sprinkle it on the flower.  [EOA]
 	*recap
-		Try use the dust on the leading flower. [Action]
+		Try use the dust on the flower. [Action]
 	*reprompt
-		Try use the dust on the leading flower. [Action]
+		Try use the dust on the flower. [Action]
 	*then
-		hear use the dust on the leading flower {
+		hear use the dust on the flower {
 			-> leading_tutorial_start
 		}
 
 @leading_tutorial_start
 	*say
-		You use the dust on the leading flower. [SeedTrader] See, the flower is reacting to it. Now, you are standing in the middle of my tent. You can hold the flower and look at four different directions, east, south, west, north.[EOA]
-Try say, look south. [Action]
+		You use the dust on the leading flower. 
+        The flower gently shakes for a second. 
+        
+        [SeedTrader]
+        Great. That means the flower has locked on to the scent of a garden, and knows how to get to it now. Hold the flower and look at four directions: East, South, West, and North.[EOA] Try say, look south 
 	*then
 		hear look south, look at south {
 			-> leading_tutorial_south
@@ -2553,7 +2554,7 @@ Try say, go north.[Action]
 
 @leading_tutorial_again
 	*say
-		[SeedTrader]Ok... No worry, I can put you back to my tent, and show you again. Do you wanna learn again?[EOA][Conversation]
+		[SeedTrader]Ok... No worry, I can put you back to the maze, and show you again. Do you wanna learn again?[EOA][Conversation]
 	*then
 		hear yes {
 			-> leading_tutorial_start
@@ -2570,7 +2571,7 @@ Try say, go north.[Action]
 
 @leading_puzzle_start
 	*say
-		You thank the man and continute your journey. [Footsteps]Couple minutes later, you are standing in front of the sandstorm. You take out the leading flower. [Action]
+		You thank him and continute your journey. [Footsteps]Couple minutes later, you are standing in front of the sandstorm. You take out the leading flower. [Action]
 	*recap
 		Try use the dust on the flower[Action]
 	*reprompt
@@ -3611,4 +3612,1069 @@ Try say, go north.[Action]
 		Your sight becomes clear. You see the oasis.
 	*then
 	    -> Arrival At The Inner Cave
+
+
+
+// cowplant puzzle---------------------------------------------------------------------------------------------
+
+@cowplant_puzzle_start
+	*say
+		You wake up finding yourself in a tent. The sunlight sprinkles on your face through the small holes in the ceiling. As you slowly gain consciousness, you hear a strange shouting coming from outside. But before you get the sound, it's strange enough that you ended up in this tent. What's inside this tent?
+	*recap
+		You can look around.
+	*reprompt
+		You can look around.
+	*then
+		hear look around {
+			-> cowplant_puzzle_tent_around_tutorial
+		}
+
+@cowplant_puzzle_tent_around_tutorial
+	*say
+		Surprisingly, it's a fairly large tent, and a messy one. Books and papers are scattered everywhere on the floor. There is also a cabinet full of plants and seeds and mysterious materials contained in vials and glass jars. A leather book that reads Cowplant Observation Notes is present on the small table beside it. That's pretty much it in the tent, but what's outside?
+	*recap
+		You should go outside.
+	*then
+		hear go outside {
+			-> cowplant_puzzle_outside_around_tutorial
+		}
+	*reprompt
+		You should go outside.
+
+@cowplant_puzzle_outside_around_tutorial
+	*say
+		As you exit the tent, you see the familiar, infinite desert. Oh. You're still in the desert. As you look back at the tent, you immediately noticed a strange plant. This plant is the size of a big refrigerator, and it has a mouth. That's right, a mouth. A man is lying on the ground, fainted.
+	*then
+		-> cowplant_puzzle_outside_interaction
+
+@cowplant_puzzle_outside_interaction
+	*say
+		
+	*recap
+		You can view different things, look around, or go to the tent. [Action]
+	*reprompt
+		You can view different things, look around, or go to the tent. [Action]
+	*then
+		hear look around, look around me {
+		    if wakeman {
+		        -> cowplant_puzzle_outside_around_noman
+		    }
+			-> cowplant_puzzle_outside_around_man
+		}
+		hear view the man {
+		    if wakeman{
+		        -> cowplant_puzzle_outside_view_man_gone
+		    }
+			-> cowplant_puzzle_outside_view_man
+		}
+
+		hear wake up the man {
+		    flag wakeman
+			-> cowplant_puzzle_outside_wake_man
+		}
+
+		hear view the plant {
+		    flag viewplant
+			-> cowplant_puzzle_outside_view_plant
+		}
+
+		hear interact with the plant {
+			-> cowplant_puzzle_cowplant_interact
+		}
+
+		hear view the basket, view the swordfish {
+			-> cowplant_puzzle_outside_view_basket
+		}
+
+		hear view the stereo {
+			-> cowplant_puzzle_outside_view_stereo
+		}
+
+		hear turn on the stereo {
+			-> cowplant_puzzle_outside_stereo_on
+		}
+
+		hear go to the tent {
+		    if getmilk and wakeman{
+		        -> cowplant_puzzle_tent_getmilk
+		    }
+			-> cowplant_puzzle_tent_goto
+		}
+		hear open the notebook {
+		    set currentplace to 1
+			if !getnotebook{
+		        -> cowplant_puzzle_tent_nonote
+		    }
+			-> cowplant_puzzle_notebook_open
+		}
+
+		hear view the tent {
+			-> cowplant_puzzle_outside_view_tent
+		}
+
+@cowplant_puzzle_cowplant_interact
+	*say
+		What do you want to do to the plant?
+	*then
+		-> cowplant_puzzle_cowplant_interaction
+
+@cowplant_puzzle_outside_view_man_gone
+	*say
+		You view the man. He is already gone to the tent. You can probably go to the tent to find him.
+	*then
+		-> cowplant_puzzle_outside_interaction
+
+@cowplant_puzzle_outside_view_tent
+	*say
+		You view the tent. That's the tent you came from. You can go to the tent at anytime.
+	*then
+		-> cowplant_puzzle_outside_interaction
+
+@cowplant_puzzle_tent_goto
+	*say
+		You go to the tent.
+	*then
+		-> cowplant_puzzle_tent_interaction
+
+@cowplant_puzzle_tent_interaction
+	*say
+		
+	*then
+		hear look around {
+		    if wakeman {
+			    -> cowplant_puzzle_tent_around_man
+			}
+			
+			-> cowplant_puzzle_tent_around_noman
+		}
+
+		hear view the man {
+		    if !wakeman{
+		        -> cowplant_puzzle_tent_view_man_out
+		    }
+			-> cowplant_puzzle_tent_view_man
+		}
+		hear view the notebook {
+			-> cowplant_puzzle_tent_view_notebook
+		}
+		hear pick up the notebook {
+		    flag getnotebook
+		    set currentplace to 0
+			-> cowplant_puzzle_tent_pickup_notebook
+		}
+		hear open the notebook {
+		    set currentplace to 0
+		    if !getnotebook{
+		        -> cowplant_puzzle_tent_nonote
+		    }
+			-> cowplant_puzzle_notebook_open
+		}
+		hear go outside {
+			-> cowplant_puzzle_outside_go
+		}
+		hear view the door {
+			-> cowplant_puzzle_tent_view_door
+		}
+	*recap
+		You can look around, view different things, or go outside. [Action]
+	*reprompt
+		You can look around, view different things, or go outside. [Action]
+
+@cowplant_puzzle_tent_view_man_out
+	*say
+		You try to view the man. But then you realize that he is still lying outside. You should probably go outside t o wake him up.
+	*then
+		-> cowplant_puzzle_tent_interaction
+
+@cowplant_puzzle_tent_view_door
+	*say
+		You view the door. It leads to outside. You can go outside as you want.
+	*then
+		-> cowplant_puzzle_tent_interaction
+
+@cowplant_puzzle_outside_go
+	*say
+		You go outside
+	*then
+		-> cowplant_puzzle_outside_interaction
+
+@cowplant_puzzle_notebook_open
+	*say
+		You open the notebook. What keyword do you want to search?
+	*then
+		-> cowplant_puzzle_notebook_seedtrader
+
+@cowplant_puzzle_tent_nonote
+	*say
+		You didn't pick up a notebook yet
+	*then
+		if currentplace is 0 {
+			    -> cowplant_puzzle_tent_interaction
+			}
+		if currentplace is 1 {
+		        -> cowplant_puzzle_outside_interaction
+		    }
+
+@cowplant_puzzle_tent_pickup_notebook
+	*say
+		You grab the notebook. It is heavy. Dozens of bookmarks are stuck on different pages. To look into details you can open the notebook.
+	*recap
+		To look into details you can open the notebook.
+	*reprompt
+		To look into details you can open the notebook.
+	*then
+		hear open the notebook {
+			-> cowplant_puzzle_grab_notebook
+		}
+
+@cowplant_puzzle_tent_view_notebook
+	*say
+		You view the notebook. It’s thick and heavy. Dozens of bookmarks are sticking on pages. You can pick up the notebook as you want.
+	*then
+		-> cowplant_puzzle_tent_interaction
+
+@cowplant_puzzle_tent_view_man
+	*say
+		You view the man. He is sitting in front of the table. Looking at nowhere. His eyes are out of focus. You should ask what happened. [Conversation]
+	*then
+		hear what happened {
+			-> cowplant_puzzle_tent_view_man_talk
+		}
+
+@cowplant_puzzle_tent_view_man_talk
+	*say
+		He is muttering no sense words. You probably need to figure out what happened to him by yourself. And hopefully you can find how to cure him. Possiblly from the notebook?
+	*then
+		-> cowplant_puzzle_tent_interaction
+
+@cowplant_puzzle_tent_around_noman
+	*say
+		You are in a messy tent. A leather book that reads Cowplant Observation Notes is present on the small table.
+	*then
+		-> cowplant_puzzle_tent_interaction
+
+@cowplant_puzzle_tent_around_man
+	*say
+		You are in a messy tent. A man is sitting in front of a  small table. A leather book that reads Cowplant Observation Notes is present on it. Behind you, it's the door.
+	*then
+		-> cowplant_puzzle_tent_interaction
+
+@cowplant_puzzle_outside_stereo_on
+	*say
+		You turn on the stereo. Oh, my, god. The plant is swagging along the music.
+	*then
+		-> cowplant_puzzle_outside_interaction
+
+@cowplant_puzzle_outside_view_stereo
+	*say
+		You view the stereo. It is placed on the ground beside the plant. Looks like someone listens to it frequently.
+ You can turn on the stereo.
+	*then
+		-> cowplant_puzzle_outside_interaction
+
+@cowplant_puzzle_outside_view_basket
+	*say
+		You view the basket of swordfish on the corner. It seems like someone is feeding this creature by swordfish. You can probably interact with the plant, to feed it.
+	*then
+		-> cowplant_puzzle_outside_interaction
+
+@cowplant_puzzle_cowplant_interaction
+	*say
+		
+	*recap
+		If you don't know what to do to it, you should probably leave and come back later.
+	*reprompt
+		You an do anything to the cowplant, or you can leave. If you don't know what to do to it, you should probably leave to explore more and come back later.
+	*then
+		hear play with the plant, play with it, play {
+			-> cowplant_puzzle_plant_play
+		}
+		hear feed the cowplant, feed it, feed, feed the plant {
+			-> cowplant_puzzle_plant_feed
+		}
+		hear milk the cowplant, milk the plant, milk, milk it {
+		    flag getmilk
+			-> cowplant_puzzle_plant_milk
+		}
+		hear grab the cake, go for the cake, take the cake, look into the cake {
+			-> cowplant_puzzle_plant_cake
+		}
+		hear leave {
+			-> cowplant_puzzle_outside_interaction
+		}
+
+@cowplant_puzzle_outside_view_plant
+	*say
+		You view the plant. It is a bizarre plant.  It has a cow head but roots of plants. A bell is hanging on its stem, or, you should say, neck. Staring closer at the plant, a tinny label is taped on, reads, cow-plant. It is waving as it is attracting your attention. It sticks out its tongue to you, and the weirdest thing is, the tongue is a cake! You can do anything to the cowplant by saying, interact with the plant. If you don't know what to do to the plant, you should probably go look around first.
+	*then
+		-> cowplant_puzzle_outside_interaction
+
+@cowplant_puzzle_outside_wake_man
+	*say
+		You wake up the man. He stares at you for a second and walks straight to the tent. He is muttering some nosense words. You wonder if he is the one who saved you from the sandstorm, and what damaged his mind. You can probably go to the tent to discover more, or you can view other things.
+	*then
+		-> cowplant_puzzle_outside_interaction
+
+@cowplant_puzzle_outside_view_man
+	*say
+		You view the man. He is fainted, and lying on the ground. He is wet and smelly. Some sort of liquid sticks on all of his body. You can wake up the man.
+	*then
+		-> cowplant_puzzle_outside_interaction
+
+@cowplant_puzzle_outside_around_man
+	*say
+		You look around. You are outside. Looking at far away, you can only see the infinite desert. In front of you, there is a tent, and a plant. A man is lying on the ground. Besides the plant, there is a basket of swordfish, and a stereo.
+	*then
+		-> cowplant_puzzle_outside_interaction
+
+@cowplant_puzzle_outside_around_noman
+	*say
+		You look around. You are outside. Looking at far away, you can only see the infinite desert. In front of you, there is a tent, and a plant. Besides the plant, there is a basket of swordfish, and a stereo.
+	*then
+		-> cowplant_puzzle_outside_interaction
+
+@cowplant_puzzle_tent_getmilk
+	*say
+		You go to the tent. The man is still stumbled. You forced him to drink the milk. [SeedTrader]Ahhh... What is that! en... Thanks. You bring me back![EOA]
+	*then
+		hear go to scene cowplant_puzzle_tent_getmilk_1 {
+			-> cowplant_puzzle_end_connect_to_act_three
+		}
+
+@cowplant_puzzle_end_connect_to_act_three
+	*say
+	
+	*then
+	    -> MysMan Introduces Himself
+
+@cowplant_puzzle_plant_milk
+	*say
+		You milk the plant, and get a bottle of potion. That's it! That is the potion which can heal the man.
+	*then
+		-> cowplant_puzzle_cowplant_interaction
+
+@cowplant_puzzle_plant_cake
+	*say
+		You go for the cake but then you find that grabing its cake tongue is too disgusting to do.
+	*then
+		-> cowplant_puzzle_outside_interaction
+
+@cowplant_puzzle_plant_play
+	*say
+		You play with the cowplant. It seems happy.
+	*then
+		-> cowplant_puzzle_cowplant_interaction
+
+@cowplant_puzzle_plant_feed
+	*say
+		You picked up a swordfish from the basket and feed the plant with it. It sticks its tongue back.
+	*then
+		-> cowplant_puzzle_outside_interaction
+
+@cowplant_puzzle_grab_notebook
+	*say
+		You open the notebook. You wonder what cowplant is. So, you find the bookmark that reads, Introduction, and you flip the notebook to that page. It reads. Cowplant is a bizarre, partly bovine form of vegetation. It usually has 4 growth states. You can search for any keyword that you found from the previous pages. For example, try to say, search growth states.
+	*then
+		hear search growth states {
+			-> cowplant_puzzle_notebook_seedtrader_states_tutorial
+		}
+
+@cowplant_puzzle_notebook_seedtrader
+	*say
+		
+	*then
+		hear baby {
+			-> cowplant_puzzle_notebook_seedtrader_baby
+		}
+
+		hear mature {
+			-> cowplant_puzzle_notebook_seedtrader_mature
+		}
+
+		hear state, states {
+			-> cowplant_puzzle_notebook_seedtrader_states
+		}
+
+		hear feed {
+			-> cowplant_puzzle_notebook_seedtrader_feed
+		}
+
+		hear cake, tongue, cake tongue {
+			-> cowplant_puzzle_notebook_seedtrader_cake
+		}
+
+		hear eat, swallow {
+			-> cowplant_puzzle_notebook_seedtrader_swallow
+		}
+
+		hear milk {
+			-> cowplant_puzzle_notebook_seedtrader_milk
+		}
+
+		hear death {
+			-> cowplant_puzzle_notebook_seedtrader_death
+		}
+		hear hungry {
+			-> cowplant_puzzle_notebook_seedtrader_hungry
+		}
+
+		hear cowplant berry, berry {
+			-> cowplant_puzzle_notebook_seedtrader_berry
+		}
+		hear sprout stage, sprout {
+			-> cowplant_puzzle_notebook_seedtrader_sprout
+		}
+		hear allergic symtoms, allergic  {
+			-> cowplant_puzzle_notebook_seedtrader_allergic
+		}
+		hear dementia, severe dementia {
+			-> cowplant_puzzle_notebook_seedtrader_dementia
+		}
+		hear devour {
+			-> cowplant_puzzle_notebook_seedtrader_devour
+		}
+		hear close the notebook {
+		    -> cowplant_puzzle_notebook_close
+		}
+	*reprompt
+		What keyword do you want to search? You can search for any keyword that you found from the previous pages. Or you can close the notebook if you are finish searching.[Action]
+	*recap
+		You can't find that bookmark.
+
+@cowplant_puzzle_notebook_seedtrader_devour
+	*say
+		You searched the keyword, devour, and opened up the notebook from that bookmark. If a person attempts to take the cake again, the cowplant will devour them. Which means, they are killed forever.
+	*then
+		-> cowplant_puzzle_notebook_seedtrader
+
+@cowplant_puzzle_notebook_seedtrader_dementia
+	*say
+		You searched the keyword, severe dementia, and opened up the notebook from that bookmark. It reads. Allergic to cowplant can possiblly cause severe dementia to certain people. Syptoms include eyes out of focus, memery lost, and loss of ability to speak. Drinking the cowplant milk will release the bad mood, as the same time, cure the allergic symtoms.
+	*then
+		-> cowplant_puzzle_notebook_seedtrader
+
+@cowplant_puzzle_notebook_seedtrader_allergic
+	*say
+		You searched the keyword, allergic symtoms, and opened up the notebook from that bookmark. It reads. A few people are allergic to be swallowed by the cowplant. Allergic symtoms are different from person to person. Possiblly causing severe dementia to certain people.
+	*then
+		-> cowplant_puzzle_notebook_seedtrader
+
+@cowplant_puzzle_notebook_seedtrader_sprout
+	*say
+		You searched the keyword, sprout, and opened up the notebook from that bookmark. It reads.
+ When you plant a Cowplant Berry, there are tiny horns appearing through the soil.
+	*then
+		-> cowplant_puzzle_notebook_seedtrader
+
+@cowplant_puzzle_notebook_seedtrader_berry
+	*say
+		You searched the keyword, cowplant berry, and opened up the notebook from that bookmark. It reads. Cowplant berry is a black and white berry. Once you plant the cowplant berry into the soil, it will gow up as a sprout stage cowplant.
+	*then
+		-> cowplant_puzzle_notebook_seedtrader
+
+@cowplant_puzzle_notebook_seedtrader_hungry
+	*say
+		You searched the keyword, hungry, and opened up the notebook from that bookmark. It reads.
+When cowplant is hungry, it will stick its cake tongue out. You can feed them at this moment. Cowplant will swallow whoever go for the cake.
+	*then
+		-> cowplant_puzzle_notebook_seedtrader
+
+@cowplant_puzzle_notebook_seedtrader_death
+	*say
+		You searched the keyword, death state, and opened up the notebook from that bookmark. It reads. Twelve hours after a Cowplant shows its cake tongue, and is not fed, it will die, A dead Cowplant has a dead stem with a hanging Cowplant skull. Cowplants cannot be saved after this stage.
+	*then
+		-> cowplant_puzzle_notebook_seedtrader
+
+@cowplant_puzzle_notebook_seedtrader_milk
+	*say
+		You searched the keyword, milk, and opened up the notebook from that bookmark. It reads. If people were swallowed for the first time, the cowplant will produce milk. Milking a cowplant, you will get a potion to release the mood, and give the emotions back to the patient. The study found, drinking the milk can also cure the allergic symptoms.
+	*then
+		-> cowplant_puzzle_notebook_seedtrader
+
+@cowplant_puzzle_notebook_seedtrader_swallow
+	*say
+		You search the bookmark that writes, swallow, and opened up from that page. It reads.
+When a person is swallowed for the first time, the Cowplant will spit them out, and they will recieve a drained mood, which will last two days. The mood
+will make people feels like an emotionless shell. Different allergic symptoms causing by swallowed have been found to a few people. If attempt to go for the cake again, the cowplant will devour them. But, if people survive from the first swallowing, the cowplant will produce milk.
+	*then
+		-> cowplant_puzzle_notebook_seedtrader
+
+@cowplant_puzzle_notebook_seedtrader_cake
+	*say
+		You searched the keyword, cake tongue, and opened up the notebook from that bookmark. It reads. Cowplant has a cake shaped tongue. When it is hungry, it will stick its tongue out to attract people's attention, so cowplant can swallow them.
+	*then
+		-> cowplant_puzzle_notebook_seedtrader
+
+@cowplant_puzzle_notebook_seedtrader_feed
+	*say
+		You searched the keyword, feed, and opened up the notebook from that bookmark. It reads. A Cowplant can  be fed  by meat when its hungry and its cake- shape- tongue sticks out.
+	*then
+		-> cowplant_puzzle_notebook_seedtrader
+
+@cowplant_puzzle_notebook_seedtrader_states
+	*say
+		You searched the keyword, growth states, and opened up the notebook from that bookmark. It reads. Cowplants usually have three growth states, and can die. They are sprout state, baby state, mature state, and death state.
+	*then
+		-> cowplant_puzzle_notebook_seedtrader
+
+@cowplant_puzzle_notebook_seedtrader_states_tutorial
+	*say
+		You searched the keyword, growth states, and opened up the notebook from that bookmark. It reads. Cowplants usually have three growth states, and can die. They are sprout state, baby state, mature state, and death state. To finish searching, you should close the notebook.
+	*then
+		hear close the notebook {
+			-> cowplant_puzzle_notebook_close
+		}
+	*recap
+		To finish searching, you should close the notebook.
+	*reprompt
+		To finish searching, you should close the notebook.
+
+@cowplant_puzzle_notebook_seedtrader_mature
+	*say
+		You searched the keyword, mature state, and opened up the notebook from that bookmark. It reads. In this stage, the Cowplant is fully matured. You can feed it, or at certain moment, you can milk it.
+	*then
+		-> cowplant_puzzle_notebook_seedtrader
+
+@cowplant_puzzle_notebook_seedtrader_baby
+	*say
+		You searched the keyword, baby state, and opened up the notebook from that bookmark. It reads. A few days after you plant the cowplant berry. You can see a tiny cowplant. In this state, you can't do much things with it.
+	*then
+		-> cowplant_puzzle_notebook_seedtrader
+
+@cowplant_puzzle_notebook_close
+	*say
+		You close the notebook.
+	*then
+		if currentplace is 0 {
+		    -> cowplant_puzzle_tent_interaction
+		}
+		if currentplace is 1 {
+		    -> cowplant_puzzle_outside_interaction
+		}
+
+//escape hut puzzle --------------------------------------------------------------------------------------------------------
+
+@escape_puzzle_intro
+	*say
+	    What should you do?
+    *reprompt
+        You have arrived at the cave, only to be locked in a small hut by a man with faded purple hair. The door seems to be stuck by something, so you're trapped inside. What should you do to get out?
+    *recap
+        You've been locked in the hut. Perhaps you should look around?
+	*then
+		hear look around, what's around me, check what's around me, anything around {
+			-> escape_puzzle_around
+		}
+
+@escape_puzzle_around
+	*say
+		You looked around the small hut. In front of you, there is a table with some stuff stacked on top. Beside the table, you see a trash bin. Right across
+ the table, there is a flower stand. On your right, there is a strange equipment that looks like a machine. And on your left, you see a chest. You can look at 
+different things to see more details.
+	*then
+		set dirt to 0
+		-> escape_puzzle_interaction
+
+@escape_puzzle_interaction
+	*recap
+		You can view different things to see more details.
+	*reprompt
+		You can look at differen things to see more details.
+	*then
+		hear view the table, view table, look at the table, look at table, table, check the table, check table {
+			-> escape_puzzle_view_table
+		}
+		hear view the notebook, view notebook, look at the notebook, look at notebook, notebook, check the notebook, check notebook {
+			-> escape_puzzle_view_notebook
+		}
+
+		hear open notebook, open the notebook, open up the notebook {
+			-> escape_puzzle_open_notebook
+		}
+		hear look around, what's around me, check what's around me, check around {
+			-> escape_puzzle_around
+		}
+		hear view the chest, look at the chest, look at chest, view chest, check the chest, check chest {
+			-> escape_puzzle_view_chest
+		}
+
+		hear view the box, view the metal box, look at the box, box, metal box, box, look at metal box, look at box, check the box, check metal box, check box {
+			-> escape_puzzle_view_metalbox
+		}
+
+		hear view the trash bin, look at the trash bin, look at trash bin, check the trash bin, check trash bin {
+			-> escape_puzzle_view_trash
+		}
+
+		hear view the newspaper, look at the newspaper, look at newspaper, check newspaper, check the newspaper, read newspaper, read the newspaper {
+			-> escape_puzzle_view_newspaper
+		}
+
+		hear view the alcohol burner, look at the alcohol burner, look at alchohol burner, burner, alcohol burner, the burner, the alcohol burner {
+			-> escape_puzzle_view_alcohollamp
+		}
+
+		hear view the wooden barrel, view the barrel, looka at the barrel, look at the wooden barrel, look at wooden barrel, look at barrel {
+			-> escape_puzzle_view_barrel
+		}
+
+		hear view the portal, look at the portal, look at portal, check the portal, check portal {
+		    if insertwand{
+		        -> escape_puzzle_view_portal_wand
+		    }
+			-> escape_puzzle_view_portal
+		}
+
+		hear view the flower stand, view flower stand, look at flower stand, look at stand, look at the stand, look at the flower stand {
+		    if readportal{
+		        -> escape_puzzle_vew_flower_dirt
+		  }
+			-> escape_puzzle_view_flower
+		}
+
+		hear heat up the metal box, heat up the wand, heat up the box, use the alcohol lamp on the metal box, use the metal box on the alcohol lamp {
+		    if getwand{
+		        -> escape_puzzle_damage_wand
+		    }
+			-> escape_puzzle_heatup_metalbox
+		}
+		hear freeze the metal box, freeze the box, freeze the wand, use the metal box on the barrel, put the metal box into the barrel {
+		      if getwand{
+		        -> escape_puzzle_damage_wand
+		    }
+			-> escape_puzzle_freeze_metalbox
+		}
+
+		hear stand on the portal, stand on portal {
+		    if insertwand and dirt!=0 { 
+		        -> escape_puzzle_stand_portal_ready
+	    	}
+		    if insertwand{
+		       -> escape_puzzle_stand_portal_nodirt
+	    	}
+		    -> escape_puzzle_stand_portal_nothing
+		}
+
+		hear insert the wand to the portal, insert the wand to the hole, insert the wand into the hole, insert the wand into the portal, on the wand on the portal, use the wand on the hole {
+		    if getwand{
+			-> escape_puzzle_insert_wand
+			}
+			-> escape_puzzle_interaction
+		}
+
+		hear freeze the notebook, use the notebook on the barrel, use the notebook on the ice, put the notebook into the ice {
+			-> escape_puzzle_freeze_note
+		}
+
+		hear heat up the notebook, heat the notebook, use the notebook on the alcohol lamp, use the notebook on the lamp, burn the notebook {
+			-> escape_puzzle_heat_note
+		}
+
+		hear heat up the barrel, heat barrel, use the barrel on the alcohol lamp, use the barrel on the lamp {
+			-> escape_puzzle_heat_barrel
+		}
+
+		hear freeze the alcohol lamp, freeze the lamp, use the lamp on the barrel, put the lamp in the barrel  {
+			-> escape_puzzle_freeze_lamp
+		}
+
+		hear insert the metal box into the hole, use the metal box on the hole, use the box on the hole {
+			-> escape_puzzle_insert_metalbox
+		}
+
+		hear insert the notebook into the hole, use the notebook on the hole {
+			-> escape_puzzle_insert_note
+		}
+		
+		hear grab the dirt from number two pot, grab the dirt from black berry, two, take dirt from pot number two, take the dirt from pot number two, grab dirt from pot number two, grab the dirt from pot number two, take some dirt from pot number two, take some dirt from number two {
+			-> escape_puzzle_vew_flower_dirt_2
+		}
+
+		hear grab the dirt from number three pot, grab the dirt from mandrake, three, take dirt from pot number three, take the dirt from pot number three, grab dirt from pot number three, grab the dirt from pot number three, take some dirt from pot number three, take some dirt from number three {
+			-> escape_puzzle_vew_flower_dirt_3
+		}
+		hear grab the dirt from number one pot, grab the dirt from fang flower, one, take dirt from put number one, take the dirt from put number one, grab dirt from put number one, grab the dirt from put number one, take some dirt from pot number one, take some dirt from number one {
+			-> escape_puzzle_vew_flower_dirt_1
+		}
+		
+		hear grab dirt{
+		    -> escape_puzzle_grab_dirt
+		}
+
+		hear use the flower on the machine, use the barrel on the portal {
+			-> escape_puzzle_insert_wrong
+		}
+@escape_puzzle_insert_wrong
+	*say
+		You tried to insert it into the portal, but it doesn't fit.
+
+@escape_puzzle_insert_note
+	*say
+		You insert the notebook into the portal. It obviously doesn’t go there.
+	*then
+		-> escape_puzzle_interaction
+
+@escape_puzzle_insert_metalbox
+	*say
+		You insert the metal box into the portal. It doesn’t seem to fit in the hole. But what about the wand inside?
+	*then
+		-> escape_puzzle_interaction
+
+@escape_puzzle_freeze_lamp
+	*say
+		You want to freeze the alcohol burner, but putting an alcohol burner into ice water will either do nothing or damage it.
+	*then
+		-> escape_puzzle_interaction
+
+@escape_puzzle_heat_barrel
+	*say
+		You heat up the barrel. But a little alcohol burner will do nothing to a large barrel of ice water.
+	*then
+		-> escape_puzzle_interaction
+
+@escape_puzzle_heat_note
+	*say
+		You want to heat up the notebook, but then you realize that it will set the notebook on fire. It probably isn't a good idea to set the house on fire.
+	*then
+		-> escape_puzzle_interaction
+
+@escape_puzzle_freeze_note
+	*say
+		It's probably not a good idea to freeze someone's notebook. You'll probably destroy it.
+	*then
+		-> escape_puzzle_interaction
+
+@escape_puzzle_damage_wand
+	*say
+		You already got the wand out of the metal box. Either heating up the wand or freezing the wand will damage it. Don't do that.
+
+@escape_puzzle_insert_wand
+	*say
+		You insert the wand into the portal. It fits into the hole perfectly. The inscriptions around the portal start to glow.
+	*then
+		flag insertwand
+	    -> escape_puzzle_interaction
+
+@escape_puzzle_stand_portal_ready
+	*say
+		You stand on the portal. The wand is reacting to the dirt in your hand.
+	*recap
+		You can say, teleport, or you can step back.
+	*reprompt
+		You can say, teleport, or you can step back.
+	*then
+		hear step back {
+			-> escape_puzzle_stand_portal_stepback
+		}
+		
+		hear teleport {
+		    if dirt == 1{
+			-> escape_puzzle_stand_portal_alien
+			}
+			if dirt == 2{
+			-> escape_puzzle_stand_portal_out
+			}
+			if dirt == 3{
+			-> escape_puzzle_stand_portal_realm
+			}
+		}
+
+@escape_puzzle_stand_portal_out
+	*say
+		You are traveling through the portal. In a blink of an eye, you are standing in the inner cave. You made your way out!
+	*then
+	    -> Exit The Room
+
+@escape_puzzle_stand_portal_realm
+	*say
+		//magic realm
+		You are traveling through the portal. After a short time, you appear in a different space. You are on top of a floating island.
+	*recap
+		This is not the right place to go, you should travel back.
+	*reprompt
+		This is not the right place to go, you should travel back.
+	*then
+		hear travel back {
+			-> escape_puzzle_stand_portal_travelback
+		}
+
+		hear go to scene escape_puzzle_stand_portal_realm_1 {
+			-> escape_puzzle_stand_portal_realm_1
+		}
+
+@escape_puzzle_stand_portal_realm_1
+	*say
+		Replace with your content.
+
+@escape_puzzle_stand_portal_alien
+	*say
+		//alien planet Sixam
+		You are traveling through the portal. After a long time, you appear in a strange space. All the plant are glowing.
+	*recap
+		This is not the right place to go, you should travel back.
+	*reprompt
+		This is not the right place to go, you should travel back.
+	*then
+		hear travel back {
+			-> escape_puzzle_stand_portal_travelback
+		}
+
+@escape_puzzle_stand_portal_travelback
+	*say
+		You travel back through the same tunnel.
+	*then
+		-> escape_puzzle_interaction
+
+@escape_puzzle_stand_portal_stepback
+	*say
+		You step back from the portal.
+	*then
+		-> escape_puzzle_interaction
+
+@escape_puzzle_stand_portal_nodirt
+	*say
+		You stand on the portal. The wand activates the portal, but nothing really happened. Seems like you are still missing something important to make it fully work. You step back from the portal. You may want to look for a description of this long distance travel portal from somewhere.
+	*then
+		-> escape_puzzle_interaction
+
+@escape_puzzle_stand_portal_nothing
+	*say
+		You stand on portal. Nothing happened. It seems like you need to insert something into the hole to make it operate. You step back from the portal. You might need to find a full desciption of this long distance travel portal.
+	*then
+		-> escape_puzzle_interaction
+
+@escape_puzzle_vew_flower_dirt
+	*say
+		You view the flower stand. You see three pots with plants in them. The soil in these pots look different to each other. Seems like someone carefully transplanted those vegetation with the soil from their origins. From the left to the right, they are labeled as, number one,  Fang Flower, number two, Blackberry, and number three, Mandrake. You can take some dirt from one of these pots.
+	*then
+		-> escape_puzzle_interaction
+
+@escape_puzzle_grab_dirt
+	*say
+		From the left to the right, they are labeled as, number one,  Fang Flower, number two, Blackberry, and number three, Mandrake. You can grab the dirt from any pot. Which number of pot do you want to grab the dirt from?
+	*then
+		hear grab the dirt from number two pot, grab the dirt from black berry, two {
+			-> escape_puzzle_vew_flower_dirt_2
+		}
+		hear grab the dirt from number three pot, grab the dirt from mandrake, three {
+			-> escape_puzzle_vew_flower_dirt_3
+		}
+		hear grab the dirt from number one pot, grab the dirt from fang flower, one {
+			-> escape_puzzle_vew_flower_dirt_1
+		}
+		hear do nothing {
+			-> escape_puzzle_interaction
+		}
+	*recap
+		Which number of pot do you want to grab the dirt from? or you can do nothing.
+	*reprompt
+		Which number of pot do you want to grab the dirt from? or you can do nothing.
+
+@escape_puzzle_vew_flower_dirt_3
+	*say
+		You grab the dirt from pot number three, mandrake, and hold it in your hand.
+	*then
+		set dirt to 3
+	    -> escape_puzzle_interaction
+
+@escape_puzzle_vew_flower_dirt_2
+	*say
+		You grab the dirt from pot number two, black berry, and hold it in your hand.
+	*then
+		set dirt to 2
+	    -> escape_puzzle_interaction
+
+@escape_puzzle_vew_flower_dirt_1
+	*say
+		You grab the dirt from pot number one, fang flower, and hold it in your hand.
+	*then
+		set dirt to 1
+	    -> escape_puzzle_interaction
+
+@escape_puzzle_box_break
+	*say
+		The metal box is broken. From the container, you retrieve a wand.
+	*then
+		flag getwand
+	-> escape_puzzle_interaction
+
+@escape_puzzle_heatup_metalbox
+	*say
+		You heat up the metalbox with the alcohol burner.
+	*then
+		flag heatbox
+		if freezebox{
+	        -> escape_puzzle_box_break
+	   }
+	    -> escape_puzzle_interaction
+
+@escape_puzzle_freeze_metalbox
+	*say
+		You freeze the metalbox by putting it into the ice barrel.
+	*then
+		flag freezebox
+		if heatbox{
+		    -> escape_puzzle_box_break
+		}
+	    -> escape_puzzle_interaction
+
+@escape_puzzle_view_flower
+	*say
+		You look at the flower stand. You see three pots with plants in them. The soil in these pots look different to each other. Seems like someone carefully transplanted those vegetations with the dirts from their origins. From the left to the right, they are labeled as, number one,  Fang Flower, number two, Blackberry, and number three, Mandrake. You have no idea what you can do with those plants yet.
+	*then
+		-> escape_puzzle_interaction
+
+@escape_puzzle_view_portal
+	*say
+		You look at the portal. The portal is a cirle on the floor with inscriptions that you can't understand painted around. The paintings lead to a hole on the floor just in front of the circle. Along with the hole is a little inscription that reads: long distance travel portal. It looks like something needs to be inserted into the hole to operate the portal. You can use anything on the portal, or stand on the portal.
+		
+	*then
+		-> escape_puzzle_interaction
+
+@escape_puzzle_view_portal_wand
+	*say
+		You look at the portal. The portal is a cirle on the floor with glowing inscriptions that you can't understand painted around. The paintings lead to a hole on the floor with a wand sticking into it. Along with the hole is a little inscription that reads: long distance travel portal. You may want to stand on the portal.
+	*then
+		-> escape_puzzle_interaction
+
+@escape_puzzle_view_barrel
+	*say
+		You look at the wooden barrel. Removing the cover carefully. You see that it's filled up with ice. Where did he get so many ice in a cave in the middle of a desert? You can use anything on the barrel to freeze it.
+	*then
+		-> escape_puzzle_interaction
+
+@escape_puzzle_view_alcohollamp
+	*say
+		You look at the alcohol burner. Judging by the marks and scratches on it, it seems like it has been used frequently. You can use anything on the burner to heat it up.
+	*then
+		-> escape_puzzle_interaction
+
+@escape_puzzle_view_newspaper
+	*say
+		You look at the newspaper. After Expanding it carefully. It reads, Magic Daily. Customer complaints about the wand containers from Juan’s Wonderful One-Stop Wand Warehouse are not strong enough to protect their luxury wands. Juan responded that all their containers are made by death metal, which is the hardest metal in the world. The problem must be caused by improper use.
+	*then
+		-> escape_puzzle_interaction
+
+@escape_puzzle_view_trash
+	*say
+		You look at the trash bin. You find a crumbled piece, dirty piece of newspaper. It seems that he was using it to wipe his table. You can read the newspaper.
+	*then
+		-> escape_puzzle_interaction
+
+@escape_puzzle_view_metalbox
+	*say
+		You look at the metal box. On the cover, it writes, Wand, of The Sylvan Forest. You flip it over. On the bottom, it has a stamp that reads, Juan’s Wonderful One-Stop Wand Warehouse. When you try to remove the cover, the box glows an alarming red. The man must have put some spells on the box, so he is the only one who can open it. If you want to open it, you need to find a way to break it.
+	*then
+		-> escape_puzzle_interaction
+
+@escape_puzzle_view_chest
+	*say
+		You view the chest. It isn't locked. You open it up easily. In the chest, you see a long metal box, and an alcohol burner.
+	*then
+		-> escape_puzzle_interaction
+
+@escape_puzzle_open_notebook
+	*say
+		You open up the notebook. What keyword do you want to search?
+	*then
+		-> escape_puzzle_notebook_search
+
+@escape_puzzle_notebook_search
+	*say
+		
+	*recap
+		You can search different keywords to flip the notebook according to bookmarks. Or you can close the notebook if you finish searching.
+	*reprompt
+		You can search different keywords to flip the notebook according to bookmarks. Or you can close the notebook if you finish searching.
+	*then
+		hear death metal, metal {
+			-> escape_puzzle_notebook_search_deathmetal
+		}
+		hear black berry {
+			-> escape_puzzle_notebook_search_blackberry
+		}
+
+		hear fang flower {
+			-> escape_puzzle_notebook_search_fangflower
+		}
+
+		hear mandrake {
+			-> escape_puzzle_notebook_search_mandrake
+		}
+
+		hear long distance travel portal, portal, long distance, travel portal {
+			-> escape_puzzle_notebook_search_portal
+		}
+		hear close the notebook {
+			-> escape_puzzle_notebook_close
+		}
+
+		hear wand, wand of the sylvan forest {
+			-> escape_puzzle_notebook_search_wand
+		}
+
+		hear juan, ice, barrel, flower, alcohol lamp, flower stand, machine, chest, box {
+			-> escape_puzzle_notebook_cannotfind
+		}
+
+@escape_puzzle_notebook_cannotfind
+	*say
+		That bookmark doesn't exist.
+	*then
+		-> escape_puzzle_interaction
+
+@escape_puzzle_notebook_search_wand
+	*say
+		You search if there's a book mark about the Wand of The Sylvan Forest, and then you flip the notebook to that page. It reads. This wand is Hand carved from the trees of Sylvan Glade, it holds immense power. I use it to operate my long distance travel portal.
+	*then
+		-> escape_puzzle_notebook_search
+
+@escape_puzzle_notebook_close
+	*say
+		You close the notebook.
+	*then
+		-> escape_puzzle_interaction
+
+@escape_puzzle_notebook_search_portal
+	*say
+		You search if there's a book mark about the long distance travel portal, and then you flip the notebook to that page. It reads. I put a Transportalate spell on it, and use, wand of the sylvan forest to operate it. So I can travel through the world. As long as, I have the dirt from the place I want to travel to. Grab the dirt in the hand,  stand on the portal, and say, travel. I will be there immediately. Easily say, travel back, I will be on the portal again.
+	*then
+		flag readportal
+		-> escape_puzzle_notebook_search
+
+@escape_puzzle_notebook_search_mandrake
+	*say
+		You search if there's a book mark about mandrakes, and then you flip the notebook to that page. It reads. Mandrake can be found in the magic realm, my hometown. I transplanted it from the area around the broken down greenhouse.
+	*then
+		-> escape_puzzle_notebook_search
+
+@escape_puzzle_notebook_search_fangflower
+	*say
+		You search if there's a book mark about the fang flower, and then you flip the notebook to that page. It reads. I brought the fang flower back from a strange place. Several years ago, I recieved a bottle of dirt from a spice market. I used the dirt to travel through the portal into another world. The sky over there was dark and the plants were glowing. I took the fang flower from there and travel back immediately.
+	*then
+		-> escape_puzzle_notebook_search
+
+@escape_puzzle_notebook_search_blackberry
+	*say
+		You search if there's a book mark about black berries, and then you flip the notebook to that page. It reads. blackberry is been found from oasis springs. But when I first steped into this cave, I found it's also grows here. So I transplanted it into the pot to remember it is the only living form in this cave before I came.
+	*then
+		-> escape_puzzle_notebook_search
+
+@escape_puzzle_notebook_search_deathmetal
+	*say
+		You search if there's a book mark about death metal, and then you flip the notebook to that page. It reads. Death metal is the hardest metal in the world. It will survive from any external force. But, research found, an alternated hot and cold will destory its form.
+	*then
+		-> escape_puzzle_notebook_search
+
+@escape_puzzle_view_notebook
+	*say
+		You look at the notebook. It's a heavy notebook. Dozens of bookmarks stick on pages. At anytime, you can open the notebook to search different keywords, so you can flip the notebook according to bookmarks.
+	*then
+		-> escape_puzzle_interaction
+
+@escape_puzzle_view_table
+	*say
+		You look at the table. It's right in front of you. On top of the table, you see a notebook, and a wooden barrel.
+	*then
+		-> escape_puzzle_interaction
 
