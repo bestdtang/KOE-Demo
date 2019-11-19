@@ -1734,7 +1734,7 @@ Get the Hot Sauce 1
 		ACT 5 test start
 		1  <audio src='https://koetest.s3.amazonaws.com/Act5/OasisAmbience.mp3'/>
 		
-	*then
+	*then 
 		hear continue {
 			-> TA4
 		}
