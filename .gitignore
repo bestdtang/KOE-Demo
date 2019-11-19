@@ -5,4 +5,4 @@ package-lock.json
 metadata/
 dist/
 baked/
-content/languageStrings.json 
+languageStrings.json
