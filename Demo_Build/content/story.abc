@@ -1689,7 +1689,7 @@ Get the Hot Sauce 1
 	        -> Open the Beauty Salon Directly
 	    }
 	    hear cow plant{
-	        -> Waking Up In An Empty Tent
+	        -> cowplant_puzzle_start
 	    }
 	    hear leading flower{
 	        -> Luke Explains the Cave
@@ -2122,7 +2122,7 @@ Get the Hot Sauce 1
 
 @chilirosa_hallway_around
 	*say
-		You are in the hallway. There is a closet standing next to you, the main door behind you, and two rooms in front of you. They are, the living room, and the kitchen. You can view different things and rooms from the hallway to see more details. [Action]
+		You are in the hallway. There is a closet standing next to you, the main door behind you, and two rooms in front of you. They are, the living room, and the kitchen. You can look at different things and rooms from the hallway to see more details. [Action]
 	*then
 		-> chilirosa_hallway_interation
 
@@ -2191,9 +2191,9 @@ Get the Hot Sauce 1
 		    }
 		}
 	*recap
-		You can view different objects, view different rooms to see more details, or look around.[Action]
+		You can look at different objects, look at different rooms to see more details, or look around.[Action]
 	*reprompt
-		You can view different objects, view different rooms to see more details, or look around.[Action]
+		You can look at different objects, look at different rooms to see more details, or look around.[Action]
 
 @chilirosa_kitchen_pot_back
 	*say
@@ -2402,9 +2402,9 @@ Get the Hot Sauce 1
 			-> chilirosa_kitchen_turnstove
 		}
 	*recap
-		You can view different objects, look around, or go to the hallway.
+		You can look at different objects, look around, or go to the hallway.
 	*reprompt
-		You can view different objects, look around, or go to the hallway.
+		You can look at different objects, look around, or go to the hallway.
 
 @chilirosa_kitchen_viewpot_boil
 	*say
@@ -2459,7 +2459,7 @@ Get the Hot Sauce 1
 
 @chilirosa_kitchen_viewkettle
 	*say
-		You view the kettle on the right. It is full of water. And it's quite hot. If you turn on the kettle, the kettle will whistle almost immediately. You can turn on the kettle.[Action]
+		You look at the kettle on the right. It is full of water. And it's quite hot. If you turn on the kettle, the kettle will whistle almost immediately. You can turn on the kettle.[Action]
 	*then
 		-> chilirosa_kitchen_interaction
 
@@ -2471,37 +2471,37 @@ Get the Hot Sauce 1
 
 @chilirosa_kitchen_viewpot
 	*say
-		You view the pot on the left. Open up the cover carefully, you see a little bit of soup left in it. The pot is cold. If you turn on the pot, the soup will boil and dry, and the pot will be burnt. You can turn on the pot.[Action] 
+		You look at the pot on the left. Open up the cover carefully, you see a little bit of soup left in it. The pot is cold. If you turn on the pot, the soup will boil and dry, and the pot will be burnt. You can turn on the pot.[Action] 
 	*then
 		-> chilirosa_kitchen_interaction
 
 @chilirosa_kitchen_viewwatertap
 	*say
-		You view the watertap. You are sure that if you open it, it will make some noise.  You can turn on the water.[Action]
+		You look at the watertap. You are sure that if you open it, it will make some noise.  You can turn on the water.[Action]
 	*then
 		-> chilirosa_kitchen_interaction
 
 @chilirosa_hallway_viewkitchen
 	*say
-		You view the kitchen. No one is in the kitchen. Some containers are on the stove. You can go to the kitchen if you want.[Action] 
+		You look at the kitchen. No one is in the kitchen. Some containers are on the stove. You can go to the kitchen if you want.[Action]
 	*then
 		-> chilirosa_hallway_interation
 
 @chilirosa_hallway_viewliving
 	*say
-		You view the living room. Misses Chilirosa is sitting next to the table and having her lunch. She is sprinkling sauce on her pasta. That's it! That's the hot sauce you want.  You can go to living room at anytime, but she is in it right now, you should do something to distract her away first.[Action]
+		You look at the living room. Misses Chilirosa is sitting next to the table and having her lunch. She is sprinkling sauce on her pasta. That's it! That's the hot sauce you want.  You can go to living room at anytime, but she is in it right now, you should do something to distract her away first.[Action]
 	*then
 		-> chilirosa_hallway_interation
 
 @chilirosa_hallway_viewcloset
 	*say
-		You view the closet. It's a large closet. You opened up the closet, a bunch of coats are hanging in it. Suprisely it's large enough for you to hide in. [Action] If you want to hide in the closet, you can say hide in the closet.
+		You look at the closet. It's a large closet. You opened up the closet, a bunch of coats are hanging in it. Suprisely it's large enough for you to hide in. [Action] If you want to hide in the closet, you can say hide in the closet.
 	*then
 		-> chilirosa_hallway_interation
 
 @chilirosa_hallway_viewdoor
 	*say
-		You view the door. That's the door you sneaked in from. If you want to give up on stealing the hot sauce, you can come to the hallway and say leave from the door.[Action]
+		You look at the door. That's the door you sneaked in from. If you want to give up on stealing the hot sauce, you can come to the hallway and say leave from the door.[Action]
 	*then
 		-> chilirosa_hallway_interation
 
@@ -3742,9 +3742,9 @@ Try say, go north.[Action]
 	*say
 		
 	*recap
-		You can view different things, look around, or go to the tent. [Action]
+		You can look at different things, look around, or go to the tent. [Action]
 	*reprompt
-		You can view different things, look around, or go to the tent. [Action]
+		You can look at different things, look around, or go to the tent. [Action]
 	*then
 		hear look around, look around me {
 		    if wakeman {
@@ -3752,7 +3752,7 @@ Try say, go north.[Action]
 		    }
 			-> cowplant_puzzle_outside_around_man
 		}
-		hear view the man {
+		hear look at the man {
 		    if wakeman{
 		        -> cowplant_puzzle_outside_view_man_gone
 		    }
@@ -3764,7 +3764,7 @@ Try say, go north.[Action]
 			-> cowplant_puzzle_outside_wake_man
 		}
 
-		hear view the plant {
+		hear look at the plant {
 		    flag viewplant
 			-> cowplant_puzzle_outside_view_plant
 		}
@@ -3773,11 +3773,11 @@ Try say, go north.[Action]
 			-> cowplant_puzzle_cowplant_interact
 		}
 
-		hear view the basket, view the swordfish {
+		hear look at the basket, look at the swordfish {
 			-> cowplant_puzzle_outside_view_basket
 		}
 
-		hear view the stereo {
+		hear look at the stereo {
 			-> cowplant_puzzle_outside_view_stereo
 		}
 
@@ -3799,7 +3799,7 @@ Try say, go north.[Action]
 			-> cowplant_puzzle_notebook_open
 		}
 
-		hear view the tent {
+		hear look at the tent {
 			-> cowplant_puzzle_outside_view_tent
 		}
 
@@ -3811,13 +3811,13 @@ Try say, go north.[Action]
 
 @cowplant_puzzle_outside_view_man_gone
 	*say
-		You view the man. He is already gone to the tent. You can probably go to the tent to find him.
+		You look at the man. He is already gone to the tent. You can probably go to the tent to find him.
 	*then
 		-> cowplant_puzzle_outside_interaction
 
 @cowplant_puzzle_outside_view_tent
 	*say
-		You view the tent. That's the tent you came from. You can go to the tent at anytime.
+		You look at the tent. That's the tent you came from. You can go to the tent at anytime.
 	*then
 		-> cowplant_puzzle_outside_interaction
 
@@ -3839,13 +3839,13 @@ Try say, go north.[Action]
 			-> cowplant_puzzle_tent_around_noman
 		}
 
-		hear view the man {
+		hear look at the man {
 		    if !wakeman{
 		        -> cowplant_puzzle_tent_view_man_out
 		    }
 			-> cowplant_puzzle_tent_view_man
 		}
-		hear view the notebook {
+		hear look at the notebook {
 			-> cowplant_puzzle_tent_view_notebook
 		}
 		hear pick up the notebook {
@@ -3863,23 +3863,23 @@ Try say, go north.[Action]
 		hear go outside {
 			-> cowplant_puzzle_outside_go
 		}
-		hear view the door {
+		hear look at the door {
 			-> cowplant_puzzle_tent_view_door
 		}
 	*recap
-		You can look around, view different things, or go outside. [Action]
+		You can look around, look at different things, or go outside. [Action]
 	*reprompt
-		You can look around, view different things, or go outside. [Action]
+		You can look around, look at different things, or go outside. [Action]
 
 @cowplant_puzzle_tent_view_man_out
 	*say
-		You try to view the man. But then you realize that he is still lying outside. You should probably go outside t o wake him up.
+		You try to look at the man. But then you realize that he is still lying outside. You should probably go outside t o wake him up.
 	*then
 		-> cowplant_puzzle_tent_interaction
 
 @cowplant_puzzle_tent_view_door
 	*say
-		You view the door. It leads to outside. You can go outside as you want.
+		You look at the door. It leads to outside. You can go outside as you want.
 	*then
 		-> cowplant_puzzle_tent_interaction
 
@@ -3920,13 +3920,13 @@ Try say, go north.[Action]
 
 @cowplant_puzzle_tent_view_notebook
 	*say
-		You view the notebook. It’s thick and heavy. Dozens of bookmarks are sticking on pages. You can pick up the notebook as you want.
+		You look at the notebook. It’s thick and heavy. Dozens of bookmarks are sticking on pages. You can pick up the notebook as you want.
 	*then
 		-> cowplant_puzzle_tent_interaction
 
 @cowplant_puzzle_tent_view_man
 	*say
-		You view the man. He is sitting in front of the table. Looking at nowhere. His eyes are out of focus. You should ask what happened. [Conversation]
+		You look at the man. He is sitting in front of the table. Looking at nowhere. His eyes are out of focus. You should ask what happened. [Conversation]
 	*then
 		hear what happened {
 			-> cowplant_puzzle_tent_view_man_talk
@@ -3958,14 +3958,14 @@ Try say, go north.[Action]
 
 @cowplant_puzzle_outside_view_stereo
 	*say
-		You view the stereo. It is placed on the ground beside the plant. Looks like someone listens to it frequently.
+		You look at the stereo. It is placed on the ground beside the plant. Looks like someone listens to it frequently.
  You can turn on the stereo.
 	*then
 		-> cowplant_puzzle_outside_interaction
 
 @cowplant_puzzle_outside_view_basket
 	*say
-		You view the basket of swordfish on the corner. It seems like someone is feeding this creature by swordfish. You can probably interact with the plant, to feed it.
+		You look at the basket of swordfish on the corner. It seems like someone is feeding this creature by swordfish. You can probably interact with the plant, to feed it.
 	*then
 		-> cowplant_puzzle_outside_interaction
 
@@ -3996,19 +3996,19 @@ Try say, go north.[Action]
 
 @cowplant_puzzle_outside_view_plant
 	*say
-		You view the plant. It is a bizarre plant.  It has a cow head but roots of plants. A bell is hanging on its stem, or, you should say, neck. Staring closer at the plant, a tinny label is taped on, reads, cow-plant. It is waving as it is attracting your attention. It sticks out its tongue to you, and the weirdest thing is, the tongue is a cake! You can do anything to the cowplant by saying, interact with the plant. If you don't know what to do to the plant, you should probably go look around first.
+		You look at the plant. It is a bizarre plant.  It has a cow head but roots of plants. A bell is hanging on its stem, or, you should say, neck. Staring closer at the plant, a tinny label is taped on, reads, cow-plant. It is waving as it is attracting your attention. It sticks out its tongue to you, and the weirdest thing is, the tongue is a cake! You can do anything to the cowplant by saying, interact with the plant. If you don't know what to do to the plant, you should probably go look around first.
 	*then
 		-> cowplant_puzzle_outside_interaction
 
 @cowplant_puzzle_outside_wake_man
 	*say
-		You wake up the man. He stares at you for a second and walks straight to the tent. He is muttering some nosense words. You wonder if he is the one who saved you from the sandstorm, and what damaged his mind. You can probably go to the tent to discover more, or you can view other things.
+		You wake up the man. He stares at you for a second and walks straight to the tent. He is muttering some nosense words. You wonder if he is the one who saved you from the sandstorm, and what damaged his mind. You can probably go to the tent to discover more, or you can look at other things.
 	*then
 		-> cowplant_puzzle_outside_interaction
 
 @cowplant_puzzle_outside_view_man
 	*say
-		You view the man. He is fainted, and lying on the ground. He is wet and smelly. Some sort of liquid sticks on all of his body. You can wake up the man.
+		You look at the man. He is fainted, and lying on the ground. He is wet and smelly. Some sort of liquid sticks on all of his body. You can wake up the man.
 	*then
 		-> cowplant_puzzle_outside_interaction
 
@@ -4536,7 +4536,7 @@ different things to see more details.
 
 @escape_puzzle_vew_flower_dirt
 	*say
-		You view the flower stand. You see three pots with plants in them. The soil in these pots look different to each other. Seems like someone carefully transplanted those vegetation with the soil from their origins. From the left to the right, they are labeled as, number one,  Fang Flower, number two, Blackberry, and number three, Mandrake. You can take some dirt from one of these pots.
+		You look at the flower stand. You see three pots with plants in them. The dirt in these pots look different to each other. Seems like someone carefully transplanted those vegetation with the dirt from their origins. From the left to the right, they are labeled as, number one,  Fang Flower, number two, Blackberry, and number three, Mandrake. You can take some dirt from one of these pots.
 	*then
 		-> escape_puzzle_interaction
 
@@ -4611,7 +4611,7 @@ different things to see more details.
 
 @escape_puzzle_view_flower
 	*say
-		You look at the flower stand. You see three pots with plants in them. The soil in these pots look different to each other. Seems like someone carefully transplanted those vegetations with the dirts from their origins. From the left to the right, they are labeled as, number one,  Fang Flower, number two, Blackberry, and number three, Mandrake. You have no idea what you can do with those plants yet.
+		You look at the flower stand. You see three pots with plants in them. The dirt in these pots look different to each other. Seems like someone carefully transplanted those vegetations with the dirts from their origins. From the left to the right, they are labeled as, number one,  Fang Flower, number two, Blackberry, and number three, Mandrake. You have no idea what you can do with those plants yet.
 	*then
 		-> escape_puzzle_interaction
 
@@ -4660,7 +4660,7 @@ different things to see more details.
 
 @escape_puzzle_view_chest
 	*say
-		You view the chest. It isn't locked. You open it up easily. In the chest, you see a long metal box, and an alcohol burner.
+		You look at the chest. It isn't locked. You open it up easily. In the chest, you see a long metal box, and an alcohol burner.
 	*then
 		-> escape_puzzle_interaction
 
