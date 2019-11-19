@@ -1628,9 +1628,9 @@ Get the Hot Sauce 1
 		hear restart, start over {
             >> RESTART
         }
-        hear jump to saloon {
-            -> Leave the Store
-        }
+        //hear jump to saloon {
+        //    -> Leave the Store
+        //}
         hear get the hot sauce, I have your sauce, I have the hot sauce {
             set currentLocation as 'Mayors Office'
             -> Get the Hot Sauce
@@ -1650,9 +1650,53 @@ Get the Hot Sauce 1
 		hear test audio {
 			-> Test Audio
 		}
-		hear jump to flower puzzle {
-			-> End of ACT III, 1&2
+
+		hear jump {
+			-> jumpto
 		}
+
+@jumpto
+	*say
+		Do you want to jump to puzzle or act?
+	*then
+	    hear act{
+	        -> jumptoact
+	    }
+	    hear puzzle{
+	        -> jumptopuzzle
+	    }
+@jumptoact
+	*say
+		which act
+	*then
+	    hear two{
+	        -> The Cross
+	    }
+	    hear three{
+	        -> MysMan Introduces Himself
+	    }
+	    hear four{
+	        -> Luke Explains the Cave
+	    }
+	    hear five{
+	        -> Arrival At The Inner Cave
+	    }
+@jumptopuzzle
+	*say
+		which puzzle
+	*then
+	    hear hot sauce{
+	        -> Open the Beauty Salon Directly
+	    }
+	    hear cow plant{
+	        -> Waking Up In An Empty Tent
+	    }
+	    hear leading flower{
+	        -> Luke Explains the Cave
+	    }
+	    hear escape room{
+	        -> Escape The Room
+	    }
 
 @Test Audio
 	*say
@@ -1671,6 +1715,12 @@ Get the Hot Sauce 1
 		12  <audio src='https://koetest.s3.amazonaws.com/Act3/sigh_01.mp3'/>
 		13  <audio src='https://koetest.s3.amazonaws.com/Act3/smallWind_01.mp3'/>
 		14  <audio src='https://koetest.s3.amazonaws.com/Act3/strongWinds_01.mp3'/>
+		
+		15  <audio src='https://koetest.s3.amazonaws.com/Act3/Act3+puzzle/cowThrowOut.mp3'/>
+		16  <audio src='https://koetest.s3.amazonaws.com/Act3/Act3+puzzle/cowplantSounds_01.mp3'/>
+		17  <audio src='https://koetest.s3.amazonaws.com/Act3/Act3+puzzle/manscream_01.mp3'/>
+		18  <audio src='https://koetest.s3.amazonaws.com/Act3/Act3+puzzle/milkingCowplant.mp3'/>
+		19  <audio src='https://koetest.s3.amazonaws.com/Act3/Act3+puzzle/radio.mp3'/>
 
 		ACT 5 test start
 		1  <audio src='https://koetest.s3.amazonaws.com/Act5/OasisAmbience.mp3'/>
@@ -1686,6 +1736,14 @@ Get the Hot Sauce 1
 		11  <audio src='https://koetest.s3.amazonaws.com/Act5/malecry02.mp3'/>
 		12  <audio src='https://koetest.s3.amazonaws.com/Act5/walkOnDirt.mp3'/>
 		13  <audio src='https://koetest.s3.amazonaws.com/Act5/waterdrop2.mp3'/>
+		
+		14  <audio src='https://koetest.s3.amazonaws.com/Act5/Act+5+puzzle/closebook_01.mp3'/>
+		15  <audio src='https://koetest.s3.amazonaws.com/Act5/Act+5+puzzle/ice_01.mp3'/>
+		16  <audio src='https://koetest.s3.amazonaws.com/Act5/Act+5+puzzle/metalcrack_01.mp3'/>
+		17  <audio src='https://koetest.s3.amazonaws.com/Act5/Act+5+puzzle/newspaper_01.mp3'/>
+		18  <audio src='https://koetest.s3.amazonaws.com/Act5/Act+5+puzzle/openbook_01.mp3'/>
+		19  <audio src='https://koetest.s3.amazonaws.com/Act5/Act+5+puzzle/portalopen_01.mp3'/>
+		20  <audio src='https://koetest.s3.amazonaws.com/Act5/Act+5+puzzle/portaltravel_01.mp3'/>
 
 		action test
 		1 <audio src='https://koetest.s3.amazonaws.com/actionsounds/as01.mp3'/>
