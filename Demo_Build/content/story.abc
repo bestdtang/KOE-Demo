@@ -21,7 +21,6 @@
 	    hear no {
 	        -> Quit Game
         }
-
 @Quit Game
 	*say
         OK. Bye~
@@ -30,7 +29,7 @@
 
 @Lost in Desert
 	*say
-		The blowing, hot wind scorches the surface of both the earth and your skin. You walk aimlessly in the desert, thirsty for water. [Pause] [footstep] In the middle of the hot desert, you found a rusty, old signpost. It has two arrows pointing to the right and the left. However, the letters have faded away.
+		Oh dear, it's a hot, hot desert. You walk aimlessly in the sand, thirsty for water. The wind is hot, the sun is hot, and the air is burning hot. [Pause] [footstep] In the middle of the hot desert, you found a rusty, old signpost. It has two arrows pointing to the right and the left. However, the letters have faded away.
 	*then
 		-> Tutorial 1: Direction Questions
 
@@ -52,21 +51,21 @@
 
 @Look Right
 	*say
-		You wiped your face with your dry hands and decided to turn right. Then, you keep treading the sea of powdered rocks wearily.
+		You wiped your face with your dry hands and decided to turn right. Then, you keep treading the sea of sand wearily.
 	*then
 		-> Tutorial 1A: Check Around
 
 @Tutorial 1A: Check Around
 	*say
-		You walked under the hot sun until you have reached the top of a little sand hill. It grants you some height advantage. Now you can see what's around you. [Pause] Sometimes, paths aren't obvious at first glance just like now. You can check around first by saying what's around me. Go on, give it a go.
+		[footstep] You walk under the hot sun until you reach the top of a little sand hill. It let's you see a little bit further away. Now you can see what's around you. [Pause] Sometimes, paths aren't obvious at first glance just like now. You can check around first by saying what's around me. Go on, give it a go.
 	*then
 		hear what's around me,check, what is around me, check what's around me, around me {
             -> Check Around the Hill
         }
 	*reprompt
-		You can check around by saying "check what's around me".
+		You can check around by saying "what's around me".
 	*recap
-		You can check around by saying "check what's around me".
+		You can check around by saying "what's around me".
 
 @Check Around the Hill
 	*say
@@ -89,7 +88,7 @@
 
 @Town
 	*say
-		The urge of cold water passing through dry lungs has dragged your weary feet to the entrance of the town. You thought the townspeople would step forward immediately to help a thirsty traveler, but instead. [Short_Pause] No-one came. What's happening? [Action] you can ask to check the environment. Try saying: "what's around me?"
+		The urge of letting cold water pass enter you drags your weary feet to the entrance of the town. At the entrance, you thought the townspeople would step forward immediately to help a thirsty traveler, but instead. [Short_Pause] No-one came. What's happening? [Action] you can ask to check the environment. Try saying: "what's around me?"
 	*recap
 		you can ask to check the environment. Try saying: "what's around me?"
 	*reprompt
@@ -128,22 +127,22 @@
 
 @Store
 	*say
-		Upon approaching the general store, you see a boy. He wears a red coat, and you can see surprised written all over his face. [Long_Pause][Kid] You are a new face here. Do you need help? [Short_Pause] You don't look well.[/Kid] [Long_Pause] Maybe the little boy has water. You can ask if there's water. [Conversation] When you hear this sound, you decide what to say to the other person next. For example, right now you can ask the boy for water. [Short_Pause] Try it!
-	*then
-		hear water, can I have some water, can you give me water, do you have water, do you have any water, ask for water, ask the boy, ask the boy for water {
+		Upon approaching the general store, you see a boy. He wears a red coat, and he looks very surprised. [Long_Pause][Kid] You are a new face here. Do you need help? [Short_Pause] You don't look well.[/Kid] [Long_Pause] Maybe the little boy has water. Perhaps you should try asking. [Conversation] When you hear this sound, you decide what to say to the other person next. For example, right now you can ask the boy for water. [Short_Pause] Try it! [Conversation]
+	*then 
+		hear water, can I have some water, can you give me water, do you have water, do you have any water, ask for water, ask the boy, ask the boy for water, give me some water, give me water {
 			-> Boy
 		}
 	*recap
-		Try ask the boy for water
+		Try ask the boy for water [Conversation]
 	*reprompt
-		 Try ask the boy for water
+		 Try ask the boy for water [Conversation]
 
 @Boy
 	*say
 		You asked the boy for some water. 
 		[Kid] 
-	    I can help you with that. [Short_Pause] But I must warn you. [Short_Pause] Situations in the house aren't exactly desirable. [Short_Pause] In a sense.[/Kid] [Pause]
-		The boy takes you around the building and enters the store from the backdoor. [Pause] Oh dear. [Pause] It is far from being desirable. The air in the store is nothing of this world. It's foul and revolting. Each step you take is like a deeper dive into the bowels of a carnivorous beast. [Pause]
+	    I can help you with that. [Short_Pause] But I must warn you before I take you into our place. [Short_Pause] You probably won't appreciate the conditions in the house. [Short_Pause] Just a heads up.[/Kid] [Pause]
+		The boy takes you around the building and enters the store from the backdoor. [Pause] Oh dear. [Pause] It is far from being desirable. It stinks. Smelly, smelly, smelly, it's like wearing the same pair of socks for over a year. [Pause]
 		[Kid] Yeah. Told you! [Pause] [/Kid] 
 		[Pause] A bald, middle-aged man that looks like in his fifties are slowly walks down the stairs. [Kid] Papa! [Pause] [/Kid] Small pieces of tissue paper are rolled and stuck in his nose. He looks like he could use some more sunshine.
 	*then
@@ -164,7 +163,7 @@
         [Pause]
         Sometimes when appropriate, you can use an item, perform an action, or do nothing. For this instance, you can either say: [Short_Pause] use water or do nothing.[Action]
 	*then
-		hear drink water, use water, use the water, water {
+		hear drink water, use water, use the water, water, chug {
 			-> Finding Out
 		}
 		hear don't drink the water, don't, no, do nothing {
@@ -185,7 +184,7 @@
     Suit yourself. Thought you were really thirsty. [EOA]
     [Long_Pause] At least you're in the shade, so you're starting to feel a little bit less thirsty. But still, the stench is unbearable.
     [Man]
-    Maybe the smell even went in the water, but we just don't know. [Long_Pause] It wasn't like this before the incident. [EOA]
+    Maybe the smell even went into the water. [Long_Pause] It wasn't like this before the incident. [EOA]
     [ActionQuestionSound]
 	*recap
 		Try say use water.
@@ -203,14 +202,14 @@
 	*say
 		The father has given you his word that the water is clean for drinking. But even without his promise you'd still chug the whole glass of water, bottoms-up.
         [Pause]
-        The desert in your body is no more. Right now it is a lagoon of spring water, cool splashes of comfort travels to every corner of your body, like ice on melting lava. It's almost as if you could hear the hiss.
+        Ahhhh. Refreshing! Although the water smells a bit off, you don't care. What's important is, you're saved from becoming human beef jerky.
         [Man]
         Feel better? You really looked like the desert's going to get you.[EOA] 
         Now it's just the stench that's really
         giving you a headache.
         [Pause]
         [Man]
-        Sorry for the bad manners back there. It's just this town has never since a single visitor for a long time. Not after the incident.[EOA]
+        Sorry for the bad manners back there. It's just this town has never had a single visitor for a long time. Not after the incident.[EOA]
         [Conversation]You should ask him.
 	*reprompt
 		You can talk to him by saying talk to the shopkeeper
@@ -260,9 +259,9 @@
 
 @Mayor Office
 	*say
-		You've arrived at the mayor's office. It's the largest building in the town, but it's doors and windows are tightly shut and locked. [Short_Pause] When you get close to the front door, there's a sharp smell of hot pepper. Looks like there's no way in. [Pause] If you don't know where to go, remember to say What's around me.
+		You arrive at the mayor's office. It's the largest building in the town, but it's doors and windows are tightly shut and locked. [Short_Pause] When you get close to the front door, there's a sharp smell of hot pepper. Looks like there's no way in. 
 	*recap
-		If you don't know where to go, remember to say What's around me.
+		It looks like there's no way in to the mayor's office. Perhaps you should visit somewhere else and try again later. If you don't know where to go, remember to say What's around me.
     [Action]
 	*then
 		hear store, general store, go to the general store {
@@ -274,7 +273,7 @@
 	*recap
 		Pick the other place
 	*reprompt
-		If you don't know where to go, remember to say What's around me. Then you can pick a place you want to go to
+		If you don't know where to go, remember to say [Short_Pause] what's around me.
 
 @Look Left
 	*say
