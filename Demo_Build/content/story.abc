@@ -3812,7 +3812,7 @@ Try say, go north.[Action]
 		    if !wakeman{
 		        -> cowplant_puzzle_tent_view_man_out
 		    }
-			-> cowplant_puzzle_tent_look at_man
+			-> cowplant_puzzle_tent_view_man
 		}
 		hear look at the notebook {
 			-> cowplant_puzzle_tent_view_notebook
