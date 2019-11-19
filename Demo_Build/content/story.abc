@@ -1702,7 +1702,7 @@ Get the Hot Sauce 1
 	        -> Open the Beauty Salon Directly
 	    }
 	    hear cow plant{
-	        -> cowplant_puzzle_start
+	        -> Been Walking For Days
 	    }
 	    hear leading flower{
 	        -> Luke Explains the Cave
