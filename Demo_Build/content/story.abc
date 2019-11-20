@@ -5270,15 +5270,15 @@ different things to see more details.
 	*say
 		You stand on the portal. <audio src='https://koetest.s3.amazonaws.com/Act5/magicSound03.mp3'/> The wand is reacting to the dirt in your hand. 
 	*recap
-		You can say, travel, or you can step back.
+		You can say, teleport, or you can step back.
 	*reprompt
-		You can say, travel, or you can step back.
+		You can say, teleport, or you can step back.
 	*then
 		hear step back {
 			-> escape_puzzle_stand_portal_stepback
 		}
 		
-		hear teleport {
+		hear travel {
 		    if dirt == 1{
 			-> escape_puzzle_stand_portal_alien
 			}
@@ -5301,11 +5301,11 @@ different things to see more details.
 		//magic realm
 		You are traveling through the portal. <audio src='https://koetest.s3.amazonaws.com/Act5/Act+5+puzzle/portaltravel_01.mp3'/> After a short time, you appear in a different space. You are on top of a floating island.
 	*recap
-		This is not the right place to go, you should travel back.
+		This is not the right place to go, you should teleport back.
 	*reprompt
-		This is not the right place to go, you should travel back.
+		This is not the right place to go, you should teleport back.
 	*then
-		hear travel back {
+		hear teleport back {
 			-> escape_puzzle_stand_portal_travelback
 		}
 
@@ -5314,11 +5314,11 @@ different things to see more details.
 		//alien planet Sixam
 		You are traveling through the portal.<audio src='https://koetest.s3.amazonaws.com/Act5/Act+5+puzzle/portaltravel_01.mp3'/> After a long time, you appear in a strange space. All the plant are glowing.
 	*recap
-		This is not the right place to go, you should travel back.
+		This is not the right place to go, you should teleport back.
 	*reprompt
-		This is not the right place to go, you should travel back.
+		This is not the right place to go, you should teleport back.
 	*then
-		hear travel back {
+		hear teleport back {
 			-> escape_puzzle_stand_portal_travelback
 		}
 
@@ -5540,7 +5540,7 @@ different things to see more details.
 
 @escape_puzzle_notebook_search_portal
 	*say
-		You search if there's a book mark about the long distance travel portal, and then you flip the notebook to that page. It reads. I put a Transportalate spell on it, and use, wand of the sylvan forest to operate it. So I can travel through the world. As long as, I have the dirt from the place I want to travel to. Grab the dirt in the hand,  stand on the portal, and say, travel. I will be there immediately. Easily say, travel back, I will be on the portal again.
+		You search if there's a book mark about the long distance travel portal, and then you flip the notebook to that page. It reads. I put a Transportalate spell on it, and use, wand of the sylvan forest to operate it. So I can travel through the world. As long as, I have the dirt from the place I want to travel to. Grab the dirt in the hand,  stand on the portal, and say, teleport. I will be there immediately. Easily say, teleport back, I will be on the portal again.
 	*then
 		flag readportal
 		-> escape_puzzle_notebook_search
@@ -5553,7 +5553,7 @@ different things to see more details.
 
 @escape_puzzle_notebook_search_fangflower
 	*say
-		You search if there's a book mark about the fang flower, and then you flip the notebook to that page. It reads. I brought the fang flower back from a strange place. Several years ago, I recieved a bottle of dirt from a spice market. I used the dirt to travel through the portal into another world. The sky over there was dark and the plants were glowing. I took the fang flower from there and travel back immediately.
+		You search if there's a book mark about the fang flower, and then you flip the notebook to that page. It reads. I brought the fang flower back from a strange place. Several years ago, I recieved a bottle of dirt from a spice market. I used the dirt to travel through the portal into another world. The sky over there was dark and the plants were glowing. I took the fang flower from there and teleport back immediately.
 	*then
 		-> escape_puzzle_notebook_search
 
