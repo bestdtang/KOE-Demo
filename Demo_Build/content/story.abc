@@ -4796,9 +4796,9 @@ Try say, go north.[Action]
 	*say
 		
 	*recap
-		If you don't know what to do to it, you should probably leave and come back later.[Action]
+		If you don't know what to do to it, you should probably leave from the plant and come back later.[Action]
 	*reprompt
-		You an do anything to the cowplant, or you can leave. If you don't know what to do to it, you should probably leave to explore more and come back later.[Action]
+		You an do anything to the cowplant, or you can leave. If you don't know what to do to it, you should probably leave from the plant to explore more and come back later.[Action]
 	*then
 		hear play with the plant, play with it, play {
 			-> cowplant_puzzle_plant_play
@@ -4813,7 +4813,7 @@ Try say, go north.[Action]
 		hear grab the cake, go for the cake, take the cake, look into the cake {
 			-> cowplant_puzzle_plant_cake
 		}
-		hear leave {
+		hear leave, leave from the plant {
 			-> cowplant_puzzle_cowplant_leave
 		}
 
@@ -4901,15 +4901,15 @@ Try say, go north.[Action]
 	*say
 		
 	*then
-		hear baby {
+		hear baby, baby state {
 			-> cowplant_puzzle_notebook_seedtrader_baby
 		}
 
-		hear mature {
+		hear mature, mature state {
 			-> cowplant_puzzle_notebook_seedtrader_mature
 		}
 
-		hear state, states {
+		hear state, states, growth state {
 			-> cowplant_puzzle_notebook_seedtrader_states
 		}
 
@@ -4929,7 +4929,7 @@ Try say, go north.[Action]
 			-> cowplant_puzzle_notebook_seedtrader_milk
 		}
 
-		hear death {
+		hear death, death state {
 			-> cowplant_puzzle_notebook_seedtrader_death
 		}
 		hear hungry {
