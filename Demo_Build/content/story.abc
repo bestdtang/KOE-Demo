@@ -1267,7 +1267,6 @@ Get the Hot Sauce 1
         Luke musters his strength and stands up, then look back at you.
 
 	*then
-		flag plot12
 		-> Luke Explains the Cave
 
 @Luke Explains the Cave
@@ -1297,7 +1296,7 @@ Get the Hot Sauce 1
 	    Try to say, lead me to the garden.
 	*then
 	    hear lead me to the garden{
-	    	-> leading_start
+	    -> leading_start
 	    }
 
 @MysMan Story Plot 2
@@ -1332,7 +1331,6 @@ Get the Hot Sauce 1
         I know why you're here. You came from the town, didn't you? You're here for the cave, where the alchemist resides. I can tell you about the puzzles in the cave.
         
 	*then
-		flag plot12
 		-> Luke Explains the Cave
 
 @One Last Thing
@@ -1413,7 +1411,6 @@ Get the Hot Sauce 1
             -> Luke Explains How He Knows
         }
         hear cave, about the cave {
-			flag plot3
             -> Luke Explains the Cave
         }
 
@@ -1450,7 +1447,6 @@ Get the Hot Sauce 1
             -> Luke Explains Why He Can't Go plot 3
         }
         hear what are the puzzles, the puzzles {
-			flag plot3
             -> Luke Explains the Cave
         }
 
@@ -1566,7 +1562,6 @@ Get the Hot Sauce 1
 
 	*then
 		hear what is the puzzle, tell me more, the puzzle {
-			flag plot4
             -> Luke Explains the Cave
         }
         hear why didn't you enter the cave, why, you {
@@ -1580,7 +1575,6 @@ Get the Hot Sauce 1
 
 	*then
 		hear what is the puzzle, the puzzles, the puzzle {
-			flag plot4
             -> Luke Explains the Cave
         }
 
@@ -1643,7 +1637,7 @@ Get the Hot Sauce 1
 
 @End of ACT III, all
 	*then
-		-> leading_puzzle_start
+		-> Luke Explains the Cave
 
 @global append
 	*then
@@ -1698,7 +1692,7 @@ Get the Hot Sauce 1
 	        -> MysMan Introduces Himself
 	    }
 	    hear four{
-	        -> leading_puzzle_start
+	        -> Luke Explains the Cave
 	    }
 	    hear five{
 	        -> Arrival At The Inner Cave
@@ -1714,7 +1708,7 @@ Get the Hot Sauce 1
 	        -> Been Walking For Days
 	    }
 	    hear leading flower{
-	        -> leading_puzzle_start
+	        -> Luke Explains the Cave
 	    }
 	    hear escape room{
 	        -> Escape The Room
@@ -3452,13 +3446,7 @@ Try say, go north.[Action]
 	*say
 		[SeedTrader] Ok, cool. It's simple to use, right? Here, take this bottle of dust. I grab it from the oasis you are looking for. And. You are ready to go! With the leading flower, you should be able to walk across the sandstorm! [EOA]
 	*then
-		if plot12 {
-			-> One Last Thing
-		}
-		if plot3 {
-			-> One More Thing Plot 3
-		}
-		-> One Last Thing Plot 4
+		-> leading_puzzle_start
 
 @leading_puzzle_start
 	*say
