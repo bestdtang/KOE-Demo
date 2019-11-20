@@ -4881,7 +4881,7 @@ Try say, go north.[Action]
 	*say
 		You picked up a swordfish from the basket and feed the plant with it. <audio src='https://koetest.s3.amazonaws.com/Act3/cowplantSounds_01.mp3'/>
 	*then
-		-> cowplant_puzzle_outside_interaction
+		-> cowplant_puzzle_cowplant_interaction
 
 @cowplant_puzzle_grab_notebook
 	*say
