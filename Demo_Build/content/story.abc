@@ -247,7 +247,7 @@
         [Man]
         The mayor believed that it's a curse from some spell caster. He was trying to find people to help. Even set up a great reward for anyone who lifts the curse. 
         [Pause]
-        Since you're here, why don't you help us? [Short_Pause] There's a lucrative treasure, and it could be all yours. What do you say?[EOA]
+        Since you're here, why don't you help us? [Short_Pause] There's a lucrative treasure, and it could be all yours. In the meantime, you can look around the store. No worries.[EOA]
         It seems like they really need your help. Do you want to help them?
 	*reprompt
 		It seems like they really need your help.
@@ -278,13 +278,9 @@
 
 @Look Left
 	*say
-		You wipe your face with your dry hands and decide to turn left. [Pause] Then, you keep treading the infinite sea of sand wearily.
+		You wipe your face with your dry hands and decide to turn left. [Pause] Then, you keep treading the sea of powdered rocks wearily.
 	*then
 		-> Tutorial 1A: Check Around
-
-
-////////////// ACT 1 END ////////////////
-////////////// ACT 2 START //////////////
 
 @Decide to Help
 	*say
@@ -297,33 +293,35 @@
 		[Kid] 
 		But the mayor is also locking himself up. No one has seen him for a while. [EOA]
 		[Man] 
-		Ha! This, my son, is when being the owner of the ONLY general store in the town comes in handy [Short_Pause] you see, the mayor has a secret craving for Super-Duper Hot Blue Pepper Sauce. [Short_Pause] And guess who's the only one selling it? Me! Ha haaah! [EOA]
+		Ha! This, my son, is when being the owner of the ONLY general store in the town comes in handy [Short_Pause] Kungh kungh, you see, the mayor has a secret craving for Super-Duper Hot Blue Pepper Sauce. [Short_Pause] And guess who's selling it? Me! Ha haaah! [EOA]
+	*recap
+		Pick the other place
 	*then
 		-> Decide to Help 2
 
 @Decide to Help 2
-	*say 
-		The shopkeeper mentions the mayor, and the hot sauce with a ridiculously long name that you can't remember. Although it's pretty obvious that you would need to ask for one bottle in order to get the mayor's attention, but it never hurts to ask about the sauce, or the mayor. [EOA]
+	*say
 		[Conversation]
+		You can ask about the mayor, ask about the sauce, or ask for one bottle
 	*recap
 		You can ask about the mayor, ask about the sauce, or ask for one bottle
 	*then
-		hear buy, buy a bottle, can I have a bottle of hot sauce, could I, can you, can I, one, ask for one bottle, ask one, please give me, give me {
+		hear buy, buy a bottle, can I have a bottle of hot sauce, could I, can you, can I, one, ask for one bottle, ask one, please give me {
 	        -> One Bottle of Sauce
 	    }
-	    hear ask about the mayor, about the mayor, the mayor, mayor {
+	    hear ask about the mayor, about the mayor, the mayor {
 	        -> Ask Shopkeeper About the Mayor
 	    }
-	    hear ask about the sauce, about the sauce, the sauce, sauce {
+	    hear ask about the sauce, about the sauce, the sauce {
 	        -> Ask Shopkeeper About the Sauce
 	    }
 	*reprompt
-		You can ask about the mayor, ask about the sauce, or ask for one bottle.
+		You can ask about the mayor, ask about the sauce, or ask for one bottle
 
 @Ask Shopkeeper About the Mayor
 	*say
 		[Man]
-        About the mayor [Short_Pause], well, he hasn't accepted to see anyone since the incident. Other than making this poster I showed you, he hasn't done anything else to help the town. Nobody knows if he's even in his office anymore. [Short_Pause] He wasn't like this before. He tried really hard to promote this little town to the world outside, that's why we had so many tourists before. [Short_Pause] By the way, after the disaster took place, he became oddly addicted to the hot sauce. What else would you like to know?[EOA] You can ask about the sauce, or ask for one bottle.
+        The mayor has a strange craving for hot sauce. The mayor has turned down guests since the incident. [Short_Pause] The mayor didn't do anything to help the town either. Nobody knows if he's even in his office anymore. What else would you like to know?[EOA] You can ask about the sauce, or ask for one bottle.
 	*then
 		hear buy, buy a bottle, can I have a bottle of hot sauce, could I, can you, can I, one, ask for one bottle, ask one, please give me  {
             -> One Bottle of Sauce
@@ -335,15 +333,7 @@
 @Ask Shopkeeper About the Sauce
 	*say
 		[Man]
-        I can only say, the hot sauce is really hot, [Short_Pause] and it looks blue, for some reason. Like the gas stoves you see in your kitchen, hot, hot, hot! [EOA]
-		[Boy]
-		Yeah, when I was little, I thought it was cake frosting in a bottle. I was wrong. [EOA]
-		[Man]
-		When I was little, [Short_Pause] Speaking like a grown-up, aren't you? [EOA]
-		[Boy]
-		I am a grown up. [EOA]
-		[Man]
-		Ha Ha Ha. Well, what else would you like to know?[EOA] You can ask about the mayor, or ask for one bottle.
+        I can only say, the hot sauce is really hot, [Short_Pause] and it looks blue. Like the gas stoves you see in your kitchen, hot, hot, hot! Hmm, what else would you like to know?[EOA] You can ask about the mayor, or ask for one bottle.
 	*then
 		hear buy, buy a bottle, can I have a bottle of hot sauce, could I, can you, can I, one, ask for one bottle, ask one, please give me  {
             -> One Bottle of Sauce
@@ -378,7 +368,7 @@
 		hear leave the store, leave {
             -> Leave the Store
         }
-        hear ask more, tell me more about, ask more about Mrs Chilirosa, Misses Chilirosa, she {
+        hear ask more, tell me more about, ask more about Mrs Chilirosa, Misses Chilirosa, she, where {
             -> Ask more about Chilirosa
         }
 
@@ -394,7 +384,7 @@
 	*recap
 		Now you can leave the store, or ask again
 	*then
-		hear leave the store, leave, go out {
+		hear leave the store, leave {
             -> Leave the Store
         }
         hear ask again, ask {
@@ -403,8 +393,9 @@
 
 @Leave the Store
 	*say
+		Just as you are about to leave the store, the shopkeeper stops you.
         [Man]
-        You'll find Chilirosa at the end of the street. Take care, and good luck. [EOA]
+        Wait wait. The desert is hot and wide. Don't want you to starve or get thirsty out there. Take these. [EOA]
         The shopkeeper gives you a big bread and a full canteen of water. They both look edible, but at the same time the stench attaches to them. 
         <audio src='https://koetest.s3.amazonaws.com/new_demo_stereo/doorOpen2.mp3'/>
         You step out of the store.
@@ -449,34 +440,10 @@
 		hear signpost,check the signpost again, again, check again {
 			-> Signpost
 		}
-		hear check the ivy, check ivy, ivy, check strings {
-			-> Check Ivy
-		}
-
-
 	*recap
 		There are a few other things that you may want to check:  the mayor's office to your left, beauty salon. Or you can check the signpost again.
 	*reprompt
 		There are a few other things that you may want to check:  the mayor's office to your left, beauty salon. Or you can check the signpost again.
-
-@Check Ivy
-	*say
-		You look closely at the ivy on the signpost. It's growing strong and healthy, as if the desert means nothing to the plant.
-	*then
-		hear salon, beauty salon, go to beauty salon, go find the beauty salon {
-		    set currentLocation as 'outside of the beauty saloon'
-			-> Beauty Salon
-		}
-		hear Mayor's office, left, go to mayor's office,office {
-		    set currentLocation as 'mayors office'
-			-> Mayor's Office
-		}
-		hear signpost,check the signpost again, again, check again {
-			-> Signpost
-		}
-		hear check the ivy, check ivy, ivy, check strings {
-			-> Check Ivy
-		}
 
 @Mayor's Office
 	*say
@@ -516,29 +483,29 @@
 
 @Knock On Mayor's Office
 	*say
-		You knock on the door, but nobody answers.
+		You knocked on the door, but nobody answers.
 	*then
 		-> Mayor's Office
 
 @Bash On Mayor's Office
 	*say
-		You bash heavily on the door, but nothing happened.
+		You bashed heavily on the door, but nothing happened.
 	*then
 		-> Mayor's Office
 
 @Check Out the Trash Can
 	*say
-		You look at the trash can. It's filled with empty bottles of super-duper hot blue pepper sauce. The smell of the sauce makes you want to cry.
+		You checked out the trash can, but it's empty.
 	*then
 		-> Mayor's Office
 
 @Beauty Salon
 	*say
-		You walk towards the end of the street.
+		You started walking towards the end of the street.
 
         Nothing but the sandy gusts of wind blow into your ears. No one is visible on the street. The buildings on the way look pretty modern, but they are all coated with a thick layer of dust. While you're on your way, you noticed something peculiar in the corner of one of the buildings. It's a patch of green.
         <audio src="https://koetest.s3.amazonaws.com/new_demo_stereo/footsteps2.mp3"/>
-		You're at the front door of the beauty salon. Looks like its doors are shut tight, but they don't look locked, and you hear the sounds of radio inside. Anyways, you should talk to Misses Chilirosa, but what should you do to get her attention?
+You're at the front door of the beauty salon. Looks like its doors are shut tight, but they don't look locked, and you hear the sounds of radio inside. Anyways, you should talk to her, but what should you do?
 	*then
 		unflag flower
 	    unflag angry
@@ -546,17 +513,17 @@
 
 @Arrive Beauty Salon
 	*say
-		Normally, you could knock on the door. But you can also try bashing on the door, or you just open the door and sneak in. You can also go back to and inspect the patch of green.[Action]
+		Now you can: Knock on the door, bash on the door, open the door directly, or check on the green patch before.[Action]
 	*then
-		hear knock, knock on the door, try knock {
+		hear knock, knock on the door {
 		    set currentLocation as 'inside of the beaty saloon'
             -> Knock On Beauty Salon
         }
-        hear bash, bash on the door, try bashing {
+        hear bash, bash on the door {
             set currentLocation as 'inside of the beaty saloon'
             -> Bash On Beauty Salon
         }
-		hear open the door directly, sneak in, sneak {
+		hear open the door directly {
 			-> Open the Beauty Salon Directly
         }
         hear check the green patch before, green patch, check {
@@ -608,7 +575,7 @@
 	*say
 		<audio src='https://koetest.s3.amazonaws.com/new_demo_stereo/peopleWalkingFast.mp3'/>
         [MrsChilirosa]
-        Hey? Show some manners![EOA] 
+        WHATTT? Show some manners![EOA] 
         <audio src='https://koetest.s3.amazonaws.com/new_demo_stereo/doorOpen2.mp3'/>
 	*then
 		if flower {
@@ -792,7 +759,7 @@
 
 @Get the Hot Sauce
 	*say
-		You're at the mayor's office. The doors are shut tight, and they seem like locked. Somehow with the stench, it also smells very spicy. Besides knocking on the door, the office is so big that you probably need to shout to get his attention. Do you want to wave to the window, or shout to the his attention?[Action]
+		You're at the mayor's office. The doors are shut tight, and they seem like their locked. Somehow with the stench, it also smells very spicy. Besides knocking on the door, the office is so big that you probably need to shout to get his attention. Do you want to wave to the window, or shout to the his attention?[Action]
 	*reprompt
 		Wave to the window? Or shout at the mayor?
 	*recap
@@ -811,9 +778,9 @@ Get the Hot Sauce 1
 	*say
 		You knocked the door, but no-one responded. You need to make a bigger noise. [Action]
 	*reprompt
-		It seems that shouting at the mayor is the only way to get his attention
+		It seems that shout at the mayor is the only way to get his attention
 	*recap
-		It seems that shouting at the mayor is the only way to get his attention
+		It seems that shout at the mayor is the only way to get his attention
 	*then
 		hear shout, shout at the mayor {
 	        -> Shout At the Mayor
@@ -823,23 +790,18 @@ Get the Hot Sauce 1
 	*say
 		Ok then. Shout something loud and clear so that the mayor can hear you. Now let's shout![Conversation]
 	*recap
-		Seems like he is not interested in what you said. Shout something else? maybe mention that you have the super duper hot blue pepper sauce? [Conversation]
+		Seems like he is not interested in what you said. Shout something else? maybe mention that you have the super duper hot pepper sauce? [Conversation]
 	*reprompt
 		Ok then. Shout something loud and clear so that the mayor can hear you. Now let's shout![Conversation]
 	*then
-		hear super duper hot blue pepper sauce, sauce, hot , pepper, super duper, hot sauce, pepper sauce, blue sauce, blue {
+		hear super duper hot blue pepper sauce, sauce, hot , pepper, super duper, hot sauce, pepper sauce {
 			-> Shout At the Mayor_1
 		}
 
 @Shout At the Mayor_1
 	*say
-		// TODO: OPEN BIG DOORS SOUND EFFECT HERE
 		[Mayor]
-        Ah. Welcome. I see that you've brought some hot sauce for me?[EOA]
-		You hand over the sauce. The mayor quickly jerks open the bottle cap, and walks hastily to one of the doors and pours the sauce under it. He looks at you and smiles awkwardly.
-		[Mayor]
-		You see. I actually don't like the sauce. I use it only to block off the smell. This scent of evilness has been surrounding this town for so long that I almost forgot when it happened. Say, why did you come?
-		[Conversation]
+        Oh, thank you for bringing me the hot sauce. What brings you here?[EOA] [Conversation]
 	*then
 		hear smell, incident, help, yes, right {
 			-> Mayor Talks More About the Incident
@@ -855,44 +817,7 @@ Get the Hot Sauce 1
 @Mayor Talks More About the Incident
 	*say
 		[Mayor]
-        Wait. Are you saying that you're willing to help us get rid of this disgusting smell? Oh please, sit down, sit down.[EOA]
-		You sit down on the old couhc in the office. The couch releases a spicy smell that stings.
-		[Mayor]
-		Want some tea? [EOA]
-	*then
-		hear yes, sure, yes please, ok {
-			-> Mayor Brings Tea To You
-		}
-		hear no, no thanks {
-			-> Mayor Doesn't Bring Tea To You
-		}
-
-
-@Mayor Brings Tea To You
-	*say
-		In a split second, the mayor has brought you a cup of tea. You drink from the cup. Oh dear. Hot. Hot. Hot. Someone call nine one one. Hot. Hot. Hot.
-		[Mayor]
-		Ha. This tea is brewed with the spicy hot sauce! This tea makes your nose so numb that you can't smell that awful stench. [Short_Pause] Ok, where were we? Ah, yes.[EOA]
-	*then
-		-> Mayor Talks About the Incident Part 2
-		
-@Mayor Doesn't Bring Tea To You
-	*say
-		[Mayor] Alright then. [EOA]
-		The mayor makes himself a cup of tea.
-		[Mayor] Ah! Hot. This tea is very, very hot. So hot that it lets you forget about the stench! [EOA]
-		I wonder what that tea is made of.
-		[Mayor] Anyway, where were we? Oh, yes. [EOA]
-	*then
-		-> Mayor Talks About the Incident Part 2
-
-@Mayor Talks About the Incident Part 2
-	*say
-		[Mayor]
-		This curse was started by one of our own. His name is the Alchemist. That coward ran away from the town, though. Can't even face his own wrongdoings like a real man. [EOA]
-		The mayor looks at the map on the wall.
-		[Mayor]
-		The legend out there says there's a precious gemstone hidden in the valleys to the East, and that the precious gem is the key ingredient to lifting the curse. What the legend didn't tell, is that the cavern is guarded by a mysterious puzzle. [EOA]
+        Yes. There is a cave that we know to the Eastern valleys, but all we know is that the cave is guarded by puzzles and challenges. But what's beyond that nobody knows.you can ask about: the cave, puzzles, eastern valleys, the town, or leave to the cave[EOA]
 	*reprompt
 		you can ask about: the cave, puzzles, eastern valleys, the town, or leave to the cave
 	*then
@@ -922,14 +847,14 @@ Get the Hot Sauce 1
 @Ask Mayor Challenges
 	*say
 		[Mayor]
-        A while ago we sent our best people to retrieve the stone. When they returned, the were smelly, even nastier than what we are enduring here. [Short_Pause] But what's worse was that they could barely remember anything. The doctor said that probably the smell was too unbearable that they lose their memories. All they could remember when they returned was they were lost in a puzzle.[EOA]
+        We sent our best guys into the cave. [Short_Pause] All they could remember when they returned was they were lost in a forest.[EOA]
 	*then
 		>> BACK
 
 @Mayor Self Introduction
 	*say
 		[Mayor]
-        I'm the Mayor. There's no question about it.[EOA]
+        I'm the Mayor. [EOA]
 	*then
 		>> BACK
 
@@ -981,14 +906,14 @@ Get the Hot Sauce 1
 @Ask Mayor The Cave
 	*say
 		[Mayor]
-        Well, there's not much to talk about the cave, other than it's hidden in the valleys to the East... wait. Ah, yes, nearly missed this: It is said that there were plant roots that lead into the cave. A real miracle since green is sparse in the desert.[EOA]
+        Strangely, some plant roots lead into the cave.[EOA]
 	*then
 		>> BACK
 
 @Ask Mayor The Town
 	*say
 		[Mayor]
-        We were once a happy little town in the desert. At one point it even became a tourist spot! It's crazy to think that people would come from everywhere, just to get a taste of our famous dish, Shawarma.[EOA]
+        The town has a story. I think it's the alchemist who did it.[EOA]
 	*then
 		>> BACK
 
@@ -1031,7 +956,7 @@ Get the Hot Sauce 1
         I hope that these information are useful to you. We're all looking forward to seeing the town coming back to life some day. Good luck! [EOA]
         You leave the mayor's office, back on to the streets. The shopkeeper stands outside.
         [Man]
-        Are you leaving? If you're ready, the horse over there is ready for you; but if you are tired. take some rest. Would you like to leave or take some rest?[EOA]
+        are you leaving? bring some of these with you. If you're ready, the horse over there is ready for you; but if you are tired. take some rest. Would you like to leave or take some rest?[EOA]
 	*then
 		hear rest, take some rest {
 	        >>END
@@ -4599,6 +4524,10 @@ Try say, go north.[Action]
 		You can look around.
 	*then
 		hear look around {
+		    unflag wakeman
+		    unflag getmilk
+		    unflag getnotebook
+		    
 			-> cowplant_puzzle_tent_around_tutorial
 		}
 
@@ -5149,6 +5078,12 @@ will make people feels like an emotionless shell. Different allergic symptoms ca
         You've been locked in the hut. Perhaps you should look around? [Action]
 	*then
 		hear look around, what's around me, check what's around me, anything around {
+		    set dirt to 0
+		    unflag readportal
+		    unflag getwand
+		    unflag insertwand
+		    unflag heatbox
+		    unflag freezebox
 			-> escape_puzzle_around
 		}
 
@@ -5158,7 +5093,6 @@ will make people feels like an emotionless shell. Different allergic symptoms ca
  the table, there is a flower stand. On your right, there is a strange equipment that looks like a machine. And on your left, you see a chest. You can look at 
 different things to see more details.
 	*then
-		set dirt to 0
 		-> escape_puzzle_interaction
 
 @escape_puzzle_interaction
