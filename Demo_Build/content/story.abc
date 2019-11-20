@@ -1113,10 +1113,10 @@ Get the Hot Sauce 1
 	*reprompt
 		You can ask more about the seed or ask how to get to the cave. You can also thank him and leave.[Conversation]
 	*then
-		hear seed, tell me more about the seed {
+		hear seed, tell me more about the seed, what is the seed {
             -> More About the Seed
         }
-        hear thank him and leave, no, leave {
+        hear thank him and leave, no, leave, than you, thanks {
             -> MysMan Says Wait
         }
         hear how to get to the cave, the cave, cave {
@@ -1152,6 +1152,8 @@ Get the Hot Sauce 1
         You can ask more about the flower or ask how to get to the cave. You can also thank him and leave.[Conversation]
 	*reprompt
 		You can ask more about the flower or ask how to get to the cave. You can also thank him and leave.
+	*recap
+		You can ask more about the flower or ask how to get to the cave. You can also thank him and leave.
 	*then
 		flag anotherItem
         hear ask more about the flower, tell me more, more, flower, tell me more about the flower {
@@ -1160,7 +1162,7 @@ Get the Hot Sauce 1
         hear about the cave, the cave {
             -> Next Item
         }
-        hear go, leave, thank him and leave, leave {
+        hear go, leave, thank him and leave, leave, thanks, thank you {
             -> MysMan Says Wait
         }
 
@@ -1171,6 +1173,8 @@ Get the Hot Sauce 1
 		
 		You can ask how to get to the cave. You can also thank him and leave.[Conversation]
 	*reprompt
+		You can ask how to get to the cave. You can also thank him and leave.
+	*recap
 		You can ask how to get to the cave. You can also thank him and leave.
 	*then
 		hear how to get to the cave, about the cave, the cave {
@@ -1190,14 +1194,16 @@ Get the Hot Sauce 1
         He seems really unsettled, but not because of the plant he's holding up to you. [Conversation]
 	*reprompt
 		You can ask how to get to the cave. You can also thank him and leave.
+	*recap
+		You can ask how to get to the cave. You can also thank him and leave.
 	*then
-		hear about the cave {
+		hear about the cave, how to get to the cave {
             -> MysMan Says Stop
         }
-        hear leave {
+        hear leave, thanks, tank you {
             -> MysMan Says Wait I Know
         }
-        hear more about the plant, the plant {
+        hear more about the plant, the plant, what is the plant {
             -> MysMan Spills the Tea
         }
 
@@ -1210,8 +1216,12 @@ Get the Hot Sauce 1
 
         [SeedTrader]
         I'm sorry. It's just that I've waited so long for someone to come and ask me about the cave. I'm sorry. [EOA]
+	*recap
+		You should talk to him, probably just tell him, it is alright?
+	*reprompt
+		You should talk to him, probably just tell him, it is alright?
 	*then
-		hear it's OK, OK, alright, fine {
+		hear it is ok, ok, it is alright, fine, alright {
             -> MysMan Story
         }
 
@@ -1309,7 +1319,7 @@ Get the Hot Sauce 1
         Luke picks up the bottle with the plant sealed in.
         
         //(Sound Effect: Sigh)
-        <audio src='https://koetest.s3.amazonaws.com/Act3/sigh_01.mp3'/>
+        //<audio src='https://koetest.s3.amazonaws.com/Act3/sigh_01.mp3'/>
         [SeedTrader]
         I knew that it was going to fail, but he disagreed. We had a big fight, and I left the lab for the night. The next thing I know, is that the town was flooded with the flower's smell, and the townsfolk were angry at the alchemist. In the end, they drove him away. [EOA]
 
@@ -1397,7 +1407,7 @@ Get the Hot Sauce 1
 	*reprompt
 		Luke seems to know that you're going to the cave, and he knows something about it. You may want ask him.
 	*then
-		hear how did you know, how {
+		hear how did you know, how, ask him {
             -> Luke Explains How He Knows
         }
         hear cave, about the cave {
@@ -1434,7 +1444,7 @@ Get the Hot Sauce 1
 		hear why, why don't you go {
             -> Luke Explains Why He Can't Go plot 3
         }
-        hear what are the puzzles, the puzzles {
+        hear what are the challenge, the challenge {
 			flag plot3
             -> Luke Explains the Cave
         }
@@ -1444,7 +1454,7 @@ Get the Hot Sauce 1
 		[SeedTrader]
         I wanted to go, but I have my own business to look after. Living in the desert is not something particularly easy, you know? On the other hand, you are going, and I can tell you about the challenges, so let's get to it?[EOA] [Pause]
 	*then
-		hear what are the puzzles, the puzzles {
+		hear sure, yes, what are the challenges, the challenges {
 		    flag plot3
             -> Luke Explains the Cave
         }
@@ -1471,7 +1481,7 @@ Get the Hot Sauce 1
 		You may choose to pause, or leave and continue to the cave. Would you like to leave for the cave?
 	*then
 		flag plot3
-        hear yes, leave for the cave, continue {
+        hear yes, leave for the cave, continue, sure {
             -> End of ACT III, 3
         }
         hear no, puase, rest {
@@ -1507,6 +1517,10 @@ Get the Hot Sauce 1
 		//(Sound Effect, cloth flapping in the blowing wind)
 
 		Luke silences for a long 3 seconds. All you can hear is the wind and the tent flapping in the wind. He doesn't look right. Is he ok?
+	*recap
+		You should ask him what happened.
+	*reprompt
+		You should ask him what happened.
 	*then
 		hear what happened, tell me more {
             -> Mysman Tells the Story Plot 4
@@ -1544,11 +1558,11 @@ Get the Hot Sauce 1
 	*recap
 		Luke squints his eyes and puts his ears closer to you, like he didn't understand. You might want to ask him more about the challenge?
 	*then
-		hear what is the puzzle, tell me more, the puzzle {
+		hear yes, what is the challenge, tell me more, the challenge {
 			flag plot4
             -> Luke Explains the Cave
         }
-        hear why didn't you enter the cave, why, you {
+        hear why didn't you enter the cave, why, you, why you did not go {
             -> Luke Explains Why He Can't Go plot 4
         }
 
@@ -1556,8 +1570,12 @@ Get the Hot Sauce 1
 	*say
 		[SeedTrader]
         Why I can't go? Well, as you can see how I ended up with that cowplant out there, I'm not the physical type. [EOA]
+	*recap
+		You should probably ask him what is the challenge.
+	*recap
+		You should probably ask him what is the challenge.
 	*then
-		hear what is the puzzle, the puzzles, the puzzle {
+		hear what is the challenge, the challenges, the challenge {
 			flag plot4
             -> Luke Explains the Cave
         }
@@ -2851,6 +2869,7 @@ Get the Hot Sauce 1
 		    unflag turn_pot
 		    unflag turn_kettle
 		    unflag hide
+			unflag caught
 			-> chilirosa_door
 		}
 
