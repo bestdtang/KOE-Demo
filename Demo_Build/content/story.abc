@@ -5153,22 +5153,22 @@ different things to see more details.
 			-> escape_puzzle_insert_note
 		}
 		
-		hear grab the dirt from number two pot, grab the dirt from black berry, two, take dirt from pot number two, take the dirt from pot number two, grab dirt from pot number two, grab the dirt from pot number two, take some dirt from pot number two, take some dirt from number two {
+		hear grab the dirt from number two pot, grab the dirt from black berry, two, take dirt from pot number two, take the dirt from pot number two, grab dirt from pot number two, grab the dirt from pot number two, take some dirt from pot number two, take some dirt from number two, take some dirt from black berry {
 			-> escape_puzzle_vew_flower_dirt_2
 		}
 
-		hear grab the dirt from number three pot, grab the dirt from mandrake, three, take dirt from pot number three, take the dirt from pot number three, grab dirt from pot number three, grab the dirt from pot number three, take some dirt from pot number three, take some dirt from number three {
+		hear grab the dirt from number three pot, grab the dirt from mandrake, three, take dirt from pot number three, take the dirt from pot number three, grab dirt from pot number three, grab the dirt from pot number three, take some dirt from pot number three, take some dirt from number three, take some dirt from mandrake {
 			-> escape_puzzle_vew_flower_dirt_3
 		}
-		hear grab the dirt from number one pot, grab the dirt from fang flower, one, take dirt from put number one, take the dirt from put number one, grab dirt from put number one, grab the dirt from put number one, take some dirt from pot number one, take some dirt from number one {
+		hear grab the dirt from number one pot, grab the dirt from fang flower, one, take dirt from put number one, take the dirt from put number one, grab dirt from put number one, grab the dirt from put number one, take some dirt from pot number one, take some dirt from number one, take some dirt from fang flower  {
 			-> escape_puzzle_vew_flower_dirt_1
 		}
 		
-		hear grab dirt{
+		hear grab dirt, take some dirt, take dirt{
 		    -> escape_puzzle_grab_dirt
 		}
 
-		hear use the flower on the portal, use the barrel on the portal {
+		hear use the flower on the portal, use the barrel on the portal, use the blueberry on the portal {
 			-> escape_puzzle_insert_wrong
 		}
 
