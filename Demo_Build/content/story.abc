@@ -15,6 +15,7 @@
 		Greetings, explorer. [Short_Pause] Welcome to the Desert Traveler experience! [Short_Pause] In this five-act interactive story, you can stop and come back at any time. Shall we start?
 	*then
 		set currentLocation as 'desert'
+		unflag skip
 		hear yes, sure, of course {
 		    -> Lost in Desert
 	    }
@@ -1674,6 +1675,7 @@ Get the Hot Sauce 1
 		}
 
 		hear jump {
+		    unflag skip
 			-> jumpto
 		}
 
@@ -1714,6 +1716,7 @@ Get the Hot Sauce 1
 	        -> Been Walking For Days
 	    }
 	    hear leading flower{
+	        flag skip
 	        -> leading_puzzle_start
 	    }
 	    hear escape room{
@@ -3427,7 +3430,7 @@ Try say, go north.[Action]
 
 @leading_tutorial_end
 	*say
-		[SeedTrader] Hey, congrats! Now you are in my garden, do you understand how to use  the leading flower?[EOA][Conversation]
+		[SeedTrader] Hey, congrats! Now you are in my garden, do you understand how to use the leading flower?[EOA][Conversation]
 	*then
 		hear yes {
 			-> leading_tutorial_end_1
@@ -3450,8 +3453,12 @@ Try say, go north.[Action]
 
 @leading_tutorial_end_1
 	*say
-		[SeedTrader] Ok, cool. It's simple to use, right? Here, take this bottle of dust. I grab it from the oasis you are looking for. And. You are ready to go! With the leading flower, you should be able to walk across the sandstorm! [EOA]
+		[SeedTrader] Ok, cool. It's simple to use, right? Here, take this bottle of dust. I grab it from the oasis you are looking for. And. You are ready to go! With the leading flower, you should be able to walk across the foggy forest! [EOA]
 	*then
+	    if skip {
+	        unflag skip
+	        -> leading_puzzle_start
+	    }
 		if plot12 {
 			-> One Last Thing
 		}
@@ -5064,7 +5071,7 @@ will make people feels like an emotionless shell. Different allergic symptoms ca
     *reprompt
         You have arrived at the cave, only to be locked in a small hut by a man with faded purple hair. The door seems to be stuck by something, so you're trapped inside. What should you do to get out?
     *recap
-        You've been locked in the hut. Perhaps you should look around?
+        You've been locked in the hut. Perhaps you should look around? [Action]
 	*then
 		hear look around, what's around me, check what's around me, anything around {
 			-> escape_puzzle_around
@@ -5081,9 +5088,9 @@ different things to see more details.
 
 @escape_puzzle_interaction
 	*recap
-		You can view different things to see more details.
+		You can view different things to see more details. [Action]
 	*reprompt
-		You can look at differen things to see more details.
+		You can look at differen things to see more details. [Action]
 	*then
 		hear view the table, view table, look at the table, look at table, table, check the table, check table {
 			-> escape_puzzle_view_table
@@ -5254,18 +5261,18 @@ different things to see more details.
 
 @escape_puzzle_insert_wand
 	*say
-		You insert the wand into the portal. It fits into the hole perfectly. The inscriptions around the portal start to glow.
+		You insert the wand into the portal. It fits into the hole perfectly. <audio src='https://koetest.s3.amazonaws.com/Act5/magicSound01.mp3'/> The inscriptions around the portal start to glow.
 	*then
 		flag insertwand
 	    -> escape_puzzle_interaction
 
 @escape_puzzle_stand_portal_ready
 	*say
-		You stand on the portal. The wand is reacting to the dirt in your hand.
+		You stand on the portal. <audio src='https://koetest.s3.amazonaws.com/Act5/magicSound03.mp3'/> The wand is reacting to the dirt in your hand. 
 	*recap
-		You can say, teleport, or you can step back.
+		You can say, travel, or you can step back.
 	*reprompt
-		You can say, teleport, or you can step back.
+		You can say, travel, or you can step back.
 	*then
 		hear step back {
 			-> escape_puzzle_stand_portal_stepback
@@ -5285,14 +5292,14 @@ different things to see more details.
 
 @escape_puzzle_stand_portal_out
 	*say
-		You are traveling through the portal. In a blink of an eye, you are standing in the inner cave. You made your way out!
+		You are traveling through the portal.<audio src='https://koetest.s3.amazonaws.com/Act5/Act+5+puzzle/portaltravel_01.mp3'/> In a blink of an eye, you are standing in the inner cave. You made your way out!
 	*then
 	    -> Exit The Room
 
 @escape_puzzle_stand_portal_realm
 	*say
 		//magic realm
-		You are traveling through the portal. After a short time, you appear in a different space. You are on top of a floating island.
+		You are traveling through the portal. <audio src='https://koetest.s3.amazonaws.com/Act5/Act+5+puzzle/portaltravel_01.mp3'/> After a short time, you appear in a different space. You are on top of a floating island.
 	*recap
 		This is not the right place to go, you should travel back.
 	*reprompt
@@ -5305,7 +5312,7 @@ different things to see more details.
 @escape_puzzle_stand_portal_alien
 	*say
 		//alien planet Sixam
-		You are traveling through the portal. After a long time, you appear in a strange space. All the plant are glowing.
+		You are traveling through the portal.<audio src='https://koetest.s3.amazonaws.com/Act5/Act+5+puzzle/portaltravel_01.mp3'/> After a long time, you appear in a strange space. All the plant are glowing.
 	*recap
 		This is not the right place to go, you should travel back.
 	*reprompt
@@ -5389,14 +5396,14 @@ different things to see more details.
 
 @escape_puzzle_box_break
 	*say
-		The metal box is broken. From the container, you retrieve a wand.
+		The metal box is broken. <audio src='https://koetest.s3.amazonaws.com/Act5/Act+5+puzzle/metalcrack_01.mp3'/> From the container, you retrieve a wand.
 	*then
 		flag getwand
 	-> escape_puzzle_interaction
 
 @escape_puzzle_heatup_metalbox
 	*say
-		You heat up the metalbox with the alcohol burner.
+		You heat up the metalbox with the alcohol burner. 
 	*then
 		flag heatbox
 		if freezebox{
@@ -5406,7 +5413,7 @@ different things to see more details.
 
 @escape_puzzle_freeze_metalbox
 	*say
-		You freeze the metalbox by putting it into the ice barrel.
+		You freeze the metalbox by putting it into the ice barrel. <audio src='https://koetest.s3.amazonaws.com/Act5/Act+5+puzzle/ice_01.mp3'/>
 	*then
 		flag freezebox
 		if heatbox{
@@ -5447,7 +5454,7 @@ different things to see more details.
 
 @escape_puzzle_view_newspaper
 	*say
-		You look at the newspaper. After Expanding it carefully. It reads, Magic Daily. Customer complaints about the wand containers from Juan’s Wonderful One-Stop Wand Warehouse are not strong enough to protect their luxury wands. Juan responded that all their containers are made by death metal, which is the hardest metal in the world. The problem must be caused by improper use.
+		You look at the newspaper. <audio src='https://koetest.s3.amazonaws.com/Act5/Act+5+puzzle/newspaper_01.mp3'/> After Expanding it carefully. It reads, Magic Daily. Customer complaints about the wand containers from Juan’s Wonderful One-Stop Wand Warehouse are not strong enough to protect their luxury wands. Juan responded that all their containers are made by death metal, which is the hardest metal in the world. The problem must be caused by improper use.
 	*then
 		-> escape_puzzle_interaction
 
@@ -5471,7 +5478,7 @@ different things to see more details.
 
 @escape_puzzle_open_notebook
 	*say
-		You open up the notebook. What keyword do you want to search?
+		You open up the notebook. <audio src='https://koetest.s3.amazonaws.com/Act5/Act+5+puzzle/openbook_01.mp3'/> What keyword do you want to search?
 	*then
 		-> escape_puzzle_notebook_search
 
@@ -5527,7 +5534,7 @@ different things to see more details.
 
 @escape_puzzle_notebook_close
 	*say
-		You close the notebook.
+		<audio src='https://koetest.s3.amazonaws.com/Act5/Act+5+puzzle/closebook_01.mp3'/> You close the notebook. 
 	*then
 		-> escape_puzzle_interaction
 
