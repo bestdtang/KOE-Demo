@@ -5096,7 +5096,7 @@ different things to see more details.
 
 @escape_puzzle_interaction
 	*recap
-		You can view different things to see more details. [Action]
+		You can look at different things to see more details. [Action]
 	*reprompt
 		You can look at differen things to see more details. [Action]
 	*then
@@ -5133,7 +5133,7 @@ different things to see more details.
 			-> escape_puzzle_view_alcohollamp
 		}
 
-		hear view the wooden barrel, view the barrel, looka at the barrel, look at the wooden barrel, look at wooden barrel, look at barrel {
+		hear view the wooden barrel, view the barrel, look at the barrel, look at the wooden barrel, look at wooden barrel, look at barrel {
 			-> escape_puzzle_view_barrel
 		}
 
@@ -5287,7 +5287,7 @@ different things to see more details.
 			-> escape_puzzle_stand_portal_stepback
 		}
 		
-		hear travel {
+		hear teleport {
 		    if dirt == 1{
 			-> escape_puzzle_stand_portal_alien
 			}
