@@ -2869,6 +2869,7 @@ Get the Hot Sauce 1
 		    unflag turn_pot
 		    unflag turn_kettle
 		    unflag hide
+			unflag caught
 			-> chilirosa_door
 		}
 
