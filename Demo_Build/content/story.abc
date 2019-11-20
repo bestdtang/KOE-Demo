@@ -22,6 +22,7 @@
 	    hear no {
 	        -> Quit Game
         }
+
 @Quit Game
 	*say
         OK. Bye~
@@ -1689,6 +1690,7 @@ Get the Hot Sauce 1
 	    hear puzzle{
 	        -> jumptopuzzle
 	    }
+
 @jumptoact
 	*say
 		which act
@@ -1705,6 +1707,7 @@ Get the Hot Sauce 1
 	    hear five{
 	        -> Arrival At The Inner Cave
 	    }
+
 @jumptopuzzle
 	*say
 		which puzzle
@@ -1761,6 +1764,7 @@ Get the Hot Sauce 1
 		hear continue {
 			-> TA3
 		}
+
 @TA3
 	*say
 		11  <audio src='https://koetest.s3.amazonaws.com/Act3/milkingCowplant.mp3'/>
@@ -1817,13 +1821,13 @@ Get the Hot Sauce 1
 			-> TA7
 		}
 
-@TA7	
+@TA7
 	*say
 		5 <audio src='https://koetest.s3.amazonaws.com/actionsounds/as05.mp3'/>
 		// 6 <audio src='https://koetest.s3.amazonaws.com/actionsounds/as06.mp3'/>
 	*then
 		>> END
-				
+
 @Where am I
 	*say
 		Now you are in {currentLocation}.
@@ -1879,7 +1883,6 @@ Get the Hot Sauce 1
 		hear hi, hello, I am, I need {
 			-> Alchemist Grabs You
 		}
-		
 
 @Alchemist Grabs You
 	*say
@@ -2753,7 +2756,7 @@ Get the Hot Sauce 1
 	*then
 		-> After Opening the Vial
 
-@After Opening the Vial	
+@After Opening the Vial
 	*say
 		
 		[Man]
@@ -2795,7 +2798,6 @@ Get the Hot Sauce 1
         }
         -> Luke Is Nowhere To Be Found
 
-
 @Luke Returns
 	*say
 		[MrsChilirosa]
@@ -2815,7 +2817,7 @@ Get the Hot Sauce 1
 		something worth celebrating.
 		
 		[Mayor]
-		Well, (playername). Let's discuss
+		Well, Let's discuss
 		about the reward I promised, shall we? [EOA]
 
 		[Man]
@@ -2875,26 +2877,23 @@ Get the Hot Sauce 1
 
 @Luke Is Nowhere To Be Found
 	*say
-		[Mayor]
-		Well, (playername). Let's discuss
-		about the reward I promised, shall we? [EOA]
-
-		[Man]
-		Wait, this is a perfect photo moment,
-		isn't it? Everybody gather around. [EOA]
-
-		As you try to find your spot in the crowd, the mayor grabs
-		you upfront.
-
-		[Mayor]
-		No, my friend. You deserve to be at
-		the very front. [EOA]
-
-		[Man]
+		[Mayor] 
+		Well. Let's discuss 
+		about the reward I promised, shall we? [EOA] 
+ 
+		[Man] 
+		Wait, this is a perfect photo moment, 
+		isn't it? Everybody gather around. [EOA] 
+ 
+		As you try to find your spot in the crowd, the mayor grabs 
+		you upfront. 
+ 
+		[Mayor] 
+		No, my friend. You deserve to be at 
+		the very front. [EOA] 
+ 
+		[Man] 
 		3, 2, 1, say cheese![EOA]
-
-		//(SE: photo sound)
-		
 	*then
 		>>END
 
@@ -5224,6 +5223,7 @@ different things to see more details.
 		hear use the flower on the machine, use the barrel on the portal {
 			-> escape_puzzle_insert_wrong
 		}
+
 @escape_puzzle_insert_wrong
 	*say
 		You tried to insert it into the portal, but it doesn't fit.
