@@ -15,6 +15,7 @@
 		Greetings, explorer. [Short_Pause] Welcome to the Desert Traveler experience! [Short_Pause] In this five-act interactive story, you can stop and come back at any time. Shall we start?
 	*then
 		set currentLocation as 'desert'
+		unflag skip
 		hear yes, sure, of course {
 		    -> Lost in Desert
 	    }
@@ -1041,7 +1042,7 @@ Get the Hot Sauce 1
 
 @Been Walking For Days
 	*say
-		You've been walking for days, but still no sign of valleys, only desert. [footstep] It's been a couple of days since you left the town. Although having a horse to carry you across the wilderness is fortunate, but now it seems very tired as well. [Pause] Your vision starts to get blurry again. Strangely, this blurriness seemed a bit, a bit yellow. You tried to muster your consciousness, only to find out that you're heading in to an inevitable sandstorm. As unwilling as you may be, this is the only way to the Eastern Valleys. You ride into the furious sandstorm. [Pause] 
+		You've been walking for days, but still no sign of valleys, only desert. <audio src='https://koetest.s3.amazonaws.com/Act3/horseNeighing_01.mp3'/> It's been a couple of days since you left the town. Although having a horse to carry you across the wilderness is fortunate, but now it seems very tired as well. [Pause]<audio src='https://koetest.s3.amazonaws.com/Act3/smallWind_01.mp3'/> Your vision starts to get blurry again. Strangely, this blurriness seemed a bit, a bit yellow. You tried to muster your consciousness, only to find out that you're heading in to an inevitable sandstorm.<audio src='https://koetest.s3.amazonaws.com/Act3/strongWinds_01.mp3'/> As unwilling as you may be, this is the only way to the Eastern Valleys. You ride into the furious sandstorm. [Pause] 
 		
 		But soon, the sandstorm has devoured you into the yellow fog. The wind is so strong an unbearable that you couldn't go on anymore. You slowly close your eyes. 
 		
@@ -1187,7 +1188,7 @@ Get the Hot Sauce 1
         You can ask more about the seed or ask how to get to the cave. You can also thank him and leave.
         
 	*reprompt
-        You can ask more about the seed or ask how to get to the cave. You can also thank him and leave.
+        You can ask more about the seed or ask how to get to the cave. You can also thank him and leave.[Conversation]
 	*then
 		hear seed, tell me more about the seed {
             -> More About the Seed
@@ -1226,7 +1227,7 @@ Get the Hot Sauce 1
        
         He takes out a small flower that glows strongly in the tent. 
         
-        You can ask more about the flower or ask how to get to the cave. You can also thank him and leave.
+        You can ask more about the flower or ask how to get to the cave. You can also thank him and leave.[Conversation]
        
     *reprompt
         You can ask more about the flower or ask how to get to the cave. You can also thank him and leave.
@@ -1248,7 +1249,7 @@ Get the Hot Sauce 1
 	    [SeedTrader]
 		Ha! Glad that you've asked. This plant is a tremendous existence in our world. It glows when there's sunlight. If there is no sun, it doesn't glow! Ha! [EOA]
 		
-		You can ask how to get to the cave. You can also thank him and leave.
+		You can ask how to get to the cave. You can also thank him and leave.[Conversation]
 		
 	*reprompt
 	    You can ask how to get to the cave. You can also thank him and leave.
@@ -1267,7 +1268,7 @@ Get the Hot Sauce 1
 		[SeedTrader]
         There! Found you. This, oh my dear, is a rare find out here in the desert. This, is a stinky plant. [EOA]
     
-        He seems really unsettled, but not because of the plant he's holding up to you. 
+        He seems really unsettled, but not because of the plant he's holding up to you. [Conversation]
     *reprompt
 	    You can ask how to get to the cave. You can also thank him and leave.
 	*then
@@ -1342,6 +1343,7 @@ Get the Hot Sauce 1
         Luke musters his strength and stands up, then look back at you.
 
 	*then
+		flag plot12
 		-> Luke Explains the Cave
 
 @Luke Explains the Cave
@@ -1350,6 +1352,7 @@ Get the Hot Sauce 1
         The cave is guarded by a thick forest. You're probably wondering how a forest could grow in the middle of the desert. Well, the alchemist is an expert in botany. His knowledge allows him to grow anything anywhere, even in the desert. [EOA]
         
         //(Sound Effect: Going through shelves)
+        <audio src='https://koetest.s3.amazonaws.com/Act3/goingThroughShelves_01.mp3'/>
         Luke goes through his shelf of specimens for a second, and returns with a compass, a small bottle of potion, and a vial of a small, but beautiful flower. Carefully, he uncovers the vial.
         
         [SeedTrader]
@@ -1370,7 +1373,7 @@ Get the Hot Sauce 1
 	    Try to say, lead me to the garden.
 	*then
 	    hear lead me to the garden{
-	    -> leading_start
+	    	-> leading_start
 	    }
 
 @MysMan Story Plot 2
@@ -1390,6 +1393,7 @@ Get the Hot Sauce 1
         Luke picks up the bottle with the plant sealed in.
         
         //(Sound Effect: Sigh)
+        <audio src='https://koetest.s3.amazonaws.com/Act3/sigh_01.mp3'/>
         [SeedTrader]
         I knew that it was going to fail, but he disagreed. We had a big fight, and I left the lab for the night. The next thing I know, is that the town was flooded with the flower's smell, and the townsfolk were angry at the alchemist. In the end, they drove him away. [EOA]
 
@@ -1404,6 +1408,7 @@ Get the Hot Sauce 1
         I know why you're here. You came from the town, didn't you? You're here for the cave, where the alchemist resides. I can tell you about the puzzles in the cave.
         
 	*then
+		flag plot12
 		-> Luke Explains the Cave
 
 @One Last Thing
@@ -1426,7 +1431,7 @@ Get the Hot Sauce 1
 		[SeedTrader]
 		The day is not young. You must go before the sandstorm comes and catch you again. Or if you want to, you can stay here for a while to wait for the storm to leave. [EOA]
 
-		You can pause your journey and take some rest here, or you can continue and hurry to the cave. Would you like to leave for the cave? 
+		You can pause your journey and take some rest here, or you can continue and hurry to the cave. Would you like to leave for the cave? [Action]
 	
 	*reprompt
 		Luke has handed you a purple seed that is crucial to producing the antidote. Now you may choose to pause your journey and take some rest here, or you may leave and continue to the cave. Would you like to leave for the cave? 
@@ -1444,6 +1449,7 @@ Get the Hot Sauce 1
 @End of ACT III, 1&2
 	*say
 		//(Sound Effect: Horse Neighing)
+		
 		[SeedTrader]
 		Very well then. Keep riding to the East. The valley is close. Follow the plant roots and you will reach the cave eventually. [EOA]
 
@@ -1483,6 +1489,7 @@ Get the Hot Sauce 1
             -> Luke Explains How He Knows
         }
         hear cave, about the cave {
+			flag plot3
             -> Luke Explains the Cave
         }
 
@@ -1519,6 +1526,7 @@ Get the Hot Sauce 1
             -> Luke Explains Why He Can't Go plot 3
         }
         hear what are the puzzles, the puzzles {
+			flag plot3
             -> Luke Explains the Cave
         }
 
@@ -1566,6 +1574,7 @@ Get the Hot Sauce 1
 @End of ACT III, 3
 	*say
 		//(Sound Effect: Horse Neighing)
+		<audio src='https://koetest.s3.amazonaws.com/Act3/horseNeighing_01.mp3'/>
         [SeedTrader]
 		Very well then. Keep riding to the East. The valley is close. Follow the plant roots and you will reach the cave eventually. Both of you walk slowly outside the tent. [EOA]
 		
@@ -1633,6 +1642,7 @@ Get the Hot Sauce 1
 
 	*then
 		hear what is the puzzle, tell me more, the puzzle {
+			flag plot4
             -> Luke Explains the Cave
         }
         hear why didn't you enter the cave, why, you {
@@ -1646,6 +1656,7 @@ Get the Hot Sauce 1
 
 	*then
 		hear what is the puzzle, the puzzles, the puzzle {
+			flag plot4
             -> Luke Explains the Cave
         }
 
@@ -1708,7 +1719,7 @@ Get the Hot Sauce 1
 
 @End of ACT III, all
 	*then
-		-> Luke Explains the Cave
+		-> leading_puzzle_start
 
 @global append
 	*then
@@ -1739,6 +1750,7 @@ Get the Hot Sauce 1
 		}
 
 		hear jump {
+		    unflag skip
 			-> jumpto
 		}
 
@@ -1763,7 +1775,7 @@ Get the Hot Sauce 1
 	        -> MysMan Introduces Himself
 	    }
 	    hear four{
-	        -> Luke Explains the Cave
+	        -> leading_puzzle_start
 	    }
 	    hear five{
 	        -> Arrival At The Inner Cave
@@ -1779,7 +1791,8 @@ Get the Hot Sauce 1
 	        -> Been Walking For Days
 	    }
 	    hear leading flower{
-	        -> Luke Explains the Cave
+	        flag skip
+	        -> leading_puzzle_start
 	    }
 	    hear escape room{
 	        -> Escape The Room
@@ -1787,12 +1800,19 @@ Get the Hot Sauce 1
 
 @Test Audio
 	*say
-		ACT 3 test start
-		1  <audio src='https://koetest.s3.amazonaws.com/Act3/aPersonThrowingHimself_01.mp3'/>
-		2  <audio src='https://koetest.s3.amazonaws.com/Act3/clothFlapping_01.mp3'/>
-		3  <audio src='https://koetest.s3.amazonaws.com/Act3/cowHappy.mp3'/>
-		4  <audio src='https://koetest.s3.amazonaws.com/Act3/cowplantSounds_01.mp3'/>
-		5  <audio src='https://koetest.s3.amazonaws.com/Act3/cowplantThrowOut.mp3'/>
+		ACT 5 puzzle test start [Pause]
+		1 <audio src='https://koetest.s3.amazonaws.com/Act3/Act3+puzzle/radio.mp3'/>
+		1 <audio src='https://koetest.s3.amazonaws.com/Act5/Act+5+puzzle/closebook_01.mp3'/>
+		1 <audio src='https://koetest.s3.amazonaws.com/Act5/Act+5+puzzle/ice_01.mp3'/>
+		1 <audio src='https://koetest.s3.amazonaws.com/Act5/Act+5+puzzle/metalcrack_01.mp3'/>
+		1 <audio src='https://koetest.s3.amazonaws.com/Act5/Act+5+puzzle/newspaper_01.mp3'/>
+
+	// 	ACT 3 test start
+	// 	1  <audio src='https://koetest.s3.amazonaws.com/Act3/aPersonThrowingHimself_01.mp3'/>
+	// 	2  <audio src='https://koetest.s3.amazonaws.com/Act3/clothFlapping_01.mp3'/>
+	// 	3  <audio src='https://koetest.s3.amazonaws.com/Act3/cowHappy.mp3'/>
+	// 	4  <audio src='https://koetest.s3.amazonaws.com/Act3/cowplantSounds_01.mp3'/>
+	// 	5  <audio src='https://koetest.s3.amazonaws.com/Act3/cowplantThrowOut.mp3'/>
 	*then
 		hear continue {
 		    -> TA2
@@ -1801,11 +1821,16 @@ Get the Hot Sauce 1
 @TA2
 	*say
 		
-		6  <audio src='https://koetest.s3.amazonaws.com/Act3/footstepsInSand_01.mp3'/>
-		7  <audio src='https://koetest.s3.amazonaws.com/Act3/goingThroughShelves_01.mp3'/>
-		8  <audio src='https://koetest.s3.amazonaws.com/Act3/handSmacking_01.mp3'/>
-		9  <audio src='https://koetest.s3.amazonaws.com/Act3/horseNeighing_01.mp3'/>
-		10  <audio src='https://koetest.s3.amazonaws.com/Act3/manscream_01.mp3'/>
+		1 <audio src='https://koetest.s3.amazonaws.com/Act5/Act+5+puzzle/openbook_01.mp3'/>
+		1 <audio src='https://koetest.s3.amazonaws.com/Act5/Act+5+puzzle/portalopen_01.mp3'/>
+		1 <audio src='https://koetest.s3.amazonaws.com/Act5/Act+5+puzzle/portaltravel_01.mp3'/>
+
+		that's the end of ACT 5 puzzle sound test
+		// 6  <audio src='https://koetest.s3.amazonaws.com/Act3/footstepsInSand_01.mp3'/>
+		// 7  <audio src='https://koetest.s3.amazonaws.com/Act3/goingThroughShelves_01.mp3'/>
+		// 8  <audio src='https://koetest.s3.amazonaws.com/Act3/handSmacking_01.mp3'/>
+		// 9  <audio src='https://koetest.s3.amazonaws.com/Act3/horseNeighing_01.mp3'/>
+		// 10  <audio src='https://koetest.s3.amazonaws.com/Act3/manscream_01.mp3'/>
 		
 	*then 
 		hear continue {
@@ -1895,41 +1920,101 @@ Get the Hot Sauce 1
 
 @Arrival At The Inner Cave
 	*say
-		You see the oasis, and a floating gem in the middle. It's the citrine. You see an old man looking at you.
-        [Alchemist]
-        Oh my, o my o my omy, the first person to visit my glorious palace in the deep caverns. You must be really tired, aren't you?[EOA] [LongPause]
+		You push through the stone doors.
+		//(SE: stone doors)
+		Immediately, you are greeted with glaring rays of light. 
+		Isn't this supposed to be a cave?
+		Yes, but none of your assumptions matter. Because right in
+		front of you is a hollowed space beneath the earth, filled
+		with all kinds of greens and plants. The center of the roof
+		is a gigantic hole that allows sunlight to nurture the life
+		in here.
+		
+		//(SE: sounds of bushes bristling)
+		
+		Suddenly, you hear the tall grass rustling. Something's
+		coming towards you.
+		
+		//(SE: sounds of bushes, with dramatic effect)
+		
+		From the bushes, pops out the head of a man with faded purple
+		hair. Should you tell him who you are and why you're here?
+		
+		//(SE: Your turn)
+		
+	*reprompt
+		You passed the forest maze, into a hollowed space
+		underground filled with natural sunlight, and life. Then, a
+		man with faded purple hair showed up in your face.
+		
+	*recap
+		The man stood there like a statue. You should try say 
+		something to get his attention? maybe just a "hi"?
 	*then
-		-> Alchemist Grabs You
+		hear hi, hello, I am, I need {
+			-> Alchemist Grabs You
+		}
+		
 
 @Alchemist Grabs You
 	*say
-		[Alchemist] 
-        You must excuse my attitude, but I must show you the way to my hut, where you will get some rest while I finish up stuff out here. [EOA]
+		He stood there and looked at you as you speak. His eyes are
+		connected to yours, but you can tell that he's thinking of
+		something else.
 
-        He grabs you firmly on the arm and you both quickly enter the hut. He sits you on a tiny little chair, then quickly exits the room.
+		[Alchemist]
+		Um. Here. Please. [EOA]
 
-        [Alchemist] 
-        Just wait for a second, will you? [EOA]
-
-        He shuts the door.
+		Alchemist takes your hand suddenly and almost pulls you
+		towards a little hut in the cave.
+		
+		[Alchemist]
+		Oh welcome to the cave ok I need to
+		work on something please don't come
+		out I will be right with you in a
+		moment please don't come out ok? [EOA]
+		
+		He puts you in the hut and closes the door.
+		
+		//(SE: Door closes)
+		//(SE: something grows)
+		
+		As he closes the door, you hear something filling up and
+		tying up the hinges of the door. You try to open it, but it
+		didn't work. You're locked inside.
 	*then
 		->Escape The Room
 
 @Escape The Room
-	*say
-		
 	*then
 		-> escape_puzzle_intro
 
 @Exit The Room
 	*say
-		[Alchemist] 
-        AH! [EOA]
+		[Alchemist]
+		Ah! [EOA]
 
-        You find the alchemist in your face. He is scared as you suddenly appearing.
+		As you finally figured out a way to leave the hut, you see
+		the man in your face, but terrified. He takes a few steps
+		back, then stumbles on the ground.
+		
+		[Alchemist]
+		Please don't hurt me! I've been trying
+		to figure out a way to fix the problem
+		I've caused. Wait, you don't look like
+		you're from the town. [EOA]
 
-        [Alchemist] 
-        Sorry, it's been a long time since I've seen anyone else. You're the first one to enter the cave, and I don't know how to act, so I locked you in. I'm working on the last step to my latest work, care to join? [EOA]
+		He looks at you for a moment. Then he stands up from the
+		ground, getting the dirt off of his clothes. His clothes are
+		still dirty, though.
+
+		[Alchemist]
+		Sorry, it's been a long time since
+		I've anyone. My name is Berette, an
+		alchemist, and a botanist. I'm working
+		on the last step to my latest work,
+		care to join? [EOA]
+
 	*then
 		hear yes, sure {
             -> Join The Alchemist At the Cauldron
@@ -1946,12 +2031,65 @@ Get the Hot Sauce 1
 
 @Join The Alchemist At the Cauldron
 	*say
-		[Alchemist] 
-        Here we go! [EOA]
+		[Alchemist]
+		Wonderful! I'll show you the way to my
+		station. [EOA]
 
-        The cauldron explodes. Nothing was made. It was a failure. The alchemist looks at you and cries
+		Berette leads you to a cauldron set up outside. It's bubbling
+		with many stuff that you don't know.
 
-        [Alchemist] Why? I thought I had everything right. I was supposed to be ready on the day you arrive. What ingredient am I missing? [EOA]
+		[Alchemist]
+		A long time ago, I did something
+		terribly wrong. I've kept myself
+		behind these stone doors so I can work
+		on a solution to undo my mistakes. I
+		think, today is my lucky day. [EOA]
+
+		Berette walks to the cauldron.
+		
+		[Alchemist]
+		Alright, ingredients, check. Solvent,
+		check. Ok. Let's see if this works. [EOA]
+
+		The alchemist walks into the pond in the middle, towards the
+		floating citrine in the middle. He takes out a vial and puts
+		it under the gemstone.
+		
+		//(SE: Miracles sounds)
+		
+		Miraculously, from the gemstone comes out a drop of a glowing
+		substance. It's so bright that it could almost be a star in
+		the night.
+		Berette walks back to the cauldron, and adds in the drop of
+		citrine.
+		
+		//(SE: Miracle sounds)
+		
+		The pot starts to glow. A golden color emits from the
+		cauldron.
+		
+		// (SE: Explosion)
+		
+		Suddenly, the contents of the pot explodes into Berette's
+		face. Berette slowly finds himself a chair, then sits down
+		and cries.
+
+		[Alchemist]
+
+		I don't know! Why? I thought I had all
+		of it solved. I was supposed to be
+		ready when someone arrives. What
+		ingredient am I missing? [EOA]
+
+	*reprompt 
+		Berette extracts a magical substance from the
+		citrine in the middle, and adds it into the cauldron he is
+		working on. But the content explodes and Berette's experiment
+		has failed again. Disappointed and depressed, he asks what
+		ingredient he is missing. Perhaps your seed may help?
+		
+	*recap
+		Berette asks if he's missing anything in his potion.
 	*then
 		hear hand him the seed, the seed {
             -> Alchemist Asks
@@ -1962,7 +2100,17 @@ Get the Hot Sauce 1
 
 @Alchemist Asks Again
 	*say
-		Are you sure? You might get something that you seek.
+		[Alchemist]
+		Are you sure? I'm pretty confident
+		that you're about to see something
+		that is beyond your knowledge. [EOA]
+
+		Berette looks at you with confident eyes. Perhaps you should
+		join him. What say you?
+		
+	*recap
+		 You know, you've come this far, why not say yes?
+
 	*then
 		hear yes, sure {
             -> Join The Alchemist At the Cauldron
@@ -1974,18 +2122,59 @@ Get the Hot Sauce 1
 @Alchemist Teel You to Stay Here
 	*say
 		[Alchemist]
-        Oh well, I guess that you're just afraid of explosions. It's ok. Just stay here and watch.[EOA]
+        Ah, I see. You are the cautious and
+		careful type of person. Got it. Well,
+		you just stay here and enjoy the show.[EOA]
+
 	*then
 		-> Alchemist Performs At the Cauldron And Fails
 
 @Alchemist Performs At the Cauldron And Fails
 	*say
-		[Alchemist] 
-        Here we go! [EOA]
+		Berette walks to the cauldron.
+		[Alchemist]
+		Alright, ingredients, check. Solvent,
+		check. Ok. Let's see if this works. [EOA]
 
-        The cauldron explodes. Nothing was made. It was a failure. The alchemist looks at you and cries
+		The alchemist walks into the pond in the middle, towards the
+		floating citrine in the middle. He takes out a vial and puts
+		it under the gemstone.
+		
+		//(SE: Miracles sounds)
 
-        [Alchemist] Why? I thought I had everything right. I was supposed to be ready on the day you arrive. What ingredient am I missing? [EOA]
+		Miraculously, from the gemstone comes out a drop of a glowing
+		substance. It's so bright that it could almost be a star in
+		the night.
+		Berette walks back to the cauldron, and adds in the drop of
+		citrine.
+		
+		//(SE: Miracle sounds)
+		
+		The pot starts to glow. A golden color emits from the
+		cauldron.
+		
+		//(SE: Explosion)
+		
+		Suddenly, the contents of the pot explodes into Berette's
+		face. Berette slowly finds himself a chair, then sits down
+		and cries.
+
+		[Alchemist]
+		I don't know! Why? I thought I had all
+		of it solved. I was supposed to be
+		ready when someone arrives. What
+		ingredient am I missing? [EOA]
+
+	*reprompt 
+		Berette extracts a magical substance from the
+		citrine in the middle, and adds it into the cauldron he is
+		working on. But the content explodes and Berette's experiment
+		has failed again. Disappointed and depressed, he asks what
+		ingredient he is missing. Perhaps your seed may help?
+		
+	*recap
+		Berette asks if he's missing anything in his potion.
+
 	*then
 		hear hand him the seed, the seed {
             -> Alchemist Asks
@@ -1996,8 +2185,20 @@ Get the Hot Sauce 1
 
 @Alchemist Asks
 	*say
-		[Alchemist] 
-        Wait, who gave you this seed?[EOA]
+		You gave the seed to the alchemist. The alchemist looks at it
+		for a second, then stares at you with wide-opened eyes.
+
+		[Alchemist]
+		Who gave you this seed? [EOA]
+
+	*reprompt
+		You gave the purple seed you have to Berette. He
+		now asks who gave you the seed.
+		
+	*recap 
+		You gave the purple seed you have to Berette. He now
+		asks who gave you the seed.
+	
 	*then
 		hear luke {
             -> Alchemist Questions About Luke
@@ -2008,8 +2209,23 @@ Get the Hot Sauce 1
 
 @Alchemist Questions About Luke
 	*say
-		[Alchemist] 
-        What? Luke sent you this seed? [SeedTrader] SENT YOU THIS SEED? Oh, now he knows how to be an apprentice? To not stab his master in the back? Did he tell you about what happened? [EOA]
+		[Alchemist]
+		What? Luke gave you this seed? Luke
+		[Pause] gave [Pause] you [Pause] this
+		[Pause] seed? Oh, now he knows how to
+		be an apprentice. To not stab his
+		master in the back? Did he tell you
+		what happened? [EOA]
+
+	*reprompt 
+		You told Barette that it was Luke who gave you the
+		seed, and he seemed to be very angry. He asks you if Luke
+		told you what happened.
+	
+	*recap
+		[Alchemist]
+		What? Is that a yes or a no? [EOA]
+
 	*then
 		hear yes {
             -> Alchemist Continues to Scold Luke
@@ -2021,7 +2237,18 @@ Get the Hot Sauce 1
 @Alchemist Continues to Scold Luke
 	*say
 		[Alchemist] 
-        So you know, right? Unbelievable. What else did he say?[EOA]
+        So you knew all of it, right?
+		Unbelievable. I thought we were
+		partners and friends. And what did he
+		do when the incident broke out? He
+		went straight to the mayor and turned
+		me in. [EOA]
+
+		Barette walks around the room. You can almost see steam
+		gushing out of his nose.
+		
+		[Alchemist] 
+		Alright, what else did he say?[EOA]
 	*then
 		hear sorry {
             -> Alchemist Asks What Luke Says Again
@@ -2036,8 +2263,12 @@ Get the Hot Sauce 1
 
 @Alchemist Asks What Luke Says Again
 	*say
+		Barette looks astonished, as if he couldn't believe what he
+		has heard.
+
 		[Alchemist]
-        What? [EOA]
+		What? Say that again? [EOA]
+
 	*then
 		hear sorry {
             -> Alchemist Sits Down
@@ -2052,27 +2283,98 @@ Get the Hot Sauce 1
 
 @Alchemist Scolds Luke Thrice
 	*say
-		[Alchemist] 
-        Hmph. This Mandrake, well he ought to give it to me. Now, let me end this curse, come with me. [EOA]
+		Barette seems disappointed and furious.
+
+		[Alchemist]
+		This mandrake, well he ought to give
+		it to me. [EOA]
+
+		Barette looks at you. He realizes that you may not understand
+		something. He holds up the seed to you.
+
+		[Alchemist]
+		This, my friend, is a Glimmerbrook
+		Mandrake. You don't find this
+		anywhere. It is basically impossible
+		to get, like the citrine. If Luke
+		managed to find this, well, he doesn't
+		deserve it anyway. So I guess he made
+		the right choice of giving it to you. [EOA]
+
+		Barette suddenly realizes something.
+
+		[Alchemist]
+		Hmm. Given that this is hard to come
+		by anywhere, perhaps we can try to add
+		this into our mix? Come on, let's see
+		what happens. [EOA]
+
 	*then
 		-> Alchemist Brews Potion
 
 @Alchemist Scolds Luke For His Weird Behaviour
 	*say
-		[Alchemist] 
-        What? That doesn't sound like what he would have said. Anyways, I deserve this Mandrake. I will end this crisis once and for all. [EOA]
+		[Alchemist]
+		That's weird. Never thought Luke would
+		say anything like that. Huh. anyways,
+		he's not my apprentice anymore, and I
+		deserve this Mandrake. [EOA]
+
+		Barette looks at you for a second, then he realizes
+		something.
+
+		[Alchemist]
+		Oh, yes. This seed, it's called the
+		Glimmerbrook Mandrake. You don't come
+		across this plant like you breathe
+		air. It's basically as precious as the
+		citrine. Not of this world. Magical.
+		Judging by its rarity, and the fact
+		that Luke gave you this, it's probably
+		worth a shot. [EOA]
+
+		Barette stops writing and closes his notebook swiftly
+
+		[Alchemist]
+		Today, I will go home. I will end this
+		mess once and for all. [EOA]
+
 	*then
 		-> Alchemist Brews Potion
 
 @Alchemist Sits Down
 	*say
-		[Alchemist] 
-        Oh. [EOA]
+		[Alchemist]
+		Oh. [EOA]
 
-        He goes back to the hut and looks at his photo with Luke.
+		Barette slowly moves to his hut, and looks at a photo on the
+		wall. It is a photo of him and Luke in the lab, except the
+		cauldron was on fire.
 
-        [Alchemist] 
-        After all this time, huh? You know, we used to be partners. I mean, he is still an apprentice to me, but we act like partners. We used to say to each other Eureka! When we succeeded on our experiment. You said this seed was from him? [EOA]
+		[Alchemist]
+		After all this time, huh? [EOA]
+		
+		Barette lets out a short sigh.
+		
+		[Alchemist]
+		You know, you we used to be partners.
+		Luke and I. Together, we've
+		accomplished many things that no
+		alchemist or botanist has ever done.
+		He was a dear friend. [EOA]
+
+		Barette then smiles a bit. He looks down on the ground.
+
+		[Alchemist]
+		We used to shout out Eureka! To each
+		other. That was the phrase we use when
+		we did something together. [EOA]
+
+		Barette then realizes that he went off by himself.
+
+		[Alchemist]
+		You said this seed was from him? [EOA]
+
 	*then
 		hear yes, sure {
             -> Alchemist Accepts
@@ -2083,22 +2385,68 @@ Get the Hot Sauce 1
 
 @Alchemist Accepts
 	*say
-		[Alchemist] 
-        Oh pal. How long have I waited you. Come, let's finish this potion and end this curse once and for all. [EOA]
+		[Alchemist]
+		Oh pal. How long have I waited for
+		you. [EOA]
+
+		Then he turns around and looks at the seed.
+
+		[Alchemist]
+		If Luke gave you this, and knows that
+		you're coming for me, then this has to
+		be the key ingredient that I'm
+		missing. Come, let's finish this once
+		and for all. [EOA]
+
 	*then
 		-> Alchemist Brews Potion
 
 @Alchemist Smirks And Accepts
 	*say
 		[Alchemist]
-        Ha. This has to be him. Let's finish this once and for all, shall we? [EOA]
+		Ha. Very much like what he would do.
+		He would deny everything until you
+		corner him, even when he did nothing
+		wrong. [EOA]
+
+		Then he looks at the seed in his hand.
+
+		[Alchemist]
+		If Luke gave you this precious plant,
+		knowing that you'll end up meeting me
+		eventually, then he probably knows.
+		This plant must be the key ingredient
+		that's missing. Come, let's finish
+		this once and for all. [EOA]
+
 	*then
 		-> Alchemist Brews Potion
 
 @None of It Matters Anyway
 	*say
-		[Alchemist] 
-        So what, did he say anything? [EOA]
+		[Alchemist]
+		Huh. Can't say that I'm surprised by
+		now. Took me so long to realize what
+		kind of person he is. [EOA]
+
+		Barette walks swiftly to his notebook by the table, with the
+		seed in his hand. He talks to you while he puts down notes in
+		his book.
+
+		[Alchemist]
+		Luke was my apprentice. Or should've
+		been. The night the when the
+		experiment went wrong, he left and
+		turned my name in to the mayor. I
+		mean, I admit, I messed it up, but was
+		that really necessary? [EOA]
+
+		Barette then stops for a moment as he continues to scribble.
+
+		[Alchemist]
+		None of it matters anyway now. What
+		else did he say? [EOA]
+
 	*then
 		hear sorry {
             -> Alchemist Asks What Luke Says Again
@@ -2113,15 +2461,49 @@ Get the Hot Sauce 1
 
 @Alchemist Questions About the Seed
 	*say
-		[Alchemist] 
-        Do you even know what this seed is? This seed is called the Glimmerbrook Mandrake, and is impossible to come by anywhere around. This person you meet, must be also a great alchemist and botanist. Hard to find this thing around here. Come, let's see if this works. [EOA]
+		Barette seems very, very amazed.
+		
+		[Alchemist]
+		Wow. Do you even know what this seed
+		is? It's a miracle that you come
+		across it. It's called the
+		Glimmerbrook Mandrake. You don't just
+		find it here, or anywhere. Frankly,
+		you can't find it in this world.
+		Anyways, this person you meet, must be
+		a great botanist, or a great magician,
+		or both. [EOA]
+
+		He takes another careful look at the seed. Suddenly, he jumps
+		up and looks at you with shining eyes.
+
+		[Alchemist]
+		Given the rarity of this plant... this
+		could be the key ingredient to our
+		potion. Come on, this could be our
+		only chance to set things right. [EOA]
+
 	*then
 		-> Alchemist Brews Potion
 
 @Alchemist Asks More
 	*say
-		[Alchemist] 
-        What? This is called Eureka? Did the guy who gave you this told you that it's called Eureka? [EOA]
+		You gave the seed to the alchemist. The alchemist looks at it
+		for a second, then looks at you with confused but trembling
+		eyes.
+
+		[Alchemist]
+		What? This is called Eureka? Who told
+		you that it's called Eureka? [EOA]
+
+	*reprompt 
+		You gave the Eureka seed you have to Berette. He
+		now asks who told you that the seed is called Eureka.
+		
+	*recap 
+		You gave the Eureka seed you have to Berette. He now
+		asks who told you that the seed is called Eureka.
+
 	*then
 		hear yes {
             -> Alchemist Realizes
@@ -2132,38 +2514,354 @@ Get the Hot Sauce 1
 
 @Alchemist Realizes
 	*say
-		[Alchemist] 
-        Oh. [EOA]
+		[Alchemist]
+		Oh. [EOA]
 
-        The alchemist pauses for a second.
+		The alchemist pauses for a second. Then he slowly walks back
+		to the hut.
+		
+		//(SE: Walks on dirt)
+		
+		He looks at a photo on the wall. It's a photo of him with
+		Luke when the cauldron in front of him explodes.
 
-        [Alchemist] Oh, partner. Why don't you just come to me directly? Well, my partner back in the day and I used to use this word a lot when we made progress. And I know it was him that you met, because this plant is not called Eureka, but a Glimmerbrook Mandrake. If he gave this to you, it means that this is the ingredient I'm missing. Come, let's finish this. [EOA]
+		[Alchemist]
+		Oh. Partner. Why don't you just come
+		to me directly? It's been so long. [EOA]
+		
+		Barette looks at you. He then smiles.
+
+		[Alchemist]
+		That man you just met outside the
+		tent, well, he's officially known as
+		an apprentice to me. But I see him as
+		my partner. [EOA]
+
+		Barette then hols up the Eureka seed to you.
+
+		[Alchemist]
+		This is not called Eureka. This, is a
+		Glimmerbrook Mandrake. Eureka is a
+		word we use back in the day to
+		celebrate the progress we made. Dumb
+		old friend, I'm not angry at him
+		anymore. [EOA]
+
+		Barette sits there quietly.
+		
+		[Alchemist]
+		This plant. you don't just come across
+		it here. Or anywhere. It's just as
+		hard to find as the citrine is. If he
+		gave this plant to you, and didn't ask
+		for anything in return, this could
+		only mean that it's the ingredient
+		we're missing. [EOA]
+
+		Barette then extend his hands to you.
+
+		[Alchemist]
+		C'mon, pull me up. Let's get this
+		potion finished, and end this crisis
+		once and for all.
+
+	*reprompt 
+		Barette realized something as soon as you told him
+		who named the plant Eureka. It turns out that Luke was
+		Barette's lab partner before, and the word Eureka is a word
+		that only the two would use before; no matter what happened
+		before, Barette is not angry with Luke anymore. Now, with the
+		seed, Barette is ready to use the seed and end the stinky
+		curse once and for all. He extends his arm and asks you to
+		pull him up from the chair.
+		
+	*recap 
+		You should pull him up from the chair.
+		
 	*then
-		-> Alchemist Brews Potion
+		hear pull, pull him up, help, up, chair {
+			-> Alchemist Brews Potion
+		}
 
 @Alchemist Smirks
 	*say
+		The Alchemist exhales deeply. He then looks at you with a
+		smirk on his face.
+
 		[Alchemist]
-        Ha. It's funny because Eureka is a word that I use a lot with my old friend back in the day. Well, until that night when the incident happened. Could be just a happy accident, though. This seed is not called Eureka, but Glimmerbrook Mandrake. This person you meet, must be also a great alchemist and botanist. Hard to find this thing around here. Come, let's see if this works. [EOA]
+		This is not called Eureka, my friend.
+		This, is a Glimmerbrook Mandrake. [EOA]
+
+		Barette then looks up into the sky, and talks slowly.
+
+		[Alchemist]
+		You know, back in the day the word
+		Eureka meant something to me. It's
+		just a silly phrase that me and my old
+		friend use all the time. Haven't seen
+		him for a long time. [EOA]
+		
+		Barette walks back to his hut.
+		
+		//(SE: Walk on dirt)
+
+		He looks at a photo on the wall. It's a photo of him and
+		Luke, taken when the cauldron in front of him explodes.
+
+		[Alchemist]
+		We had a big fight one night over
+		procedures of a certain experiment.
+		Turned out he was right. I was too
+		eager and too confident. After that
+		night, the water and the soil of the
+		town are all contaminated. [EOA]
+
+		Barette looks down on the ground, then you.
+
+		[Alchemist]
+		That's why I fled away. I couldn't
+		dare face the anger of the
+		townspeople. I hid myself within these
+		caves, and I told myself that I'd
+		never come out until I figure out a
+		solution. [EOA]
+
+		He holds up the mandrake seed, and smiles at it.
+
+		[Alchemist]
+		Well, this could be our lucky day.
+		Let's see if this works, shall we?
+		Pull me up from this chair. [EOA]
+
+		He extends his arm out and asks you to pull him up.
+
+	*reprompt 
+		Barette realized something as soon as you told him
+		who named the plant Eureka. It turns out that Luke was
+		Barette's lab partner before, and the word Eureka is a word
+		that only the two would use before; no matter what happened
+		before, Barette is not angry with Luke anymore. Now, with the
+		seed, Barette is ready to use the seed and end the stinky
+		curse once and for all. He extends his arm and asks you to
+		pull him up from the chair.
+		
+	*recap 
+		You should pull him up from the chair.
+		
 	*then
-		-> Alchemist Brews Potion
+		hear pull, pull him up, help, up, chair, pull him up from the chair {
+			-> Alchemist Brews Potion
+		}
 
 @Alchemist Brews Potion
 	*say
-		[Alchemist] 
-        Let's do this.[EOA]
+        Barette quickly walks back to the cauldron. He extracts
+		another drop of substance the citrine releases.
+		After adding all the regular ingredients, there is one thing
+		left to do: add the mandrake seed. 
 
-        He brews the potion. Suddenly the skies are filled with dark clouds, then it starts pouring rain. But it was not stinky rain. Conversely, it washes away the stench.
+		[Alchemist]
+		Here goes nothing. [EOA]
 
-        [Alchemist] 
-        Eureka! Quick. We must bring back this potion the town instantly. [EOA]
+		He allows the seed to slip and roll of his palm. The seed
+		slowly falls and enters the pot.
+		
+		//(SE: Explode)
+		
+		Poof! Smoke emerges from the pot. Strangely, you see sparkles
+		of purple within the fog. It swiftly rises and fills the roof
+		.
+
+		[Alchemist]
+		Huh. This is unlike anything I've
+		seen. Oh dear.[EOA]
+
+		In just a few seconds, the fog gathers into clouds above
+		their heads.
+
+		[Alchemist]
+		What was that?[EOA]
+
+		Barette suddenly asks. You felt the same thing. Water.
+		
+		//(SE: starts to rain)
+		
+		The cave starts pouring rain. But it was no ordinary rain.
+		The raindrops that are supposed to hit your harshly, instead
+		felt like cool splashes of spring water.
+		As you look to Barette, you noticed something else: he no
+		longer smells.
+
+		[Alchemist]
+		The smell. It's gone. We did it! We
+		did it, visitor! We've found the
+		solution![EOA]
+
+		Barette holds his hand tightly, and punches into the sky.
+
+		[Alchemist]
+		Eureka![EOA]
+
+		Then he hugs you tightly, and dances around, as if joy is an
+		emotion new to him.
+
+		[Alchemist]
+		Quick! Pack your stuff immediately. We
+		will end this chaos once and for all.[EOA]
+
+		//(SE: horses galloping)
+
+		As you close in on the town, you could smell that stench
+		again.
+
+		[Alchemist]
+		Don't worry guys, I'm here to correct
+		everything.[EOA]
+
+		A woman in the town shouts.
+		
+		[MrsChilirosa]
+		Look! It's the alchemist![EOA]
+
+		//(SE: Town bell)
+
+		The town bell rang. Although they'd prefer not to, the
+		townspeople all came out to check what's going on.
+
+		[Mayor]
+		Look who's back here, villain. Did you
+		return only to give us yet another
+		curse?[EOA]
+
+		[Alchemist]
+		No! People. I came back here because I
+		knew I did something terrible. I came
+		back because I've found a way to fix
+		all of this.[EOA]
+
+		[MrsChilirosa]
+		Oh, is that so? How do you propose to
+		fix this disaster?[EOA]
+
+		[Alchemist]
+		By this![EOA]
+
+		Barette takes out the vial containing the purple potion.
+
+		[Man]
+		No! Not one of your tricks again,
+		wizard! We don't trust you.[EOA]
+
+		[Alchemist]
+		Please! You must believe me.[EOA]
+
+		[MrsChilirosa]
+		Get out of here.[EOA]
+
+		The crowd boos at Barette, chanting for his immediate
+		banishment. The mayor seemed a little bit hesitant.
+		Barette looks at you. He gives you the vial.
+
+		[Alchemist]
+		Open the vial. Show them that they're
+		wrong.[EOA]
+
+		Will you open the vial?
+
 	*then
-		-> Return Back To Town
+		hear yes, sure {
+			-> Open the Vial
+		}
+		hear no, nope {
+			-> Dont Open the Vial
+		}
 
-@Return Back To Town
+@Open the Vial
+	*say	
+		You opened the vial without hesitation. Smoke glittering
+		purple comes out of the bottle, and into the sky. In no time,
+		the blue sky is filled with purple clouds.
+		As expected, it starts raining. The stench starts to wear
+		away.
+
+	*then
+		-> After Opening the Vial
+
+@Dont Open the Vial
 	*say
-		The alchemist returns and apologizes everyone, and fixes the town.
+		You stood there and do nothing.
+		
+		[Mayor]
+		I'm sorry, Barette, but I think, we've
+		seen what you're capable of. You even
+		turned our visitor against us. You
+		must leave. [EOA]
+
+		[MrsChilirosa]
+		Leave! Leave! Leave![EOA]
+		
+		[Man]
+		Leave! Leave! Leave![EOA]
+		
+		[Kid]
+		Wait![EOA]
+
+		The shopkeeper's son yells at the crowd.
+
+		[Kid]
+		I believe him.[EOA]
+
+		Slowly, he walks towards you, and takes over the potion.
+
+		[Man]
+		Boy, what are you doing?[EOA]
+
+		[Kid]
+		Fixing all of you.[EOA]
+
+		In a blink of an eye, the boy opens the vial. Smoke
+		glittering purple comes out of the bottle, and into the sky.
+		In no time, the blue sky is filled with purple clouds.
+		As expected, it starts raining. The stench starts to wear
+		away.
+
 	*then
+		-> After Opening the Vial
+
+@After Opening the Vial	
+	*say
+		
+		[Man]
+		Wa, what? What's going on?[EOA]
+
+		[MrsChilirosa]
+		Is my nose going crazy?[EOA]
+
+		[Mayor]
+		No.. it's the stench. It's getting
+		washed away! Everyone! Come outside!
+		The rain is washing away the stench![EOA]
+
+		People started to come outside of their heavily-locked
+		houses. No people like them has ever enjoyed the rain so
+		much.
+		By the time the rain ends, the stench is completely washed
+		away. The town is saved.
+
+		[Mayor]
+		I'm sorry, Barette. It's just that
+		we've been so scared and desperate
+		about it. We are grateful for you
+		coming back.[EOA]
+
+		[MrsChilirosa]
+		Hum. Had he not done those weird
+		experiments, this would never have
+		happened in the first place.[EOA]
+
+		[Man]
+		Come on, Chilirosa. It's all over. [EOA]
+	*then	
 		if plot12 {
             -> Luke Returns
         }
@@ -2172,6 +2870,110 @@ Get the Hot Sauce 1
         }
         -> Luke Is Nowhere To Be Found
 
+
+@Luke Returns
+	*say
+		[MrsChilirosa]
+		There's someone arriving from the
+		East! [EOA]
+
+		The soaked townspeople looked in to the East. A figure
+		approaches the town on a camel. You squint your eyes as the
+		visitor's shape reminds you of someone.
+		It's Luke.
+		The alchemist looks to the East as well. Then, he starts to
+		walk towards Luke in big strides; Luke gets off the camel and
+		walks in big strides as well. The two collided with each
+		other into a big hug.
+		They are too far for you to listen to what they're saying,
+		but from the looks on their faces, you are sure that it's
+		something worth celebrating.
+		
+		[Mayor]
+		Well, (playername). Let's discuss
+		about the reward I promised, shall we? [EOA]
+
+		[Man]
+		Wait, this is a perfect photo moment,
+		isn't it? Everybody gather around.[EOA]
+
+		As you try to find your spot in the crowd, the mayor grabs
+		you upfront.
+
+		[Mayor]
+		No, my friend. You deserve to be at
+		the very front.[EOA]
+
+		You sit firmly on the ground. Everyone is happy. As if spring
+		and life is coming back to the desert.
+
+		[Man]
+		3, 2, 1, say cheese! [EOA]
+
+		//(SE: photo sound)
+
+	*then
+		>>END
+
+@Luke Watches From the Distance
+	*say
+		[Mayor]
+		Well, Let's discuss
+		about the reward I promised, shall we? [EOA]
+
+		[Man]
+		Wait, this is a perfect photo moment,
+		isn't it? Everybody gather around.[EOA]
+
+		As you try to find your spot in the crowd, the mayor grabs
+		you upfront.
+
+		[Mayor]
+		No, my friend. You deserve to be at
+		the very front.[EOA]
+		
+		[Alchemist]
+		Oh. How I wish Luke was here.[EOA]
+
+		You sit firmly on the ground. Everyone is happy. As if spring
+		and life is coming back to the desert.
+		You spot someone in the distance. You could almost tell who
+		the person is by the outline, but soon the figure turns
+		around and leaves the town.
+
+		[Man]
+		3, 2, 1, say cheese![EOA]
+
+		//(SE: photo sound)
+	*then
+		>>END
+
+@Luke Is Nowhere To Be Found
+	*say
+		[Mayor]
+		Well, (playername). Let's discuss
+		about the reward I promised, shall we? [EOA]
+
+		[Man]
+		Wait, this is a perfect photo moment,
+		isn't it? Everybody gather around. [EOA]
+
+		As you try to find your spot in the crowd, the mayor grabs
+		you upfront.
+
+		[Mayor]
+		No, my friend. You deserve to be at
+		the very front. [EOA]
+
+		[Man]
+		3, 2, 1, say cheese![EOA]
+
+		//(SE: photo sound)
+		
+	*then
+		>>END
+
+// the start of Chilirosa steal puzzle -------------------------------------------------------------------------------------------
 @chilirosa_steal_puzzle_start
 	*say
 		You want to sneak into the Misses Chilirosa's house to grab the hot sauce, do you?
@@ -2527,7 +3329,7 @@ Get the Hot Sauce 1
 	*say
 		You go to the hallway
 	*then
-		-> chilirosa_hallway_around
+		-> chilirosa_hallway_interation
 
 @chilirosa_kitchen_turnpot
 	*say
@@ -2591,24 +3393,7 @@ Get the Hot Sauce 1
 		You look at the door. That's the door you sneaked in from. If you want to give up on stealing the hot sauce, you can come to the hallway and say leave from the door.[Action]
 	*then
 		-> chilirosa_hallway_interation
-
-@Luke Returns
-	*say
-		Luke returns and apologizes to the alchemist.
-	*then
-		>>END
-
-@Luke Watches From the Distance
-	*say
-		In the disance, you see Luke quietly watching
-	*then
-		>>END
-
-@Luke Is Nowhere To Be Found
-	*then
-		>>END
-		
-		
+	
 		
 
     
@@ -2720,7 +3505,7 @@ Try say, go north.[Action]
 
 @leading_tutorial_end
 	*say
-		[SeedTrader] Hey, congrats! Now you are in my garden, do you understand how to use  the leading flower?[EOA][Conversation]
+		[SeedTrader] Hey, congrats! Now you are in my garden, do you understand how to use the leading flower?[EOA][Conversation]
 	*then
 		hear yes {
 			-> leading_tutorial_end_1
@@ -2743,13 +3528,23 @@ Try say, go north.[Action]
 
 @leading_tutorial_end_1
 	*say
-		[SeedTrader] Ok, cool. It's simple to use, right? Here, take this bottle of dust. I grab it from the oasis you are looking for. And. You are ready to go! With the leading flower, you should be able to walk across the sandstorm! [EOA]
+		[SeedTrader] Ok, cool. It's simple to use, right? Here, take this bottle of dust. I grab it from the oasis you are looking for. And. You are ready to go! With the leading flower, you should be able to walk across the foggy forest! [EOA]
 	*then
-		-> leading_puzzle_start
+	    if skip {
+	        unflag skip
+	        -> leading_puzzle_start
+	    }
+		if plot12 {
+			-> One Last Thing
+		}
+		if plot3 {
+			-> One More Thing Plot 3
+		}
+		-> One Last Thing Plot 4
 
 @leading_puzzle_start
 	*say
-		You thank him and continute your journey. [Footsteps]Couple minutes later, you are standing in front of the sandstorm. You take out the leading flower. [Action]
+		You thank him and continute your journey. [Footsteps]Couple minutes later, you are standing in front of the foggy forest. You take out the leading flower. [Action]
 	*recap
 		Try use the dust on the flower[Action]
 	*reprompt
@@ -3203,7 +3998,7 @@ Try say, go north.[Action]
 
 @leading_g_north
 	*say
-		You are looking north. [DirSound_Large] A pond of water blocks the way. Look across the pond, you can almost see some greens.
+		You are looking north. [DirSound_Large] A pond of water blocks the way. Look across the pond, you can almost see something different.
 	*then
 		-> leading_g_position
 
@@ -3413,13 +4208,13 @@ Try say, go north.[Action]
 
 @leading_j_north
 	*say
-		You are looking north. [DirSound_MRight] A large field of cactus blocks the way.
+		You are looking north. [DirSound_MRight] A large field of marsh blocks the way.
 	*then
 		-> leading_j_position
 
 @leading_j_east
 	*say
-		You are looking east. [DirSound_Large] A huge sandhill blocks the way.
+		You are looking east. [DirSound_Large] A long hill blocks the way.
 	*then
 		-> leading_j_position
 
@@ -3635,7 +4430,7 @@ Try say, go north.[Action]
 
 @leading_n_south
 	*say
-		You are looking south. [DirSound_MLeft] A large field of cactus blocks the way.
+		You are looking south. [DirSound_MLeft] A large field of marsh blocks the way.
 	*then
 		-> leading_n_position
 
@@ -3797,7 +4592,7 @@ Try say, go north.[Action]
 
 @cowplant_puzzle_start
 	*say
-		You wake up finding yourself in a tent. The sunlight sprinkles on your face through the small holes in the ceiling. As you slowly gain consciousness, you hear a strange shouting coming from outside. But before you get the sound, it's strange enough that you ended up in this tent. What's inside this tent?
+		You wake up finding yourself in a tent. The sunlight sprinkles on your face through the small holes in the ceiling. As you slowly gain consciousness, you hear a strange shouting coming from outside.<audio src='https://koetest.s3.amazonaws.com/Act3/manscream_01.mp3'/> But before you get the sound, it's strange enough that you ended up in this tent. What's inside this tent?
 	*recap
 		You can look around.
 	*reprompt
@@ -3809,7 +4604,7 @@ Try say, go north.[Action]
 
 @cowplant_puzzle_tent_around_tutorial
 	*say
-		Surprisingly, it's a fairly large tent, and a messy one. Books and papers are scattered everywhere on the floor. There is also a cabinet full of plants and seeds and mysterious materials contained in vials and glass jars. A leather book that reads Cowplant Observation Notes is present on the small table beside it. That's pretty much it in the tent, but what's outside?
+		Surprisingly, it's a fairly large tent, and a messy one. Books and papers are scattered everywhere on the floor. There is also a cabinet full of plants and seeds and mysterious materials contained in vials and glass jars. A leather book that reads Cowplant Observation Notes is present on the small table beside it. That's pretty much it in the tent.  And then you hear another sound. <audio src='https://koetest.s3.amazonaws.com/Act3/cowplantThrowOut.mp3'/> What's outside?
 	*recap
 		You should go outside.
 	*then
@@ -3892,7 +4687,7 @@ Try say, go north.[Action]
 
 @cowplant_puzzle_cowplant_interact
 	*say
-		What do you want to do to the plant?
+		What do you want to do to the plant? [Action]
 	*then
 		-> cowplant_puzzle_cowplant_interaction
 
@@ -3932,13 +4727,13 @@ Try say, go north.[Action]
 		    }
 			-> cowplant_puzzle_tent_view_man
 		}
-		hear look at the notebook {
+		hear look at the notebook, look at the note, look at the book, look at the observation {
 		    if getnotebook{
 		        -> cowplant_puzzle_tent_note_already
 		    }
 			-> cowplant_puzzle_tent_view_notebook
 		}
-		hear pick up the notebook {
+		hear pick up the notebook, pick up the note, pick up the book {
 		    if getnotebook{
 		        -> cowplant_puzzle_tent_note_already
 		    }
@@ -3991,7 +4786,7 @@ Try say, go north.[Action]
 
 @cowplant_puzzle_notebook_open
 	*say
-		You open the notebook. What keyword do you want to search?
+		You open the notebook.<audio src='https://koetest.s3.amazonaws.com/Act5/Act+5+puzzle/openbook_01.mp3'/> What keyword do you want to search?
 	*then
 		-> cowplant_puzzle_notebook_seedtrader
 
@@ -4052,7 +4847,7 @@ Try say, go north.[Action]
 
 @cowplant_puzzle_outside_stereo_on
 	*say
-		You turn on the stereo. Oh, my, god. The plant is swagging along the music.
+		You turn on the stereo. <audio src='https://koetest.s3.amazonaws.com/Act3/Act3+puzzle/radio.mp3'/> Oh, my, god. The plant is swagging along the music.
 	*then
 		-> cowplant_puzzle_outside_interaction
 
@@ -4073,9 +4868,9 @@ Try say, go north.[Action]
 	*say
 		
 	*recap
-		If you don't know what to do to it, you should probably leave and come back later.
+		If you don't know what to do to it, you should probably leave and come back later.[Action]
 	*reprompt
-		You an do anything to the cowplant, or you can leave. If you don't know what to do to it, you should probably leave to explore more and come back later.
+		You an do anything to the cowplant, or you can leave. If you don't know what to do to it, you should probably leave to explore more and come back later.[Action]
 	*then
 		hear play with the plant, play with it, play {
 			-> cowplant_puzzle_plant_play
@@ -4140,7 +4935,7 @@ Try say, go north.[Action]
 
 @cowplant_puzzle_plant_milk
 	*say
-		You milk the plant, and get a bottle of potion. That's it! That is the potion which can heal the man.
+		You milk the plant, <audio src='https://koetest.s3.amazonaws.com/Act3/milkingCowplant.mp3'/> and get a bottle of potion. That's it! That is the potion which can heal the man.
 	*then
 		-> cowplant_puzzle_cowplant_interaction
 
@@ -4152,13 +4947,13 @@ Try say, go north.[Action]
 
 @cowplant_puzzle_plant_play
 	*say
-		You play with the cowplant. It seems happy.
+		You play with the cowplant.<audio src='https://koetest.s3.amazonaws.com/Act3/cowHappy.mp3'/> It seems happy.
 	*then
 		-> cowplant_puzzle_cowplant_interaction
 
 @cowplant_puzzle_plant_feed
 	*say
-		You picked up a swordfish from the basket and feed the plant with it. It sticks its tongue back.
+		You picked up a swordfish from the basket and feed the plant with it. <audio src='https://koetest.s3.amazonaws.com/Act3/cowplantSounds_01.mp3'/>
 	*then
 		-> cowplant_puzzle_outside_interaction
 
@@ -4334,7 +5129,7 @@ will make people feels like an emotionless shell. Different allergic symptoms ca
 
 @cowplant_puzzle_notebook_close
 	*say
-		You close the notebook.
+		You close the notebook. <audio src='https://koetest.s3.amazonaws.com/Act5/Act+5+puzzle/closebook_01.mp3'/>
 	*then
 		if currentplace is 0 {
 		    -> cowplant_puzzle_tent_interaction
@@ -4351,7 +5146,7 @@ will make people feels like an emotionless shell. Different allergic symptoms ca
     *reprompt
         You have arrived at the cave, only to be locked in a small hut by a man with faded purple hair. The door seems to be stuck by something, so you're trapped inside. What should you do to get out?
     *recap
-        You've been locked in the hut. Perhaps you should look around?
+        You've been locked in the hut. Perhaps you should look around? [Action]
 	*then
 		hear look around, what's around me, check what's around me, anything around {
 			-> escape_puzzle_around
@@ -4368,9 +5163,9 @@ different things to see more details.
 
 @escape_puzzle_interaction
 	*recap
-		You can view different things to see more details.
+		You can view different things to see more details. [Action]
 	*reprompt
-		You can look at differen things to see more details.
+		You can look at differen things to see more details. [Action]
 	*then
 		hear view the table, view table, look at the table, look at table, table, check the table, check table {
 			-> escape_puzzle_view_table
@@ -4541,18 +5336,18 @@ different things to see more details.
 
 @escape_puzzle_insert_wand
 	*say
-		You insert the wand into the portal. It fits into the hole perfectly. The inscriptions around the portal start to glow.
+		You insert the wand into the portal. It fits into the hole perfectly. <audio src='https://koetest.s3.amazonaws.com/Act5/magicSound01.mp3'/> The inscriptions around the portal start to glow.
 	*then
 		flag insertwand
 	    -> escape_puzzle_interaction
 
 @escape_puzzle_stand_portal_ready
 	*say
-		You stand on the portal. The wand is reacting to the dirt in your hand.
+		You stand on the portal. <audio src='https://koetest.s3.amazonaws.com/Act5/magicSound03.mp3'/> The wand is reacting to the dirt in your hand. 
 	*recap
-		You can say, teleport, or you can step back.
+		You can say, travel, or you can step back.
 	*reprompt
-		You can say, teleport, or you can step back.
+		You can say, travel, or you can step back.
 	*then
 		hear step back {
 			-> escape_puzzle_stand_portal_stepback
@@ -4572,14 +5367,14 @@ different things to see more details.
 
 @escape_puzzle_stand_portal_out
 	*say
-		You are traveling through the portal. In a blink of an eye, you are standing in the inner cave. You made your way out!
+		You are traveling through the portal.<audio src='https://koetest.s3.amazonaws.com/Act5/Act+5+puzzle/portaltravel_01.mp3'/> In a blink of an eye, you are standing in the inner cave. You made your way out!
 	*then
 	    -> Exit The Room
 
 @escape_puzzle_stand_portal_realm
 	*say
 		//magic realm
-		You are traveling through the portal. After a short time, you appear in a different space. You are on top of a floating island.
+		You are traveling through the portal. <audio src='https://koetest.s3.amazonaws.com/Act5/Act+5+puzzle/portaltravel_01.mp3'/> After a short time, you appear in a different space. You are on top of a floating island.
 	*recap
 		This is not the right place to go, you should travel back.
 	*reprompt
@@ -4592,7 +5387,7 @@ different things to see more details.
 @escape_puzzle_stand_portal_alien
 	*say
 		//alien planet Sixam
-		You are traveling through the portal. After a long time, you appear in a strange space. All the plant are glowing.
+		You are traveling through the portal.<audio src='https://koetest.s3.amazonaws.com/Act5/Act+5+puzzle/portaltravel_01.mp3'/> After a long time, you appear in a strange space. All the plant are glowing.
 	*recap
 		This is not the right place to go, you should travel back.
 	*reprompt
@@ -4676,14 +5471,14 @@ different things to see more details.
 
 @escape_puzzle_box_break
 	*say
-		The metal box is broken. From the container, you retrieve a wand.
+		The metal box is broken. <audio src='https://koetest.s3.amazonaws.com/Act5/Act+5+puzzle/metalcrack_01.mp3'/> From the container, you retrieve a wand.
 	*then
 		flag getwand
 	-> escape_puzzle_interaction
 
 @escape_puzzle_heatup_metalbox
 	*say
-		You heat up the metalbox with the alcohol burner.
+		You heat up the metalbox with the alcohol burner. 
 	*then
 		flag heatbox
 		if freezebox{
@@ -4693,7 +5488,7 @@ different things to see more details.
 
 @escape_puzzle_freeze_metalbox
 	*say
-		You freeze the metalbox by putting it into the ice barrel.
+		You freeze the metalbox by putting it into the ice barrel. <audio src='https://koetest.s3.amazonaws.com/Act5/Act+5+puzzle/ice_01.mp3'/>
 	*then
 		flag freezebox
 		if heatbox{
@@ -4734,7 +5529,7 @@ different things to see more details.
 
 @escape_puzzle_view_newspaper
 	*say
-		You look at the newspaper. After Expanding it carefully. It reads, Magic Daily. Customer complaints about the wand containers from Juan’s Wonderful One-Stop Wand Warehouse are not strong enough to protect their luxury wands. Juan responded that all their containers are made by death metal, which is the hardest metal in the world. The problem must be caused by improper use.
+		You look at the newspaper. <audio src='https://koetest.s3.amazonaws.com/Act5/Act+5+puzzle/newspaper_01.mp3'/> After Expanding it carefully. It reads, Magic Daily. Customer complaints about the wand containers from Juan’s Wonderful One-Stop Wand Warehouse are not strong enough to protect their luxury wands. Juan responded that all their containers are made by death metal, which is the hardest metal in the world. The problem must be caused by improper use.
 	*then
 		-> escape_puzzle_interaction
 
@@ -4758,7 +5553,7 @@ different things to see more details.
 
 @escape_puzzle_open_notebook
 	*say
-		You open up the notebook. What keyword do you want to search?
+		You open up the notebook. <audio src='https://koetest.s3.amazonaws.com/Act5/Act+5+puzzle/openbook_01.mp3'/> What keyword do you want to search?
 	*then
 		-> escape_puzzle_notebook_search
 
@@ -4814,7 +5609,7 @@ different things to see more details.
 
 @escape_puzzle_notebook_close
 	*say
-		You close the notebook.
+		<audio src='https://koetest.s3.amazonaws.com/Act5/Act+5+puzzle/closebook_01.mp3'/> You close the notebook. 
 	*then
 		-> escape_puzzle_interaction
 
