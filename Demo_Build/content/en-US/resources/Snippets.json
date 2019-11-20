@@ -5,7 +5,7 @@
   "/Kid": "</voice>",
   "Pause": "<break time='0.5s'/>",
   "Man": "<voice name='Brian'>",
-  "footstep": "<audio src='https://koetest.s3.amazonaws.com/new_demo/Heavy_footsteps_01.mp3'/>",
+  "footstep": "<audio src='https://koetest.s3.amazonaws.com/Act3/footstepsInSand_01.mp3'/>",
   "MrsChilirosa": " <voice name=\"Kimberly\">",
   "Mayor": "<voice name=\"Joey\">",
   "LongPause": "<break time='4s'/>",
@@ -22,6 +22,6 @@
   "Direction": "<audio src='https://koetest.s3.amazonaws.com/new_demo_stereo/direction+01.mp3'/>",
   "Chilirosa_hide": "<audio src='https://koetest.s3.amazonaws.com/new_demo_stereo/hideintocloset.mp3'/>",
   "Chilirosa_startfire": "<audio src='https://koetest.s3.amazonaws.com/new_demo_stereo/fire.mp3'/>",
-  "Conversation": "<audio src='https://koetest.s3.amazonaws.com/new_demo_stereo/action_question.mp3'/>",
+  "Conversation": "<audio src='https://koetest.s3.amazonaws.com/actionsounds/as03.mp3'/>",
   "Action": "<audio src='https://koetest.s3.amazonaws.com/new_demo_stereo/action_question.mp3'/>"
 }
