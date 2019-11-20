@@ -4814,8 +4814,14 @@ Try say, go north.[Action]
 			-> cowplant_puzzle_plant_cake
 		}
 		hear leave {
-			-> cowplant_puzzle_outside_interaction
+			-> cowplant_puzzle_cowplant_leave
 		}
+
+@cowplant_puzzle_cowplant_leave
+	*say
+		You leave from the cowplant.
+	*then
+	    -> cowplant_puzzle_outside_interaction
 
 @cowplant_puzzle_outside_view_plant
 	*say
