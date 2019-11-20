@@ -1646,10 +1646,10 @@ Get the Hot Sauce 1
         //hear jump to saloon {
         //    -> Leave the Store
         //}
-        hear get the hot sauce, I have your sauce, I have the hot sauce {
-            set currentLocation as 'Mayors Office'
-            -> Get the Hot Sauce
-        }
+        // hear get the hot sauce, I have your sauce, I have the hot sauce {
+        //     set currentLocation as 'Mayors Office'
+        //     -> Get the Hot Sauce
+        // }
         hear where am I, current location, tell me my location {
             -> Where am I
         }
