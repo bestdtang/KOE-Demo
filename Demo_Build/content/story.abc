@@ -5089,7 +5089,7 @@ will make people feels like an emotionless shell. Different allergic symptoms ca
 @escape_puzzle_around
 	*say
 		You looked around the small hut. In front of you, there is a table with some stuff stacked on top. Beside the table, you see a trash bin. Right across
- the table, there is a flower stand. On your right, there is a strange equipment that looks like a machine. And on your left, you see a chest. You can look at 
+ the table, there is a flower stand. On your right, there is a strange equipment that looks like a portal. And on your left, you see a chest. You can look at 
 different things to see more details.
 	*then
 		-> escape_puzzle_interaction
@@ -5220,7 +5220,7 @@ different things to see more details.
 		    -> escape_puzzle_grab_dirt
 		}
 
-		hear use the flower on the machine, use the barrel on the portal {
+		hear use the flower on the portal, use the barrel on the portal {
 			-> escape_puzzle_insert_wrong
 		}
 
@@ -5525,7 +5525,7 @@ different things to see more details.
 			-> escape_puzzle_notebook_search_wand
 		}
 
-		hear juan, ice, barrel, flower, alcohol lamp, flower stand, machine, chest, box {
+		hear juan, ice, barrel, flower, alcohol lamp, flower stand, chest, box {
 			-> escape_puzzle_notebook_cannotfind
 		}
 
