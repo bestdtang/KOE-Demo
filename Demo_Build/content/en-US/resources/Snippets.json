@@ -18,7 +18,7 @@
   "SeedTrader": "<voice name='Matthew'>",
   "Short_Pause": "<break time='0.2s'/>",
   "Long_Pause": "<break time='0.8s'/>",
-  "Alchemist": "<voice name='Russell'>",
+  "Alchemist": "<voice name='Hans'>",
   "Direction": "<audio src='https://koetest.s3.amazonaws.com/new_demo_stereo/direction+01.mp3'/>",
   "Chilirosa_hide": "<audio src='https://koetest.s3.amazonaws.com/new_demo_stereo/hideintocloset.mp3'/>",
   "Chilirosa_startfire": "<audio src='https://koetest.s3.amazonaws.com/new_demo_stereo/fire.mp3'/>",
