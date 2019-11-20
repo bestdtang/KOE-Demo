@@ -4851,9 +4851,7 @@ Try say, go north.[Action]
 	*say
 		You go to the tent. The man is still stumbled. You forced him to drink the milk. [SeedTrader]Ahhh... What is that! en... Thanks. You bring me back![EOA]
 	*then
-		hear go to scene cowplant_puzzle_tent_getmilk_1 {
-			-> cowplant_puzzle_end_connect_to_act_three
-		}
+		-> cowplant_puzzle_end_connect_to_act_three
 
 @cowplant_puzzle_end_connect_to_act_three
 	*say
