@@ -3047,7 +3047,7 @@ Get the Hot Sauce 1
 	*say
 		
 	*then
-		hear view watertap, look at the watertap {
+		hear view water tap, look at the water tap, look water tap {
 		    if pot_count is 1{
 		        -> chilirosa_kitchen_caught_pot_stay
 		    }
@@ -3093,7 +3093,7 @@ Get the Hot Sauce 1
 		hear go to hallway, hallway {
 			    -> chilirosa_hallway_goto
 		}
-		hear turn on watertap, turn on water {
+		hear turn on water tap, turn on water{
 		    if pot_count is 1{
 		        -> chilirosa_kitchen_caught_pot_stay
 		    }

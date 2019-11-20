@@ -20,8 +20,8 @@
   "Long_Pause": "<break time='0.8s'/>",
   "Alchemist": "<voice name='Salli'>",
   "Direction": "<audio src='https://koetest.s3.amazonaws.com/new_demo_stereo/direction+01.mp3'/>",
-  "Chilirosa_hide": "<audio src='https://koetest.s3.amazonaws.com/new_demo_stereo/hideintocloset.mp3'/>",
-  "Chilirosa_startfire": "<audio src='https://koetest.s3.amazonaws.com/new_demo_stereo/fire.mp3'/>",
+  "Chilirosa_hide": " ",
+  "Chilirosa_startfire": " ",
   "Conversation": "<audio src='https://koetest.s3.amazonaws.com/actionsounds/as03.mp3'/>",
   "Action": "<audio src='https://koetest.s3.amazonaws.com/new_demo_stereo/action_question.mp3'/>"
 }
