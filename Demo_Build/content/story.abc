@@ -966,7 +966,7 @@ Get the Hot Sauce 1
 
 @Been Walking For Days
 	*say
-		You've been walking for days, but still no sign of valleys, only desert. [footstep] It's been a couple of days since you left the town. Although having a horse to carry you across the wilderness is fortunate, but now it seems very tired as well. [Pause] Your vision starts to get blurry again. Strangely, this blurriness seemed a bit, a bit yellow. You tried to muster your consciousness, only to find out that you're heading in to an inevitable sandstorm. As unwilling as you may be, this is the only way to the Eastern Valleys. You ride into the furious sandstorm. [Pause] 
+		You've been walking for days, but still no sign of valleys, only desert. <audio src='https://koetest.s3.amazonaws.com/Act3/horseNeighing_01.mp3'/> It's been a couple of days since you left the town. Although having a horse to carry you across the wilderness is fortunate, but now it seems very tired as well. [Pause]<audio src='https://koetest.s3.amazonaws.com/Act3/smallWind_01.mp3'/> Your vision starts to get blurry again. Strangely, this blurriness seemed a bit, a bit yellow. You tried to muster your consciousness, only to find out that you're heading in to an inevitable sandstorm.<audio src='https://koetest.s3.amazonaws.com/Act3/strongWinds_01.mp3'/> As unwilling as you may be, this is the only way to the Eastern Valleys. You ride into the furious sandstorm. [Pause] 
 		
 		But soon, the sandstorm has devoured you into the yellow fog. The wind is so strong an unbearable that you couldn't go on anymore. You slowly close your eyes. 
 		
@@ -1112,7 +1112,7 @@ Get the Hot Sauce 1
         You can ask more about the seed or ask how to get to the cave. You can also thank him and leave.
         
 	*reprompt
-        You can ask more about the seed or ask how to get to the cave. You can also thank him and leave.
+        You can ask more about the seed or ask how to get to the cave. You can also thank him and leave.[Conversation]
 	*then
 		hear seed, tell me more about the seed {
             -> More About the Seed
@@ -1151,7 +1151,7 @@ Get the Hot Sauce 1
        
         He takes out a small flower that glows strongly in the tent. 
         
-        You can ask more about the flower or ask how to get to the cave. You can also thank him and leave.
+        You can ask more about the flower or ask how to get to the cave. You can also thank him and leave.[Conversation]
        
     *reprompt
         You can ask more about the flower or ask how to get to the cave. You can also thank him and leave.
@@ -1173,7 +1173,7 @@ Get the Hot Sauce 1
 	    [SeedTrader]
 		Ha! Glad that you've asked. This plant is a tremendous existence in our world. It glows when there's sunlight. If there is no sun, it doesn't glow! Ha! [EOA]
 		
-		You can ask how to get to the cave. You can also thank him and leave.
+		You can ask how to get to the cave. You can also thank him and leave.[Conversation]
 		
 	*reprompt
 	    You can ask how to get to the cave. You can also thank him and leave.
@@ -1192,7 +1192,7 @@ Get the Hot Sauce 1
 		[SeedTrader]
         There! Found you. This, oh my dear, is a rare find out here in the desert. This, is a stinky plant. [EOA]
     
-        He seems really unsettled, but not because of the plant he's holding up to you. 
+        He seems really unsettled, but not because of the plant he's holding up to you. [Conversation]
     *reprompt
 	    You can ask how to get to the cave. You can also thank him and leave.
 	*then
@@ -1275,6 +1275,7 @@ Get the Hot Sauce 1
         The cave is guarded by a thick forest. You're probably wondering how a forest could grow in the middle of the desert. Well, the alchemist is an expert in botany. His knowledge allows him to grow anything anywhere, even in the desert. [EOA]
         
         //(Sound Effect: Going through shelves)
+        <audio src='https://koetest.s3.amazonaws.com/Act3/goingThroughShelves_01.mp3'/>
         Luke goes through his shelf of specimens for a second, and returns with a compass, a small bottle of potion, and a vial of a small, but beautiful flower. Carefully, he uncovers the vial.
         
         [SeedTrader]
@@ -1315,6 +1316,7 @@ Get the Hot Sauce 1
         Luke picks up the bottle with the plant sealed in.
         
         //(Sound Effect: Sigh)
+        <audio src='https://koetest.s3.amazonaws.com/Act3/sigh_01.mp3'/>
         [SeedTrader]
         I knew that it was going to fail, but he disagreed. We had a big fight, and I left the lab for the night. The next thing I know, is that the town was flooded with the flower's smell, and the townsfolk were angry at the alchemist. In the end, they drove him away. [EOA]
 
@@ -1351,7 +1353,7 @@ Get the Hot Sauce 1
 		[SeedTrader]
 		The day is not young. You must go before the sandstorm comes and catch you again. Or if you want to, you can stay here for a while to wait for the storm to leave. [EOA]
 
-		You can pause your journey and take some rest here, or you can continue and hurry to the cave. Would you like to leave for the cave? 
+		You can pause your journey and take some rest here, or you can continue and hurry to the cave. Would you like to leave for the cave? [Action]
 	
 	*reprompt
 		Luke has handed you a purple seed that is crucial to producing the antidote. Now you may choose to pause your journey and take some rest here, or you may leave and continue to the cave. Would you like to leave for the cave? 
@@ -1369,6 +1371,7 @@ Get the Hot Sauce 1
 @End of ACT III, 1&2
 	*say
 		//(Sound Effect: Horse Neighing)
+		
 		[SeedTrader]
 		Very well then. Keep riding to the East. The valley is close. Follow the plant roots and you will reach the cave eventually. [EOA]
 
@@ -1491,6 +1494,7 @@ Get the Hot Sauce 1
 @End of ACT III, 3
 	*say
 		//(Sound Effect: Horse Neighing)
+		<audio src='https://koetest.s3.amazonaws.com/Act3/horseNeighing_01.mp3'/>
         [SeedTrader]
 		Very well then. Keep riding to the East. The valley is close. Follow the plant roots and you will reach the cave eventually. Both of you walk slowly outside the tent. [EOA]
 		
@@ -2452,7 +2456,7 @@ Get the Hot Sauce 1
 	*say
 		You go to the hallway
 	*then
-		-> chilirosa_hallway_around
+		-> chilirosa_hallway_interation
 
 @chilirosa_kitchen_turnpot
 	*say
@@ -2674,7 +2678,7 @@ Try say, go north.[Action]
 
 @leading_puzzle_start
 	*say
-		You thank him and continute your journey. [Footsteps]Couple minutes later, you are standing in front of the sandstorm. You take out the leading flower. [Action]
+		You thank him and continute your journey. [Footsteps]Couple minutes later, you are standing in front of the foggy forest. You take out the leading flower. [Action]
 	*recap
 		Try use the dust on the flower[Action]
 	*reprompt
@@ -3128,7 +3132,7 @@ Try say, go north.[Action]
 
 @leading_g_north
 	*say
-		You are looking north. [DirSound_Large] A pond of water blocks the way. Look across the pond, you can almost see some greens.
+		You are looking north. [DirSound_Large] A pond of water blocks the way. Look across the pond, you can almost see something different.
 	*then
 		-> leading_g_position
 
@@ -3338,13 +3342,13 @@ Try say, go north.[Action]
 
 @leading_j_north
 	*say
-		You are looking north. [DirSound_MRight] A large field of cactus blocks the way.
+		You are looking north. [DirSound_MRight] A large field of marsh blocks the way.
 	*then
 		-> leading_j_position
 
 @leading_j_east
 	*say
-		You are looking east. [DirSound_Large] A huge sandhill blocks the way.
+		You are looking east. [DirSound_Large] A long hill blocks the way.
 	*then
 		-> leading_j_position
 
@@ -3560,7 +3564,7 @@ Try say, go north.[Action]
 
 @leading_n_south
 	*say
-		You are looking south. [DirSound_MLeft] A large field of cactus blocks the way.
+		You are looking south. [DirSound_MLeft] A large field of marsh blocks the way.
 	*then
 		-> leading_n_position
 
@@ -3722,7 +3726,7 @@ Try say, go north.[Action]
 
 @cowplant_puzzle_start
 	*say
-		You wake up finding yourself in a tent. The sunlight sprinkles on your face through the small holes in the ceiling. As you slowly gain consciousness, you hear a strange shouting coming from outside. But before you get the sound, it's strange enough that you ended up in this tent. What's inside this tent?
+		You wake up finding yourself in a tent. The sunlight sprinkles on your face through the small holes in the ceiling. As you slowly gain consciousness, you hear a strange shouting coming from outside.<audio src='https://koetest.s3.amazonaws.com/Act3/manscream_01.mp3'/> But before you get the sound, it's strange enough that you ended up in this tent. What's inside this tent?
 	*recap
 		You can look around.
 	*reprompt
@@ -3734,7 +3738,7 @@ Try say, go north.[Action]
 
 @cowplant_puzzle_tent_around_tutorial
 	*say
-		Surprisingly, it's a fairly large tent, and a messy one. Books and papers are scattered everywhere on the floor. There is also a cabinet full of plants and seeds and mysterious materials contained in vials and glass jars. A leather book that reads Cowplant Observation Notes is present on the small table beside it. That's pretty much it in the tent, but what's outside?
+		Surprisingly, it's a fairly large tent, and a messy one. Books and papers are scattered everywhere on the floor. There is also a cabinet full of plants and seeds and mysterious materials contained in vials and glass jars. A leather book that reads Cowplant Observation Notes is present on the small table beside it. That's pretty much it in the tent.  And then you hear another sound. <audio src='https://koetest.s3.amazonaws.com/Act3/cowplantThrowOut.mp3'/> What's outside?
 	*recap
 		You should go outside.
 	*then
@@ -3817,7 +3821,7 @@ Try say, go north.[Action]
 
 @cowplant_puzzle_cowplant_interact
 	*say
-		What do you want to do to the plant?
+		What do you want to do to the plant? [Action]
 	*then
 		-> cowplant_puzzle_cowplant_interaction
 
@@ -3857,13 +3861,13 @@ Try say, go north.[Action]
 		    }
 			-> cowplant_puzzle_tent_view_man
 		}
-		hear look at the notebook {
+		hear look at the notebook, look at the note, look at the book, look at the observation {
 		    if getnotebook{
 		        -> cowplant_puzzle_tent_note_already
 		    }
 			-> cowplant_puzzle_tent_view_notebook
 		}
-		hear pick up the notebook {
+		hear pick up the notebook, pick up the note, pick up the book {
 		    if getnotebook{
 		        -> cowplant_puzzle_tent_note_already
 		    }
@@ -3916,7 +3920,7 @@ Try say, go north.[Action]
 
 @cowplant_puzzle_notebook_open
 	*say
-		You open the notebook. What keyword do you want to search?
+		You open the notebook.<audio src='https://koetest.s3.amazonaws.com/Act5/Act+5+puzzle/openbook_01.mp3'/> What keyword do you want to search?
 	*then
 		-> cowplant_puzzle_notebook_seedtrader
 
@@ -3977,7 +3981,7 @@ Try say, go north.[Action]
 
 @cowplant_puzzle_outside_stereo_on
 	*say
-		You turn on the stereo. Oh, my, god. The plant is swagging along the music.
+		You turn on the stereo. <audio src='https://koetest.s3.amazonaws.com/Act3/Act3+puzzle/radio.mp3'/> Oh, my, god. The plant is swagging along the music.
 	*then
 		-> cowplant_puzzle_outside_interaction
 
@@ -3998,9 +4002,9 @@ Try say, go north.[Action]
 	*say
 		
 	*recap
-		If you don't know what to do to it, you should probably leave and come back later.
+		If you don't know what to do to it, you should probably leave and come back later.[Action]
 	*reprompt
-		You an do anything to the cowplant, or you can leave. If you don't know what to do to it, you should probably leave to explore more and come back later.
+		You an do anything to the cowplant, or you can leave. If you don't know what to do to it, you should probably leave to explore more and come back later.[Action]
 	*then
 		hear play with the plant, play with it, play {
 			-> cowplant_puzzle_plant_play
@@ -4065,7 +4069,7 @@ Try say, go north.[Action]
 
 @cowplant_puzzle_plant_milk
 	*say
-		You milk the plant, and get a bottle of potion. That's it! That is the potion which can heal the man.
+		You milk the plant, <audio src='https://koetest.s3.amazonaws.com/Act3/milkingCowplant.mp3'/> and get a bottle of potion. That's it! That is the potion which can heal the man.
 	*then
 		-> cowplant_puzzle_cowplant_interaction
 
@@ -4077,13 +4081,13 @@ Try say, go north.[Action]
 
 @cowplant_puzzle_plant_play
 	*say
-		You play with the cowplant. It seems happy.
+		You play with the cowplant.<audio src='https://koetest.s3.amazonaws.com/Act3/cowHappy.mp3'/> It seems happy.
 	*then
 		-> cowplant_puzzle_cowplant_interaction
 
 @cowplant_puzzle_plant_feed
 	*say
-		You picked up a swordfish from the basket and feed the plant with it. It sticks its tongue back.
+		You picked up a swordfish from the basket and feed the plant with it. <audio src='https://koetest.s3.amazonaws.com/Act3/cowplantSounds_01.mp3'/>
 	*then
 		-> cowplant_puzzle_outside_interaction
 
@@ -4259,7 +4263,7 @@ will make people feels like an emotionless shell. Different allergic symptoms ca
 
 @cowplant_puzzle_notebook_close
 	*say
-		You close the notebook.
+		You close the notebook. <audio src='https://koetest.s3.amazonaws.com/Act5/Act+5+puzzle/closebook_01.mp3'/>
 	*then
 		if currentplace is 0 {
 		    -> cowplant_puzzle_tent_interaction
