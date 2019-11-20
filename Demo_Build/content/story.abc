@@ -1090,11 +1090,11 @@ Get the Hot Sauce 1
         You are inside Luke's tent. There is a giant brown seed on the table beside you. 
 
         
-        [SeedTrader]
+        //[SeedTrader]
         //Welcome, to Luke's tent of peculiar collections. 
         //Would you be interested in any of the items I have? 
         //Would you be interested in a seed that grows nothing but more seeds? 
-        [EOA]
+        //[EOA]
         
         //Don't forget, you need to get to the cave, fast. 
         //What should you ask?
