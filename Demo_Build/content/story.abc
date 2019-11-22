@@ -1711,7 +1711,7 @@ Get the Hot Sauce 1
 	    }
 	    hear leading flower{
 	        flag skip
-	        -> leading_puzzle_start
+	        -> Luke Explains the Cave
 	    }
 	    hear escape room{
 	        -> Escape The Room
