@@ -524,7 +524,7 @@ You're at the front door of the beauty salon. Looks like its doors are shut tigh
             set currentLocation as 'inside of the beaty saloon'
             -> Bash On Beauty Salon
         }
-		hear open the door directly {
+		hear open the door, directly {
 			-> Open the Beauty Salon Directly
         }
         hear check the green patch before, green patch, check {
@@ -2854,6 +2854,8 @@ Get the Hot Sauce 1
 		    unflag turn_pot
 		    unflag turn_kettle
 		    unflag hide
+			unflag ChilirosaInKitchen
+			unflag caught
 			-> chilirosa_door
 		}
 		hear no {
@@ -2868,16 +2870,17 @@ Get the Hot Sauce 1
 		    set pot_count as 0
 		    unflag turn_pot
 		    unflag turn_kettle
+			unflag ChilirosaInKitchen
 		    unflag hide
-			unflag caught
-			-> chilirosa_door
+			flag caught 
+			-> chilirosa_hallway_around
 		}
 
 @chilirosa_door
 	*say
 		You decided to sneak into Misses Chilirosa's house to steal the hot sauce. You open the the door carefully, and sneak into the hallway. Suprisely, it connects to her house.At anytime, you can say look around me to explore the rooms. [Action]
 	*then
-		hear look around me, look around the hallway, around me {
+		hear look around me, look around the hallway, around me, look around {
 			-> chilirosa_hallway_around
 		}
 
@@ -2895,15 +2898,21 @@ Get the Hot Sauce 1
 			-> chilirosa_hallway_viewdoor
 		}
 
-		hear view the closet, look at the closet {
+		hear view the closet, look at the closet, check the closet {
 			-> chilirosa_hallway_viewcloset
 		}
 
 		hear view the living room, look at the living room {
+			if ChilirosaInKitchen{
+				-> chilirosa_hallway_viewliving2
+			}
 			-> chilirosa_hallway_viewliving
 		}
 
 		hear view the kitchen, look at kitchen {
+			if ChilirosaInKitchen{
+				-> chilirosa_hallway_viewkitchen2	
+			}
 			-> chilirosa_hallway_viewkitchen
 		}
 		hear go to the kitchen, go to kitchen {
@@ -2931,6 +2940,7 @@ Get the Hot Sauce 1
 			if turn_pot and turn_kettle{
 			    unflag turn_pot
 			    unflag turn_kettle
+				flag ChilirosaInKitchen
 		        set pot_count as 0
 			    -> chilirosa_hallway_hidepotkettle
 			}
@@ -3169,14 +3179,20 @@ Get the Hot Sauce 1
 @chilirosa_kitchen_viewpot_boil
 	*say
 		You look at the pot. It's cooking on the stove. The soup will be boiled dry soon and the pot will be burnt.
+	*then	
+		>> BACK
 
 @chilirosa_kitchen_caught_pot_stay
 	*say
 		The soup has been boiled dry and the pot is burnt. Misses Chilirosa comes over to check on the stove but finds you instead. You are caught. She throws you out of her house.
+	*then	
+		-> chilirosa_steal_puzzle_again
 
 @chilirosa_kitchen_caught_kettle_stay
 	*say
 		Suddenly, the kettle whistles. Misses Chilirosa hears it, and arrives at the kitchen to find you, a stranger, wandering. She throws you out of her house.
+	*then	
+		-> chilirosa_steal_puzzle_again
 
 @chilirosa_kitchen_turnstove
 	*say
@@ -3214,7 +3230,6 @@ Get the Hot Sauce 1
 	*say
 		You turn on the watertap. Water starts to flow. Misses Chilirosa rushes in to the kitchen to check out what's going on. Now she knows what's going on. There's a thief, and that means you. You are thrown out of her house.
 	*then
-		flag caught
 		-> chilirosa_steal_puzzle_again
 
 @chilirosa_kitchen_viewkettle
@@ -3247,9 +3262,21 @@ Get the Hot Sauce 1
 	*then
 		-> chilirosa_hallway_interation
 
+@chilirosa_hallway_viewkitchen2
+	*say
+		You look at the kitchen. Mrs. Chilirosa is still cleaning in the kitchen. It's a great chance for you to go to the living room and get the hot sauce! [Action]
+	*then
+		-> chilirosa_hallway_interation
+
 @chilirosa_hallway_viewliving
 	*say
 		You look at the living room. Misses Chilirosa is sitting next to the table and having her lunch. She is sprinkling sauce on her pasta. That's it! That's the hot sauce you want.  You can go to living room at anytime, but she is in it right now, you should do something to distract her away first.[Action]
+	*then
+		-> chilirosa_hallway_interation
+
+@chilirosa_hallway_viewliving2
+	*say
+		You look at the living room. That's it! That's the hot sauce you want.  You can go to living room right now since she is still cleaning in the kitchen.[Action]
 	*then
 		-> chilirosa_hallway_interation
 
@@ -3265,9 +3292,10 @@ Get the Hot Sauce 1
 	*then
 		-> chilirosa_hallway_interation
 	
-		
 
-    
+
+
+
 //Leading flower puzzle-----------------------------------------------------------------------------------
 
 @leading_beforestart
@@ -3279,8 +3307,10 @@ Get the Hot Sauce 1
 @leading_puzzle_help
 	*say
 		If you are far away from the right direction. The flower will sing this song. [DirSound_Small]
-If you are close to the right direction, the flower will sing. [DirSound_MRight]
-If you are on the right direction, the flower will sing. [DirSound_Large]
+		If you are close to the right direction, the flower will sing. [DirSound_MRight]
+		If you are on the right direction, the flower will sing. [DirSound_Large]
+	*then 
+		>> BACK
 
 @leading_start
 	*say
@@ -3330,8 +3360,8 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 @leading_tutorial_west
 	*say
 		You are looking at the west.
-[DirSound_MRight]
-[SeedTrader] This song means you are close to the right direction. [EOA]
+		[DirSound_MRight]
+		[SeedTrader] This song means you are close to the right direction. [EOA]
 	*recap
 		You can say look east or look north. [Action]
 	*reprompt
@@ -3360,11 +3390,11 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 @leading_tutorial_north
 	*say
 		You are looking north.
-[DirSound_Large]
-[SeedTrader]
-This song means you are right looking at the way out! Go toward that direction and you are free! [EOA]
+		[DirSound_Large]
+		[SeedTrader]
+		This song means you are right looking at the way out! Go toward that direction and you are free! [EOA]
 
-Try say, go north.[Action]
+		Try say, go north.[Action]
 	*then
 		hear go north {
 			-> leading_tutorial_end

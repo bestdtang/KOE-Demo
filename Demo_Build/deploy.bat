@@ -13,3 +13,5 @@ del .\code\package-lock.json
 del .\content\languageStrings.json 
 
 npx alexa-sfb deploy -o .
+
+@pause
