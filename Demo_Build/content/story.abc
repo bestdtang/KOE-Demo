@@ -5831,11 +5831,11 @@ will make people feels like an emotionless shell. Different allergic symptoms ca
 @escape_puzzle_whatdo_take_dirt
 	*then
 		if view_flower {
-			-> escape_puzzle_whatdo_look_note_Y
+			-> escape_puzzle_whatdo_take_dirt_Y
 		}
-		-> escape_puzzle_whatdo_look_note_N
+		-> escape_puzzle_whatdo_take_dirt_N
 
-@escape_puzzle_whatdo_take _dirt_Y
+@escape_puzzle_whatdo_take_dirt_Y
 	*say 
 		 take some dirt from any flower pot, 
 	*then
