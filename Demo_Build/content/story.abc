@@ -1266,6 +1266,8 @@ Get the Hot Sauce 1
 		
 	*reprompt
 	    You can ask how to get to the cave. You can also thank him and leave.
+	*recap
+		You can ask how to get to the cave. You can also thank him and leave.
 	*then
 		hear how to get to the cave, about the cave, cave {
             -> Next Item
@@ -1288,10 +1290,10 @@ Get the Hot Sauce 1
 	*recap
 		Luke shows you a stinky plant. You can ask about the plant, ask him how to get to the cave.  You can also thank him and leave.
 	*then
-		hear about the cave {
+		hear about the cave, cave {
             -> MysMan Says Stop
         }
-        hear leave {
+        hear leave, thank {
             -> MysMan Says Wait I Know
         }
         hear more about the plant, the plant {
@@ -1759,10 +1761,10 @@ Get the Hot Sauce 1
         //hear jump to saloon {
         //    -> Leave the Store
         //}
-        hear get the hot sauce, I have your sauce, I have the hot sauce {
-            set currentLocation as 'Mayors Office'
-            -> Get the Hot Sauce
-        }
+        // hear get the hot sauce, I have your sauce, I have the hot sauce {
+        //     set currentLocation as 'Mayors Office'
+        //     -> Get the Hot Sauce
+        // }
         hear where am I, current location, tell me my location {
             -> Where am I
         }
@@ -1822,7 +1824,7 @@ Get the Hot Sauce 1
 	    }
 	    hear leading flower{
 	        flag skip
-	        -> leading_puzzle_start
+	        -> Luke Explains the Cave
 	    }
 	    hear escape room{
 	        -> Escape The Room
@@ -2920,7 +2922,7 @@ Get the Hot Sauce 1
 		something worth celebrating.
 		
 		[Mayor]
-		Well, (playername). Let's discuss
+		Well, {playerName}. Let's discuss
 		about the reward I promised, shall we? [EOA]
 
 		[Man]
@@ -2981,7 +2983,7 @@ Get the Hot Sauce 1
 @Luke Is Nowhere To Be Found
 	*say
 		[Mayor]
-		Well, (playername). Let's discuss
+		Well, {playerName}. Let's discuss
 		about the reward I promised, shall we? [EOA]
 
 		[Man]
@@ -3004,6 +3006,7 @@ Get the Hot Sauce 1
 		>>END
 
 // the start of Chilirosa steal puzzle -------------------------------------------------------------------------------------------
+
 @chilirosa_steal_puzzle_start
 	*say
 		You want to sneak into the Misses Chilirosa's house to grab the hot sauce, do you?
@@ -3013,6 +3016,8 @@ Get the Hot Sauce 1
 		    unflag turn_pot
 		    unflag turn_kettle
 		    unflag hide
+			unflag ChilirosaInKitchen
+			unflag caught
 			-> chilirosa_door
 		}
 		hear no {
@@ -3027,15 +3032,17 @@ Get the Hot Sauce 1
 		    set pot_count as 0
 		    unflag turn_pot
 		    unflag turn_kettle
+			unflag ChilirosaInKitchen
 		    unflag hide
-			-> chilirosa_door
+			flag caught 
+			-> chilirosa_hallway_around
 		}
 
 @chilirosa_door
 	*say
 		You decided to sneak into Misses Chilirosa's house to steal the hot sauce. You open the the door carefully, and sneak into the hallway. Suprisely, it connects to her house.At anytime, you can say look around me to explore the rooms. [Action]
 	*then
-		hear look around me, look around the hallway, around me {
+		hear look around me, look around the hallway, around me, look around {
 			-> chilirosa_hallway_around
 		}
 
@@ -3053,15 +3060,21 @@ Get the Hot Sauce 1
 			-> chilirosa_hallway_viewdoor
 		}
 
-		hear view the closet, look at the closet {
+		hear view the closet, look at the closet, check the closet {
 			-> chilirosa_hallway_viewcloset
 		}
 
 		hear view the living room, look at the living room {
+			if ChilirosaInKitchen{
+				-> chilirosa_hallway_viewliving2
+			}
 			-> chilirosa_hallway_viewliving
 		}
 
 		hear view the kitchen, look at kitchen {
+			if ChilirosaInKitchen{
+				-> chilirosa_hallway_viewkitchen2	
+			}
 			-> chilirosa_hallway_viewkitchen
 		}
 		hear go to the kitchen, go to kitchen {
@@ -3089,6 +3102,7 @@ Get the Hot Sauce 1
 			if turn_pot and turn_kettle{
 			    unflag turn_pot
 			    unflag turn_kettle
+				flag ChilirosaInKitchen
 		        set pot_count as 0
 			    -> chilirosa_hallway_hidepotkettle
 			}
@@ -3122,7 +3136,7 @@ Get the Hot Sauce 1
 			-> chilirosa_hallway_pot_caught
 		}
 	*recap
-		You should go to hallway.[Action] 
+		You should go to hallway.[Action]
 	*reprompt
 		You should go to hallway.[Action]
 
@@ -3148,7 +3162,6 @@ Get the Hot Sauce 1
 	*say
 		You hide into the closet. [Chilirosa_hide]Right after you close the door, the kettle starts to whistle. Misses Chilirosa hears it, walks past the hallway to the kitchen. She turns the kettle off and finds that the pot is also on. The soup is not boiling dry yet. She turns the pot off, then goes back to the living room. Hearing that, you come out of the closet. You should find a way to leave her in the kitchen for a longer time.
 	*then
-	    
 		-> chilirosa_hallway_interation
 
 @chilirosa_living_caught
@@ -3173,7 +3186,7 @@ Get the Hot Sauce 1
 	*recap
 		You should take the hot sauce.[Action]
 	*reprompt
-		You should take the hot sauce.[Action] 
+		You should take the hot sauce.[Action]
 	*then
 		hear take the sauce, take sauce, take hot sauce, take the hot sauce, take it {
 			-> chilirosa_living_takesauce
@@ -3225,7 +3238,7 @@ Get the Hot Sauce 1
 	*say
 		
 	*then
-		hear view watertap, look at the watertap {
+		hear view water tap, look at the water tap, look water tap {
 		    if pot_count is 1{
 		        -> chilirosa_kitchen_caught_pot_stay
 		    }
@@ -3271,7 +3284,7 @@ Get the Hot Sauce 1
 		hear go to hallway, hallway {
 			    -> chilirosa_hallway_goto
 		}
-		hear turn on watertap, turn on water {
+		hear turn on water tap, turn on water{
 		    if pot_count is 1{
 		        -> chilirosa_kitchen_caught_pot_stay
 		    }
@@ -3328,14 +3341,20 @@ Get the Hot Sauce 1
 @chilirosa_kitchen_viewpot_boil
 	*say
 		You look at the pot. It's cooking on the stove. The soup will be boiled dry soon and the pot will be burnt.
+	*then
+		>> BACK
 
 @chilirosa_kitchen_caught_pot_stay
 	*say
 		The soup has been boiled dry and the pot is burnt. Misses Chilirosa comes over to check on the stove but finds you instead. You are caught. She throws you out of her house.
+	*then
+		-> chilirosa_steal_puzzle_again
 
 @chilirosa_kitchen_caught_kettle_stay
 	*say
 		Suddenly, the kettle whistles. Misses Chilirosa hears it, and arrives at the kitchen to find you, a stranger, wandering. She throws you out of her house.
+	*then
+		-> chilirosa_steal_puzzle_again
 
 @chilirosa_kitchen_turnstove
 	*say
@@ -3373,7 +3392,6 @@ Get the Hot Sauce 1
 	*say
 		You turn on the watertap. Water starts to flow. Misses Chilirosa rushes in to the kitchen to check out what's going on. Now she knows what's going on. There's a thief, and that means you. You are thrown out of her house.
 	*then
-		flag caught
 		-> chilirosa_steal_puzzle_again
 
 @chilirosa_kitchen_viewkettle
@@ -3390,7 +3408,7 @@ Get the Hot Sauce 1
 
 @chilirosa_kitchen_viewpot
 	*say
-		You look at the pot on the left. Open up the cover carefully, you see a little bit of soup left in it. The pot is cold. If you turn on the pot, the soup will boil and dry, and the pot will be burnt. You can turn on the pot.[Action] 
+		You look at the pot on the left. Open up the cover carefully, you see a little bit of soup left in it. The pot is cold. If you turn on the pot, the soup will boil and dry, and the pot will be burnt. You can turn on the pot.[Action]
 	*then
 		-> chilirosa_kitchen_interaction
 
@@ -3406,9 +3424,21 @@ Get the Hot Sauce 1
 	*then
 		-> chilirosa_hallway_interation
 
+@chilirosa_hallway_viewkitchen2
+	*say
+		You look at the kitchen. Mrs. Chilirosa is still cleaning in the kitchen. It's a great chance for you to go to the living room and get the hot sauce! [Action]
+	*then
+		-> chilirosa_hallway_interation
+
 @chilirosa_hallway_viewliving
 	*say
 		You look at the living room. Misses Chilirosa is sitting next to the table and having her lunch. She is sprinkling sauce on her pasta. That's it! That's the hot sauce you want.  You can go to living room at anytime, but she is in it right now, you should do something to distract her away first.[Action]
+	*then
+		-> chilirosa_hallway_interation
+
+@chilirosa_hallway_viewliving2
+	*say
+		You look at the living room. That's it! That's the hot sauce you want.  You can go to living room right now since she is still cleaning in the kitchen.[Action]
 	*then
 		-> chilirosa_hallway_interation
 
@@ -3424,9 +3454,10 @@ Get the Hot Sauce 1
 	*then
 		-> chilirosa_hallway_interation
 	
-		
 
-    
+
+
+
 //Leading flower puzzle-----------------------------------------------------------------------------------
 
 @leading_beforestart
@@ -3438,8 +3469,10 @@ Get the Hot Sauce 1
 @leading_puzzle_help
 	*say
 		If you are far away from the right direction. The flower will sing this song. [DirSound_Small]
-If you are close to the right direction, the flower will sing. [DirSound_MRight]
-If you are on the right direction, the flower will sing. [DirSound_Large]
+		If you are close to the right direction, the flower will sing. [DirSound_MRight]
+		If you are on the right direction, the flower will sing. [DirSound_Large]
+	*then
+		>> BACK
 
 @leading_start
 	*say
@@ -3462,7 +3495,7 @@ If you are on the right direction, the flower will sing. [DirSound_Large]
         The flower gently shakes for a second. 
         
         [SeedTrader]
-        Great. That means the flower has locked on to the scent of a garden, and knows how to get to it now. Hold the flower and look at four directions: East, South, West, and North.[EOA] Try say, look south 
+        Great. That means the flower has locked on to the scent of a garden, and knows how to get to it now. Hold the flower and look at four directions: East, South, West, and North.[EOA] Try say, look south
 	*then
 		hear look south, look at south {
 			-> leading_tutorial_south
@@ -3489,8 +3522,8 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 @leading_tutorial_west
 	*say
 		You are looking at the west.
-[DirSound_MRight]
-[SeedTrader] This song means you are close to the right direction. [EOA]
+		[DirSound_MRight]
+		[SeedTrader] This song means you are close to the right direction. [EOA]
 	*recap
 		You can say look east or look north. [Action]
 	*reprompt
@@ -3519,11 +3552,11 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 @leading_tutorial_north
 	*say
 		You are looking north.
-[DirSound_Large]
-[SeedTrader]
-This song means you are right looking at the way out! Go toward that direction and you are free! [EOA]
+		[DirSound_Large]
+		[SeedTrader]
+		This song means you are right looking at the way out! Go toward that direction and you are free! [EOA]
 
-Try say, go north.[Action]
+		Try say, go north.[Action]
 	*then
 		hear go north {
 			-> leading_tutorial_end
@@ -3560,7 +3593,7 @@ Try say, go north.[Action]
 	*say
 		[SeedTrader] Ok, cool. It's simple to use, right? Here, take this bottle of dust. I grab it from the oasis you are looking for. And. You are ready to go! With the leading flower, you should be able to walk across the foggy forest! [EOA]
 	*then
-	    if skip {
+		if skip {
 	        unflag skip
 	        -> leading_puzzle_start
 	    }
@@ -3599,9 +3632,6 @@ Try say, go north.[Action]
 		-> leading_a_position
 
 @leading_a_goto
-	*say
-		
-	*then
 
 @leading_a_position
 	*then
@@ -3653,7 +3683,7 @@ Try say, go north.[Action]
 
 @leading_a_west
 	*say
-		You are looking west.[DirSound_Small] You see the outer edge of the sandstorm. That's definitely now the right way.
+		You are looking west.[DirSound_Small] You see the outer edge of the forest. That's definitely now the right way.
 	*then
 		-> leading_a_position
         
@@ -3709,7 +3739,7 @@ Try say, go north.[Action]
 
 @leading_b_south
 	*say
-		You are looking south. [DirSound_Small] You see the outer edge of the sandstorm. That's definitely now the right way.
+		You are looking south. [DirSound_Small] You see the outer edge of the forest. That's definitely now the right way.
 	*then
 		-> leading_b_position
 
@@ -3775,7 +3805,7 @@ Try say, go north.[Action]
 
 @leading_c_south
 	*say
-		You are looking south.[DirSound_Small] You see the outer edge of the sandstorm. That's definitely now the right way.
+		You are looking south.[DirSound_Small] You see the outer edge of the forest. That's definitely now the right way.
 	*then
 		-> leading_c_position
 
@@ -3831,13 +3861,13 @@ Try say, go north.[Action]
 
 @leading_d_east
 	*say
-		You are looking east. [DirSound_Small] You see the outer edge of the sandstorm. That's definitely now the right way.
+		You are looking east. [DirSound_Small] You see the outer edge of the forest. That's definitely now the right way.
 	*then
 		-> leading_d_position
 
 @leading_d_south
 	*say
-		You are looking south. [DirSound_Small] You see the outer edge of the sandstorm. That's definitely now the right way.
+		You are looking south. [DirSound_Small] You see the outer edge of the forest. That's definitely now the right way.
 	*then
 		-> leading_d_position
 
@@ -3909,7 +3939,7 @@ Try say, go north.[Action]
 
 @leading_e_west
 	*say
-		You are looking west. [DirSound_Small] You see the outer edge of the sandstorm. That's definitely now the right way.
+		You are looking west. [DirSound_Small] You see the outer edge of the forest. That's definitely now the right way.
 	*then
 		-> leading_e_position
 
@@ -4104,7 +4134,7 @@ Try say, go north.[Action]
 
 @leading_h_east
 	*say
-		You are looking east. [DirSound_Small] You see the outer edge of the sandstorm. That's definitely now the right way. 
+		You are looking east. [DirSound_Small] You see the outer edge of the forest. That's definitely now the right way.
 	*then
 		-> leading_h_position
 
@@ -4186,7 +4216,7 @@ Try say, go north.[Action]
 
 @leading_i_west
 	*say
-		You are looking west. [DirSound_Small] You see the outer edge of the sandstorm. That's definitely now the right way.
+		You are looking west. [DirSound_Small] You see the outer edge of the forest. That's definitely now the right way.
 	*then
 		-> leading_i_position
 
@@ -4314,7 +4344,7 @@ Try say, go north.[Action]
 
 @leading_l_east
 	*say
-		You are looking east. [DirSound_Small] You see the outer edge of the sandstorm. That's definitely now the right way.
+		You are looking east. [DirSound_Small] You see the outer edge of the forest. That's definitely now the right way.
 	*then
 		-> leading_l_position
 
@@ -4378,7 +4408,7 @@ Try say, go north.[Action]
 
 @leading_m_north
 	*say
-		You are looking north. [DirSound_Small] You see the outer edge of the sandstorm. That's definitely now the right way.
+		You are looking north. [DirSound_Small] You see the outer edge of the forest. That's definitely now the right way.
 	*then
 		-> leading_m_position
 
@@ -4396,7 +4426,7 @@ Try say, go north.[Action]
 
 @leading_m_west
 	*say
-		You are looking west. [DirSound_Small] You see the outer edge of the sandstorm. That's definitely now the right way.
+		You are looking west. [DirSound_Small] You see the outer edge of the forest. That's definitely now the right way.
 	*then
 		-> leading_m_position
 
@@ -4448,7 +4478,7 @@ Try say, go north.[Action]
 
 @leading_n_north
 	*say
-		You are looking north. [DirSound_Small] You see the outer edge of the sandstorm. That's definitely now the right way.
+		You are looking north. [DirSound_Small] You see the outer edge of the forest. That's definitely now the right way.
 	*then
 		-> leading_n_position
 
@@ -4518,7 +4548,7 @@ Try say, go north.[Action]
 
 @leading_o_north
 	*say
-		You are looking north. [DirSound_Small] You see the outer edge of the sandstorm. That's definitely now the right way.
+		You are looking north. [DirSound_Small] You see the outer edge of the forest. That's definitely now the right way.
 	*then
 		-> leading_o_position
 
@@ -4588,13 +4618,13 @@ Try say, go north.[Action]
 
 @leading_p_north
 	*say
-		You are looking north. [DirSound_Small] You see the outer edge of the sandstorm. That's definitely now the right way.
+		You are looking north. [DirSound_Small] You see the outer edge of the forest. That's definitely now the right way.
 	*then
 		-> leading_p_position
 
 @leading_p_east
 	*say
-		You are looking east. [DirSound_Small] You see the outer edge of the sandstorm. That's definitely now the right way.
+		You are looking east. [DirSound_Small] You see the outer edge of the forest. That's definitely now the right way.
 	*then
 		-> leading_p_position
 
@@ -4614,7 +4644,7 @@ Try say, go north.[Action]
 	*say
 		Your sight becomes clear. You see the oasis.
 	*then
-	    -> Arrival At The Inner Cave
+		-> Arrival At The Inner Cave
 
 
 
@@ -4622,23 +4652,38 @@ Try say, go north.[Action]
 
 @cowplant_puzzle_start
 	*say
-		You wake up finding yourself in a tent. The sunlight sprinkles on your face through the small holes in the ceiling. As you slowly gain consciousness, you hear a strange shouting coming from outside.<audio src='https://koetest.s3.amazonaws.com/Act3/manscream_01.mp3'/> But before you get the sound, it's strange enough that you ended up in this tent. What's inside this tent?
+		You wake up finding yourself in a tent. The sunlight sprinkles on your face through the small holes in the ceiling. 
+		As you slowly gain consciousness, you hear a strange shouting coming from outside.
+		<audio src='https://koetest.s3.amazonaws.com/Act3/manscream_01.mp3'/> 
+		But before you get the sound, it's strange enough that you ended up in this tent. What's inside this tent? you should look around.
 	*recap
-		You can look around.
+		You should look around first.
 	*reprompt
-		You can look around.
+		You should look around.
 	*then
 		hear look around {
+		    unflag wakeman
+		    unflag getmilk
+		    unflag getnotebook_c
+		    unflag view_manoutside
+			unflag view_mantent
+			unflag view_stereo
+			unflag view_plant
 			-> cowplant_puzzle_tent_around_tutorial
 		}
 
 @cowplant_puzzle_tent_around_tutorial
 	*say
-		Surprisingly, it's a fairly large tent, and a messy one. Books and papers are scattered everywhere on the floor. There is also a cabinet full of plants and seeds and mysterious materials contained in vials and glass jars. A leather book that reads Cowplant Observation Notes is present on the small table beside it. That's pretty much it in the tent.  And then you hear another sound. <audio src='https://koetest.s3.amazonaws.com/Act3/cowplantThrowOut.mp3'/> What's outside?
+		Surprisingly, it's a fairly large tent, and a messy one. Books and papers are scattered everywhere on the floor. 
+		There is also a cabinet full of plants and seeds and mysterious materials contained in vials and glass jars. 
+		A leather book that reads Cowplant Observation Notes is present on the small table beside it. That's pretty much it in the tent.  
+		And then you hear another sound. <audio src='https://koetest.s3.amazonaws.com/Act3/cowplantThrowOut.mp3'/> What's outside?
 	*recap
 		You should go outside.
+	*reprompt
+		You hear another sound. <audio src='https://koetest.s3.amazonaws.com/Act3/cowplantThrowOut.mp3'/> What's outside?
 	*then
-		hear go outside {
+		hear go outside, look outside, go out, look at outside {
 			-> cowplant_puzzle_outside_around_tutorial
 		}
 	*reprompt
@@ -4646,7 +4691,10 @@ Try say, go north.[Action]
 
 @cowplant_puzzle_outside_around_tutorial
 	*say
-		As you exit the tent, you see the familiar, infinite desert. Oh. You're still in the desert. As you look back at the tent, you immediately noticed a strange plant. This plant is the size of a big refrigerator, and it has a mouth. That's right, a mouth. A man is lying on the ground, fainted.
+		As you exit the tent, you see the familiar, infinite desert. 
+		Oh. You're still in the desert. As you look back at the tent, you immediately noticed a strange plant. 
+		This plant is the size of a big refrigerator, and it has a mouth. That's right, a mouth. 
+		A man is lying on the ground, fainted.
 	*then
 		-> cowplant_puzzle_outside_interaction
 
@@ -4654,34 +4702,34 @@ Try say, go north.[Action]
 	*say
 		
 	*recap
-		You can look at different things, look around, or go to the tent. [Action]
+		You can not do that. If you need help, you can ask, what can I do. [Action]
 	*reprompt
-		You can look at different things, look around, or go to the tent. [Action]
+		You can look around, look at specific things. or go to the tent. [Action]
 	*then
-		hear look around, look around me {
+		hear look around, look around me, what is around me {
 		    if wakeman {
 		        -> cowplant_puzzle_outside_around_noman
 		    }
 			-> cowplant_puzzle_outside_around_man
 		}
-		hear look at the man {
+		hear look at the man, look at man {
 		    if wakeman{
 		        -> cowplant_puzzle_outside_view_man_gone
 		    }
 			-> cowplant_puzzle_outside_view_man
 		}
 
-		hear wake up the man {
+		hear wake up the man, wake up man {
 		    flag wakeman
 			-> cowplant_puzzle_outside_wake_man
 		}
 
-		hear look at the plant {
-		    flag viewplant
+		hear look at the plant, look at plant {
+		    flag view_plant
 			-> cowplant_puzzle_outside_view_plant
 		}
 
-		hear interact with the plant {
+		hear go to the plant, go to plant, interact with the plant {
 			-> cowplant_puzzle_cowplant_interact
 		}
 
@@ -4703,21 +4751,156 @@ Try say, go north.[Action]
 		    }
 			-> cowplant_puzzle_tent_goto
 		}
-		hear open the notebook {
+		hear  look at the notebook, open the notebook, read the notebook, look at notebook {
 		    set currentplace to 1
-			if !getnotebook{
+			if !getnotebook_c{
 		        -> cowplant_puzzle_tent_nonote
 		    }
 			-> cowplant_puzzle_notebook_open
 		}
 
-		hear look at the tent {
+		hear look at the tent, look at tent {
 			-> cowplant_puzzle_outside_view_tent
 		}
 
+		hear what can I do {
+			-> cowplant_puzzle_outside_whatdo
+		}
+
+//What to do outside ---------------------------------------------------------------
+@cowplant_puzzle_outside_whatdo
+	*say
+		You can look around, look at specific things, go to the tent. 
+	*then 
+		-> cowplant_puzzle_outside_whatdo_turnon_stereo
+		
+
+@cowplant_puzzle_outside_whatdo_turnon_stereo
+	*then
+		if view_stereo {
+			-> cowplant_puzzle_outside_whatdo_turnon_stereo_Y
+		}
+		-> cowplant_puzzle_outside_whatdo_turnon_stereo_N
+
+@cowplant_puzzle_outside_whatdo_turnon_stereo_Y 
+	*say
+		 Turn on the stereo, 
+	*then 
+		-> cowplant_puzzle_outside_whatdo_wake_man
+
+@cowplant_puzzle_outside_whatdo_turnon_stereo_N 
+	*then 
+		-> cowplant_puzzle_outside_whatdo_wake_man
+
+@cowplant_puzzle_outside_whatdo_wake_man
+	*then 
+		if view_manoutside {
+			-> cowplant_puzzle_outside_whatdo_wake_man_Y
+		}
+		-> cowplant_puzzle_outside_whatdo_wake_man_N
+
+@cowplant_puzzle_outside_whatdo_wake_man_Y
+	*say 
+		 wake up the man, 
+	*then 
+		-> cowplant_puzzle_outside_whatdo_look_note
+	
+@cowplant_puzzle_outside_whatdo_wake_man_N
+	*then 
+		-> cowplant_puzzle_outside_whatdo_look_note
+
+@cowplant_puzzle_outside_whatdo_look_note
+	*then 
+		 if getnotebook_c {
+			 -> cowplant_puzzle_outside_whatdo_look_note_Y
+		 }
+		 -> cowplant_puzzle_outside_whatdo_look_note_N
+
+@cowplant_puzzle_outside_whatdo_look_note_Y
+	*say 
+		 look at the notebook, 
+	*then
+		-> cowplant_puzzle_outside_whatdo_goto_plant
+
+@cowplant_puzzle_outside_whatdo_look_note_N
+	*then
+		-> cowplant_puzzle_outside_whatdo_goto_plant
+
+@cowplant_puzzle_outside_whatdo_goto_plant
+	*then
+		if view_plant {
+			-> cowplant_puzzle_outside_whatdo_goto_plant_Y
+		}
+		-> cowplant_puzzle_outside_whatdo_goto_plant_N
+
+@cowplant_puzzle_outside_whatdo_goto_plant_Y
+	*say
+		 go to the plant.
+	*then
+	 	-> cowplant_puzzle_outside_whatdo_end
+
+@cowplant_puzzle_outside_whatdo_goto_plant_N
+	*then
+		-> cowplant_puzzle_outside_whatdo_end
+
+@cowplant_puzzle_outside_whatdo_end
+	*say
+		[Action]
+	*then 
+		-> cowplant_puzzle_outside_interaction
+
+// what to do tent ---------------------------------------------------------------------------
+@cowplant_puzzle_tent_whatdo
+	*say
+		You can look around, look at specific things, go outside.
+	*then 
+		-> cowplant_puzzle_tent_whatdo_look_note
+
+@cowplant_puzzle_tent_whatdo_look_note
+	*then 
+		 if getnotebook_c {
+			 -> cowplant_puzzle_tent_whatdo_look_note_Y
+		 }
+		 -> cowplant_puzzle_tent_whatdo_look_note_N
+
+@cowplant_puzzle_tent_whatdo_look_note_Y
+	*say 
+		 look at the notebook, 
+	*then
+		-> cowplant_puzzle_tent_whatdo_talk_man
+		
+@cowplant_puzzle_tent_whatdo_look_note_N
+	*then
+		-> cowplant_puzzle_tent_whatdo_talk_man
+
+@cowplant_puzzle_tent_whatdo_talk_man
+	*then 
+		 if view_mantent {
+			 -> cowplant_puzzle_tent_whatdo_talk_man_Y
+		 }
+		 -> cowplant_puzzle_tent_whatdo_talk_man_N
+
+@cowplant_puzzle_tent_whatdo_talk_man_Y
+	*say 
+		 talk to the man. 
+	*then
+		-> cowplant_puzzle_tent_whatdo_end
+		
+@cowplant_puzzle_tent_whatdo_talk_man_N
+	*then
+		-> cowplant_puzzle_tent_whatdo_end
+
+@cowplant_puzzle_tent_whatdo_end
+	*say
+		[Action]
+	*then 
+		-> cowplant_puzzle_tent_interaction	
+
+//End of what to do ------------------------------------------------------------------------------	
+
 @cowplant_puzzle_cowplant_interact
 	*say
-		What do you want to do to the plant? [Action]
+		You go to the plant. What do you want to do to the plant? [Action]
 	*then
 		-> cowplant_puzzle_cowplant_interaction
 
@@ -4735,7 +4918,7 @@ Try say, go north.[Action]
 
 @cowplant_puzzle_tent_goto
 	*say
-		You go to the tent.
+		[footstep]You go to the tent.
 	*then
 		-> cowplant_puzzle_tent_interaction
 
@@ -4755,50 +4938,36 @@ Try say, go north.[Action]
 		    if !wakeman{
 		        -> cowplant_puzzle_tent_view_man_out
 		    }
+			flag view_mantent
 			-> cowplant_puzzle_tent_view_man
 		}
-		hear look at the notebook, look at the note, look at the book, look at the observation {
-		    if getnotebook{
-		        -> cowplant_puzzle_tent_note_already
+		hear look at the notebook, look at the note, look at the book, look at the observation, read the notebook {
+		    if getnotebook_c{
+				set currentplace to 0
+		        -> cowplant_puzzle_notebook_open
 		    }
 			-> cowplant_puzzle_tent_view_notebook
 		}
-		hear pick up the notebook, pick up the note, pick up the book {
-		    if getnotebook{
-		        -> cowplant_puzzle_tent_note_already
-		    }
-		    flag getnotebook
-		    set currentplace to 0
-			-> cowplant_puzzle_tent_pickup_notebook
+		hear talk to the man{
+			if !wakeman{
+				-> cowplant_puzzle_tent_view_man_out
+			}
+			-> cowplant_puzzle_tent_view_man_talk
 		}
-		hear open the notebook {
-		    set currentplace to 0
-		    if !getnotebook{
-		        -> cowplant_puzzle_tent_nonote
-		    }
-			-> cowplant_puzzle_notebook_open
-		}
-		hear go outside {
+		hear go outside, leave the tent {
 			-> cowplant_puzzle_outside_go
 		}
 		hear look at the door {
 			-> cowplant_puzzle_tent_view_door
 		}
-
 	*recap
-		You can look around, look at different things, or go outside. [Action]
+		You can not do that. If you need help, you can ask, what can I do. [Action]
 	*reprompt
-		You can look around, look at different things, or go outside. [Action]
-
-@cowplant_puzzle_tent_note_already
-	*say
-		You already pucked up the notebook. You can search keywords by open notebook.
-	*then
-	    -> cowplant_puzzle_tent_interaction
+		You can look around, look at specific things, or go outside. [Action]
 
 @cowplant_puzzle_tent_view_man_out
 	*say
-		You try to look at the man. But then you realize that he is still lying outside. You should probably go outside t o wake him up.
+		You try to find the man. But then you realize that he is still lying outside. You should probably go outside to wake him up.
 	*then
 		-> cowplant_puzzle_tent_interaction
 
@@ -4810,13 +4979,13 @@ Try say, go north.[Action]
 
 @cowplant_puzzle_outside_go
 	*say
-		You go outside
+		[footstep]You go outside.
 	*then
 		-> cowplant_puzzle_outside_interaction
 
 @cowplant_puzzle_notebook_open
 	*say
-		You open the notebook.<audio src='https://koetest.s3.amazonaws.com/Act5/Act+5+puzzle/openbook_01.mp3'/> What keyword do you want to search?
+		You look at the notebook.<audio src='https://koetest.s3.amazonaws.com/Act5/Act+5+puzzle/openbook_01.mp3'/> What keyword do you want to search?
 	*then
 		-> cowplant_puzzle_notebook_seedtrader
 
@@ -4824,20 +4993,16 @@ Try say, go north.[Action]
 	*say
 		You didn't pick up a notebook yet
 	*then
-		if currentplace is 0 {
-			    -> cowplant_puzzle_tent_interaction
-			}
-		if currentplace is 1 {
-		        -> cowplant_puzzle_outside_interaction
-		    }
+		-> cowplant_puzzle_outside_interaction
 
 @cowplant_puzzle_tent_pickup_notebook
 	*say
-		You grab the notebook. It is heavy. Dozens of bookmarks are stuck on different pages. To look into details you can open the notebook.
+		You pick up the notebook. It is heavy. Dozens of bookmarks are stuck on different pages. You take the notebook with you. 
+		So, at anytime, you can look at the note book to see more details.
 	*recap
-		To look into details you can open the notebook.
+		You should look at the notebook first.
 	*reprompt
-		To look into details you can open the notebook.
+		You should look at the notebook. 
 	*then
 		hear open the notebook {
 			-> cowplant_puzzle_grab_notebook
@@ -4845,9 +5010,18 @@ Try say, go north.[Action]
 
 @cowplant_puzzle_tent_view_notebook
 	*say
-		You look at the notebook. It’s thick and heavy. Dozens of bookmarks are sticking on pages. You can pick up the notebook as you want.
+		You look at the notebook. It is a leather book that it reads Cowplant Observation Notes. You should pick up the notebook.
+	*recap
+		You should pick up the notebook first.
+	*reprompt 
+		You should pick up the notebook.
 	*then
-		-> cowplant_puzzle_tent_interaction
+		hear pick up the notebook {
+			flag getnotebook_c
+			set currentplace to 0
+			-> cowplant_puzzle_tent_pickup_notebook
+		}
+
 
 @cowplant_puzzle_tent_view_man
 	*say
@@ -4871,13 +5045,15 @@ Try say, go north.[Action]
 
 @cowplant_puzzle_tent_around_man
 	*say
-		You are in a messy tent. A man is sitting in front of a  small table. A leather book that reads Cowplant Observation Notes is present on it. Behind you, it's the door.
+		You are in a messy tent. A man is sitting in front of a  small table. A leather book that reads Cowplant Observation Notes is present on it. 
+		Behind you, it's the door.
 	*then
 		-> cowplant_puzzle_tent_interaction
 
 @cowplant_puzzle_outside_stereo_on
 	*say
-		You turn on the stereo. <audio src='https://koetest.s3.amazonaws.com/Act3/Act3+puzzle/radio.mp3'/> Oh, my, god. The plant is swagging along the music.
+		You turn on the stereo. <audio src='https://koetest.s3.amazonaws.com/Act3/Act3+puzzle/radio.mp3'/> 
+		Oh, my, god. The plant is swagging along the music.
 	*then
 		-> cowplant_puzzle_outside_interaction
 
@@ -4886,6 +5062,7 @@ Try say, go north.[Action]
 		You look at the stereo. It is placed on the ground beside the plant. Looks like someone listens to it frequently.
  You can turn on the stereo.
 	*then
+		flag view_stereo
 		-> cowplant_puzzle_outside_interaction
 
 @cowplant_puzzle_outside_view_basket
@@ -4898,14 +5075,14 @@ Try say, go north.[Action]
 	*say
 		
 	*recap
-		If you don't know what to do to it, you should probably leave and come back later.[Action]
+		You can not do that to the plant. If you don't know what to do to it, you should probably leave the plant right now and come back later when you can think of what to do.[Action]
 	*reprompt
-		You an do anything to the cowplant, or you can leave. If you don't know what to do to it, you should probably leave to explore more and come back later.[Action]
+		You can do anything to the cowplant, or you can leave the plant.
 	*then
-		hear play with the plant, play with it, play {
+		hear play with the plant, play with it, play, play with the cow plant {
 			-> cowplant_puzzle_plant_play
 		}
-		hear feed the cowplant, feed it, feed, feed the plant {
+		hear feed the cowplant, feed it, feed, feed the plant, feed the cow plant, feed it fish, feed it with swordfish {
 			-> cowplant_puzzle_plant_feed
 		}
 		hear milk the cowplant, milk the plant, milk, milk it {
@@ -4915,13 +5092,23 @@ Try say, go north.[Action]
 		hear grab the cake, go for the cake, take the cake, look into the cake {
 			-> cowplant_puzzle_plant_cake
 		}
-		hear leave {
-			-> cowplant_puzzle_outside_interaction
+		hear leave the plant, leave, leave from the plant {
+			-> cowplant_puzzle_cowplant_leave
 		}
+
+@cowplant_puzzle_cowplant_leave
+	*say
+		You leave the cowplant.
+	*then
+		-> cowplant_puzzle_outside_interaction
 
 @cowplant_puzzle_outside_view_plant
 	*say
-		You look at the plant. It is a bizarre plant.  It has a cow head but roots of plants. A bell is hanging on its stem, or, you should say, neck. Staring closer at the plant, a tinny label is taped on, reads, cow-plant. It is waving as it is attracting your attention. It sticks out its tongue to you, and the weirdest thing is, the tongue is a cake! You can do anything to the cowplant by saying, interact with the plant. If you don't know what to do to the plant, you should probably go look around first.
+		You look at the plant. It is a bizarre plant.  
+		It has a cow head but roots of plants. A bell is hanging on its stem, or, you should say, neck. 
+		Staring closer at the plant, a tinny label is taped on, reads, cow-plant. It is waving as it is attracting your attention. 
+		It sticks out its tongue to you, and the weirdest thing is, the tongue is a cake! 
+		You can do anything to the cowplant by saying, go to the plant. 
 	*then
 		-> cowplant_puzzle_outside_interaction
 
@@ -4935,6 +5122,7 @@ Try say, go north.[Action]
 	*say
 		You look at the man. He is fainted, and lying on the ground. He is wet and smelly. Some sort of liquid sticks on all of his body. You can wake up the man.
 	*then
+		flag view_manoutside
 		-> cowplant_puzzle_outside_interaction
 
 @cowplant_puzzle_outside_around_man
@@ -4953,15 +5141,13 @@ Try say, go north.[Action]
 	*say
 		You go to the tent. The man is still stumbled. You forced him to drink the milk. [SeedTrader]Ahhh... What is that! en... Thanks. You bring me back![EOA]
 	*then
-		hear go to scene cowplant_puzzle_tent_getmilk_1 {
-			-> cowplant_puzzle_end_connect_to_act_three
-		}
+		-> cowplant_puzzle_end_connect_to_act_three
 
 @cowplant_puzzle_end_connect_to_act_three
 	*say
-	
+		
 	*then
-	    -> MysMan Introduces Himself
+		-> MysMan Introduces Himself
 
 @cowplant_puzzle_plant_milk
 	*say
@@ -4985,13 +5171,20 @@ Try say, go north.[Action]
 	*say
 		You picked up a swordfish from the basket and feed the plant with it. <audio src='https://koetest.s3.amazonaws.com/Act3/cowplantSounds_01.mp3'/>
 	*then
-		-> cowplant_puzzle_outside_interaction
+		-> cowplant_puzzle_cowplant_interaction
 
 @cowplant_puzzle_grab_notebook
 	*say
-		You open the notebook. You wonder what cowplant is. So, you find the bookmark that reads, Introduction, and you flip the notebook to that page. It reads. Cowplant is a bizarre, partly bovine form of vegetation. It usually has 4 growth states. You can search for any keyword that you found from the previous pages. For example, try to say, search growth states.
+		You look at the notebook. You wonder what cowplant is. 
+		So, you find the bookmark that reads, Introduction, and you flip the notebook to that page. 
+		It reads. Cowplant is a bizarre, partly bovine form of vegetation. It usually has 4 growth states. 
+		You can search for any keyword that you found from the previous pages. For example, try to search, growth states.
+	*recap
+		Try to search, growth states.
+	*reprompt
+		Try to search, growth states.
 	*then
-		hear search growth states {
+		hear search growth states, growth states {
 			-> cowplant_puzzle_notebook_seedtrader_states_tutorial
 		}
 
@@ -4999,67 +5192,77 @@ Try say, go north.[Action]
 	*say
 		
 	*then
-		hear baby {
+		hear introduction, cow plant, search introduction {
+			-> cowplant_puzzle_notebook_seedtrader_introduction
+		}
+		hear baby, baby state, search baby state {
 			-> cowplant_puzzle_notebook_seedtrader_baby
 		}
 
-		hear mature {
+		hear mature, mature state, search mature state {
 			-> cowplant_puzzle_notebook_seedtrader_mature
 		}
 
-		hear state, states {
+		hear state, states, growth state, search growth state {
 			-> cowplant_puzzle_notebook_seedtrader_states
 		}
 
-		hear feed {
+		hear feed, search feed {
 			-> cowplant_puzzle_notebook_seedtrader_feed
 		}
 
-		hear cake, tongue, cake tongue {
+		hear cake, tongue, cake tongue, search cake, search cake tongue {
 			-> cowplant_puzzle_notebook_seedtrader_cake
 		}
 
-		hear eat, swallow {
+		hear eat, swallow, search swallow {
 			-> cowplant_puzzle_notebook_seedtrader_swallow
 		}
 
-		hear milk {
+		hear milk, search milk {
 			-> cowplant_puzzle_notebook_seedtrader_milk
 		}
 
-		hear death {
+		hear death, death state, search death {
 			-> cowplant_puzzle_notebook_seedtrader_death
 		}
-		hear hungry {
+		hear hungry, search hungry {
 			-> cowplant_puzzle_notebook_seedtrader_hungry
 		}
-
-		hear cowplant berry, berry {
+		hear cowplant berry, berry, search berry {
 			-> cowplant_puzzle_notebook_seedtrader_berry
 		}
-		hear sprout stage, sprout {
+		hear sprout state, sprout, search sprout state{
 			-> cowplant_puzzle_notebook_seedtrader_sprout
 		}
-		hear allergic symtoms, allergic  {
+		hear allergic symtoms, allergic, search allergic {
 			-> cowplant_puzzle_notebook_seedtrader_allergic
 		}
-		hear dementia, severe dementia {
+		hear dementia, severe dementia, search dementia {
 			-> cowplant_puzzle_notebook_seedtrader_dementia
 		}
-		hear devour {
+		hear devour, search devour {
 			-> cowplant_puzzle_notebook_seedtrader_devour
 		}
 		hear close the notebook {
 		    -> cowplant_puzzle_notebook_close
 		}
 	*reprompt
-		What keyword do you want to search? You can search for any keyword that you found from the previous pages. Or you can close the notebook if you are finish searching.[Action]
+		What keyword do you want to search? You can search for any keyword that you found from the previous pages. 
+		Or you can close the notebook if you are finish searching.[Action]
 	*recap
 		You can't find that bookmark.
 
+@cowplant_puzzle_notebook_seedtrader_introduction
+	*say
+		You searched the keyword, cowplant introduction, and opened up the notebook from that bookmark. It reads. 
+		Cowplant is a bizarre, partly bovine form of vegetation. It usually has 4 growth states. 
+	*then
+		-> cowplant_puzzle_notebook_seedtrader
+
 @cowplant_puzzle_notebook_seedtrader_devour
 	*say
-		You searched the keyword, devour, and opened up the notebook from that bookmark. If a person attempts to take the cake again, the cowplant will devour them. Which means, they are killed forever.
+		You searched the keyword, devour, and opened up the notebook from that bookmark. It reads. If a person attempts to take the cake again, the cowplant will devour them. Which means, they are killed forever.
 	*then
 		-> cowplant_puzzle_notebook_seedtrader
 
@@ -5135,7 +5338,14 @@ will make people feels like an emotionless shell. Different allergic symptoms ca
 
 @cowplant_puzzle_notebook_seedtrader_states_tutorial
 	*say
-		You searched the keyword, growth states, and opened up the notebook from that bookmark. It reads. Cowplants usually have three growth states, and can die. They are sprout state, baby state, mature state, and death state. To finish searching, you should close the notebook.
+		You searched the keyword, growth states, and opened up the notebook from that bookmark. 
+		It reads. Cowplants usually have three growth states, and can die. They are sprout state, baby state, mature state, and death state. 
+		To finish searching, try close the notebook.
+	*recap
+		You should try to close the notebook right now. 
+		If you can think of any keyword that you want to search, you can look at the notebook again, at anytime.
+	*reprompt
+		Try close the notebook.
 	*then
 		hear close the notebook {
 			-> cowplant_puzzle_notebook_close
@@ -5172,40 +5382,51 @@ will make people feels like an emotionless shell. Different allergic symptoms ca
 
 @escape_puzzle_intro
 	*say
-	    What should you do?
-    *reprompt
-        You have arrived at the cave, only to be locked in a small hut by a man with faded purple hair. The door seems to be stuck by something, so you're trapped inside. What should you do to get out?
-    *recap
-        You've been locked in the hut. Perhaps you should look around? [Action]
+		What should you do? Probably look around?
+	*reprompt
+		You have arrived at the cave, only to be locked in a small hut by a man with faded purple hair. The door seems to be stuck by something, so you're trapped inside. What should you do to get out?
+	*recap
+		You've been locked in the hut. Perhaps you should look around? [Action]
 	*then
 		hear look around, what's around me, check what's around me, anything around {
+		    set dirt to 0
+		    unflag readportal
+		    unflag getwand
+		    unflag insertwand
+		    unflag heatbox
+		    unflag freezebox
+
+			unflag view_note_e
+			unflag view_flower
+			unflag view_barrel
+			unflag view_burner
+			unflag view_portal
+
 			-> escape_puzzle_around
 		}
 
 @escape_puzzle_around
 	*say
-		You looked around the small hut. In front of you, there is a table with some stuff stacked on top. Beside the table, you see a trash bin. Right across
- the table, there is a flower stand. On your right, there is a strange equipment that looks like a machine. And on your left, you see a chest. You can look at 
-different things to see more details.
+		You looked around the small hut. The door is obviously locked. In front of you, there is a table with some stuff stacked on top. Beside the table, you see a trash bin. Right across
+ 		the table, there is a flower stand. On your right, there is a strange equipment that looks like a portal. And on your left, you see a chest. You can look at 
+		different things to see more details.
 	*then
-		set dirt to 0
 		-> escape_puzzle_interaction
 
 @escape_puzzle_interaction
 	*recap
-		You can view different things to see more details. [Action]
+		You can't do that. If you need help, you can ask, what can I do. [Action]
 	*reprompt
-		You can look at differen things to see more details. [Action]
+		You can look around or look at specific things. [Action]
 	*then
 		hear view the table, view table, look at the table, look at table, table, check the table, check table {
 			-> escape_puzzle_view_table
 		}
-		hear view the notebook, view notebook, look at the notebook, look at notebook, notebook, check the notebook, check notebook {
+		hear look at the notebook, view the notebook, view notebook, look at notebook, notebook, check the notebook, check notebook, open the notebook, open up the notebook {
+			if view_note_e {
+				-> escape_puzzle_open_notebook
+			}
 			-> escape_puzzle_view_notebook
-		}
-
-		hear open notebook, open the notebook, open up the notebook {
-			-> escape_puzzle_open_notebook
 		}
 		hear look around, what's around me, check what's around me, check around {
 			-> escape_puzzle_around
@@ -5230,7 +5451,7 @@ different things to see more details.
 			-> escape_puzzle_view_alcohollamp
 		}
 
-		hear view the wooden barrel, view the barrel, looka at the barrel, look at the wooden barrel, look at wooden barrel, look at barrel {
+		hear view the wooden barrel, view the barrel, look at the barrel, look at the wooden barrel, look at wooden barrel, look at barrel {
 			-> escape_puzzle_view_barrel
 		}
 
@@ -5248,20 +5469,20 @@ different things to see more details.
 			-> escape_puzzle_view_flower
 		}
 
-		hear heat up the metal box, heat up the wand, heat up the box, use the alcohol lamp on the metal box, use the metal box on the alcohol lamp {
+		hear heat up the metal box, heat up the wand, heat up the box, use the alcohol burner on the metal box, use the metal box on the alcohol burner, use the matal box on the burner, use the box on the burner, use the wand box on the alcohol burner {
 		    if getwand{
 		        -> escape_puzzle_damage_wand
 		    }
 			-> escape_puzzle_heatup_metalbox
 		}
-		hear freeze the metal box, freeze the box, freeze the wand, use the metal box on the barrel, put the metal box into the barrel {
+		hear freeze the metal box, freeze the box, freeze the wand, use the metal box on the barrel, put the metal box into the barrel, use the metal box on the wooden barrel, use the wand box on the barrel, use the box on the barrel {
 		      if getwand{
 		        -> escape_puzzle_damage_wand
 		    }
 			-> escape_puzzle_freeze_metalbox
 		}
 
-		hear stand on the portal, stand on portal {
+		hear stand on the portal, stand on portal, go to the portal {
 		    if insertwand and dirt!=0 { 
 		        -> escape_puzzle_stand_portal_ready
 	    	}
@@ -5282,15 +5503,15 @@ different things to see more details.
 			-> escape_puzzle_freeze_note
 		}
 
-		hear heat up the notebook, heat the notebook, use the notebook on the alcohol lamp, use the notebook on the lamp, burn the notebook {
+		hear heat up the notebook, heat the notebook, use the notebook on the alcohol burner, use the notebook on the burner, burn the notebook {
 			-> escape_puzzle_heat_note
 		}
 
-		hear heat up the barrel, heat barrel, use the barrel on the alcohol lamp, use the barrel on the lamp {
+		hear heat up the barrel, heat barrel, use the barrel on the alcohol burner, use the barrel on the burner {
 			-> escape_puzzle_heat_barrel
 		}
 
-		hear freeze the alcohol lamp, freeze the lamp, use the lamp on the barrel, put the lamp in the barrel  {
+		hear freeze the alcohol burner, freeze the burner, use the burner on the barrel, put the burner in the barrel  {
 			-> escape_puzzle_freeze_lamp
 		}
 
@@ -5302,24 +5523,57 @@ different things to see more details.
 			-> escape_puzzle_insert_note
 		}
 		
-		hear grab the dirt from number two pot, grab the dirt from black berry, two, take dirt from pot number two, take the dirt from pot number two, grab dirt from pot number two, grab the dirt from pot number two, take some dirt from pot number two, take some dirt from number two {
+		hear take some dirt from the second pot, grab the dirt from number two pot, grab the dirt from black berry, two, take dirt from pot number two, take the dirt from pot number two, grab dirt from pot number two, grab the dirt from pot number two, take some dirt from pot number two, take some dirt from number two, take some dirt from black berry {
 			-> escape_puzzle_vew_flower_dirt_2
 		}
 
-		hear grab the dirt from number three pot, grab the dirt from mandrake, three, take dirt from pot number three, take the dirt from pot number three, grab dirt from pot number three, grab the dirt from pot number three, take some dirt from pot number three, take some dirt from number three {
+		hear take some dirt from the third pot, grab the dirt from number three pot, grab the dirt from mandrake, three, take dirt from pot number three, take the dirt from pot number three, grab dirt from pot number three, grab the dirt from pot number three, take some dirt from pot number three, take some dirt from number three, take some dirt from mandrake {
 			-> escape_puzzle_vew_flower_dirt_3
 		}
-		hear grab the dirt from number one pot, grab the dirt from fang flower, one, take dirt from put number one, take the dirt from put number one, grab dirt from put number one, grab the dirt from put number one, take some dirt from pot number one, take some dirt from number one {
+		hear take some dirt from the first pot, grab the dirt from number one pot, grab the dirt from fang flower, one, take dirt from put number one, take the dirt from put number one, grab dirt from put number one, grab the dirt from put number one, take some dirt from pot number one, take some dirt from number one, take some dirt from fang flower  {
 			-> escape_puzzle_vew_flower_dirt_1
 		}
 		
-		hear grab dirt{
+		hear grab dirt, take some dirt, take dirt{
 		    -> escape_puzzle_grab_dirt
 		}
 
-		hear use the flower on the machine, use the barrel on the portal {
+		hear use the flower on the portal, use the barrel on the portal, use the blueberry on the portal, use the flower stand on the portal {
 			-> escape_puzzle_insert_wrong
 		}
+
+		hear look at the wand, view the wand {
+			if getwand{
+				-> escape_puzzle_view_wand
+			}
+			-> escape_puzzle_view_wand_no
+		}
+
+		hear look at the door, look at door{
+			-> escape_puzzle_view_door
+		}
+
+		hear what can I do {
+			-> escape_puzzle_whatdo
+		}
+@escape_puzzle_view_door
+	*say
+		You look at the door. It has been locked from outside. 
+	*then
+		-> escape_puzzle_interaction
+
+@escape_puzzle_view_wand
+	*say
+		You look at the wand. It's a wooden wand. Nothing else special.
+	*then
+		-> escape_puzzle_interaction
+
+@escape_puzzle_view_wand_no
+	*say
+		You look at the wand. It's still in the metal box. If you want to look into details, you should find a way to break the metal.
+	*then
+		-> escape_puzzle_interaction
+
 @escape_puzzle_insert_wrong
 	*say
 		You tried to insert it into the portal, but it doesn't fit.
@@ -5373,7 +5627,7 @@ different things to see more details.
 
 @escape_puzzle_stand_portal_ready
 	*say
-		You stand on the portal. <audio src='https://koetest.s3.amazonaws.com/Act5/magicSound03.mp3'/> The wand is reacting to the dirt in your hand. 
+		You stand on the portal. <audio src='https://koetest.s3.amazonaws.com/Act5/magicSound03.mp3'/> The wand is reacting to the dirt in your hand.
 	*recap
 		You can say, teleport, or you can step back.
 	*reprompt
@@ -5383,7 +5637,7 @@ different things to see more details.
 			-> escape_puzzle_stand_portal_stepback
 		}
 		
-		hear travel {
+		hear teleport {
 		    if dirt == 1{
 			-> escape_puzzle_stand_portal_alien
 			}
@@ -5399,7 +5653,7 @@ different things to see more details.
 	*say
 		You are traveling through the portal.<audio src='https://koetest.s3.amazonaws.com/Act5/Act+5+puzzle/portaltravel_01.mp3'/> In a blink of an eye, you are standing in the inner cave. You made your way out!
 	*then
-	    -> Exit The Room
+		-> Exit The Room
 
 @escape_puzzle_stand_portal_realm
 	*say
@@ -5453,21 +5707,24 @@ different things to see more details.
 
 @escape_puzzle_vew_flower_dirt
 	*say
-		You look at the flower stand. You see three pots with plants in them. The dirt in these pots look different to each other. Seems like someone carefully transplanted those vegetation with the dirt from their origins. From the left to the right, they are labeled as, number one,  Fang Flower, number two, Blackberry, and number three, Mandrake. You can take some dirt from one of these pots.
+		You look at the flower stand. You see three pots with plants in them. 
+		The dirt in these pots look different to each other. Seems like someone carefully transplanted those vegetation with the dirt from their origins. 
+		From the left to the right, they are labeled as, number one,  Fang Flower, number two, Blackberry, and number three, Mandrake. 
+		You can take some dirt from one of these pots to help you travel through the portal.
 	*then
 		-> escape_puzzle_interaction
 
 @escape_puzzle_grab_dirt
 	*say
-		From the left to the right, they are labeled as, number one,  Fang Flower, number two, Blackberry, and number three, Mandrake. You can grab the dirt from any pot. Which number of pot do you want to grab the dirt from?
+		From the left to the right, they are labeled as, number one,  Fang Flower, number two, Blackberry, and number three, Mandrake. You can take some dirt from any pot. Which number of pot do you want to take some dirt from?
 	*then
-		hear grab the dirt from number two pot, grab the dirt from black berry, two {
+		hear take some dirt from the second pot, grab the dirt from number two pot, grab the dirt from black berry, two {
 			-> escape_puzzle_vew_flower_dirt_2
 		}
-		hear grab the dirt from number three pot, grab the dirt from mandrake, three {
+		hear take some dirt from the third pot, grab the dirt from number three pot, grab the dirt from mandrake, three {
 			-> escape_puzzle_vew_flower_dirt_3
 		}
-		hear grab the dirt from number one pot, grab the dirt from fang flower, one {
+		hear take some dirt from the first pot, grab the dirt from number one pot, grab the dirt from fang flower, one {
 			-> escape_puzzle_vew_flower_dirt_1
 		}
 		hear do nothing {
@@ -5508,7 +5765,7 @@ different things to see more details.
 
 @escape_puzzle_heatup_metalbox
 	*say
-		You heat up the metalbox with the alcohol burner. 
+		You heat up the metalbox with the alcohol burner.
 	*then
 		flag heatbox
 		if freezebox{
@@ -5528,15 +5785,22 @@ different things to see more details.
 
 @escape_puzzle_view_flower
 	*say
-		You look at the flower stand. You see three pots with plants in them. The dirt in these pots look different to each other. Seems like someone carefully transplanted those vegetations with the dirts from their origins. From the left to the right, they are labeled as, number one,  Fang Flower, number two, Blackberry, and number three, Mandrake. You have no idea what you can do with those plants yet.
+		You look at the flower stand. You see three pots with plants in them. 
+		The dirt in these pots look different to each other. Seems like someone carefully transplanted those vegetations with the dirts from their origins. 
+		From the left to the right, they are labeled as, number one,  Fang Flower, number two, Blackberry, and number three, Mandrake. 
+		You can sort of, take some dirt from any of the pots and grab it in your hand. But you have no clue what to do with it.
 	*then
+		flag view_flower
 		-> escape_puzzle_interaction
 
 @escape_puzzle_view_portal
 	*say
-		You look at the portal. The portal is a cirle on the floor with inscriptions that you can't understand painted around. The paintings lead to a hole on the floor just in front of the circle. Along with the hole is a little inscription that reads: long distance travel portal. It looks like something needs to be inserted into the hole to operate the portal. You can use anything on the portal, or stand on the portal.
-		
+		You look at the portal. The portal is a cirle on the floor with inscriptions that you can't understand painted around. 
+		The paintings lead to a hole on the floor just in front of the circle. Along with the hole is a little inscription that reads: 
+		long distance travel portal. It looks like something needs to be inserted into the hole to operate the portal. 
+		You can use anything on the portal, or stand on the portal.
 	*then
+		flag view_portal
 		-> escape_puzzle_interaction
 
 @escape_puzzle_view_portal_wand
@@ -5547,14 +5811,18 @@ different things to see more details.
 
 @escape_puzzle_view_barrel
 	*say
-		You look at the wooden barrel. Removing the cover carefully. You see that it's filled up with ice. Where did he get so many ice in a cave in the middle of a desert? You can use anything on the barrel to freeze it.
+		You look at the wooden barrel. Removing the cover carefully. You see that it's filled up with ice. 
+		Where did he get so many ice in a cave in the middle of a desert? You can use anything on the barrel to freeze it.
 	*then
+		flag view_barrel
 		-> escape_puzzle_interaction
 
 @escape_puzzle_view_alcohollamp
 	*say
-		You look at the alcohol burner. Judging by the marks and scratches on it, it seems like it has been used frequently. You can use anything on the burner to heat it up.
+		You look at the alcohol burner. Judging by the marks and scratches on it, it seems like it has been used frequently. 
+		You can use anything on the burner to heat it up.
 	*then
+		flag view_burner
 		-> escape_puzzle_interaction
 
 @escape_puzzle_view_newspaper
@@ -5583,7 +5851,7 @@ different things to see more details.
 
 @escape_puzzle_open_notebook
 	*say
-		You open up the notebook. <audio src='https://koetest.s3.amazonaws.com/Act5/Act+5+puzzle/openbook_01.mp3'/> What keyword do you want to search?
+		You look at the notebook. <audio src='https://koetest.s3.amazonaws.com/Act5/Act+5+puzzle/openbook_01.mp3'/> What keyword do you want to search?
 	*then
 		-> escape_puzzle_notebook_search
 
@@ -5591,45 +5859,53 @@ different things to see more details.
 	*say
 		
 	*recap
-		You can search different keywords to flip the notebook according to bookmarks. Or you can close the notebook if you finish searching.
+		You can't do that. You can search any keyword or close the notebook. 
 	*reprompt
-		You can search different keywords to flip the notebook according to bookmarks. Or you can close the notebook if you finish searching.
+		You can search any keyword or close the notebook. 
 	*then
-		hear death metal, metal {
+		hear death metal, metal, search metal, search death metal {
 			-> escape_puzzle_notebook_search_deathmetal
 		}
-		hear black berry {
+		hear black berry, search black berry {
 			-> escape_puzzle_notebook_search_blackberry
 		}
 
-		hear fang flower {
+		hear fang flower, search fang flower {
 			-> escape_puzzle_notebook_search_fangflower
 		}
 
-		hear mandrake {
+		hear mandrake, search mandrake {
 			-> escape_puzzle_notebook_search_mandrake
 		}
 
-		hear long distance travel portal, portal, long distance, travel portal {
+		hear long distance travel portal, portal, long distance, travel portal, search portal, search long distance {
 			-> escape_puzzle_notebook_search_portal
 		}
 		hear close the notebook {
 			-> escape_puzzle_notebook_close
 		}
 
-		hear wand, wand of the sylvan forest {
+		hear wand, wand of the sylvan forest, search wand {
 			-> escape_puzzle_notebook_search_wand
 		}
 
-		hear juan, ice, barrel, flower, alcohol lamp, flower stand, machine, chest, box {
+		hear juan, ice, barrel, alcohol burner, flower stand, chest, box {
 			-> escape_puzzle_notebook_cannotfind
 		}
+		hear flower, search flower, plant, search plants{
+			-> escape_puzzle_notebook_whichflower
+		}
+@escape_puzzle_notebook_whichflower
+	*say
+		What kind of flower or plants are you searching for? Say the name.
+	*then
+		-> escape_puzzle_notebook_search
 
 @escape_puzzle_notebook_cannotfind
 	*say
 		That bookmark doesn't exist.
 	*then
-		-> escape_puzzle_interaction
+		-> escape_puzzle_notebook_search
 
 @escape_puzzle_notebook_search_wand
 	*say
@@ -5639,7 +5915,7 @@ different things to see more details.
 
 @escape_puzzle_notebook_close
 	*say
-		<audio src='https://koetest.s3.amazonaws.com/Act5/Act+5+puzzle/closebook_01.mp3'/> You close the notebook. 
+		<audio src='https://koetest.s3.amazonaws.com/Act5/Act+5+puzzle/closebook_01.mp3'/> You close the notebook.
 	*then
 		-> escape_puzzle_interaction
 
@@ -5676,8 +5952,11 @@ different things to see more details.
 
 @escape_puzzle_view_notebook
 	*say
-		You look at the notebook. It's a heavy notebook. Dozens of bookmarks stick on pages. At anytime, you can open the notebook to search different keywords, so you can flip the notebook according to bookmarks.
+		You look at the notebook. It's a heavy notebook. Dozens of bookmarks stick on pages. 
+		You take it with you. So, 
+		At anytime, you can look at the notebook to search different keywords.
 	*then
+		flag view_note_e
 		-> escape_puzzle_interaction
 
 @escape_puzzle_view_table
@@ -5686,3 +5965,99 @@ different things to see more details.
 	*then
 		-> escape_puzzle_interaction
 
+
+// what can I do---------------------------------------------------------------------------------------------------------------------
+@escape_puzzle_whatdo
+	*say
+		You can look around, or look at specific things. 
+	*then
+		-> escape_puzzle_whatdo_look_note
+
+@escape_puzzle_whatdo_look_note
+	*then
+		if view_note_e {
+			-> escape_puzzle_whatdo_look_note_Y
+		}
+		-> escape_puzzle_whatdo_look_note_N
+
+@escape_puzzle_whatdo_look_note_Y
+	*say 
+		 look at the notebook, 
+	*then
+		-> escape_puzzle_whatdo_take_dirt
+
+@escape_puzzle_whatdo_look_note_N
+	*then
+	-> escape_puzzle_whatdo_take_dirt
+
+@escape_puzzle_whatdo_take_dirt
+	*then
+		if view_flower {
+			-> escape_puzzle_whatdo_take_dirt_Y
+		}
+		-> escape_puzzle_whatdo_take_dirt_N
+
+@escape_puzzle_whatdo_take_dirt_Y
+	*say 
+		 take some dirt from any flower pot, 
+	*then
+		-> escape_puzzle_whatdo_barrel
+
+@escape_puzzle_whatdo_take_dirt_N
+	*then
+		-> escape_puzzle_whatdo_barrel
+
+@escape_puzzle_whatdo_barrel
+	*then
+		if view_barrel {
+			-> escape_puzzle_whatdo_barrel_Y
+		}
+		-> escape_puzzle_whatdo_barrel_N
+
+@escape_puzzle_whatdo_barrel_Y
+	*say 
+		 use anything on the wooden barrel, 
+	*then
+		-> escape_puzzle_whatdo_burner
+
+@escape_puzzle_whatdo_barrel_N
+	*then
+		-> escape_puzzle_whatdo_burner
+
+@escape_puzzle_whatdo_burner
+	*then
+		if view_burner {
+			-> escape_puzzle_whatdo_burner_Y
+		}
+		-> escape_puzzle_whatdo_burner_N
+
+@escape_puzzle_whatdo_burner_Y
+	*say 
+		 use anything on the alcohol burner, 
+	*then
+		-> escape_puzzle_whatdo_portal
+
+@escape_puzzle_whatdo_burner_N
+	*then
+		-> escape_puzzle_whatdo_portal
+
+@escape_puzzle_whatdo_portal
+	*then
+		if view_portal {
+			-> escape_puzzle_whatdo_portal_Y
+		}
+		-> escape_puzzle_whatdo_portal_N
+
+@escape_puzzle_whatdo_portal_Y
+	*say 
+		 use anything on the portal, or stand on the portal 
+	*then
+		-> escape_puzzle_whatdo_end
+
+@escape_puzzle_whatdo_portal_N
+	*then
+		-> escape_puzzle_whatdo_end
+
+@escape_puzzle_whatdo_end
+	*then
+		-> escape_puzzle_interaction
