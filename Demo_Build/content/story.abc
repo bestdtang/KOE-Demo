@@ -4608,7 +4608,7 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 //What to do outside ---------------------------------------------------------------
 @cowplant_puzzle_outside_whatdo
 	*say
-		You can look around, look at specific things, go to the tent. You can also 
+		You can look around, look at specific things, go to the tent. 
 	*then 
 		-> cowplant_puzzle_outside_whatdo_turnon_stereo
 		
@@ -4690,7 +4690,7 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 // what to do tent ---------------------------------------------------------------------------
 @cowplant_puzzle_tent_whatdo
 	*say
-		You can look around, look at specific things, go outside. You can also 
+		You can look around, look at specific things, go outside.
 	*then 
 		-> cowplant_puzzle_tent_whatdo_look_note
 
@@ -5220,7 +5220,7 @@ will make people feels like an emotionless shell. Different allergic symptoms ca
 
 @escape_puzzle_intro
 	*say
-		What should you do?
+		What should you do? Probably look around?
 	*reprompt
 		You have arrived at the cave, only to be locked in a small hut by a man with faded purple hair. The door seems to be stuck by something, so you're trapped inside. What should you do to get out?
 	*recap
@@ -5233,32 +5233,38 @@ will make people feels like an emotionless shell. Different allergic symptoms ca
 		    unflag insertwand
 		    unflag heatbox
 		    unflag freezebox
+
+			unflag view_note_e
+			unflag view_flower
+			unflag view_barrel
+			unflag view_burner
+			unflag view_portal
+
 			-> escape_puzzle_around
 		}
 
 @escape_puzzle_around
 	*say
-		You looked around the small hut. In front of you, there is a table with some stuff stacked on top. Beside the table, you see a trash bin. Right across
- the table, there is a flower stand. On your right, there is a strange equipment that looks like a portal. And on your left, you see a chest. You can look at 
-different things to see more details.
+		You looked around the small hut. The door is obviously locked. In front of you, there is a table with some stuff stacked on top. Beside the table, you see a trash bin. Right across
+ 		the table, there is a flower stand. On your right, there is a strange equipment that looks like a portal. And on your left, you see a chest. You can look at 
+		different things to see more details.
 	*then
 		-> escape_puzzle_interaction
 
 @escape_puzzle_interaction
 	*recap
-		You can look at different things to see more details. [Action]
+		You can't do that. If you need help, you can ask, what can I do. [Action]
 	*reprompt
-		You can look at differen things to see more details. [Action]
+		You can look around or look at specific things. [Action]
 	*then
 		hear view the table, view table, look at the table, look at table, table, check the table, check table {
 			-> escape_puzzle_view_table
 		}
-		hear view the notebook, view notebook, look at the notebook, look at notebook, notebook, check the notebook, check notebook {
+		hear look at the notebook, view the notebook, view notebook, look at notebook, notebook, check the notebook, check notebook, open the notebook, open up the notebook {
+			if view_note_e {
+				-> escape_puzzle_open_notebook
+			}
 			-> escape_puzzle_view_notebook
-		}
-
-		hear open notebook, open the notebook, open up the notebook {
-			-> escape_puzzle_open_notebook
 		}
 		hear look around, what's around me, check what's around me, check around {
 			-> escape_puzzle_around
@@ -5301,20 +5307,20 @@ different things to see more details.
 			-> escape_puzzle_view_flower
 		}
 
-		hear heat up the metal box, heat up the wand, heat up the box, use the alcohol burner on the metal box, use the metal box on the alcohol burner, use the matal box on the burner, use the box on the burner {
+		hear heat up the metal box, heat up the wand, heat up the box, use the alcohol burner on the metal box, use the metal box on the alcohol burner, use the matal box on the burner, use the box on the burner, use the wand box on the alcohol burner {
 		    if getwand{
 		        -> escape_puzzle_damage_wand
 		    }
 			-> escape_puzzle_heatup_metalbox
 		}
-		hear freeze the metal box, freeze the box, freeze the wand, use the metal box on the barrel, put the metal box into the barrel {
+		hear freeze the metal box, freeze the box, freeze the wand, use the metal box on the barrel, put the metal box into the barrel, use the metal box on the wooden barrel, use the wand box on the barrel, use the box on the barrel {
 		      if getwand{
 		        -> escape_puzzle_damage_wand
 		    }
 			-> escape_puzzle_freeze_metalbox
 		}
 
-		hear stand on the portal, stand on portal {
+		hear stand on the portal, stand on portal, go to the portal {
 		    if insertwand and dirt!=0 { 
 		        -> escape_puzzle_stand_portal_ready
 	    	}
@@ -5355,14 +5361,14 @@ different things to see more details.
 			-> escape_puzzle_insert_note
 		}
 		
-		hear grab the dirt from number two pot, grab the dirt from black berry, two, take dirt from pot number two, take the dirt from pot number two, grab dirt from pot number two, grab the dirt from pot number two, take some dirt from pot number two, take some dirt from number two, take some dirt from black berry {
+		hear take some dirt from the second pot, grab the dirt from number two pot, grab the dirt from black berry, two, take dirt from pot number two, take the dirt from pot number two, grab dirt from pot number two, grab the dirt from pot number two, take some dirt from pot number two, take some dirt from number two, take some dirt from black berry {
 			-> escape_puzzle_vew_flower_dirt_2
 		}
 
-		hear grab the dirt from number three pot, grab the dirt from mandrake, three, take dirt from pot number three, take the dirt from pot number three, grab dirt from pot number three, grab the dirt from pot number three, take some dirt from pot number three, take some dirt from number three, take some dirt from mandrake {
+		hear take some dirt from the third pot, grab the dirt from number three pot, grab the dirt from mandrake, three, take dirt from pot number three, take the dirt from pot number three, grab dirt from pot number three, grab the dirt from pot number three, take some dirt from pot number three, take some dirt from number three, take some dirt from mandrake {
 			-> escape_puzzle_vew_flower_dirt_3
 		}
-		hear grab the dirt from number one pot, grab the dirt from fang flower, one, take dirt from put number one, take the dirt from put number one, grab dirt from put number one, grab the dirt from put number one, take some dirt from pot number one, take some dirt from number one, take some dirt from fang flower  {
+		hear take some dirt from the first pot, grab the dirt from number one pot, grab the dirt from fang flower, one, take dirt from put number one, take the dirt from put number one, grab dirt from put number one, grab the dirt from put number one, take some dirt from pot number one, take some dirt from number one, take some dirt from fang flower  {
 			-> escape_puzzle_vew_flower_dirt_1
 		}
 		
@@ -5370,7 +5376,7 @@ different things to see more details.
 		    -> escape_puzzle_grab_dirt
 		}
 
-		hear use the flower on the portal, use the barrel on the portal, use the blueberry on the portal {
+		hear use the flower on the portal, use the barrel on the portal, use the blueberry on the portal, use the flower stand on the portal {
 			-> escape_puzzle_insert_wrong
 		}
 
@@ -5380,6 +5386,19 @@ different things to see more details.
 			}
 			-> escape_puzzle_view_wand_no
 		}
+
+		hear look at the door, look at door{
+			-> escape_puzzle_view_door
+		}
+
+		hear what can I do {
+			-> escape_puzzle_whatdo
+		}
+@escape_puzzle_view_door
+	*say
+		You look at the door. It has been locked from outside. 
+	*then
+		-> escape_puzzle_interaction
 
 @escape_puzzle_view_wand
 	*say
@@ -5526,21 +5545,24 @@ different things to see more details.
 
 @escape_puzzle_vew_flower_dirt
 	*say
-		You look at the flower stand. You see three pots with plants in them. The dirt in these pots look different to each other. Seems like someone carefully transplanted those vegetation with the dirt from their origins. From the left to the right, they are labeled as, number one,  Fang Flower, number two, Blackberry, and number three, Mandrake. You can take some dirt from one of these pots.
+		You look at the flower stand. You see three pots with plants in them. 
+		The dirt in these pots look different to each other. Seems like someone carefully transplanted those vegetation with the dirt from their origins. 
+		From the left to the right, they are labeled as, number one,  Fang Flower, number two, Blackberry, and number three, Mandrake. 
+		You can take some dirt from one of these pots to help you travel through the portal.
 	*then
 		-> escape_puzzle_interaction
 
 @escape_puzzle_grab_dirt
 	*say
-		From the left to the right, they are labeled as, number one,  Fang Flower, number two, Blackberry, and number three, Mandrake. You can grab the dirt from any pot. Which number of pot do you want to grab the dirt from?
+		From the left to the right, they are labeled as, number one,  Fang Flower, number two, Blackberry, and number three, Mandrake. You can take some dirt from any pot. Which number of pot do you want to take some dirt from?
 	*then
-		hear grab the dirt from number two pot, grab the dirt from black berry, two {
+		hear take some dirt from the second pot, grab the dirt from number two pot, grab the dirt from black berry, two {
 			-> escape_puzzle_vew_flower_dirt_2
 		}
-		hear grab the dirt from number three pot, grab the dirt from mandrake, three {
+		hear take some dirt from the third pot, grab the dirt from number three pot, grab the dirt from mandrake, three {
 			-> escape_puzzle_vew_flower_dirt_3
 		}
-		hear grab the dirt from number one pot, grab the dirt from fang flower, one {
+		hear take some dirt from the first pot, grab the dirt from number one pot, grab the dirt from fang flower, one {
 			-> escape_puzzle_vew_flower_dirt_1
 		}
 		hear do nothing {
@@ -5601,14 +5623,22 @@ different things to see more details.
 
 @escape_puzzle_view_flower
 	*say
-		You look at the flower stand. You see three pots with plants in them. The dirt in these pots look different to each other. Seems like someone carefully transplanted those vegetations with the dirts from their origins. From the left to the right, they are labeled as, number one,  Fang Flower, number two, Blackberry, and number three, Mandrake. You have no idea what you can do with those plants yet.
+		You look at the flower stand. You see three pots with plants in them. 
+		The dirt in these pots look different to each other. Seems like someone carefully transplanted those vegetations with the dirts from their origins. 
+		From the left to the right, they are labeled as, number one,  Fang Flower, number two, Blackberry, and number three, Mandrake. 
+		You can sort of, take some dirt from any of the pots and grab it in your hand. But you have no clue what to do with it.
 	*then
+		flag view_flower
 		-> escape_puzzle_interaction
 
 @escape_puzzle_view_portal
 	*say
-		You look at the portal. The portal is a cirle on the floor with inscriptions that you can't understand painted around. The paintings lead to a hole on the floor just in front of the circle. Along with the hole is a little inscription that reads: long distance travel portal. It looks like something needs to be inserted into the hole to operate the portal. You can use anything on the portal, or stand on the portal.
+		You look at the portal. The portal is a cirle on the floor with inscriptions that you can't understand painted around. 
+		The paintings lead to a hole on the floor just in front of the circle. Along with the hole is a little inscription that reads: 
+		long distance travel portal. It looks like something needs to be inserted into the hole to operate the portal. 
+		You can use anything on the portal, or stand on the portal.
 	*then
+		flag view_portal
 		-> escape_puzzle_interaction
 
 @escape_puzzle_view_portal_wand
@@ -5619,14 +5649,18 @@ different things to see more details.
 
 @escape_puzzle_view_barrel
 	*say
-		You look at the wooden barrel. Removing the cover carefully. You see that it's filled up with ice. Where did he get so many ice in a cave in the middle of a desert? You can use anything on the barrel to freeze it.
+		You look at the wooden barrel. Removing the cover carefully. You see that it's filled up with ice. 
+		Where did he get so many ice in a cave in the middle of a desert? You can use anything on the barrel to freeze it.
 	*then
+		flag view_barrel
 		-> escape_puzzle_interaction
 
 @escape_puzzle_view_alcohollamp
 	*say
-		You look at the alcohol burner. Judging by the marks and scratches on it, it seems like it has been used frequently. You can use anything on the burner to heat it up.
+		You look at the alcohol burner. Judging by the marks and scratches on it, it seems like it has been used frequently. 
+		You can use anything on the burner to heat it up.
 	*then
+		flag view_burner
 		-> escape_puzzle_interaction
 
 @escape_puzzle_view_newspaper
@@ -5663,45 +5697,53 @@ different things to see more details.
 	*say
 		
 	*recap
-		You can search different keywords to flip the notebook according to bookmarks. Or you can close the notebook if you finish searching.
+		You can't do that. You can search any keyword or close the notebook. 
 	*reprompt
-		You can search different keywords to flip the notebook according to bookmarks. Or you can close the notebook if you finish searching.
+		You can search any keyword or close the notebook. 
 	*then
-		hear death metal, metal {
+		hear death metal, metal, search metal, search death metal {
 			-> escape_puzzle_notebook_search_deathmetal
 		}
-		hear black berry {
+		hear black berry, search black berry {
 			-> escape_puzzle_notebook_search_blackberry
 		}
 
-		hear fang flower {
+		hear fang flower, search fang flower {
 			-> escape_puzzle_notebook_search_fangflower
 		}
 
-		hear mandrake {
+		hear mandrake, search mandrake {
 			-> escape_puzzle_notebook_search_mandrake
 		}
 
-		hear long distance travel portal, portal, long distance, travel portal {
+		hear long distance travel portal, portal, long distance, travel portal, search portal, search long distance {
 			-> escape_puzzle_notebook_search_portal
 		}
 		hear close the notebook {
 			-> escape_puzzle_notebook_close
 		}
 
-		hear wand, wand of the sylvan forest {
+		hear wand, wand of the sylvan forest, search wand {
 			-> escape_puzzle_notebook_search_wand
 		}
 
-		hear juan, ice, barrel, flower, alcohol burner, flower stand, chest, box {
+		hear juan, ice, barrel, alcohol burner, flower stand, chest, box {
 			-> escape_puzzle_notebook_cannotfind
 		}
+		hear flower, search flower, plant, search plants{
+			-> escape_puzzle_notebook_whichflower
+		}
+@escape_puzzle_notebook_whichflower
+	*say
+		What kind of flower or plants are you searching for? Say the name.
+	*then
+		-> escape_puzzle_notebook_search
 
 @escape_puzzle_notebook_cannotfind
 	*say
 		That bookmark doesn't exist.
 	*then
-		-> escape_puzzle_interaction
+		-> escape_puzzle_notebook_search
 
 @escape_puzzle_notebook_search_wand
 	*say
@@ -5748,8 +5790,11 @@ different things to see more details.
 
 @escape_puzzle_view_notebook
 	*say
-		You look at the notebook. It's a heavy notebook. Dozens of bookmarks stick on pages. At anytime, you can open the notebook to search different keywords, so you can flip the notebook according to bookmarks.
+		You look at the notebook. It's a heavy notebook. Dozens of bookmarks stick on pages. 
+		You take it with you. So, 
+		At anytime, you can look at the notebook to search different keywords.
 	*then
+		flag view_note_e
 		-> escape_puzzle_interaction
 
 @escape_puzzle_view_table
@@ -5757,4 +5802,104 @@ different things to see more details.
 		You look at the table. It's right in front of you. On top of the table, you see a notebook, and a wooden barrel.
 	*then
 		-> escape_puzzle_interaction
+
+
+// what can I do---------------------------------------------------------------------------------------------------------------------
+@escape_puzzle_whatdo
+	*say
+		You can look around, or look at specific things. 
+	*then
+		-> escape_puzzle_whatdo_look_note
+
+@escape_puzzle_whatdo_look_note
+	*then
+		if view_note_e {
+			-> escape_puzzle_whatdo_look_note_Y
+		}
+		-> escape_puzzle_whatdo_look_note_N
+
+@escape_puzzle_whatdo_look_note_Y
+	*say 
+		 look at the notebook, 
+	*then
+		-> escape_puzzle_whatdo_take_dirt
+
+@escape_puzzle_whatdo_look_note_N
+	*then
+	-> escape_puzzle_whatdo_take_dirt
+
+@escape_puzzle_whatdo_take_dirt
+	*then
+		if view_flower {
+			-> escape_puzzle_whatdo_look_note_Y
+		}
+		-> escape_puzzle_whatdo_look_note_N
+
+@escape_puzzle_whatdo_take _dirt_Y
+	*say 
+		 take some dirt from any flower pot, 
+	*then
+		-> escape_puzzle_whatdo_barrel
+
+@escape_puzzle_whatdo_take_dirt_N
+	*then
+		-> escape_puzzle_whatdo_barrel
+
+@escape_puzzle_whatdo_barrel
+	*then
+		if view_barrel {
+			-> escape_puzzle_whatdo_barrel_Y
+		}
+		-> escape_puzzle_whatdo_barrel_N
+
+@escape_puzzle_whatdo_barrel_Y
+	*say 
+		 use anything on the wooden barrel, 
+	*then
+		-> escape_puzzle_whatdo_burner
+
+@escape_puzzle_whatdo_barrel_N
+	*then
+		-> escape_puzzle_whatdo_burner
+
+@escape_puzzle_whatdo_burner
+	*then
+		if view_burner {
+			-> escape_puzzle_whatdo_burner_Y
+		}
+		-> escape_puzzle_whatdo_burner_N
+
+@escape_puzzle_whatdo_burner_Y
+	*say 
+		 use anything on the alcohol burner, 
+	*then
+		-> escape_puzzle_whatdo_portal
+
+@escape_puzzle_whatdo_burner_N
+	*then
+		-> escape_puzzle_whatdo_portal
+
+@escape_puzzle_whatdo_portal
+	*then
+		if view_portal {
+			-> escape_puzzle_whatdo_portal_Y
+		}
+		-> escape_puzzle_whatdo_portal_N
+
+@escape_puzzle_whatdo_portal_Y
+	*say 
+		 use anything on the portal, or stand on the portal 
+	*then
+		-> escape_puzzle_whatdo_end
+
+@escape_puzzle_whatdo_portal_N
+	*then
+		-> escape_puzzle_whatdo_end
+
+@escape_puzzle_whatdo_end
+	*then
+		-> escape_puzzle_interaction
+
+
+
 
