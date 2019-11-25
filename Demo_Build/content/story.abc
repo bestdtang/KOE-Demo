@@ -224,19 +224,25 @@
 @Ask Shopkeeper
 	*say
 		[Man]A while ago the town was famed for our Shawarma. People would come all the way from cities to this dune for a taste of it.[Pause] 
-		//By the way. What's your name, traveler?
-		[EOA]
+		By the way. What's your name, traveler? [EOA]
 		[Conversation]
+
+	*recap
+		Maybe try some common names instead? For example, You can say: my name is Shawn.
+
+	*reprompt
+		Say your name to the shopkepper. For example, You can say: my name is Brian.
+
 	*then
-		//slot playerName_ to 'AMAZON.US_FIRST_NAME'
-		//hear {playerName_}, my name is {playerName_} {
+		slot playerName_ to 'AMAZON.US_FIRST_NAME'
+		hear {playerName_}, my name is {playerName_} {
 			-> Ask for Help
-		//}
+		}
 
 @Ask for Help
 	*say
 		[Man] 
-		//That's a rare name around here. 
+		That's a rare name around here. 
 		[Pause] Anyway, this is a desert so you could imagine it never rains here [Short_Pause] until that night. [Pause] On that night. We've seen the greatest thunderstorm of the town's history, [Short_Pause] but no-one anticipated what came after.[EOA]
         [Kid]
         [Long_Pause] And then the next morning, my dad started sweating like a cow. So did everyone else. [/Kid]
@@ -670,23 +676,25 @@
 	*say
 		[MrsChilirosa]
         Why, thank you, dear... 
-        //What's your name? 
+        What's your name? 
         [EOA]
-        //<amazon:effect name="whispered">say your name!</amazon:effect>.
+        <amazon:effect name="whispered">say your name!</amazon:effect>.
+	
 	*recap
-		//maybe try a more common one?
+		Maybe try some common names instead? For example, You can say: my name is Shawn.
+
 	*reprompt
-		//<amazon:effect name="whispered">say your name!</amazon:effect>.
+		Say your name to the shopkepper. For example, You can say: my name is Brian.
 	*then
-		//slot playerName to 'AMAZON.US_FIRST_NAME'
-		//hear {playerName}, my name is {playerName} {
+		slot playerName to 'AMAZON.US_FIRST_NAME'
+		hear {playerName}, my name is {playerName} {
 			-> Answer Your Name
-        //}
+        }
 
 @Answer Your Name
 	*say
 		[MrsChilirosa]
-        //Oh, thank you, dear {playerName}. 
+        Oh, thank you, dear {playerName}. 
         What can I give you in exchange? [EOA]
 	*then
 		-> Meet Mrs Chilirosa
@@ -731,8 +739,6 @@
 			-> Tell Mrs Chilirose Honestly
         }
         
-// todo
-
 @Tell Mrs Chilirose you like the Sauce
 	*say
 		Ok. Now make up a good reason why you like the sauce. You can say the sentence start with [Pause]"My reason is"[LongPause]
@@ -1136,13 +1142,18 @@ Get the Hot Sauce 1
 	*say
 		[SeedTrader]
         Thanks.  
-        //What's your name? 
+        What's your name? 
         [EOA]
+
+	*recap
+		Maybe try some common names instead? For example, You can say: my name is Shawn.
+	*reprompt
+		Say your name to the shopkepper. For example, You can say: my name is Brian.
 	*then
-		//slot playerName__ to 'AMAZON.US_FIRST_NAME'
+		slot playerName__ to 'AMAZON.US_FIRST_NAME'
         
-        //hear {playerName__}, my name is {playerName__} {
-        //}
+        hear {playerName__}, my name is {playerName__} {
+        }
 
 @MysMan Introduces Himself
 	*say
@@ -1165,13 +1176,13 @@ Get the Hot Sauce 1
 
         
         [SeedTrader]
-        //Welcome, to Luke's tent of peculiar collections. 
-        //Would you be interested in any of the items I have? 
-        //Would you be interested in a seed that grows nothing but more seeds? 
+        Welcome, to Luke's tent of peculiar collections. 
+        Would you be interested in any of the items I have? 
+        Would you be interested in a seed that grows nothing but more seeds? 
         [EOA]
         
-        //Don't forget, you need to get to the cave, fast. 
-        //What should you ask?
+        Don't forget, you need to get to the cave, fast. 
+        What should you ask?
         
 	*then
 		unflag anotherItem
@@ -1182,8 +1193,8 @@ Get the Hot Sauce 1
 
 @MysMan Introduces Himself 2
 	*say
-		//[SeedTrader]
-        //This is a seed that grows more seeds. Would you like to know how it works? [EOA]
+		[SeedTrader]
+        This is a seed that grows more seeds. Would you like to know how it works? [EOA]
         
         You can ask more about the seed or ask how to get to the cave. You can also thank him and leave.
         
@@ -1207,7 +1218,7 @@ Get the Hot Sauce 1
 	    [SeedTrader]
 		Ah, yes. This is a seed that makes more seeds. No plant roots, no flowers, just... seeds! I personally use it for seasoning. A great match for all dishes, even junk food. [EOA]
 		
-		//Luke eagerly waits for your response.
+		Luke eagerly waits for your response.
 
 	*then
 		>> BACK
@@ -1470,7 +1481,7 @@ Get the Hot Sauce 1
 		Both of you walk slowly outside the tent. It looks like Luke has something to tell you, but he's trying to keep it to himself.
 
 		[SeedTrader]
-		Hey, [EOA]
+		Hey, {playerName__}![EOA]
 
 		As you make yourself comfortable on the saddle, Luke calls you.
 
@@ -1595,7 +1606,7 @@ Get the Hot Sauce 1
 		It looks like Luke has something to tell you, but he's trying to keep it to himself.
 		
 		[SeedTrader]
-		Hey! [EOA]
+		Hey! {playerName__}! [EOA]
 		
 		As you make yourself comfortable on the saddle, Luke calls you.
 
@@ -1724,7 +1735,7 @@ Get the Hot Sauce 1
 		Both of you walk slowly outside the tent. It looks like Luke has something to tell you, but he's trying to keep it to himself.
 
 		[SeedTrader]
-		Hey, [EOA]
+		Hey, {playerName__}! [EOA]
 
 		As you make yourself comfortable on the saddle, Luke calls you.
 
