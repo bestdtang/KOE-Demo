@@ -5689,7 +5689,7 @@ will make people feels like an emotionless shell. Different allergic symptoms ca
 
 @escape_puzzle_open_notebook
 	*say
-		You open up the notebook. <audio src='https://koetest.s3.amazonaws.com/Act5/Act+5+puzzle/openbook_01.mp3'/> What keyword do you want to search?
+		You look at the notebook. <audio src='https://koetest.s3.amazonaws.com/Act5/Act+5+puzzle/openbook_01.mp3'/> What keyword do you want to search?
 	*then
 		-> escape_puzzle_notebook_search
 
