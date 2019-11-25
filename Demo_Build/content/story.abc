@@ -3179,19 +3179,19 @@ Get the Hot Sauce 1
 @chilirosa_kitchen_viewpot_boil
 	*say
 		You look at the pot. It's cooking on the stove. The soup will be boiled dry soon and the pot will be burnt.
-	*then	
+	*then
 		>> BACK
 
 @chilirosa_kitchen_caught_pot_stay
 	*say
 		The soup has been boiled dry and the pot is burnt. Misses Chilirosa comes over to check on the stove but finds you instead. You are caught. She throws you out of her house.
-	*then	
+	*then
 		-> chilirosa_steal_puzzle_again
 
 @chilirosa_kitchen_caught_kettle_stay
 	*say
 		Suddenly, the kettle whistles. Misses Chilirosa hears it, and arrives at the kitchen to find you, a stranger, wandering. She throws you out of her house.
-	*then	
+	*then
 		-> chilirosa_steal_puzzle_again
 
 @chilirosa_kitchen_turnstove
@@ -3309,7 +3309,7 @@ Get the Hot Sauce 1
 		If you are far away from the right direction. The flower will sing this song. [DirSound_Small]
 		If you are close to the right direction, the flower will sing. [DirSound_MRight]
 		If you are on the right direction, the flower will sing. [DirSound_Large]
-	*then 
+	*then
 		>> BACK
 
 @leading_start
@@ -3470,7 +3470,6 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 		-> leading_a_position
 
 @leading_a_goto
-	*say
 
 @leading_a_position
 	*then
@@ -4491,27 +4490,38 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 
 @cowplant_puzzle_start
 	*say
-		You wake up finding yourself in a tent. The sunlight sprinkles on your face through the small holes in the ceiling. As you slowly gain consciousness, you hear a strange shouting coming from outside.<audio src='https://koetest.s3.amazonaws.com/Act3/manscream_01.mp3'/> But before you get the sound, it's strange enough that you ended up in this tent. What's inside this tent?
+		You wake up finding yourself in a tent. The sunlight sprinkles on your face through the small holes in the ceiling. 
+		As you slowly gain consciousness, you hear a strange shouting coming from outside.
+		<audio src='https://koetest.s3.amazonaws.com/Act3/manscream_01.mp3'/> 
+		But before you get the sound, it's strange enough that you ended up in this tent. What's inside this tent? you should look around.
 	*recap
-		You can look around.
+		You should look around first.
 	*reprompt
-		You can look around.
+		You should look around.
 	*then
 		hear look around {
 		    unflag wakeman
 		    unflag getmilk
-		    unflag getnotebook
-		    
+		    unflag getnotebook_c
+		    unflag view_manoutside
+			unflag view_mantent
+			unflag view_stereo
+			unflag view_plant
 			-> cowplant_puzzle_tent_around_tutorial
 		}
 
 @cowplant_puzzle_tent_around_tutorial
 	*say
-		Surprisingly, it's a fairly large tent, and a messy one. Books and papers are scattered everywhere on the floor. There is also a cabinet full of plants and seeds and mysterious materials contained in vials and glass jars. A leather book that reads Cowplant Observation Notes is present on the small table beside it. That's pretty much it in the tent.  And then you hear another sound. <audio src='https://koetest.s3.amazonaws.com/Act3/cowplantThrowOut.mp3'/> What's outside?
+		Surprisingly, it's a fairly large tent, and a messy one. Books and papers are scattered everywhere on the floor. 
+		There is also a cabinet full of plants and seeds and mysterious materials contained in vials and glass jars. 
+		A leather book that reads Cowplant Observation Notes is present on the small table beside it. That's pretty much it in the tent.  
+		And then you hear another sound. <audio src='https://koetest.s3.amazonaws.com/Act3/cowplantThrowOut.mp3'/> What's outside?
 	*recap
 		You should go outside.
+	*reprompt
+		You hear another sound. <audio src='https://koetest.s3.amazonaws.com/Act3/cowplantThrowOut.mp3'/> What's outside?
 	*then
-		hear go outside {
+		hear go outside, look outside, go out, look at outside {
 			-> cowplant_puzzle_outside_around_tutorial
 		}
 	*reprompt
@@ -4519,7 +4529,10 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 
 @cowplant_puzzle_outside_around_tutorial
 	*say
-		As you exit the tent, you see the familiar, infinite desert. Oh. You're still in the desert. As you look back at the tent, you immediately noticed a strange plant. This plant is the size of a big refrigerator, and it has a mouth. That's right, a mouth. A man is lying on the ground, fainted.
+		As you exit the tent, you see the familiar, infinite desert. 
+		Oh. You're still in the desert. As you look back at the tent, you immediately noticed a strange plant. 
+		This plant is the size of a big refrigerator, and it has a mouth. That's right, a mouth. 
+		A man is lying on the ground, fainted.
 	*then
 		-> cowplant_puzzle_outside_interaction
 
@@ -4527,34 +4540,34 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 	*say
 		
 	*recap
-		You can look at different things, look around, or go to the tent. [Action]
+		You can not do that. If you need help, you can ask, what can I do. [Action]
 	*reprompt
-		You can look at different things, look around, or go to the tent. [Action]
+		You can look around, look at specific things. or go to the tent. [Action]
 	*then
-		hear look around, look around me {
+		hear look around, look around me, what is around me {
 		    if wakeman {
 		        -> cowplant_puzzle_outside_around_noman
 		    }
 			-> cowplant_puzzle_outside_around_man
 		}
-		hear look at the man {
+		hear look at the man, look at man {
 		    if wakeman{
 		        -> cowplant_puzzle_outside_view_man_gone
 		    }
 			-> cowplant_puzzle_outside_view_man
 		}
 
-		hear wake up the man {
+		hear wake up the man, wake up man {
 		    flag wakeman
 			-> cowplant_puzzle_outside_wake_man
 		}
 
-		hear look at the plant {
-		    flag viewplant
+		hear look at the plant, look at plant {
+		    flag view_plant
 			-> cowplant_puzzle_outside_view_plant
 		}
 
-		hear interact with the plant {
+		hear go to the plant, go to plant, interact with the plant {
 			-> cowplant_puzzle_cowplant_interact
 		}
 
@@ -4576,21 +4589,156 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 		    }
 			-> cowplant_puzzle_tent_goto
 		}
-		hear open the notebook {
+		hear  look at the notebook, open the notebook, read the notebook, look at notebook {
 		    set currentplace to 1
-			if !getnotebook{
+			if !getnotebook_c{
 		        -> cowplant_puzzle_tent_nonote
 		    }
 			-> cowplant_puzzle_notebook_open
 		}
 
-		hear look at the tent {
+		hear look at the tent, look at tent {
 			-> cowplant_puzzle_outside_view_tent
 		}
 
+		hear what can I do {
+			-> cowplant_puzzle_outside_whatdo
+		}
+
+//What to do outside ---------------------------------------------------------------
+@cowplant_puzzle_outside_whatdo
+	*say
+		You can look around, look at specific things, go to the tent. You can also 
+	*then 
+		-> cowplant_puzzle_outside_whatdo_turnon_stereo
+		
+
+@cowplant_puzzle_outside_whatdo_turnon_stereo
+	*then
+		if view_stereo {
+			-> cowplant_puzzle_outside_whatdo_turnon_stereo_Y
+		}
+		-> cowplant_puzzle_outside_whatdo_turnon_stereo_N
+
+@cowplant_puzzle_outside_whatdo_turnon_stereo_Y 
+	*say
+		 Turn on the stereo, 
+	*then 
+		-> cowplant_puzzle_outside_whatdo_wake_man
+
+@cowplant_puzzle_outside_whatdo_turnon_stereo_N 
+	*then 
+		-> cowplant_puzzle_outside_whatdo_wake_man
+
+@cowplant_puzzle_outside_whatdo_wake_man
+	*then 
+		if view_manoutside {
+			-> cowplant_puzzle_outside_whatdo_wake_man_Y
+		}
+		-> cowplant_puzzle_outside_whatdo_wake_man_N
+
+@cowplant_puzzle_outside_whatdo_wake_man_Y
+	*say 
+		 wake up the man, 
+	*then 
+		-> cowplant_puzzle_outside_whatdo_look_note
+	
+@cowplant_puzzle_outside_whatdo_wake_man_N
+	*then 
+		-> cowplant_puzzle_outside_whatdo_look_note
+
+@cowplant_puzzle_outside_whatdo_look_note
+	*then 
+		 if getnotebook_c {
+			 -> cowplant_puzzle_outside_whatdo_look_note_Y
+		 }
+		 -> cowplant_puzzle_outside_whatdo_look_note_N
+
+@cowplant_puzzle_outside_whatdo_look_note_Y
+	*say 
+		 look at the notebook, 
+	*then
+		-> cowplant_puzzle_outside_whatdo_goto_plant
+
+@cowplant_puzzle_outside_whatdo_look_note_N
+	*then
+		-> cowplant_puzzle_outside_whatdo_goto_plant
+
+@cowplant_puzzle_outside_whatdo_goto_plant
+	*then
+		if view_plant {
+			-> cowplant_puzzle_outside_whatdo_goto_plant_Y
+		}
+		-> cowplant_puzzle_outside_whatdo_goto_plant_N
+
+@cowplant_puzzle_outside_whatdo_goto_plant_Y
+	*say
+		 go to the plant.
+	*then
+	 	-> cowplant_puzzle_outside_whatdo_end
+
+@cowplant_puzzle_outside_whatdo_goto_plant_N
+	*then
+		-> cowplant_puzzle_outside_whatdo_end
+
+@cowplant_puzzle_outside_whatdo_end
+	*say
+		[Action]
+	*then 
+		-> cowplant_puzzle_outside_interaction
+
+// what to do tent ---------------------------------------------------------------------------
+@cowplant_puzzle_tent_whatdo
+	*say
+		You can look around, look at specific things, go outside. You can also 
+	*then 
+		-> cowplant_puzzle_tent_whatdo_look_note
+
+@cowplant_puzzle_tent_whatdo_look_note
+	*then 
+		 if getnotebook_c {
+			 -> cowplant_puzzle_tent_whatdo_look_note_Y
+		 }
+		 -> cowplant_puzzle_tent_whatdo_look_note_N
+
+@cowplant_puzzle_tent_whatdo_look_note_Y
+	*say 
+		 look at the notebook, 
+	*then
+		-> cowplant_puzzle_tent_whatdo_talk_man
+		
+@cowplant_puzzle_tent_whatdo_look_note_N
+	*then
+		-> cowplant_puzzle_tent_whatdo_talk_man
+
+@cowplant_puzzle_tent_whatdo_talk_man
+	*then 
+		 if view_mantent {
+			 -> cowplant_puzzle_tent_whatdo_talk_man_Y
+		 }
+		 -> cowplant_puzzle_tent_whatdo_talk_man_N
+
+@cowplant_puzzle_tent_whatdo_talk_man_Y
+	*say 
+		 talk to the man. 
+	*then
+		-> cowplant_puzzle_tent_whatdo_end
+		
+@cowplant_puzzle_tent_whatdo_talk_man_N
+	*then
+		-> cowplant_puzzle_tent_whatdo_end
+
+@cowplant_puzzle_tent_whatdo_end
+	*say
+		[Action]
+	*then 
+		-> cowplant_puzzle_tent_interaction	
+
+//End of what to do ------------------------------------------------------------------------------	
+
 @cowplant_puzzle_cowplant_interact
 	*say
-		What do you want to do to the plant? [Action]
+		You go to the plant. What do you want to do to the plant? [Action]
 	*then
 		-> cowplant_puzzle_cowplant_interaction
 
@@ -4608,7 +4756,7 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 
 @cowplant_puzzle_tent_goto
 	*say
-		You go to the tent.
+		[footstep]You go to the tent.
 	*then
 		-> cowplant_puzzle_tent_interaction
 
@@ -4628,49 +4776,36 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 		    if !wakeman{
 		        -> cowplant_puzzle_tent_view_man_out
 		    }
+			flag view_mantent
 			-> cowplant_puzzle_tent_view_man
 		}
-		hear look at the notebook, look at the note, look at the book, look at the observation {
-		    if getnotebook{
-		        -> cowplant_puzzle_tent_note_already
+		hear look at the notebook, look at the note, look at the book, look at the observation, read the notebook {
+		    if getnotebook_c{
+				set currentplace to 0
+		        -> cowplant_puzzle_notebook_open
 		    }
 			-> cowplant_puzzle_tent_view_notebook
 		}
-		hear pick up the notebook, pick up the note, pick up the book {
-		    if getnotebook{
-		        -> cowplant_puzzle_tent_note_already
-		    }
-		    flag getnotebook
-		    set currentplace to 0
-			-> cowplant_puzzle_tent_pickup_notebook
+		hear talk to the man{
+			if !wakeman{
+				-> cowplant_puzzle_tent_view_man_out
+			}
+			-> cowplant_puzzle_tent_view_man_talk
 		}
-		hear open the notebook {
-		    set currentplace to 0
-		    if !getnotebook{
-		        -> cowplant_puzzle_tent_nonote
-		    }
-			-> cowplant_puzzle_notebook_open
-		}
-		hear go outside {
+		hear go outside, leave the tent {
 			-> cowplant_puzzle_outside_go
 		}
 		hear look at the door {
 			-> cowplant_puzzle_tent_view_door
 		}
 	*recap
-		You can look around, look at different things, or go outside. [Action]
+		You can not do that. If you need help, you can ask, what can I do. [Action]
 	*reprompt
-		You can look around, look at different things, or go outside. [Action]
-
-@cowplant_puzzle_tent_note_already
-	*say
-		You already pucked up the notebook. You can search keywords by open notebook.
-	*then
-		-> cowplant_puzzle_tent_interaction
+		You can look around, look at specific things, or go outside. [Action]
 
 @cowplant_puzzle_tent_view_man_out
 	*say
-		You try to look at the man. But then you realize that he is still lying outside. You should probably go outside t o wake him up.
+		You try to find the man. But then you realize that he is still lying outside. You should probably go outside to wake him up.
 	*then
 		-> cowplant_puzzle_tent_interaction
 
@@ -4682,13 +4817,13 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 
 @cowplant_puzzle_outside_go
 	*say
-		You go outside
+		[footstep]You go outside.
 	*then
 		-> cowplant_puzzle_outside_interaction
 
 @cowplant_puzzle_notebook_open
 	*say
-		You open the notebook.<audio src='https://koetest.s3.amazonaws.com/Act5/Act+5+puzzle/openbook_01.mp3'/> What keyword do you want to search?
+		You look at the notebook.<audio src='https://koetest.s3.amazonaws.com/Act5/Act+5+puzzle/openbook_01.mp3'/> What keyword do you want to search?
 	*then
 		-> cowplant_puzzle_notebook_seedtrader
 
@@ -4696,20 +4831,16 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 	*say
 		You didn't pick up a notebook yet
 	*then
-		if currentplace is 0 {
-			    -> cowplant_puzzle_tent_interaction
-			}
-		if currentplace is 1 {
-		        -> cowplant_puzzle_outside_interaction
-		    }
+		-> cowplant_puzzle_outside_interaction
 
 @cowplant_puzzle_tent_pickup_notebook
 	*say
-		You grab the notebook. It is heavy. Dozens of bookmarks are stuck on different pages. To look into details you can open the notebook.
+		You pick up the notebook. It is heavy. Dozens of bookmarks are stuck on different pages. You take the notebook with you. 
+		So, at anytime, you can look at the note book to see more details.
 	*recap
-		To look into details you can open the notebook.
+		You should look at the notebook first.
 	*reprompt
-		To look into details you can open the notebook.
+		You should look at the notebook. 
 	*then
 		hear open the notebook {
 			-> cowplant_puzzle_grab_notebook
@@ -4717,9 +4848,18 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 
 @cowplant_puzzle_tent_view_notebook
 	*say
-		You look at the notebook. It’s thick and heavy. Dozens of bookmarks are sticking on pages. You can pick up the notebook as you want.
+		You look at the notebook. It is a leather book that it reads Cowplant Observation Notes. You should pick up the notebook.
+	*recap
+		You should pick up the notebook first.
+	*reprompt 
+		You should pick up the notebook.
 	*then
-		-> cowplant_puzzle_tent_interaction
+		hear pick up the notebook {
+			flag getnotebook_c
+			set currentplace to 0
+			-> cowplant_puzzle_tent_pickup_notebook
+		}
+
 
 @cowplant_puzzle_tent_view_man
 	*say
@@ -4743,13 +4883,15 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 
 @cowplant_puzzle_tent_around_man
 	*say
-		You are in a messy tent. A man is sitting in front of a  small table. A leather book that reads Cowplant Observation Notes is present on it. Behind you, it's the door.
+		You are in a messy tent. A man is sitting in front of a  small table. A leather book that reads Cowplant Observation Notes is present on it. 
+		Behind you, it's the door.
 	*then
 		-> cowplant_puzzle_tent_interaction
 
 @cowplant_puzzle_outside_stereo_on
 	*say
-		You turn on the stereo. <audio src='https://koetest.s3.amazonaws.com/Act3/Act3+puzzle/radio.mp3'/> Oh, my, god. The plant is swagging along the music.
+		You turn on the stereo. <audio src='https://koetest.s3.amazonaws.com/Act3/Act3+puzzle/radio.mp3'/> 
+		Oh, my, god. The plant is swagging along the music.
 	*then
 		-> cowplant_puzzle_outside_interaction
 
@@ -4758,6 +4900,7 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 		You look at the stereo. It is placed on the ground beside the plant. Looks like someone listens to it frequently.
  You can turn on the stereo.
 	*then
+		flag view_stereo
 		-> cowplant_puzzle_outside_interaction
 
 @cowplant_puzzle_outside_view_basket
@@ -4770,14 +4913,14 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 	*say
 		
 	*recap
-		If you don't know what to do to it, you should probably leave from the plant and come back later.[Action]
+		You can not do that to the plant. If you don't know what to do to it, you should probably leave the plant right now and come back later when you can think of what to do.[Action]
 	*reprompt
-		You an do anything to the cowplant, or you can leave. If you don't know what to do to it, you should probably leave from the plant to explore more and come back later.[Action]
+		You can do anything to the cowplant, or you can leave the plant.
 	*then
-		hear play with the plant, play with it, play {
+		hear play with the plant, play with it, play, play with the cow plant {
 			-> cowplant_puzzle_plant_play
 		}
-		hear feed the cowplant, feed it, feed, feed the plant {
+		hear feed the cowplant, feed it, feed, feed the plant, feed the cow plant, feed it fish, feed it with swordfish {
 			-> cowplant_puzzle_plant_feed
 		}
 		hear milk the cowplant, milk the plant, milk, milk it {
@@ -4787,19 +4930,23 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 		hear grab the cake, go for the cake, take the cake, look into the cake {
 			-> cowplant_puzzle_plant_cake
 		}
-		hear leave, leave from the plant {
+		hear leave the plant, leave, leave from the plant {
 			-> cowplant_puzzle_cowplant_leave
 		}
 
 @cowplant_puzzle_cowplant_leave
 	*say
-		You leave from the cowplant.
+		You leave the cowplant.
 	*then
 		-> cowplant_puzzle_outside_interaction
 
 @cowplant_puzzle_outside_view_plant
 	*say
-		You look at the plant. It is a bizarre plant.  It has a cow head but roots of plants. A bell is hanging on its stem, or, you should say, neck. Staring closer at the plant, a tinny label is taped on, reads, cow-plant. It is waving as it is attracting your attention. It sticks out its tongue to you, and the weirdest thing is, the tongue is a cake! You can do anything to the cowplant by saying, interact with the plant. If you don't know what to do to the plant, you should probably go look around first.
+		You look at the plant. It is a bizarre plant.  
+		It has a cow head but roots of plants. A bell is hanging on its stem, or, you should say, neck. 
+		Staring closer at the plant, a tinny label is taped on, reads, cow-plant. It is waving as it is attracting your attention. 
+		It sticks out its tongue to you, and the weirdest thing is, the tongue is a cake! 
+		You can do anything to the cowplant by saying, go to the plant. 
 	*then
 		-> cowplant_puzzle_outside_interaction
 
@@ -4813,6 +4960,7 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 	*say
 		You look at the man. He is fainted, and lying on the ground. He is wet and smelly. Some sort of liquid sticks on all of his body. You can wake up the man.
 	*then
+		flag view_manoutside
 		-> cowplant_puzzle_outside_interaction
 
 @cowplant_puzzle_outside_around_man
@@ -4865,9 +5013,16 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 
 @cowplant_puzzle_grab_notebook
 	*say
-		You open the notebook. You wonder what cowplant is. So, you find the bookmark that reads, Introduction, and you flip the notebook to that page. It reads. Cowplant is a bizarre, partly bovine form of vegetation. It usually has 4 growth states. You can search for any keyword that you found from the previous pages. For example, try to say, search growth states.
+		You look at the notebook. You wonder what cowplant is. 
+		So, you find the bookmark that reads, Introduction, and you flip the notebook to that page. 
+		It reads. Cowplant is a bizarre, partly bovine form of vegetation. It usually has 4 growth states. 
+		You can search for any keyword that you found from the previous pages. For example, try to search, growth states.
+	*recap
+		Try to search, growth states.
+	*reprompt
+		Try to search, growth states.
 	*then
-		hear search growth states {
+		hear search growth states, growth states {
 			-> cowplant_puzzle_notebook_seedtrader_states_tutorial
 		}
 
@@ -4875,67 +5030,77 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 	*say
 		
 	*then
-		hear baby, baby state {
+		hear introduction, cow plant, search introduction {
+			-> cowplant_puzzle_notebook_seedtrader_introduction
+		}
+		hear baby, baby state, search baby state {
 			-> cowplant_puzzle_notebook_seedtrader_baby
 		}
 
-		hear mature, mature state {
+		hear mature, mature state, search mature state {
 			-> cowplant_puzzle_notebook_seedtrader_mature
 		}
 
-		hear state, states, growth state {
+		hear state, states, growth state, search growth state {
 			-> cowplant_puzzle_notebook_seedtrader_states
 		}
 
-		hear feed {
+		hear feed, search feed {
 			-> cowplant_puzzle_notebook_seedtrader_feed
 		}
 
-		hear cake, tongue, cake tongue {
+		hear cake, tongue, cake tongue, search cake, search cake tongue {
 			-> cowplant_puzzle_notebook_seedtrader_cake
 		}
 
-		hear eat, swallow {
+		hear eat, swallow, search swallow {
 			-> cowplant_puzzle_notebook_seedtrader_swallow
 		}
 
-		hear milk {
+		hear milk, search milk {
 			-> cowplant_puzzle_notebook_seedtrader_milk
 		}
 
-		hear death, death state {
+		hear death, death state, search death {
 			-> cowplant_puzzle_notebook_seedtrader_death
 		}
-		hear hungry {
+		hear hungry, search hungry {
 			-> cowplant_puzzle_notebook_seedtrader_hungry
 		}
-
-		hear cowplant berry, berry {
+		hear cowplant berry, berry, search berry {
 			-> cowplant_puzzle_notebook_seedtrader_berry
 		}
-		hear sprout stage, sprout {
+		hear sprout state, sprout, search sprout state{
 			-> cowplant_puzzle_notebook_seedtrader_sprout
 		}
-		hear allergic symtoms, allergic  {
+		hear allergic symtoms, allergic, search allergic {
 			-> cowplant_puzzle_notebook_seedtrader_allergic
 		}
-		hear dementia, severe dementia {
+		hear dementia, severe dementia, search dementia {
 			-> cowplant_puzzle_notebook_seedtrader_dementia
 		}
-		hear devour {
+		hear devour, search devour {
 			-> cowplant_puzzle_notebook_seedtrader_devour
 		}
 		hear close the notebook {
 		    -> cowplant_puzzle_notebook_close
 		}
 	*reprompt
-		What keyword do you want to search? You can search for any keyword that you found from the previous pages. Or you can close the notebook if you are finish searching.[Action]
+		What keyword do you want to search? You can search for any keyword that you found from the previous pages. 
+		Or you can close the notebook if you are finish searching.[Action]
 	*recap
 		You can't find that bookmark.
 
+@cowplant_puzzle_notebook_seedtrader_introduction
+	*say
+		You searched the keyword, cowplant introduction, and opened up the notebook from that bookmark. It reads. 
+		Cowplant is a bizarre, partly bovine form of vegetation. It usually has 4 growth states. 
+	*then
+		-> cowplant_puzzle_notebook_seedtrader
+
 @cowplant_puzzle_notebook_seedtrader_devour
 	*say
-		You searched the keyword, devour, and opened up the notebook from that bookmark. If a person attempts to take the cake again, the cowplant will devour them. Which means, they are killed forever.
+		You searched the keyword, devour, and opened up the notebook from that bookmark. It reads. If a person attempts to take the cake again, the cowplant will devour them. Which means, they are killed forever.
 	*then
 		-> cowplant_puzzle_notebook_seedtrader
 
@@ -5011,7 +5176,14 @@ will make people feels like an emotionless shell. Different allergic symptoms ca
 
 @cowplant_puzzle_notebook_seedtrader_states_tutorial
 	*say
-		You searched the keyword, growth states, and opened up the notebook from that bookmark. It reads. Cowplants usually have three growth states, and can die. They are sprout state, baby state, mature state, and death state. To finish searching, you should close the notebook.
+		You searched the keyword, growth states, and opened up the notebook from that bookmark. 
+		It reads. Cowplants usually have three growth states, and can die. They are sprout state, baby state, mature state, and death state. 
+		To finish searching, try close the notebook.
+	*recap
+		You should try to close the notebook right now. 
+		If you can think of any keyword that you want to search, you can look at the notebook again, at anytime.
+	*reprompt
+		Try close the notebook.
 	*then
 		hear close the notebook {
 			-> cowplant_puzzle_notebook_close
@@ -5212,13 +5384,13 @@ different things to see more details.
 @escape_puzzle_view_wand
 	*say
 		You look at the wand. It's a wooden wand. Nothing else special.
-	*then 
+	*then
 		-> escape_puzzle_interaction
 
 @escape_puzzle_view_wand_no
 	*say
 		You look at the wand. It's still in the metal box. If you want to look into details, you should find a way to break the metal.
-	*then 
+	*then
 		-> escape_puzzle_interaction
 
 @escape_puzzle_insert_wrong
