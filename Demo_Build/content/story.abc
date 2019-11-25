@@ -3521,7 +3521,7 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 
 @leading_a_west
 	*say
-		You are looking west.[DirSound_Small] You see the outer edge of the sandstorm. That's definitely now the right way.
+		You are looking west.[DirSound_Small] You see the outer edge of the forest. That's definitely now the right way.
 	*then
 		-> leading_a_position
         
@@ -3577,7 +3577,7 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 
 @leading_b_south
 	*say
-		You are looking south. [DirSound_Small] You see the outer edge of the sandstorm. That's definitely now the right way.
+		You are looking south. [DirSound_Small] You see the outer edge of the forest. That's definitely now the right way.
 	*then
 		-> leading_b_position
 
@@ -3643,7 +3643,7 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 
 @leading_c_south
 	*say
-		You are looking south.[DirSound_Small] You see the outer edge of the sandstorm. That's definitely now the right way.
+		You are looking south.[DirSound_Small] You see the outer edge of the forest. That's definitely now the right way.
 	*then
 		-> leading_c_position
 
@@ -3699,13 +3699,13 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 
 @leading_d_east
 	*say
-		You are looking east. [DirSound_Small] You see the outer edge of the sandstorm. That's definitely now the right way.
+		You are looking east. [DirSound_Small] You see the outer edge of the forest. That's definitely now the right way.
 	*then
 		-> leading_d_position
 
 @leading_d_south
 	*say
-		You are looking south. [DirSound_Small] You see the outer edge of the sandstorm. That's definitely now the right way.
+		You are looking south. [DirSound_Small] You see the outer edge of the forest. That's definitely now the right way.
 	*then
 		-> leading_d_position
 
@@ -3777,7 +3777,7 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 
 @leading_e_west
 	*say
-		You are looking west. [DirSound_Small] You see the outer edge of the sandstorm. That's definitely now the right way.
+		You are looking west. [DirSound_Small] You see the outer edge of the forest. That's definitely now the right way.
 	*then
 		-> leading_e_position
 
@@ -3972,7 +3972,7 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 
 @leading_h_east
 	*say
-		You are looking east. [DirSound_Small] You see the outer edge of the sandstorm. That's definitely now the right way.
+		You are looking east. [DirSound_Small] You see the outer edge of the forest. That's definitely now the right way.
 	*then
 		-> leading_h_position
 
@@ -4054,7 +4054,7 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 
 @leading_i_west
 	*say
-		You are looking west. [DirSound_Small] You see the outer edge of the sandstorm. That's definitely now the right way.
+		You are looking west. [DirSound_Small] You see the outer edge of the forest. That's definitely now the right way.
 	*then
 		-> leading_i_position
 
@@ -4182,7 +4182,7 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 
 @leading_l_east
 	*say
-		You are looking east. [DirSound_Small] You see the outer edge of the sandstorm. That's definitely now the right way.
+		You are looking east. [DirSound_Small] You see the outer edge of the forest. That's definitely now the right way.
 	*then
 		-> leading_l_position
 
@@ -4246,7 +4246,7 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 
 @leading_m_north
 	*say
-		You are looking north. [DirSound_Small] You see the outer edge of the sandstorm. That's definitely now the right way.
+		You are looking north. [DirSound_Small] You see the outer edge of the forest. That's definitely now the right way.
 	*then
 		-> leading_m_position
 
@@ -4264,7 +4264,7 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 
 @leading_m_west
 	*say
-		You are looking west. [DirSound_Small] You see the outer edge of the sandstorm. That's definitely now the right way.
+		You are looking west. [DirSound_Small] You see the outer edge of the forest. That's definitely now the right way.
 	*then
 		-> leading_m_position
 
@@ -4316,7 +4316,7 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 
 @leading_n_north
 	*say
-		You are looking north. [DirSound_Small] You see the outer edge of the sandstorm. That's definitely now the right way.
+		You are looking north. [DirSound_Small] You see the outer edge of the forest. That's definitely now the right way.
 	*then
 		-> leading_n_position
 
@@ -4386,7 +4386,7 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 
 @leading_o_north
 	*say
-		You are looking north. [DirSound_Small] You see the outer edge of the sandstorm. That's definitely now the right way.
+		You are looking north. [DirSound_Small] You see the outer edge of the forest. That's definitely now the right way.
 	*then
 		-> leading_o_position
 
@@ -4456,13 +4456,13 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 
 @leading_p_north
 	*say
-		You are looking north. [DirSound_Small] You see the outer edge of the sandstorm. That's definitely now the right way.
+		You are looking north. [DirSound_Small] You see the outer edge of the forest. That's definitely now the right way.
 	*then
 		-> leading_p_position
 
 @leading_p_east
 	*say
-		You are looking east. [DirSound_Small] You see the outer edge of the sandstorm. That's definitely now the right way.
+		You are looking east. [DirSound_Small] You see the outer edge of the forest. That's definitely now the right way.
 	*then
 		-> leading_p_position
 
