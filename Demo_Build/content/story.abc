@@ -31,13 +31,15 @@
 
 @Lost in Desert
 	*say
-		Oh dear, it's a hot, hot desert. You walk aimlessly in the sand, thirsty for water. The wind is hot, the sun is hot, and the air is burning hot. [Pause] [footstep] In the middle of the hot desert, you found a rusty, old signpost. It has two arrows pointing to the right and the left. However, the letters have faded away.
+		Oh dear, it's a hot, hot desert. You walk aimlessly in the sand, thirsty for water. 
+		//The wind is hot, the sun is hot, and the air is burning hot. [Pause] 
+		[footstep] In the middle of the hot desert, you found a rusty, old signpost. It has two arrows pointing to the right and the left. However, the letters have faded away.
 	*then
 		-> Tutorial 1: Direction Questions
 
 @Tutorial 1: Direction Questions
 	*say
-		[Action]When you hear this sound, you will be deciding which path, or direction, to take. In this case, try saying: go to the left, or go to the right.
+		[Action] When you hear this sound, you will be deciding which path, or direction, to take. In this case, try saying: go to the left, or go to the right.
 	*then
 		hear go to the left {
 			-> Look Left
@@ -59,7 +61,9 @@
 
 @Tutorial 1A: Check Around
 	*say
-		[footstep] You walk under the hot sun until you reach the top of a little sand hill. It let's you see a little bit further away. Now you can see what's around you. [Pause] Sometimes, paths aren't obvious at first glance just like now. You can check around first by saying what's around me. Go on, give it a go.
+		[footstep] You walk under the hot sun until you reach the top of a little sand hill. 
+		//It let's you see a little bit further away. Now you can see what's around you. [Pause] Sometimes, paths aren't obvious at first glance just like now. 
+		You can check around first by saying what's around me. Go on, give it a go.
 	*then
 		hear what's around me,check, what is around me, check what's around me, around me {
             -> Check Around the Hill
@@ -71,30 +75,39 @@
 
 @Check Around the Hill
 	*say
-		You look around, like a compass slowly spinning. You don't find anything particularly interesting. [Pause] Wait! You see a few freckles on the yellow surfaces of Earth. It shines under the burning sun! You squint your eyes and look closer. [Pause] <emphasis level="reduced">It's a town!</emphasis> [Short_Pause] There's a good chance that they have some water there.[Action]
+		You looked around. 
+		//You don't find anything particularly interesting. [Pause] Wait! 
+		You see a few freckles on the yellow surfaces of Earth. It shines under the burning sun! 
+		//You squint your eyes and look closer. [Pause] 
+		It's a town! [Short_Pause] 
+		//There's a good chance that they have some water there.
+		[Action]
 	*then
 		hear go to the town, go towards the town, town, the town {
 		    set currentLocation as 'town'
              -> Go to Town
          }
 	*reprompt
-		You might want to go to a location?
+		Try saying go to the town.
 	*recap
-		You might want to go to a location? try say go to the town?
+		Try saying go to the town.
 
 @Go to Town
 	*say
-		Quick! There might be water there.
+		//Quick! There might be water there.
+		The urge of letting cold water pass enter you drags your weary feet to the entrance of the town. 
 	*then
 		-> Town
 
 @Town
 	*say
-		The urge of letting cold water pass enter you drags your weary feet to the entrance of the town. At the entrance, you thought the townspeople would step forward immediately to help a thirsty traveler, but instead. [Short_Pause] No-one came. What's happening? [Action] you can ask to check the environment. Try saying: "what's around me?"
+		The urge of letting cold water pass enter you drags your weary feet to the entrance of the town. 
+		//At the entrance, you thought the townspeople would step forward immediately to help a thirsty traveler, but instead. [Short_Pause] No-one came. What's happening? [Action] you can ask to check the environment. 
+		you can check the environment by saying, what's around me.
 	*recap
-		you can ask to check the environment. Try saying: "what's around me?"
+		you can check the environment by saying, what's around me.
 	*reprompt
-		you can ask to check the environment. Try saying: "what's around me?"
+		you can check the environment by saying, what's around me.
 	*then
 		hear what's around me {
 			-> Around 
@@ -102,21 +115,22 @@
 
 @Around
 	*say
-		You're at the entrance of the town. Some small buildings align on the sides of the street. But all of their doors are shut tight. Only a few people are walking on the streets. It's almost as if they're trying to avoid having eye-contact with you.
+		You're at the entrance of the town. Some small buildings align on the sides of the street. But all of their doors are shut tight. 
+		//Only a few people are walking on the streets. It's almost as if they're trying to avoid having eye-contact with you.
 	*reprompt
-		There are a few establishments right in front of you. a general store and the mayor's office. Could any of them have some water? Choose a location to go to.
+		There are a few establishments right in front of you. A general store and the mayor's office. Which one do you want to go to?
 	*recap
-		There are a few establishments right in front of you. a general store and the mayor's office. Could any of them have some water? Choose a location to go to.
+		There are a few establishments right in front of you. A general store and the mayor's office. Which one do you want to go to?
 	*then
 		-> Around_1
 
 @Around_1
 	*say
-		There are a few establishments right in front of you. A general store and the mayor's office. Could any of them have some water? [Action]
+		There are a few establishments right in front of you. A general store and the mayor's office. Which one do you want to go to? [Action]
 	*recap
-		There are a few establishments right in front of you. A general store and the mayor's office. Could any of them have some water? [Short_Pause] Choose a location to go to.
+		There are a few establishments right in front of you. A general store and the mayor's office. Which one do you want to go to?
 	*reprompt
-		There are a few establishments right in front of you. A general store and the mayor's office. Could any of them have some water? [Short_Pause] Choose a location to go to.
+		Do you want to go to the general store or the mayor's office?
 	*then
 		hear mayor's office, office, mayor, go to mayor's office {
 		    set currentLocation as 'mayors office'
@@ -129,15 +143,18 @@
 
 @Store
 	*say
-		Upon approaching the general store, you see a boy. He wears a red coat, and he looks very surprised. [Long_Pause][Kid] You are a new face here. Do you need help? [Short_Pause] You don't look well.[/Kid] [Long_Pause] Maybe the little boy has water. Perhaps you should try asking. [Conversation] When you hear this sound, you decide what to say to the other person next. For example, right now you can ask the boy for water. [Short_Pause] Try it! [Conversation]
+		Upon approaching the general store, you see a boy. He wears a red coat, and he looks very surprised. [Pause][Kid] You are a new face here. Do you need help? [Short_Pause] You don't look well.[/Kid] [Pause] Maybe the little boy has water. 
+		//Perhaps you should try asking. 
+		[Conversation] 
+		//When you hear this sound, you decide what to say to the other person next. For example, right now you can ask the boy for water. [Short_Pause] Try it! [Conversation]
 	*then
 		hear water, can I have some water, can you give me water, do you have water, do you have any water, ask for water, ask the boy, ask the boy for water, give me some water, give me water {
 			-> Boy
 		}
 	*recap
-		Try ask the boy for water [Conversation]
+		Try asking the boy for water [Conversation]
 	*reprompt
-		Try ask the boy for water [Conversation]
+		Try asking the boy for water [Conversation]
 
 @Boy
 	*say
@@ -147,6 +164,8 @@
 		The boy takes you around the building and enters the store from the backdoor. [Pause] Oh dear. [Pause] It is far from being desirable. It stinks. Smelly, smelly, smelly, it's like wearing the same pair of socks for over a year. [Pause]
 		[Kid] Yeah. Told you! [Pause] [/Kid] 
 		[Pause] A bald, middle-aged man that looks like in his fifties are slowly walks down the stairs. [Kid] Papa! [Pause] [/Kid] Small pieces of tissue paper are rolled and stuck in his nose. He looks like he could use some more sunshine.
+	*recap
+		The boy took you to his father's general store.
 	*then
 		-> Shopkeeper
 
@@ -160,8 +179,10 @@
         Water? [Pause] Hah! I got lots of water. As if water would do anything to wash this stench away.[EOA] 
         [Pause] 
         The young boy's father handed you a big glass of water. 
-        [Man] 
-        Hey. [Pause] Don't worry. I know it smells bad in here. But I assure you, the water is clean. [Pause] Go on, drink up. Ahh. Yes, the water is fresh and good.[EOA]
+        [Man]
+        Hey. [Pause] Don't worry. I know it smells bad in here. But I assure you, the water is clean. 
+        //[Pause] Go on, drink up. Ahh. Yes, the water is fresh and good.
+        [EOA]
         [Pause]
         Sometimes when appropriate, you can use an item, perform an action, or do nothing. For this instance, you can either say: [Short_Pause] use water or do nothing.[Action]
 	*then
@@ -179,19 +200,19 @@
 @Don't Drink
 	*say
 		You hold the glass of water at your hand, but you don't drink from it. [Pause]
+    //[Man]
+    //<emphasis level="strong">Hmmmm.</emphasis> [Pause] [EOA]
+    The shopkeeper looks at the glass of water. He then looks down on the dusty floor.
+    //[Man]
+    //Suit yourself. Thought you were really thirsty. [EOA]
+    //[Long_Pause] At least you're in the shade, so you're starting to feel a little bit less thirsty. But still, the stench is unbearable.
     [Man]
-    <emphasis level="strong">Hmmmm.</emphasis> [Pause] [EOA]
-    The shopkeeper looks at the glass of water. He looks down on the dusty floor.
-    [Man]
-    Suit yourself. Thought you were really thirsty. [EOA]
-    [Long_Pause] At least you're in the shade, so you're starting to feel a little bit less thirsty. But still, the stench is unbearable.
-    [Man]
-    Maybe the smell even went into the water. [Long_Pause] It wasn't like this before the incident. [EOA]
+    Maybe the smell even went into the water. [Pause] It wasn't like this before the incident. [EOA]
     [ActionQuestionSound]
 	*recap
-		Try say use water.
+		You can drink water or ask more about the incident.
 	*reprompt
-		Try say use water.
+		You can drink water or ask more about the incident.
 	*then
 		hear use water, drink water {
 			-> Finding Out
@@ -204,12 +225,11 @@
 	*say
 		The father has given you his word that the water is clean for drinking. But even without his promise you'd still chug the whole glass of water, bottoms-up.
         [Pause]
-        Ahhhh. Refreshing! Although the water smells a bit off, you don't care. What's important is, you're saved from becoming human beef jerky.
+        //Ahhhh. Refreshing! Although the water smells a bit off, you don't care. What's important is, you're saved from becoming human beef jerky.
         [Man]
         Feel better? You really looked like the desert's going to get you.[EOA] 
-        Now it's just the stench that's really
+        //Now it's just the stench that's really
         giving you a headache.
-        [Pause]
         [Man]
         Sorry for the bad manners back there. It's just this town has never had a single visitor for a long time. Not after the incident.[EOA]
         [Conversation]You should ask him.
@@ -396,8 +416,11 @@
 	*say
 		Just as you are about to leave the store, the shopkeeper stops you.
         [Man]
-        Wait wait. The desert is hot and wide. Don't want you to starve or get thirsty out there. Take these. [EOA]
-        The shopkeeper gives you a big bread and a full canteen of water. They both look edible, but at the same time the stench attaches to them. 
+        Wait wait. Take these.
+        //The desert is hot and wide. Don't want you to starve or get thirsty out there. Take these. 
+        [EOA]
+        The shopkeeper gives you a big bread and a full canteen of water. 
+        //They both look edible, but at the same time the stench attaches to them. 
         <audio src='https://koetest.s3.amazonaws.com/new_demo_stereo/doorOpen2.mp3'/>
         You step out of the store.
 	*then
@@ -428,7 +451,9 @@
 
 @Signpost
 	*say
-		You come forward to the signpost across the lonely street. There are a few items on it. [Short_Pause] It reads: the right leads to the mayor's office, Chilirosa's Beauty Salon, and the Eastern exit of the town. You've also noticed that there are a few strings of ivy tangling around the signpost. They look surprisingly healthy.
+		//You come forward to the signpost across the lonely street. 
+		There are a few items on it. [Short_Pause] It reads: the right leads to the mayor's office, Chilirosa's Beauty Salon, and the Eastern exit of the town. 
+		//You've also noticed that there are a few strings of ivy tangling around the signpost. They look surprisingly healthy.
 	*then
 		hear salon, beauty salon, go to beauty salon, go find the beauty salon {
 		    set currentLocation as 'outside of the beauty saloon'
@@ -448,7 +473,8 @@
 
 @Mayor's Office
 	*say
-		You're at the mayor's office. The doors are shut tight, and they seem like their locked. Somehow with the stench, it also smells very spicy. Besides knocking on the door, the office is so big that you probably need to shout to get his attention. 
+		You're at the mayor's office. The doors are shut tight, and they seem like their locked. 
+		//Somehow with the stench, it also smells very spicy. Besides knocking on the door, the office is so big that you probably need to shout to get his attention. 
            Now you can: Knock, bash, or try to open the door, check out the trash can, or go to another location. [Action]
 	*then
 		hear knock {
@@ -504,7 +530,8 @@
 	*say
 		You started walking towards the end of the street.
 
-        Nothing but the sandy gusts of wind blow into your ears. No one is visible on the street. The buildings on the way look pretty modern, but they are all coated with a thick layer of dust. While you're on your way, you noticed something peculiar in the corner of one of the buildings. It's a patch of green.
+        //Nothing but the sandy gusts of wind blow into your ears. No one is visible on the street. The buildings on the way look pretty modern, but they are all coated with a thick layer of dust. 
+        While you're on your way, you noticed something peculiar in the corner of one of the buildings. It's a patch of green.
         <audio src="https://koetest.s3.amazonaws.com/new_demo_stereo/footsteps2.mp3"/>
 You're at the front door of the beauty salon. Looks like its doors are shut tight, but they don't look locked, and you hear the sounds of radio inside. Anyways, you should talk to her, but what should you do?
 	*then
@@ -687,8 +714,8 @@ You're at the front door of the beauty salon. Looks like its doors are shut tigh
 @Ask about the Sauce
 	*say
 		[MrsChilirosa]
-        Give me a reason why you need hot sauce. You want hot sauce because? [EOA]
-        [Conversation] So we have two plans here: first plan, You tell her how you like the sauce. second plan. tell her that you need it to get the mayor's attention. Which plan you do you want to go?
+        Give me a reason why you need hot sauce. You want hot sauce because of what? [EOA]
+        So we have two plans here: first plan, You tell her how you like the sauce. second plan. tell her that you need it to get the mayor's attention. Which plan you do you want to go? [Conversation] 
 	*recap
 		We have two plans here: First one, make up a reason and lie. Second one, tell her that you need it to get the mayor's attention. Which plan you do you want to go?
 	*then
@@ -760,7 +787,9 @@ You're at the front door of the beauty salon. Looks like its doors are shut tigh
 
 @Get the Hot Sauce
 	*say
-		You're at the mayor's office. The doors are shut tight, and they seem like their locked. Somehow with the stench, it also smells very spicy. Besides knocking on the door, the office is so big that you probably need to shout to get his attention. Do you want to wave to the window, or shout to the his attention?[Action]
+		You're at the mayor's office. 
+		//The doors are shut tight, and they seem like their locked. Somehow with the stench, it also smells very spicy. Besides knocking on the door, the office is so big that you probably need to shout to get his attention. 
+		Do you want to wave to the window, or shout to the his attention?[Action]
 	*reprompt
 		Wave to the window? Or shout at the mayor?
 	*recap
