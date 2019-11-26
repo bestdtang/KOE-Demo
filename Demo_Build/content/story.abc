@@ -152,17 +152,17 @@
 @Shopkeeper
 	*say
 		[Man]
-        Who is this person? [Short_Pause] Why did you bring a stranger that looks like a dying cactus to this place? [EOA] 
+        Who is this person? Why did you bring a stranger that looks like a dying cactus to this place? [EOA] 
         [Kid] 
         [Pause]Relax, papa. He's just a traveler. And he needs water. [Short_Pause]A lot of water.[/Kid] 
         [Man] 
-        Water? [Short_Pause] Hah! I got lots of water. As if water would do anything to wash this stench away.[EOA] 
+        Water? Hah! I got lots of water. As if water would do anything to wash this stench away.[EOA] 
         [Pause] 
         The young boy's father handed you a big glass of water. 
         [Man] 
-        Hey. [Short_Pause] Don't worry. I know it smells bad in here. But I assure you, the water is clean. [Short_Pause] Go on, drink up. Ahh. Yes, the water is fresh and good.[EOA]
+        Hey. Don't worry. I know it smells bad in here. But I assure you, the water is clean. [Short_Pause] Go on, drink up. Ahh. Yes, the water is fresh and good.[EOA]
         [Pause]
-        Sometimes when appropriate, you can use an item, perform an action, or do nothing. For this instance, you can either say: [Short_Pause] use water or do nothing.[Action]
+        Sometimes when appropriate, you can use an item, perform an action, or do nothing. For this instance, you can either say: [Conversation] use water or do nothing.[Action]
 	*then
 		hear drink water, use water, use the water, water, chug {
 			-> Finding Out
@@ -175,7 +175,7 @@
 	*reprompt
 		Sometimes when appropriate, you can use an item, perform an action, or do nothing. For this instance, you can either say: [Short_Pause] "use water", or "do nothing".
 
-// --------CHECK POINT: ACTION AND CONVERSATIONG SOUND
+
 @Don't Drink
 	*say
 		You hold the glass of water at your hand, but you don't drink from it. [Pause]
@@ -186,8 +186,7 @@
     Suit yourself. Thought you were really thirsty. [EOA]
     [Long_Pause] At least you're in the shade, so you're starting to feel a little bit less thirsty. But still, the stench is unbearable.
     [Man]
-    Maybe the smell even went into the water. [Long_Pause] It wasn't like this before the incident. [EOA]
-    [Action]
+    Maybe the smell even went into the water. [Long_Pause] It wasn't like this before the incident. [EOA] [Action]
 	*recap
 		Try say use water.
 	*reprompt
@@ -212,7 +211,7 @@
         [Pause]
         [Man]
         Sorry for the bad manners back there. It's just this town has never had a single visitor for a long time. Not after the incident.[EOA]
-        [Action]You should ask him.
+        [Conversation] You should ask him. [Action]
 	*reprompt
 		You can talk to him by saying talk to the shopkeeper
 	*recap
@@ -255,7 +254,7 @@
         The mayor believed that it's a curse from some spell caster. He was trying to find people to help. Even set up a great reward for anyone who lifts the curse. 
         [Pause]
         Since you're here, why don't you help us? [Short_Pause] There's a lucrative treasure, and it could be all yours. What do you say?[EOA]
-        It seems like they really need your help. Do you want to help them?
+        It seems like they really need your help. Do you want to help them? [Action]
 	*reprompt
 		It seems like they really need your help.
 	*recap
@@ -269,7 +268,7 @@
 	*say
 		You arrive at the mayor's office. It's the largest building in the town, but it's doors and windows are tightly shut and locked. [Short_Pause] When you get close to the front door, there's a sharp smell of hot pepper. Looks like there's no way in. 
 	*recap
-		It looks like there's no way in to the mayor's office. Perhaps you should visit somewhere else and try again later. If you don't know where to go, remember to say What's around me.
+		It looks like there's no way in to the mayor's office. Perhaps you should visit somewhere else and try again later. [Conversation] If you don't know where to go, remember to say What's around me.
     [Action]
 	*then
 		hear store, general store, go to the general store {
@@ -330,7 +329,7 @@
 @Ask Shopkeeper About the Mayor
 	*say
 		[Man]
-        About the mayor [Short_Pause], well, he hasn't accepted to see anyone since the incident. Other than making this poster I showed you, he hasn't done anything else to help the town. Nobody knows if he's even in his office anymore. [Short_Pause] He wasn't like this before. He tried really hard to promote this little town to the world outside, that's why we had so many tourists before. [Short_Pause] By the way, after the disaster took place, he became oddly addicted to the hot sauce. What else would you like to know?[EOA] You can ask about the sauce, or ask for one bottle.
+        About the mayor [Short_Pause], well, he hasn't accepted to see anyone since the incident. Other than making this poster I showed you, he hasn't done anything else to help the town. Nobody knows if he's even in his office anymore. [Short_Pause] He wasn't like this before. He tried really hard to promote this little town to the world outside, that's why we had so many tourists before. [Short_Pause] By the way, after the disaster took place, he became oddly addicted to the hot sauce. What else would you like to know?[EOA] [Conversation] You can ask about the sauce, or ask for one bottle. [Action]
 	*then
 		hear buy, buy a bottle, can I have a bottle of hot sauce, could I, can you, can I, one, ask for one bottle, ask one, please give me  {
             -> One Bottle of Sauce
@@ -350,7 +349,7 @@
 		[Boy]
 		I am a grown up. [EOA]
 		[Man]
-		Ha Ha Ha. Well, what else would you like to know?[EOA] You can ask about the mayor, or ask for one bottle.
+		Ha Ha Ha. Well, what else would you like to know?[EOA] [Conversation] You can ask about the mayor, or ask for one bottle. [Action]
 	*then
 		hear buy, buy a bottle, can I have a bottle of hot sauce, could I, can you, can I, one, ask for one bottle, ask one, please give me  {
             -> One Bottle of Sauce
@@ -378,7 +377,7 @@
 
 @One Bottle of Sauce 2
 	*say
-		Now you can leave the store, or ask more about Mrs. Chilirosa.
+		[Conversation] Now you can leave the store, or ask more about Mrs. Chilirosa. [Action]
 	*recap
 		Now you can leave the store or ask more about Mrs. Chilirosa.
 	*then
@@ -397,7 +396,7 @@
         Yeah! All my friends who visited her shop came out with hair that smelled spicy for days! [EOA]
         [Man] 
         But I know what she also likes. [Short_Pause] As funny as it may sound, she also likes roses. But I doubt you'll be finding any of them around. Not in this desert.[EOA]
-        Now you can leave the store, or ask again
+        [Conversation]Now you can leave the store, or ask again. [Action]
 	*recap
 		Now you can leave the store, or ask again
 	*then
@@ -422,7 +421,7 @@
 @The Cross
 	*say
 		//[Action]
-		There are a few things that you may want to check: A signpost, the mayor's office to your left, or you can go find the beauty salon.
+		There are a few things that you may want to check: [Conversation] A signpost, the mayor's office to your left, or you can go find the beauty salon. [Action]
 	*then
 		hear signpost, check the signpost, read the signpost {
 		    set currentLocation as 'signpost'
@@ -437,13 +436,15 @@
             -> Beauty Salon
         }
 	*recap
-		[Action]There are a few things that you may want to check: A signpost, the mayor's office to your left, or you can go find the beauty salon.
+		There are a few things that you may want to check: A signpost, the mayor's office to your left, or you can go find the beauty salon.
 	*reprompt
-		[Action]There are a few things that you may want to check: A signpost, the mayor's office to your left, or you can go find the beauty salon.
+		There are a few things that you may want to check: A signpost, the mayor's office to your left, or you can go find the beauty salon.
 
 @Signpost
 	*say
-		You come forward to the signpost across the lonely street. There are a few items on it. [Short_Pause] It reads: the right leads to the mayor's office, Chilirosa's Beauty Salon, and the Eastern exit of the town. You've also noticed that there are a few strings of ivy tangling around the signpost. They look surprisingly healthy.
+		You come forward to the signpost across the lonely street. There are a few items on it. [Short_Pause] 
+		It reads: the right leads to the mayor's office, Chilirosa's Beauty Salon, and the Eastern exit of the town. 
+		You've also noticed that there are a few strings of ivy tangling around the signpost. They look surprisingly healthy. [Action]
 	*then
 		hear salon, beauty salon, go to beauty salon, go find the beauty salon {
 		    set currentLocation as 'outside of the beauty saloon'
@@ -462,33 +463,20 @@
 
 
 	*recap
-		There are a few other things that you may want to check:  the mayor's office to your left, beauty salon. Or you can check the signpost again.
+		There are a few other things that you may want to check:  the mayor's office to your left, beauty salon. you can check the signpost again or check the ivy.
 	*reprompt
-		There are a few other things that you may want to check:  the mayor's office to your left, beauty salon. Or you can check the signpost again.
+		There are a few other things that you may want to check:  the mayor's office to your left, beauty salon. you can check the signpost again or check the ivy..
 
 @Check Ivy
 	*say
 		You look closely at the ivy on the signpost. It's growing strong and healthy, as if the desert means nothing to the plant.
 	*then
-		hear salon, beauty salon, go to beauty salon, go find the beauty salon {
-		    set currentLocation as 'outside of the beauty saloon'
-			-> Beauty Salon
-		}
-		hear Mayor's office, left, go to mayor's office,office {
-		    set currentLocation as 'mayors office'
-			-> Mayor's Office
-		}
-		hear signpost,check the signpost again, again, check again {
-			-> Signpost
-		}
-		hear check the ivy, check ivy, ivy, check strings {
-			-> Check Ivy
-		}
+		-> The Cross
 
 @Mayor's Office
 	*say
 		You're at the mayor's office. The doors are shut tight, and they seem like their locked. Somehow with the stench, it also smells very spicy. Besides knocking on the door, the office is so big that you probably need to shout to get his attention. 
-           Now you can: Knock, bash, or try to open the door, check out the trash can, or go to another location. [Action]
+           Now you can: [Conversation] Knock, bash, or try to open the door, check out the trash can, or go to another location. [Action]
 	*then
 		hear knock {
             -> Knock On Mayor's Office
@@ -510,7 +498,7 @@
 
 @Mayor's Office_anotherlocation
 	*say
-		There are a few other things that you may want to check: A signpost, or you can go find the beauty salon.
+		There are a few other things that you may want to check: [Conversation] A signpost, or you can go find the beauty salon. [Action]
 	*then	
 		hear salon, beauty salon, go to beauty salon, go find the beauty salon {
 	    	set currentLocation as 'outside of the beauty saloon'
@@ -553,7 +541,7 @@
 
 @Arrive Beauty Salon
 	*say
-		Normally, you could knock on the door. But you can also try bashing on the door, or you just open the door and sneak in. You can also go back to and inspect the patch of green.[Action]
+		[Conversation] Normally, you could knock on the door. But you can also try bashing on the door, or you just open the door and sneak in. You can also go back to and inspect the patch of green.[Action]
 	*then
 		hear knock, knock on the door, try knock {
 		    set currentLocation as 'inside of the beaty saloon'
@@ -576,7 +564,7 @@
 
 @Knock On Beauty Salon
 	*say
-		No one responds. Knock again or bash on the door?[Action]
+		No one responds. [Conversation] Knock again ,bash on the door, or try to open i tdirectly?[Action]
 	*recap
 		You can try knock again, knock harder, or open the door directly.[Action]
 	*then
@@ -600,7 +588,7 @@
             flag angry
             -> Chilirosa Annoyed
         }
-		hear open the door directly, sneak in, sneak {
+		hear open the door directly, sneak in, sneak, yes, sure {
 			-> Open the Beauty Salon Directly
         }
 
@@ -648,7 +636,7 @@
         Oh, my! Is THAT for me?[EOA]
 	*recap
 		[MrsChilirosa]
-        I believe it is for me, right?[EOA]
+        I believe it is for me, right?[EOA] [Action]
 	*then
 		hear yes, sure {
             -> Give Mrs Chilirosa the flower
@@ -665,7 +653,7 @@
 		hear yes, sure {
             -> Give Mrs Chilirosa the flower
         }
-        hear Hot Sauce {
+        hear hot sauce, sauce, I want the hot sauce, give me the hot sauce {
             -> Chilirosa Give Hot Sauce
         }
         hear no, nope {
@@ -677,8 +665,8 @@
 	*say
 		[MrsChilirosa]
         What do you want? If you have nothing else please leave. This town is already a skunk and I would appreciate if you close the door to stop the stinky air coming in.[EOA] 
-        [Action] 
-        Now you can ask about the hot sauce, or leave.
+        [Conversation] 
+        Now you can ask about the hot sauce, or leave. [Action]
 	*then
 		hear ask about the hot sauce, the sauce, hot sauce {
             -> Ask about the Sauce
@@ -690,7 +678,7 @@
         Why, thank you, dear... 
         What's your name? 
         [EOA]
-        <amazon:effect name="whispered">say your name!</amazon:effect>.
+        <amazon:effect name="whispered">say your name!</amazon:effect>. [Action]
 	
 	*recap
 		Maybe try some common names instead? For example, You can say: my name is Shawn.
@@ -742,7 +730,7 @@
         Give me a reason why you need hot sauce. You want hot sauce because? [EOA]
         [Action] So we have two plans here: first plan, You tell her how you like the sauce. second plan. tell her that you need it to get the mayor's attention. Which plan you do you want to go?
 	*recap
-		We have two plans here: First one, make up a reason and lie. Second one, tell her that you need it to get the mayor's attention. Which plan you do you want to go?
+		We have two plans here: [Conversation] First one, make up a reason and lie. Second one, tell her that you need it to get the mayor's attention. Which plan you do you want to go? [Action]
 	*then
 		hear one, first, make up, reason, lie {
             -> Tell Mrs Chilirose you like the Sauce
@@ -789,7 +777,7 @@
 
 @check the Green Patch
 	*say
-		You walk back to the patch of green sitting in the corner of a building. Oh dear, in a dry desert like this, you found a rose with a bright red color on it. You pick up the rose and hold it in your hand, and go back to Misses Chilirosa's house. Now you can: Knock on the door, bash on the door, or open the door directly. [Action]
+		You walk back to the patch of green sitting in the corner of a building. Oh dear, in a dry desert like this, you found a rose with a bright red color on it. You pick up the rose and hold it in your hand, and go back to Misses Chilirosa's house. Now you can: [Conversation] Knock on the door, bash on the door, or open the door directly. [Action]
 	*then
 		flag flower
 		hear knock, knock on the door {
@@ -810,7 +798,7 @@
 
 @Get the Hot Sauce
 	*say
-		You're at the mayor's office. The doors are shut tight, and they seem like locked. Somehow with the stench, it also smells very spicy. Besides knocking on the door, the office is so big that you probably need to shout to get his attention. Do you want to wave to the window, or shout to the his attention?[Action]
+		You're at the mayor's office. The doors are shut tight, and they seem like locked. Somehow with the stench, it also smells very spicy. Besides knocking on the door, the office is so big that you probably need to shout to get his attention.[Conversation] Do you want to wave to the window, or shout to the his attention?[Action]
 	*reprompt
 		Wave to the window? Or shout at the mayor?
 	*recap
@@ -825,7 +813,7 @@
 
 @Wave To the Window
 	*say
-		You knocked the door, but no-one responded. You need to make a bigger noise. [Action]
+		You knocked the door, but no-one responded. [Conversation] You need to make a bigger noise. [Action]
 	*reprompt
 		It seems that shouting at the mayor is the only way to get his attention
 	*recap
@@ -854,7 +842,7 @@
         Ah. Welcome. I see that you've brought some hot sauce for me?[EOA]
 		You hand over the sauce. The mayor quickly jerks open the bottle cap, and walks hastily to one of the doors and pours the sauce under it. He looks at you and smiles awkwardly.
 		[Mayor]
-		You see. I actually don't like the sauce. I use it only to block off the smell. This scent of evilness has been surrounding this town for so long that I almost forgot when it happened. Say, why did you come?
+		You see. I actually don't like the sauce. I use it only to block off the smell. This scent of evilness has been surrounding this town for so long that I almost forgot when it happened. [Conversation] Say, why did you come?
 		[Action]
 	*then
 		hear smell, incident, help, yes, right {
@@ -874,7 +862,7 @@
         Wait. Are you saying that you're willing to help us get rid of this disgusting smell? Oh please, sit down, sit down.[EOA]
 		You sit down on the old couhc in the office. The couch releases a spicy smell that stings.
 		[Mayor]
-		Want some tea? [EOA]
+		Want some tea? [EOA] [Action]
 	*then
 		hear yes, sure, yes please, ok {
 			-> Mayor Brings Tea To You
@@ -910,7 +898,7 @@
 		[Mayor]
 		The legend out there says there's a precious gemstone hidden in the valleys to the East, and that the precious gem is the key ingredient to lifting the curse. What the legend didn't tell, is that the cavern is guarded by a mysterious puzzle. [EOA]
 	*reprompt
-		you can ask about: the cave, puzzles, eastern valleys, the town, or leave to the cave
+		you can ask about: [Conversation] the cave, puzzles, eastern valleys, the town, or leave to the cave [Action]
 	*then
 		hear cave, about the cave {
             -> Ask Mayor The Cave
@@ -971,9 +959,9 @@
 
 @Ask the Mayor
 	*say
-		[Action]You can ask about how he knows all this, about the cave, or about the town itself.
+		[Conversation] You can ask about how he knows all this, about the cave, or about the town itself. [Action]
 	*recap
-		Well, the options are: A. ask about how he knows all this; B. ask about the cave; C. ask about the town it self.
+		Well, the options are:[Conversation] A. ask about how he knows all this; B. ask about the cave; C. ask about the town it self. [Action]
 	*then
 		hear A, a, how he knows all this, all this {
 			-> Ask Mayor How He knows
@@ -1047,7 +1035,7 @@
         I hope that these information are useful to you. We're all looking forward to seeing the town coming back to life some day. Good luck! [EOA]
         You leave the mayor's office, back on to the streets. The shopkeeper stands outside.
         [Man]
-        Are you leaving? If you're ready, the horse over there is ready for you; but if you are tired. take some rest. Would you like to leave or take some rest?[EOA]
+        Are you leaving? If you're ready, the horse over there is ready for you; but if you are tired. take some rest. [Conversation] Would you like to leave or take some rest?[EOA] [Action]
 	*then
 		hear rest, take some rest {
 	        >>END
@@ -1072,12 +1060,13 @@
         
         You feel like you were being carried onto a bed, so you close your eyes and let yourself drift away.
 	*then
-	-> cowplant_puzzle_start
+		-> cowplant_puzzle_start
 
 @Waking Up In An Empty Tent
 	*say
-		You wake up finding yourself in a tent. The sunlight sprinkles on your face through the small holes in the ceiling. As you slowly gain consciousness, you hear a strange noise coming from outside.
-
+		You wake up finding yourself in a tent. The sunlight sprinkles on your face through the small holes in the ceiling. As you slowly gain consciousness, you hear a strange noise coming from outside. [Action]
+	*reprompt
+		You can [Conversation] look around, or leave the tent.
 	*then
 		hear look around, around {
             -> Details of the Tent
@@ -1094,7 +1083,10 @@
 
 @Leave the Tent
 	*say
-		You're still in the desert. Beside the tent there is a mysterious plant wobbling around, and it's chewing a person. You can also hear someone yelling for help from the plant.
+		You're still in the desert. Beside the tent there is a mysterious plant wobbling around, and it's chewing a person. You can also hear someone yelling for help from the plant. [Action]
+
+	*reprompt
+		[Conversation] You can examine the thing, help the person, or leave.[Action]
 	*then
 		hear check if there is anything I can throw, throw {
             -> Look Around
@@ -1132,17 +1124,14 @@
 @Help the Person
 	*say
 		[SeedTrader]
-        Is someone there? [Short_Pause] Thank God! You need to save me from this cowplant. [EOA]
+        Is someone there? [Short_Pause] Thank God! You need to save me from this cowplant. [EOA] [Pause]
 	*then
-		hear how, how to save {
-            -> MysMan Explains
-        }
         -> MysMan Explains
 
 @MysMan Explains
 	*say
 		[SeedTrader]
-        You need to milk the cowplant. [EOA]
+        You need to milk the cowplant. [EOA] [Action]
 	*then
 		hear milk, milk the cowplant {  
             -> MysMan Saved
@@ -1206,12 +1195,13 @@
 		[SeedTrader]
         This is a seed that grows more seeds. Would you like to know how it works? [EOA]
         
-        You can ask more about the seed or ask how to get to the cave. You can also thank him and leave.
+		[Conversation]
+        You can ask more about the seed or ask how to get to the cave. You can also thank him and leave. [Action]
         
 	*reprompt
-		You can ask more about the seed or ask how to get to the cave. You can also thank him and leave.[Action]
+		You can ask more about the seed or ask how to get to the cave. You can also thank him and leave.
 	*recap
-		You walked to the tent with Luke, the seed trader. You can ask more about the seed or ask how to get to the cave. You can also thank him and leave.[Action]
+		You walked to the tent with Luke, the seed trader. You can ask more about the seed or ask how to get to the cave. You can also thank him and leave. 
 	*then
 		hear seed, tell me more about the seed {
             -> More About the Seed
@@ -1250,7 +1240,7 @@
        
         He takes out a small flower that glows strongly in the tent. 
         
-        You can ask more about the flower or ask how to get to the cave. You can also thank him and leave.[Action]
+        [Conversation] You can ask more about the flower or ask how to get to the cave. You can also thank him and leave.[Action]
 	*reprompt
 		You can ask more about the flower or ask how to get to the cave. You can also thank him and leave.
 	*recap
@@ -1272,7 +1262,7 @@
 	    [SeedTrader]
 		Ha! Glad that you've asked. This plant is a tremendous existence in our world. It glows when there's sunlight. If there is no sun, it doesn't glow! Ha! [EOA]
 		
-		You can ask how to get to the cave. You can also thank him and leave.[Action]
+		[Conversation] You can ask how to get to the cave. You can also thank him and leave.[Action]
 		
 	*reprompt
 	    You can ask how to get to the cave. You can also thank him and leave.
@@ -1294,7 +1284,7 @@
         There! Found you. This, oh my dear, is a rare find out here in the desert. This, is a stinky plant. [EOA]
     
         He seems really unsettled, but not because of the plant he's holding up to you. 
-        You can ask how to get to the cave. You can also thank him and leave. [Action]
+        [Conversation] You can ask how to get to the cave. You can also thank him and leave. [Action]
 	*reprompt
 		You can ask about the plant, ask him how to get to the cave. You can also thank him and leave.
 	*recap
@@ -1318,11 +1308,11 @@
         As soon as the word stupid comes out of his mouth, he immediately knows that he said something that he shouldn't have.
 
         [SeedTrader]
-        I'm sorry. It's just that I've waited so long for someone to come and ask me about the cave. I'm sorry. [EOA]
+        I'm sorry. It's just that I've waited so long for someone to come and ask me about the cave. I'm sorry. [EOA] [Action]
 	*recap
 		Luke keeps apologizing to you. You should talk to him, probably just tell him, it is alright?
 	*reprompt
-		You should talk to him, probably just tell him, it is alright?
+		You should talk to him, probably just tell him, it is alright? 
 	*then
 		hear it's OK, OK, alright, fine {
             -> MysMan Story
@@ -1331,7 +1321,7 @@
 @MysMan Story
 	*say
 		[SeedTrader]
-        It all happened a long time ago. Do you know why the town was cursed? [EOA]
+        It all happened a long time ago. Do you know why the town was cursed? [EOA] [Action]
     *recap
 		Luke asks you if you know that the town is cursed. 
 	*reprompt
@@ -1402,7 +1392,7 @@
         Luke then hands over the flower and the compass to you. Suddenly, with an exaggerating pose, Luke throws the potion into the air. But instead, the potion only traveled for a second or two before it landed. The potion breaks. Magically, a garden surrounded by bushes appears in the middle of nothing.
         
         [SeedTrader]
-        Now. You will use this flower and guide yourself to garden, which is in the center of this maze. First, say to the flower [Pause] "Lead me to the garden." [EOA]
+        Now. You will use this flower and guide yourself to garden, which is in the center of this maze. [Conversation] First, say to the flower [Pause] "Lead me to the garden." [EOA] [Action]
 	*recap
 		Luke gives you a magic flower that can lead you. Try to say, lead me to the garden.
 	*reprompt
@@ -1468,7 +1458,7 @@
 		[SeedTrader]
 		The day is not young. You must go before the sandstorm comes and catch you again. Or if you want to, you can stay here for a while to wait for the storm to leave. [EOA]
 
-		You can pause your journey and take some rest here, or you can continue and hurry to the cave. Would you like to leave for the cave? [Action]
+		You can pause your journey and take some rest here, or you can continue and hurry to the cave.[Conversation] Would you like to leave for the cave? [Action]
 	
 	*reprompt
 		Luke has handed you a purple seed that is crucial to producing the antidote. Now you may choose to pause your journey and take some rest here, or you may leave and continue to the cave. Would you like to leave for the cave? 
@@ -1516,18 +1506,17 @@
         He looks at you with determined eyes.
 
         [SeedTrader]
-        Yes. I know why you're here. You're here because you need to get to the cave. You're here because you needed the citrine to lift the curse. And I'm the only one who knows how. [EOA]
+        Yes. I know why you're here. You're here because you need to get to the cave. You're here because you needed the citrine to lift the curse. And I'm the only one who knows how. [EOA] [Action]
 
-        Do you want to ask Luke why does he know that you are going to the cave? 
     *recap
-		Luke stops you as you are about to leave. He says that he knows why you are here. Do you want to ask Luke why does he know that you are going to the cave? 
+		Luke stops you as you are about to leave. He says that he knows why you are here. [Conversation] Do you want to ask Luke why does he know that you are going to the cave? 
 	*reprompt
-		Do you want to ask Luke why does he know that you are going to the cave? 
+		Do you want to ask Luke why does he know that you are going to the cave? Or just ask him about the cave?
 	*then
-		hear how did you know, how {
+		hear how did you know, how, why, yes {
             -> Luke Explains How He Knows
         }
-        hear cave, about the cave {
+        hear cave, about the cave, no {
 			flag plot3
             -> Luke Explains the Cave
         }
@@ -1552,19 +1541,19 @@
         Luke then goes through the piles of notes on the ground and retrieves a black little book.
         
         [SeedTrader]
-        From the information I gathered regarding the alchemist, the cave and what-not, I think I have a good guess on a challenge that lies in the cave.
+        From the information I gathered regarding the alchemist, the cave and what-not, I think I have a good guess on a challenge that lies in the cave.[EOA] [Action]
         
     *reprompt
         Luke reveals that he is also an alchemist, volunteered to help with the cause whenever he can. He also knows what challenge is in the cave, which you might want to ask?
 
     *recap
-        Luke looks confused and didn't understand. You might want to ask about the challenge in the cave.
+        Luke looks confused and didn't understand. [Conversation] You might want to ask about the challenge in the cave.
         
 	*then
 		hear why, why don't you go {
             -> Luke Explains Why He Can't Go plot 3
         }
-        hear what are the puzzles, the puzzles {
+        hear what are the puzzles, the challenges, what challenge, challenge {
 			flag plot3
             -> Luke Explains the Cave
         }
@@ -1574,7 +1563,7 @@
 		[SeedTrader]
         I wanted to go, but I have my own business to look after. Living in the desert is not something particularly easy, you know. On the other hand, you are going, and I can tell you about the challenges, so let's get to it?[EOA] [Pause]
 	*then
-		hear what are the puzzles, the puzzles {
+		hear what are the challenges, the challenges, sure, yes {
 		    flag plot3
             -> Luke Explains the Cave
         }
@@ -1594,7 +1583,7 @@
         [SeedTrader]
         The day is not young. You must go before the sandstorm comes and catch you again. Or if you want to, you can stay here for a while to wait for the storm to leave. [EOA]
         
-        You can pause your journey and take some rest here, or you can continue and hurry to the cave. Would you like to leave for the cave?
+        You can pause your journey and take some rest here, or you can continue and hurry to the cave. [Conversation] Would you like to leave for the cave? [Action]
 	*reprompt
 		uke has handed you a purple seed that is crucial to producing the antidote. Now you may choose to pause your journey and take some rest here, or you may leave and continue to the cave. Would you like to leave for the cave?
 	*recap
@@ -1604,7 +1593,7 @@
         hear yes, leave for the cave, continue {
             -> End of ACT III, 3
         }
-        hear no, puase, rest {
+        hear no, rest {
             -> Quit Game
         }
 
@@ -1638,7 +1627,7 @@
 
 		//(Sound Effect, cloth flapping in the blowing wind)
 
-		Luke silences for a long 3 seconds. All you can hear is the wind and the tent flapping in the wind. He doesn't look right. You can ask him what happened. 
+		Luke silences for a long 3 seconds. All you can hear is the wind and the tent flapping in the wind. He doesn't look right. [Conversation] You can ask him what happened.  [Action]
 	*recap
 		Luke reluctantly tells you that the stinky plant can pollute water. You can ask him what happened. 
 	*reprompt
@@ -1666,16 +1655,14 @@
 		Luke looks to the ground for a bit, then turns away from you.
 
 		[SeedTrader]
-		That's the last time I heard from him. 
-		//(Sound Effect: Your turn) (DOES NOT WAIT FOR RESPONSE)
+		That's the last time I heard from him. [EOA]
+		[Action]
 
 		Before you could ask any questions, he presses on with the conversation.
 
 		[SeedTrader]
-		You, on the other hand. [Pause] I know what you want. Yes. You want to go to the cave, don't you? Some town in the west needs your help. I've heard travelers here and there trying to get into the cave, and I've seen it myself too. I know that a challenge awaits you in the cave. 
+		You, on the other hand. [Pause] I know what you want. Yes. You want to go to the cave, don't you? Some town in the west needs your help. I've heard travelers here and there trying to get into the cave, and I've seen it myself too. I know that a challenge awaits you in the cave. [EOA] [Action] 
 		
-		//(Sound Effect: Your turn)
-
 		*reprompt
 		Luke tells you that the stinky plant reminded him of a friend who experimented with it, but ended up miserably. Then, he mentions a challenge that awaits you in the cave. You may want to ask him more on that.
 		
@@ -1683,7 +1670,7 @@
 		Luke squints his eyes and puts his ears closer to you, like he didn't understand. You might want to ask him more about the challenge?
 
 	*then
-		hear what is the puzzle, tell me more, the puzzle {
+		hear what is the challenge, tell me more, the challenge, more about the challenge, more about{
 			flag plot4
             -> Luke Explains the Cave
         }
@@ -1694,10 +1681,12 @@
 @Luke Explains Why He Can't Go plot 4
 	*say
 		[SeedTrader]
-        Why I can't go? Well, as you can see how I ended up with that cowplant out there, I'm not the physical type. [EOA]
+        Why I can't go? Well, as you can see how I ended up with that cowplant out there, I'm not the physical type. [EOA] [Action]
+	*recap
+		Luke squints his eyes and puts his ears closer to you, like he didn't understand. You might want to ask him more about the challenge?
 
 	*then
-		hear what is the puzzle, the puzzles, the puzzle {
+		hear what is the challenge, tell me more, the challenge, more about the challenge, more about{
 			flag plot4
             -> Luke Explains the Cave
         }
@@ -1722,7 +1711,7 @@
 		[SeedTrader]
 		The day is not young. You must go before the sandstorm comes and catch you again. Or if you want to, you can stay here for a while to wait for the storm to leave. [EOA]
 
-		You can pause your journey and take some rest here, or you can continue and hurry to the cave. Would you like to leave for the cave?
+		You can pause your journey and take some rest here, or you can continue and hurry to the cave. [Conversation] Would you like to leave for the cave? [Action]
 
 	*reprompt
 		Luke has handed you a purple seed that is crucial to producing the antidote. Now you may choose to pause your journey and take some rest here, or you may leave and continue to the cave. Would you like to leave for the cave?
@@ -1977,6 +1966,7 @@
 	*say
 		You push through the stone doors.
 		//(SE: stone doors)
+
 		Immediately, you are greeted with glaring rays of light. 
 		Isn't this supposed to be a cave?
 		Yes, but none of your assumptions matter. Because right in
@@ -1986,6 +1976,7 @@
 		in here.
 		
 		//(SE: sounds of bushes bristling)
+		<audio src='https://koetest.s3.amazonaws.com/Act5/OasisAmbience.mp3'/>
 		
 		Suddenly, you hear the tall grass rustling. Something's
 		coming towards you.
@@ -1993,10 +1984,8 @@
 		//(SE: sounds of bushes, with dramatic effect)
 		
 		From the bushes, pops out the head of a man with faded purple
-		hair. Should you tell him who you are and why you're here?
-		
-		//(SE: Your turn)
-		
+		hair. Should you tell him who you are and why you're here? [Action]
+				
 	*reprompt
 		You passed the forest maze, into a hollowed space
 		underground filled with natural sunlight, and life. Then, a
@@ -2033,7 +2022,7 @@
 		
 		//(SE: Door closes)
 		//(SE: something grows)
-		
+		<audio src='https://koetest.s3.amazonaws.com/Act5/VinGrowing.mp3'/>
 		As he closes the door, you hear something filling up and
 		tying up the hinges of the door. You try to open it, but it
 		didn't work. You're locked inside.
@@ -2068,7 +2057,7 @@
 		I've anyone. My name is Berette, an
 		alchemist, and a botanist. I'm working
 		on the last step to my latest work,
-		care to join? [EOA]
+		care to join? [EOA] [Action]
 
 	*then
 		hear yes, sure {
@@ -2111,7 +2100,7 @@
 		it under the gemstone.
 		
 		//(SE: Miracles sounds)
-		
+		[MiracleSound01]
 		Miraculously, from the gemstone comes out a drop of a glowing
 		substance. It's so bright that it could almost be a star in
 		the night.
@@ -2119,11 +2108,12 @@
 		citrine.
 		
 		//(SE: Miracle sounds)
-		
+		[MiracleSound02]
 		The pot starts to glow. A golden color emits from the
 		cauldron.
 		
 		// (SE: Explosion)
+		[Explosion]
 		
 		Suddenly, the contents of the pot explodes into Berette's
 		face. Berette slowly finds himself a chair, then sits down
@@ -2134,7 +2124,7 @@
 		I don't know! Why? I thought I had all
 		of it solved. I was supposed to be
 		ready when someone arrives. What
-		ingredient am I missing? [EOA]
+		ingredient am I missing? [EOA] [Action]
 
 	*reprompt 
 		Berette extracts a magical substance from the
@@ -2161,7 +2151,7 @@
 		that is beyond your knowledge. [EOA]
 
 		Berette looks at you with confident eyes. Perhaps you should
-		join him. What say you?
+		join him. What say you? [Action]
 		
 	*recap
 		 You know, you've come this far, why not say yes?
@@ -2196,7 +2186,7 @@
 		it under the gemstone.
 		
 		//(SE: Miracles sounds)
-
+		[MiracleSound01]
 		Miraculously, from the gemstone comes out a drop of a glowing
 		substance. It's so bright that it could almost be a star in
 		the night.
@@ -2204,12 +2194,14 @@
 		citrine.
 		
 		//(SE: Miracle sounds)
-		
+		[MiracleSound02]
+
 		The pot starts to glow. A golden color emits from the
 		cauldron.
 		
 		//(SE: Explosion)
-		
+		[Explosion]
+
 		Suddenly, the contents of the pot explodes into Berette's
 		face. Berette slowly finds himself a chair, then sits down
 		and cries.
@@ -2218,7 +2210,7 @@
 		I don't know! Why? I thought I had all
 		of it solved. I was supposed to be
 		ready when someone arrives. What
-		ingredient am I missing? [EOA]
+		ingredient am I missing? [EOA] [Action]
 
 	*reprompt 
 		Berette extracts a magical substance from the
@@ -2244,7 +2236,7 @@
 		for a second, then stares at you with wide-opened eyes.
 
 		[Alchemist]
-		Who gave you this seed? [EOA]
+		Who gave you this seed? [EOA] [Action]
 
 	*reprompt
 		You gave the purple seed you have to Berette. He
@@ -2270,7 +2262,7 @@
 		[Pause] seed? Oh, now he knows how to
 		be an apprentice. To not stab his
 		master in the back? Did he tell you
-		what happened? [EOA]
+		what happened? [EOA] [Action]
 
 	*reprompt 
 		You told Barette that it was Luke who gave you the
@@ -2279,7 +2271,7 @@
 	
 	*recap
 		[Alchemist]
-		What? Is that a yes or a no? [EOA]
+		What? Is that a yes or a no? [EOA] 
 
 	*then
 		hear yes {
@@ -2303,7 +2295,7 @@
 		gushing out of his nose.
 		
 		[Alchemist] 
-		Alright, what else did he say?[EOA]
+		Alright, what else did he say?[EOA] [Action]
 	*then
 		hear sorry {
             -> Alchemist Asks What Luke Says Again
@@ -2322,7 +2314,7 @@
 		has heard.
 
 		[Alchemist]
-		What? Say that again? [EOA]
+		What? Say that again? [EOA] [Action]
 
 	*then
 		hear sorry {
@@ -2428,7 +2420,7 @@
 		Barette then realizes that he went off by himself.
 
 		[Alchemist]
-		You said this seed was from him? [EOA]
+		You said this seed was from him? [EOA] [Action]
 
 	*then
 		hear yes, sure {
@@ -2500,7 +2492,7 @@
 
 		[Alchemist]
 		None of it matters anyway now. What
-		else did he say? [EOA]
+		else did he say? [EOA] [Action]
 
 	*then
 		hear sorry {
@@ -2549,7 +2541,7 @@
 
 		[Alchemist]
 		What? This is called Eureka? Who told
-		you that it's called Eureka? [EOA]
+		you that it's called Eureka? [EOA] [Action]
 
 	*reprompt 
 		You gave the Eureka seed you have to Berette. He
@@ -2557,7 +2549,7 @@
 		
 	*recap 
 		You gave the Eureka seed you have to Berette. He now
-		asks who told you that the seed is called Eureka.
+		asks who told you that the seed is called Eureka. 
 
 	*then
 		hear yes {
@@ -2618,7 +2610,7 @@
 		[Alchemist]
 		C'mon, pull me up. Let's get this
 		potion finished, and end this crisis
-		once and for all.
+		once and for all. [Action]
 
 	*reprompt 
 		Barette realized something as soon as you told him
@@ -2634,7 +2626,7 @@
 		You should pull him up from the chair.
 		
 	*then
-		hear pull, pull him up, help, up, chair {
+		hear pull, pull him up, help, up, chair, sure, ok {
 			-> Alchemist Brews Potion
 		}
 
@@ -2659,6 +2651,7 @@
 		Barette walks back to his hut.
 		
 		//(SE: Walk on dirt)
+		<audio src='https://koetest.s3.amazonaws.com/Act5/walkOnDirt.mp3'/>
 
 		He looks at a photo on the wall. It's a photo of him and
 		Luke, taken when the cauldron in front of him explodes.
@@ -2722,7 +2715,8 @@
 		slowly falls and enters the pot.
 		
 		//(SE: Explode)
-		
+		<audio src='https://koetest.s3.amazonaws.com/Act5/explode02.mp3'/>
+
 		Poof! Smoke emerges from the pot. Strangely, you see sparkles
 		of purple within the fog. It swiftly rises and fills the roof
 		.
@@ -2740,7 +2734,8 @@
 		Barette suddenly asks. You felt the same thing. Water.
 		
 		//(SE: starts to rain)
-		
+		<audio src='https://koetest.s3.amazonaws.com/Act5/PouringRain02.mp3'/>
+
 		The cave starts pouring rain. But it was no ordinary rain.
 		The raindrops that are supposed to hit your harshly, instead
 		felt like cool splashes of spring water.
@@ -2821,7 +2816,7 @@
 		Open the vial. Show them that they're
 		wrong.[EOA]
 
-		Will you open the vial?
+		Will you open the vial? [Action]
 
 	*then
 		hear yes, sure {
@@ -3064,7 +3059,7 @@
 
 @chilirosa_door
 	*say
-		You decided to sneak into Misses Chilirosa's house to steal the hot sauce. You open the the door carefully, and sneak into the hallway. Suprisely, it connects to her house.At anytime, you can say look around me to explore the rooms. [Action]
+		You decided to sneak into Misses Chilirosa's house to steal the hot sauce. You open the the door carefully, and sneak into the hallway. [Chilirosa_footstepSneaky] Suprisely, it connects to her house.At anytime, you can say look around me to explore the rooms. [Action]
 	*then
 		hear look around me, look around the hallway, around me, look around {
 			-> chilirosa_hallway_around
@@ -3154,7 +3149,7 @@
 
 @chilirosa_kitchen_pot_back
 	*say
-		You go to the kitchen. The pot is been heaten up. It will boil dry soon, and the pot will be burnt. You need to leave the kitchen right now. Otherwise, you will be caught.
+		You go to the kitchen. [Chilirosa_footstepSneaky] The pot is been heaten up. It will boil dry soon, and the pot will be burnt. You need to leave the kitchen right now. Otherwise, you will be caught.
 	*then
 		hear go to the hallway, go to hallway {
 			-> chilirosa_hallway_pot_caught
@@ -3173,7 +3168,7 @@
 
 @chilirosa_kitchen_caught_kettle_back
 	*say
-		You go to the kitchen. At the time you just arrived, the kettle whistles. Misses Chilirosa hears it, and arrives at the kitchen to find you, a stranger, wandering. 
+		You go to the kitchen. [Chilirosa_footstepSneaky] At the time you just arrived, the kettle whistles. Misses Chilirosa hears it, and arrives at the kitchen to find you, a stranger, wandering. 
 	*then
 		flag angry
 		-> Chilirosa Angered
@@ -3192,7 +3187,7 @@
 
 @chilirosa_living_caught
 	*say
-		You go to the living room. Misses Chilirosa is right there. You are caught. 
+		You go to the living room. [Chilirosa_footstepSneaky] Misses Chilirosa is right there. You are caught. 
 		//Make sure you observe the room first, before you go in.
 	*then
 		flag angry
@@ -3200,7 +3195,7 @@
 
 @chilirosa_living_goto
 	*say
-		You go to the living room.
+		You go to the living room. [Chilirosa_footstepSneaky]
 	*then
 		-> chilirosa_living_around
 
@@ -3222,7 +3217,7 @@
 
 @chilirosa_hallway_out
 	*say
-		You go to the hallway, with the hot sauce in your hand. Misses chilirosa is still cleaning up the pot that was burnt. You leave her house from the door. Now you have the hot sauce!
+		You go to the hallway, with the hot sauce in your hand.[Chilirosa_footstepSneaky] Misses chilirosa is still cleaning up the pot that was burnt. You leave her house from the door. Now you have the hot sauce!
 	*then
 		-> chilirosa_puzzle_end
 
@@ -3259,7 +3254,7 @@
 
 @chilirosa_kitchen_goto
 	*say
-		You go to the kitchen.
+		You go to the kitchen. [Chilirosa_footstepSneaky]
 	*then
 		-> chilirosa_kitchen_around
 
@@ -3382,7 +3377,7 @@
 
 @chilirosa_kitchen_caught_kettle_stay
 	*say
-		Suddenly, the kettle whistles. Misses Chilirosa hears it, and arrives at the kitchen to find you, a stranger, wandering. 
+		Suddenly, the kettle whistles. <audio src='https://koetest.s3.amazonaws.com/Chilirosa/waterBoilingWomenFootsteps.mp3'/> Misses Chilirosa hears it, and arrives at the kitchen to find you, a stranger, wandering. 
 	*then
 		flag angry
 		-> Chilirosa Angered
@@ -3400,14 +3395,14 @@
 
 @chilirosa_kitchen_turnkettle
 	*say
-		You turn on the kettle.[Chilirosa_startfire] The water starts to boil.
+		You turn on the kettle.[Chilirosa_startfire] The water starts to boil. 
 	*then
 		flag turn_kettle
 	    -> chilirosa_kitchen_interaction
 
 @chilirosa_hallway_goto
 	*say
-		You go to the hallway
+		You go to the hallway [Chilirosa_footstepSneaky]
 	*then
 		-> chilirosa_hallway_interation
 
