@@ -20,7 +20,7 @@
   "Long_Pause": "<break time='0.8s'/>",
   "Alchemist": "<voice name='Salli'>",
   "Direction": "<audio src='https://koetest.s3.amazonaws.com/new_demo_stereo/direction+01.mp3'/>",
-  "Chilirosa_hide": " ",
+  "Chilirosa_hide": "https://koetest.s3.amazonaws.com/Chilirosa/hideintocloset.mp3",
   "Chilirosa_startfire": " ",
   "Conversation": "<audio src='https://koetest.s3.amazonaws.com/actionsounds/as03.mp3'/>",
   "Action": "<audio src='https://koetest.s3.amazonaws.com/new_demo_stereo/action_question.mp3'/>"

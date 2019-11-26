@@ -1,7 +1,7 @@
 @resume
 	*say
 		Welcome back! Do you want to continue your story from where you last left
-        off?
+        off? [Action]
 	*then
 		hear yes,sure {
             >> RESUME
@@ -12,7 +12,7 @@
 
 @start
 	*say
-		Greetings, explorer. [Short_Pause] Welcome to the Desert Traveler experience! [Short_Pause] In this five-act interactive story, you can stop and come back at any time. Shall we start?
+		Greetings, explorer. [Short_Pause] Welcome to the Desert Traveler experience! [Short_Pause] In this five-act interactive story, you can stop and come back at any time. Shall we start? [Action]
 	*then
 		set currentLocation as 'desert'
 		unflag skip
@@ -36,7 +36,7 @@
 
 @Tutorial 1: Direction Questions
 	*say
-		[Action]When you hear this sound, you will be deciding which path, or direction, to take. In this case, try saying: go to the left, or go to the right.
+		When you hear this sound [Conversation], you will be deciding which path, or direction, to take. In this case, try saying: [Conversation] go to the left, or go to the right. [Action]
 	*then
 		hear go to the left {
 			-> Look Left
@@ -58,7 +58,7 @@
 
 @Tutorial 1A: Check Around
 	*say
-		[footstep] You walk under the hot sun until you reach the top of a little sand hill. It let's you see a little bit further away. Now you can see what's around you. [Pause] Sometimes, paths aren't obvious at first glance just like now. You can check around first by saying what's around me. Go on, give it a go.
+		[footstep] You walk under the hot sun until you reach the top of a little sand hill. It let's you see a little bit further away. Now you can see what's around you. [Pause] Sometimes, paths aren't obvious at first glance just like now. You can check around first by saying what's around me. Go on, give it a go. [Action]
 	*then
 		hear what's around me,check, what is around me, check what's around me, around me {
             -> Check Around the Hill
@@ -89,9 +89,9 @@
 
 @Town
 	*say
-		The urge of letting cold water pass enter you drags your weary feet to the entrance of the town. At the entrance, you thought the townspeople would step forward immediately to help a thirsty traveler, but instead. [Short_Pause] No-one came. What's happening? [Action] you can ask to check the environment. Try saying: "what's around me?"
+		The urge of letting cold water pass enter you drags your weary feet to the entrance of the town. At the entrance, you thought the townspeople would step forward immediately to help a thirsty traveler, but instead. [Short_Pause] No-one came. What's happening? you can ask to check the environment. Try saying: "what's around me?" [Action]
 	*recap
-		you can ask to check the environment. Try saying: "what's around me?"
+		you can ask to check the environment. Try saying: "what's around me?" 
 	*reprompt
 		you can ask to check the environment. Try saying: "what's around me?"
 	*then
@@ -128,15 +128,15 @@
 
 @Store
 	*say
-		Upon approaching the general store, you see a boy. He wears a red coat, and he looks very surprised. [Long_Pause][Kid] You are a new face here. Do you need help? [Short_Pause] You don't look well.[/Kid] [Long_Pause] Maybe the little boy has water. Perhaps you should try asking. [Conversation] When you hear this sound, you decide what to say to the other person next. For example, right now you can ask the boy for water. [Short_Pause] Try it! [Conversation]
+		Upon approaching the general store, you see a boy. He wears a red coat, and he looks very surprised. [Long_Pause][Kid] You are a new face here. Do you need help? [Short_Pause] You don't look well.[/Kid] [Long_Pause] Maybe the little boy has water. Perhaps you should try asking. When you hear this sound[Action], you decide what to say to the other person next. For example, right now you can ask the boy for water. [Short_Pause] Try it! [Action]
 	*then 
 		hear water, can I have some water, can you give me water, do you have water, do you have any water, ask for water, ask the boy, ask the boy for water, give me some water, give me water {
 			-> Boy
 		}
 	*recap
-		Try ask the boy for water [Conversation]
+		Try ask the boy for water [Action]
 	*reprompt
-		 Try ask the boy for water [Conversation]
+		Try ask the boy for water [Action]
 
 @Boy
 	*say
@@ -152,15 +152,15 @@
 @Shopkeeper
 	*say
 		[Man]
-        Who is this person? [Pause] Why did you bring a stranger that looks like a dying cactus to this place? [EOA] 
+        Who is this person? [Short_Pause] Why did you bring a stranger that looks like a dying cactus to this place? [EOA] 
         [Kid] 
-        [Pause]Relax, papa. He's just a traveler. And he needs water. [Pause]A lot of water.[/Kid] 
+        [Pause]Relax, papa. He's just a traveler. And he needs water. [Short_Pause]A lot of water.[/Kid] 
         [Man] 
-        Water? [Pause] Hah! I got lots of water. As if water would do anything to wash this stench away.[EOA] 
+        Water? [Short_Pause] Hah! I got lots of water. As if water would do anything to wash this stench away.[EOA] 
         [Pause] 
         The young boy's father handed you a big glass of water. 
         [Man] 
-        Hey. [Pause] Don't worry. I know it smells bad in here. But I assure you, the water is clean. [Pause] Go on, drink up. Ahh. Yes, the water is fresh and good.[EOA]
+        Hey. [Short_Pause] Don't worry. I know it smells bad in here. But I assure you, the water is clean. [Short_Pause] Go on, drink up. Ahh. Yes, the water is fresh and good.[EOA]
         [Pause]
         Sometimes when appropriate, you can use an item, perform an action, or do nothing. For this instance, you can either say: [Short_Pause] use water or do nothing.[Action]
 	*then
@@ -175,6 +175,7 @@
 	*reprompt
 		Sometimes when appropriate, you can use an item, perform an action, or do nothing. For this instance, you can either say: [Short_Pause] "use water", or "do nothing".
 
+// --------CHECK POINT: ACTION AND CONVERSATIONG SOUND
 @Don't Drink
 	*say
 		You hold the glass of water at your hand, but you don't drink from it. [Pause]
@@ -186,7 +187,7 @@
     [Long_Pause] At least you're in the shade, so you're starting to feel a little bit less thirsty. But still, the stench is unbearable.
     [Man]
     Maybe the smell even went into the water. [Long_Pause] It wasn't like this before the incident. [EOA]
-    [ActionQuestionSound]
+    [Action]
 	*recap
 		Try say use water.
 	*reprompt
@@ -211,7 +212,7 @@
         [Pause]
         [Man]
         Sorry for the bad manners back there. It's just this town has never had a single visitor for a long time. Not after the incident.[EOA]
-        [Conversation]You should ask him.
+        [Action]You should ask him.
 	*reprompt
 		You can talk to him by saying talk to the shopkeeper
 	*recap
@@ -225,7 +226,7 @@
 	*say
 		[Man]A while ago the town was famed for our Shawarma. People would come all the way from cities to this dune for a taste of it.[Pause] 
 		By the way. What's your name, traveler? [EOA]
-		[Conversation]
+		[Action]
 
 	*recap
 		Maybe try some common names instead? For example, You can say: my name is Shawn.
@@ -234,8 +235,8 @@
 		Say your name to the shopkepper. For example, You can say: my name is Brian.
 
 	*then
-		slot playerName_ to 'AMAZON.US_FIRST_NAME'
-		hear {playerName_}, my name is {playerName_} {
+		slot playerName to 'AMAZON.US_FIRST_NAME'
+		hear {playerName}, my name is {playerName} {
 			-> Ask for Help
 		}
 
@@ -310,7 +311,7 @@
 @Decide to Help 2
 	*say 
 		The shopkeeper mentions the mayor, and the hot sauce with a ridiculously long name that you can't remember. Although it's pretty obvious that you would need to ask for one bottle in order to get the mayor's attention, but it never hurts to ask about the sauce, or the mayor. [EOA]
-		[Conversation]
+		[Action]
 	*recap
 		You can ask about the mayor, ask about the sauce, or ask for one bottle
 	*then
@@ -577,7 +578,7 @@
 	*say
 		No one responds. Knock again or bash on the door?[Action]
 	*recap
-		You can try knock again or knock harder
+		You can try knock again, knock harder, or open the door directly.[Action]
 	*then
 		hear knock, knock again{
 	        -> Knock On Beauty Salon 2
@@ -585,16 +586,22 @@
 	    hear bash, know harder, bash on the door {
 	        -> Bash On Beauty Salon
 	    }
+		hear open the door directly, sneak in, sneak {
+			-> Open the Beauty Salon Directly
+        }
 
 @Knock On Beauty Salon 2
 	*say
-		You hear a crank in the house, but still no response. [Action]
-	*recap
-		You can try knock again or knock harder.
+		You hear a crank in the house, but still no response. Maybe we just open the door directly and sneak in? [Action]
+	*reprompt
+		You can try to say: open the door directly
 	*then
 		hear knock again, again {
             flag angry
             -> Chilirosa Annoyed
+        }
+		hear open the door directly, sneak in, sneak {
+			-> Open the Beauty Salon Directly
         }
 
 @Chilirosa Annoyed
@@ -625,10 +632,15 @@
 
 @Bash On Beauty Salon
 	*say
-		You bashed on the door.
+		You bashed on the door. And the door opened directly
 	*then
-		flag angry
-		-> Chilirosa Angered
+		set pot_count as 0
+		unflag turn_pot
+		unflag turn_kettle
+		unflag hide
+		unflag ChilirosaInKitchen
+		unflag caught
+		-> chilirosa_door
 
 @Meet Mrs Chilirosa with flower
 	*say
@@ -648,7 +660,7 @@
 @Chilirosa Bargains
 	*say
 		[MrsChilirosa]
-        Please, roses are very hard to find in this stinky town. I can pay you.[EOA] [Conversation]
+        Please, roses are very hard to find in this stinky town. I can pay you.[EOA] [Action]
 	*then
 		hear yes, sure {
             -> Give Mrs Chilirosa the flower
@@ -665,7 +677,7 @@
 	*say
 		[MrsChilirosa]
         What do you want? If you have nothing else please leave. This town is already a skunk and I would appreciate if you close the door to stop the stinky air coming in.[EOA] 
-        [Conversation] 
+        [Action] 
         Now you can ask about the hot sauce, or leave.
 	*then
 		hear ask about the hot sauce, the sauce, hot sauce {
@@ -701,7 +713,7 @@
 
 @Meet Mrs Chilirosa
 	*say
-		[Conversation]Now, it's time to ask her about the sauce.
+		[Action]Now, it's time to ask her about the sauce.
 	*recap
 		You can try to say "Ask about the sauce".
 	*reprompt
@@ -718,7 +730,7 @@
 	*say
 		[MrsChilirosa]
         yeah, what about it? You want it? [EOA]
-        [Conversation]
+        [Action]
 	*then
 		hear yes, sure {
             -> Ask about the Sauce
@@ -728,7 +740,7 @@
 	*say
 		[MrsChilirosa]
         Give me a reason why you need hot sauce. You want hot sauce because? [EOA]
-        [Conversation] So we have two plans here: first plan, You tell her how you like the sauce. second plan. tell her that you need it to get the mayor's attention. Which plan you do you want to go?
+        [Action] So we have two plans here: first plan, You tell her how you like the sauce. second plan. tell her that you need it to get the mayor's attention. Which plan you do you want to go?
 	*recap
 		We have two plans here: First one, make up a reason and lie. Second one, tell her that you need it to get the mayor's attention. Which plan you do you want to go?
 	*then
@@ -811,8 +823,6 @@
             -> Shout At the Mayor
         }
 
-Get the Hot Sauce 1
-
 @Wave To the Window
 	*say
 		You knocked the door, but no-one responded. You need to make a bigger noise. [Action]
@@ -827,11 +837,11 @@ Get the Hot Sauce 1
 
 @Shout At the Mayor
 	*say
-		Ok then. Shout something loud and clear so that the mayor can hear you. Now let's shout![Conversation]
+		Ok then. Shout something loud and clear so that the mayor can hear you. Now let's shout![Action]
 	*recap
-		Seems like he is not interested in what you said. Shout something else? maybe mention that you have the super duper hot blue pepper sauce? [Conversation]
+		Seems like he is not interested in what you said. Shout something else? maybe mention that you have the super duper hot blue pepper sauce? [Action]
 	*reprompt
-		Ok then. Shout something loud and clear so that the mayor can hear you. Now let's shout![Conversation]
+		Ok then. Shout something loud and clear so that the mayor can hear you. Now let's shout![Action]
 	*then
 		hear super duper hot blue pepper sauce, sauce, hot , pepper, super duper, hot sauce, pepper sauce, blue sauce, blue {
 			-> Shout At the Mayor_1
@@ -845,7 +855,7 @@ Get the Hot Sauce 1
 		You hand over the sauce. The mayor quickly jerks open the bottle cap, and walks hastily to one of the doors and pours the sauce under it. He looks at you and smiles awkwardly.
 		[Mayor]
 		You see. I actually don't like the sauce. I use it only to block off the smell. This scent of evilness has been surrounding this town for so long that I almost forgot when it happened. Say, why did you come?
-		[Conversation]
+		[Action]
 	*then
 		hear smell, incident, help, yes, right {
 			-> Mayor Talks More About the Incident
@@ -961,7 +971,7 @@ Get the Hot Sauce 1
 
 @Ask the Mayor
 	*say
-		[Conversation]You can ask about how he knows all this, about the cave, or about the town itself.
+		[Action]You can ask about how he knows all this, about the cave, or about the town itself.
 	*recap
 		Well, the options are: A. ask about how he knows all this; B. ask about the cave; C. ask about the town it self.
 	*then
@@ -1150,9 +1160,9 @@ Get the Hot Sauce 1
 	*reprompt
 		Say your name to the shopkepper. For example, You can say: my name is Brian.
 	*then
-		slot playerName__ to 'AMAZON.US_FIRST_NAME'
+		slot playerName to 'AMAZON.US_FIRST_NAME'
         
-        hear {playerName__}, my name is {playerName__} {
+        hear {playerName}, my name is {playerName} {
         }
 
 @MysMan Introduces Himself
@@ -1199,9 +1209,9 @@ Get the Hot Sauce 1
         You can ask more about the seed or ask how to get to the cave. You can also thank him and leave.
         
 	*reprompt
-		You can ask more about the seed or ask how to get to the cave. You can also thank him and leave.[Conversation]
+		You can ask more about the seed or ask how to get to the cave. You can also thank him and leave.[Action]
 	*recap
-		You walked to the tent with Luke, the seed trader. You can ask more about the seed or ask how to get to the cave. You can also thank him and leave.[Conversation]
+		You walked to the tent with Luke, the seed trader. You can ask more about the seed or ask how to get to the cave. You can also thank him and leave.[Action]
 	*then
 		hear seed, tell me more about the seed {
             -> More About the Seed
@@ -1240,7 +1250,7 @@ Get the Hot Sauce 1
        
         He takes out a small flower that glows strongly in the tent. 
         
-        You can ask more about the flower or ask how to get to the cave. You can also thank him and leave.[Conversation]
+        You can ask more about the flower or ask how to get to the cave. You can also thank him and leave.[Action]
 	*reprompt
 		You can ask more about the flower or ask how to get to the cave. You can also thank him and leave.
 	*recap
@@ -1262,7 +1272,7 @@ Get the Hot Sauce 1
 	    [SeedTrader]
 		Ha! Glad that you've asked. This plant is a tremendous existence in our world. It glows when there's sunlight. If there is no sun, it doesn't glow! Ha! [EOA]
 		
-		You can ask how to get to the cave. You can also thank him and leave.[Conversation]
+		You can ask how to get to the cave. You can also thank him and leave.[Action]
 		
 	*reprompt
 	    You can ask how to get to the cave. You can also thank him and leave.
@@ -1284,7 +1294,7 @@ Get the Hot Sauce 1
         There! Found you. This, oh my dear, is a rare find out here in the desert. This, is a stinky plant. [EOA]
     
         He seems really unsettled, but not because of the plant he's holding up to you. 
-        You can ask how to get to the cave. You can also thank him and leave. [Conversation]
+        You can ask how to get to the cave. You can also thank him and leave. [Action]
 	*reprompt
 		You can ask about the plant, ask him how to get to the cave. You can also thank him and leave.
 	*recap
@@ -1483,7 +1493,7 @@ Get the Hot Sauce 1
 		Both of you walk slowly outside the tent. It looks like Luke has something to tell you, but he's trying to keep it to himself.
 
 		[SeedTrader]
-		Hey, {playerName__}![EOA]
+		Hey, {playerName}![EOA]
 
 		As you make yourself comfortable on the saddle, Luke calls you.
 
@@ -1608,7 +1618,7 @@ Get the Hot Sauce 1
 		It looks like Luke has something to tell you, but he's trying to keep it to himself.
 		
 		[SeedTrader]
-		Hey! {playerName__}! [EOA]
+		Hey! {playerName}! [EOA]
 		
 		As you make yourself comfortable on the saddle, Luke calls you.
 
@@ -1737,7 +1747,7 @@ Get the Hot Sauce 1
 		Both of you walk slowly outside the tent. It looks like Luke has something to tell you, but he's trying to keep it to himself.
 
 		[SeedTrader]
-		Hey, {playerName__}! [EOA]
+		Hey, {playerName}! [EOA]
 
 		As you make yourself comfortable on the saddle, Luke calls you.
 
@@ -1765,6 +1775,10 @@ Get the Hot Sauce 1
         //     set currentLocation as 'Mayors Office'
         //     -> Get the Hot Sauce
         // }
+		hear test name input {
+			-> Ask Shopkeeper
+		}
+
         hear where am I, current location, tell me my location {
             -> Where am I
         }
@@ -1832,12 +1846,18 @@ Get the Hot Sauce 1
 
 @Test Audio
 	*say
-		ACT 5 puzzle test start [Pause]
-		1 <audio src='https://koetest.s3.amazonaws.com/Act3/Act3+puzzle/radio.mp3'/>
-		1 <audio src='https://koetest.s3.amazonaws.com/Act5/Act+5+puzzle/closebook_01.mp3'/>
-		1 <audio src='https://koetest.s3.amazonaws.com/Act5/Act+5+puzzle/ice_01.mp3'/>
-		1 <audio src='https://koetest.s3.amazonaws.com/Act5/Act+5+puzzle/metalcrack_01.mp3'/>
-		1 <audio src='https://koetest.s3.amazonaws.com/Act5/Act+5+puzzle/newspaper_01.mp3'/>
+		1 <audio src='https://koetest.s3.amazonaws.com/Chilirosa/fastFootsteps.mp3'/>
+		1 <audio src='https://koetest.s3.amazonaws.com/Chilirosa/hideintocloset.mp3'/>
+		1 <audio src='https://koetest.s3.amazonaws.com/Chilirosa/lightUpFireStove.mp3'/>
+		1 <audio src='https://koetest.s3.amazonaws.com/Chilirosa/open+closet.mp3'/>
+		1 <audio src='https://koetest.s3.amazonaws.com/Chilirosa/open+stove.mp3'/>
+		
+		// ACT 5 puzzle test start [Pause]
+		// 1 <audio src='https://koetest.s3.amazonaws.com/Act3/Act3+puzzle/radio.mp3'/>
+		// 1 <audio src='https://koetest.s3.amazonaws.com/Act5/Act+5+puzzle/closebook_01.mp3'/>
+		// 1 <audio src='https://koetest.s3.amazonaws.com/Act5/Act+5+puzzle/ice_01.mp3'/>
+		// 1 <audio src='https://koetest.s3.amazonaws.com/Act5/Act+5+puzzle/metalcrack_01.mp3'/>
+		// 1 <audio src='https://koetest.s3.amazonaws.com/Act5/Act+5+puzzle/newspaper_01.mp3'/>
 
 	// 	ACT 3 test start
 	// 	1  <audio src='https://koetest.s3.amazonaws.com/Act3/aPersonThrowingHimself_01.mp3'/>
@@ -1853,9 +1873,12 @@ Get the Hot Sauce 1
 @TA2
 	*say
 		
-		1 <audio src='https://koetest.s3.amazonaws.com/Act5/Act+5+puzzle/openbook_01.mp3'/>
-		1 <audio src='https://koetest.s3.amazonaws.com/Act5/Act+5+puzzle/portalopen_01.mp3'/>
-		1 <audio src='https://koetest.s3.amazonaws.com/Act5/Act+5+puzzle/portaltravel_01.mp3'/>
+		1 <audio src='https://koetest.s3.amazonaws.com/Chilirosa/sneakyFootsteps.mp3'/>
+		1 <audio src='https://koetest.s3.amazonaws.com/Chilirosa/waterBoilingWomenFootsteps.mp3'/>
+		1 <audio src='https://koetest.s3.amazonaws.com/Chilirosa/womenRunning.mp3'/>
+		// 1 <audio src='https://koetest.s3.amazonaws.com/Act5/Act+5+puzzle/openbook_01.mp3'/>
+		// 1 <audio src='https://koetest.s3.amazonaws.com/Act5/Act+5+puzzle/portalopen_01.mp3'/>
+		// 1 <audio src='https://koetest.s3.amazonaws.com/Act5/Act+5+puzzle/portaltravel_01.mp3'/>
 
 		that's the end of ACT 5 puzzle sound test
 		// 6  <audio src='https://koetest.s3.amazonaws.com/Act3/footstepsInSand_01.mp3'/>
@@ -1870,13 +1893,13 @@ Get the Hot Sauce 1
 		}
 @TA3
 	*say
-		11  <audio src='https://koetest.s3.amazonaws.com/Act3/milkingCowplant.mp3'/>
-		12  <audio src='https://koetest.s3.amazonaws.com/Act3/sigh_01.mp3'/>
-		13  <audio src='https://koetest.s3.amazonaws.com/Act3/smallWind_01.mp3'/>
-		14  <audio src='https://koetest.s3.amazonaws.com/Act3/strongWinds_01.mp3'/>
+		// 11  <audio src='https://koetest.s3.amazonaws.com/Act3/milkingCowplant.mp3'/>
+		// 12  <audio src='https://koetest.s3.amazonaws.com/Act3/sigh_01.mp3'/>
+		// 13  <audio src='https://koetest.s3.amazonaws.com/Act3/smallWind_01.mp3'/>
+		// 14  <audio src='https://koetest.s3.amazonaws.com/Act3/strongWinds_01.mp3'/>
 		
-		ACT 5 test start
-		1  <audio src='https://koetest.s3.amazonaws.com/Act5/OasisAmbience.mp3'/>
+		// ACT 5 test start
+		// 1  <audio src='https://koetest.s3.amazonaws.com/Act5/OasisAmbience.mp3'/>
 		
 	*then 
 		hear continue {
@@ -1885,11 +1908,11 @@ Get the Hot Sauce 1
 
 @TA4
 	*say
-		2  <audio src='https://koetest.s3.amazonaws.com/Act5/PouringRain.mp3'/>
-		3  <audio src='https://koetest.s3.amazonaws.com/Act5/PouringRain02.mp3'/>
-		4  <audio src='https://koetest.s3.amazonaws.com/Act5/VinGrowing.mp3'/>
-		5  <audio src='https://koetest.s3.amazonaws.com/Act5/explode01.mp3'/>
-		6  <audio src='https://koetest.s3.amazonaws.com/Act5/explode02.mp3'/>
+		// 2  <audio src='https://koetest.s3.amazonaws.com/Act5/PouringRain.mp3'/>
+		// 3  <audio src='https://koetest.s3.amazonaws.com/Act5/PouringRain02.mp3'/>
+		// 4  <audio src='https://koetest.s3.amazonaws.com/Act5/VinGrowing.mp3'/>
+		// 5  <audio src='https://koetest.s3.amazonaws.com/Act5/explode01.mp3'/>
+		// 6  <audio src='https://koetest.s3.amazonaws.com/Act5/explode02.mp3'/>
 		
 	*then
 		hear continue {
@@ -1900,7 +1923,7 @@ Get the Hot Sauce 1
 	*say	
 		7  <audio src='https://koetest.s3.amazonaws.com/Act5/magicSound01.mp3'/>
 		8  <audio src='https://koetest.s3.amazonaws.com/Act5/magicSound03.mp3'/>
-		// 9  <audio src='https://koetest.s3.amazonaws.com/Act5/magicSound02.mp3'/>
+		// 9  <audio src='https://koetest.s3.amazonaws.com/Act5/magicSound02.mp3'/> NOT WORKING
 		10  <audio src='https://koetest.s3.amazonaws.com/Act5/malecry01.mp3'/>
 		11  <audio src='https://koetest.s3.amazonaws.com/Act5/malecry02.mp3'/>
 		12  <audio src='https://koetest.s3.amazonaws.com/Act5/walkOnDirt.mp3'/>
@@ -1927,7 +1950,7 @@ Get the Hot Sauce 1
 @TA7	
 	*say
 		5 <audio src='https://koetest.s3.amazonaws.com/actionsounds/as05.mp3'/>
-		// 6 <audio src='https://koetest.s3.amazonaws.com/actionsounds/as06.mp3'/>
+		// 6 <audio src='https://koetest.s3.amazonaws.com/actionsounds/as06.mp3'/> NOT WORKING
 	*then
 		>> END
 				
@@ -2977,6 +3000,7 @@ Get the Hot Sauce 1
 		3, 2, 1, say cheese![EOA]
 
 		//(SE: photo sound)
+
 	*then
 		>>END
 
@@ -3142,15 +3166,17 @@ Get the Hot Sauce 1
 
 @chilirosa_hallway_pot_caught
 	*say
-		As soon as you arrive at the hallway. The soup is been boiled dry and the pot is burnt. Misses Chilirosa comes over to check on the stove but finds you instead. You are caught. She throws you out of her house.
+		As soon as you arrive at the hallway. The soup is been boiled dry and the pot is burnt. Misses Chilirosa comes over to check on the stove but finds you instead. You are caught. 
 	*then
-		-> chilirosa_steal_puzzle_again
+		flag angry
+		-> Chilirosa Angered
 
 @chilirosa_kitchen_caught_kettle_back
 	*say
-		You go to the kitchen. At the time you just arrived, the kettle whistles. Misses Chilirosa hears it, and arrives at the kitchen to find you, a stranger, wandering. She throws you out of her house.
+		You go to the kitchen. At the time you just arrived, the kettle whistles. Misses Chilirosa hears it, and arrives at the kitchen to find you, a stranger, wandering. 
 	*then
-		-> chilirosa_steal_puzzle_again
+		flag angry
+		-> Chilirosa Angered
 
 @chilirosa_hallway_hidekettle
 	*say
@@ -3166,9 +3192,11 @@ Get the Hot Sauce 1
 
 @chilirosa_living_caught
 	*say
-		You go to the living room. Misses Chilirosa is right there. You are caught. She throws you out of her house. Make sure you observe the room first, before you go in.
+		You go to the living room. Misses Chilirosa is right there. You are caught. 
+		//Make sure you observe the room first, before you go in.
 	*then
-		-> chilirosa_steal_puzzle_again
+		flag angry
+		-> Chilirosa Angered
 
 @chilirosa_living_goto
 	*say
@@ -3226,7 +3254,8 @@ Get the Hot Sauce 1
 	*say
 		You go the the kitchen. Misses Chilirosa is right in the kitchen. You are caught.
 	*then
-		-> chilirosa_steal_puzzle_again
+		flag angry
+		-> Chilirosa Angered
 
 @chilirosa_kitchen_goto
 	*say
@@ -3346,15 +3375,17 @@ Get the Hot Sauce 1
 
 @chilirosa_kitchen_caught_pot_stay
 	*say
-		The soup has been boiled dry and the pot is burnt. Misses Chilirosa comes over to check on the stove but finds you instead. You are caught. She throws you out of her house.
+		The soup has been boiled dry and the pot is burnt. Misses Chilirosa comes over to check on the stove but finds you instead. You are caught. 
 	*then
-		-> chilirosa_steal_puzzle_again
+		flag angry
+		-> Chilirosa Angered
 
 @chilirosa_kitchen_caught_kettle_stay
 	*say
-		Suddenly, the kettle whistles. Misses Chilirosa hears it, and arrives at the kitchen to find you, a stranger, wandering. She throws you out of her house.
+		Suddenly, the kettle whistles. Misses Chilirosa hears it, and arrives at the kitchen to find you, a stranger, wandering. 
 	*then
-		-> chilirosa_steal_puzzle_again
+		flag angry
+		-> Chilirosa Angered
 
 @chilirosa_kitchen_turnstove
 	*say
@@ -3454,7 +3485,6 @@ Get the Hot Sauce 1
 	*then
 		-> chilirosa_hallway_interation
 	
-
 
 
 
@@ -3568,7 +3598,7 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 
 @leading_tutorial_end
 	*say
-		[SeedTrader] Hey, congrats! Now you are in my garden, do you understand how to use the leading flower?[EOA][Conversation]
+		[SeedTrader] Hey, congrats! Now you are in my garden, do you understand how to use the leading flower?[EOA][Action]
 	*then
 		hear yes {
 			-> leading_tutorial_end_1
@@ -3580,7 +3610,7 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 
 @leading_tutorial_again
 	*say
-		[SeedTrader]Ok... No worry, I can put you back to the maze, and show you again. Do you wanna learn again?[EOA][Conversation]
+		[SeedTrader]Ok... No worry, I can put you back to the maze, and show you again. Do you wanna learn again?[EOA][Action]
 	*then
 		hear yes {
 			-> leading_tutorial_start
@@ -5025,7 +5055,7 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 
 @cowplant_puzzle_tent_view_man
 	*say
-		You look at the man. He is sitting in front of the table. Looking at nowhere. His eyes are out of focus. You should ask what happened. [Conversation]
+		You look at the man. He is sitting in front of the table. Looking at nowhere. His eyes are out of focus. You should ask what happened. [Action]
 	*then
 		hear what happened {
 			-> cowplant_puzzle_tent_view_man_talk
