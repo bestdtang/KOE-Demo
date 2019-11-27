@@ -30,13 +30,17 @@
 
 @Lost in Desert
 	*say
-		Oh dear, it's a hot, hot desert. You walk aimlessly in the sand, thirsty for water. The wind is hot, the sun is hot, and the air is burning hot. [Pause] [footstep] In the middle of the hot desert, you found a rusty, old signpost. It has two arrows pointing to the right and the left. However, the letters have faded away.
+		Oh dear, it's a hot, hot desert. You walk aimlessly in the sand, thirsty for water. The wind is hot, the sun is hot, and the air is burning hot. [Pause] 
+		<audio src='https://koetest.s3.amazonaws.com/Act1/wind.mp3'/>
+		<audio src='https://koetest.s3.amazonaws.com/Act1/gulp.mp3'/>
+		In the middle of the hot desert, you found a rusty, old signpost. It has two arrows pointing to the right and the left. However, the letters have faded away.
 	*then
 		-> Tutorial 1: Direction Questions
 
 @Tutorial 1: Direction Questions
 	*say
-		When you hear this sound [Conversation], you will be deciding which path, or direction, to take. In this case, try saying: [Conversation] go to the left, or go to the right. [Action]
+		//When you hear this sound [Action], you will be deciding which path, or direction, to take. 
+		In this case, try saying: [Conversation] go to the left, or go to the right. [Action]
 	*then
 		hear go to the left {
 			-> Look Left
@@ -53,12 +57,13 @@
 @Look Right
 	*say
 		You wiped your face with your dry hands and decided to turn right. Then, you keep treading the sea of sand wearily.
+		
 	*then
 		-> Tutorial 1A: Check Around
 
 @Tutorial 1A: Check Around
 	*say
-		[footstep] You walk under the hot sun until you reach the top of a little sand hill. It let's you see a little bit further away. Now you can see what's around you. [Pause] Sometimes, paths aren't obvious at first glance just like now. You can check around first by saying what's around me. Go on, give it a go. [Action]
+		<audio src='https://koetest.s3.amazonaws.com/Act1/windFootsteps.mp3'/> You walk under the hot sun until you reach the top of a little sand hill. It let's you see a little bit further away. Now you can see what's around you. [Pause] [Conversation] Sometimes, paths aren't obvious at first glance just like now. You can check around first by saying what's around me. Go on, give it a go. [Action]
 	*then
 		hear what's around me,check, what is around me, check what's around me, around me {
             -> Check Around the Hill
@@ -70,26 +75,15 @@
 
 @Check Around the Hill
 	*say
-		You look around, like a compass slowly spinning. You don't find anything particularly interesting. [Pause] Wait! You see a few freckles on the yellow surfaces of Earth. It shines under the burning sun! You squint your eyes and look closer. [Pause] <emphasis level="reduced">It's a town!</emphasis> [Short_Pause] There's a good chance that they have some water there.[Action]
-	*then
-		hear go to the town, go towards the town, town, the town {
-		    set currentLocation as 'town'
-             -> Go to Town
-         }
-	*reprompt
-		You might want to go to a location?
-	*recap
-		You might want to go to a location? try say go to the town?
-
-@Go to Town
-	*say
-		Quick! There might be water there.
+		You look around, like a compass slowly spinning. You don't find anything particularly interesting. [Pause] Wait! You see a few freckles on the yellow surfaces of Earth. It shines under the burning sun! You squint your eyes and look closer. [Pause] <emphasis level="reduced">It's a town!</emphasis> [Short_Pause] There's a good chance that they have some water there.
+		Quick! There might be water there. 
+		<audio src='https://koetest.s3.amazonaws.com/Act1/sandRun3s.mp3'/>  
 	*then
 		-> Town
 
 @Town
 	*say
-		The urge of letting cold water pass enter you drags your weary feet to the entrance of the town. At the entrance, you thought the townspeople would step forward immediately to help a thirsty traveler, but instead. [Short_Pause] No-one came. What's happening? you can ask to check the environment. Try saying: "what's around me?" [Action]
+		The urge of letting cold water pass enter you drags your weary feet to the entrance of the town. At the entrance, you thought the townspeople would step forward immediately to help a thirsty traveler, but instead. [Short_Pause] No-one came. What's happening? [Conversation] you can ask to check the environment. Try saying: "what's around me?" [Action]
 	*recap
 		you can ask to check the environment. Try saying: "what's around me?" 
 	*reprompt
@@ -111,7 +105,7 @@
 
 @Around_1
 	*say
-		There are a few establishments right in front of you. A general store and the mayor's office. Could any of them have some water? [Action]
+		There are a few establishments right in front of you. A general store and the mayor's office. Could any of them have some water? 
 	*recap
 		There are a few establishments right in front of you. A general store and the mayor's office. Could any of them have some water? [Short_Pause] Choose a location to go to.
 	*reprompt
@@ -128,7 +122,7 @@
 
 @Store
 	*say
-		Upon approaching the general store, you see a boy. He wears a red coat, and he looks very surprised. [Long_Pause][Kid] You are a new face here. Do you need help? [Short_Pause] You don't look well.[/Kid] [Long_Pause] Maybe the little boy has water. Perhaps you should try asking. When you hear this sound[Action], you decide what to say to the other person next. For example, right now you can ask the boy for water. [Short_Pause] Try it! [Action]
+		Upon approaching the general store, you see a boy. He wears a red coat, and he looks very surprised. [Long_Pause][Kid] You are a new face here. Do you need help? [Short_Pause] You don't look well.[EOA] [Long_Pause] Maybe the little boy has water. Perhaps you should try asking. When you hear this sound[Action], you decide what to say to the other person next. For example, right now you can ask the boy for water. [Short_Pause] Try it! [Action]
 	*then 
 		hear water, can I have some water, can you give me water, do you have water, do you have any water, ask for water, ask the boy, ask the boy for water, give me some water, give me water {
 			-> Boy
@@ -142,10 +136,25 @@
 	*say
 		You asked the boy for some water. 
 		[Kid] 
-	    I can help you with that. [Short_Pause] But I must warn you before I take you into our place. [Short_Pause] You probably won't appreciate the conditions in the house. [Short_Pause] Just a heads up.[/Kid] [Pause]
-		The boy takes you around the building and enters the store from the backdoor. [Pause] Oh dear. [Pause] It is far from being desirable. It stinks. Smelly, smelly, smelly, it's like wearing the same pair of socks for over a year. [Pause]
-		[Kid] Yeah. Told you! [Pause] [/Kid] 
-		[Pause] A bald, middle-aged man that looks like in his fifties are slowly walks down the stairs. [Kid] Papa! [Pause] [/Kid] Small pieces of tissue paper are rolled and stuck in his nose. He looks like he could use some more sunshine.
+	    I can help you with that. [Short_Pause] But I must warn you before I take you into our place. [Short_Pause] You probably won't appreciate the conditions in the house. [Short_Pause] Just a heads up.[EOA] [Pause]
+		
+		The boy takes you around the building and enters the store from the backdoor. 
+		
+		<audio src='https://koetest.s3.amazonaws.com/Act1/openWoodDoor.mp3'/>
+		
+		Oh dear. It is far from being desirable. It stinks. Smelly, smelly, smelly, it's like wearing the same pair of socks for over a year. [Pause]
+		
+		[Kid] 
+		Yeah. Told you! [EOA] [Pause]
+		
+		[Pause] A bald, middle-aged man that looks like in his fifties are slowly walks down the stairs. 
+		
+		<audio src='https://koetest.s3.amazonaws.com/Act1/woodenFloorCracking.mp3'/>
+		
+		[Kid] 
+		Papa! [Pause] [EOA] 
+		
+		Small pieces of tissue paper are rolled and stuck in his nose. He looks like he could use some more sunshine.
 	*then
 		-> Shopkeeper
 
@@ -153,15 +162,19 @@
 	*say
 		[Man]
         Who is this person? Why did you bring a stranger that looks like a dying cactus to this place? [EOA] 
-        [Kid] 
-        [Pause]Relax, papa. He's just a traveler. And he needs water. [Short_Pause]A lot of water.[/Kid] 
-        [Man] 
+        
+		[Kid] 
+        [Pause]Relax, papa. He's just a traveler. And he needs water. [Short_Pause]A lot of water.[EOA] 
+        
+		[Man] 
         Water? Hah! I got lots of water. As if water would do anything to wash this stench away.[EOA] 
-        [Pause] 
+        
         The young boy's father handed you a big glass of water. 
-        [Man] 
+        
+		[Man] 
         Hey. Don't worry. I know it smells bad in here. But I assure you, the water is clean. [Short_Pause] Go on, drink up. Ahh. Yes, the water is fresh and good.[EOA]
-        [Pause]
+        
+		[Pause]
         Sometimes when appropriate, you can use an item, perform an action, or do nothing. For this instance, you can either say: [Conversation] use water or do nothing.[Action]
 	*then
 		hear drink water, use water, use the water, water, chug {
@@ -178,15 +191,18 @@
 
 @Don't Drink
 	*say
-		You hold the glass of water at your hand, but you don't drink from it. [Pause]
-    [Man]
-    <emphasis level="strong">Hmmmm.</emphasis> [Pause] [EOA]
-    The shopkeeper looks at the glass of water. He looks down on the dusty floor.
-    [Man]
-    Suit yourself. Thought you were really thirsty. [EOA]
-    [Long_Pause] At least you're in the shade, so you're starting to feel a little bit less thirsty. But still, the stench is unbearable.
-    [Man]
-    Maybe the smell even went into the water. [Long_Pause] It wasn't like this before the incident. [EOA] [Action]
+		You hold the glass of water at your hand, but you don't drink from it. 
+		[Man]
+		<emphasis level="strong">Hmmmm.</emphasis> [Pause] [EOA]
+		The shopkeeper looks at the glass of water. He looks down on the dusty floor.
+
+		[Man]
+		Suit yourself. Thought you were really thirsty. [EOA]
+
+		[Long_Pause] At least you're in the shade, so you're starting to feel a little bit less thirsty. But still, the stench is unbearable.
+
+		[Man]
+		Maybe the smell even went into the water. [Long_Pause] It wasn't like this before the incident. [EOA] [Action]
 	*recap
 		Try say use water.
 	*reprompt
@@ -202,22 +218,27 @@
 @Finding Out
 	*say
 		The father has given you his word that the water is clean for drinking. But even without his promise you'd still chug the whole glass of water, bottoms-up.
-        [Pause]
-        Ahhhh. Refreshing! Although the water smells a bit off, you don't care. What's important is, you're saved from becoming human beef jerky.
-        [Man]
+        
+		<audio src='https://koetest.s3.amazonaws.com/Act1/drinkingNoises.mp3'/>
+        
+		Ahhhh. Refreshing! Although the water smells a bit off, you don't care. What's important is, you're saved from becoming human beef jerky.
+        
+		[Man]
         Feel better? You really looked like the desert's going to get you.[EOA] 
-        Now it's just the stench that's really
-        giving you a headache.
-        [Pause]
-        [Man]
+        
+		Now it's just the stench that's really giving you a headache.
+        
+		[Man]
         Sorry for the bad manners back there. It's just this town has never had a single visitor for a long time. Not after the incident.[EOA]
-        [Conversation] You should ask him. [Action]
+        
+		[Conversation] You should ask him. [Action]
+
 	*reprompt
 		You can talk to him by saying talk to the shopkeeper
 	*recap
 		You can talk to him by saying talk to the shopkeeper
 	*then
-		hear talk to the shopkeeper, what incident, incident, ask about the incident, ask, talk, talk to the shopkeeper, ask papa {
+		hear talk to the shopkeeper, what incident, incident, ask about the incident, ask, talk, talk to the shopkeeper, ask papa, ask him {
 			-> Ask Shopkeeper
 		}
 
@@ -243,18 +264,24 @@
 	*say
 		[Man] 
 		That's a rare name around here. 
-		[Pause] Anyway, this is a desert so you could imagine it never rains here [Short_Pause] until that night. [Pause] On that night. We've seen the greatest thunderstorm of the town's history, [Short_Pause] but no-one anticipated what came after.[EOA]
+		[Pause] Anyway, this is a desert so you could imagine it never rains here [Short_Pause] until that night. 
+		
+		<audio src='https://koetest.s3.amazonaws.com/Act1/thunder11s.mp3'/>
+
+		On that night. We've seen the greatest thunderstorm of the town's history, [Short_Pause] but no-one anticipated what came after.[EOA]
         [Kid]
-        [Long_Pause] And then the next morning, my dad started sweating like a cow. So did everyone else. [/Kid]
+        [Long_Pause] And then the next morning, my dad started sweating like a cow. So did everyone else. [EOA]
         [Man]
         Yeah. [Pause] What's worse was what happens afterward. [Short_Pause]That's right.The stench. This stench. It kept everyone from talking to each other. It drove tourists away. And now, no-one wants to come to our town anymore.[EOA]
-        [Pause]
+        
         The shopkeeper points to a poster on the left wall. It has some dust and the colors have started to fade away, but it's still pretty clear. 
-        [Man]
+        
+		[Man]
         The mayor believed that it's a curse from some spell caster. He was trying to find people to help. Even set up a great reward for anyone who lifts the curse. 
-        [Pause]
-        Since you're here, why don't you help us? [Short_Pause] There's a lucrative treasure, and it could be all yours. What do you say?[EOA]
-        It seems like they really need your help. Do you want to help them? [Action]
+        [Short_Pause]
+        Since you're here, why don't you help us? There's a lucrative treasure, and it could be all yours. What do you say?[EOA]
+
+        [Conversation] It seems like they really need your help. Do you want to help them? [Action]
 	*reprompt
 		It seems like they really need your help.
 	*recap
@@ -266,10 +293,11 @@
 
 @Mayor Office
 	*say
-		You arrive at the mayor's office. It's the largest building in the town, but it's doors and windows are tightly shut and locked. [Short_Pause] When you get close to the front door, there's a sharp smell of hot pepper. Looks like there's no way in. 
+		You arrive at the mayor's office. It's the largest building in the town, but it's doors and windows are tightly shut and locked. [Short_Pause] When you get close to the front door, there's a sharp smell of hot pepper. Looks like there's no way in. [Action]
 	*recap
-		It looks like there's no way in to the mayor's office. Perhaps you should visit somewhere else and try again later. [Conversation] If you don't know where to go, remember to say What's around me.
-    [Action]
+		It looks like there's no way in to the mayor's office. Perhaps you should visit somewhere else and try again later. [Conversation] If you don't know where to go, remember to say What's around me. 
+		||
+		Maybe go to the general store instead?
 	*then
 		hear store, general store, go to the general store {
 			-> Store
@@ -277,8 +305,6 @@
 		hear what is around me,around me {
 			-> Around_1
 		}
-	*recap
-		Pick the other place
 	*reprompt
 		If you don't know where to go, remember to say [Short_Pause] what's around me.
 
@@ -289,7 +315,7 @@
 		-> Tutorial 1A: Check Around
 
 
-////////////// ACT 1 END ////////////////
+////////////// Act1 END ////////////////
 ////////////// ACT 2 START //////////////
 
 @Decide to Help
@@ -511,13 +537,17 @@
 
 @Knock On Mayor's Office
 	*say
-		You knock on the door, but nobody answers.
+		You knock on the door,
+		<audio src='https://koetest.s3.amazonaws.com/Act2/knockDoor.mp3'/>
+		but nobody answers.
 	*then
 		-> Mayor's Office
 
 @Bash On Mayor's Office
 	*say
-		You bash heavily on the door, but nothing happened.
+		You bash heavily on the door,
+		<audio src='https://koetest.s3.amazonaws.com/Act2/bashDoor.mp3'/>
+		but nothing happened.
 	*then
 		-> Mayor's Office
 
@@ -530,7 +560,7 @@
 @Beauty Salon
 	*say
 		You walk towards the end of the street.
-
+		<audio src='https://koetest.s3.amazonaws.com/Act2/windCurtain.mp3'/>
         Nothing but the sandy gusts of wind blow into your ears. No one is visible on the street. The buildings on the way look pretty modern, but they are all coated with a thick layer of dust. While you're on your way, you noticed something peculiar in the corner of one of the buildings. It's a patch of green.
         <audio src="https://koetest.s3.amazonaws.com/new_demo_stereo/footsteps2.mp3"/>
 		You're at the front door of the beauty salon. Looks like its doors are shut tight, but they don't look locked, and you hear the sounds of radio inside. Anyways, you should talk to Misses Chilirosa, but what should you do to get her attention?
@@ -558,15 +588,16 @@
             -> check the Green Patch
         }
 	*recap
-		Now you can: Knock on the door, bash on the door, open the door directly, or check on the green patch before.[Action]
+		Now you can: Knock on the door, bash on the door, open the door directly, or check on the green patch before.
 	*reprompt
-		Now you can: Knock on the door, bash on the door, open the door directly, or check on the green patch before.[Action]
+		Now you can: Knock on the door, bash on the door, open the door directly, or check on the green patch before.
 
 @Knock On Beauty Salon
 	*say
-		No one responds. [Conversation] Knock again ,bash on the door, or try to open i tdirectly?[Action]
+		<audio src='https://koetest.s3.amazonaws.com/Act2/knockDoor.mp3'/>
+		No one responds. [Conversation] Knock again ,bash on the door, or try to open it directly?[Action]
 	*recap
-		You can try knock again, knock harder, or open the door directly.[Action]
+		You can try knock again, knock harder, or open the door directly.
 	*then
 		hear knock, knock again{
 	        -> Knock On Beauty Salon 2
@@ -620,7 +651,9 @@
 
 @Bash On Beauty Salon
 	*say
-		You bashed on the door. And the door opened directly
+		You bashed on the door. 
+		<audio src='https://koetest.s3.amazonaws.com/Act2/bashDoor.mp3'/>
+		And the door opened directly
 	*then
 		set pot_count as 0
 		unflag turn_pot
@@ -813,7 +846,11 @@
 
 @Wave To the Window
 	*say
-		You knocked the door, but no-one responded. [Conversation] You need to make a bigger noise. [Action]
+		You knocked the door, 
+		
+		<audio src='https://koetest.s3.amazonaws.com/Act2/knockDoor.mp3'/>
+		
+		but no-one responded. [Conversation] You need to make a bigger noise. [Action]
 	*reprompt
 		It seems that shouting at the mayor is the only way to get his attention
 	*recap
@@ -837,13 +874,15 @@
 
 @Shout At the Mayor_1
 	*say
-		// TODO: OPEN BIG DOORS SOUND EFFECT HERE
+		<audio src='https://koetest.s3.amazonaws.com/new_demo_stereo/openWindows.mp3'/>
+
 		[Mayor]
-        Ah. Welcome. I see that you've brought some hot sauce for me?[EOA]
+        Ah. Welcome. I see that you've brought some hot sauce for me? [EOA]
+
 		You hand over the sauce. The mayor quickly jerks open the bottle cap, and walks hastily to one of the doors and pours the sauce under it. He looks at you and smiles awkwardly.
+		
 		[Mayor]
-		You see. I actually don't like the sauce. I use it only to block off the smell. This scent of evilness has been surrounding this town for so long that I almost forgot when it happened. [Conversation] Say, why did you come?
-		[Action]
+		You see. I actually don't like the sauce. I use it only to block off the smell. This scent of evilness has been surrounding this town for so long that I almost forgot when it happened. [Conversation] Say, why did you come? [Action] [EOA]
 	*then
 		hear smell, incident, help, yes, right {
 			-> Mayor Talks More About the Incident
@@ -860,7 +899,7 @@
 	*say
 		[Mayor]
         Wait. Are you saying that you're willing to help us get rid of this disgusting smell? Oh please, sit down, sit down.[EOA]
-		You sit down on the old couhc in the office. The couch releases a spicy smell that stings.
+		You sit down on the old couch in the office. The couch releases a spicy smell that stings.
 		[Mayor]
 		Want some tea? [EOA] [Action]
 	*then
@@ -937,51 +976,6 @@
 	*then
 		>> BACK
 
-//not using
-
-@Agree to Help the Mayor
-	*say
-		[Mayor]Wait. [Short_Pause] Are you saying that you're willing to help us get rid of this disgusting smell? Oh please, sit down, sit down[EOA]
-
-        You sit down on the old couch in the mayor's office. The couch releases a spicy smell that stings.  
-      
-    [Mayor]
-        So, the legend out there says there's a precious gem hidden in the valleys to the East, and that the precious gem is the key ingredient to lifting the curse.[EOA]
-        //<audio src="https://koetest.s3.amazonaws.com/new_demo_stereo/windBlowing2.mp3"/> 
-
-    [Mayor]    that the don't know, is that the cavern is guarded by puzzles and challenges. But what's beyond that- nobody knows. Nobody remembers[EOA]
-	*then
-		unflag cave
-	    unflag town
-		-> Ask the Mayor
-
-//not using
-
-@Ask the Mayor
-	*say
-		[Conversation] You can ask about how he knows all this, about the cave, or about the town itself. [Action]
-	*recap
-		Well, the options are:[Conversation] A. ask about how he knows all this; B. ask about the cave; C. ask about the town it self. [Action]
-	*then
-		hear A, a, how he knows all this, all this {
-			-> Ask Mayor How He knows
-        }
-        hear B, b, about the cave, cave {
-            -> Ask Mayor The Cave
-        }
-        hear C, c, about the town, town {
-            -> Ask Mayor The Town
-        }
-
-//not using
-
-@Ask Mayor How He knows
-	*say
-		[Mayor]
-        A while ago we sent our best people to go and retrieve the stone. When they returned, they were covered in smell even nastier than what we have in the town. But what's worse was that they could barely remember anything. The doctor said that probably the smell was too unbearable that they passed out at some point and lost all the memory. This is all they could remember.[EOA]
-	*then
-		>> BACK
-
 @Ask Mayor The Cave
 	*say
 		[Mayor]
@@ -994,10 +988,52 @@
 		[Mayor]
         We were once a happy little town in the desert. At one point it even became a tourist spot! It's crazy to think that people would come from everywhere, just to get a taste of our famous dish, Shawarma.[EOA]
 	*then
+		>> BACK		
+
+//not using
+@Agree to Help the Mayor
+	*say
+		[Mayor]
+		Wait. [Short_Pause] Are you saying that you're willing to help us get rid of this disgusting smell? Oh please, sit down, sit down[EOA]
+
+        You sit down on the old couch in the mayor's office. The couch releases a spicy smell that stings.  
+      
+    	[Mayor]
+        So, the legend out there says there's a precious gem hidden in the valleys to the East, and that the precious gem is the key ingredient to lifting the curse.[EOA]
+        <audio src='https://koetest.s3.amazonaws.com/Act2/windCurtain.mp3'/>
+		that the don't know, is that the cavern is guarded by puzzles and challenges. But what's beyond that- nobody knows. Nobody remembers[EOA]
+
+	*then
+		unflag cave
+	    unflag town
+		-> Ask the Mayor
+
+//not using
+@Ask the Mayor
+	*say
+		[Conversation] You can ask about how he knows all this, about the cave, or about the town itself. [Action]
+	*recap
+		Well, the options are: [Conversation] A. ask about how he knows all this; B. ask about the cave; C. ask about the town it self. [Action]
+	*then
+		hear A, a, how he knows all this, all this {
+			-> Ask Mayor How He knows
+        }
+        hear B, b, about the cave, cave {
+            -> Ask Mayor The Cave
+        }
+        hear C, c, about the town, town {
+            -> Ask Mayor The Town
+        }
+
+//not using
+@Ask Mayor How He knows
+	*say
+		[Mayor]
+        A while ago we sent our best people to go and retrieve the stone. When they returned, they were covered in smell even nastier than what we have in the town. But what's worse was that they could barely remember anything. The doctor said that probably the smell was too unbearable that they passed out at some point and lost all the memory. This is all they could remember.[EOA]
+	*then
 		>> BACK
 
 //not using
-
 @Continue Ask Mayor The Town
 	*say
 		[mayor]
@@ -1015,7 +1051,6 @@
         -> Ask the Mayor
 
 //not using
-
 @Before Leave For the Cave
 	*say
 		and you can also heave for the cave.[Action]
@@ -1046,7 +1081,17 @@
 
 @Been Walking For Days
 	*say
-		You've been walking for days, but still no sign of valleys, only desert. <audio src='https://koetest.s3.amazonaws.com/Act3/horseNeighing_01.mp3'/> It's been a couple of days since you left the town. Although having a horse to carry you across the wilderness is fortunate, but now it seems very tired as well. [Pause]<audio src='https://koetest.s3.amazonaws.com/Act3/smallWind_01.mp3'/> Your vision starts to get blurry again. Strangely, this blurriness seemed a bit, a bit yellow. You tried to muster your consciousness, only to find out that you're heading in to an inevitable sandstorm.<audio src='https://koetest.s3.amazonaws.com/Act3/strongWinds_01.mp3'/> As unwilling as you may be, this is the only way to the Eastern Valleys. You ride into the furious sandstorm. [Pause] 
+		You've been walking for days, but still no sign of valleys, only desert. 
+		
+		<audio src='https://koetest.s3.amazonaws.com/Act3/horseNeighing_01.mp3'/> 
+		
+		It's been a couple of days since you left the town. Although having a horse to carry you across the wilderness is fortunate, but now it seems very tired as well. 
+		
+		<audio src='https://koetest.s3.amazonaws.com/Act3/smallWind_01.mp3'/> 
+		
+		Your vision starts to get blurry again. Strangely, this blurriness seemed a bit, a bit yellow. You tried to muster your consciousness, only to find out that you're heading in to an inevitable sandstorm. As unwilling as you may be, this is the only way to the Eastern Valleys. You ride into the furious sandstorm. 
+		
+		<audio src='https://koetest.s3.amazonaws.com/Act3/strongWinds_01.mp3'/> 
 		
 		But soon, the sandstorm has devoured you into the yellow fog. The wind is so strong an unbearable that you couldn't go on anymore. You slowly close your eyes. 
 		
@@ -1061,98 +1106,6 @@
         You feel like you were being carried onto a bed, so you close your eyes and let yourself drift away.
 	*then
 		-> cowplant_puzzle_start
-
-@Waking Up In An Empty Tent
-	*say
-		You wake up finding yourself in a tent. The sunlight sprinkles on your face through the small holes in the ceiling. As you slowly gain consciousness, you hear a strange noise coming from outside. [Action]
-	*reprompt
-		You can [Conversation] look around, or leave the tent.
-	*then
-		hear look around, around {
-            -> Details of the Tent
-        }
-        hear leave, leave the tent {
-            -> Leave the Tent
-        }
-
-@Details of the Tent
-	*say
-		It's a tent with many vials and plants.
-	*then
-		>> BACK
-
-@Leave the Tent
-	*say
-		You're still in the desert. Beside the tent there is a mysterious plant wobbling around, and it's chewing a person. You can also hear someone yelling for help from the plant. [Action]
-
-	*reprompt
-		[Conversation] You can examine the thing, help the person, or leave.[Action]
-	*then
-		hear check if there is anything I can throw, throw {
-            -> Look Around
-        }
-        hear What is the thing, examine the thing {
-            -> Examine the Thing
-        }
-        hear Help the person, help him {
-            -> Help the Person
-        }
-        hear Leave {
-            -> Warning to Leave
-        }
-
-@Look Around
-	*say
-		You looked around. But found nothing.
-	*then
-		>> BACK
-
-@Warning to Leave
-	*say
-		[SeedTrader]
-        I know why you're here, you need me! Don't leave me in this cowplant. [EOA]
-        Are you sure you want to leave the man? Maybe we need to help him out.
-	*then
-		>> BACK
-
-@Examine the Thing
-	*say
-		It looks like a cow's head, but it has sharp teeth.
-	*then
-		>> BACK
-
-@Help the Person
-	*say
-		[SeedTrader]
-        Is someone there? [Short_Pause] Thank God! You need to save me from this cowplant. [EOA] [Pause]
-	*then
-        -> MysMan Explains
-
-@MysMan Explains
-	*say
-		[SeedTrader]
-        You need to milk the cowplant. [EOA] [Action]
-	*then
-		hear milk, milk the cowplant {  
-            -> MysMan Saved
-        }
-
-@MysMan Saved
-	*say
-		[SeedTrader]
-        Thanks.  
-        What's your name? 
-        [EOA]
-
-	*recap
-		Maybe try some common names instead? For example, You can say: my name is Shawn.
-	*reprompt
-		Say your name to the shopkepper. For example, You can say: my name is Brian.
-	*then
-		slot playerName to 'AMAZON.US_FIRST_NAME'
-        
-        hear {playerName}, my name is {playerName} {
-        }
 
 @MysMan Introduces Himself
 	*say
@@ -1192,6 +1145,7 @@
 
 @MysMan Introduces Himself 2
 	*say
+		<audio src='https://koetest.s3.amazonaws.com/Act3/goingThroughShelvesGlassy.mp3'/>
 		[SeedTrader]
         This is a seed that grows more seeds. Would you like to know how it works? [EOA]
         
@@ -1235,6 +1189,8 @@
 
 @Another Item
 	*say
+		<audio src='https://koetest.s3.amazonaws.com/Act3/goingThroughShelvesGlassy.mp3'/>
+
 		[SeedTrader]
         Uh, how about this? This is a plant that glows in the day! [EOA]
        
@@ -1280,11 +1236,14 @@
 	*say
 	    Strangely, Luke starts to panic. He goes through all of his inventory, again and again. Then, he picks up a glass vial that was immediately in front of him before.
 		
+		<audio src='https://koetest.s3.amazonaws.com/Act3/goingThroughShelvesGlassy.mp3'/>
+
 		[SeedTrader]
         There! Found you. This, oh my dear, is a rare find out here in the desert. This, is a stinky plant. [EOA]
     
         He seems really unsettled, but not because of the plant he's holding up to you. 
         [Conversation] You can ask how to get to the cave. You can also thank him and leave. [Action]
+
 	*reprompt
 		You can ask about the plant, ask him how to get to the cave. You can also thank him and leave.
 	*recap
@@ -1302,6 +1261,7 @@
 
 @MysMan Says Stop
 	*say
+		<audio src='https://koetest.s3.amazonaws.com/Act3/handSmacking_01.mp3'/>
 		[SeedTrader]
         Stop! Stop asking me how to get to the cave! Can you not see me trying to avoid your question? How can you be so stupid? [EOA]
 
@@ -1379,6 +1339,7 @@
         
         //(Sound Effect: Going through shelves)
         <audio src='https://koetest.s3.amazonaws.com/Act3/goingThroughShelves_01.mp3'/>
+		
         Luke goes through his shelf of specimens for a second, and returns with a compass, a small bottle of potion, and a vial of a small, but beautiful flower. Carefully, he uncovers the vial.
         
         [SeedTrader]
@@ -1389,8 +1350,14 @@
         [SeedTrader]
         This flower tells directions. As long as you give it a clear destination, it will lead you to it accurately and timely. Here, hold these two for me, will you? [EOA]
         
-        Luke then hands over the flower and the compass to you. Suddenly, with an exaggerating pose, Luke throws the potion into the air. But instead, the potion only traveled for a second or two before it landed. The potion breaks. Magically, a garden surrounded by bushes appears in the middle of nothing.
+        Luke then hands over the flower and the compass to you. Suddenly, with an exaggerating pose, Luke throws the potion into the air. 
+		
+		<audio src='https://koetest.s3.amazonaws.com/Act3/grabDust.mp3'/>
+		
+		But instead, the potion only traveled for a second or two before it landed. The potion breaks. Magically, a garden surrounded by bushes appears in the middle of nothing.
         
+		<audio src='https://koetest.s3.amazonaws.com/Act3/sparklingSound.mp3'/>
+
         [SeedTrader]
         Now. You will use this flower and guide yourself to garden, which is in the center of this maze. [Conversation] First, say to the flower [Pause] "Lead me to the garden." [EOA] [Action]
 	*recap
@@ -1420,6 +1387,7 @@
         
         //(Sound Effect: Sigh)
         <audio src='https://koetest.s3.amazonaws.com/Act3/sigh_01.mp3'/>
+
         [SeedTrader]
         I knew that it was going to fail, but he disagreed. We had a big fight, and I left the lab for the night. The next thing I know, is that the town was flooded with the flower's smell, and the townsfolk were angry at the alchemist. In the end, they drove him away. [EOA]
 
@@ -1442,6 +1410,8 @@
 	*say
 		[SeedTrader]
 		That's pretty much it. Oh. Wait. [EOA]
+
+		<audio src='https://koetest.s3.amazonaws.com/Act3/goingThroughShelvesGlassy.mp3'/>
 
 		Luke goes to a locked chest and retrieves a purple seed.
 
@@ -1476,7 +1446,8 @@
 @End of ACT III, 1&2
 	*say
 		//(Sound Effect: Horse Neighing)
-		
+		<audio src='https://koetest.s3.amazonaws.com/Act3/horseNeighing_01.mp3'/>
+
 		[SeedTrader]
 		Very well then. Keep riding to the East. The valley is close. Follow the plant roots and you will reach the cave eventually. [EOA]
 
@@ -1489,7 +1460,8 @@
 
 		[SeedTrader] 
 		When you do meet the alchemist, please tell him I'm sorry. [EOA]
-
+		
+		<audio src='https://koetest.s3.amazonaws.com/Act3/Slap.mp3'/>
 		He then gives your horse a big slap. The horse charges into the East, leaving Luke behind in the desert.
 	*recap
 		Luke asks you to keep going to the east. He also asks you to tell the alchemsit that he is sorry. 
@@ -1538,6 +1510,7 @@
         [SeedTrader]
         Oh, I'm sorry. Anyways, as a fellow alchemist, I've been searching for ingredients that might help alleviate the situation. From time to time I've traveled back to the town and asked for any clues or information about the alchemist. [EOA]
         
+		<audio src='https://koetest.s3.amazonaws.com/Act3/goingThroughShelves_01.mp3'/>
         Luke then goes through the piles of notes on the ground and retrieves a black little book.
         
         [SeedTrader]
@@ -1573,6 +1546,7 @@
 		[SeedTrader]
         Oh, by the way. [EOA]
         
+		<audio src='https://koetest.s3.amazonaws.com/Act3/goingThroughShelves_01.mp3'/>
         Luke goes to an old wooden chest and takes out a purple seed.
 
         [SeedTrader]
@@ -1601,6 +1575,7 @@
 	*say
 		//(Sound Effect: Horse Neighing)
 		<audio src='https://koetest.s3.amazonaws.com/Act3/horseNeighing_01.mp3'/>
+
         [SeedTrader]
 		Very well then. Keep riding to the East. The valley is close. Follow the plant roots and you will reach the cave eventually. Both of you walk slowly outside the tent. [EOA]
 		
@@ -1613,10 +1588,8 @@
 
 		[SeedTrader]
 		If you do meet the alchemist in the end, I would imagine that he demanded the name of this seed. You know, alchemists are all alike, can't trust anything unless they know what it is. Make sure you tell him the name, won't you? [EOA]
-		
+		<audio src='https://koetest.s3.amazonaws.com/Act3/Slap.mp3'/>
 		He then gives your horse a big slap. The horse charges into the East, leaving Luke behind in the desert.
-	*recap
-	    Luke asks you to say the seed's name when you meet the alchemist. Again, it's called Eureka. 
 	*then
 		-> End of ACT III, all
 
@@ -1743,6 +1716,7 @@
 		[SeedTrader]
 		Good luck. I hope you find the solution and restore it to its former glory. [EOA]
 
+		<audio src='https://koetest.s3.amazonaws.com/Act3/Slap.mp3'/>
 		He then gives your horse a big slap. The horse charges into the East, leaving Luke behind in the desert.
 
 	*then
@@ -1835,46 +1809,22 @@
 
 @Test Audio
 	*say
-		1 <audio src='https://koetest.s3.amazonaws.com/Chilirosa/fastFootsteps.mp3'/>
-		1 <audio src='https://koetest.s3.amazonaws.com/Chilirosa/hideintocloset.mp3'/>
-		1 <audio src='https://koetest.s3.amazonaws.com/Chilirosa/lightUpFireStove.mp3'/>
-		1 <audio src='https://koetest.s3.amazonaws.com/Chilirosa/open+closet.mp3'/>
-		1 <audio src='https://koetest.s3.amazonaws.com/Chilirosa/open+stove.mp3'/>
-		
-		// ACT 5 puzzle test start [Pause]
-		// 1 <audio src='https://koetest.s3.amazonaws.com/Act3/Act3+puzzle/radio.mp3'/>
-		// 1 <audio src='https://koetest.s3.amazonaws.com/Act5/Act+5+puzzle/closebook_01.mp3'/>
-		// 1 <audio src='https://koetest.s3.amazonaws.com/Act5/Act+5+puzzle/ice_01.mp3'/>
-		// 1 <audio src='https://koetest.s3.amazonaws.com/Act5/Act+5+puzzle/metalcrack_01.mp3'/>
-		// 1 <audio src='https://koetest.s3.amazonaws.com/Act5/Act+5+puzzle/newspaper_01.mp3'/>
-
-	// 	ACT 3 test start
-	// 	1  <audio src='https://koetest.s3.amazonaws.com/Act3/aPersonThrowingHimself_01.mp3'/>
-	// 	2  <audio src='https://koetest.s3.amazonaws.com/Act3/clothFlapping_01.mp3'/>
-	// 	3  <audio src='https://koetest.s3.amazonaws.com/Act3/cowHappy.mp3'/>
-	// 	4  <audio src='https://koetest.s3.amazonaws.com/Act3/cowplantSounds_01.mp3'/>
-	// 	5  <audio src='https://koetest.s3.amazonaws.com/Act3/cowplantThrowOut.mp3'/>
+		<audio src='https://koetest.s3.amazonaws.com/Act1/wind.mp3'/>
+		<audio src='https://koetest.s3.amazonaws.com/Act1/gulp.mp3'/>
+		<audio src='https://koetest.s3.amazonaws.com/Act1/windFootsteps.mp3'/>
+		<audio src='https://koetest.s3.amazonaws.com/Act1/openWoodDoor.mp3'/>
+		<audio src='https://koetest.s3.amazonaws.com/Act1/woodenFloorCracking.mp3'/>
 	*then
 		hear continue {
 		    -> TA2
 	    }
-
 @TA2
 	*say
-		
-		1 <audio src='https://koetest.s3.amazonaws.com/Chilirosa/sneakyFootsteps.mp3'/>
-		1 <audio src='https://koetest.s3.amazonaws.com/Chilirosa/waterBoilingWomenFootsteps.mp3'/>
-		1 <audio src='https://koetest.s3.amazonaws.com/Chilirosa/womenRunning.mp3'/>
-		// 1 <audio src='https://koetest.s3.amazonaws.com/Act5/Act+5+puzzle/openbook_01.mp3'/>
-		// 1 <audio src='https://koetest.s3.amazonaws.com/Act5/Act+5+puzzle/portalopen_01.mp3'/>
-		// 1 <audio src='https://koetest.s3.amazonaws.com/Act5/Act+5+puzzle/portaltravel_01.mp3'/>
-
-		that's the end of ACT 5 puzzle sound test
-		// 6  <audio src='https://koetest.s3.amazonaws.com/Act3/footstepsInSand_01.mp3'/>
-		// 7  <audio src='https://koetest.s3.amazonaws.com/Act3/goingThroughShelves_01.mp3'/>
-		// 8  <audio src='https://koetest.s3.amazonaws.com/Act3/handSmacking_01.mp3'/>
-		// 9  <audio src='https://koetest.s3.amazonaws.com/Act3/horseNeighing_01.mp3'/>
-		// 10  <audio src='https://koetest.s3.amazonaws.com/Act3/manscream_01.mp3'/>
+		<audio src='https://koetest.s3.amazonaws.com/Act1/drinkingNoises.mp3'/>
+		<audio src='https://koetest.s3.amazonaws.com/Act1/thunder11s.mp3'/>
+		<audio src='https://koetest.s3.amazonaws.com/Act1/thunder22s.mp3'/>
+		<audio src='https://koetest.s3.amazonaws.com/Act1/sandRun3s.mp3'/>  
+		<audio src='https://koetest.s3.amazonaws.com/Act1/sandRun7s.mp3'/>
 		
 	*then 
 		hear continue {
@@ -1882,27 +1832,22 @@
 		}
 @TA3
 	*say
-		// 11  <audio src='https://koetest.s3.amazonaws.com/Act3/milkingCowplant.mp3'/>
-		// 12  <audio src='https://koetest.s3.amazonaws.com/Act3/sigh_01.mp3'/>
-		// 13  <audio src='https://koetest.s3.amazonaws.com/Act3/smallWind_01.mp3'/>
-		// 14  <audio src='https://koetest.s3.amazonaws.com/Act3/strongWinds_01.mp3'/>
-		
-		// ACT 5 test start
-		// 1  <audio src='https://koetest.s3.amazonaws.com/Act5/OasisAmbience.mp3'/>
-		
+		<audio src='https://koetest.s3.amazonaws.com/Act2/footstepsTowardsYou.mp3'/>
+		<audio src='https://koetest.s3.amazonaws.com/Act2/SlowlyTowardsYou.mp3'/>
+		<audio src='https://koetest.s3.amazonaws.com/new_demo_stereo/openWindows.mp3'/>
+		//<audio src='https://koetest.s3.amazonaws.com/new_demo_stereo/doorOpen1.mp3'/> // guale
+		<audio src='https://koetest.s3.amazonaws.com/new_demo_stereo/doorOpen2.mp3'/>
 	*then 
 		hear continue {
 			-> TA4
 		}
-
 @TA4
 	*say
-		// 2  <audio src='https://koetest.s3.amazonaws.com/Act5/PouringRain.mp3'/>
-		// 3  <audio src='https://koetest.s3.amazonaws.com/Act5/PouringRain02.mp3'/>
-		// 4  <audio src='https://koetest.s3.amazonaws.com/Act5/VinGrowing.mp3'/>
-		// 5  <audio src='https://koetest.s3.amazonaws.com/Act5/explode01.mp3'/>
-		// 6  <audio src='https://koetest.s3.amazonaws.com/Act5/explode02.mp3'/>
-		
+		<audio src='https://koetest.s3.amazonaws.com/Act2/windCurtain.mp3'/>
+		<audio src='https://koetest.s3.amazonaws.com/Act3/horseGalloping.mp3'/>
+		<audio src='https://koetest.s3.amazonaws.com/Act2/knockDoor.mp3'/>
+		<audio src='https://koetest.s3.amazonaws.com/Act2/bashDoor.mp3'/>
+		<audio src='https://koetest.s3.amazonaws.com/new_demo_stereo/strongWind.mp3'/>
 	*then
 		hear continue {
 			-> TA5
@@ -1910,12 +1855,12 @@
 
 @TA5
 	*say	
-		7  <audio src='https://koetest.s3.amazonaws.com/Act5/magicSound01.mp3'/>
-		8  <audio src='https://koetest.s3.amazonaws.com/Act5/magicSound03.mp3'/>
-		// 9  <audio src='https://koetest.s3.amazonaws.com/Act5/magicSound02.mp3'/> NOT WORKING
-		10  <audio src='https://koetest.s3.amazonaws.com/Act5/malecry01.mp3'/>
-		11  <audio src='https://koetest.s3.amazonaws.com/Act5/malecry02.mp3'/>
-		12  <audio src='https://koetest.s3.amazonaws.com/Act5/walkOnDirt.mp3'/>
+		<audio src='https://koetest.s3.amazonaws.com/Act3/cowplantSounds_01.mp3'/>
+		<audio src='https://koetest.s3.amazonaws.com/Act3/goingThroughShelvesGlassy.mp3'/>
+		<audio src='https://koetest.s3.amazonaws.com/Act3/handSmacking_01.mp3'/>
+		<audio src='https://koetest.s3.amazonaws.com/Act3/aPersonThrowingHimself_01.mp3'/>
+		<audio src='https://koetest.s3.amazonaws.com/Act3/smallWind_01.mp3'/>
+		
 		
 	*then
 		hear continue {
@@ -1924,12 +1869,12 @@
 
 @TA6
 	*say
-		13  <audio src='https://koetest.s3.amazonaws.com/Act5/waterdrop2.mp3'/>
-		action test
-		1 <audio src='https://koetest.s3.amazonaws.com/actionsounds/as01.mp3'/>
-		2 <audio src='https://koetest.s3.amazonaws.com/actionsounds/as02.mp3'/>
-		3 <audio src='https://koetest.s3.amazonaws.com/actionsounds/as03.mp3'/>
-		4 <audio src='https://koetest.s3.amazonaws.com/actionsounds/as04.mp3'/>
+		<audio src='https://koetest.s3.amazonaws.com/Act3/goingThroughShelves_01.mp3'/>
+		<audio src='https://koetest.s3.amazonaws.com/Act3/grabDust.mp3'/>
+		<audio src='https://koetest.s3.amazonaws.com/Act3/sparklingSound.mp3'/>
+		<audio src='https://koetest.s3.amazonaws.com/Act5/magicSound01.mp3'/>
+		//<audio src='https://koetest.s3.amazonaws.com/Act5/magicSound02.mp3'/>  // gua le
+		
 		
 	*then
 		hear continue {
@@ -1938,17 +1883,82 @@
 
 @TA7	
 	*say
-		5 <audio src='https://koetest.s3.amazonaws.com/actionsounds/as05.mp3'/>
-		// 6 <audio src='https://koetest.s3.amazonaws.com/actionsounds/as06.mp3'/> NOT WORKING
+		<audio src='https://koetest.s3.amazonaws.com/Act5/magicSound03.mp3'/>
+		<audio src='https://koetest.s3.amazonaws.com/Act5/magicSound04.mp3'/>
+		<audio src='https://koetest.s3.amazonaws.com/Act3/horseNeighing_01.mp3'/>
+		<audio src='https://koetest.s3.amazonaws.com/Act3/strongWinds_01.mp3'/>
+		<audio src='https://koetest.s3.amazonaws.com/Act3/clothFlapping_01.mp3'/>
+		
 	*then
-		>> END
+		hear continue {
+			-> TA8
+		}
 				
+
+@TA8
+	*say
+		<audio src='https://koetest.s3.amazonaws.com/Act3/Slap.mp3'/>
+		<audio src='https://koetest.s3.amazonaws.com/Act3/horseGalloping.mp3'/>
+		<audio src='https://koetest.s3.amazonaws.com/Act5/stoneDoor.mp3'/>
+		<audio src='https://koetest.s3.amazonaws.com/Act5/bushRustling.mp3'/>
+		<audio src='https://koetest.s3.amazonaws.com/Act5/stoneDoor.mp3'/>
+	*then
+		hear continue {
+			-> TA9
+		}
+
+@TA9
+	*say
+		
+		<audio src='https://koetest.s3.amazonaws.com/Act5/VinGrowing.mp3'/>
+		<audio src='https://koetest.s3.amazonaws.com/Act5/magicSound01.mp3'/>
+		//<audio src='https://koetest.s3.amazonaws.com/Act5/magicSound02.mp3'/>
+		<audio src='https://koetest.s3.amazonaws.com/Act5/magicSound03.mp3'/>
+		<audio src='https://koetest.s3.amazonaws.com/Act5/magicSound04.mp3'/>
+	*then
+		hear continue {
+			-> TA10
+		}
+
+@TA10
+	*say
+		
+		<audio src='https://koetest.s3.amazonaws.com/Act5/explode01.mp3'/>
+		<audio src='https://koetest.s3.amazonaws.com/Act5/explode02.mp3'/>
+		<audio src='https://koetest.s3.amazonaws.com/Act5/explode03.mp3'/>
+		<audio src='https://koetest.s3.amazonaws.com/Act5/walkOnDirt.mp3'/>
+		<audio src='https://koetest.s3.amazonaws.com/Act5/smokePoof.mp3'/>
+	*then
+		hear continue {
+			-> TA11
+		}
+
+@TA11
+	*say
+		
+		<audio src='https://koetest.s3.amazonaws.com/Act5/PouringRain.mp3'/>
+		<audio src='https://koetest.s3.amazonaws.com/Act5/PouringRain02.mp3'/>
+		<audio src='https://koetest.s3.amazonaws.com/Act5/townBell.mp3'/>
+		<audio src='https://koetest.s3.amazonaws.com/Act5/townBell2.mp3'/>
+		<audio src='https://koetest.s3.amazonaws.com/Act5/openBottle.mp3'/>
+	*then
+		hear continue {
+			-> TA12
+		}
+
+@TA12
+	*say
+		
+		<audio src='https://koetest.s3.amazonaws.com/Act5/takePhoto.mp3'/>
+	*then
+		>> END	
 @Where am I
 	*say
 		Now you are in {currentLocation}.
 	*then
 		>> BACK
 
+//TODO: update the help content
 @Help
 	*say
 		Here is what you can do: 
@@ -1960,13 +1970,13 @@
 		>> BACK
 
 
-//TODO: ACT V Start
+// ACT V Start
 
 @Arrival At The Inner Cave
 	*say
 		You push through the stone doors.
 		//(SE: stone doors)
-
+		<audio src='https://koetest.s3.amazonaws.com/Act5/stoneDoor.mp3'/>
 		Immediately, you are greeted with glaring rays of light. 
 		Isn't this supposed to be a cave?
 		Yes, but none of your assumptions matter. Because right in
@@ -1982,7 +1992,7 @@
 		coming towards you.
 		
 		//(SE: sounds of bushes, with dramatic effect)
-		
+		<audio src='https://koetest.s3.amazonaws.com/Act5/bushRustling.mp3'/>
 		From the bushes, pops out the head of a man with faded purple
 		hair. Should you tell him who you are and why you're here? [Action]
 				
@@ -2021,6 +2031,7 @@
 		He puts you in the hut and closes the door.
 		
 		//(SE: Door closes)
+		<audio src='https://koetest.s3.amazonaws.com/Act5/stoneDoor.mp3'/>
 		//(SE: something grows)
 		<audio src='https://koetest.s3.amazonaws.com/Act5/VinGrowing.mp3'/>
 		As he closes the door, you hear something filling up and
@@ -2760,6 +2771,7 @@
 		will end this chaos once and for all.[EOA]
 
 		//(SE: horses galloping)
+		<audio src='https://koetest.s3.amazonaws.com/Act3/horseGalloping.mp3'/>
 
 		As you close in on the town, you could smell that stench
 		again.
@@ -2774,7 +2786,7 @@
 		Look! It's the alchemist![EOA]
 
 		//(SE: Town bell)
-
+		<audio src='https://koetest.s3.amazonaws.com/Act5/townBell.mp3'/>
 		The town bell rang. Although they'd prefer not to, the
 		townspeople all came out to check what's going on.
 
@@ -2960,7 +2972,7 @@
 		[Man]
 		3, 2, 1, say cheese! [EOA]
 
-		//(SE: photo sound)
+		<audio src='https://koetest.s3.amazonaws.com/Act5/takePhoto.mp3'/>
 
 	*then
 		>>END
@@ -2994,7 +3006,7 @@
 		[Man]
 		3, 2, 1, say cheese![EOA]
 
-		//(SE: photo sound)
+		<audio src='https://koetest.s3.amazonaws.com/Act5/takePhoto.mp3'/>
 
 	*then
 		>>END
@@ -3019,7 +3031,7 @@
 		[Man]
 		3, 2, 1, say cheese![EOA]
 
-		//(SE: photo sound)
+		<audio src='https://koetest.s3.amazonaws.com/Act5/takePhoto.mp3'/>
 		
 	*then
 		>>END
@@ -3634,9 +3646,9 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 	*say
 		You thank him and continute your journey. [Footsteps]Couple minutes later, you are standing in front of the foggy forest. You take out the leading flower. [Action]
 	*recap
-		Try use the dust on the flower[Action]
+		Try use the dust on the flower
 	*reprompt
-		You should use the dust on the leading flower before you go into the sandstorm. [Action]
+		You should use the dust on the leading flower before you go into the sandstorm. 
 	*then
 		hear use the dust on the flower, use , use dust {
 			-> leading_puzzle_start_from_a
@@ -3649,9 +3661,9 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 	*say
 		You use the dust on the flower. The flower is reacting to it. Now you can look to different directions.
 	*recap
-		You can look east, look south, look west and look north. [Action] [Action]
+		You can look east, look south, look west and look north. [Action]
 	*reprompt
-		You can look east, look south, look west and look north. [Action] [Action]
+		You can look east, look south, look west and look north. [Action]
 	*then
 		//Node _a_
 		-> leading_a_position
@@ -4680,7 +4692,7 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 		You wake up finding yourself in a tent. The sunlight sprinkles on your face through the small holes in the ceiling. 
 		As you slowly gain consciousness, you hear a strange shouting coming from outside.
 		<audio src='https://koetest.s3.amazonaws.com/Act3/manscream_01.mp3'/> 
-		But before you get the sound, it's strange enough that you ended up in this tent. What's inside this tent? you should look around.
+		But before you get the sound, it's strange enough that you ended up in this tent. What's inside this tent? you should look around. [Action]
 	*recap
 		You should look around first.
 	*reprompt
@@ -5254,7 +5266,7 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 		hear hungry, search hungry {
 			-> cowplant_puzzle_notebook_seedtrader_hungry
 		}
-		hear cowplant berry, berry, search berry {
+		hear cowplant berry, search berry {
 			-> cowplant_puzzle_notebook_seedtrader_berry
 		}
 		hear sprout state, sprout, search sprout state{
@@ -5914,7 +5926,7 @@ will make people feels like an emotionless shell. Different allergic symptoms ca
 			-> escape_puzzle_notebook_search_wand
 		}
 
-		hear juan, ice, barrel, alcohol burner, flower stand, chest, box {
+		hear ice, barrel, alcohol burner, flower stand, chest, box {
 			-> escape_puzzle_notebook_cannotfind
 		}
 		hear flower, search flower, plant, search plants{
