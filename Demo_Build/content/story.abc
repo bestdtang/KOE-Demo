@@ -483,7 +483,7 @@
 		hear signpost,check the signpost again, again, check again {
 			-> Signpost
 		}
-		hear check the ivy, check ivy, ivy, check strings {
+		hear check the ivy, check ivy, check strings {
 			-> Check Ivy
 		}
 
