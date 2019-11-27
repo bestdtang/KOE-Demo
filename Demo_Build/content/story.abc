@@ -39,13 +39,14 @@
 
 @Tutorial 1: Direction Questions
 	*say
-		[Action] When you hear this sound, you will be deciding which path, or direction, to take. In this case, try saying: go to the left, or go to the right.
+		//[Action] When you hear this sound, you will be deciding which path, or direction, to take. In this case, try saying: go to the left, or go to the right.
+		Do you want to go to the left, or go to the right? [Action]
 	*then
-		hear go to the left {
+		hear go to the left, left {
 			-> Look Left
 		}
 
-		hear go to the right {
+		hear go to the right, right {
 			-> Look Right
 		}
 	*reprompt
@@ -63,7 +64,8 @@
 	*say
 		[footstep] You walk under the hot sun until you reach the top of a little sand hill. 
 		//It let's you see a little bit further away. Now you can see what's around you. [Pause] Sometimes, paths aren't obvious at first glance just like now. 
-		You can check around first by saying what's around me. Go on, give it a go.
+		You can check around first by saying what's around me.[Action]
+		//Go on, give it a go.
 	*then
 		hear what's around me,check, what is around me, check what's around me, around me {
             -> Check Around the Hill
@@ -79,7 +81,7 @@
 		//You don't find anything particularly interesting. [Pause] Wait! 
 		You see a few freckles on the yellow surfaces of Earth. It shines under the burning sun! 
 		//You squint your eyes and look closer. [Pause] 
-		It's a town! [Short_Pause] 
+		It's a town! [Short_Pause] What would you like to do?
 		//There's a good chance that they have some water there.
 		[Action]
 	*then
@@ -101,13 +103,13 @@
 
 @Town
 	*say
-		The urge of letting cold water pass enter you drags your weary feet to the entrance of the town. 
+		//The urge of letting cold water pass enter you drags your weary feet to the entrance of the town. 
 		//At the entrance, you thought the townspeople would step forward immediately to help a thirsty traveler, but instead. [Short_Pause] No-one came. What's happening? [Action] you can ask to check the environment. 
-		you can check the environment by saying, what's around me.
+		Now you can check the environment by saying, what's around me. [Action]
 	*recap
-		you can check the environment by saying, what's around me.
+		Try saying, what's around me.[Action]
 	*reprompt
-		you can check the environment by saying, what's around me.
+		Try saying, what's around me.[Action]
 	*then
 		hear what's around me {
 			-> Around 
@@ -128,7 +130,7 @@
 	*say
 		There are a few establishments right in front of you. A general store and the mayor's office. Which one do you want to go to? [Action]
 	*recap
-		There are a few establishments right in front of you. A general store and the mayor's office. Which one do you want to go to?
+		There are a few establishments right in front of you. A general store and the mayor's office. Which one do you want to go to?[Action]
 	*reprompt
 		Do you want to go to the general store or the mayor's office?
 	*then
@@ -143,12 +145,14 @@
 
 @Store
 	*say
-		Upon approaching the general store, you see a boy. He wears a red coat, and he looks very surprised. [Pause][Kid] You are a new face here. Do you need help? [Short_Pause] You don't look well.[/Kid] [Pause] Maybe the little boy has water. 
+		Upon approaching the general store, you see a boy. He wears a red coat, and he looks very surprised. [Pause][Kid] You are a new face here. Do you need help? [Short_Pause] You don't look well. Is there anything I can help you? [/Kid] [Pause] 
+		//Maybe the little boy has water. 
+		[Action]
 		//Perhaps you should try asking. 
 		[Conversation] 
 		//When you hear this sound, you decide what to say to the other person next. For example, right now you can ask the boy for water. [Short_Pause] Try it! [Conversation]
 	*then
-		hear water, can I have some water, can you give me water, do you have water, do you have any water, ask for water, ask the boy, ask the boy for water, give me some water, give me water {
+		hear thirsty, water, can I have some water, can you give me water, do you have water, do you have any water, ask for water, ask the boy, ask the boy for water, give me some water, give me water {
 			-> Boy
 		}
 	*recap
@@ -158,12 +162,16 @@
 
 @Boy
 	*say
-		You asked the boy for some water. 
+		//You asked the boy for some water. 
 		[Kid] 
-	    I can help you with that. [Short_Pause] But I must warn you before I take you into our place. [Short_Pause] You probably won't appreciate the conditions in the house. [Short_Pause] Just a heads up.[/Kid] [Pause]
+	    I can help you with that. [Short_Pause] 
+	    //But I must warn you before I take you into our place. 
+	    Just a heads up. You probably won't appreciate the conditions in the house. [Short_Pause]
+	    [/Kid] [Pause]
 		The boy takes you around the building and enters the store from the backdoor. [Pause] Oh dear. [Pause] It is far from being desirable. It stinks. Smelly, smelly, smelly, it's like wearing the same pair of socks for over a year. [Pause]
 		[Kid] Yeah. Told you! [Pause] [/Kid] 
-		[Pause] A bald, middle-aged man that looks like in his fifties are slowly walks down the stairs. [Kid] Papa! [Pause] [/Kid] Small pieces of tissue paper are rolled and stuck in his nose. He looks like he could use some more sunshine.
+		[Pause] A bald, middle-aged man that looks like in his fifties are slowly walks down the stairs. [Kid] Papa! [Pause] [/Kid] 
+		//Small pieces of tissue paper are rolled and stuck in his nose. He looks like he could use some more sunshine.
 	*recap
 		The boy took you to his father's general store.
 	*then
@@ -175,15 +183,14 @@
         Who is this person? [Pause] Why did you bring a stranger that looks like a dying cactus to this place? [EOA] 
         [Kid] 
         [Pause]Relax, papa. He's just a traveler. And he needs water. [Pause]A lot of water.[/Kid] 
-        [Man] 
-        Water? [Pause] Hah! I got lots of water. As if water would do anything to wash this stench away.[EOA] 
+        //[Man] 
+        //Water? [Pause] Hah! I got lots of water. As if water would do anything to wash this stench away.[EOA] 
         [Pause] 
         The young boy's father handed you a big glass of water. 
         [Man]
-        Hey. [Pause] Don't worry. I know it smells bad in here. But I assure you, the water is clean. 
+        Hey.Don't worry. I know it smells bad in here. But I assure you, the water is clean. 
         //[Pause] Go on, drink up. Ahh. Yes, the water is fresh and good.
         [EOA]
-        [Pause]
         Sometimes when appropriate, you can use an item, perform an action, or do nothing. For this instance, you can either say: [Short_Pause] use water or do nothing.[Action]
 	*then
 		hear drink water, use water, use the water, water, chug {
@@ -223,16 +230,20 @@
 
 @Finding Out
 	*say
-		The father has given you his word that the water is clean for drinking. But even without his promise you'd still chug the whole glass of water, bottoms-up.
+		//The father has given you his word that the water is clean for drinking. But even without his promise you'd still chug the whole glass of water, bottoms-up.
+		You chug the whole glass of water, bottoms-up.
         [Pause]
         //Ahhhh. Refreshing! Although the water smells a bit off, you don't care. What's important is, you're saved from becoming human beef jerky.
         [Man]
-        Feel better? You really looked like the desert's going to get you.[EOA] 
+        Feel better? 
+	//You really looked like the desert's going to get you.
+	[EOA] 
         //Now it's just the stench that's really
         giving you a headache.
         [Man]
         Sorry for the bad manners back there. It's just this town has never had a single visitor for a long time. Not after the incident.[EOA]
-        [Conversation]You should ask him.
+        [Conversation]
+	//You should ask him.
 	*reprompt
 		You can talk to him by saying talk to the shopkeeper
 	*recap
@@ -258,7 +269,7 @@
 	*say
 		[Man] 
 		//That's a rare name around here. 
-		[Pause] Anyway, this is a desert so you could imagine it never rains here [Short_Pause] until that night. [Pause] On that night. We've seen the greatest thunderstorm of the town's history, [Short_Pause] but no-one anticipated what came after.[EOA]
+		[Pause] This is a desert so you could imagine it never rains here [Short_Pause] until that night. [Pause] On that night. We've seen the greatest thunderstorm of the town's history, [Short_Pause] but no-one anticipated what came after.[EOA]
         [Kid]
         [Long_Pause] And then the next morning, my dad started sweating like a cow. So did everyone else. [/Kid]
         [Man]
@@ -268,7 +279,9 @@
         [Man]
         The mayor believed that it's a curse from some spell caster. He was trying to find people to help. Even set up a great reward for anyone who lifts the curse. 
         [Pause]
-        Since you're here, why don't you help us? [Short_Pause] There's a lucrative treasure, and it could be all yours. In the meantime, you can look around the store. No worries.[EOA]
+        Since you're here, why don't you help us? [Short_Pause] There's a lucrative treasure, and it could be all yours. 
+	//In the meantime, you can look around the store. No worries.
+	[EOA]
         It seems like they really need your help. Do you want to help them?
 	*reprompt
 		It seems like they really need your help.
@@ -281,7 +294,9 @@
 
 @Mayor Office
 	*say
-		You arrive at the mayor's office. It's the largest building in the town, but it's doors and windows are tightly shut and locked. [Short_Pause] When you get close to the front door, there's a sharp smell of hot pepper. Looks like there's no way in.
+		You arrive at the mayor's office. It's the largest building in the town, but it's doors and windows are tightly shut and locked. [Short_Pause] 
+		//When you get close to the front door, there's a sharp smell of hot pepper. 
+		Looks like there's no way in.
 	*recap
 		It looks like there's no way in to the mayor's office. Perhaps you should visit somewhere else and try again later. If you don't know where to go, remember to say What's around me.
     [Action]
@@ -306,11 +321,13 @@
 @Decide to Help
 	*say
 		[Man]
-	    This is our lucky day, son. Finally a person who is willing to help us. Well, I guess I shouldn't be keeping you here for too long eh? [EOA]
+	    This is our lucky day, son. Finally a person who is willing to help us. Well, I guess I shouldn't be keeping you here for too long. [EOA]
 		[Kid] 
 		But papa, you haven't told him anything about how to solve the problem. [EOA]
 		[Man]
-		Oh yes, yes. hey, perhaps you can go ask if the mayor knows anything more. After all, he's the one who put up this poster. Maybe he knows more.[EOA]
+		Oh yes, yes. hey, perhaps you can go ask if the mayor knows anything more. 
+		//After all, he's the one who put up this poster. Maybe he knows more.
+		[EOA]
 		[Kid] 
 		But the mayor is also locking himself up. No one has seen him for a while. [EOA]
 		[Man] 
@@ -322,8 +339,7 @@
 
 @Decide to Help 2
 	*say
-		[Conversation]
-		You can ask about the mayor, ask about the sauce, or ask for one bottle
+		You can ask about the mayor, ask about the sauce, or ask for one bottle [Conversation]
 	*recap
 		You can ask about the mayor, ask about the sauce, or ask for one bottle
 	*then
@@ -342,7 +358,9 @@
 @Ask Shopkeeper About the Mayor
 	*say
 		[Man]
-        The mayor has a strange craving for hot sauce. The mayor has turned down guests since the incident. [Short_Pause] The mayor didn't do anything to help the town either. Nobody knows if he's even in his office anymore. What else would you like to know?[EOA] You can ask about the sauce, or ask for one bottle.
+        The mayor has a strange craving for hot sauce. The mayor has turned down guests since the incident. [Short_Pause] 
+	The mayor didn't do anything to help the town either. Nobody knows if he's even in his office anymore. What else would you like to know?[EOA] 
+	You can ask about the sauce, or ask for one bottle.
 	*then
 		hear buy, buy a bottle, can I have a bottle of hot sauce, could I, can you, can I, one, ask for one bottle, ask one, please give me  {
             -> One Bottle of Sauce
@@ -415,17 +433,20 @@
 @Leave the Store
 	*say
 		Just as you are about to leave the store, the shopkeeper stops you.
-        [Man]
-        Wait wait. Take these.
-        //The desert is hot and wide. Don't want you to starve or get thirsty out there. Take these. 
-        [EOA]
-        The shopkeeper gives you a big bread and a full canteen of water. 
+        //[Man] Wait wait. Take these.
+        //The desert is hot and wide. Don't want you to starve or get thirsty out there. Take these. [EOA]
+        He gives you a big bread and a full canteen of water. 
         //They both look edible, but at the same time the stench attaches to them. 
         <audio src='https://koetest.s3.amazonaws.com/new_demo_stereo/doorOpen2.mp3'/>
-        You step out of the store.
-	*then
+        You step out of the store. 
+	This is the end of act one. You can stop here and come back later. Or you can continue to act 2. Would you like to continue?
+	hear yes, yeah, sure {
 		set currentLocation as 'a cross'
-		-> The Cross
+            -> The Cross
+        }
+	hear no {
+		-> Quit Game
+	}
 
 @The Cross
 	*say
