@@ -268,18 +268,12 @@
 @Ask for Help
 	*say
 		[Man] 
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
+
 		//That's a rare name around here. 
 		[Pause] This is a desert so you could imagine it never rains here [Short_Pause] until that night. [Pause] On that night. We've seen the greatest thunderstorm of the town's history, [Short_Pause] but no-one anticipated what came after.[EOA]
-=======
 		//That's a rare name around here. [Pause] 
 		Anyway, this is a desert so you could imagine it never rains here [Short_Pause] until that night. [Pause] On that night. We've seen the greatest thunderstorm of the town's history, [Short_Pause] but no-one anticipated what came after.[EOA]
->>>>>>> Stashed changes
-=======
-		//That's a rare name around here. [Pause] 
-		Anyway, this is a desert so you could imagine it never rains here [Short_Pause] until that night. [Pause] On that night. We've seen the greatest thunderstorm of the town's history, [Short_Pause] but no-one anticipated what came after.[EOA]
->>>>>>> Stashed changes
+		
         [Kid]
         [Long_Pause] And then the next morning, my dad started sweating like a cow. So did everyone else. [/Kid]
         [Man]
@@ -581,15 +575,9 @@ You're at the front door of the beauty salon. Looks like its doors are shut tigh
             set currentLocation as 'inside of the beaty saloon'
             -> Bash On Beauty Salon
         }
-<<<<<<< Updated upstream
-		hear open the door, directly {
-=======
-		hear open the door directly {
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-			-> Open the Beauty Salon Directly
+
+	hear open the door directly {
+		-> Open the Beauty Salon Directly
         }
         hear check the green patch before, green patch, check {
             if flower{
@@ -812,29 +800,15 @@ You're at the front door of the beauty salon. Looks like its doors are shut tigh
 
 @Open the Beauty Salon Directly
 	*say
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-		You tried to open the door directly, you entered! Nobody is here. On your right side, there is a door. Then you noticed that it's connected to Misses Chilirosa's house.
-=======
+
 		You tried to open the door directly, you entered! Then you noticed that the beauty salon is connect to Misses Chilirosa's house.
->>>>>>> Stashed changes
-=======
-		You tried to open the door directly, you entered! Then you noticed that the beauty salon is connect to Misses Chilirosa's house.
->>>>>>> Stashed changes
+
 	*then
 		-> chilirosa_steal_puzzle_start
 
 @check the Green Patch
 	*say
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-		You walk back to the patch of green sitting in the corner of a building. Oh dear, in a dry desert like this, you found a rose with a bright red color on it. You pick up the rose and hold it in your hand, and go back to Misses Chilirosa's house. Now you can: Knock on the door, bash on the door, or open the door directly. [Action]
-=======
 		You walk back to the patch of green sitting in the corner of a building. Oh dear, in a dry desert like this, you found a rose with a bright red color on it. You pick up the rose and hold it in your hand. 
->>>>>>> Stashed changes
-=======
-		You walk back to the patch of green sitting in the corner of a building. Oh dear, in a dry desert like this, you found a rose with a bright red color on it. You pick up the rose and hold it in your hand. 
->>>>>>> Stashed changes
 	*then
 		flag flower
 		hear knock, knock on the door {
