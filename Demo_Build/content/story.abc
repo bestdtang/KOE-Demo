@@ -12,16 +12,18 @@
 
 @start
 	*say
-		Greetings, explorer. [Short_Pause] Welcome to the Desert Traveler experience! [Short_Pause] In this five-act interactive story, you can stop and come back at any time. Shall we start? [Action]
+		Greetings, explorer. [Short_Pause] Welcome to the Desert Traveler experience! [Short_Pause] In this five-act interactive story, you can stop and come back at any time. Now you can start from the very beginning and experience the exciting journey; And you can also jump to the in-game puzzles directly and enjoy solving it, which will take shorter time. Which do you prefer? Story or puzzle?[Action]
 	*then
 		set currentLocation as 'desert'
-		unflag skip
-		hear yes, sure, of course {
+		hear story {
+			unflag skip
 		    -> Lost in Desert
 	    }
-	    hear no {
-	        -> Quit Game
+	    hear puzzle {
+			flag skip
+	        -> jumptopuzzle
         }
+
 @Quit Game
 	*say
         OK. Bye~
@@ -632,12 +634,6 @@
 	*then
 		-> Arrive Beauty Salon
 
-@Check the Green Patch Again
-	*say
-		You walk back to the patch of green sitting in the corner of a building. You've picked up a rose from here before.
-	*then
-		-> Arrive Beauty Salon
-
 @Knock On Beauty Salon
 	*say
 		<audio src='https://koetest.s3.amazonaws.com/Act2/knockDoor.mp3'/>
@@ -699,15 +695,9 @@
 	*say
 		You bashed on the door. 
 		<audio src='https://koetest.s3.amazonaws.com/Act2/bashDoor.mp3'/>
-		And the door opened directly
 	*then
-		set pot_count as 0
-		unflag turn_pot
-		unflag turn_kettle
-		unflag hide
-		unflag ChilirosaInKitchen
-		unflag caught
-		-> chilirosa_door
+		flag angry
+		-> Chilirosa Angered
 
 @Meet Mrs Chilirosa with flower
 	*say
@@ -1807,7 +1797,6 @@
 		}
 
 		hear jump {
-		    unflag skip
 			-> jumpto
 		}
 
@@ -1839,21 +1828,45 @@
 	    }
 @jumptopuzzle
 	*say
-		which puzzle
+		which puzzle do you want to play? we have: sneaking puzzle, cow plant puzzle, leading flower puzzle, and escape puzzle.
 	*then
-	    hear hot sauce{
-	        -> Open the Beauty Salon Directly
+	    hear hot sauce, sneaking{
+	        -> puzzle_intro_sneaking
 	    }
 	    hear cow plant{
-	        -> Been Walking For Days
+	        -> puzzle_intro_cowplant
 	    }
 	    hear leading flower{
-	        flag skip
-	        -> Luke Explains the Cave
+	        -> puzzle_intro_leadingflower
 	    }
-	    hear escape room{
-	        -> Escape The Room
+	    hear escape room, escape{
+	        -> puzzle_intro_escape
 	    }
+
+//TODO: check this and write a quick introduction for each puzzle
+@puzzle_intro_sneaking
+	*say
+		//introduction here
+	*then
+		-> Open the Beauty Salon Directly
+
+@puzzle_intro_cowplant
+	*say
+		//introduction here
+	*then
+		-> Been Walking For Days
+
+@puzzle_intro_leadingflower
+	*say
+		//introduction here
+	*then
+		-> Luke Explains the Cave
+
+@puzzle_intro_escape
+	*say
+		//introduction here
+	*then		
+		-> Escape The Room
 
 @Test Audio
 	*say
@@ -2940,7 +2953,8 @@
 
 @After Opening the Vial	
 	*say
-		
+		<audio src='https://koetest.s3.amazonaws.com/Act5/PouringRain.mp3'/>
+
 		[Man]
 		Wa, what? What's going on?[EOA]
 
@@ -3223,14 +3237,20 @@
 	*say
 		As soon as you arrive at the hallway. The soup is been boiled dry and the pot is burnt. Misses Chilirosa comes over to check on the stove but finds you instead. You are caught. 
 	*then
-		flag angry
+		if skip {
+            -> chilirosa_steal_puzzle_again
+        }
+        flag angry
 		-> Chilirosa Angered
 
 @chilirosa_kitchen_caught_kettle_back
 	*say
 		You go to the kitchen. [Chilirosa_footstepSneaky] At the time you just arrived, the kettle whistles. Misses Chilirosa hears it, and arrives at the kitchen to find you, a stranger, wandering. 
 	*then
-		flag angry
+		if skip {
+            -> chilirosa_steal_puzzle_again
+        }
+        flag angry
 		-> Chilirosa Angered
 
 @chilirosa_hallway_hidekettle
@@ -3250,7 +3270,10 @@
 		You go to the living room. [Chilirosa_footstepSneaky] Misses Chilirosa is right there. You are caught. 
 		//Make sure you observe the room first, before you go in.
 	*then
-		flag angry
+		if skip {
+            -> chilirosa_steal_puzzle_again
+        }
+        flag angry
 		-> Chilirosa Angered
 
 @chilirosa_living_goto
@@ -3279,11 +3302,23 @@
 	*say
 		You go to the hallway, with the hot sauce in your hand.[Chilirosa_footstepSneaky] Misses chilirosa is still cleaning up the pot that was burnt. You leave her house from the door. Now you have the hot sauce!
 	*then
-		-> chilirosa_puzzle_end
+		if skip {
+			-> chilirosa_puzzle_end
+		}
+		-> Get the Hot Sauce
 
 @chilirosa_puzzle_end
+	*say	
+		That's the end of this  sneaking puzzle. Do you want to experience the whole story now, or choose another puzzle to play?
 	*then
-		-> Get the Hot Sauce
+		hear story {
+			unflag skip
+			-> Lost in Desert
+		}
+		hear puzzle {
+			flag skip
+			-> jumptopuzzle
+		}
 
 @chilirosa_living_takesauce
 	*say
@@ -3309,6 +3344,9 @@
 	*say
 		You go the the kitchen. Misses Chilirosa is right in the kitchen. You are caught.
 	*then
+		if skip {
+			-> chilirosa_steal_puzzle_again
+		}
 		flag angry
 		-> Chilirosa Angered
 
@@ -3432,6 +3470,9 @@
 	*say
 		The soup has been boiled dry and the pot is burnt. Misses Chilirosa comes over to check on the stove but finds you instead. You are caught. 
 	*then
+		if skip {
+			-> chilirosa_steal_puzzle_again
+		}
 		flag angry
 		-> Chilirosa Angered
 
@@ -3439,6 +3480,9 @@
 	*say
 		Suddenly, the kettle whistles. <audio src='https://koetest.s3.amazonaws.com/Chilirosa/waterBoilingWomenFootsteps.mp3'/> Misses Chilirosa hears it, and arrives at the kitchen to find you, a stranger, wandering. 
 	*then
+		if skip {
+    		-> chilirosa_steal_puzzle_again
+		}
 		flag angry
 		-> Chilirosa Angered
 
@@ -3679,7 +3723,6 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 		[SeedTrader] Ok, cool. It's simple to use, right? Here, take this bottle of dust. I grab it from the oasis you are looking for. And. You are ready to go! With the leading flower, you should be able to walk across the foggy forest! [EOA]
 	*then
 		if skip {
-	        unflag skip
 	        -> leading_puzzle_start
 	    }
 		if plot12 {
@@ -4729,9 +4772,23 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 	*say
 		Your sight becomes clear. You see the oasis.
 	*then
+		if skip {
+			-> leading_puzzle_ends
+		}
 		-> Arrival At The Inner Cave
 
-
+@leading_puzzle_ends
+	*say	
+		That's the end of this leading flower puzzle. Do you want to experience the whole story now, or choose another puzzle to play?
+	*then
+		hear story {
+			unflag skip
+			-> Lost in Desert
+		}
+		hear puzzle {
+			flag skip
+			-> jumptopuzzle
+		}
 
 // cowplant puzzle---------------------------------------------------------------------------------------------
 
@@ -4848,7 +4905,7 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 			-> cowplant_puzzle_outside_view_tent
 		}
 
-		hear what can I do {
+		hear what can I do, what {
 			-> cowplant_puzzle_outside_whatdo
 		}
 
@@ -5046,6 +5103,7 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 			-> cowplant_puzzle_tent_view_door
 		}
 	*recap
+		//TODO: this recap needs update
 		You can not do that. If you need help, you can ask, what can I do. [Action]
 	*reprompt
 		You can look around, look at specific things, or go outside. [Action]
@@ -5089,7 +5147,7 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 	*reprompt
 		You should look at the notebook. 
 	*then
-		hear open the notebook {
+		hear look at the notebook, look at {
 			-> cowplant_puzzle_grab_notebook
 		}
 
@@ -5224,9 +5282,27 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 
 @cowplant_puzzle_tent_getmilk
 	*say
-		You go to the tent. The man is still stumbled. You forced him to drink the milk. [SeedTrader]Ahhh... What is that! en... Thanks. You bring me back![EOA]
+		You go to the tent. The man is still stumbled. You forced him to drink the milk. 
+		[SeedTrader]
+		Ahhh... What is that! en... Thanks. You bring me back![EOA]
 	*then
+		if skip {
+			-> cowplant_puzzle_ends
+		}
 		-> cowplant_puzzle_end_connect_to_act_three
+
+@cowplant_puzzle_ends
+	*say	
+		That's the end of this cow plant puzzle. Do you want to experience the whole story now, or choose another puzzle to play?
+	*then
+		hear story {
+			unflag skip
+			-> Lost in Desert
+		}
+		hear puzzle {
+			flag skip
+			-> jumptopuzzle
+		}
 
 @cowplant_puzzle_end_connect_to_act_three
 	*say
@@ -5398,8 +5474,7 @@ When cowplant is hungry, it will stick its cake tongue out. You can feed them at
 @cowplant_puzzle_notebook_seedtrader_swallow
 	*say
 		You search the bookmark that writes, swallow, and opened up from that page. It reads.
-When a person is swallowed for the first time, the Cowplant will spit them out, and they will recieve a drained mood, which will last two days. The mood
-will make people feels like an emotionless shell. Different allergic symptoms causing by swallowed have been found to a few people. If attempt to go for the cake again, the cowplant will devour them. But, if people survive from the first swallowing, the cowplant will produce milk.
+		When a person is swallowed for the first time, the Cowplant will spit them out, and they will recieve a drained mood, which will last two days. The mood will make people feels like an emotionless shell. Different allergic symptoms causing by swallowed have been found to a few people. If attempt to go for the cake again, the cowplant will devour them. But, if people survive from the first swallowing, the cowplant will produce milk.
 	*then
 		-> cowplant_puzzle_notebook_seedtrader
 
@@ -5738,7 +5813,23 @@ will make people feels like an emotionless shell. Different allergic symptoms ca
 	*say
 		You are traveling through the portal.<audio src='https://koetest.s3.amazonaws.com/Act5/Act+5+puzzle/portaltravel_01.mp3'/> In a blink of an eye, you are standing in the inner cave. You made your way out!
 	*then
+		if skip {
+			-> escape_puzzle_ends
+		}
 		-> Exit The Room
+
+@escape_puzzle_ends
+	*say	
+		That's the end of this escape room puzzle. Do you want to experience the whole story now, or choose another puzzle to play?
+	*then
+		hear story {
+			unflag skip
+			-> Lost in Desert
+		}
+		hear puzzle {
+			flag skip
+			-> jumptopuzzle
+		}
 
 @escape_puzzle_stand_portal_realm
 	*say
