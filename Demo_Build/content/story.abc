@@ -348,12 +348,12 @@
 @Decide to Help
 	*say
 		[Man]
-	    This is our lucky day, son. Finally a person who is willing to help us. Well, I guess I shouldn't be keeping you here for too long. [EOA]
+		[JOY]
+		This is our lucky day. Finally a person who is willing to help us. Well, I guess I shouldn't be keeping you here for too long. [EOA]
 		[Kid] 
 		But papa, you haven't told him anything about how to solve the problem. [EOA]
 		[Man]
-		Oh yes, yes. hey, perhaps you can go ask if the mayor knows anything more. 
-		//After all, he's the one who put up this poster. Maybe he knows more.
+		Oh Yes, yes. Well, I'd like to help you, but what I've told you is all I know. Hey, perhaps you should go find the mayor! He must know more than anyone of us.
 		[EOA]
 		[Kid] 
 		But the mayor is also locking himself up. No one has seen him for a while. [EOA]
