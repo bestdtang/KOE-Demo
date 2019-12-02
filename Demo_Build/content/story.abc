@@ -1846,26 +1846,26 @@
 //TODO: check this and write a quick introduction for each puzzle
 @puzzle_intro_sneaking
 	*say
-		//introduction here
+		introduction here
 	*then
 		-> Open the Beauty Salon Directly
 
 @puzzle_intro_cowplant
 	*say
-		//introduction here
+		introduction here
 	*then
 		-> Been Walking For Days
 
 @puzzle_intro_leadingflower
 	*say
-		//introduction here
+		introduction here
 	*then
 		-> Luke Explains the Cave
 
 @puzzle_intro_escape
 	*say
-		//introduction here
-	*then		
+		introduction here
+	*then
 		-> Escape The Room
 
 @Test Audio
@@ -5101,6 +5101,9 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 		}
 		hear look at the door {
 			-> cowplant_puzzle_tent_view_door
+		}
+		hear what can I do, what {
+			-> cowplant_puzzle_tent_whatdo
 		}
 	*recap
 		//TODO: this recap needs update
