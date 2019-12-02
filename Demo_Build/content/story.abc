@@ -3611,7 +3611,7 @@
 		The flower suddenly stands up straight, like it has awoken from some sleep.
         
         [SeedTrader]
-        Good. Then, grab some dust from the ground and sprinkle it on the flower.  [EOA]
+        Good. If you grab some dust from the ground and sprinkle it on the flower, the flower will react to it. Try saying, use the dust on the flower. [EOA]
 	*recap
 		Try use the dust on the flower. [Action]
 	*reprompt
@@ -3623,7 +3623,7 @@
 
 @leading_tutorial_start
 	*say
-		You use the dust on the leading flower. 
+		You used the dust on the leading flower. 
         The flower gently shakes for a second. 
         
         [SeedTrader]
@@ -3738,7 +3738,7 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 
 @leading_puzzle_start
 	*say
-		You thank him and continute your journey. [Footsteps]Couple minutes later, you are standing in front of the foggy forest. You take out the leading flower. [Action]
+		You thank him and continute your journey. [Footsteps]A couple minutes later, you are standing in front of the foggy forest. You take out the leading flower. [Action]
 	*recap
 		Try use the dust on the flower
 	*reprompt
@@ -3822,7 +3822,7 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 
 @leading_b_goto
 	*say
-		[Footsteps] Couple minutes later. You come to a new spot.
+		[Footsteps] A couple minutes later. You come to a new spot.
 	*then
 		-> leading_b_position
 
@@ -3884,7 +3884,7 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 
 @leading_c_goto
 	*say
-		[Footsteps] Couple minutes later. You come to a new spot.
+		[Footsteps] A couple minutes later. You come to a new spot.
 	*then
 		-> leading_c_position
 
@@ -3950,7 +3950,7 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 
 @leading_d_goto
 	*say
-		[Footsteps] Couple minutes later. You come to a new spot.
+		[Footsteps] A couple minutes later. You come to a new spot.
 	*then
 		-> leading_d_position
 
@@ -4012,7 +4012,7 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 
 @leading_e_goto
 	*say
-		[Footsteps] Couple minutes later. You come to a new spot.
+		[Footsteps] A couple minutes later. You come to a new spot.
 	*then
 		-> leading_e_position
 
@@ -4079,7 +4079,7 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 
 @leading_f_goto
 	*say
-		[Footsteps] Couple minutes later. You come to a new spot.
+		[Footsteps] A couple minutes later. You come to a new spot.
 	*then
 		-> leading_f_position
 
@@ -4145,7 +4145,7 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 
 @leading_g_goto
 	*say
-		[Footsteps] Couple minutes later. You come to a new spot.
+		[Footsteps] A couple minutes later. You come to a new spot.
 	*then
 		-> leading_g_position
 
@@ -4189,7 +4189,7 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 
 @leading_g_north
 	*say
-		You are looking north. [DirSound_Large] A pond of water blocks the way. Look across the pond, you can almost see something different.
+		You are looking north. [DirSound_Large] A pond of water blocks the way. You are looking across the pond. You can almost see something different.
 	*then
 		-> leading_g_position
 
@@ -4215,7 +4215,7 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 
 @leading_h_goto
 	*say
-		[Footsteps] Couple minutes later. You come to a new spot.
+		[Footsteps] A couple minutes later. You come to a new spot.
 	*then
 		-> leading_h_position
 
@@ -4285,7 +4285,7 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 
 @leading_i_goto
 	*say
-		[Footsteps] Couple minutes later. You come to a new spot.
+		[Footsteps] A couple minutes later. You come to a new spot.
 	*then
 		-> leading_i_position
 
@@ -4355,7 +4355,7 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 
 @leading_j_goto
 	*say
-		[Footsteps] Couple minutes later. You come to a new spot.
+		[Footsteps] A couple minutes later. You come to a new spot.
 	*then
 		-> leading_j_position
 
@@ -4425,7 +4425,7 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 
 @leading_l_goto
 	*say
-		[Footsteps] Couple minutes later. You come to a new spot.
+		[Footsteps] A couple minutes later. You come to a new spot.
 	*then
 		-> leading_l_position
 
@@ -4495,7 +4495,7 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 
 @leading_m_goto
 	*say
-		[Footsteps] Couple minutes later. You come to a new spot.
+		[Footsteps] A couple minutes later. You come to a new spot.
 	*then
 		-> leading_m_position
 
@@ -4565,7 +4565,7 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 
 @leading_n_goto
 	*say
-		[Footsteps] Couple minutes later. You come to a new spot.
+		[Footsteps] A couple minutes later. You come to a new spot.
 	*then
 		-> leading_n_position
 
@@ -4635,7 +4635,7 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 
 @leading_o_goto
 	*say
-		[Footsteps] Couple minutes later. You come to a new spot.
+		[Footsteps] A couple minutes later. You come to a new spot.
 	*then
 		-> leading_o_position
 
@@ -4705,7 +4705,7 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 
 @leading_p_goto
 	*say
-		[Footsteps] Couple minutes later. You come to a new spot.
+		[Footsteps] A couple minutes later. You come to a new spot.
 	*then
 		-> leading_p_position
 
