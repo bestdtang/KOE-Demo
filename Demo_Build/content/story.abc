@@ -614,7 +614,7 @@
             set currentLocation as 'inside of the beaty saloon'
             -> Bash On Beauty Salon
         }
-		hear open the door directly, sneak in, sneak {
+		hear open the door, open the door directly, sneak in, sneak {
 			-> Open the Beauty Salon Directly
         }
         hear check the green patch before, green patch, check {
@@ -647,7 +647,7 @@
 	    hear bash, know harder, bash on the door {
 	        -> Bash On Beauty Salon
 	    }
-		hear open the door directly, sneak in, sneak {
+		hear open the door, open the door directly, sneak in, sneak {
 			-> Open the Beauty Salon Directly
         }
 
@@ -661,7 +661,7 @@
             flag angry
             -> Chilirosa Annoyed
         }
-		hear open the door directly, sneak in, sneak, yes, sure {
+		hear open the door, open the door directly, sneak in, sneak, yes, sure {
 			-> Open the Beauty Salon Directly
         }
 
@@ -859,7 +859,7 @@
             set currentLocation as 'inside of the beaty saloon'
             -> Bash On Beauty Salon
         }
-		hear open the door directly {
+		hear open the door, open the door directly {
 			-> Open the Beauty Salon Directly
         }
 	*recap
@@ -5367,7 +5367,7 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 			-> cowplant_puzzle_notebook_seedtrader_mature
 		}
 
-		hear state, states, growth state, search growth state {
+		hear state, states, growth states, search growth states {
 			-> cowplant_puzzle_notebook_seedtrader_states
 		}
 
