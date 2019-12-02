@@ -27,5 +27,6 @@
   "Explosion": "<audio src='https://koetest.s3.amazonaws.com/Act5/explode01.mp3'/>",
   "Conversation": "<audio src='https://koetest.s3.amazonaws.com/actionsounds/as03.mp3'/>",
   "Action": "<audio src='https://koetest.s3.amazonaws.com/new_demo_stereo/action_question.mp3'/>",
-  "JOY": " "
+  "MAN_JOY": " ",
+  "MAN_LAUGH": " "
 }

@@ -248,13 +248,10 @@
 		<audio src='https://koetest.s3.amazonaws.com/Act1/drinkingNoises.mp3'/>
         //Ahhhh. Refreshing! Although the water smells a bit off, you don't care. What's important is, you're saved from becoming human beef jerky.
         [Man]
-        Feel better? 
-	//You really looked like the desert's going to get you.
-	[EOA] 
-        //Now it's just the stench that's really
-        giving you a headache.
+        Feel better? You really looked like the desert's going to get you. [EOA] 
+        Now it's just the stench that's really giving you a headache.
         [Man]
-        Sorry for the bad manners back there. It's just this town has never had a single visitor for a long time. Not after the incident.[EOA]
+        Strange for you to show up. This town has never had a single visitor for a long time. Not after the incident.[EOA]
         [Conversation]
 	//You should ask him.
 	*reprompt
@@ -348,7 +345,7 @@
 @Decide to Help
 	*say
 		[Man]
-		[JOY]
+		[MAN_JOY]
 		This is our lucky day. Finally a person who is willing to help us. Well, I guess I shouldn't be keeping you here for too long. [EOA]
 		[Kid] 
 		But papa, you haven't told him anything about how to solve the problem. [EOA]
@@ -372,7 +369,7 @@
 		hear buy, buy a bottle, can I have a bottle of hot sauce, could I, can you, can I, one, ask for one bottle, ask one, please give me, give me {
 	        -> One Bottle of Sauce
 	    }
-	    hear ask about the mayor, about the mayor, the mayor, mayor {
+	    hear ask about the mayor, about the mayor, the mayor, mayor, what about the mayor {
 	        -> Ask Shopkeeper About the Mayor
 	    }
 	    hear ask about the sauce, about the sauce, the sauce, sauce {
@@ -384,7 +381,7 @@
 @Ask Shopkeeper About the Mayor
 	*say
 		[Man]
-        About the mayor [Short_Pause], well, he hasn't accepted to see anyone since the incident. Other than making this poster I showed you, he hasn't done anything else to help the town. Nobody knows if he's even in his office anymore. [Short_Pause] He wasn't like this before. He tried really hard to promote this little town to the world outside, that's why we had so many tourists before. [Short_Pause] By the way, after the disaster took place, he became oddly addicted to the hot sauce. What else would you like to know?[EOA] [Conversation] You can ask about the sauce, or ask for one bottle. [Action]
+        About the mayor [Short_Pause], well, he hasn't accepted to see anyone since the incident. [Short_Pause] He wasn't like this before. He tried really hard to promote this little town to the world outside, that's why we had so many tourists before. [Short_Pause] By the way, after the disaster took place, he became oddly addicted to the hot sauce. What else would you like to know?[EOA] [Conversation] You can ask about the sauce, or ask for one bottle. [Action]
 	*then
 		hear buy, buy a bottle, can I have a bottle of hot sauce, could I, can you, can I, one, ask for one bottle, ask one, please give me  {
             -> One Bottle of Sauce
@@ -398,7 +395,7 @@
 		[Man]
         I can only say, the hot sauce is really hot, [Short_Pause] and it looks blue, for some reason. Like the gas stoves you see in your kitchen, hot, hot, hot! [EOA]
 		[Boy]
-		Yeah, when I was little, I thought it was cake frosting in a bottle. I was wrong. [EOA]
+		Yeah, when I was little, I thought it was cake frosting in a bottle.[Short_Pause] Well, I was wrong. [EOA]
 		[Man]
 		When I was little, [Short_Pause] Speaking like a grown-up, aren't you? [EOA]
 		[Boy]
@@ -424,9 +421,9 @@
         [Kid]  
         Dad, didn't you just sell one to Mrs. Chilirosa yesterday? [EOA] 
         [Man]  
-        Hmm, Oh yes, yes! I did sell one to her. [Short_Pause] Oh dear. I guess that's our last bottle in a while. Next batch is not coming in a week, and I need to drive all the way out of town to get it because they can't stand our stench! [EOA] 
+        Hmm, Oh yes! I did sell one to her. [Short_Pause] Oh dear. I guess that's our last bottle in a while. This is embarrassing. [EOA] 
         [Kid]  
-        Stop murmuring, dad. [Short_Pause] Anyways, if you go ask Mrs. Chilirosa, she might still have some left for you.[EOA]
+        Anyways, if you go ask Mrs. Chilirosa, she might still have some left for you. She's right down the street.[EOA]
 	*then
 		-> One Bottle of Sauce 2
 
@@ -450,7 +447,7 @@
         [Kid] 
         Yeah! All my friends who visited her shop came out with hair that smelled spicy for days! [EOA]
         [Man] 
-        But I know what she also likes. [Short_Pause] As funny as it may sound, she also likes roses. But I doubt you'll be finding any of them around. Not in this desert.[EOA]
+        But I know what she also likes. [MAN_LAUGH] As funny as it may sound, she also likes roses. But I doubt you'll be finding any of them around. Not in this desert.[EOA]
         [Conversation]Now you can leave the store, or ask again. [Action]
 	*recap
 		Now you can leave the store, or ask again
@@ -464,8 +461,7 @@
 @Leave the Store
 	*say
         [Man]
-        You'll find Chilirosa at the end of the street. Take care, and good luck. [EOA]
-        The shopkeeper gives you a big bread and a full canteen of water. They both look edible, but at the same time the stench attaches to them. 
+        Wait. Sorry for the bad manners back there. I didn't mean it. Many of us had already lost hope on getting rid of this curse, and we've never had a visitor who agrees to help us. Thank you, and I wish you good luck. [EOA]
         <audio src='https://koetest.s3.amazonaws.com/new_demo_stereo/doorOpen2.mp3'/>
         You step out of the store. 
 	This is the end of act one. You can stop here and come back later. Or you can continue to act 2. Would you like to continue?
