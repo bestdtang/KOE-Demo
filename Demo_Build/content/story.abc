@@ -1846,25 +1846,28 @@
 //TODO: check this and write a quick introduction for each puzzle
 @puzzle_intro_sneaking
 	*say
-		introduction here
+		You need to get the super duper hot blue pepper sauce from Misses Chilirosa in order to let the mayor meet you. 
+		You decided to sneak into her house to steal the hot sauce.
 	*then
 		-> Open the Beauty Salon Directly
 
 @puzzle_intro_cowplant
 	*say
-		introduction here
+		On your way to the valley, you are saved by a stranger from a strong sandstorm. 
+		And then, you waked up from a tent. You decided to find him and ask about the situation. 
 	*then
 		-> Been Walking For Days
 
 @puzzle_intro_leadingflower
 	*say
-		introduction here
+		Luke told you the direction of the cave and gave you a magical singing flower. 
+		With help from the flower, you are trying to walk across the foggy forest.
 	*then
 		-> Luke Explains the Cave
 
 @puzzle_intro_escape
 	*say
-		introduction here
+		You finally saw the alchemist, but she locked you inside a hut. You decided to get out of here. 
 	*then
 		-> Escape The Room
 
