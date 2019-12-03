@@ -253,7 +253,7 @@
         Feel better? 
 	//You really looked like the desert's going to get you.
 	[EOA] 
-        //Now it's just the stench that's really
+        Now it's just the stench that's really
         giving you a headache.
         [Man]
         Sorry for the bad manners back there. It's just this town has never had a single visitor for a long time. Not after the incident.[EOA]
@@ -290,7 +290,7 @@
 	*say
 		[Man] 
 		//That's a rare name around here. 
-		[Pause] This is a desert so you could imagine it never rains here [Short_Pause] until that night. [Pause] On that night. We've seen the greatest thunderstorm of the town's history, [Short_Pause] but no-one anticipated what came after.[EOA]
+		[Pause] This is a desert so you could imagine it never rains here [Short_Pause] until that night. [Pause] On that night. We've seen the greatest thunderstorm of the town's history, [Short_Pause] but no-one anticipated what came after.
 		//That's a rare name around here. [Pause] 
 		Anyway, this is a desert so you could imagine it never rains here [Short_Pause] until that night.
 		<audio src='https://koetest.s3.amazonaws.com/Act1/thunder11s.mp3'/>
@@ -298,6 +298,7 @@
 		
         [Kid]
         [Long_Pause] And then the next morning, my dad started sweating like a cow. So did everyone else. [EOA]
+		
         [Man]
         Yeah. [Pause] What's worse was what happens afterward. [Short_Pause]That's right.The stench. This stench. It kept everyone from talking to each other. It drove tourists away. And now, no-one wants to come to our town anymore.[EOA]
         
@@ -306,8 +307,8 @@
 		[Man]
         The mayor believed that it's a curse from some spell caster. He was trying to find people to help. Even set up a great reward for anyone who lifts the curse. 
         [Pause]
-        Since you're here, why don't you help us? [Short_Pause] There's a lucrative treasure, and it could be all yours. 
-	[EOA]
+        Since you're here, why don't you help us? [Short_Pause] There's a lucrative treasure, and it could be all yours. [EOA]
+
         It seems like they really need your help. Do you want to help them?[Action]
 	*reprompt
 		It seems like they really need your help.
@@ -1076,7 +1077,7 @@
 //not using
 @Continue Ask Mayor The Town
 	*say
-		[mayor]
+		[Mayor]
         Speaking of which, [Short_Pause] this reminds me of a character, [Short_Pause] yes, quite a character in our town. [EOA]
         The mayor pauses to sip a cup of water. He also spreads some of the hot sauce on his nose. 
         [Mayor] 
@@ -1347,7 +1348,7 @@
         Luke picks up the bottle with the stinky plant sealed within, and stares into it.
         
         [SeedTrader]
-        The failed potion accidentally went into the soil and contaminated the land. That's how the stench got to everyone.
+        The failed potion accidentally went into the soil and contaminated the land. That's how the stench got to everyone. [EOA]
         
         He sighs and puts down the bottle.
         
@@ -1357,7 +1358,7 @@
         The wind blows a little bit outside the tent. Luke holds his hands together and covers his face.
         
         [SeedTrader]
-        The next thing I know was that when I came back, the alchemist was being yelled at, and banished from the town. 
+        The next thing I know was that when I came back, the alchemist was being yelled at, and banished from the town. [EOA]
         
         He breathes sharply, as if he's trying to get himself together.
         
@@ -1439,7 +1440,7 @@
         Luke then puts the plant back on the table.
         
         [SeedTrader]
-        I know why you're here. You came from the town, didn't you? You're here for the cave, where the alchemist resides. I can tell you about the puzzles in the cave.
+        I know why you're here. You came from the town, didn't you? You're here for the cave, where the alchemist resides. I can tell you about the puzzles in the cave. [EOA]
 	*recap
 		Luke tells you that everything comes from an accident. 
 	*then
@@ -2197,7 +2198,6 @@
 		and cries.
 
 		[Alchemist]
-
 		I don't know! Why? I thought I had all
 		of it solved. I was supposed to be
 		ready when someone arrives. What
@@ -2687,7 +2687,7 @@
 		[Alchemist]
 		C'mon, pull me up. Let's get this
 		potion finished, and end this crisis
-		once and for all. [Action]
+		once and for all. [EOA] [Action]
 
 	*reprompt 
 		Barette realized something as soon as you told him
