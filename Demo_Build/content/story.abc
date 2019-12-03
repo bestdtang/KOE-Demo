@@ -153,11 +153,13 @@
 
 @Store
 	*say
-		Upon approaching the general store, you see a boy. He wears a red coat, and he looks very surprised. [Pause][Kid] You are a new face here. Do you need help? [Short_Pause] You don't look well. Is there anything I can help you? [/Kid] [Pause] 
+		Upon approaching the general store, you see a boy. He wears a red coat, and he looks very surprised. [Pause]
+		[Kid] 
+		You are a new face here. Do you need help? [Short_Pause] You don't look well. Is there anything I can help you? [EOA] 
 		//Maybe the little boy has water. 
-		[Action]
+		//[Action]
 		//Perhaps you should try asking. 
-		[Conversation] 
+		//[Conversation] 
 		//When you hear this sound, you decide what to say to the other person next. For example, right now you can ask the boy for water. [Short_Pause] Try it! [Conversation]
 	*then
 		hear thirsty, water, can I have some water, can you give me water, do you have water, do you have any water, ask for water, ask the boy, ask the boy for water, give me some water, give me water {
@@ -175,14 +177,14 @@
 	    I can help you with that. [Short_Pause] 
 	    //But I must warn you before I take you into our place. 
 	    Just a heads up. You probably won't appreciate the conditions in the house. [Short_Pause]
-	    [/Kid] [Pause]
+	    [EOA] [Pause]
 		The boy takes you around the building and enters the store from the backdoor. 
 		<audio src='https://koetest.s3.amazonaws.com/Act1/openWoodDoor.mp3'/>
 		Oh dear. [Pause] It is far from being desirable. It stinks. Smelly, smelly, smelly, it's like wearing the same pair of socks for over a year. [Pause]
-		[Kid] Yeah. Told you! [Pause] [/Kid] 
+		[Kid] Yeah. Told you! [Pause] [EOA] 
 		[Pause] A bald, middle-aged man that looks like in his fifties are slowly walks down the stairs.
 		<audio src='https://koetest.s3.amazonaws.com/Act1/woodenFloorCracking.mp3'/>
-		[Kid] Papa! [Pause] [/Kid] 
+		[Kid] Papa! [Pause] [EOA] 
 		//Small pieces of tissue paper are rolled and stuck in his nose. He looks like he could use some more sunshine.
 	*recap
 		The boy took you to his father's general store.
@@ -194,7 +196,7 @@
 		[Man]
         Who is this person? [Pause] Why did you bring a stranger that looks like a dying cactus to this place? [EOA] 
         [Kid] 
-        [Pause]Relax, papa. He's just a traveler. And he needs water. [Pause]A lot of water.[/Kid] 
+        [Pause]Relax, papa. He's just a traveler. And he needs water. [Pause]A lot of water.[EOA] 
         //[Man] 
         //Water? [Pause] Hah! I got lots of water. As if water would do anything to wash this stench away.[EOA] 
         [Pause] 
