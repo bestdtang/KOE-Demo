@@ -202,9 +202,8 @@
         [Pause] 
         The young boy's father handed you a big glass of water. 
         [Man]
-        Hey.Don't worry. I know it smells bad in here. But I assure you, the water is clean. 
-        //[Pause] Go on, drink up. Ahh. Yes, the water is fresh and good.
-        [EOA]
+        Hey.Don't worry. I know it smells bad in here. But I assure you, the water is clean. [EOA]
+		
         Sometimes when appropriate, you can use an item, perform an action, or do nothing. For this instance, you can either say: [Short_Pause] use water or do nothing.[Action]
 	*then
 		hear drink water, use water, use the water, water, chug {
@@ -222,15 +221,15 @@
 @Don't Drink
 	*say
 		You hold the glass of water at your hand, but you don't drink from it. [Pause]
-    //[Man]
-    //<emphasis level="strong">Hmmmm.</emphasis> [Pause] [EOA]
-    The shopkeeper looks at the glass of water. He then looks down on the dusty floor.
-    //[Man]
-    //Suit yourself. Thought you were really thirsty. [EOA]
-    //[Long_Pause] At least you're in the shade, so you're starting to feel a little bit less thirsty. But still, the stench is unbearable.
-    [Man]
-    Maybe the smell even went into the water. [Pause] It wasn't like this before the incident. [EOA]
-    [Action]
+		//[Man]
+		//<emphasis level="strong">Hmmmm.</emphasis> [Pause] [EOA]
+		The shopkeeper looks at the glass of water. He then looks down on the dusty floor.
+		//[Man]
+		//Suit yourself. Thought you were really thirsty. [EOA]
+		//[Long_Pause] At least you're in the shade, so you're starting to feel a little bit less thirsty. But still, the stench is unbearable.
+		[Man]
+		Maybe the smell even went into the water. [Pause] It wasn't like this before the incident. [EOA]
+		[Action]
 	*recap
 		You can drink water or ask more about the incident.
 	*reprompt
@@ -354,8 +353,7 @@
 		[Kid] 
 		But papa, you haven't told him anything about how to solve the problem. [EOA]
 		[Man]
-		Oh Yes, yes. Well, I'd like to help you, but what I've told you is all I know. Hey, perhaps you should go find the mayor! He must know more than anyone of us.
-		[EOA]
+		Oh Yes, yes. Well, I'd like to help you, but what I've told you is all I know. Hey, perhaps you should go find the mayor! He must know more than anyone of us. [EOA]
 		[Kid] 
 		But the mayor is also locking himself up. No one has seen him for a while. [EOA]
 		[Man] 
@@ -385,7 +383,9 @@
 @Ask Shopkeeper About the Mayor
 	*say
 		[Man]
-        About the mayor [Short_Pause], well, he hasn't accepted to see anyone since the incident. [Short_Pause] He wasn't like this before. He tried really hard to promote this little town to the world outside, that's why we had so many tourists before. [Short_Pause] By the way, after the disaster took place, he became oddly addicted to the hot sauce. What else would you like to know?[EOA] [Conversation] You can ask about the sauce, or ask for one bottle. [Action]
+        About the mayor [Short_Pause], well, he hasn't accepted to see anyone since the incident. [Short_Pause] He wasn't like this before. He tried really hard to promote this little town to the world outside, that's why we had so many tourists before. [Short_Pause] By the way, after the disaster took place, he became oddly addicted to the hot sauce. What else would you like to know?[EOA] 
+		
+		[Conversation] You can ask about the sauce, or ask for one bottle. [Action]
 	*then
 		hear buy, buy a bottle, can I have a bottle of hot sauce, could I, can you, can I, one, ask for one bottle, ask one, please give me  {
             -> One Bottle of Sauce
