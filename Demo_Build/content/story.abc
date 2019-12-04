@@ -2380,17 +2380,16 @@
 		[Alchemist]
 		This, my friend, is a Glimmerbrook
 		Mandrake. You don't find this
-		anywhere. It is basically impossible
+		anywhere. It is nearly impossible
 		to get, like the citrine. If Luke
 		managed to find this, well, he doesn't
 		deserve it anyway. So I guess he made
-		the right choice of giving it to you. [EOA]
+		the right choice to give it to you. [EOA]
 
 		Barette suddenly realizes something.
 
 		[Alchemist]
-		Hmm. Given that this is hard to come
-		by anywhere, perhaps we can try to add
+		Hmm. perhaps we can try to add
 		this into our mix? Come on, let's see
 		what happens. [EOA]
 
@@ -2453,7 +2452,7 @@
 		[Alchemist]
 		We used to shout out Eureka! To each
 		other. That was the phrase we use when
-		we did something together. [EOA]
+		we accomplished something together. [EOA]
 
 		Barette then realizes that she went off by himself.
 
@@ -2490,17 +2489,16 @@
 	*say
 		[Alchemist]
 		Ha. Very much like what he would do.
-		He would deny everything until you
-		corner him, even when he did nothing
-		wrong. [EOA]
+		He would always put up a good fight until you
+		corner him. [EOA]
 
 		Then she looks at the seed in his hand.
 
 		[Alchemist]
-		If Luke gave you this precious plant,
-		knowing that you'll end up meeting me
-		eventually, then he probably knows.
-		This plant must be the key ingredient
+		If Luke gave you this precious plant
+		and knows that you'll end up meeting me
+		eventually, then he probably also knows that
+		this plant must be the key ingredient
 		that's missing. Come, let's finish
 		this once and for all. [EOA]
 
@@ -2718,9 +2716,7 @@
 		[Alchemist]
 		Well, this could be our lucky day.
 		Let's see if this works, shall we?
-		Pull me up from this chair. [EOA]
-
-		She extends her arm out and asks you to pull her up.
+		Can you pull me up from this chair? [EOA]
 
 	*reprompt 
 		Barette realized something as soon as you told him
@@ -2736,7 +2732,7 @@
 		You should pull her up from the chair.
 		
 	*then
-		hear pull, pull her up, help, up, chair, pull her up from the chair {
+		hear pull, pull her up, help, up, chair, pull her up from the chair, yes, sure, ok {
 			-> Alchemist Brews Potion
 		}
 
@@ -2822,6 +2818,8 @@
 		return only to give us yet another
 		curse?[EOA]
 
+		The mayor looks surpised and disappointed.
+
 		[Alchemist]
 		No! People. I came back here because I
 		knew I did something terrible. I came
@@ -2881,7 +2879,7 @@
 		You stood there and do nothing.
 		
 		[Mayor]
-		I'm sorry, Barette, but I think, we've
+		We've
 		seen what you're capable of. You even
 		turned our visitor against us. You
 		must leave. [EOA]
