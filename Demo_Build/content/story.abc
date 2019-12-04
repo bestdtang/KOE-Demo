@@ -4773,10 +4773,7 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 
 @cowplant_puzzle_start
 	*say
-		You wake up finding yourself in a tent. The sunlight sprinkles on your face through the small holes in the ceiling. 
-		As you slowly gain consciousness, you hear a strange shouting coming from outside.
-		<audio src='https://koetest.s3.amazonaws.com/Act3/manscream_01.mp3'/> 
-		But before you get the sound, it's strange enough that you ended up in this tent. What's inside this tent? you should look around. [Action]
+		You wake up after a long sleep but find youself in a tent. Maybe you want to look around first. [Action]
 	*recap
 		You should look around first.
 	*reprompt
@@ -4795,14 +4792,16 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 
 @cowplant_puzzle_tent_around_tutorial
 	*say
-		Surprisingly, it's a fairly large tent, and a messy one. Books and papers are scattered everywhere on the floor. 
-		There is also a cabinet full of plants and seeds and mysterious materials contained in vials and glass jars. 
-		A leather book that reads Cowplant Observation Notes is present on the small table beside it. That's pretty much it in the tent.  
-		And then you hear another sound. <audio src='https://koetest.s3.amazonaws.com/Act3/cowplantThrowOut.mp3'/> What's outside?
+		Books and scratch paper scatter everywhere on the ground in this large and messy tent.
+		You see a cabinet full of plants and seeds in glass jars. 
+		A carefully binded leather notebook catches you attention. It reads Cowplant Observation Notes.
+		While you are wondering what is cowplant, you hear a strange sound from the outside.
+		<audio src='https://koetest.s3.amazonaws.com/Act3/manscream_01.mp3'/> 
+		Then you hear another sound. <audio src='https://koetest.s3.amazonaws.com/Act3/cowplantThrowOut.mp3'/> Maybe you should go outside.[Action]
 	*recap
 		You should go outside.
 	*reprompt
-		You hear another sound. <audio src='https://koetest.s3.amazonaws.com/Act3/cowplantThrowOut.mp3'/> What's outside?
+		You hear another sound. <audio src='https://koetest.s3.amazonaws.com/Act3/cowplantThrowOut.mp3'/> Maybe you should go outside.[Action]
 	*then
 		hear go outside, look outside, go out, look at outside {
 			-> cowplant_puzzle_outside_around_tutorial
@@ -4812,10 +4811,9 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 
 @cowplant_puzzle_outside_around_tutorial
 	*say
-		As you exit the tent, you see the familiar, infinite desert. 
-		Oh. You're still in the desert. As you look back at the tent, you immediately noticed a strange plant. 
-		This plant is the size of a big refrigerator, and it has a mouth. That's right, a mouth. 
-		A man is lying on the ground, fainted.
+		You walked outside. As soon as you step out of the tent, you realize that you are still in the desert.
+		In front of you, there is a giant plant is as large as the refrigerator. What's more starnge is that, it has a mouth. Yes, a mouth. 
+		Beside the plant a man is lying on the ground, fainted.
 	*then
 		-> cowplant_puzzle_outside_interaction
 
@@ -5092,7 +5090,7 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 
 @cowplant_puzzle_tent_view_man_out
 	*say
-		You try to find the man. But then you realize that he is still lying outside. You should probably go outside to wake him up.
+		You try to find the man but he is still lying outside. You may want to go outside and wake him up.
 	*then
 		-> cowplant_puzzle_tent_interaction
 
@@ -5122,8 +5120,8 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 
 @cowplant_puzzle_tent_pickup_notebook
 	*say
-		You pick up the notebook. It is heavy. Dozens of bookmarks are stuck on different pages. You take the notebook with you. 
-		So, at anytime, you can look at the note book to see more details.
+		You pick up the notebook. It has many bookmarks on different pages. You decide to carry the notebook with you so you can look things up easier.
+		You can look at the note book to see more details. [Action]
 	*recap
 		You should look at the notebook first.
 	*reprompt
@@ -5135,7 +5133,7 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 
 @cowplant_puzzle_tent_view_notebook
 	*say
-		You look at the notebook. It is a leather book that it reads Cowplant Observation Notes. You should pick up the notebook.
+		You look at the notebook. It is a leather book that reads Cowplant Observation Notes. You should pick up the notebook. [Action]
 	*recap
 		You should pick up the notebook first.
 	*reprompt 
@@ -5150,7 +5148,7 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 
 @cowplant_puzzle_tent_view_man
 	*say
-		You look at the man. He is sitting in front of the table. Looking at nowhere. His eyes are out of focus. You should ask what happened. [Action]
+		You look at the man. He is sitting still like a stone. Looking at nowhere. Maybe you want to ask him what happened. [Action]
 	*then
 		hear what happened {
 			-> cowplant_puzzle_tent_view_man_talk
@@ -5158,33 +5156,34 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 
 @cowplant_puzzle_tent_view_man_talk
 	*say
-		He is muttering no sense words. You probably need to figure out what happened to him by yourself. And hopefully you can find how to cure him. Possiblly from the notebook?
+		He is murmuring to himself. It's unlikely that you will get any clue from him. 
+		It's on you to find out what happended. Hopefully you can find a way to cure him. The notebook has his writing. You might find some useful information from the notebook.
 	*then
 		-> cowplant_puzzle_tent_interaction
 
 @cowplant_puzzle_tent_around_noman
 	*say
-		You are in a messy tent. A leather book that reads Cowplant Observation Notes is present on the small table.
+		You are in the tent. A leather book that reads Cowplant Observation Notes is on the table.
 	*then
 		-> cowplant_puzzle_tent_interaction
 
 @cowplant_puzzle_tent_around_man
 	*say
-		You are in a messy tent. A man is sitting in front of a  small table. A leather book that reads Cowplant Observation Notes is present on it. 
-		Behind you, it's the door.
+		You are in the tent. A man is sitting still in front of a table. A leather book that reads Cowplant Observation Notes is on the table. 
+		The door is behind you.
 	*then
 		-> cowplant_puzzle_tent_interaction
 
 @cowplant_puzzle_outside_stereo_on
 	*say
 		You turn on the stereo. <audio src='https://koetest.s3.amazonaws.com/Act3/Act3+puzzle/radio.mp3'/> 
-		Oh, my, god. The plant is swagging along the music.
+		To your surpirse the plant start to swag along the music.
 	*then
 		-> cowplant_puzzle_outside_interaction
 
 @cowplant_puzzle_outside_view_stereo
 	*say
-		You look at the stereo. It is placed on the ground beside the plant. Looks like someone listens to it frequently.
+		You look at the stereo. It is on the ground beside the plant. Looks like someone listens to it frequently.
  You can turn on the stereo.
 	*then
 		flag view_stereo
@@ -5192,7 +5191,7 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 
 @cowplant_puzzle_outside_view_basket
 	*say
-		You look at the basket of swordfish on the corner. It seems like someone is feeding this creature by swordfish. You can probably interact with the plant, to feed it.
+		You look at the basket of swordfish on the corner. Is that the food for the plant? Maybe you can interact with the plant, and then feed it. 
 	*then
 		-> cowplant_puzzle_outside_interaction
 
@@ -5200,7 +5199,7 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 	*say
 		
 	*recap
-		You can not do that to the plant. If you don't know what to do to it, you should probably leave the plant right now and come back later when you can think of what to do.[Action]
+		The plant has no reaction. If you are not sure what to do with it, you can leave the plant for now and come back later when you know what to do.[Action]
 	*reprompt
 		You can do anything to the cowplant, or you can leave the plant.
 	*then
@@ -5223,48 +5222,52 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 
 @cowplant_puzzle_cowplant_leave
 	*say
-		You leave the cowplant.
+		You leave the plant.
 	*then
 		-> cowplant_puzzle_outside_interaction
 
 @cowplant_puzzle_outside_view_plant
 	*say
-		You look at the plant. It is a bizarre plant.  
-		It has a cow head but roots of plants. A bell is hanging on its stem, or, you should say, neck. 
-		Staring closer at the plant, a tinny label is taped on, reads, cow-plant. It is waving as it is attracting your attention. 
-		It sticks out its tongue to you, and the weirdest thing is, the tongue is a cake! 
-		You can do anything to the cowplant by saying, go to the plant. 
+		You look at this bizzare plant from a distance. A label on it reads, cow-plant. 
+		It has a cow head but normal plant root. A bell is hanging on its stem, or, more accurately, its neck. 
+		Now it's waving its cow head at you to get your attention. 
+		It slowly sticks out its tongue to you. What's even weird is that, the tip of the tongue is a cake! 
+		Maybe you want to get closer by saying go to the plant. 
 	*then
 		-> cowplant_puzzle_outside_interaction
 
 @cowplant_puzzle_outside_wake_man
 	*say
-		You wake up the man. He stares at you for a second and walks straight to the tent. He is muttering some nosense words. You wonder if he is the one who saved you from the sandstorm, and what damaged his mind. You can probably go to the tent to discover more, or you can look at other things.
+		You shake the man to wake him up. He suddenly opens his eyes and stares straight at you. 
+		He is murmuring some words. He is half conscious. 
+		Without saying anything to you he walks straight back to the tent. 
+		He must be the one who saved you from the sandstorm. What exactly happened to this poor man? 
+		Maybe you can go to the tent to find out more, or you can look at other specific objects.
 	*then
 		-> cowplant_puzzle_outside_interaction
 
 @cowplant_puzzle_outside_view_man
 	*say
-		You look at the man. He is fainted, and lying on the ground. He is wet and smelly. Some sort of liquid sticks on all of his body. You can wake up the man.
+		You look at the man. He is fainted on the ground. He is wet and smelly with some green liquid all of his clothes. You may want to wake him up. 
 	*then
 		flag view_manoutside
 		-> cowplant_puzzle_outside_interaction
 
 @cowplant_puzzle_outside_around_man
 	*say
-		You look around. You are outside. Looking at far away, you can only see the infinite desert. In front of you, there is a tent, and a plant. A man is lying on the ground. Besides the plant, there is a basket of swordfish, and a stereo.
+		You look around. You are outside of the tent. You can see a plant and a man is lying beside the plant. There are also a basket of swordfish, and a stereo.
 	*then
 		-> cowplant_puzzle_outside_interaction
 
 @cowplant_puzzle_outside_around_noman
 	*say
-		You look around. You are outside. Looking at far away, you can only see the infinite desert. In front of you, there is a tent, and a plant. Besides the plant, there is a basket of swordfish, and a stereo.
+		You look around. You are outside of the tent. You can see a plant and a man is lying beside the plant. There are also a basket of swordfish, and a stereo.
 	*then
 		-> cowplant_puzzle_outside_interaction
 
 @cowplant_puzzle_tent_getmilk
 	*say
-		You go to the tent. The man is still stumbled. You forced him to drink the milk. 
+		You go back to the tent. The man is still sitting there, half conscious. You force him to drink the milk. 
 		[SeedTrader]
 		Ahhh... What is that! en... Thanks. You bring me back![EOA]
 	*then
@@ -5275,7 +5278,7 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 
 @cowplant_puzzle_ends
 	*say	
-		That's the end of this cow plant puzzle. Do you want to experience the whole story now, or choose another puzzle to play?
+		This is the end of this cow plant puzzle. Do you want to play the interactive story, or solve another puzzle?
 	*then
 		hear story {
 			unflag skip
@@ -5294,13 +5297,13 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 
 @cowplant_puzzle_plant_milk
 	*say
-		You milk the plant, <audio src='https://koetest.s3.amazonaws.com/Act3/milkingCowplant.mp3'/> and get a bottle of potion. That's it! That is the potion which can heal the man.
+		You milk the plant, <audio src='https://koetest.s3.amazonaws.com/Act3/milkingCowplant.mp3'/> You get a bottle of milk, or you can call it potion. This is the potion to cure the man.
 	*then
 		-> cowplant_puzzle_cowplant_interaction
 
 @cowplant_puzzle_plant_cake
 	*say
-		You go for the cake but then you find that grabing its cake tongue is too disgusting to do.
+		You try to get the cake but give up. The tongue is sticky and smelly. 
 	*then
 		-> cowplant_puzzle_outside_interaction
 
@@ -5312,16 +5315,16 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 
 @cowplant_puzzle_plant_feed
 	*say
-		You picked up a swordfish from the basket and feed the plant with it. <audio src='https://koetest.s3.amazonaws.com/Act3/cowplantSounds_01.mp3'/>
+		You grab a sticky swordfish from the basket and feed the plant. <audio src='https://koetest.s3.amazonaws.com/Act3/cowplantSounds_01.mp3'/>
 	*then
 		-> cowplant_puzzle_cowplant_interaction
 
 @cowplant_puzzle_grab_notebook
 	*say
-		You look at the notebook. You wonder what cowplant is. 
-		So, you find the bookmark that reads, Introduction, and you flip the notebook to that page. 
+		You look at the notebook and flip to introduction.
 		It reads. Cowplant is a bizarre, partly bovine form of vegetation. It usually has 4 growth states. 
-		You can search for any keyword that you found from the previous pages. For example, try to search, growth states.
+		You can search for words that you read from the notebook. Keep in mind, you want to find the clue to cure the poor man who saved you from the sandstorm.
+		Try saying search growth states.
 	*recap
 		Try to search, growth states.
 	*reprompt
@@ -5391,65 +5394,65 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 		    -> cowplant_puzzle_notebook_close
 		}
 	*reprompt
-		What keyword do you want to search? You can search for any keyword that you found from the previous pages. 
-		Or you can close the notebook if you are finish searching.[Action]
+		You can search for keywords that you read in the notebook. 
+		Or you can close the notebook if you find the way to cure the man. Which keyword would you like to search? [Action]
 	*recap
-		You can't find that bookmark.
+		Sorry there's no bookmark for that.
 
 @cowplant_puzzle_notebook_seedtrader_introduction
 	*say
-		You searched the keyword, cowplant introduction, and opened up the notebook from that bookmark. It reads. 
+		You searched the keyword, cowplant introduction. It reads. 
 		Cowplant is a bizarre, partly bovine form of vegetation. It usually has 4 growth states. 
 	*then
 		-> cowplant_puzzle_notebook_seedtrader
 
 @cowplant_puzzle_notebook_seedtrader_devour
 	*say
-		You searched the keyword, devour, and opened up the notebook from that bookmark. It reads. If a person attempts to take the cake again, the cowplant will devour them. Which means, they are killed forever.
+		You searched the keyword, devour. The page reads. If a person attempts to take the cake again, the cowplant will devour them. Which means, they are killed forever.
 	*then
 		-> cowplant_puzzle_notebook_seedtrader
 
 @cowplant_puzzle_notebook_seedtrader_dementia
 	*say
-		You searched the keyword, severe dementia, and opened up the notebook from that bookmark. It reads. Allergic to cowplant can possiblly cause severe dementia to certain people. Syptoms include eyes out of focus, memery lost, and loss of ability to speak. Drinking the cowplant milk will release the bad mood, as the same time, cure the allergic symtoms.
+		You searched the keyword, severe dementia. The page reads. Allergic to cowplant can possiblly cause severe dementia to certain people. Syptoms include eyes out of focus, memery lost, and loss of ability to speak. Drinking the cowplant milk will release the bad mood, as the same time, cure the allergic symtoms.
 	*then
 		-> cowplant_puzzle_notebook_seedtrader
 
 @cowplant_puzzle_notebook_seedtrader_allergic
 	*say
-		You searched the keyword, allergic symtoms, and opened up the notebook from that bookmark. It reads. A few people are allergic to be swallowed by the cowplant. Allergic symtoms are different from person to person. Possiblly causing severe dementia to certain people.
+		You searched the keyword, allergic symtoms. The page reads. A few people are allergic to be swallowed by the cowplant. Allergic symtoms are different from person to person. Possiblly causing severe dementia to certain people.
 	*then
 		-> cowplant_puzzle_notebook_seedtrader
 
 @cowplant_puzzle_notebook_seedtrader_sprout
 	*say
-		You searched the keyword, sprout, and opened up the notebook from that bookmark. It reads.
+		You searched the keyword, sprout. The page reads.
  When you plant a Cowplant Berry, there are tiny horns appearing through the soil.
 	*then
 		-> cowplant_puzzle_notebook_seedtrader
 
 @cowplant_puzzle_notebook_seedtrader_berry
 	*say
-		You searched the keyword, cowplant berry, and opened up the notebook from that bookmark. It reads. Cowplant berry is a black and white berry. Once you plant the cowplant berry into the soil, it will gow up as a sprout stage cowplant.
+		You searched the keyword, cowplant berry. The page reads. Cowplant berry is a black and white berry. Once you plant the cowplant berry into the soil, it will gow up as a sprout stage cowplant.
 	*then
 		-> cowplant_puzzle_notebook_seedtrader
 
 @cowplant_puzzle_notebook_seedtrader_hungry
 	*say
-		You searched the keyword, hungry, and opened up the notebook from that bookmark. It reads.
+		You searched the keyword, hungry. The page reads.
 When cowplant is hungry, it will stick its cake tongue out. You can feed them at this moment. Cowplant will swallow whoever go for the cake.
 	*then
 		-> cowplant_puzzle_notebook_seedtrader
 
 @cowplant_puzzle_notebook_seedtrader_death
 	*say
-		You searched the keyword, death state, and opened up the notebook from that bookmark. It reads. Twelve hours after a Cowplant shows its cake tongue, and is not fed, it will die, A dead Cowplant has a dead stem with a hanging Cowplant skull. Cowplants cannot be saved after this stage.
+		You searched the keyword, death state. The page reads. Twelve hours after a Cowplant shows its cake tongue, and is not fed, it will die, A dead Cowplant has a dead stem with a hanging Cowplant skull. Cowplants cannot be saved after this stage.
 	*then
 		-> cowplant_puzzle_notebook_seedtrader
 
 @cowplant_puzzle_notebook_seedtrader_milk
 	*say
-		You searched the keyword, milk, and opened up the notebook from that bookmark. It reads. If people were swallowed for the first time, the cowplant will produce milk. Milking a cowplant, you will get a potion to release the mood, and give the emotions back to the patient. The study found, drinking the milk can also cure the allergic symptoms.
+		You searched the keyword, milk. The page reads. If people were swallowed for the first time, the cowplant will produce milk. Milking a cowplant, you will get a potion to release the mood, and give the emotions back to the patient. The study found, drinking the milk can also cure the allergic symptoms.
 	*then
 		-> cowplant_puzzle_notebook_seedtrader
 
@@ -5462,56 +5465,54 @@ When cowplant is hungry, it will stick its cake tongue out. You can feed them at
 
 @cowplant_puzzle_notebook_seedtrader_cake
 	*say
-		You searched the keyword, cake tongue, and opened up the notebook from that bookmark. It reads. Cowplant has a cake shaped tongue. When it is hungry, it will stick its tongue out to attract people's attention, so cowplant can swallow them.
+		You searched the keyword, cake tongue. The page reads. Cowplant has a cake shaped tongue. When it is hungry, it will stick its tongue out to attract people's attention, so cowplant can swallow them.
 	*then
 		-> cowplant_puzzle_notebook_seedtrader
 
 @cowplant_puzzle_notebook_seedtrader_feed
 	*say
-		You searched the keyword, feed, and opened up the notebook from that bookmark. It reads. A Cowplant can  be fed  by meat when its hungry and its cake- shape- tongue sticks out.
+		You searched the keyword, feed. The page reads. A Cowplant can  be fed  by meat when its hungry and its cake- shape- tongue sticks out.
 	*then
 		-> cowplant_puzzle_notebook_seedtrader
 
 @cowplant_puzzle_notebook_seedtrader_states
 	*say
-		You searched the keyword, growth states, and opened up the notebook from that bookmark. It reads. Cowplants usually have three growth states, and can die. They are sprout state, baby state, mature state, and death state.
+		You searched the keyword, growth states. The page reads. Cowplants usually have three growth states, and can die. They are sprout state, baby state, mature state, and death state.
 	*then
 		-> cowplant_puzzle_notebook_seedtrader
 
 @cowplant_puzzle_notebook_seedtrader_states_tutorial
 	*say
-		You searched the keyword, growth states, and opened up the notebook from that bookmark. 
-		It reads. Cowplants usually have three growth states, and can die. They are sprout state, baby state, mature state, and death state. 
-		To finish searching, try close the notebook.
+		You searched the keyword, growth states. 
+		The page reads. Cowplants usually have three growth states, and can die. They are sprout state, baby state, mature state, and death state. 
+		You can search its different growth states later. For now, to finish searching, try saying, close the notebook.
 	*recap
-		You should try to close the notebook right now. 
+		To finish searching, try saying close the notebook.
 		If you can think of any keyword that you want to search, you can look at the notebook again, at anytime.
 	*reprompt
-		Try close the notebook.
+		To finish searching, try saying close the notebook.
 	*then
 		hear close the notebook {
 			-> cowplant_puzzle_notebook_close
 		}
-	*recap
-		To finish searching, you should close the notebook.
-	*reprompt
-		To finish searching, you should close the notebook.
+
 
 @cowplant_puzzle_notebook_seedtrader_mature
 	*say
-		You searched the keyword, mature state, and opened up the notebook from that bookmark. It reads. In this stage, the Cowplant is fully matured. You can feed it, or at certain moment, you can milk it.
+		You searched the keyword, mature state. The page reads. In this stage, the Cowplant is fully matured. You can feed it, or at certain moment, you can milk it.
 	*then
 		-> cowplant_puzzle_notebook_seedtrader
 
 @cowplant_puzzle_notebook_seedtrader_baby
 	*say
-		You searched the keyword, baby state, and opened up the notebook from that bookmark. It reads. A few days after you plant the cowplant berry. You can see a tiny cowplant. In this state, you can't do much things with it.
+		You searched the keyword, baby state. The page reads. A few days after you plant the cowplant berry. You can see a tiny cowplant. In this state, you can't do much things with it.
 	*then
 		-> cowplant_puzzle_notebook_seedtrader
 
 @cowplant_puzzle_notebook_close
 	*say
-		You close the notebook. <audio src='https://koetest.s3.amazonaws.com/Act5/Act+5+puzzle/closebook_01.mp3'/>
+		You closed the notebook. <audio src='https://koetest.s3.amazonaws.com/Act5/Act+5+puzzle/closebook_01.mp3'/>
+		You can look at it again later and search for more keywords.
 	*then
 		if currentplace is 0 {
 		    -> cowplant_puzzle_tent_interaction
