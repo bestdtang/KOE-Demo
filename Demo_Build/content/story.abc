@@ -12,6 +12,7 @@
 
 @start
 	*say
+		<audio src='https://koetest.s3.amazonaws.com/bgm/musicBeginning.mp3'/>
 		Greetings, explorer. [Short_Pause] Welcome to the Desert Traveler experience! [Short_Pause] In this five-act interactive story, you can stop and come back at any time. Now you can start from the very beginning and experience the exciting journey; And you can also jump to the in-game puzzles directly and enjoy solving it, which will take shorter time. Which do you prefer? Story or puzzle?[Action]
 	*then
 		set currentLocation as 'desert'
@@ -1088,6 +1089,12 @@
 
 
 @Been Walking For Days
+	*show
+		template: 'default'
+        background:'https://koetest.s3.amazonaws.com/Images/CowPlant.png'
+        title: ''
+        subtitle: ''
+
 	*say
 		You've been walking for days, but still no sign of valleys, only desert. 
 		
@@ -1803,7 +1810,7 @@
 	    hear hot sauce, sneaking{
 	        -> puzzle_intro_sneaking
 	    }
-	    hear cow plant{
+	    hear cow plant, cow, plant, cowplant{
 	        -> puzzle_intro_cowplant
 	    }
 	    hear leading flower{
