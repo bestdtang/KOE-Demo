@@ -287,15 +287,16 @@
 @Ask for Help
 	*say
 		[Man] 
-		//That's a rare name around here. 
-		[Pause] This is a desert so you could imagine it never rains here [Short_Pause] until that night. [Pause] On that night. We've seen the greatest thunderstorm of the town's history, [Short_Pause] but no-one anticipated what came after.
-		//That's a rare name around here. [Pause] 
-		Anyway, this is a desert so you could imagine it never rains here [Short_Pause] until that night.
+		That's a rare name around here. 
+		[Pause] This is a desert so you could imagine it never rains here [Short_Pause] until that night. On that night. We've seen the greatest thunderstorm of the town's history, [Short_Pause] but no-one anticipated what came after.[EOA]
+
 		<audio src='https://koetest.s3.amazonaws.com/Act1/thunder11s.mp3'/>
+
+		[Man] 
 		On that night. We've seen the greatest thunderstorm of the town's history, [Short_Pause] but no-one anticipated what came after.[EOA]
 		
         [Kid]
-        [Long_Pause] And then the next morning, my dad started sweating like a cow. So did everyone else. [EOA]
+        [Pause] And then the next morning, my dad started sweating like a cow. So did everyone else. [EOA]
 		
         [Man]
         Yeah. [Pause] What's worse was what happens afterward. [Short_Pause]That's right.The stench. This stench. It kept everyone from talking to each other. It drove tourists away. And now, no-one wants to come to our town anymore.[EOA]
@@ -348,15 +349,20 @@
 
 @Decide to Help
 	*say
-		[Man]
 		[MAN_JOY]
+
+		[Man]
 		This is our lucky day. Finally a person who is willing to help us. Well, I guess I shouldn't be keeping you here for too long. [EOA]
+
 		[Kid] 
 		But papa, you haven't told him anything about how to solve the problem. [EOA]
+
 		[Man]
 		Oh Yes, yes. Well, I'd like to help you, but what I've told you is all I know. Hey, perhaps you should go find the mayor! He must know more than anyone of us. [EOA]
+
 		[Kid] 
 		But the mayor is also locking himself up. No one has seen him for a while. [EOA]
+
 		[Man] 
 		Ha! This, my son, is when being the owner of the ONLY general store in the town comes in handy [Short_Pause] you see, the mayor has a secret craving for Super-Duper Hot Blue Pepper Sauce. [Short_Pause] And guess who's the only one selling it? Me! Ha haaah! [EOA]
 	*then
@@ -364,8 +370,7 @@
 
 @Decide to Help 2
 	*say 
-		The shopkeeper mentions the mayor, and the hot sauce with a ridiculously long name that you can't remember. Although it's pretty obvious that you would need to ask for one bottle in order to get the mayor's attention, but it never hurts to ask about the sauce, or the mayor. [EOA]
-		[Action]
+		The shopkeeper mentions the mayor, and the hot sauce with a ridiculously long name that you can't remember. [Conversation] Although it's pretty obvious that you would need to ask for one bottle in order to get the mayor's attention, but it never hurts to ask about the sauce, or the mayor. [Action]
 	*recap
 		You can ask about the mayor, ask about the sauce, or ask for one bottle
 	*then
@@ -1850,11 +1855,15 @@
 
 @Test Audio
 	*say
-		<audio src='https://koetest.s3.amazonaws.com/afa/af4_worry.mp3'/>
-		<audio src='https://koetest.s3.amazonaws.com/afa/afa11_fail_angry.mp3'/>
-		<audio src='https://koetest.s3.amazonaws.com/afa/afa16_whoah+.mp3'/>
-		<audio src='https://koetest.s3.amazonaws.com/afa/afa18_suprise+.mp3'/>
-		<audio src='https://koetest.s3.amazonaws.com/afa/afa19_face_disgust.mp3'/>
+		<audio src='https://koetest.s3.amazonaws.com/amb/amb_happy_2.mp3'/>
+  		<audio src='https://koetest.s3.amazonaws.com/amb/amb_happy1.mp3'/>
+  		<audio src='https://koetest.s3.amazonaws.com/efa/efa15_happy_2.mp3'/>
+  		<audio src='https://koetest.s3.amazonaws.com/new_demo_stereo/doorOpen2.mp3'/>
+		// <audio src='https://koetest.s3.amazonaws.com/afa/af4_worry.mp3'/>
+		// <audio src='https://koetest.s3.amazonaws.com/afa/afa11_fail_angry.mp3'/>
+		// <audio src='https://koetest.s3.amazonaws.com/afa/afa16_whoah+.mp3'/>
+		// <audio src='https://koetest.s3.amazonaws.com/afa/afa18_suprise+.mp3'/>
+		// <audio src='https://koetest.s3.amazonaws.com/afa/afa19_face_disgust.mp3'/>
 	*then
 		hear continue {
 		    -> TA2
@@ -2014,18 +2023,43 @@
 // ACT V Start
 
 @Arrival At The Inner Cave
+	*show	
+		template: 'default'
+        background:'https://koetest.s3.amazonaws.com/visuals/Cave/caveLight2.png'
+        title: ''
+        subtitle: ''
 	*say
 		You push through the stone doors.
 		//(SE: stone doors)
 		<audio src='https://koetest.s3.amazonaws.com/Act5/stoneDoor.mp3'/>
 		Immediately, you are greeted with glaring rays of light. 
 		Isn't this supposed to be a cave?
-		Yes, but none of your assumptions matter. Because right in
+		Yes, but none of your assumptions matter. 
+	*then
+		-> Arrival At The Inner Cave 2
+
+@Arrival At The Inner Cave 2
+	*show
+		template: 'default'
+        background:'https://koetest.s3.amazonaws.com/visuals/Cave/plant2.png'
+        title: ''
+        subtitle: ''
+	*say
+		Because right in
 		front of you is a hollowed space beneath the earth, filled
 		with all kinds of greens and plants. The center of the roof
 		is a gigantic hole that allows sunlight to nurture the life
 		in here.
-		
+	*then
+		-> Arrival At The Inner Cave 3
+
+@Arrival At The Inner Cave 3
+	*show	
+		template: 'default'
+        background:'https://koetest.s3.amazonaws.com/visuals/Cave/plant1.png'
+        title: ''
+        subtitle: ''
+	*say
 		//(SE: sounds of bushes bristling)
 		<audio src='https://koetest.s3.amazonaws.com/Act5/OasisAmbience.mp3'/>
 		
@@ -2146,11 +2180,30 @@
 		[Alchemist]
 		Alright, ingredients, check. Solvent,
 		check. Ok. Let's see if this works. [EOA]
+	*then
+		-> Join The Alchemist At the Cauldron 2
 
+@Join The Alchemist At the Cauldron 2
+	*show
+		template: 'default'
+        background:'https://koetest.s3.amazonaws.com/visuals/Cave/waterAndCitrine.png'
+        title: ''
+        subtitle: ''
+	*say
 		The alchemist walks into the pond in the middle, towards the
 		floating citrine in the middle. He takes out a vial and puts
 		it under the gemstone.
 		
+	*then
+		-> Join The Alchemist At the Cauldron 3
+
+@Join The Alchemist At the Cauldron 3
+	*show
+		template: 'default'
+        background:'https://koetest.s3.amazonaws.com/visuals/Cave/citrine.png'
+        title: ''
+        subtitle: ''
+	*say
 		//(SE: Miracles sounds)
 		[MiracleSound01]
 		Miraculously, from the gemstone comes out a drop of a glowing
@@ -2282,6 +2335,11 @@
         }
 
 @Alchemist Asks
+	*show
+		template: 'default'
+        background:'https://koetest.s3.amazonaws.com/visuals/Cave/cave_pond_withoutPeople.png'
+        title: ''
+        subtitle: ''
 	*say
 		You gave the seed to the alchemist. The alchemist looks at it
 		for a second, then stares at you with wide-opened eyes.
@@ -2585,6 +2643,11 @@
 		-> Alchemist Brews Potion
 
 @Alchemist Asks More
+	*show
+		template: 'default'
+        background:'https://koetest.s3.amazonaws.com/visuals/Cave/cave_pond_withoutPeople.png'
+        title: ''
+        subtitle: ''
 	*say
 		You gave the seed to the alchemist. The alchemist looks at it
 		for a second, then looks at you with confused but trembling
@@ -2753,6 +2816,11 @@
 		}
 
 @Alchemist Brews Potion
+	*show
+		template: 'default'
+        background:'https://koetest.s3.amazonaws.com/visuals/Cave/pond.png'
+        title: ''
+        subtitle: ''
 	*say
         Barette quickly walks back to the cauldron. He extracts
 		another drop of substance the citrine releases.
@@ -2761,7 +2829,16 @@
 
 		[Alchemist]
 		Here goes nothing. [EOA]
+	*then
+		-> Alchemist Brews Potion 2
 
+@Alchemist Brews Potion 2
+	*show
+		template: 'default'
+        background:'https://koetest.s3.amazonaws.com/visuals/Cave/cave_pond_withoutPeople.png'
+        title: ''
+        subtitle: ''
+	*say
 		He allows the seed to slip and roll of his palm. The seed
 		slowly falls and enters the pot.
 		
