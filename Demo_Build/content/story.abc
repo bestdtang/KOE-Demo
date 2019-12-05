@@ -2094,10 +2094,10 @@
 		towards a little hut in the cave.
 		
 		[Alchemist]
-		Oh welcome to the cave ok I need to
-		work on something please don't come
-		out I will be right with you in a
-		moment please don't come out ok? [EOA]
+		Oh welcome to the cave. ok I need to
+		work on something. please don't come
+		out. I will be right with you in a
+		moment. please don't come out, ok? [EOA]
 		
 		She puts you in the hut and closes the door.
 		
@@ -2129,7 +2129,7 @@
 		I've caused. Wait, you don't look like
 		you're from the town. [EOA]
 
-		She looks at you for a moment. Then She stands up from the
+		She looks at you for a moment. Then she stands up from the
 		ground, getting the dirt off of her clothes. Her clothes are
 		still dirty, though.
 
@@ -2139,6 +2139,11 @@
 		alchemist, and a botanist. I'm working
 		on the last step to my latest work,
 		care to join? [EOA] [Action]
+	*reprompt
+		Would you like to join?
+		
+	*recap
+		The alchemist introduced herself and asked if you want to join her on the last step of her work. Would you like to join?
 
 	*then
 		hear yes, sure {
@@ -2178,6 +2183,9 @@
 		[Alchemist]
 		Alright, ingredients, check. Solvent,
 		check. Ok. Let's see if this works. [EOA]
+		
+	*recap
+		The alchemist confessed to you. She kept her self behind the stone doors to work on a solution to undo her mistakes.
 	*then
 		-> Join The Alchemist At the Cauldron 2
 
@@ -2270,10 +2278,10 @@
             -> Join The Alchemist At the Cauldron
         }
         hear no, nope {
-            -> Alchemist Teel You to Stay Here
+            -> Alchemist Tell You to Stay Here
         }
 
-@Alchemist Teel You to Stay Here
+@Alchemist Tell You to Stay Here
 	*say
 		[Alchemist]
         Ah, I see. You're the cautious type. Got it. Well,
@@ -2434,8 +2442,6 @@
 		Barette looks astonished, as if she couldn't believe what she
 		has heard.
 
-
-
 		[Alchemist]
 		What? Say that again? [EOA] [Action]
 
@@ -2545,7 +2551,10 @@
 
 		[Alchemist]
 		You said this seed was from him? [EOA] [Action]
-
+	*reprompt
+		Is this seed really from the seed trader?
+	*recap
+		Is this seed really from the seed trader?
 	*then
 		hear yes, sure {
             -> Alchemist Accepts
@@ -2622,6 +2631,11 @@
 		[Alchemist]
 		None of it matters anyway now. What
 		else did he say? [EOA] [Action]
+	*reprompt
+		She asks you what did Luke say to you. When you left the tent, Luke had asked you to apologize to the alchemist for him.
+	*recap
+		The alchemist told you that Luke the seed trader was once her apprentice. However, her experiment went wrong one night and Luke turned her name into the mayor.
+		She asks you what did Luke say to you. When you left the tent, Luke had asked you to apologize to the alchemist for him.
 
 	*then
 		hear sorry {
@@ -2977,7 +2991,7 @@
 		Will you open the vial? [Action]
 
 	*then
-		hear yes, sure {
+		hear yes, sure, will {
 			-> Open the Vial
 		}
 		hear no, nope {
@@ -3108,7 +3122,7 @@
 		something worth celebrating.
 		
 		[Mayor]
-		Well, {playerName}. Let's discuss
+		Well, my friend. Let's discuss
 		about the reward I promised, shall we? [EOA]
 
 		[Man]
@@ -3170,7 +3184,7 @@
 @Luke Is Nowhere To Be Found
 	*say
 		[Mayor]
-		Well, {playerName}. Let's discuss
+		Well, my friend. Let's discuss
 		about the reward I promised, shall we? [EOA]
 
 		[Man]
