@@ -183,7 +183,7 @@
 		<audio src='https://koetest.s3.amazonaws.com/Act1/openWoodDoor.mp3'/>
 		Oh dear. [Pause] It is far from being desirable. It stinks. Smelly, smelly, smelly, it's like wearing the same pair of socks for over a year. [Pause]
 		[Kid] Yeah. Told you! [Pause] [EOA] 
-		[Pause] A bald, middle-aged man that looks like in his fifties are slowly walks down the stairs.
+		[Pause] A bald, middle-aged man that looks like in his fifties slowly walks down the stairs.
 		<audio src='https://koetest.s3.amazonaws.com/Act1/woodenFloorCracking.mp3'/>
 		[Kid] Papa! [Pause] [EOA] 
 		//Small pieces of tissue paper are rolled and stuck in his nose. He looks like he could use some more sunshine.
@@ -404,14 +404,20 @@
 	*say
 		[Man]
         I can only say, the hot sauce is really hot, [Short_Pause] and it looks blue, for some reason. Like the gas stoves you see in your kitchen, hot, hot, hot! [EOA]
-		[Boy]
+
+		[Kid]
 		Yeah, when I was little, I thought it was cake frosting in a bottle.[Short_Pause] Well, I was wrong. [EOA]
+
 		[Man]
 		When I was little, [Short_Pause] Speaking like a grown-up, aren't you? [EOA]
-		[Boy]
+
+		[Kid]
 		I am a grown up. [EOA]
+
 		[Man]
-		Ha Ha Ha. Well, what else would you like to know?[EOA] [Conversation] You can ask about the mayor, or ask for one bottle. [Action]
+		Ha Ha Ha. Well, what else would you like to know?[EOA] 
+		
+		[Conversation] You can ask about the mayor, or ask for one bottle. [Action]
 	*then
 		hear buy, buy a bottle, can I have a bottle of hot sauce, could I, can you, can I, one, ask for one bottle, ask one, please give me  {
             -> One Bottle of Sauce
@@ -2228,9 +2234,7 @@
 		
 		Suddenly, the contents of the pot explodes into Berette's
 		face. 
-		
-		[BAR_CRIES]
-		
+				
 		Berette slowly finds herself a chair, then sits down
 		and cries.
 
@@ -2320,9 +2324,7 @@
 
 		Suddenly, the contents of the pot explodes into Berette's
 		face. 
-		
-		[BAR_CRIES]
-		
+				
 		Berette slowly finds herself a chair, then sits down
 		and cries.
 
@@ -2532,7 +2534,9 @@
 		After all this time, huh? [EOA]
 		
 		[BAR_SIGH]
-		
+		She quietly sits down on a chair.
+
+
 		[Alchemist]
 		You know, you we used to be partners.
 		Luke and I. Together, we've
@@ -2578,11 +2582,21 @@
 		If Luke gave you this, and knows that
 		you're coming for me, then this has to
 		be the key ingredient that I'm
-		missing. Come, let's finish this once
-		and for all. [EOA]
+		missing. [EOA]
+		
+		Suddenly, she looks like she realizes something.
 
+		[Alchemist]
+		I have an idea. Help me up, will you?  [EOA]
+
+	*recap 
+		You should pull her up from the chair.
+		
 	*then
-		-> Alchemist Brews Potion
+		hear pull, pull her up, help, up, chair, sure, ok, yes {
+			-> Alchemist Brews Potion
+		}
+
 
 @Alchemist Smirks And Accepts
 	*say
@@ -2600,11 +2614,20 @@
 		and knows that you'll end up meeting me
 		eventually, then he probably also knows that
 		this plant must be the key ingredient
-		that's missing. Come, let's finish
-		this once and for all. [EOA]
+		that's missing. 
+		
+		Suddenly, she looks like she realizes something.
 
+		[Alchemist]
+		I have an idea. Help me up, will you?  [EOA]
+
+	*recap 
+		You should pull her up from the chair.
+		
 	*then
-		-> Alchemist Brews Potion
+		hear pull, pull her up, help, up, chair, sure, ok, yes {
+			-> Alchemist Brews Potion
+		}
 
 @None of It Matters Anyway
 	*say
@@ -2671,11 +2694,20 @@
 		[Alchemist]
 		Given the rarity of this plant... this
 		could be the key ingredient to our
-		potion. Come on, this could be our
-		only chance to set things right. [EOA]
+		potion. 
+		
+		Suddenly, she looks like she realizes something.
 
+		[Alchemist]
+		I have an idea. Help me up, will you?  [EOA]
+
+	*recap 
+		You should pull her up from the chair.
+		
 	*then
-		-> Alchemist Brews Potion
+		hear pull, pull her up, help, up, chair, sure, ok, yes {
+			-> Alchemist Brews Potion
+		}
 
 @Alchemist Asks More
 	*show
@@ -2829,8 +2861,6 @@
 		[BAR_SMILE]
 		She holds up the mandrake seed, and smiles at it.
 
-		
-
 		[Alchemist]
 		Well, this could be our lucky day.
 		Let's see if this works, shall we?
@@ -2886,8 +2916,6 @@
 		Poof! Smoke emerges from the pot. Strangely, you see sparkles
 		of purple within the fog. It swiftly rises and fills the roof.
 
-		[BAR_SURPRISED]
-
 		[Alchemist]
 		This is unlike anything I've
 		seen. Oh dear.[EOA]
@@ -2909,8 +2937,6 @@
 		As you look to Barette, you noticed something else: she no
 		longer smells.
 
-		[BAR_EXCITED]
-
 		[Alchemist]
 		The smell. It's gone. We did it! We
 		did it, visitor! We've found the
@@ -2922,7 +2948,6 @@
 		Eureka![EOA]
 
 		Then she hugs you tightly, and dances around like it's the best of her life.
-
 
 		[Alchemist]
 		Quick! Pack your stuff immediately. We
@@ -2945,6 +2970,7 @@
 
 		//(SE: Town bell)
 		<audio src='https://koetest.s3.amazonaws.com/Act5/townBell.mp3'/>
+
 		The town bell rings. Although they'd prefer not to, the
 		townspeople all come out to check what's going on.
 
@@ -3210,7 +3236,7 @@
 
 @chilirosa_steal_puzzle_start
 	*say
-		You want to sneak into the Misses Chilirosa's house to grab the hot sauce, do you?
+		You want to sneak into Misses Chilirosa's house to grab the hot sauce, do you?
 	*then
 		hear yes {
 		    set pot_count as 0
