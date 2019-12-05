@@ -2034,7 +2034,7 @@
 		<audio src='https://koetest.s3.amazonaws.com/Act5/stoneDoor.mp3'/>
 		Immediately, you are greeted with glaring rays of light. 
 		Isn't this supposed to be a cave?
-		Yes, but none of your assumptions matter. 
+
 	*then
 		-> Arrival At The Inner Cave 2
 
@@ -2045,11 +2045,8 @@
         title: ''
         subtitle: ''
 	*say
-		Because right in
-		front of you is a hollowed space beneath the earth, filled
-		with all kinds of greens and plants. The center of the roof
-		is a gigantic hole that allows sunlight to nurture the life
-		in here.
+		Because right in front of you is not a cave, but a sinkhole 
+		filled with all kinds of greens and plants.
 	*then
 		-> Arrival At The Inner Cave 3
 
@@ -2068,28 +2065,27 @@
 		
 		//(SE: sounds of bushes, with dramatic effect)
 		<audio src='https://koetest.s3.amazonaws.com/Act5/bushRustling.mp3'/>
-		From the bushes, pops out the head of a man with faded purple
-		hair. Should you tell him who you are and why you're here? [Action]
+		From the bushes, pops out the head of a woman with faded purple
+		hair. Should you tell her who you are and why you're here? [Action]
 				
 	*reprompt
 		You passed the forest maze, into a hollowed space
 		underground filled with natural sunlight, and life. Then, a
-		man with faded purple hair showed up in your face.
+		woman with faded purple hair showed up in your face. Oh, and she also stinks.
 		
 	*recap
-		The man stood there like a statue. You should try say 
-		something to get his attention? maybe just a "hi"?
+		The woman stood there like a statue. You should try say 
+		something to get her attention? maybe just a "hi"?
 	*then
-		hear hi, hello, I am, I need {
+		hear hi, hello, I am, I need, yes, no {
 			-> Alchemist Grabs You
 		}
 		
 
 @Alchemist Grabs You
 	*say
-		He stood there and looked at you as you speak. His eyes are
-		connected to yours, but you can tell that he's thinking of
-		something else.
+		She stood there and looked at you as you speak. Her eyes are
+		looking at you, but you can easily tell that She's nervous.
 
 		[Alchemist]
 		Um. Here. Please. [EOA]
@@ -2103,15 +2099,15 @@
 		out I will be right with you in a
 		moment please don't come out ok? [EOA]
 		
-		He puts you in the hut and closes the door.
+		She puts you in the hut and closes the door.
 		
 		//(SE: Door closes)
 		<audio src='https://koetest.s3.amazonaws.com/Act5/stoneDoor.mp3'/>
 		//(SE: something grows)
 		<audio src='https://koetest.s3.amazonaws.com/Act5/VinGrowing.mp3'/>
-		As he closes the door, you hear something filling up and
-		tying up the hinges of the door. You try to open it, but it
-		didn't work. You're locked inside.
+		As She closes the door, you hear something filling up and
+		tying up the hinge. You try to open it, but it
+		didn't work. Oh no. You're locked inside.
 	*then
 		->Escape The Room
 
@@ -2121,11 +2117,10 @@
 
 @Exit The Room
 	*say
-		[Alchemist]
-		Ah! [EOA]
+		[BAR_SURPRISED]
 
 		As you finally figured out a way to leave the hut, you see
-		the man in your face, but terrified. He takes a few steps
+		the woman in your face, but terrified. She takes a few steps
 		back, then stumbles on the ground.
 		
 		[Alchemist]
@@ -2134,13 +2129,13 @@
 		I've caused. Wait, you don't look like
 		you're from the town. [EOA]
 
-		He looks at you for a moment. Then he stands up from the
-		ground, getting the dirt off of his clothes. His clothes are
+		She looks at you for a moment. Then She stands up from the
+		ground, getting the dirt off of her clothes. Her clothes are
 		still dirty, though.
 
 		[Alchemist]
 		Sorry, it's been a long time since
-		I've anyone. My name is Berette, an
+		I've talked to anyone. My name is Berette, an
 		alchemist, and a botanist. I'm working
 		on the last step to my latest work,
 		care to join? [EOA] [Action]
@@ -2152,15 +2147,18 @@
         hear no, nope {
             -> Alchemist Asks Again
         }
-        hear hand him the seed, the seed {
+        hear hand her the seed, the seed {
             -> Alchemist Asks
         }
-        hear hand him the eureka plant, the plant {
+        hear hand her the eureka plant, the plant {
             -> Alchemist Asks More
         }
 
 @Join The Alchemist At the Cauldron
 	*say
+
+		[BAR_HAPPY]
+
 		[Alchemist]
 		Wonderful! I'll show you the way to my
 		station. [EOA]
@@ -2191,7 +2189,7 @@
         subtitle: ''
 	*say
 		The alchemist walks into the pond in the middle, towards the
-		floating citrine in the middle. He takes out a vial and puts
+		floating citrine in the middle. She takes out a vial and puts
 		it under the gemstone.
 		
 	*then
@@ -2221,58 +2219,64 @@
 		[Explosion]
 		
 		Suddenly, the contents of the pot explodes into Berette's
-		face. Berette slowly finds himself a chair, then sits down
+		face. 
+		
+		[BAR_CRIES]
+		
+		Berette slowly finds herself a chair, then sits down
 		and cries.
 
 		[Alchemist]
-		I don't know! Why? I thought I had all
-		of it solved. I was supposed to be
+		I don't know! Why? I thought I had it all solved. I was supposed to be
 		ready when someone arrives. What
 		ingredient am I missing? [EOA] [Action]
 
 	*reprompt 
 		Berette extracts a magical substance from the
-		citrine in the middle, and adds it into the cauldron he is
+		citrine in the middle, and adds it into the cauldron she is
 		working on. But the content explodes and Berette's experiment
-		has failed again. Disappointed and depressed, he asks what
-		ingredient he is missing. Perhaps your seed may help?
+		has failed again. Disappointed and depressed, she asks what
+		ingredient she is missing. Perhaps your seed may help?
 		
 	*recap
-		Berette asks if he's missing anything in his potion.
+		Berette asks if she's missing anything in his potion.
 	*then
-		hear hand him the seed, the seed {
+		hear hand her the seed, the seed, seed {
             -> Alchemist Asks
         }
-        hear hand him the eureka seed, eureka, plant {
+        hear hand her the eureka seed, eureka, eureka seed {
             -> Alchemist Asks More
         }
 
 @Alchemist Asks Again
 	*say
-		[Alchemist]
-		Are you sure? I'm pretty confident
-		that you're about to see something
-		that is beyond your knowledge. [EOA]
 
-		Berette looks at you with confident eyes. Perhaps you should
+		[BAR_HMM]
+
+		[Alchemist]
+		Just letting you know that you're about miss something
+		that is beyond your knowledge. Why don't you come and have a look yourself?[EOA]
+
+		[BAR_CONFIDENT]
+
+		Berette looks at you with determined and confident eyes. Perhaps you should
 		join him. What say you? [Action]
 		
 	*recap
 		 You know, you've come this far, why not say yes?
 
 	*then
-		hear yes, sure {
+		hear yes, sure, ok {
             -> Join The Alchemist At the Cauldron
         }
-        hear no {
+        hear no, nope {
             -> Alchemist Teel You to Stay Here
         }
 
 @Alchemist Teel You to Stay Here
 	*say
 		[Alchemist]
-        Ah, I see. You are the cautious and
-		careful type of person. Got it. Well,
+        Ah, I see. You're the cautious type. Got it. Well,
 		you just stay here and enjoy the show.[EOA]
 
 	*then
@@ -2286,7 +2290,7 @@
 		check. Ok. Let's see if this works. [EOA]
 
 		The alchemist walks into the pond in the middle, towards the
-		floating citrine in the middle. He takes out a vial and puts
+		floating citrine at the center. She takes out a vial and puts
 		it under the gemstone.
 		
 		//(SE: Miracles sounds)
@@ -2307,30 +2311,33 @@
 		[Explosion]
 
 		Suddenly, the contents of the pot explodes into Berette's
-		face. Berette slowly finds himself a chair, then sits down
+		face. 
+		
+		[BAR_CRIES]
+		
+		Berette slowly finds herself a chair, then sits down
 		and cries.
 
 		[Alchemist]
-		I don't know! Why? I thought I had all
-		of it solved. I was supposed to be
+		I don't know! Why? I thought I had it all solved. I was supposed to be
 		ready when someone arrives. What
 		ingredient am I missing? [EOA] [Action]
 
 	*reprompt 
 		Berette extracts a magical substance from the
-		citrine in the middle, and adds it into the cauldron he is
+		citrine in the middle, and adds it into the cauldron she is
 		working on. But the content explodes and Berette's experiment
-		has failed again. Disappointed and depressed, he asks what
-		ingredient he is missing. Perhaps your seed may help?
+		has failed again. Disappointed and depressed, she asks what
+		ingredient she is missing. Perhaps your seed may help?
 		
 	*recap
-		Berette asks if he's missing anything in his potion.
+		Berette asks if she's missing anything in her potion.
 
 	*then
-		hear hand him the seed, the seed {
+		hear hand her the seed, the seed {
             -> Alchemist Asks
         }
-        hear hand him the eureka seed, eureka, plant {
+        hear hand her the eureka seed, eureka, plant {
             -> Alchemist Asks More
         }
 
@@ -2341,18 +2348,20 @@
         title: ''
         subtitle: ''
 	*say
-		You gave the seed to the alchemist. The alchemist looks at it
+		You gave the seed to the alchemist. The master alchemist looks at it
 		for a second, then stares at you with wide-opened eyes.
+
+		[BAR_SURPRISED]
 
 		[Alchemist]
 		Who gave you this seed? [EOA] [Action]
 
 	*reprompt
-		You gave the purple seed you have to Berette. He
+		You gave the purple seed you have to Berette. She
 		now asks who gave you the seed.
 		
 	*recap 
-		You gave the purple seed you have to Berette. He now
+		You gave the purple seed you have to Berette. She now
 		asks who gave you the seed.
 	
 	*then
@@ -2365,6 +2374,7 @@
 
 @Alchemist Questions About Luke
 	*say
+		[BAR_ANGRY]
 		[Alchemist]
 		What? Luke gave you this seed? Luke
 		[Pause] gave [Pause] you [Pause] this
@@ -2375,7 +2385,7 @@
 
 	*reprompt 
 		You told Barette that it was Luke who gave you the
-		seed, and he seemed to be very angry. He asks you if Luke
+		seed, and She seems to be enraged. She demands to know if Luke
 		told you what happened.
 	
 	*recap
@@ -2401,7 +2411,7 @@
 		me in. [EOA]
 
 		Barette walks around the room. You can almost see steam
-		gushing out of his nose.
+		gushing out of her nose.
 		
 		[Alchemist] 
 		Alright, what else did he say?[EOA] [Action]
@@ -2419,8 +2429,12 @@
 
 @Alchemist Asks What Luke Says Again
 	*say
-		Barette looks astonished, as if he couldn't believe what he
+		[BAR_SURPRISED]
+		
+		Barette looks astonished, as if she couldn't believe what she
 		has heard.
+
+
 
 		[Alchemist]
 		What? Say that again? [EOA] [Action]
@@ -2439,29 +2453,30 @@
 
 @Alchemist Scolds Luke Thrice
 	*say
+		[BAR_ANGRY]
+
 		Barette seems disappointed and furious.
 
 		[Alchemist]
 		This mandrake, well he ought to give
 		it to me. [EOA]
 
-		Barette looks at you. He realizes that you may not understand
-		something. He holds up the seed to you.
+		Barette looks at you. She realizes that you may not understand
+		something. She holds up the seed to you.
 
 		[Alchemist]
 		This, my friend, is a Glimmerbrook
 		Mandrake. You don't find this
-		anywhere. It is basically impossible
+		anywhere. It is nearly impossible
 		to get, like the citrine. If Luke
 		managed to find this, well, he doesn't
 		deserve it anyway. So I guess he made
-		the right choice of giving it to you. [EOA]
+		the right choice to give it to you. [EOA]
 
 		Barette suddenly realizes something.
 
 		[Alchemist]
-		Hmm. Given that this is hard to come
-		by anywhere, perhaps we can try to add
+		Hmm. perhaps we can try to add
 		this into our mix? Come on, let's see
 		what happens. [EOA]
 
@@ -2476,7 +2491,7 @@
 		he's not my apprentice anymore, and I
 		deserve this Mandrake. [EOA]
 
-		Barette looks at you for a second, then he realizes
+		Barette looks at you for a second, then she realizes
 		something.
 
 		[Alchemist]
@@ -2489,7 +2504,7 @@
 		that Luke gave you this, it's probably
 		worth a shot. [EOA]
 
-		Barette stops writing and closes his notebook swiftly
+		Barette stops writing and closes her notebook swiftly
 
 		[Alchemist]
 		Today, I will go home. I will end this
@@ -2510,7 +2525,7 @@
 		[Alchemist]
 		After all this time, huh? [EOA]
 		
-		Barette lets out a short sigh.
+		[BAR_SIGH]
 		
 		[Alchemist]
 		You know, you we used to be partners.
@@ -2519,14 +2534,14 @@
 		alchemist or botanist has ever done.
 		He was a dear friend. [EOA]
 
-		Barette then smiles a bit. He looks down on the ground.
+		Barette then smiles a bit. She looks down on the ground.
 
 		[Alchemist]
 		We used to shout out Eureka! To each
 		other. That was the phrase we use when
-		we did something together. [EOA]
+		we accomplished something together. [EOA]
 
-		Barette then realizes that he went off by himself.
+		Barette then realizes that she went off on her own.
 
 		[Alchemist]
 		You said this seed was from him? [EOA] [Action]
@@ -2541,11 +2556,14 @@
 
 @Alchemist Accepts
 	*say
+
+		[BAR_SAD]
+
 		[Alchemist]
 		Oh pal. How long have I waited for
 		you. [EOA]
 
-		Then he turns around and looks at the seed.
+		Then she turns around and looks at the seed.
 
 		[Alchemist]
 		If Luke gave you this, and knows that
@@ -2559,19 +2577,20 @@
 
 @Alchemist Smirks And Accepts
 	*say
-		[Alchemist]
-		Ha. Very much like what he would do.
-		He would deny everything until you
-		corner him, even when he did nothing
-		wrong. [EOA]
-
-		Then he looks at the seed in his hand.
+		[BAR_LAUGH]
 
 		[Alchemist]
-		If Luke gave you this precious plant,
-		knowing that you'll end up meeting me
-		eventually, then he probably knows.
-		This plant must be the key ingredient
+		Very much like what he would do.
+		He would always put up a good fight until you
+		corner him. [EOA]
+
+		Then she looks at the seed in her hand.
+
+		[Alchemist]
+		If Luke gave you this precious plant
+		and knows that you'll end up meeting me
+		eventually, then he probably also knows that
+		this plant must be the key ingredient
 		that's missing. Come, let's finish
 		this once and for all. [EOA]
 
@@ -2580,14 +2599,15 @@
 
 @None of It Matters Anyway
 	*say
+		[BAR_HMM]
 		[Alchemist]
 		Huh. Can't say that I'm surprised by
 		now. Took me so long to realize what
 		kind of person he is. [EOA]
 
-		Barette walks swiftly to his notebook by the table, with the
-		seed in his hand. He talks to you while he puts down notes in
-		his book.
+		Barette walks swiftly to her notebook by the table, with the
+		seed in her hand. She talks to you while she puts down notes in
+		her book.
 
 		[Alchemist]
 		Luke was my apprentice. Or should've
@@ -2597,7 +2617,7 @@
 		mean, I admit, I messed it up, but was
 		that really necessary? [EOA]
 
-		Barette then stops for a moment as he continues to scribble.
+		Barette then stops for a moment as she continues to scribble.
 
 		[Alchemist]
 		None of it matters anyway now. What
@@ -2617,7 +2637,8 @@
 
 @Alchemist Questions About the Seed
 	*say
-		Barette seems very, very amazed.
+		[BAR_SURPRISED]
+		Barette seems very, very surprised.
 		
 		[Alchemist]
 		Wow. Do you even know what this seed
@@ -2630,7 +2651,7 @@
 		a great botanist, or a great magician,
 		or both. [EOA]
 
-		He takes another careful look at the seed. Suddenly, he jumps
+		She takes another careful look at the seed. Suddenly, she jumps
 		up and looks at you with shining eyes.
 
 		[Alchemist]
@@ -2658,15 +2679,15 @@
 		you that it's called Eureka? [EOA] [Action]
 
 	*reprompt 
-		You gave the Eureka seed you have to Berette. He
+		You gave the Eureka seed you have to Berette. She
 		now asks who told you that the seed is called Eureka.
 		
 	*recap 
-		You gave the Eureka seed you have to Berette. He now
+		You gave the Eureka seed you have to Berette. She now
 		asks who told you that the seed is called Eureka. 
 
 	*then
-		hear yes {
+		hear yes, yeah {
             -> Alchemist Realizes
         }
         hear no {
@@ -2678,19 +2699,21 @@
 		[Alchemist]
 		Oh. [EOA]
 
-		The alchemist pauses for a second. Then he slowly walks back
+		The alchemist pauses for a second. Then she slowly walks back
 		to the hut.
 		
 		//(SE: Walks on dirt)
 		
-		He looks at a photo on the wall. It's a photo of him with
-		Luke when the cauldron in front of him explodes.
+		She looks at a photo on the wall. It's a photo of her with
+		Luke when the cauldron in front of her explodes.
+
+		[BAR_SAD]
 
 		[Alchemist]
 		Oh. Partner. Why don't you just come
 		to me directly? It's been so long. [EOA]
 		
-		Barette looks at you. He then smiles.
+		Barette looks at you. She then smiles.
 
 		[Alchemist]
 		That man you just met outside the
@@ -2698,11 +2721,11 @@
 		an apprentice to me. But I see him as
 		my partner. [EOA]
 
-		Barette then hols up the Eureka seed to you.
+		Barette then holds up the Eureka seed to you.
 
 		[Alchemist]
 		This is not called Eureka. This, is a
-		Glimmerbrook Mandrake. Eureka is a
+		Glimmerbrook Mandrake. Eureka, on the other hand, is a
 		word we use back in the day to
 		celebrate the progress we made. Dumb
 		old friend, I'm not angry at him
@@ -2719,34 +2742,34 @@
 		only mean that it's the ingredient
 		we're missing. [EOA]
 
-		Barette then extend his hands to you.
+		Barette then extend her hands to you.
 
 		[Alchemist]
-		C'mon, pull me up. Let's get this
+		Let's get this
 		potion finished, and end this crisis
-		once and for all. [EOA] [Action]
+		once and for all. Come on, give me a hand, will you?[EOA] [Action]
 
 	*reprompt 
-		Barette realized something as soon as you told him
-		who named the plant Eureka. It turns out that Luke was
+		Barette realized something as soon as you revealed to her the person
+		who thought the plant's name is Eureka. It turns out that Luke was
 		Barette's lab partner before, and the word Eureka is a word
 		that only the two would use before; no matter what happened
 		before, Barette is not angry with Luke anymore. Now, with the
 		seed, Barette is ready to use the seed and end the stinky
-		curse once and for all. He extends his arm and asks you to
-		pull him up from the chair.
+		curse once and for all. She extends her arm and asks you to
+		pull her up from the chair.
 		
 	*recap 
-		You should pull him up from the chair.
+		You should pull her up from the chair.
 		
 	*then
-		hear pull, pull him up, help, up, chair, sure, ok {
+		hear pull, pull her up, help, up, chair, sure, ok, yes {
 			-> Alchemist Brews Potion
 		}
 
 @Alchemist Smirks
 	*say
-		The Alchemist exhales deeply. He then looks at you with a
+		The Alchemist exhales deeply. She then looks at you with a
 		smirk on his face.
 
 		[Alchemist]
@@ -2762,13 +2785,13 @@
 		friend use all the time. Haven't seen
 		him for a long time. [EOA]
 		
-		Barette walks back to his hut.
+		Barette walks back to her hut.
 		
 		//(SE: Walk on dirt)
 		<audio src='https://koetest.s3.amazonaws.com/Act5/walkOnDirt.mp3'/>
 
-		He looks at a photo on the wall. It's a photo of him and
-		Luke, taken when the cauldron in front of him explodes.
+		She looks at a photo on the wall. It's a photo of her and
+		Luke, taken when the cauldron in front of her explodes.
 
 		[Alchemist]
 		We had a big fight one night over
@@ -2788,30 +2811,31 @@
 		never come out until I figure out a
 		solution. [EOA]
 
-		He holds up the mandrake seed, and smiles at it.
+
+		[BAR_SMILE]
+		She holds up the mandrake seed, and smiles at it.
+
+		
 
 		[Alchemist]
 		Well, this could be our lucky day.
 		Let's see if this works, shall we?
-		Pull me up from this chair. [EOA]
-
-		He extends his arm out and asks you to pull him up.
+		Can you pull me up from this chair? [EOA]
 
 	*reprompt 
-		Barette realized something as soon as you told him
+		Barette realized something as soon as you told her
 		who named the plant Eureka. It turns out that Luke was
 		Barette's lab partner before, and the word Eureka is a word
 		that only the two would use before; no matter what happened
 		before, Barette is not angry with Luke anymore. Now, with the
-		seed, Barette is ready to use the seed and end the stinky
-		curse once and for all. He extends his arm and asks you to
-		pull him up from the chair.
+		seed, Barette is ready to use the seed and end the stench once and for all. She extends her arm and asks you to
+		pull her up from the chair.
 		
 	*recap 
-		You should pull him up from the chair.
+		You should pull her up from the chair.
 		
 	*then
-		hear pull, pull him up, help, up, chair, pull him up from the chair {
+		hear pull, pull her up, help, up, chair, pull her up from the chair, yes, sure, ok {
 			-> Alchemist Brews Potion
 		}
 
@@ -2822,7 +2846,7 @@
         title: ''
         subtitle: ''
 	*say
-        Barette quickly walks back to the cauldron. He extracts
+        Barette quickly walks back to the cauldron. She extracts
 		another drop of substance the citrine releases.
 		After adding all the regular ingredients, there is one thing
 		left to do: add the mandrake seed. 
@@ -2839,18 +2863,19 @@
         title: ''
         subtitle: ''
 	*say
-		He allows the seed to slip and roll of his palm. The seed
+		She allows the seed to slip and roll of her palm. The seed
 		slowly falls and enters the pot.
 		
 		//(SE: Explode)
 		<audio src='https://koetest.s3.amazonaws.com/Act5/explode02.mp3'/>
 
 		Poof! Smoke emerges from the pot. Strangely, you see sparkles
-		of purple within the fog. It swiftly rises and fills the roof
-		.
+		of purple within the fog. It swiftly rises and fills the roof.
+
+		[BAR_SURPRISED]
 
 		[Alchemist]
-		Huh. This is unlike anything I've
+		This is unlike anything I've
 		seen. Oh dear.[EOA]
 
 		In just a few seconds, the fog gathers into clouds above
@@ -2867,8 +2892,10 @@
 		The cave starts pouring rain. But it was no ordinary rain.
 		The raindrops that are supposed to hit your harshly, instead
 		felt like cool splashes of spring water.
-		As you look to Barette, you noticed something else: he no
+		As you look to Barette, you noticed something else: she no
 		longer smells.
+
+		[BAR_EXCITED]
 
 		[Alchemist]
 		The smell. It's gone. We did it! We
@@ -2880,8 +2907,8 @@
 		[Alchemist]
 		Eureka![EOA]
 
-		Then he hugs you tightly, and dances around, as if joy is an
-		emotion new to him.
+		Then she hugs you tightly, and dances around like it's the best of her life.
+
 
 		[Alchemist]
 		Quick! Pack your stuff immediately. We
@@ -2904,13 +2931,15 @@
 
 		//(SE: Town bell)
 		<audio src='https://koetest.s3.amazonaws.com/Act5/townBell.mp3'/>
-		The town bell rang. Although they'd prefer not to, the
-		townspeople all came out to check what's going on.
+		The town bell rings. Although they'd prefer not to, the
+		townspeople all come out to check what's going on.
 
 		[Mayor]
-		Look who's back here, villain. Did you
+		Look who's back here. Did you
 		return only to give us yet another
 		curse?[EOA]
+
+		The mayor looks surpised and disappointed.
 
 		[Alchemist]
 		No! People. I came back here because I
@@ -2937,9 +2966,9 @@
 		[MrsChilirosa]
 		Get out of here.[EOA]
 
-		The crowd boos at Barette, chanting for his immediate
-		banishment. The mayor seemed a little bit hesitant.
-		Barette looks at you. He gives you the vial.
+		The crowd boos at Barette, chanting for her immediate
+		leave. The mayor seems a little bit hesitant.
+		Barette looks at you. She gives you the vial.
 
 		[Alchemist]
 		Open the vial. Show them that they're
@@ -2971,7 +3000,7 @@
 		You stood there and do nothing.
 		
 		[Mayor]
-		I'm sorry, Barette, but I think, we've
+		We've
 		seen what you're capable of. You even
 		turned our visitor against us. You
 		must leave. [EOA]
@@ -2988,7 +3017,7 @@
 		The shopkeeper's son yells at the crowd.
 
 		[Kid]
-		I believe him.[EOA]
+		I believe her.[EOA]
 
 		Slowly, he walks towards you, and takes over the potion.
 
@@ -2996,8 +3025,9 @@
 		Boy, what are you doing?[EOA]
 
 		[Kid]
-		Fixing all of you.[EOA]
+		Fixing all of us.[EOA]
 
+		<audio src='https://koetest.s3.amazonaws.com/Act5/explode02.mp3'/>
 		In a blink of an eye, the boy opens the vial. Smoke
 		glittering purple comes out of the bottle, and into the sky.
 		In no time, the blue sky is filled with purple clouds.
@@ -3011,22 +3041,28 @@
 	*say
 		<audio src='https://koetest.s3.amazonaws.com/Act5/PouringRain.mp3'/>
 
+		[RANDOMMAN_SURPISED]
+
 		[Man]
 		Wa, what? What's going on?[EOA]
 
+		[Chili_Surprised]
+
 		[MrsChilirosa]
 		Is my nose going crazy?[EOA]
+
+		[MAYOR_HAPPY]
 
 		[Mayor]
 		No.. it's the stench. It's getting
 		washed away! Everyone! Come outside!
 		The rain is washing away the stench![EOA]
 
-		People started to come outside of their heavily-locked
+		More people start to come out of their heavily-locked
 		houses. No people like them has ever enjoyed the rain so
 		much.
 		By the time the rain ends, the stench is completely washed
-		away. The town is saved.
+		away. Oh, how dear I've missed the fresh air.
 
 		[Mayor]
 		I'm sorry, Barette. It's just that
@@ -3034,8 +3070,10 @@
 		about it. We are grateful for you
 		coming back.[EOA]
 
+		[Chili_Annoyed]
+		
 		[MrsChilirosa]
-		Hum. Had he not done those weird
+		Had she not done those weird
 		experiments, this would never have
 		happened in the first place.[EOA]
 
