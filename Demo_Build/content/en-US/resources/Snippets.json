@@ -30,5 +30,20 @@
   "MAN_JOY": "<audio src='https://koetest.s3.amazonaws.com/amb/amb_happy_2.mp3'/>",
   "MAN_LAUGH": "<audio src='https://koetest.s3.amazonaws.com/amb/amb_happy1.mp3'/>",
   "CHILI_HAPPY": "<audio src='https://koetest.s3.amazonaws.com/efa/efa15_happy_2.mp3'/>",
-  "DOOR_UNLOCK": "<audio src='https://koetest.s3.amazonaws.com/new_demo_stereo/doorOpen2.mp3'/>"
+  "DOOR_UNLOCK": "<audio src='https://koetest.s3.amazonaws.com/new_demo_stereo/doorOpen2.mp3'/>",
+  "BAR_SURPRISED":" ",
+  "BAR_HAPPY": " ",
+  "BAR_CRIES":" ",
+  "BAR_CONFIDENT": " ",
+  "BAR_HMM":" ",
+  "BAR_ANGRY":" ",
+  "BAR_SIGH": " ",
+  "BAR_SAD":" ",
+  "BAR_LAUGH":" ",
+  "BAR_SMILE":" ",
+  "BAR_EXCITED":" ",
+  "RANDOMMAN_SURPRISED":" ",
+  "Chili_Surprised":" ",
+  "MAYOR_HAPPY":" ",
+  "Chili_Annoyed":" "
 }
