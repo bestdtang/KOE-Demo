@@ -11,6 +11,11 @@
         }
 
 @start
+	*show
+		template: 'default'
+        background:'https://koetest.s3.amazonaws.com/visuals/Dessert/dessertAll.png'
+        title: ''
+        subtitle: ''
 	*say
 		<audio src='https://koetest.s3.amazonaws.com/bgm/musicBeginning.mp3'/>
 		Greetings, explorer. [Short_Pause] Welcome to the Desert Traveler experience! [Short_Pause] In this five-act interactive story, you can stop and come back at any time. Now you can start from the very beginning and experience the exciting journey; And you can also jump to the in-game puzzles directly and enjoy solving it, which will take shorter time. Which do you prefer? Story or puzzle?[Action]
@@ -59,6 +64,11 @@
 		[Pause]
 
 @Look Right
+	*show
+		template: 'default'
+        background:'https://koetest.s3.amazonaws.com/visuals/Dessert/walking2.png'
+        title: ''
+        subtitle: ''
 	*say
 		You wiped your face with your dry hands and decided to turn right. Then, you keep treading the sea of sand wearily.
 		
@@ -66,6 +76,11 @@
 		-> Tutorial 1A: Check Around
 
 @Tutorial 1A: Check Around
+	*show
+		template: 'default'
+        background:'https://koetest.s3.amazonaws.com/visuals/Dessert/walking2.png'
+        title: ''
+        subtitle: ''
 	*say
 		<audio src='https://koetest.s3.amazonaws.com/Act1/windFootsteps.mp3'/> 
 		You walk under the hot sun until you reach the top of a little sand hill. 
@@ -83,6 +98,11 @@
 		You can check around by saying "what's around me".
 
 @Check Around the Hill
+	*show
+		template: 'default'
+        background:'https://koetest.s3.amazonaws.com/visuals/Dessert/dessertAll.png'
+        title: ''
+        subtitle: ''
 	*say
 		You looked around. 
 		//You don't find anything particularly interesting. [Pause] Wait! 
@@ -1852,10 +1872,11 @@
 
 @Test Audio
 	*say
-		<audio src='https://koetest.s3.amazonaws.com/amb/amb_happy_2.mp3'/>
-  		<audio src='https://koetest.s3.amazonaws.com/amb/amb_happy1.mp3'/>
-  		<audio src='https://koetest.s3.amazonaws.com/efa/efa15_happy_2.mp3'/>
-  		<audio src='https://koetest.s3.amazonaws.com/new_demo_stereo/doorOpen2.mp3'/>
+		<audio src='https://koetest.s3.amazonaws.com/Act5/Act5puzzle/closebook_01.mp3'/>
+		<audio src='https://koetest.s3.amazonaws.com/Act5/Act5puzzle/openbook_01.mp3'/>
+		<audio src='https://koetest.s3.amazonaws.com/Act5/Act5puzzle/ice_01.mp3'/>
+		<audio src='https://koetest.s3.amazonaws.com/Act5/Act5puzzle/metalcrack_01.mp3'/>
+		<audio src='https://koetest.s3.amazonaws.com/Act5/Act5puzzle/newspaper_01.mp3'/>
 		// <audio src='https://koetest.s3.amazonaws.com/afa/af4_worry.mp3'/>
 		// <audio src='https://koetest.s3.amazonaws.com/afa/afa11_fail_angry.mp3'/>
 		// <audio src='https://koetest.s3.amazonaws.com/afa/afa16_whoah+.mp3'/>
@@ -1867,11 +1888,16 @@
 	    }
 @TA2
 	*say
-		<audio src='https://koetest.s3.amazonaws.com/Act1/drinkingNoises.mp3'/>
-		<audio src='https://koetest.s3.amazonaws.com/Act1/thunder11s.mp3'/>
-		<audio src='https://koetest.s3.amazonaws.com/Act1/thunder22s.mp3'/>
-		<audio src='https://koetest.s3.amazonaws.com/Act1/sandRun3s.mp3'/>  
-		<audio src='https://koetest.s3.amazonaws.com/Act1/sandRun7s.mp3'/>
+		
+		<audio src='https://koetest.s3.amazonaws.com/Act5/Act5puzzle/portalopen_01.mp3'/>
+		<audio src='https://koetest.s3.amazonaws.com/Act5/Act5puzzle/portaltravel_01.mp3'/>
+		<audio src='https://koetest.s3.amazonaws.com/AchievementSounds/achievement01.mp3'/>
+		<audio src='https://koetest.s3.amazonaws.com/AchievementSounds/achievement02.mp3'/>
+		// <audio src='https://koetest.s3.amazonaws.com/Act1/drinkingNoises.mp3'/>
+		// <audio src='https://koetest.s3.amazonaws.com/Act1/thunder11s.mp3'/>
+		// <audio src='https://koetest.s3.amazonaws.com/Act1/thunder22s.mp3'/>
+		// <audio src='https://koetest.s3.amazonaws.com/Act1/sandRun3s.mp3'/>  
+		// <audio src='https://koetest.s3.amazonaws.com/Act1/sandRun7s.mp3'/>
 		
 	*then 
 		hear continue {
@@ -3450,9 +3476,9 @@
 
 @chilirosa_living_takesauce
 	*say
-		You got the hot sauce. Now, go to the hallway and leave from there.
+		[Achievement] You got the hot sauce. Now, Let's go to the hallway and leave the house!
 	*then
-		hear go to hallway, go to the hallway {
+		hear go to hallway, go to the hallway, leave the house, sure, yes, do it {
 			-> chilirosa_hallway_out
 		}
 
@@ -3939,7 +3965,7 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 
 @leading_a_west
 	*say
-		You are looking west.[DirSound_Small] You see the outer edge of the forest. That's definitely now the right way.
+		You are looking west.[DirSound_Small] You see the outer edge of the forest. That's definitely not the right way.
 	*then
 		-> leading_a_position
         
@@ -3995,7 +4021,7 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 
 @leading_b_south
 	*say
-		You are looking south. [DirSound_Small] You see the outer edge of the forest. That's definitely now the right way.
+		You are looking south. [DirSound_Small] You see the outer edge of the forest. That's definitely not the right way.
 	*then
 		-> leading_b_position
 
@@ -4061,7 +4087,7 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 
 @leading_c_south
 	*say
-		You are looking south.[DirSound_Small] You see the outer edge of the forest. That's definitely now the right way.
+		You are looking south.[DirSound_Small] You see the outer edge of the forest. That's definitely not the right way.
 	*then
 		-> leading_c_position
 
@@ -4117,13 +4143,13 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 
 @leading_d_east
 	*say
-		You are looking east. [DirSound_Small] You see the outer edge of the forest. That's definitely now the right way.
+		You are looking east. [DirSound_Small] You see the outer edge of the forest. That's definitely not the right way.
 	*then
 		-> leading_d_position
 
 @leading_d_south
 	*say
-		You are looking south. [DirSound_Small] You see the outer edge of the forest. That's definitely now the right way.
+		You are looking south. [DirSound_Small] You see the outer edge of the forest. That's definitely not the right way.
 	*then
 		-> leading_d_position
 
@@ -4195,7 +4221,7 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 
 @leading_e_west
 	*say
-		You are looking west. [DirSound_Small] You see the outer edge of the forest. That's definitely now the right way.
+		You are looking west. [DirSound_Small] You see the outer edge of the forest. That's definitely not the right way.
 	*then
 		-> leading_e_position
 
@@ -4390,7 +4416,7 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 
 @leading_h_east
 	*say
-		You are looking east. [DirSound_Small] You see the outer edge of the forest. That's definitely now the right way.
+		You are looking east. [DirSound_Small] You see the outer edge of the forest. That's definitely not the right way.
 	*then
 		-> leading_h_position
 
@@ -4472,7 +4498,7 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 
 @leading_i_west
 	*say
-		You are looking west. [DirSound_Small] You see the outer edge of the forest. That's definitely now the right way.
+		You are looking west. [DirSound_Small] You see the outer edge of the forest. That's definitely not the right way.
 	*then
 		-> leading_i_position
 
@@ -4600,7 +4626,7 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 
 @leading_l_east
 	*say
-		You are looking east. [DirSound_Small] You see the outer edge of the forest. That's definitely now the right way.
+		You are looking east. [DirSound_Small] You see the outer edge of the forest. That's definitely not the right way.
 	*then
 		-> leading_l_position
 
@@ -4664,7 +4690,7 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 
 @leading_m_north
 	*say
-		You are looking north. [DirSound_Small] You see the outer edge of the forest. That's definitely now the right way.
+		You are looking north. [DirSound_Small] You see the outer edge of the forest. That's definitely not the right way.
 	*then
 		-> leading_m_position
 
@@ -4682,7 +4708,7 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 
 @leading_m_west
 	*say
-		You are looking west. [DirSound_Small] You see the outer edge of the forest. That's definitely now the right way.
+		You are looking west. [DirSound_Small] You see the outer edge of the forest. That's definitely not the right way.
 	*then
 		-> leading_m_position
 
@@ -4734,7 +4760,7 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 
 @leading_n_north
 	*say
-		You are looking north. [DirSound_Small] You see the outer edge of the forest. That's definitely now the right way.
+		You are looking north. [DirSound_Small] You see the outer edge of the forest. That's definitely not the right way.
 	*then
 		-> leading_n_position
 
@@ -4804,7 +4830,7 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 
 @leading_o_north
 	*say
-		You are looking north. [DirSound_Small] You see the outer edge of the forest. That's definitely now the right way.
+		You are looking north. [DirSound_Small] You see the outer edge of the forest. That's definitely not the right way.
 	*then
 		-> leading_o_position
 
@@ -4874,13 +4900,13 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 
 @leading_p_north
 	*say
-		You are looking north. [DirSound_Small] You see the outer edge of the forest. That's definitely now the right way.
+		You are looking north. [DirSound_Small] You see the outer edge of the forest. That's definitely not the right way.
 	*then
 		-> leading_p_position
 
 @leading_p_east
 	*say
-		You are looking east. [DirSound_Small] You see the outer edge of the forest. That's definitely now the right way.
+		You are looking east. [DirSound_Small] You see the outer edge of the forest. That's definitely not the right way.
 	*then
 		-> leading_p_position
 
@@ -5258,7 +5284,7 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 
 @cowplant_puzzle_notebook_open
 	*say
-		You look at the notebook.<audio src='https://koetest.s3.amazonaws.com/Act5/Act+5+puzzle/openbook_01.mp3'/> What keyword do you want to search?
+		You look at the notebook.<audio src='https://koetest.s3.amazonaws.com/Act5/Act5Puzzle/openbook_01.mp3'/> What keyword do you want to search?
 	*then
 		-> cowplant_puzzle_notebook_seedtrader
 
@@ -5417,7 +5443,7 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 
 @cowplant_puzzle_tent_getmilk
 	*say
-		You go back to the tent. The man is still sitting there, half conscious. You force him to drink the milk. 
+		You go back to where the man is. And you force him to drink the milk. 
 		[SeedTrader]
 		Ahhh... What is that! en... Thanks. You bring me back![EOA]
 	*then
@@ -5440,6 +5466,11 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 		}
 
 @cowplant_puzzle_end_connect_to_act_three
+	*show
+		template: 'default'
+        background:'https://koetest.s3.amazonaws.com/visuals/Dessert/dessertAll.png'
+        title: ''
+        subtitle: ''
 	*say
 		
 	*then
@@ -5447,9 +5478,14 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 
 @cowplant_puzzle_plant_milk
 	*say
-		You milk the plant, <audio src='https://koetest.s3.amazonaws.com/Act3/milkingCowplant.mp3'/> You get a bottle of milk, or you can call it potion. This is the potion to cure the man.
+		You milk the plant, <audio src='https://koetest.s3.amazonaws.com/Act3/milkingCowplant.mp3'/>  You get a bottle of milk, or you can call it potion. [Achievement] Maybe this is the potion to cure the man. You can go help the man directly, or take a look at the notebook and see if it's the right solution. [Conversation] Do you want to help the man to drink the milk right now, or check the notebook first?
 	*then
-		-> cowplant_puzzle_cowplant_interaction
+		hear milk, drink, help the man, man {
+			-> cowplant_puzzle_tent_getmilk
+		}
+		hear notebook, check the notebook, check {
+			-> cowplant_puzzle_notebook_seedtrader_milk
+		}
 
 @cowplant_puzzle_plant_cake
 	*say
@@ -5602,7 +5638,7 @@ When cowplant is hungry, it will stick its cake tongue out. You can feed them at
 
 @cowplant_puzzle_notebook_seedtrader_milk
 	*say
-		You searched the keyword, milk. The page reads. If people were swallowed for the first time, the cowplant will produce milk. Milking a cowplant, you will get a potion to release the mood, and give the emotions back to the patient. The study found, drinking the milk can also cure the allergic symptoms.
+		You searched the keyword, milk. The page reads. If people were swallowed for the first time, the cowplant will produce milk. Milking a cowplant, you will get a potion to release the mood, and give the emotions back to the patient. The study found, drinking the milk can also cure the allergic symptoms. [Achievement] Yes! Maybe the milk can cure the man!
 	*then
 		-> cowplant_puzzle_notebook_seedtrader
 
@@ -5661,7 +5697,7 @@ When cowplant is hungry, it will stick its cake tongue out. You can feed them at
 
 @cowplant_puzzle_notebook_close
 	*say
-		You closed the notebook. <audio src='https://koetest.s3.amazonaws.com/Act5/Act+5+puzzle/closebook_01.mp3'/>
+		You closed the notebook. <audio src='https://koetest.s3.amazonaws.com/Act5/Act5Puzzle/closebook_01.mp3'/>
 		You can look at it again later and search for more keywords.
 	*then
 		if currentplace is 0 {
@@ -5863,7 +5899,7 @@ When cowplant is hungry, it will stick its cake tongue out. You can feed them at
 
 @escape_puzzle_view_wand_no
 	*say
-		You look at the wand. It's still in the metal box. If you want to look into details, you should find a way to break the metal.
+		You look at the wand. It's still in the metal box. [Conversation] If you want to look into details, you should find a way to break the metal.
 	*then
 		-> escape_puzzle_interaction
 
@@ -5913,7 +5949,7 @@ When cowplant is hungry, it will stick its cake tongue out. You can feed them at
 
 @escape_puzzle_insert_wand
 	*say
-		You insert the wand into the portal. It fits into the hole perfectly. <audio src='https://koetest.s3.amazonaws.com/Act5/magicSound01.mp3'/> The inscriptions around the portal start to glow.
+		You insert the wand into the portal. It fits into the hole perfectly. <audio src='https://koetest.s3.amazonaws.com/Act5/magicSound01.mp3'/> The inscriptions around the portal start to glow. [Achievement]
 	*then
 		flag insertwand
 	    -> escape_puzzle_interaction
@@ -5944,7 +5980,8 @@ When cowplant is hungry, it will stick its cake tongue out. You can feed them at
 
 @escape_puzzle_stand_portal_out
 	*say
-		You are traveling through the portal.<audio src='https://koetest.s3.amazonaws.com/Act5/Act+5+puzzle/portaltravel_01.mp3'/> In a blink of an eye, you are standing in the inner cave. You made your way out!
+		You are traveling through the portal.<audio src='https://koetest.s3.amazonaws.com/Act5/Act5Puzzle/portaltravel_01.mp3'/> In a blink of an eye, you are standing in the inner cave. You made your way out!
+		[Achievement]
 	*then
 		if skip {
 			-> escape_puzzle_ends
@@ -5967,7 +6004,7 @@ When cowplant is hungry, it will stick its cake tongue out. You can feed them at
 @escape_puzzle_stand_portal_realm
 	*say
 		//magic realm
-		You are traveling through the portal. <audio src='https://koetest.s3.amazonaws.com/Act5/Act+5+puzzle/portaltravel_01.mp3'/> After a short time, you appear in a different space. You are on top of a floating island.
+		You are traveling through the portal. <audio src='https://koetest.s3.amazonaws.com/Act5/Act5Puzzle/portaltravel_01.mp3'/> After a short time, you appear in a different space. You are on top of a floating island.
 	*recap
 		This is not the right place to go, you should teleport back.
 	*reprompt
@@ -5980,7 +6017,7 @@ When cowplant is hungry, it will stick its cake tongue out. You can feed them at
 @escape_puzzle_stand_portal_alien
 	*say
 		//alien planet Sixam
-		You are traveling through the portal.<audio src='https://koetest.s3.amazonaws.com/Act5/Act+5+puzzle/portaltravel_01.mp3'/> After a long time, you appear in a strange space. All the plant are glowing.
+		You are traveling through the portal.<audio src='https://koetest.s3.amazonaws.com/Act5/Act5Puzzle/portaltravel_01.mp3'/> After a long time, you appear in a strange space. All the plant are glowing.
 	*recap
 		This is not the right place to go, you should teleport back.
 	*reprompt
@@ -6053,7 +6090,7 @@ When cowplant is hungry, it will stick its cake tongue out. You can feed them at
 
 @escape_puzzle_vew_flower_dirt_2
 	*say
-		You grab the dirt from pot number two, black berry, and hold it in your hand.
+		You grab the dirt from pot number two, black berry, and hold it in your hand. [Achievement]
 	*then
 		set dirt to 2
 	    -> escape_puzzle_interaction
@@ -6067,14 +6104,14 @@ When cowplant is hungry, it will stick its cake tongue out. You can feed them at
 
 @escape_puzzle_box_break
 	*say
-		The metal box is broken. <audio src='https://koetest.s3.amazonaws.com/Act5/Act+5+puzzle/metalcrack_01.mp3'/> From the container, you retrieve a wand.
+		The metal box is broken. <audio src='https://koetest.s3.amazonaws.com/Act5/Act5Puzzle/metalcrack_01.mp3'/> From the container, you retrieve a wand. [Achievement] If you get the dirt of the right flower, you can use the portal now!
 	*then
 		flag getwand
 	-> escape_puzzle_interaction
 
 @escape_puzzle_heatup_metalbox
 	*say
-		You heat up the metalbox with the alcohol burner.
+		You heat up the metalbox with the alcohol burner. 
 	*then
 		flag heatbox
 		if freezebox{
@@ -6084,7 +6121,7 @@ When cowplant is hungry, it will stick its cake tongue out. You can feed them at
 
 @escape_puzzle_freeze_metalbox
 	*say
-		You freeze the metalbox by putting it into the ice barrel. <audio src='https://koetest.s3.amazonaws.com/Act5/Act+5+puzzle/ice_01.mp3'/>
+		You freeze the metalbox by putting it into the ice barrel. <audio src='https://koetest.s3.amazonaws.com/Act5/Act5Puzzle/ice_01.mp3'/>
 	*then
 		flag freezebox
 		if heatbox{
@@ -6136,7 +6173,7 @@ When cowplant is hungry, it will stick its cake tongue out. You can feed them at
 
 @escape_puzzle_view_newspaper
 	*say
-		You look at the newspaper. <audio src='https://koetest.s3.amazonaws.com/Act5/Act+5+puzzle/newspaper_01.mp3'/> After Expanding it carefully. It reads, Magic Daily. Customer complaints about the wand containers from Juan’s Wonderful One-Stop Wand Warehouse are not strong enough to protect their luxury wands. Juan responded that all their containers are made by death metal, which is the hardest metal in the world. The problem must be caused by improper use.
+		You look at the newspaper. <audio src='https://koetest.s3.amazonaws.com/Act5/Act5Puzzle/newspaper_01.mp3'/> After Expanding it carefully. It reads, Magic Daily. Customer complaints about the wand containers from Juan’s Wonderful One-Stop Wand Warehouse are not strong enough to protect their luxury wands. Juan responded that all their containers are made by death metal, which is the hardest metal in the world. The problem must be caused by improper use.
 	*then
 		-> escape_puzzle_interaction
 
@@ -6160,7 +6197,7 @@ When cowplant is hungry, it will stick its cake tongue out. You can feed them at
 
 @escape_puzzle_open_notebook
 	*say
-		You look at the notebook. <audio src='https://koetest.s3.amazonaws.com/Act5/Act+5+puzzle/openbook_01.mp3'/> What keyword do you want to search?
+		You look at the notebook. <audio src='https://koetest.s3.amazonaws.com/Act5/Act5Puzzle/openbook_01.mp3'/> What keyword do you want to search?
 	*then
 		-> escape_puzzle_notebook_search
 
@@ -6168,11 +6205,11 @@ When cowplant is hungry, it will stick its cake tongue out. You can feed them at
 	*say
 		
 	*recap
-		You can't do that. You can search any keyword or close the notebook. 
+		Didn't find the words you are looking for. You can search any keyword or close the notebook. 
 	*reprompt
 		You can search any keyword or close the notebook. 
 	*then
-		hear death metal, metal, search metal, search death metal {
+		hear ice, barrel, alcohol burner, alcohol, burn, death metal, metal, search metal, search death metal {
 			-> escape_puzzle_notebook_search_deathmetal
 		}
 		hear black berry, search black berry {
@@ -6194,19 +6231,15 @@ When cowplant is hungry, it will stick its cake tongue out. You can feed them at
 			-> escape_puzzle_notebook_close
 		}
 
-		hear wand, wand of the sylvan forest, search wand {
+		hear chest, box, wand, wand of the sylvan forest, search wand {
 			-> escape_puzzle_notebook_search_wand
 		}
-
-		hear ice, barrel, alcohol burner, flower stand, chest, box {
-			-> escape_puzzle_notebook_cannotfind
+		hear flower stand, flower, flower, search flower, plant, search plants{
+			-> escape_puzzle_notebook_flowerstand
 		}
-		hear flower, search flower, plant, search plants{
-			-> escape_puzzle_notebook_whichflower
-		}
-@escape_puzzle_notebook_whichflower
+@escape_puzzle_notebook_flowerstand
 	*say
-		What kind of flower or plants are you searching for? Say the name.
+		Here is the result of what you are searching: I stored three different types of flowers on the flower stand. They are: black berry, fang flower, and mandrake. I use the dirt of these flowers to locate the position that I wanna teleport to by the portal. 
 	*then
 		-> escape_puzzle_notebook_search
 
@@ -6216,21 +6249,27 @@ When cowplant is hungry, it will stick its cake tongue out. You can feed them at
 	*then
 		-> escape_puzzle_notebook_search
 
+@escape_puzzle_notebook_search_destroy_box
+	*say
+		Here is the result of what you are searching: Sometimes I forget where the key of my death metal wand box, I'll destroy it directly. The method is very simple: use alcohol burner to heat it up, and then put it into the ice water. And that's why I always put one alcohol burner and one barrel of ice water inside the room.
+	*then
+		-> escape_puzzle_notebook_search
+
 @escape_puzzle_notebook_search_wand
 	*say
-		You search if there's a book mark about the Wand of The Sylvan Forest, and then you flip the notebook to that page. It reads. This wand is Hand carved from the trees of Sylvan Glade, it holds immense power. I use it to operate my long distance travel portal.
+		You search if there's a book mark is relevant. It reads. This wand is Hand carved from the trees of Sylvan Glade, it holds immense power. I use it to operate my long distance travel portal. This wand is well kept in a box made of death metal.
 	*then
 		-> escape_puzzle_notebook_search
 
 @escape_puzzle_notebook_close
 	*say
-		<audio src='https://koetest.s3.amazonaws.com/Act5/Act+5+puzzle/closebook_01.mp3'/> You close the notebook.
+		<audio src='https://koetest.s3.amazonaws.com/Act5/Act5Puzzle/closebook_01.mp3'/> You close the notebook.
 	*then
 		-> escape_puzzle_interaction
 
 @escape_puzzle_notebook_search_portal
 	*say
-		You search if there's a book mark about the long distance travel portal, and then you flip the notebook to that page. It reads. I put a Transportalate spell on it, and use, wand of the sylvan forest to operate it. So I can travel through the world. As long as, I have the dirt from the place I want to travel to. Grab the dirt in the hand,  stand on the portal, and say, teleport. I will be there immediately. Easily say, teleport back, I will be on the portal again.
+		You search if there's a book mark about the long distance travel portal. It reads. I put a Transportalate spell on it, and use, wand of the sylvan forest to operate it. So I can travel through the world. As long as, I have the dirt from the place I want to travel to. Grab the dirt in the hand,  stand on the portal, and say, teleport. I will be there immediately. Easily say, teleport back, I will be on the portal again.
 	*then
 		flag readportal
 		-> escape_puzzle_notebook_search
@@ -6255,7 +6294,7 @@ When cowplant is hungry, it will stick its cake tongue out. You can feed them at
 
 @escape_puzzle_notebook_search_deathmetal
 	*say
-		You search if there's a book mark about death metal, and then you flip the notebook to that page. It reads. Death metal is the hardest metal in the world. It will survive from any external force. But, research found, an alternated hot and cold will destory its form.
+		You search if there's a book mark is relevant, and then you flip the notebook to that page. It reads. Death metal is the hardest metal in the world. It will survive from any external force. But, research found, an alternated hot and cold will destory its form. I've been testing the firmness of death metal. In the test, I use the death metal on the alcohol burner and ice barrel alternatively, It breaks easily
 	*then
 		-> escape_puzzle_notebook_search
 

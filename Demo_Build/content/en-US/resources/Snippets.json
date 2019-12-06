@@ -44,5 +44,6 @@
   "RANDOMMAN_SURPRISED":"",
   "Chili_Surprised":"",
   "MAYOR_HAPPY":"<audio src='https://koetest.s3.amazonaws.com/ama/ama03_excited.mp3'/>",
-  "Chili_Annoyed":"<audio src='https://koetest.s3.amazonaws.com/efa/efa10_shakehead_angry.mp3'/>"
+  "Chili_Annoyed":"<audio src='https://koetest.s3.amazonaws.com/efa/efa10_shakehead_angry.mp3'/>",
+  "Achievement":"<audio src='https://koetest.s3.amazonaws.com/AchievementSounds/achievement01.mp3'/>"
 }
