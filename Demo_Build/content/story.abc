@@ -753,7 +753,7 @@
 	*reprompt
 		She is waiting for your response.
 	*then
-		hear ask about the sauce, the sauce, hot sauce {
+		hear ask about the sauce, the sauce, hot sauce, could you, give, sauce {
             if angry{
                 -> Ask about the Sauce 1
             }
@@ -787,7 +787,7 @@
         
 @Tell Mrs Chilirose you like the Sauce
 	*say
-		Ok. Now make up a good reason why you like the sauce. You like the sauce because? [Action]
+		Ok. Now make up a good reason why you like the sauce. You like the sauce because? [Action] [LongPause]
 	*then
 		-> Tell Mrs Chilirose you like the Sauce 2
 
