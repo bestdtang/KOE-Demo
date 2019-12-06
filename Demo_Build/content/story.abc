@@ -44,13 +44,13 @@
 @Tutorial 1: Direction Questions
 	*say
 		//[Action] When you hear this sound, you will be deciding which path, or direction, to take. In this case, try saying: go to the left, or go to the right.
-		Do you want to go to the left, or go to the right? [Action]
+		Do you want to go left, or go right? [Action]
 	*then
-		hear go to the left, left {
+		hear go left, left {
 			-> Look Left
 		}
 
-		hear go to the right, right {
+		hear go right, right {
 			-> Look Right
 		}
 	*reprompt
@@ -274,6 +274,7 @@
 
 	*recap
 		Maybe try some common names instead? For example, You can say: my name is Shawn.
+		//TODO: rephrase
 
 	*reprompt
 		Say your name to the shopkepper. For example, You can say: my name is Brian.
@@ -299,7 +300,7 @@
         [Pause] And then the next morning, my dad started sweating like a cow. So did everyone else. [EOA]
 		
         [Man]
-        Yeah. [Pause] What's worse was what happens afterward. [Short_Pause]That's right.The stench. This stench. It kept everyone from talking to each other. It drove tourists away. And now, no-one wants to come to our town anymore.[EOA]
+        Yeah. [Pause] What's worse was what happens afterward. [Short_Pause]That's right. The stench. This stench. It kept everyone from talking to each other. It drove tourists away. And now, no-one wants to come to our town anymore.[EOA]
         
         The shopkeeper points to a poster on the left wall. It has some dust and the colors have started to fade away, but it's still pretty clear. 
         
@@ -314,7 +315,7 @@
 	*recap
 		It seems like they really need your help. Do you want to help them?
 	*then
-		hear yes, sure {
+		hear yes, sure, help {
 			-> Decide to Help
 		}
 
@@ -480,6 +481,7 @@
         Wait. Sorry for the bad manners back there. I didn't mean it. Many of us had already lost hope on getting rid of this curse, and we've never had a visitor who agrees to help us. Thank you, and I wish you good luck. [EOA]
         <audio src='https://koetest.s3.amazonaws.com/new_demo_stereo/doorOpen2.mp3'/>
         You step out of the store. 
+	
 	This is the end of act one. You can stop here and come back later. Or you can continue to act 2. Would you like to continue?
 	hear yes, yeah, sure {
 		set currentLocation as 'a cross'
@@ -807,8 +809,7 @@
 
 @Open the Beauty Salon Directly
 	*say
-
-		You tried to open the door directly, you entered! Then you noticed that the beauty salon is connect to Misses Chilirosa's house.
+		You carefully and quietly opened the door. You entered! The beauty salon is connected to Misses Chilirosa's house.
 
 	*then
 		-> chilirosa_steal_puzzle_start
@@ -1816,9 +1817,9 @@
 	    }
 @jumptopuzzle
 	*say
-		which puzzle do you want to play? we have: sneaking puzzle, cow plant puzzle, leading flower puzzle, and escape puzzle.
+		which puzzle would you like play? We have four puzzles with difficulty levels from easy to hard. They are hot sauce puzzle, cow plant puzzle, leading flower puzzle, and escape the lab puzzle.
 	*then
-	    hear hot sauce, sneaking{
+	    hear hot sauce, hot{
 	        -> puzzle_intro_sneaking
 	    }
 	    hear cow plant, cow, plant, cowplant{
@@ -1831,31 +1832,30 @@
 	        -> puzzle_intro_escape
 	    }
 
-//TODO: check this and write a quick introduction for each puzzle
 @puzzle_intro_sneaking
 	*say
-		You need to get the super duper hot blue pepper sauce from Misses Chilirosa in order to let the mayor meet you. 
-		You decided to sneak into her house to steal the hot sauce.
+		You thanked the shopkeeper and left the store. Now you are in front of Misses Chilirosa's beauty salon. It's in a house.
+		Misses Chilirosa has the only bottle of super duper hot blue pepper sauce. You need to get the hot sauce from her.
 	*then
 		-> Open the Beauty Salon Directly
 
 @puzzle_intro_cowplant
 	*say
-		On your way to the valley, you are saved by a stranger from a strong sandstorm. 
-		And then, you waked up from a tent. You decided to find him and ask about the situation. 
+		On your journey to the oasis, a stranger saved you from the sandstorm. 
+		You wake up and find yourself in a tent. You decide to find out what's going on.
 	*then
 		-> Been Walking For Days
 
 @puzzle_intro_leadingflower
 	*say
-		Luke told you the direction of the cave and gave you a magical singing flower. 
-		With help from the flower, you are trying to walk across the foggy forest.
+		Luke thanked you for saving him from the nasty cowplant. He not only told you about the cave but also gave you a magical singing flower. 
+		With this magical flower, you can walk across the foggy forest.
 	*then
 		-> Luke Explains the Cave
 
 @puzzle_intro_escape
 	*say
-		You finally saw the alchemist, but she locked you inside a hut. You decided to get out of here. 
+		You finally see the alchemist in this distant oasis from the desert town. You were excited but nervous to meet her. However for some reason she locked you inside her lab. You still have tasks to do, and you have to get our of here.
 	*then
 		-> Escape The Room
 
@@ -2020,16 +2020,15 @@
 		Here is what you can do: 
             if you want to know your current location, say: where am I; 
             if you want to restart the whole game, say: restart; 
-            if you want to revisit the saloon scene, say: jump to saloon.
-            if you want to revisit the mayor's office scene, say: get the hot sauce.
+            if you want to revisit the beauty saloon, say: go to saloon.
+            if you want to revisit the mayor's office, say: get the hot sauce.
 	*then
 		>> BACK
-
 
 // ACT V Start
 
 @Arrival At The Inner Cave
-	*show	
+	*show
 		template: 'default'
         background:'https://koetest.s3.amazonaws.com/visuals/Cave/caveLight2.png'
         title: ''
@@ -3236,9 +3235,9 @@
 
 @chilirosa_steal_puzzle_start
 	*say
-		You want to sneak into Misses Chilirosa's house to grab the hot sauce, do you?
+		You want to sneak into Misses Chilirosa's house to get the hot sauce, right?
 	*then
-		hear yes {
+		hear yes,sure {
 		    set pot_count as 0
 		    unflag turn_pot
 		    unflag turn_kettle
@@ -3253,7 +3252,7 @@
 
 @chilirosa_steal_puzzle_again
 	*say
-		You are in front of Misses Chilirosa's house. Do you want to sneak in again?
+		You are now in front of Misses Chilirosa's house. Do you want to sneak in again?
 	*then
 		hear yes, sure {
 		    set pot_count as 0
@@ -3267,15 +3266,17 @@
 
 @chilirosa_door
 	*say
-		You decided to sneak into Misses Chilirosa's house to steal the hot sauce. You open the the door carefully, and sneak into the hallway. [Chilirosa_footstepSneaky] Suprisely, it connects to her house.At anytime, you can say look around me to explore the rooms. [Action]
+		You hold your breath and open the the door carefully. You then sneak into the hallway.
+		You can say look around at anytime to check the environment. [Action]
 	*then
-		hear look around me, look around the hallway, around me, look around {
+		hear look around, look around the hallway, around me, look around {
 			-> chilirosa_hallway_around
 		}
 
 @chilirosa_hallway_around
 	*say
-		You are in the hallway. There is a closet standing next to you, the main door behind you, and two rooms in front of you. They are, the living room, and the kitchen. You can look at different things and rooms from the hallway to see more details. [Action]
+		You are in the hallway. A vintage wood closet is next to you. Behind you is the the door you just entered.
+		You can also see the living room and the kitchen. You can check the objects or rooms by saing look at object or room name. [Action]
 	*then
 		-> chilirosa_hallway_interation
 
@@ -3351,13 +3352,13 @@
 		    }
 		}
 	*recap
-		You can look at different objects, look at different rooms to see more details, or look around.[Action]
+		You can look at different objects, rooms, or look around.[Action]
 	*reprompt
-		You can look at different objects, look at different rooms to see more details, or look around.[Action]
+		You can look at different objects, rooms, or look around.[Action]
 
 @chilirosa_kitchen_pot_back
 	*say
-		You go to the kitchen. [Chilirosa_footstepSneaky] The pot is been heaten up. It will boil dry soon, and the pot will be burnt. You need to leave the kitchen right now. Otherwise, you will be caught.
+		You go to the kitchen. [Chilirosa_footstepSneaky] The pot has been heaten up. The soup will be boiled to dry soon, and the pot itself will be burnt. You need to leave the kitchen right now. Otherwise, you will be caught.
 	*then
 		hear go to the hallway, go to hallway {
 			-> chilirosa_hallway_pot_caught
@@ -3379,7 +3380,7 @@
 
 @chilirosa_kitchen_caught_kettle_back
 	*say
-		You go to the kitchen. [Chilirosa_footstepSneaky] At the time you just arrived, the kettle whistles. Misses Chilirosa hears it, and arrives at the kitchen to find you, a stranger, wandering. 
+		You go to the kitchen. [Chilirosa_footstepSneaky] The kettle starts to whistle. Misses Chilirosa hears it, and rushes into the kitchen but finds you instead.
 	*then
 		if skip {
             -> chilirosa_steal_puzzle_again
@@ -3389,19 +3390,21 @@
 
 @chilirosa_hallway_hidekettle
 	*say
-		You hide into the closet.[Chilirosa_hide] Right after you close the closet, the kettle starts to whistle. Misses Chilirosa hears it, walks past the hallway to the kitchen, and turns the kettle off. She then goes back to the living room, muttering about the stench. You come out of the closet. You should find a way to leave her in the kitchen for a longer time.
+		You hide in the closet.[Chilirosa_hide] Just you close the closet door, the kettle starts to whistle. Misses Chilirosa hears it and rushes into the kitchen. She turns the kettle off. She then goes back to the living room. You step out of the closet. 
+		Maybe you want to find a way to keep her inside the kitchen longer.
 	*then
 		-> chilirosa_hallway_interation
 
 @chilirosa_hallway_hidepotkettle
 	*say
-		You hide into the closet. [Chilirosa_hide]Right after you close the door, the kettle starts to whistle. Misses Chilirosa hears it, walks past the hallway to the kitchen. She turns the kettle off and finds that the pot is also on. The soup is not boiling dry yet. She turns the pot off, then goes back to the living room. Hearing that, you come out of the closet. You should find a way to leave her in the kitchen for a longer time.
+		You hide in the closet. [Chilirosa_hide] The moment you close the closet door, the kettle starts to whistle. Misses Chilirosa hears it and rushes into the kitchen. She turns the kettle off and finds that the pot is also on. The soup is not boiling dry yet. She turns the pot off, then goes back to the living room. 
+		Hearing that, you step of the closet. Maybe you want to find a way to keep her inside the kitchen longer.
 	*then
 		-> chilirosa_hallway_interation
 
 @chilirosa_living_caught
 	*say
-		You go to the living room. [Chilirosa_footstepSneaky] Misses Chilirosa is right there. You are caught. 
+		You go to the living room. [Chilirosa_footstepSneaky] Misses Chilirosa is sitting right there. She is very surprised to see you but then becomes very angry. You are caught. She throws you out of the window.
 		//Make sure you observe the room first, before you go in.
 	*then
 		if skip {
@@ -3418,23 +3421,23 @@
 
 @chilirosa_living_around
 	*say
-		You are in the living room. From the living room, you can see Misses Chilirosa's bedroom. The important thing is, the hot sauce is right on the table beside you.
+		You are in the living room. The hot sauce, yes the super duper hot blue pepper sauce, is sitting right on the table.
 	*then
 		-> chilirosa_living_interaction
 
 @chilirosa_living_interaction
 	*recap
-		You should take the hot sauce.[Action]
+		The sauce is right in front of you. What would you like to do? [Action]
 	*reprompt
-		You should take the hot sauce.[Action]
+		The sauce is right in front of you. What would you like to do? [Action]
 	*then
-		hear take the sauce, take sauce, take hot sauce, take the hot sauce, take it {
+		hear take, take the sauce, take sauce, take hot sauce, take the hot sauce, take it {
 			-> chilirosa_living_takesauce
 		}
 
 @chilirosa_hallway_out
 	*say
-		You go to the hallway, with the hot sauce in your hand.[Chilirosa_footstepSneaky] Misses chilirosa is still cleaning up the pot that was burnt. You leave her house from the door. Now you have the hot sauce!
+		You go to the hallway, with the hot sauce in your hand.[Chilirosa_footstepSneaky] Misses chilirosa is still cleaning up the pot in the kitchen. You quietly open the door and then close it. You are now in front of her house with the hot sauce in your hand.
 	*then
 		if skip {
 			-> chilirosa_puzzle_end
@@ -3443,7 +3446,7 @@
 
 @chilirosa_puzzle_end
 	*say	
-		That's the end of this  sneaking puzzle. Do you want to experience the whole story now, or choose another puzzle to play?
+		Congratulations! You successfully solved the hot sauce puzzle. Do you want to experience the story or play another puzzle? 
 	*then
 		hear story {
 			unflag skip
@@ -3470,13 +3473,13 @@
 
 @chilirosa_hallway_hidenormal
 	*say
-		You hide in the closet.[Chilirosa_hide] Nothing happened for a bit. So you come out of the closet.
+		You hide in the closet.[Chilirosa_hide] Nothing happened. So you come out of the closet.
 	*then
 		-> chilirosa_hallway_interation
 
 @chilirosa_kitchen_caught_goto
 	*say
-		You go the the kitchen. Misses Chilirosa is right in the kitchen. You are caught.
+		You go the the kitchen. Misses Chilirosa is in the kitchen. You are caught.
 	*then
 		if skip {
 			-> chilirosa_steal_puzzle_again
@@ -3678,7 +3681,7 @@
 
 @chilirosa_kitchen_viewwatertap
 	*say
-		You look at the watertap. You are sure that if you open it, it will make some noise.  You can turn on the water.[Action]
+		You look at the watertap. You are sure that if you open it, it will make some noise.  You have the option to turn on the water.[Action]
 	*then
 		-> chilirosa_kitchen_interaction
 
@@ -3708,7 +3711,7 @@
 
 @chilirosa_hallway_viewcloset
 	*say
-		You look at the closet. It's a large closet. You opened up the closet, a bunch of coats are hanging in it. Suprisely it's large enough for you to hide in. [Action] If you want to hide in the closet, you can say hide in the closet.
+		You look at the closet. It's a large closet. You opened up the closet, a bunch of coats are hanging in it. Suprisely it's large enough for you to hide in. If you want to hide in the closet, you can say hide in the closet. [Action]
 	*then
 		-> chilirosa_hallway_interation
 
@@ -4961,6 +4964,7 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 		hear go outside, look outside, go out, look at outside {
 			-> cowplant_puzzle_outside_around_tutorial
 		}
+
 	*reprompt
 		You should go outside.
 
@@ -6101,8 +6105,8 @@ When cowplant is hungry, it will stick its cake tongue out. You can feed them at
 	*say
 		You look at the flower stand. You see three pots with plants in them. 
 		The dirt in these pots look different to each other. Seems like someone carefully transplanted those vegetations with the dirts from their origins. 
-		From the left to the right, they are labeled as, number one,  Fang Flower, number two, Blackberry, and number three, Mandrake. 
-		You can sort of, take some dirt from any of the pots and grab it in your hand. But you have no clue what to do with it.
+		From the left to the right, they are labeled as, number one, Fang Flower, number two, Blackberry, and number three, Mandrake. 
+		You can take some dirt from any of the pots and grab it in your hand. But you have no clue what to do with it.
 	*then
 		flag view_flower
 		-> escape_puzzle_interaction
@@ -6126,7 +6130,7 @@ When cowplant is hungry, it will stick its cake tongue out. You can feed them at
 @escape_puzzle_view_barrel
 	*say
 		You look at the wooden barrel. Removing the cover carefully. You see that it's filled up with ice. 
-		Where did he get so many ice in a cave in the middle of a desert? You can use anything on the barrel to freeze it.
+		Where did she get so many ice in a cave in the middle of a desert? You can use anything on the barrel to freeze it.
 	*then
 		flag view_barrel
 		-> escape_puzzle_interaction
