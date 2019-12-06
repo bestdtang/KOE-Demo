@@ -270,19 +270,10 @@
 	*say
 		[Man]A while ago the town was famed for our Shawarma. People would come all the way from cities to this dune for a taste of it.[Pause] 
 		By the way. What's your name, traveler? [EOA]
-		[Action]
-
-	*recap
-		Maybe try some common names instead? For example, You can say: my name is Shawn.
-
-	*reprompt
-		Say your name to the shopkepper. For example, You can say: my name is Brian.
+		[Action] [LongPause]
 
 	*then
-		slot playerName to 'AMAZON.US_FIRST_NAME'
-		hear {playerName}, my name is {playerName} {
-			-> Ask for Help
-		}
+		-> Ask for Help
 
 @Ask for Help
 	*say
@@ -481,12 +472,13 @@
         <audio src='https://koetest.s3.amazonaws.com/new_demo_stereo/doorOpen2.mp3'/>
         You step out of the store. 
 	This is the end of act one. You can stop here and come back later. Or you can continue to act 2. Would you like to continue?
-	hear yes, yeah, sure {
-		set currentLocation as 'a cross'
+	*then
+		hear yes, yeah, sure {
+			set currentLocation as 'a cross'
             -> The Cross
         }
-	hear no {
-		-> Quit Game
+		hear no {
+			-> Quit Game
 	}
 
 @The Cross
@@ -5520,7 +5512,7 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 			-> cowplant_puzzle_notebook_seedtrader_swallow
 		}
 
-		hear milk, search milk {
+		hear milk, potion, cure, search milk {
 			-> cowplant_puzzle_notebook_seedtrader_milk
 		}
 
@@ -5614,7 +5606,7 @@ When cowplant is hungry, it will stick its cake tongue out. You can feed them at
 @cowplant_puzzle_notebook_seedtrader_swallow
 	*say
 		You search the bookmark that writes, swallow, and opened up from that page. It reads.
-		When a person is swallowed for the first time, the Cowplant will spit them out, and they will recieve a drained mood, which will last two days. The mood will make people feels like an emotionless shell. Different allergic symptoms causing by swallowed have been found to a few people. If attempt to go for the cake again, the cowplant will devour them. But, if people survive from the first swallowing, the cowplant will produce milk.
+		When a person is swallowed for the first time, the Cowplant will spit them out, and they will receive a drained mood, which will last two days. The mood will make people feels like an emotionless shell. Different allergic symptoms causing by swallowed have been found to a few people. If attempt to go for the cake again, the cowplant will devour them. But, if people survive from the first swallowing, the cowplant will produce milk.
 	*then
 		-> cowplant_puzzle_notebook_seedtrader
 
@@ -5654,7 +5646,7 @@ When cowplant is hungry, it will stick its cake tongue out. You can feed them at
 
 @cowplant_puzzle_notebook_seedtrader_mature
 	*say
-		You searched the keyword, mature state. The page reads. In this stage, the Cowplant is fully matured. You can feed it, or at certain moment, you can milk it.
+		You searched the keyword, mature state. The page reads. In this stage, the Cowplant is fully matured. You can feed it, or at certain moment, you can milk it. When a person is swallowed for the first time, the Cowplant will spit them out, and they will receive a drained mood, which will last two days. If people survive from the first swallowing, the cowplant will produce milk. I'll discuss about the milk later in the related category.
 	*then
 		-> cowplant_puzzle_notebook_seedtrader
 
