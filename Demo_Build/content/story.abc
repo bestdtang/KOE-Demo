@@ -42,13 +42,12 @@
 		//The wind is hot, the sun is hot, and the air is burning hot. [Pause] 
 		<audio src='https://koetest.s3.amazonaws.com/Act1/wind.mp3'/>
 		<audio src='https://koetest.s3.amazonaws.com/Act1/gulp.mp3'/>
-		In the middle of the hot desert, you found a rusty, old signpost. It has two arrows pointing to the right and the left. However, the letters have faded away.
+		In the middle of the hot desert, you find a rusty, old signpost. It has two arrows pointing to the right and the left. However, the letters have faded away.
 	*then
 		-> Tutorial 1: Direction Questions
 
 @Tutorial 1: Direction Questions
 	*say
-		//[Action] When you hear this sound, you will be deciding which path, or direction, to take. In this case, try saying: go to the left, or go to the right.
 		Do you want to go left, or go right? [Action]
 	*then
 		hear go left, left {
@@ -70,7 +69,7 @@
         title: ''
         subtitle: ''
 	*say
-		You wiped your face with your dry hands and decided to turn right. Then, you keep treading the sea of sand wearily.
+		You wipe your face with your dry hands and decide to turn right. Then, you keep treading the sea of sand wearily.
 		
 	*then
 		-> Tutorial 1A: Check Around
@@ -84,9 +83,9 @@
 	*say
 		<audio src='https://koetest.s3.amazonaws.com/Act1/windFootsteps.mp3'/> 
 		You walk under the hot sun until you reach the top of a little sand hill. 
-		//It let's you see a little bit further away. Now you can see what's around you. [Pause] Sometimes, paths aren't obvious at first glance just like now. 
-		You can check around first by saying what's around me.[Action]
-		//Go on, give it a go.
+		It let's you see a little bit further away. Now you can see what's around you. [Pause] Sometimes, paths aren't obvious at first glance.
+		You can check around first by saying what's around me. Go on, give it a try. [Action]
+		
 		
 	*then
 		hear what's around me,check, what is around me, check what's around me, around me {
@@ -104,37 +103,36 @@
         title: ''
         subtitle: ''
 	*say
-		You looked around. 
+		You look around. 
 		//You don't find anything particularly interesting. [Pause] Wait! 
-		You see a few freckles on the yellow surfaces of Earth. It shines under the burning sun! 
+		You see a few specks on the yellow surfaces of Earth. It shines under the burning sun! 
 		//You squint your eyes and look closer. [Pause] 
 		It's a town! [Short_Pause]
-		What would you like to do?
-		//There's a good chance that they have some water there.
+		There's a good chance that they have some water there.
 		[Action]
 	*then
-		hear go to the town, go towards the town, town, the town {
+		hear go to the town, go towards the town, town, the town, go, ok, yes {
 		    set currentLocation as 'town'
              -> Go to Town
          }
 	*reprompt
-		Try saying go to the town.
+		You're thirsty, and there's seems like a town out there.
 	*recap
-		Try saying go to the town.
+		You're thirsty, and there's seems like a town out there. Perhaps you should go there?
 
 @Go to Town
 	*say
 		//Quick! There might be water there.
 		<audio src='https://koetest.s3.amazonaws.com/Act1/sandRun3s.mp3'/> 
-		The urge of letting cold water pass enter you drags your weary feet to the entrance of the town. 
+		The promise of cold water entering you drags your weary feet to the entrance of the town. 
 	*then
 		-> Town
 
 @Town
 	*say
 		//The urge of letting cold water pass enter you drags your weary feet to the entrance of the town. 
-		//At the entrance, you thought the townspeople would step forward immediately to help a thirsty traveler, but instead. [Short_Pause] No-one came. What's happening? [Action] you can ask to check the environment. 
-		Now you can check the environment by saying, what's around me. [Action]
+		Surely the townspeople will rush to help a thirsty traveler, [Short_Pause] but No-one came. Where is everyone?
+		Where should you go? [Action]
 	*recap
 		Try saying, what's around me.[Action]
 	*reprompt
@@ -147,19 +145,19 @@
 @Around
 	*say
 		You're at the entrance of the town. Some small buildings align on the sides of the street. But all of their doors are shut tight. 
-		//Only a few people are walking on the streets. It's almost as if they're trying to avoid having eye-contact with you.
+		Only a few people are walking on the streets. It's almost as if they're trying to avoid having eye-contact with you. [Short_Pause] Also. Something smells bad.
 	*reprompt
-		There are a few establishments right in front of you. A general store and the mayor's office. Which one do you want to go to?
+		There are a few establishments right in front of you. A general store and the mayor's office. Which one should you go to?
 	*recap
-		There are a few establishments right in front of you. A general store and the mayor's office. Which one do you want to go to?
+		There are a few establishments right in front of you. A general store and the mayor's office. Which one should you go to?
 	*then
 		-> Around_1
 
 @Around_1
 	*say
-		There are a few establishments right in front of you. A general store and the mayor's office. Which one do you want to go to? [Action]
+		There are a few establishments right in front of you. A general store and the mayor's office. Which one should you go to? [Action]
 	*recap
-		There are a few establishments right in front of you. A general store and the mayor's office. Which one do you want to go to?[Action]
+		There are a few establishments right in front of you. A general store and the mayor's office. Which one should you go to?[Action]
 	*reprompt
 		Do you want to go to the general store or the mayor's office?
 	*then
@@ -197,13 +195,13 @@
 		[Kid] 
 	    I can help you with that. [Short_Pause] 
 	    //But I must warn you before I take you into our place. 
-	    Just a heads up. You probably won't appreciate the conditions in the house. [Short_Pause]
+	    Just a heads up. You probably already noticed that there's a bad smell. Well, it gets worse indoors. [Short_Pause]
 	    [EOA] [Pause]
 		The boy takes you around the building and enters the store from the backdoor. 
 		<audio src='https://koetest.s3.amazonaws.com/Act1/openWoodDoor.mp3'/>
-		Oh dear. [Pause] It is far from being desirable. It stinks. Smelly, smelly, smelly, it's like wearing the same pair of socks for over a year. [Pause]
+		Oh dear. [Pause] It is far from being desirable. It stinks, like really really stinks. it smells like someone's wearing the same pair of socks for over a year. [Pause]
 		[Kid] Yeah. Told you! [Pause] [EOA] 
-		[Pause] A bald, middle-aged man that looks like in his fifties slowly walks down the stairs.
+		[Pause] A bald, middle-aged man slowly walks down the stairs.
 		<audio src='https://koetest.s3.amazonaws.com/Act1/woodenFloorCracking.mp3'/>
 		[Kid] Papa! [Pause] [EOA] 
 		//Small pieces of tissue paper are rolled and stuck in his nose. He looks like he could use some more sunshine.
@@ -225,18 +223,18 @@
         [Man]
         Hey.Don't worry. I know it smells bad in here. But I assure you, the water is clean. [EOA]
 		
-        Sometimes when appropriate, you can use an item, perform an action, or do nothing. For this instance, you can either say: [Short_Pause] use water or do nothing.[Action]
+        The water looks ok, but it smells bad. Are you sure you want to drink it? [Action]
 	*then
-		hear drink water, use water, use the water, water, chug {
+		hear drink water, use water, use the water, water, chug, yes {
 			-> Finding Out
 		}
 		hear don't drink the water, don't, no, do nothing {
 			-> Don't Drink
 		}
 	*recap
-		Sometimes when appropriate, you can use an item, perform an action, or do nothing. For this instance, you can either say: [Short_Pause] "use water", or "do nothing".
+		The water looks ok, but it smells bad. Are you sure you want to drink it? [Action]
 	*reprompt
-		Sometimes when appropriate, you can use an item, perform an action, or do nothing. For this instance, you can either say: [Short_Pause] "use water", or "do nothing".
+		The water looks ok, but it smells bad. Are you sure you want to drink it? [Action]
 
 
 @Don't Drink
@@ -299,7 +297,7 @@
 	*say
 		[Man] 
 		That's a rare name around here. 
-		[Pause] This is a desert so you could imagine it never rains here [Short_Pause] until that night. On that night. We've seen the greatest thunderstorm of the town's history, [Short_Pause] but no-one anticipated what came after.[EOA]
+		[Pause] This is a desert so you could imagine it never rains here [Short_Pause] until that fateful night. On that night. We saw the greatest thunderstorm of the town's history, [Short_Pause] but no-one anticipated what happened next.[EOA]
 
 		<audio src='https://koetest.s3.amazonaws.com/Act1/thunder11s.mp3'/>
 
@@ -310,14 +308,14 @@
         [Pause] And then the next morning, my dad started sweating like a cow. So did everyone else. [EOA]
 		
         [Man]
-        Yeah. [Pause] What's worse was what happens afterward. [Short_Pause]That's right. The stench. This stench. It kept everyone from talking to each other. It drove tourists away. And now, no-one wants to come to our town anymore.[EOA]
+        Yeah. [Pause] What's worse was what happened afterward. [Short_Pause]That's right. The stench. This stench. It keeps everyone from talking to each other. It drives tourists away. And now, no-one wants to come to our town anymore.[EOA]
         
-        The shopkeeper points to a poster on the left wall. It has some dust and the colors have started to fade away, but it's still pretty clear. 
+        The shopkeeper points to a poster on the left wall. It pictures a determined face of a bearded man.
         
 		[Man]
-        The mayor believed that it's a curse from some spell caster. He was trying to find people to help. Even set up a great reward for anyone who lifts the curse. 
+        The mayor is still trying to find people to help. Even set up a great reward for anyone who lifts the curse. 
         [Pause]
-        Since you're here, why don't you help us? [Short_Pause] There's a lucrative treasure, and it could be all yours. [EOA]
+        Say, Since you're here, maybe you could help us? The mayor's reward could all be yours! [EOA]
 
         It seems like they really need your help. Do you want to help them?[Action]
 	*reprompt
