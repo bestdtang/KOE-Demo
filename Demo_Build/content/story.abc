@@ -3639,7 +3639,7 @@
 
 @chilirosa_kitchen_caught_pot_stay
 	*say
-		The soup has been boiled dry and the pot is burnt. Misses Chilirosa comes over to check on the stove but finds you instead. You are caught. 
+		The soup has been dry and the pot is burnt. Misses Chilirosa comes over to check on the stove but finds you instead. You are caught. 
 	*then
 		if skip {
 			-> chilirosa_steal_puzzle_again
