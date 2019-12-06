@@ -751,7 +751,7 @@
 	*reprompt
 		She is waiting for your response.
 	*then
-		hear ask about the sauce, the sauce, hot sauce {
+		hear ask about the sauce, the sauce, hot sauce, could you, give, sauce {
             if angry{
                 -> Ask about the Sauce 1
             }
@@ -785,7 +785,7 @@
         
 @Tell Mrs Chilirose you like the Sauce
 	*say
-		Ok. Now make up a good reason why you like the sauce. You like the sauce because? [Action]
+		Ok. Now make up a good reason why you like the sauce. You like the sauce because? [Action] [LongPause]
 	*then
 		-> Tell Mrs Chilirose you like the Sauce 2
 
@@ -1452,7 +1452,7 @@
 		Luke goes to a locked chest and retrieves a purple seed.
 
 		[SeedTrader]
-		There's another thing about the citrine that you're looking for. The antidote cannot be made without this other ingredient. He probably doesn't know this yet, since he has never left the cave. [EOA]
+		There's another thing about the citrine that you're looking for. The antidote cannot be made without this other ingredient. She probably doesn't know this yet, since she has never left the cave. [EOA]
 
 		Luke hands the seed to you.
 		
@@ -2392,7 +2392,7 @@
 		hear luke {
             -> Alchemist Questions About Luke
         }
-        hear desert trader {
+        hear desert trader, trader, seed {
             -> Alchemist Questions About the Seed
         }
 
@@ -2447,7 +2447,7 @@
             -> Alchemist Scolds Luke Thrice
         }
         //TODO: update this part; shouldn't be 'anything else'
-        hear anything else {
+        hear anything else, don't know {
             -> Alchemist Scolds Luke For His Weird Behaviour
         }
 
@@ -2601,7 +2601,7 @@
 		Suddenly, she looks like she realizes something.
 
 		[Alchemist]
-		I have an idea. Help me up, will you?  [EOA]
+		I have an idea. Help me up, will you?  [EOA] [Action]
 
 	*recap 
 		You should pull her up from the chair.
@@ -2633,7 +2633,7 @@
 		Suddenly, she looks like she realizes something.
 
 		[Alchemist]
-		I have an idea. Help me up, will you?  [EOA]
+		I have an idea. Help me up, will you?  [EOA] [Action]
 
 	*recap 
 		You should pull her up from the chair.
@@ -2713,7 +2713,7 @@
 		Suddenly, she looks like she realizes something.
 
 		[Alchemist]
-		I have an idea. Help me up, will you?  [EOA]
+		I have an idea. Help me up, will you?  [EOA] [Action]
 
 	*recap 
 		You should pull her up from the chair.
@@ -2878,7 +2878,7 @@
 		[Alchemist]
 		Well, this could be our lucky day.
 		Let's see if this works, shall we?
-		Can you pull me up from this chair? [EOA]
+		Can you pull me up from this chair? [EOA] [Action]
 
 	*reprompt 
 		Barette realized something as soon as you told her
@@ -3024,6 +3024,19 @@
 		leave. The mayor seems a little bit hesitant.
 		Barette looks at you. She gives you the vial.
 
+		[Alchemist]
+		Open the vial. Show them that they're
+		wrong.[EOA]
+
+		Will you open the vial? [Action]
+	*recap
+		[Alchemist]
+		Open the vial. Show them that they're
+		wrong.[EOA]
+
+		Will you open the vial? [Action]
+
+	*reprompt
 		[Alchemist]
 		Open the vial. Show them that they're
 		wrong.[EOA]
@@ -3184,6 +3197,8 @@
 
 		<audio src='https://koetest.s3.amazonaws.com/Act5/takePhoto.mp3'/>
 
+		<audio src='https://koetest.s3.amazonaws.com/bgm/musicEndLong.mp3'/>
+
 	*then
 		>>END
 
@@ -3218,6 +3233,8 @@
 
 		<audio src='https://koetest.s3.amazonaws.com/Act5/takePhoto.mp3'/>
 
+		<audio src='https://koetest.s3.amazonaws.com/bgm/musicEndLong.mp3'/>
+
 	*then
 		>>END
 
@@ -3242,6 +3259,8 @@
 		3, 2, 1, say cheese![EOA]
 
 		<audio src='https://koetest.s3.amazonaws.com/Act5/takePhoto.mp3'/>
+
+		<audio src='https://koetest.s3.amazonaws.com/bgm/musicEndLong.mp3'/>
 		
 	*then
 		>>END
@@ -3760,13 +3779,13 @@
 		The flower suddenly stands up straight, like it has awoken from some sleep.
         
         [SeedTrader]
-        Good. Then, grab some dust from the ground and sprinkle it on the flower.  [EOA]
+        Good. Then, grab some dust from the ground and sprinkle it on the flower.  [EOA] [Action]
 	*recap
 		Try use the dust on the flower. [Action]
 	*reprompt
 		Try use the dust on the flower. [Action]
 	*then
-		hear use the dust on the flower {
+		hear use the dust on the flower, flower, sprinkle, grab, dust {
 			-> leading_tutorial_start
 		}
 
@@ -3776,7 +3795,8 @@
         The flower gently shakes for a second. 
         
         [SeedTrader]
-        Great. That means the flower has locked on to the scent of a garden, and knows how to get to it now. Hold the flower and look at four directions: East, South, West, and North.[EOA] Try say, look south
+        Great. That means the flower has locked on to the scent of a garden, and knows how to get to it now. Hold the flower and look at four directions: East, South, West, and North.[EOA] 
+		Try say, look south [Action]
 	*then
 		hear look south, look at south {
 			-> leading_tutorial_south
@@ -3891,7 +3911,7 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 	*recap
 		Try use the dust on the flower
 	*reprompt
-		You should use the dust on the leading flower before you go into the sandstorm. 
+		You should use the dust on the leading flower before you go into the forest. 
 	*then
 		hear use the dust on the flower, use , use dust {
 			-> leading_puzzle_start_from_a
@@ -3945,25 +3965,25 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 
 @leading_a_north
 	*say
-		You are looking north.[DirSound_MRight]
+		You are looking north.[DirSound_MRight] [Action]
 	*then
 		-> leading_a_position
 
 @leading_a_east
 	*say
-		You are looking east.[DirSound_MLeft]
+		You are looking east.[DirSound_MLeft] [Action]
 	*then
 		-> leading_a_position
 
 @leading_a_south
 	*say
-		You are looking south.[DirSound_Small] That's the entrance you came in before.
+		You are looking south.[DirSound_Small] That's the entrance you came in before. [Action]
 	*then
 		-> leading_a_position
 
 @leading_a_west
 	*say
-		You are looking west.[DirSound_Small] You see the outer edge of the forest. That's definitely not the right way.
+		You are looking west.[DirSound_Small] You see the outer edge of the forest. That's definitely not the right way. [Action]
 	*then
 		-> leading_a_position
         
@@ -3971,7 +3991,7 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 
 @leading_b_goto
 	*say
-		[Footsteps] Couple minutes later. You come to a new spot.
+		[Footsteps] Couple minutes later. You come to a new spot. [Action]
 	*then
 		-> leading_b_position
 
@@ -4007,25 +4027,25 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 
 @leading_b_north
 	*say
-		You are looking north. [DirSound_MRight] A dead forest blocks the way.
+		You are looking north. [DirSound_MRight] A dead forest blocks the way. [Action]
 	*then
 		-> leading_b_position
 
 @leading_b_east
 	*say
-		You are looking east. [DirSound_MLeft]
+		You are looking east. [DirSound_MLeft] [Action]
 	*then
 		-> leading_b_position
 
 @leading_b_south
 	*say
-		You are looking south. [DirSound_Small] You see the outer edge of the forest. That's definitely not the right way.
+		You are looking south. [DirSound_Small] You see the outer edge of the forest. That's definitely not the right way. [Action]
 	*then
 		-> leading_b_position
 
 @leading_b_west
 	*say
-		You are looking west. [DirSound_Small]
+		You are looking west. [DirSound_Small] [Action]
 	*then
 		-> leading_b_position
 
@@ -4033,7 +4053,7 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 
 @leading_c_goto
 	*say
-		[Footsteps] Couple minutes later. You come to a new spot.
+		[Footsteps] Couple minutes later. You come to a new spot. [Action]
 	*then
 		-> leading_c_position
 
@@ -4073,25 +4093,25 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 
 @leading_c_north
 	*say
-		You are looking north.[DirSound_Large]
+		You are looking north.[DirSound_Large] [Action]
 	*then
 		-> leading_c_position
 
 @leading_c_east
 	*say
-		You are looking east.[DirSound_MLeft]
+		You are looking east.[DirSound_MLeft] [Action]
 	*then
 		-> leading_c_position
 
 @leading_c_south
 	*say
-		You are looking south.[DirSound_Small] You see the outer edge of the forest. That's definitely not the right way.
+		You are looking south.[DirSound_Small] You see the outer edge of the forest. That's definitely not the right way. [Action]
 	*then
 		-> leading_c_position
 
 @leading_c_west
 	*say
-		You are looking west. [DirSound_MRight]
+		You are looking west. [DirSound_MRight] [Action]
 	*then
 		-> leading_c_position
 
@@ -4099,7 +4119,7 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 
 @leading_d_goto
 	*say
-		[Footsteps] Couple minutes later. You come to a new spot.
+		[Footsteps] Couple minutes later. You come to a new spot. [Action]
 	*then
 		-> leading_d_position
 
@@ -4135,25 +4155,25 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 
 @leading_d_north
 	*say
-		You are looking north. [DirSound_MLeft]
+		You are looking north. [DirSound_MLeft] [Action]
 	*then
 		-> leading_d_position
 
 @leading_d_east
 	*say
-		You are looking east. [DirSound_Small] You see the outer edge of the forest. That's definitely not the right way.
+		You are looking east. [DirSound_Small] You see the outer edge of the forest. That's definitely not the right way. [Action]
 	*then
 		-> leading_d_position
 
 @leading_d_south
 	*say
-		You are looking south. [DirSound_Small] You see the outer edge of the forest. That's definitely not the right way.
+		You are looking south. [DirSound_Small] You see the outer edge of the forest. That's definitely not the right way. [Action]
 	*then
 		-> leading_d_position
 
 @leading_d_west
 	*say
-		You are looking west. [DirSound_MRight]
+		You are looking west. [DirSound_MRight] [Action]
 	*then
 		-> leading_d_position
 
@@ -4161,7 +4181,7 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 
 @leading_e_goto
 	*say
-		[Footsteps] Couple minutes later. You come to a new spot.
+		[Footsteps] Couple minutes later. You come to a new spot. [Action]
 	*then
 		-> leading_e_position
 
@@ -4201,25 +4221,25 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 
 @leading_e_north
 	*say
-		You are looking north. [DirSound_MRight]
+		You are looking north. [DirSound_MRight] [Action]
 	*then
 		-> leading_e_position
 
 @leading_e_east
 	*say
-		You are looking east. [DirSound_MLeft]
+		You are looking east. [DirSound_MLeft] [Action]
 	*then
 		-> leading_e_position
 
 @leading_e_south
 	*say
-		You are looking south. [DirSound_Small]
+		You are looking south. [DirSound_Small] [Action]
 	*then
 		-> leading_e_position
 
 @leading_e_west
 	*say
-		You are looking west. [DirSound_Small] You see the outer edge of the forest. That's definitely not the right way.
+		You are looking west. [DirSound_Small] You see the outer edge of the forest. That's definitely not the right way. [Action]
 	*then
 		-> leading_e_position
 
@@ -4228,7 +4248,7 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 
 @leading_f_goto
 	*say
-		[Footsteps] Couple minutes later. You come to a new spot.
+		[Footsteps] Couple minutes later. You come to a new spot. [Action]
 	*then
 		-> leading_f_position
 
@@ -4268,25 +4288,25 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 
 @leading_f_north
 	*say
-		You are looking north. [DirSound_MRight]
+		You are looking north. [DirSound_MRight] [Action]
 	*then
 		-> leading_f_position
 
 @leading_f_east
 	*say
-		You are looking east. [DirSound_MLeft]
+		You are looking east. [DirSound_MLeft] [Action]
 	*then
 		-> leading_f_position
 
 @leading_f_south
 	*say
-		You are looking south. [DirSound_Small] A dead forest blocks the way.
+		You are looking south. [DirSound_Small] A dead forest blocks the way. [Action]
 	*then
 		-> leading_f_position
 
 @leading_f_west
 	*say
-		You are looking west. [DirSound_Small]
+		You are looking west. [DirSound_Small] [Action]
 	*then
 		-> leading_f_position
 
@@ -4294,7 +4314,7 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 
 @leading_g_goto
 	*say
-		[Footsteps] Couple minutes later. You come to a new spot.
+		[Footsteps] Couple minutes later. You come to a new spot. [Action]
 	*then
 		-> leading_g_position
 
@@ -4338,25 +4358,25 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 
 @leading_g_north
 	*say
-		You are looking north. [DirSound_Large] A pond of water blocks the way. Look across the pond, you can almost see something different.
+		You are looking north. [DirSound_Large] A pond of water blocks the way. Look across the pond, you can almost see something different. [Action]
 	*then
 		-> leading_g_position
 
 @leading_g_east
 	*say
-		You are looking east. [DirSound_MLeft]
+		You are looking east. [DirSound_MLeft] [Action]
 	*then
 		-> leading_g_position
 
 @leading_g_south
 	*say
-		You are looking south. [DirSound_Small]
+		You are looking south. [DirSound_Small] [Action]
 	*then
 		-> leading_g_position
 
 @leading_g_west
 	*say
-		You are looking west. [DirSound_MRight]
+		You are looking west. [DirSound_MRight] [Action]
 	*then
 		-> leading_g_position
 
@@ -4364,7 +4384,7 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 
 @leading_h_goto
 	*say
-		[Footsteps] Couple minutes later. You come to a new spot.
+		[Footsteps] Couple minutes later. You come to a new spot. [Action]
 	*then
 		-> leading_h_position
 
@@ -4408,25 +4428,25 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 
 @leading_h_north
 	*say
-		You are looking north. [DirSound_MLeft]
+		You are looking north. [DirSound_MLeft] [Action]
 	*then
 		-> leading_h_position
 
 @leading_h_east
 	*say
-		You are looking east. [DirSound_Small] You see the outer edge of the forest. That's definitely not the right way.
+		You are looking east. [DirSound_Small] You see the outer edge of the forest. That's definitely not the right way. [Action]
 	*then
 		-> leading_h_position
 
 @leading_h_south
 	*say
-		You are looking south. [DirSound_Small]
+		You are looking south. [DirSound_Small] [Action]
 	*then
 		-> leading_h_position
 
 @leading_h_west
 	*say
-		You are looking west. [DirSound_MRight]
+		You are looking west. [DirSound_MRight] [Action]
 	*then
 		-> leading_h_position
 
@@ -4434,7 +4454,7 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 
 @leading_i_goto
 	*say
-		[Footsteps] Couple minutes later. You come to a new spot.
+		[Footsteps] Couple minutes later. You come to a new spot. [Action]
 	*then
 		-> leading_i_position
 
@@ -4478,25 +4498,25 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 
 @leading_i_north
 	*say
-		You are looking north. [DirSound_MRight]
+		You are looking north. [DirSound_MRight] [Action]
 	*then
 		-> leading_i_position
 
 @leading_i_east
 	*say
-		You are looking east. [DirSound_Large]
+		You are looking east. [DirSound_Large] [Action]
 	*then
 		-> leading_i_position
 
 @leading_i_south
 	*say
-		You are looking south. [DirSound_MLeft]
+		You are looking south. [DirSound_MLeft] [Action]
 	*then
 		-> leading_i_position
 
 @leading_i_west
 	*say
-		You are looking west. [DirSound_Small] You see the outer edge of the forest. That's definitely not the right way.
+		You are looking west. [DirSound_Small] You see the outer edge of the forest. That's definitely not the right way. [Action]
 	*then
 		-> leading_i_position
 
@@ -4504,7 +4524,7 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 
 @leading_j_goto
 	*say
-		[Footsteps] Couple minutes later. You come to a new spot.
+		[Footsteps] Couple minutes later. You come to a new spot. [Action]
 	*then
 		-> leading_j_position
 
@@ -4548,25 +4568,25 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 
 @leading_j_north
 	*say
-		You are looking north. [DirSound_MRight] A large field of marsh blocks the way.
+		You are looking north. [DirSound_MRight] A large field of marsh blocks the way. [Action]
 	*then
 		-> leading_j_position
 
 @leading_j_east
 	*say
-		You are looking east. [DirSound_Large] A long hill blocks the way.
+		You are looking east. [DirSound_Large] A long hill blocks the way. [Action]
 	*then
 		-> leading_j_position
 
 @leading_j_south
 	*say
-		You are looking south. [DirSound_MLeft]
+		You are looking south. [DirSound_MLeft] [Action]
 	*then
 		-> leading_j_position
 
 @leading_j_west
 	*say
-		You are looking west. [DirSound_Small]
+		You are looking west. [DirSound_Small] [Action]
 	*then
 		-> leading_j_position
 
@@ -4574,7 +4594,7 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 
 @leading_l_goto
 	*say
-		[Footsteps] Couple minutes later. You come to a new spot.
+		[Footsteps] Couple minutes later. You come to a new spot. [Action]
 	*then
 		-> leading_l_position
 
@@ -4618,25 +4638,25 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 
 @leading_l_north
 	*say
-		You are looking north. [DirSound_MLeft]
+		You are looking north. [DirSound_MLeft] [Action]
 	*then
 		-> leading_l_position
 
 @leading_l_east
 	*say
-		You are looking east. [DirSound_Small] You see the outer edge of the forest. That's definitely not the right way.
+		You are looking east. [DirSound_Small] You see the outer edge of the forest. That's definitely not the right way. [Action]
 	*then
 		-> leading_l_position
 
 @leading_l_south
 	*say
-		You are looking south. [DirSound_MRight]
+		You are looking south. [DirSound_MRight] [Action]
 	*then
 		-> leading_l_position
 
 @leading_l_west
 	*say
-		You are looking west. [DirSound_Large]
+		You are looking west. [DirSound_Large] [Action]
 	*then
 		-> leading_l_position
 
@@ -4644,7 +4664,7 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 
 @leading_m_goto
 	*say
-		[Footsteps] Couple minutes later. You come to a new spot.
+		[Footsteps] Couple minutes later. You come to a new spot. [Action]
 	*then
 		-> leading_m_position
 
@@ -4688,25 +4708,25 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 
 @leading_m_north
 	*say
-		You are looking north. [DirSound_Small] You see the outer edge of the forest. That's definitely not the right way.
+		You are looking north. [DirSound_Small] You see the outer edge of the forest. That's definitely not the right way. [Action]
 	*then
 		-> leading_m_position
 
 @leading_m_east
 	*say
-		You are looking east. [DirSound_MRight]
+		You are looking east. [DirSound_MRight] [Action]
 	*then
 		-> leading_m_position
 
 @leading_m_south
 	*say
-		You are looking south. [DirSound_MLeft]
+		You are looking south. [DirSound_MLeft] [Action]
 	*then
 		-> leading_m_position
 
 @leading_m_west
 	*say
-		You are looking west. [DirSound_Small] You see the outer edge of the forest. That's definitely not the right way.
+		You are looking west. [DirSound_Small] You see the outer edge of the forest. That's definitely not the right way. [Action]
 	*then
 		-> leading_m_position
 
@@ -4714,7 +4734,7 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 
 @leading_n_goto
 	*say
-		[Footsteps] Couple minutes later. You come to a new spot.
+		[Footsteps] Couple minutes later. You come to a new spot. [Action]
 	*then
 		-> leading_n_position
 
@@ -4758,25 +4778,25 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 
 @leading_n_north
 	*say
-		You are looking north. [DirSound_Small] You see the outer edge of the forest. That's definitely not the right way.
+		You are looking north. [DirSound_Small] You see the outer edge of the forest. That's definitely not the right way. [Action]
 	*then
 		-> leading_n_position
 
 @leading_n_east
 	*say
-		You are looking east. [DirSound_MRight]
+		You are looking east. [DirSound_MRight] [Action]
 	*then
 		-> leading_n_position
 
 @leading_n_south
 	*say
-		You are looking south. [DirSound_MLeft] A large field of marsh blocks the way.
+		You are looking south. [DirSound_MLeft] A large field of marsh blocks the way. [Action]
 	*then
 		-> leading_n_position
 
 @leading_n_west
 	*say
-		You are looking west. [DirSound_Small]
+		You are looking west. [DirSound_Small] [Action]
 	*then
 		-> leading_n_position
 
@@ -4828,25 +4848,25 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 
 @leading_o_north
 	*say
-		You are looking north. [DirSound_Small] You see the outer edge of the forest. That's definitely not the right way.
+		You are looking north. [DirSound_Small] You see the outer edge of the forest. That's definitely not the right way.[Action]
 	*then
 		-> leading_o_position
 
 @leading_o_east
 	*say
-		You are looking east. [DirSound_MRight]
+		You are looking east. [DirSound_MRight] [Action]
 	*then
 		-> leading_o_position
 
 @leading_o_south
 	*say
-		You are looking south. [DirSound_Large]
+		You are looking south. [DirSound_Large] [Action]
 	*then
 		-> leading_o_position
 
 @leading_o_west
 	*say
-		You are looking west. [DirSound_MLeft]
+		You are looking west. [DirSound_MLeft] [Action]
 	*then
 		-> leading_o_position
 
@@ -4922,7 +4942,7 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 
 @leading_find_oasis
 	*say
-		Your sight becomes clear. You see the oasis.
+		Your sight becomes clear. You see the cave. [Achievement]
 	*then
 		if skip {
 			-> leading_puzzle_ends
@@ -4967,7 +4987,34 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 	*say
 		Books and scratch paper scatter everywhere on the ground in this large and messy tent.
 		You see a cabinet full of plants and seeds in glass jars. 
-		A carefully binded leather notebook catches you attention. It reads Cowplant Observation Notes.
+		A carefully binded leather notebook catches you attention. It reads Cowplant Observation Notes. 
+		[Conversation] This notes might be helpful, let's pick up the note first. [Action]
+	*then
+		hear pick up the notebook, pick up, pick {
+			flag getnotebook_c
+			set currentplace to 0
+			-> cowplant_puzzle_tent_pickup_notebook
+		}
+	*recap
+		You should pick up the notebook first.
+	*reprompt 
+		You should pick up the notebook.
+
+@cowplant_puzzle_tent_pickup_notebook
+	*say
+		You pick up the notebook. It has many bookmarks on different pages. You decide to carry the notebook with you so you can look things up easier.
+		You can look at the note book to see more details. [Action]
+	*recap
+		You should look at the notebook first.
+	*reprompt
+		You should look at the notebook. 
+	*then
+		hear look at the notebook, look at {
+			-> cowplant_puzzle_after_pick_up
+		}
+
+@cowplant_puzzle_after_pick_up
+	*say
 		While you are wondering what is cowplant, you hear a strange sound from the outside.
 		<audio src='https://koetest.s3.amazonaws.com/Act3/manscream_01.mp3'/> 
 		Then you hear another sound. <audio src='https://koetest.s3.amazonaws.com/Act3/cowplantThrowOut.mp3'/> Maybe you should go outside.[Action]
@@ -4987,9 +5034,27 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 	*say
 		You walked outside. As soon as you step out of the tent, you realize that you are still in the desert.
 		In front of you, there is a giant plant is as large as the refrigerator. What's more starnge is that, it has a mouth. Yes, a mouth. 
-		Beside the plant a man is lying on the ground, fainted.
+		Beside the plant a man is lying on the ground, fainted. 
+		[Conversation] Hmm, before we move closer, maybe we should take a look at the notebook first and see if we can find any clues. [Action]
 	*then
-		-> cowplant_puzzle_outside_interaction
+		hear look at the notebook, note, notebook {
+			-> cowplant_puzzle_grab_notebook
+		}
+
+@cowplant_puzzle_grab_notebook
+	*say
+		You look at the notebook and flip to introduction.
+		It reads. Cowplant is a bizarre, partly bovine form of vegetation. It usually has 4 growth states. 
+		You can search for words that you read from the notebook. Keep in mind, you want to find the clue to cure the poor man who saved you from the sandstorm.
+		[Conversation] Try saying search growth states. [Action]
+	*recap
+		Try to search, growth states.
+	*reprompt
+		Try to search, growth states.
+	*then
+		hear search growth states, growth states {
+			-> cowplant_puzzle_notebook_seedtrader_states_tutorial
+		}		
 
 @cowplant_puzzle_outside_interaction
 	*say
@@ -5012,7 +5077,7 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 			-> cowplant_puzzle_outside_view_man
 		}
 
-		hear wake up the man, wake up man {
+		hear wake up the man, wake up man, wake him up {
 		    flag wakeman
 			-> cowplant_puzzle_outside_wake_man
 		}
@@ -5211,7 +5276,7 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 
 @cowplant_puzzle_tent_goto
 	*say
-		[footstep]You go to the tent.
+		[footstep]You go to the tent. [Action]
 	*then
 		-> cowplant_puzzle_tent_interaction
 
@@ -5264,7 +5329,7 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 
 @cowplant_puzzle_tent_view_man_out
 	*say
-		You try to find the man but he is still lying outside. You may want to go outside and wake him up.
+		You try to find the man but he is still lying outside. You may want to go outside and wake him up. [Action]
 	*then
 		-> cowplant_puzzle_tent_interaction
 
@@ -5276,7 +5341,7 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 
 @cowplant_puzzle_outside_go
 	*say
-		[footstep]You go outside.
+		[footstep]You go outside. [Action]
 	*then
 		-> cowplant_puzzle_outside_interaction
 
@@ -5292,19 +5357,6 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 	*then
 		-> cowplant_puzzle_outside_interaction
 
-@cowplant_puzzle_tent_pickup_notebook
-	*say
-		You pick up the notebook. It has many bookmarks on different pages. You decide to carry the notebook with you so you can look things up easier.
-		You can look at the note book to see more details. [Action]
-	*recap
-		You should look at the notebook first.
-	*reprompt
-		You should look at the notebook. 
-	*then
-		hear look at the notebook, look at {
-			-> cowplant_puzzle_grab_notebook
-		}
-
 @cowplant_puzzle_tent_view_notebook
 	*say
 		You look at the notebook. It is a leather book that reads Cowplant Observation Notes. You should pick up the notebook. [Action]
@@ -5313,7 +5365,7 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 	*reprompt 
 		You should pick up the notebook.
 	*then
-		hear pick up the notebook {
+		hear pick up the notebook, pick up, pick {
 			flag getnotebook_c
 			set currentplace to 0
 			-> cowplant_puzzle_tent_pickup_notebook
@@ -5331,20 +5383,20 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 @cowplant_puzzle_tent_view_man_talk
 	*say
 		He is murmuring to himself. It's unlikely that you will get any clue from him. 
-		It's on you to find out what happended. Hopefully you can find a way to cure him. The notebook has his writing. You might find some useful information from the notebook.
+		It's on you to find out what happended. Hopefully you can find a way to cure him. The notebook has his writing. You might find some useful information from the notebook. [Action]
 	*then
 		-> cowplant_puzzle_tent_interaction
 
 @cowplant_puzzle_tent_around_noman
 	*say
-		You are in the tent. A leather book that reads Cowplant Observation Notes is on the table.
+		You are in the tent. A leather book that reads Cowplant Observation Notes is on the table. [Action]
 	*then
 		-> cowplant_puzzle_tent_interaction
 
 @cowplant_puzzle_tent_around_man
 	*say
 		You are in the tent. A man is sitting still in front of a table. A leather book that reads Cowplant Observation Notes is on the table. 
-		The door is behind you.
+		The door is behind you. [Action]
 	*then
 		-> cowplant_puzzle_tent_interaction
 
@@ -5502,21 +5554,6 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 		You grab a sticky swordfish from the basket and feed the plant. <audio src='https://koetest.s3.amazonaws.com/Act3/cowplantSounds_01.mp3'/>
 	*then
 		-> cowplant_puzzle_cowplant_interaction
-
-@cowplant_puzzle_grab_notebook
-	*say
-		You look at the notebook and flip to introduction.
-		It reads. Cowplant is a bizarre, partly bovine form of vegetation. It usually has 4 growth states. 
-		You can search for words that you read from the notebook. Keep in mind, you want to find the clue to cure the poor man who saved you from the sandstorm.
-		Try saying search growth states.
-	*recap
-		Try to search, growth states.
-	*reprompt
-		Try to search, growth states.
-	*then
-		hear search growth states, growth states {
-			-> cowplant_puzzle_notebook_seedtrader_states_tutorial
-		}
 
 @cowplant_puzzle_notebook_seedtrader
 	*say
@@ -5696,7 +5733,7 @@ When cowplant is hungry, it will stick its cake tongue out. You can feed them at
 @cowplant_puzzle_notebook_close
 	*say
 		You closed the notebook. <audio src='https://koetest.s3.amazonaws.com/Act5/Act5Puzzle/closebook_01.mp3'/>
-		You can look at it again later and search for more keywords.
+		You can look at it again later and search for more keywords. [Action]
 	*then
 		if currentplace is 0 {
 		    -> cowplant_puzzle_tent_interaction
@@ -5880,7 +5917,7 @@ When cowplant is hungry, it will stick its cake tongue out. You can feed them at
 			-> escape_puzzle_view_door
 		}
 
-		hear what can I do {
+		hear what can I do, what, can I {
 			-> escape_puzzle_whatdo
 		}
 @escape_puzzle_view_door
@@ -5947,7 +5984,7 @@ When cowplant is hungry, it will stick its cake tongue out. You can feed them at
 
 @escape_puzzle_insert_wand
 	*say
-		You insert the wand into the portal. It fits into the hole perfectly. <audio src='https://koetest.s3.amazonaws.com/Act5/magicSound01.mp3'/> The inscriptions around the portal start to glow. [Achievement]
+		You insert the wand into the portal. It fits into the hole perfectly. <audio src='https://koetest.s3.amazonaws.com/Act5/magicSound01.mp3'/> The inscriptions around the portal start to glow. [Achievement] Yes, now it's time to stand on the portal and see the magic words! 
 	*then
 		flag insertwand
 	    -> escape_puzzle_interaction
@@ -6292,7 +6329,7 @@ When cowplant is hungry, it will stick its cake tongue out. You can feed them at
 
 @escape_puzzle_notebook_search_deathmetal
 	*say
-		You search if there's a book mark is relevant, and then you flip the notebook to that page. It reads. Death metal is the hardest metal in the world. It will survive from any external force. But, research found, an alternated hot and cold will destory its form. I've been testing the firmness of death metal. In the test, I use the death metal on the alcohol burner and ice barrel alternatively, It breaks easily
+		You search if there's a book mark is relevant, and then you flip the notebook to that page. It reads. Death metal is the hardest metal in the world. It will survive from any external force. But, research found, an alternated hot and cold will destroy its form. I've been testing the firmness of death metal. In the test, I use the death metal on the alcohol burner and ice barrel alternatively, It breaks easily
 	*then
 		-> escape_puzzle_notebook_search
 
