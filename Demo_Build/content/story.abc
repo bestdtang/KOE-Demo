@@ -135,9 +135,9 @@
 		Surely the townspeople will rush to help a thirsty traveler, [Short_Pause] but No-one came. Where is everyone?
 		Where should you go? [Action]
 	*recap
-		Try saying, what's around me.[Action]
+		Try to saying, what's around me.[Action]
 	*reprompt
-		Try saying, what's around me.[Action]
+		Try to saying, what's around me.[Action]
 	*then
 		hear what's around me {
 			-> Around 
@@ -1122,7 +1122,7 @@
 		
 		<audio src='https://koetest.s3.amazonaws.com/Act3/horseNeighing_01.mp3'/> 
 		
-		It's been a couple of days since you left the town. Although having a horse to carry you across the wilderness is fortunate, but now it seems very tired as well. 
+		It's been a A couple of days since you left the town. Although having a horse to carry you across the wilderness is fortunate, but now it seems very tired as well. 
 		
 		<audio src='https://koetest.s3.amazonaws.com/Act3/smallWind_01.mp3'/> 
 		
@@ -1694,7 +1694,7 @@
 @Luke Explains Why He Can't Go plot 4
 	*say
 		[SeedTrader]
-        Why I can't go? Well, as you can see how I ended up with that cowplant out there, I'm not the physical type. [EOA] [Action]
+        Why I can't go? Well, as you can see how I ended up with that cow plantout there, I'm not the physical type. [EOA] [Action]
 	*recap
 		Luke squints his eyes and puts his ears closer to you, like he didn't understand. You might want to ask him more about the challenge?
 
@@ -2166,7 +2166,7 @@
 		Would you like to join?
 		
 	*recap
-		The alchemist introduced herself and asked if you want to join her on the last step of her work. Would you like to join?
+		The alchemist introduced herself and asked if you want to join her on the last step out of her work. Would you like to join?
 
 	*then
 		hear yes, sure {
@@ -3295,7 +3295,7 @@
 
 @chilirosa_door
 	*say
-		You hold your breath and open the the door carefully. You then sneak into the hallway.
+		You hold your breath and open the door carefully. You then sneak into the hallway.
 		You can say look around at anytime to check the environment. [Action]
 	*then
 		hear look around, look around the hallway, around me, look around {
@@ -3304,8 +3304,8 @@
 
 @chilirosa_hallway_around
 	*say
-		You are in the hallway. A vintage wood closet is next to you. Behind you is the the door you just entered.
-		You can also see the living room and the kitchen. You can check the objects or rooms by saing look at object or room name. [Action]
+		You are in the hallway. A vintage wood closet is next to you. Behind you is the door you just entered.
+		You can also see the living room and the kitchen. You can check the objects or rooms by saying look at the object or room name. [Action]
 	*then
 		-> chilirosa_hallway_interation
 
@@ -3349,7 +3349,7 @@
 		hear look around, look around me {
 			-> chilirosa_hallway_around
 		}
-		hear leave, leave from the door {
+		hear leave, leave the door {
 			-> chilirosa_steal_puzzle_start
 		}
 		hear hide in the closet {
@@ -3372,7 +3372,7 @@
 			    -> chilirosa_hallway_hidekettle
 			}
 		}
-		hear go to the living room, go to living room {
+		hear go to the living room, go to the living room {
 		    if turn_pot and hide{
 			    -> chilirosa_living_goto
 			}
@@ -3387,15 +3387,15 @@
 
 @chilirosa_kitchen_pot_back
 	*say
-		You go to the kitchen. [Chilirosa_footstepSneaky] The pot has been heaten up. The soup will be boiled to dry soon, and the pot itself will be burnt. You need to leave the kitchen right now. Otherwise, you will be caught.
+		You go to the kitchen. [Chilirosa_footstepSneaky] The pot has been heated up. The soup will be boiled to dry soon, and the pot itself will be burnt. You need to leave the kitchen right now. Otherwise, you will be caught.
 	*then
-		hear go to the hallway, go to hallway {
+		hear go to the hallway, go to the hallway {
 			-> chilirosa_hallway_pot_caught
 		}
 	*recap
-		You should go to hallway.[Action]
+		You should go to the hallway.[Action]
 	*reprompt
-		You should go to hallway.[Action]
+		You should go to the hallway.[Action]
 
 @chilirosa_hallway_pot_caught
 	*say
@@ -3427,7 +3427,7 @@
 @chilirosa_hallway_hidepotkettle
 	*say
 		You hide in the closet. [Chilirosa_hide] The moment you close the closet door, the kettle starts to whistle. Misses Chilirosa hears it and rushes into the kitchen. She turns the kettle off and finds that the pot is also on. The soup is not boiling dry yet. She turns the pot off, then goes back to the living room. 
-		Hearing that, you step of the closet. Maybe you want to find a way to keep her inside the kitchen longer.
+		Hearing that, you step out of the closet. Maybe you want to find a way to keep her inside the kitchen longer.
 	*then
 		-> chilirosa_hallway_interation
 
@@ -3490,7 +3490,7 @@
 	*say
 		[Achievement] You got the hot sauce. Now, Let's go to the hallway and leave the house!
 	*then
-		hear go to hallway, go to the hallway, leave the house, sure, yes, do it {
+		hear go to the hallway, go to the hallway, leave the house, sure, yes, do it {
 			-> chilirosa_hallway_out
 		}
 
@@ -3508,7 +3508,7 @@
 
 @chilirosa_kitchen_caught_goto
 	*say
-		You go the the kitchen. Misses Chilirosa is in the kitchen. You are caught.
+		You go the kitchen. Misses Chilirosa is in the kitchen. You are caught.
 	*then
 		if skip {
 			-> chilirosa_steal_puzzle_again
@@ -3569,7 +3569,7 @@
 		    }
 			-> chilirosa_kitchen_viewkettle
 		}
-		hear go to hallway, hallway {
+		hear go to the hallway, hallway {
 			    -> chilirosa_hallway_goto
 		}
 		hear turn on water tap, turn on water{
@@ -3634,7 +3634,7 @@
 
 @chilirosa_kitchen_caught_pot_stay
 	*say
-		The soup has been boiled dry and the pot is burnt. Misses Chilirosa comes over to check on the stove but finds you instead. You are caught. 
+		The soup has been dry and the pot is burnt. Misses Chilirosa comes over to check on the stove but finds you instead. You are caught. 
 	*then
 		if skip {
 			-> chilirosa_steal_puzzle_again
@@ -3686,7 +3686,7 @@
 
 @chilirosa_kitchen_caught_turnwater
 	*say
-		You turn on the watertap. Water starts to flow. Misses Chilirosa rushes in to the kitchen to check out what's going on. Now she knows what's going on. There's a thief, and that means you. You are thrown out of her house.
+		You turn on the water tap. Water starts to flow. Misses Chilirosa rushes in to the kitchen to check out what's going on. Now she knows what's going on. There's a thief, and that means you. You are thrown out of her house.
 	*then
 		-> chilirosa_steal_puzzle_again
 
@@ -3698,7 +3698,7 @@
 
 @chilirosa_kitchen_around
 	*say
-		You are in the kitchen. From the kitchen, you can only see the hallway you came from. Inside the kitchen, there is a pair of stoves. On the left is a pot, and on the rightis a kettle. Beside the stoves is a water tap.  But, you didn't find the hot sauce in the kitchen. [Action]
+		You are in the kitchen. From the kitchen, you can only see the hallway you came from. Inside the kitchen, there is a pair of stoves. On the left is a pot, and on the right is a kettle. Beside the stoves is a water tap.  But, you didn't find the hot sauce in the kitchen. [Action]
 	*then
 		-> chilirosa_kitchen_interaction
 
@@ -3710,7 +3710,7 @@
 
 @chilirosa_kitchen_viewwatertap
 	*say
-		You look at the watertap. You are sure that if you open it, it will make some noise.  You have the option to turn on the water.[Action]
+		You look at the water tap. You are sure that if you open it, it will make some noise.  You have the option to turn on the water.[Action]
 	*then
 		-> chilirosa_kitchen_interaction
 
@@ -3728,25 +3728,25 @@
 
 @chilirosa_hallway_viewliving
 	*say
-		You look at the living room. Misses Chilirosa is sitting next to the table and having her lunch. She is sprinkling sauce on her pasta. That's it! That's the hot sauce you want.  You can go to living room at anytime, but she is in it right now, you should do something to distract her away first.[Action]
+		You look at the living room. Misses Chilirosa is sitting next to the table and having her lunch. She is sprinkling sauce on her pasta. That's it! That's the hot sauce you want.  You can go to the living room at anytime, but she is in it right now, you should do something to distract her away first.[Action]
 	*then
 		-> chilirosa_hallway_interation
 
 @chilirosa_hallway_viewliving2
 	*say
-		You look at the living room. That's it! That's the hot sauce you want.  You can go to living room right now since she is still cleaning in the kitchen.[Action]
+		You look at the living room. That's it! That's the hot sauce you want.  You can go to the living room right now since she is still cleaning in the kitchen.[Action]
 	*then
 		-> chilirosa_hallway_interation
 
 @chilirosa_hallway_viewcloset
 	*say
-		You look at the closet. It's a large closet. You opened up the closet, a bunch of coats are hanging in it. Suprisely it's large enough for you to hide in. If you want to hide in the closet, you can say hide in the closet. [Action]
+		You look at the closet. It's a large closet. You opened up the closet. A lot of coats and dresses are hanging inside. Suprisely it's large enough for you to hide in. If you want to hide in the closet, you can say hide in the closet. [Action]
 	*then
 		-> chilirosa_hallway_interation
 
 @chilirosa_hallway_viewdoor
 	*say
-		You look at the door. That's the door you sneaked in from. If you want to give up on stealing the hot sauce, you can come to the hallway and say leave from the door.[Action]
+		You look at the door. That's the door you sneaked in from. If you want to give up on stealing the hot sauce, you can come to the hallway and say leave the door.[Action]
 	*then
 		-> chilirosa_hallway_interation
 	
@@ -3765,20 +3765,20 @@
 	*say
 		If you are far away from the right direction. The flower will sing this song. [DirSound_Small]
 		If you are close to the right direction, the flower will sing. [DirSound_MRight]
-		If you are on the right direction, the flower will sing. [DirSound_Large]
+		If you are in the right direction, the flower will sing. [DirSound_Large]
 	*then
 		>> BACK
 
 @leading_start
 	*say
-		The flower suddenly stands up straight, like it has awoken from some sleep.
+		The flower suddenly stands up straight.
         
         [SeedTrader]
         Good. Then, grab some dust from the ground and sprinkle it on the flower.  [EOA] [Action]
 	*recap
-		Try use the dust on the flower. [Action]
+		Try to use the dust on the flower. [Action]
 	*reprompt
-		Try use the dust on the flower. [Action]
+		Try to use the dust on the flower. [Action]
 	*then
 		hear use the dust on the flower, flower, sprinkle, grab, dust {
 			-> leading_tutorial_start
@@ -3791,29 +3791,29 @@
         
         [SeedTrader]
         Great. That means the flower has locked on to the scent of a garden, and knows how to get to it now. Hold the flower and look at four directions: East, South, West, and North.[EOA] 
-		Try say, look south [Action]
+		Try to say, look south [Action]
 	*then
 		hear look south, look at south {
 			-> leading_tutorial_south
 		}
 	*recap
-		Try say, look south. [Action]
+		Try to say, look south. [Action]
 	*reprompt
-		Try say, look south. [Action]
+		Try to say, look south. [Action]
 
 @leading_tutorial_south
 	*say
 		You are looking at the south. [SeedTrader]
 Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTrader]This song means that the direction you are looking is far away from the right direction.  [EOA]
- Now, try say look west. [Action]
+ Now, Try to say look west. [Action]
 	*then
 		hear look west {
 			-> leading_tutorial_west
 		}
 	*recap
-		Now, try say look west.[Action]
+		Now, Try to say look west.[Action]
 	*reprompt
-		Now, try say look west.[Action]
+		Now, Try to say look west.[Action]
 
 @leading_tutorial_west
 	*say
@@ -3852,15 +3852,15 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 		[SeedTrader]
 		This song means you are right looking at the way out! Go toward that direction and you are free! [EOA]
 
-		Try say, go north.[Action]
+		Try to say, go north.[Action]
 	*then
 		hear go north {
 			-> leading_tutorial_end
 		}
 	*recap
-		Try say, go north.[Action]
+		Try to say, go north.[Action]
 	*reprompt
-		Try say, go north.[Action]
+		Try to say, go north.[Action]
 
 @leading_tutorial_end
 	*say
@@ -3902,9 +3902,9 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 
 @leading_puzzle_start
 	*say
-		You thank him and continute your journey. [Footsteps]Couple minutes later, you are standing in front of the foggy forest. You take out the leading flower. [Action]
+		You thank him and continut your journey. [Footsteps]A A couple of minutes later, you are standing in front of the foggy forest. You take out the leading flower. [Action]
 	*recap
-		Try use the dust on the flower
+		Try to use the dust on the flower
 	*reprompt
 		You should use the dust on the leading flower before you go into the forest. 
 	*then
@@ -3917,7 +3917,7 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 
 @leading_puzzle_start_from_a
 	*say
-		You use the dust on the flower. The flower is reacting to it. Now you can look to different directions.
+		You use the dust on the flower. The flower is reacting to it. Now you can look at different directions.
 	*recap
 		You can look east, look south, look west and look north. [Action]
 	*reprompt
@@ -3978,7 +3978,7 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 
 @leading_a_west
 	*say
-		You are looking west.[DirSound_Small] You see the outer edge of the forest. That's definitely not the right way. [Action]
+		You are looking west.[DirSound_Small] You see the outer edge of the forest. That is not the right way. [Action]
 	*then
 		-> leading_a_position
         
@@ -3986,7 +3986,7 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 
 @leading_b_goto
 	*say
-		[Footsteps] Couple minutes later. You come to a new spot. [Action]
+		[Footsteps] A A couple of minutes later. You come to a new spot. [Action]
 	*then
 		-> leading_b_position
 
@@ -4034,7 +4034,7 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 
 @leading_b_south
 	*say
-		You are looking south. [DirSound_Small] You see the outer edge of the forest. That's definitely not the right way. [Action]
+		You are looking south. [DirSound_Small] You see the outer edge of the forest. This is not the right way. [Action]
 	*then
 		-> leading_b_position
 
@@ -4048,7 +4048,7 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 
 @leading_c_goto
 	*say
-		[Footsteps] Couple minutes later. You come to a new spot. [Action]
+		[Footsteps] A A couple of minutes later. You come to a new spot. [Action]
 	*then
 		-> leading_c_position
 
@@ -4100,7 +4100,7 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 
 @leading_c_south
 	*say
-		You are looking south.[DirSound_Small] You see the outer edge of the forest. That's definitely not the right way. [Action]
+		You are looking south.[DirSound_Small] You see the outer edge of the forest. This is not the right way. [Action]
 	*then
 		-> leading_c_position
 
@@ -4114,7 +4114,7 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 
 @leading_d_goto
 	*say
-		[Footsteps] Couple minutes later. You come to a new spot. [Action]
+		[Footsteps] A A couple of minutes later. You come to a new spot. [Action]
 	*then
 		-> leading_d_position
 
@@ -4156,13 +4156,13 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 
 @leading_d_east
 	*say
-		You are looking east. [DirSound_Small] You see the outer edge of the forest. That's definitely not the right way. [Action]
+		You are looking east. [DirSound_Small] You see the outer edge of the forest. This is not the right way. [Action]
 	*then
 		-> leading_d_position
 
 @leading_d_south
 	*say
-		You are looking south. [DirSound_Small] You see the outer edge of the forest. That's definitely not the right way. [Action]
+		You are looking south. [DirSound_Small] You see the outer edge of the forest. This is not the right way. [Action]
 	*then
 		-> leading_d_position
 
@@ -4176,7 +4176,7 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 
 @leading_e_goto
 	*say
-		[Footsteps] Couple minutes later. You come to a new spot. [Action]
+		[Footsteps] A A couple of minutes later. You come to a new spot. [Action]
 	*then
 		-> leading_e_position
 
@@ -4234,7 +4234,7 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 
 @leading_e_west
 	*say
-		You are looking west. [DirSound_Small] You see the outer edge of the forest. That's definitely not the right way. [Action]
+		You are looking west. [DirSound_Small] You see the outer edge of the forest. This is not the right way. [Action]
 	*then
 		-> leading_e_position
 
@@ -4243,7 +4243,7 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 
 @leading_f_goto
 	*say
-		[Footsteps] Couple minutes later. You come to a new spot. [Action]
+		[Footsteps] A A couple of minutes later. You come to a new spot. [Action]
 	*then
 		-> leading_f_position
 
@@ -4309,7 +4309,7 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 
 @leading_g_goto
 	*say
-		[Footsteps] Couple minutes later. You come to a new spot. [Action]
+		[Footsteps] A A couple of minutes later. You come to a new spot. [Action]
 	*then
 		-> leading_g_position
 
@@ -4379,7 +4379,7 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 
 @leading_h_goto
 	*say
-		[Footsteps] Couple minutes later. You come to a new spot. [Action]
+		[Footsteps] A A couple of minutes later. You come to a new spot. [Action]
 	*then
 		-> leading_h_position
 
@@ -4429,7 +4429,7 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 
 @leading_h_east
 	*say
-		You are looking east. [DirSound_Small] You see the outer edge of the forest. That's definitely not the right way. [Action]
+		You are looking east. [DirSound_Small] You see the outer edge of the forest. This is not the right way. [Action]
 	*then
 		-> leading_h_position
 
@@ -4449,7 +4449,7 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 
 @leading_i_goto
 	*say
-		[Footsteps] Couple minutes later. You come to a new spot. [Action]
+		[Footsteps] A A couple of minutes later. You come to a new spot. [Action]
 	*then
 		-> leading_i_position
 
@@ -4511,7 +4511,7 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 
 @leading_i_west
 	*say
-		You are looking west. [DirSound_Small] You see the outer edge of the forest. That's definitely not the right way. [Action]
+		You are looking west. [DirSound_Small] You see the outer edge of the forest. This is not the right way. [Action]
 	*then
 		-> leading_i_position
 
@@ -4519,7 +4519,7 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 
 @leading_j_goto
 	*say
-		[Footsteps] Couple minutes later. You come to a new spot. [Action]
+		[Footsteps] A A couple of minutes later. You come to a new spot. [Action]
 	*then
 		-> leading_j_position
 
@@ -4589,7 +4589,7 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 
 @leading_l_goto
 	*say
-		[Footsteps] Couple minutes later. You come to a new spot. [Action]
+		[Footsteps] A A couple of minutes later. You come to a new spot. [Action]
 	*then
 		-> leading_l_position
 
@@ -4639,7 +4639,7 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 
 @leading_l_east
 	*say
-		You are looking east. [DirSound_Small] You see the outer edge of the forest. That's definitely not the right way. [Action]
+		You are looking east. [DirSound_Small] You see the outer edge of the forest. This is not the right way. [Action]
 	*then
 		-> leading_l_position
 
@@ -4659,7 +4659,7 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 
 @leading_m_goto
 	*say
-		[Footsteps] Couple minutes later. You come to a new spot. [Action]
+		[Footsteps] A couple of minutes later. You come to a new spot. [Action]
 	*then
 		-> leading_m_position
 
@@ -4703,7 +4703,7 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 
 @leading_m_north
 	*say
-		You are looking north. [DirSound_Small] You see the outer edge of the forest. That's definitely not the right way. [Action]
+		You are looking north. [DirSound_Small] You see the outer edge of the forest. This is not the right way. [Action]
 	*then
 		-> leading_m_position
 
@@ -4721,7 +4721,7 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 
 @leading_m_west
 	*say
-		You are looking west. [DirSound_Small] You see the outer edge of the forest. That's definitely not the right way. [Action]
+		You are looking west. [DirSound_Small] You see the outer edge of the forest. This is not the right way. [Action]
 	*then
 		-> leading_m_position
 
@@ -4729,7 +4729,7 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 
 @leading_n_goto
 	*say
-		[Footsteps] Couple minutes later. You come to a new spot. [Action]
+		[Footsteps] A couple of minutes later. You come to a new spot. [Action]
 	*then
 		-> leading_n_position
 
@@ -4773,7 +4773,7 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 
 @leading_n_north
 	*say
-		You are looking north. [DirSound_Small] You see the outer edge of the forest. That's definitely not the right way. [Action]
+		You are looking north. [DirSound_Small] You see the outer edge of the forest. This is not the right way. [Action]
 	*then
 		-> leading_n_position
 
@@ -4799,7 +4799,7 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 
 @leading_o_goto
 	*say
-		[Footsteps] Couple minutes later. You come to a new spot.
+		[Footsteps] A couple of minutes later. You come to a new spot.
 	*then
 		-> leading_o_position
 
@@ -4869,7 +4869,7 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 
 @leading_p_goto
 	*say
-		[Footsteps] Couple minutes later. You come to a new spot.
+		[Footsteps] A couple of minutes later. You come to a new spot.
 	*then
 		-> leading_p_position
 
@@ -4957,7 +4957,7 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 			-> jumptopuzzle
 		}
 
-// cowplant puzzle---------------------------------------------------------------------------------------------
+// cow plantpuzzle---------------------------------------------------------------------------------------------
 
 @cowplant_puzzle_start
 	*say
@@ -4982,7 +4982,7 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 	*say
 		Books and scratch paper scatter everywhere on the ground in this large and messy tent.
 		You see a cabinet full of plants and seeds in glass jars. 
-		A carefully binded leather notebook catches you attention. It reads Cowplant Observation Notes. 
+		A carefully bonded leather notebook catches your attention. It reads cow plant Observation Notes. 
 		[Conversation] This notes might be helpful, let's pick up the note first. [Action]
 	*then
 		hear pick up the notebook, pick up, pick {
@@ -5028,8 +5028,8 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 @cowplant_puzzle_outside_around_tutorial
 	*say
 		You walked outside. As soon as you step out of the tent, you realize that you are still in the desert.
-		In front of you, there is a giant plant is as large as the refrigerator. What's more starnge is that, it has a mouth. Yes, a mouth. 
-		Beside the plant a man is lying on the ground, fainted. 
+		In front of you, there is a giant plant is as large as the refrigerator. What's more strange is that, it has a mouth. Yes, a mouth. 
+		Besides the plant a man is lying on the ground, fainted. 
 		[Conversation] Hmm, before we move closer, maybe we should take a look at the notebook first and see if we can find any clues. [Action]
 	*then
 		hear look at the notebook, note, notebook {
@@ -5038,10 +5038,10 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 
 @cowplant_puzzle_grab_notebook
 	*say
-		You look at the notebook and flip to introduction.
-		It reads. Cowplant is a bizarre, partly bovine form of vegetation. It usually has 4 growth states. 
+		You look at the notebook and flip to the introduction.
+		It reads. Cow plant is a bizarre, partly bovine form of vegetation. It usually has 4 growth states. 
 		You can search for words that you read from the notebook. Keep in mind, you want to find the clue to cure the poor man who saved you from the sandstorm.
-		[Conversation] Try saying search growth states. [Action]
+		[Conversation] Try to saying search growth states. [Action]
 	*recap
 		Try to search, growth states.
 	*reprompt
@@ -5055,7 +5055,7 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 	*say
 		
 	*recap
-		You can not do that. If you need help, you can ask, what can I do. [Action]
+		Sorry you can not do that. Try to say what can I do. [Action]
 	*reprompt
 		You can look around, look at specific things. or go to the tent. [Action]
 	*then
@@ -5354,7 +5354,7 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 
 @cowplant_puzzle_tent_view_notebook
 	*say
-		You look at the notebook. It is a leather book that reads Cowplant Observation Notes. You should pick up the notebook. [Action]
+		You look at the notebook. It is a leather book that reads cow plant Observation Notes. You should pick up the notebook. [Action]
 	*recap
 		You should pick up the notebook first.
 	*reprompt 
@@ -5378,19 +5378,19 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 @cowplant_puzzle_tent_view_man_talk
 	*say
 		He is murmuring to himself. It's unlikely that you will get any clue from him. 
-		It's on you to find out what happended. Hopefully you can find a way to cure him. The notebook has his writing. You might find some useful information from the notebook. [Action]
+		It's on you to find out what happened. Hopefully you can find a way to cure him. The notebook has his writing. You might find some useful information from the notebook. [Action]
 	*then
 		-> cowplant_puzzle_tent_interaction
 
 @cowplant_puzzle_tent_around_noman
 	*say
-		You are in the tent. A leather book that reads Cowplant Observation Notes is on the table. [Action]
+		You are in the tent. A leather book that reads cow plant Observation Notes is on the table. [Action]
 	*then
 		-> cowplant_puzzle_tent_interaction
 
 @cowplant_puzzle_tent_around_man
 	*say
-		You are in the tent. A man is sitting still in front of a table. A leather book that reads Cowplant Observation Notes is on the table. 
+		You are in the tent. A man is sitting still in front of a table. A leather book that reads cow plant Observation Notes is on the table. 
 		The door is behind you. [Action]
 	*then
 		-> cowplant_puzzle_tent_interaction
@@ -5398,7 +5398,7 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 @cowplant_puzzle_outside_stereo_on
 	*say
 		You turn on the stereo. <audio src='https://koetest.s3.amazonaws.com/Act3/Act3+puzzle/radio.mp3'/> 
-		To your surpirse the plant start to swag along the music.
+		To your surprise the plant starts to swag along with the music.
 	*then
 		-> cowplant_puzzle_outside_interaction
 
@@ -5420,24 +5420,24 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 	*say
 		
 	*recap
-		The plant has no reaction. If you are not sure what to do with it, you can leave the plant for now and come back later when you know what to do.[Action]
+		The plant does not react. If you are not sure what to do with it, you can leave the plant for now and come back later when you know what to do.[Action]
 	*reprompt
-		You can do anything to the cowplant, or you can leave the plant.
+		You can do anything to the cow plant, or you can leave the plant.
 	*then
 		hear play with the plant, play with it, play, play with the cow plant {
 			-> cowplant_puzzle_plant_play
 		}
-		hear feed the cowplant, feed it, feed, feed the plant, feed the cow plant, feed it fish, feed it with swordfish {
+		hear feed the cow plant, feed it, feed, feed the plant, feed the cow plant, feed it fish, feed it with swordfish {
 			-> cowplant_puzzle_plant_feed
 		}
-		hear milk the cowplant, milk the plant, milk, milk it {
+		hear milk the cow plant, milk the plant, milk, milk it {
 		    flag getmilk
 			-> cowplant_puzzle_plant_milk
 		}
 		hear grab the cake, go for the cake, take the cake, look into the cake {
 			-> cowplant_puzzle_plant_cake
 		}
-		hear leave the plant, leave, leave from the plant {
+		hear leave the plant, leave, {
 			-> cowplant_puzzle_cowplant_leave
 		}
 
@@ -5449,8 +5449,8 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 
 @cowplant_puzzle_outside_view_plant
 	*say
-		You look at this bizzare plant from a distance. A label on it reads, cow-plant. 
-		It has a cow head but normal plant root. A bell is hanging on its stem, or, more accurately, its neck. 
+		You look at this bizarre plant from a distance. A label on it reads, cow plant. 
+		It has a cow head but a normal plant root. A bell is hanging on its stem, or, more accurately, its neck. 
 		Now it's waving its cow head at you to get your attention. 
 		It slowly sticks out its tongue to you. What's even weird is that, the tip of the tongue is a cake! 
 		Maybe you want to get closer by saying go to the plant. 
@@ -5469,7 +5469,7 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 
 @cowplant_puzzle_outside_view_man
 	*say
-		You look at the man. He is fainted on the ground. He is wet and smelly with some green liquid all of his clothes. You may want to wake him up. 
+		You look at the man. He has fainted on the ground. He is wet and smelly with some green liquid all of his clothes. You may want to wake him up. 
 	*then
 		flag view_manoutside
 		-> cowplant_puzzle_outside_interaction
@@ -5499,7 +5499,7 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 
 @cowplant_puzzle_ends
 	*say	
-		This is the end of this cow plant puzzle. Do you want to play the interactive story, or solve another puzzle?
+		This is the end of this cow plant puzzle. Do you want to play the story, or solve another puzzle?
 	*then
 		hear story {
 			unflag skip
@@ -5540,7 +5540,7 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 
 @cowplant_puzzle_plant_play
 	*say
-		You play with the cowplant.<audio src='https://koetest.s3.amazonaws.com/Act3/cowHappy.mp3'/> It seems happy.
+		You play with the cow plant.<audio src='https://koetest.s3.amazonaws.com/Act3/cowHappy.mp3'/> It seems happy.
 	*then
 		-> cowplant_puzzle_cowplant_interaction
 
@@ -5591,13 +5591,13 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 		hear hungry, search hungry {
 			-> cowplant_puzzle_notebook_seedtrader_hungry
 		}
-		hear cowplant berry, search berry {
+		hear cow plant berry, search berry {
 			-> cowplant_puzzle_notebook_seedtrader_berry
 		}
 		hear sprout state, sprout, search sprout state{
 			-> cowplant_puzzle_notebook_seedtrader_sprout
 		}
-		hear allergic symtoms, allergic, search allergic {
+		hear allergic symptoms, allergic, search allergic {
 			-> cowplant_puzzle_notebook_seedtrader_allergic
 		}
 		hear dementia, severe dementia, search dementia {
@@ -5611,83 +5611,83 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 		}
 	*reprompt
 		You can search for keywords that you read in the notebook. 
-		Or you can close the notebook if you find the way to cure the man. Which keyword would you like to search? [Action]
+		Or you can close the notebook if you find a way to cure the man. Which keyword would you like to search? [Action]
 	*recap
 		Sorry there's no bookmark for that.
 
 @cowplant_puzzle_notebook_seedtrader_introduction
 	*say
-		You searched the keyword, cowplant introduction. It reads. 
-		Cowplant is a bizarre, partly bovine form of vegetation. It usually has 4 growth states. 
+		You searched the keyword, cow plant introduction. It reads. 
+		cow plant is a bizarre, partly bovine form of vegetation. It usually has 4 growth states. 
 	*then
 		-> cowplant_puzzle_notebook_seedtrader
 
 @cowplant_puzzle_notebook_seedtrader_devour
 	*say
-		You searched the keyword, devour. The page reads. If a person attempts to take the cake again, the cowplant will devour them. Which means, they are killed forever.
+		You searched the keyword, devour. The page reads. If a person attempts to take the cake again, the cow plant will devour them. Which means, they are killed forever.
 	*then
 		-> cowplant_puzzle_notebook_seedtrader
 
 @cowplant_puzzle_notebook_seedtrader_dementia
 	*say
-		You searched the keyword, severe dementia. The page reads. Allergic to cowplant can possiblly cause severe dementia to certain people. Syptoms include eyes out of focus, memery lost, and loss of ability to speak. Drinking the cowplant milk will release the bad mood, as the same time, cure the allergic symtoms.
+		You searched the keyword, severe dementia. The page reads. Allergic to cow plant can possibly cause severe dementia to certain people. Syptoms include eyes out of focus, memory lost, and loss of ability to speak. Drinking the cow plant milk will release the bad mood, at the same time, cure the allergic symptoms.
 	*then
 		-> cowplant_puzzle_notebook_seedtrader
 
 @cowplant_puzzle_notebook_seedtrader_allergic
 	*say
-		You searched the keyword, allergic symtoms. The page reads. A few people are allergic to be swallowed by the cowplant. Allergic symtoms are different from person to person. Possiblly causing severe dementia to certain people.
+		You searched the keyword, allergic symptoms. The page reads. A few people are allergic to be swallowed by the cow plant. Allergic symptoms are different from person to person. possibly causing severe dementia to certain people.
 	*then
 		-> cowplant_puzzle_notebook_seedtrader
 
 @cowplant_puzzle_notebook_seedtrader_sprout
 	*say
 		You searched the keyword, sprout. The page reads.
- When you plant a Cowplant Berry, there are tiny horns appearing through the soil.
+ After you plant a cow plant Berry, tiny horns will appear through the soil.
 	*then
 		-> cowplant_puzzle_notebook_seedtrader
 
 @cowplant_puzzle_notebook_seedtrader_berry
 	*say
-		You searched the keyword, cowplant berry. The page reads. Cowplant berry is a black and white berry. Once you plant the cowplant berry into the soil, it will gow up as a sprout stage cowplant.
+		You searched the keyword, cow plant berry. The page reads. cow plant berry is a black and white berry. Once you plant the cow plant berry into the soil, it will grow up as a sprout stage cow plant.
 	*then
 		-> cowplant_puzzle_notebook_seedtrader
 
 @cowplant_puzzle_notebook_seedtrader_hungry
 	*say
 		You searched the keyword, hungry. The page reads.
-When cowplant is hungry, it will stick its cake tongue out. You can feed them at this moment. Cowplant will swallow whoever go for the cake.
+When cow plant is hungry, it will stick its cake tongue out. You can feed them at this moment. cow plant will swallow whoever reaches for the cake.
 	*then
 		-> cowplant_puzzle_notebook_seedtrader
 
 @cowplant_puzzle_notebook_seedtrader_death
 	*say
-		You searched the keyword, death state. The page reads. Twelve hours after a Cowplant shows its cake tongue, and is not fed, it will die, A dead Cowplant has a dead stem with a hanging Cowplant skull. Cowplants cannot be saved after this stage.
+		You searched the keyword, death state. The page reads. Twelve hours after a cow plant shows its cake tongue, and is not fed, it will die, A dead cow plant has a dead stem with a hanging cow plant skull. Cowplants cannot be saved after this stage.
 	*then
 		-> cowplant_puzzle_notebook_seedtrader
 
 @cowplant_puzzle_notebook_seedtrader_milk
 	*say
-		You searched the keyword, milk. The page reads. If people were swallowed for the first time, the cowplant will produce milk. Milking a cowplant, you will get a potion to release the mood, and give the emotions back to the patient. The study found, drinking the milk can also cure the allergic symptoms. [Achievement] Yes! Maybe the milk can cure the man!
+		You searched the keyword, milk. The page reads. If people were swallowed for the first time, the cow plant will produce milk. Milking a cow plant, you will get a potion to release the mood, and give the emotions back to the patient. The study found, drinking the milk can also cure the allergic symptoms. [Achievement] Yes! Maybe the milk can cure the man!
 	*then
 		-> cowplant_puzzle_notebook_seedtrader
 
 @cowplant_puzzle_notebook_seedtrader_swallow
 	*say
 		You search the bookmark that writes, swallow, and opened up from that page. It reads.
-		When a person is swallowed for the first time, the Cowplant will spit them out, and they will receive a drained mood, which will last two days. The mood will make people feels like an emotionless shell. Different allergic symptoms causing by swallowed have been found to a few people. If attempt to go for the cake again, the cowplant will devour them. But, if people survive from the first swallowing, the cowplant will produce milk.
+		When a person is swallowed for the first time, the cow plant will spit them out, and they will receive a drained mood, which will last two days. The mood will make people feel like an emotionless shell. Different allergic symptoms causing by swallowed have been found to a few people. If people attempt to go for the cake again, the cow plant will devour them. But, if people survive from the first swallowing, the cow plant will produce milk.
 	*then
 		-> cowplant_puzzle_notebook_seedtrader
 
 @cowplant_puzzle_notebook_seedtrader_cake
 	*say
-		You searched the keyword, cake tongue. The page reads. Cowplant has a cake shaped tongue. When it is hungry, it will stick its tongue out to attract people's attention, so cowplant can swallow them.
+		You searched the keyword, cake tongue. The page reads. cow plant has a cake shaped tongue. When it is hungry, it will stick its tongue out to attract people's attention, so cow plant can swallow them.
 	*then
 		-> cowplant_puzzle_notebook_seedtrader
 
 @cowplant_puzzle_notebook_seedtrader_feed
 	*say
-		You searched the keyword, feed. The page reads. A Cowplant can  be fed  by meat when its hungry and its cake- shape- tongue sticks out.
+		You searched the keyword, feed. The page reads. A cow plant can  be fed  by meat when its hungry and its cake- shape- tongue sticks out.
 	*then
 		-> cowplant_puzzle_notebook_seedtrader
 
@@ -5701,12 +5701,12 @@ When cowplant is hungry, it will stick its cake tongue out. You can feed them at
 	*say
 		You searched the keyword, growth states. 
 		The page reads. Cowplants usually have three growth states, and can die. They are sprout state, baby state, mature state, and death state. 
-		You can search its different growth states later. For now, to finish searching, try saying, close the notebook.
+		You can search for its different growth states later. For now, to finish searching, Try to saying, close the notebook.
 	*recap
-		To finish searching, try saying close the notebook.
+		To finish searching, Try to saying close the notebook.
 		If you can think of any keyword that you want to search, you can look at the notebook again, at anytime.
 	*reprompt
-		To finish searching, try saying close the notebook.
+		To finish searching, Try to saying close the notebook.
 	*then
 		hear close the notebook {
 			-> cowplant_puzzle_notebook_close
@@ -5715,13 +5715,13 @@ When cowplant is hungry, it will stick its cake tongue out. You can feed them at
 
 @cowplant_puzzle_notebook_seedtrader_mature
 	*say
-		You searched the keyword, mature state. The page reads. In this stage, the Cowplant is fully matured. You can feed it, or at certain moment, you can milk it. When a person is swallowed for the first time, the Cowplant will spit them out, and they will receive a drained mood, which will last two days. If people survive from the first swallowing, the cowplant will produce milk. I'll discuss about the milk later in the related category.
+		You searched the keyword, mature state. The page reads. In this stage, the cow plant is fully matured. You can feed it, or at some certain moment, you can milk it. When a person is swallowed for the first time, the cow plant will spit them out, and they will receive a drained mood, which will last two days. If people survive from the first swallowing, the cow plant will produce milk. I'll make more notes on the milk later in the related category.
 	*then
 		-> cowplant_puzzle_notebook_seedtrader
 
 @cowplant_puzzle_notebook_seedtrader_baby
 	*say
-		You searched the keyword, baby state. The page reads. A few days after you plant the cowplant berry. You can see a tiny cowplant. In this state, you can't do much things with it.
+		You searched the keyword, baby state. The page reads. A few days after you plant the cow plant berry. You can see a tiny cow plant. In this state, you can't do much things with it.
 	*then
 		-> cowplant_puzzle_notebook_seedtrader
 
@@ -5766,8 +5766,8 @@ When cowplant is hungry, it will stick its cake tongue out. You can feed them at
 
 @escape_puzzle_around
 	*say
-		You looked around the small hut. The door is obviously locked. In front of you, there is a table with some stuff stacked on top. Beside the table, you see a trash bin. Right across
- 		the table, there is a flower stand. On your right, there is a strange equipment that looks like a portal. And on your left, you see a chest. You can look at 
+		You looked around the small hut. The door is locked. In front of you, there is a table with some stuff stacked on top. Beside the table, you see a trash bin. Right across
+ 		the table, there is a flower stand. On your right, there is a piece of strange equipment that looks like a portal. And on your left, you see a chest. You can look at 
 		different things to see more details.
 	*then
 		-> escape_puzzle_interaction
@@ -5939,7 +5939,7 @@ When cowplant is hungry, it will stick its cake tongue out. You can feed them at
 
 @escape_puzzle_insert_note
 	*say
-		You insert the notebook into the portal. It obviously doesn’t go there.
+		You insert the notebook into the portal. It doesn’t go there.
 	*then
 		-> escape_puzzle_interaction
 
@@ -6047,7 +6047,7 @@ When cowplant is hungry, it will stick its cake tongue out. You can feed them at
 @escape_puzzle_stand_portal_alien
 	*say
 		//alien planet Sixam
-		You are traveling through the portal.<audio src='https://koetest.s3.amazonaws.com/Act5/Act5Puzzle/portaltravel_01.mp3'/> After a long time, you appear in a strange space. All the plant are glowing.
+		You are traveling through the portal.<audio src='https://koetest.s3.amazonaws.com/Act5/Act5Puzzle/portaltravel_01.mp3'/> After a long time, you appear in a strange space. All the plants are glowing.
 	*recap
 		This is not the right place to go, you should teleport back.
 	*reprompt
@@ -6071,20 +6071,20 @@ When cowplant is hungry, it will stick its cake tongue out. You can feed them at
 
 @escape_puzzle_stand_portal_nodirt
 	*say
-		You stand on the portal. The wand activates the portal, but nothing really happened. Seems like you are still missing something important to make it fully work. You step back from the portal. You may want to look for a description of this long distance travel portal from somewhere.
+		You stand on the portal. The wand activates the portal, but nothing happened. Seems like you are still missing something important to make it fully work. You step back from the portal. You may want to look for a description of this long distance travel portal from somewhere.
 	*then
 		-> escape_puzzle_interaction
 
 @escape_puzzle_stand_portal_nothing
 	*say
-		You stand on portal. Nothing happened. It seems like you need to insert something into the hole to make it operate. You step back from the portal. You might need to find a full desciption of this long distance travel portal.
+		You stand on the portal. Nothing happened. It seems like you need to insert something into the hole to make it operate. You step back from the portal. You might need to find a full description of this long distance travel portal.
 	*then
 		-> escape_puzzle_interaction
 
 @escape_puzzle_vew_flower_dirt
 	*say
 		You look at the flower stand. You see three pots with plants in them. 
-		The dirt in these pots look different to each other. Seems like someone carefully transplanted those vegetation with the dirt from their origins. 
+		The dirt in these pots is different from each other. Seems like someone carefully transplanted those vegetation with the dirt from their origins. 
 		From the left to the right, they are labeled as, number one,  Fang Flower, number two, Blackberry, and number three, Mandrake. 
 		You can take some dirt from one of these pots to help you travel through the portal.
 	*then
@@ -6141,7 +6141,7 @@ When cowplant is hungry, it will stick its cake tongue out. You can feed them at
 
 @escape_puzzle_heatup_metalbox
 	*say
-		You heat up the metalbox with the alcohol burner. 
+		You heat up the metal box with the alcohol burner. 
 	*then
 		flag heatbox
 		if freezebox{
@@ -6151,7 +6151,7 @@ When cowplant is hungry, it will stick its cake tongue out. You can feed them at
 
 @escape_puzzle_freeze_metalbox
 	*say
-		You freeze the metalbox by putting it into the ice barrel. <audio src='https://koetest.s3.amazonaws.com/Act5/Act5Puzzle/ice_01.mp3'/>
+		You freeze the metal box by putting it into the ice barrel. <audio src='https://koetest.s3.amazonaws.com/Act5/Act5Puzzle/ice_01.mp3'/>
 	*then
 		flag freezebox
 		if heatbox{
@@ -6162,7 +6162,7 @@ When cowplant is hungry, it will stick its cake tongue out. You can feed them at
 @escape_puzzle_view_flower
 	*say
 		You look at the flower stand. You see three pots with plants in them. 
-		The dirt in these pots look different to each other. Seems like someone carefully transplanted those vegetations with the dirts from their origins. 
+		The dirt in these pots is different from each other. It seems that someone has carefully transplanted the vegetations with the dirts from their origins. 
 		From the left to the right, they are labeled as, number one, Fang Flower, number two, Blackberry, and number three, Mandrake. 
 		You can take some dirt from any of the pots and grab it in your hand. But you have no clue what to do with it.
 	*then
@@ -6171,7 +6171,7 @@ When cowplant is hungry, it will stick its cake tongue out. You can feed them at
 
 @escape_puzzle_view_portal
 	*say
-		You look at the portal. The portal is a cirle on the floor with inscriptions that you can't understand painted around. 
+		You look at the portal. The portal is a circle on the floor with inscriptions that you can't understand painted around. 
 		The paintings lead to a hole on the floor just in front of the circle. Along with the hole is a little inscription that reads: 
 		long distance travel portal. It looks like something needs to be inserted into the hole to operate the portal. 
 		You can use anything on the portal, or stand on the portal.
@@ -6181,14 +6181,14 @@ When cowplant is hungry, it will stick its cake tongue out. You can feed them at
 
 @escape_puzzle_view_portal_wand
 	*say
-		You look at the portal. The portal is a cirle on the floor with glowing inscriptions that you can't understand painted around. The paintings lead to a hole on the floor with a wand sticking into it. Along with the hole is a little inscription that reads: long distance travel portal. You may want to stand on the portal.
+		You look at the portal. The portal is a circle on the floor with glowing inscriptions that you can't understand painted around. The paintings lead to a hole on the floor with a wand sticking into it. Along with the hole is a little inscription that reads: long distance travel portal. You may want to stand on the portal.
 	*then
 		-> escape_puzzle_interaction
 
 @escape_puzzle_view_barrel
 	*say
 		You look at the wooden barrel. Removing the cover carefully. You see that it's filled up with ice. 
-		Where did she get so many ice in a cave in the middle of a desert? You can use anything on the barrel to freeze it.
+		Where did she get this much ice from the middle of a desert? You can use anything on the barrel to freeze it.
 	*then
 		flag view_barrel
 		-> escape_puzzle_interaction
@@ -6235,9 +6235,9 @@ When cowplant is hungry, it will stick its cake tongue out. You can feed them at
 	*say
 		
 	*recap
-		Didn't find the words you are looking for. You can search any keyword or close the notebook. 
+		Sorry I couldn't find the word you are looking for. You can search for any keyword or close the notebook. 
 	*reprompt
-		You can search any keyword or close the notebook. 
+		You can search for any keyword or close the notebook. 
 	*then
 		hear ice, barrel, alcohol burner, alcohol, burn, death metal, metal, search metal, search death metal {
 			-> escape_puzzle_notebook_search_deathmetal
@@ -6287,7 +6287,7 @@ When cowplant is hungry, it will stick its cake tongue out. You can feed them at
 
 @escape_puzzle_notebook_search_wand
 	*say
-		You search if there's a book mark is relevant. It reads. This wand is Hand carved from the trees of Sylvan Glade, it holds immense power. I use it to operate my long distance travel portal. This wand is well kept in a box made of death metal.
+		You search if there's a book mark is relevant. It reads. This wand is hand carved from the trees of Sylvan Glade, it holds immense power. I use it to operate my long distance travel portal. This wand is well kept in a box made of death metal.
 	*then
 		-> escape_puzzle_notebook_search
 
@@ -6312,19 +6312,19 @@ When cowplant is hungry, it will stick its cake tongue out. You can feed them at
 
 @escape_puzzle_notebook_search_fangflower
 	*say
-		You search if there's a book mark about the fang flower, and then you flip the notebook to that page. It reads. I brought the fang flower back from a strange place. Several years ago, I recieved a bottle of dirt from a spice market. I used the dirt to travel through the portal into another world. The sky over there was dark and the plants were glowing. I took the fang flower from there and teleport back immediately.
+		You search if there's a book mark about the fang flower, and then you flip the notebook to that page. It reads. I brought the fang flower back from a strange place. Several years ago, I received a bottle of dirt from a spice market. I used the dirt to travel through the portal into another world. The sky over there was dark and the plants were glowing. I took the fang flower from there and teleport back immediately.
 	*then
 		-> escape_puzzle_notebook_search
 
 @escape_puzzle_notebook_search_blackberry
 	*say
-		You search if there's a book mark about black berries, and then you flip the notebook to that page. It reads. blackberry is been found from oasis springs. But when I first steped into this cave, I found it's also grows here. So I transplanted it into the pot to remember it is the only living form in this cave before I came.
+		You search if there's a book mark about black berries, and then you flip the notebook to that page. It reads. blackberry is been found from oasis springs. But when I first stepped into this cave, I found it's also grows here. So I transplanted it into the pot to remember it is the only living form in this cave before I came.
 	*then
 		-> escape_puzzle_notebook_search
 
 @escape_puzzle_notebook_search_deathmetal
 	*say
-		You search if there's a book mark is relevant, and then you flip the notebook to that page. It reads. Death metal is the hardest metal in the world. It will survive from any external force. But, research found, an alternated hot and cold will destroy its form. I've been testing the firmness of death metal. In the test, I use the death metal on the alcohol burner and ice barrel alternatively, It breaks easily
+		You search if there's a book mark is relevant, and then you flip the notebook to that page. It reads. Death metal is the hardest metal in the world. It will survive from any external force. But, research has found, an alternate hot and cold will destroy its form. I've been testing the firmness of death metal. In the test, I use the death metal on the alcohol burner and ice barrel alternatively, It breaks easily
 	*then
 		-> escape_puzzle_notebook_search
 
