@@ -38,9 +38,10 @@
 
 @Lost in Desert
 	*say
+		Ok then. Sit back and enjoy.
+		<audio src='https://koetest.s3.amazonaws.com/Act1/wind.mp3'/>
 		Oh dear, it's a hot, hot desert. You walk aimlessly in the sand, thirsty for water. 
 		//The wind is hot, the sun is hot, and the air is burning hot. [Pause] 
-		<audio src='https://koetest.s3.amazonaws.com/Act1/wind.mp3'/>
 		<audio src='https://koetest.s3.amazonaws.com/Act1/gulp.mp3'/>
 		In the middle of the hot desert, you find a rusty, old signpost. It has two arrows pointing to the right and the left. However, the letters have faded away.
 	*then
@@ -199,7 +200,7 @@
 	    [EOA] [Pause]
 		The boy takes you around the building and enters the store from the backdoor. 
 		<audio src='https://koetest.s3.amazonaws.com/Act1/openWoodDoor.mp3'/>
-		Oh dear. [Pause] It is far from being desirable. It stinks, like really really stinks. it smells like someone's wearing the same pair of socks for over a year. [Pause]
+		Oh dear. [Pause] The store stinks, like really really stinks. it smells like someone's wearing the same pair of socks for over a year. [Pause]
 		[Kid] Yeah. Told you! [Pause] [EOA] 
 		[Pause] A bald, middle-aged man slowly walks down the stairs.
 		<audio src='https://koetest.s3.amazonaws.com/Act1/woodenFloorCracking.mp3'/>
@@ -221,7 +222,7 @@
         [Pause] 
         The young boy's father handed you a big glass of water. 
         [Man]
-        Hey.Don't worry. I know it smells bad in here. But I assure you, the water is clean. [EOA]
+        Hey. Don't worry. I know it smells bad in here. But I assure you, the water is clean. [EOA]
 		
         The water looks ok, but it smells bad. Are you sure you want to drink it? [Action]
 	*then
@@ -280,7 +281,7 @@
 	*recap
 		You can talk to him by saying talk to the shopkeeper
 	*then
-		hear talk to the shopkeeper, what incident, incident, ask about the incident, ask, talk, talk to the shopkeeper, ask papa, ask him {
+		hear talk to the shopkeeper, what incident, incident, ask about the incident, ask, talk, talk to the shopkeeper, ask papa, ask him, tell me, more, tell me more {
 			-> Ask Shopkeeper
 		}
 
@@ -297,18 +298,18 @@
 	*say
 		[Man] 
 		That's a rare name around here. 
-		[Pause] This is a desert so you could imagine it never rains here [Short_Pause] until that fateful night. On that night. We saw the greatest thunderstorm of the town's history, [Short_Pause] but no-one anticipated what happened next.[EOA]
+		[Pause] This is a desert so you could imagine it never rains here [Short_Pause] until that fateful night. [EOA]
 
 		<audio src='https://koetest.s3.amazonaws.com/Act1/thunder11s.mp3'/>
 
 		[Man] 
-		On that night. We've seen the greatest thunderstorm of the town's history, [Short_Pause] but no-one anticipated what came after.[EOA]
+		On that night. We saw the greatest thunderstorm of the town's history, [Short_Pause] but no-one anticipated what happened next.[EOA]
 		
         [Kid]
-        [Pause] And then the next morning, my dad started sweating like a cow. So did everyone else. [EOA]
+        [Pause] Next morning, my dad started sweating like a cow. So did everyone else. [EOA]
 		
         [Man]
-        Yeah. [Pause] What's worse was what happened afterward. [Short_Pause]That's right. The stench. This stench. It keeps everyone from talking to each other. It drives tourists away. And now, no-one wants to come to our town anymore.[EOA]
+        Yes. [Pause] What's worse was what happened afterward. [Short_Pause]That's right. The stench. This stench. It keeps everyone from talking to each other. It drives tourists away. And now, no-one wants to come to our town anymore.[EOA]
         
         The shopkeeper points to a poster on the left wall. It pictures a determined face of a bearded man.
         
@@ -364,7 +365,7 @@
 		This is our lucky day. Finally a person who is willing to help us. Well, I guess I shouldn't be keeping you here for too long. [EOA]
 
 		[Kid] 
-		But papa, you haven't told him anything about how to solve the problem. [EOA]
+		But papa, you haven't told anything about how to solve the problem. [EOA]
 
 		[Man]
 		Oh Yes, yes. Well, I'd like to help you, but what I've told you is all I know. Hey, perhaps you should go find the mayor! He must know more than anyone of us. [EOA]
@@ -402,7 +403,7 @@
 		
 		[Conversation] You can ask about the sauce, or ask for one bottle. [Action]
 	*then
-		hear buy, buy a bottle, can I have a bottle of hot sauce, could I, can you, can I, one, ask for one bottle, ask one, please give me  {
+		hear buy, buy a bottle, can I have a bottle of hot sauce, could I, can you, can I, one, ask for one bottle, ask one, please give me, one bottle  {
             -> One Bottle of Sauce
         }
         hear ask about the sauce, about the sauce, the sauce {
@@ -428,7 +429,7 @@
 		
 		[Conversation] You can ask about the mayor, or ask for one bottle. [Action]
 	*then
-		hear buy, buy a bottle, can I have a bottle of hot sauce, could I, can you, can I, one, ask for one bottle, ask one, please give me  {
+		hear buy, buy a bottle, can I have a bottle of hot sauce, could I, can you, can I, one, ask for one bottle, ask one, please give me, a bottle, bottle  {
             -> One Bottle of Sauce
         }
         hear ask about the mayor, about the mayor, the mayor {
@@ -444,9 +445,9 @@
         Hmmm, where is it? [EOA] 
         <audio src="https://koetest.s3.amazonaws.com/new_demo_stereo/findingThings2.mp3"/> 
         [Kid]  
-        Dad, didn't you just sell one to Mrs. Chilirosa yesterday? [EOA] 
+        Dad, didn't you just sell the last one to Mrs. Chilirosa yesterday? [EOA] 
         [Man]  
-        Hmm, Oh yes! I did sell one to her. [Short_Pause] Oh dear. I guess that's our last bottle in a while. This is embarrassing. [EOA] 
+        Hmm, Oh yes! I did sell one to her. [Short_Pause] That was our last one? This is embarrassing. [EOA] 
         [Kid]  
         Anyways, if you go ask Mrs. Chilirosa, she might still have some left for you. She's right down the street.[EOA]
 	*then
@@ -468,7 +469,7 @@
 @Ask more about Chilirosa
 	*say
 		[Man] 
-        She's a stubborn old lady who works at the hair salon down the street. Like the mayor, she also has a craving for spicy things. [EOA]
+        She's a stubborn old lady who owns a beauty salon down the street. Like the mayor, she also has a craving for spicy things. [EOA]
         [Kid] 
         Yeah! All my friends who visited her shop came out with hair that smelled spicy for days! [EOA]
         [Man] 
@@ -569,7 +570,7 @@
 	*say
 		You walk towards the end of the street.
 		<audio src='https://koetest.s3.amazonaws.com/Act2/windCurtain.mp3'/>
-        Nothing but the sandy gusts of wind scratch your ears. The buildings on the way look pretty modern, but they are all coated with a thick layer of dust. While you're on your way, you noticed something peculiar in the corner of one of the buildings. It's a patch of green.
+        Nothing but the sandy gusts of wind scratch your ears. The buildings on the way look pretty modern, but they are all coated with a thick layer of dust. While you're on your way, you noticed something peculiar in the corner of one of the buildings. Oh my! It's a patch of green.
         <audio src="https://koetest.s3.amazonaws.com/new_demo_stereo/footsteps2.mp3"/>
 		You're now at the frontsteps of misses Chilirosa's beauty salon. Looks like its doors are shut tight, but they don't look locked, and you hear the sounds of radio inside. Anyways, you should talk to Misses Chilirosa, but what should you do to get her attention?
 	*then
@@ -579,7 +580,7 @@
 
 @Arrive Beauty Salon
 	*say
-		[Conversation] Normally, you could knock on the door. But you can also try bashing on the door, or you just open the door and sneak in. You can also go back to and inspect the patch of green.[Action]
+		[Conversation] Normally, you could knock on the door. But you can also try bashing on the door, or just open the door and sneak in. You can also go back and inspect the patch of green.[Action]
 	*then
 		hear knock, knock on the door, try knock {
 		    set currentLocation as 'inside of the beaty saloon'
@@ -589,10 +590,10 @@
             set currentLocation as 'inside of the beaty saloon'
             -> Bash On Beauty Salon
         }
-		hear open the door, open the door directly, sneak in, sneak {
+		hear open the door, open the door directly, sneak in, sneak, try open, open {
 			-> Open the Beauty Salon Directly
         }
-        hear check the green patch before, green patch, check {
+        hear check the green patch before, green patch, check, go back, green, back {
             if flower{
                 -> Check the Green Patch Again
             }
@@ -906,7 +907,7 @@
 		You hand over the sauce. The mayor quickly jerks open the bottle cap, and walks hastily to one of the doors and pours the sauce under it. He looks at you and smiles awkwardly.
 		
 		[Mayor]
-		You see. I actually don't like the sauce. I use it only to block off the smell. This scent of evilness has been surrounding this town for so long that I almost forgot when it happened. [Conversation] Say, why did you come? [Action] [EOA]
+		You see. I actually don't like the sauce. I use it only to block off the smell. This bothering smell has been so long that I almost forgot when it happened. [Conversation] So. why did you come? [Action] [EOA]
 	*then
 		hear smell, incident, help, yes, right {
 			-> Mayor Talks More About the Incident
@@ -937,7 +938,7 @@
 
 @Mayor Brings Tea To You
 	*say
-		In a split second, the mayor has brought you a cup of tea. You drink from the cup. Oh dear. A volcano is erupting in your mouth. HOT!
+		In a split second, the mayor brings you a cup of tea. You drink from the cup. You feel like a a volcano is erupting in your mouth. It's not just hot. It's spicy.
 		[Mayor]
 		Ha. This tea is brewed with the spicy hot sauce! This tea makes your nose so numb that you can't smell that awful stench. [Short_Pause] Ok, where were we? Ah, yes.[EOA]
 	*then
@@ -956,10 +957,10 @@
 @Mayor Talks About the Incident Part 2
 	*say
 		[Mayor]
-		This curse was started by one of our own. His name is the Alchemist. That coward ran away from the town, though. Can't even face his own wrongdoings like a real man. [EOA]
+		This curse is the work by one of our own, or formerly one of our own. His name is Barette the Alchemist. That coward ran away from the town, though. Can't even face his own wrongdoings like a real man. Because of him, we have lost tourists and people don't want to come here anymore. People are even afraid to mention his name. [EOA]
 		The mayor looks at the map on the wall.
 		[Mayor]
-		The legend out there says there's a precious gemstone hidden in the valleys to the East, and that the precious gem is the key ingredient to lifting the curse. What the legend didn't tell, is that the cavern is guarded by a mysterious puzzle. [EOA]
+		The legend out there says there's a precious gemstone called the citrine hidden in the valleys to the East, and that the precious gem is the key ingredient to lifting the curse. What the legend didn't tell, is that the cavern is guarded by a mysterious puzzle. [EOA]
 	*reprompt
 		you can ask about: [Conversation] the cave, puzzles, eastern valleys, the town, or leave to the cave [Action]
 	*then
@@ -1125,7 +1126,7 @@
 		
 		<audio src='https://koetest.s3.amazonaws.com/Act3/smallWind_01.mp3'/> 
 		
-		Your vision starts to get blurry again. Strangely, this blurriness seemed a bit, a bit yellow. You tried to muster your consciousness, only to find out that you're heading in to an inevitable sandstorm. As unwilling as you may be, this is the only way to the Eastern Valleys. You ride into the furious sandstorm. 
+		Your vision starts to get blurry again. Strangely, this blurriness seems a bit, a bit yellow. You tried to muster your consciousness, only to find out that you're heading in to an inevitable sandstorm. As unwilling as you may be, this is the only way to the Eastern Valleys. You ride into the furious sandstorm. 
 		
 		<audio src='https://koetest.s3.amazonaws.com/Act3/strongWinds_01.mp3'/> 
 		
@@ -1452,7 +1453,7 @@
 		Luke goes to a locked chest and retrieves a purple seed.
 
 		[SeedTrader]
-		There's another thing about the citrine that you're looking for. The antidote cannot be made without this other ingredient. She probably doesn't know this yet, since she has never left the cave. [EOA]
+		There's another thing about the citrine that you're looking for. The antidote cannot be made without this other ingredient. I guess she doesn't know this yet, since the town still smells awful. [EOA]
 
 		Luke hands the seed to you.
 		
@@ -1673,7 +1674,10 @@
 		You, on the other hand. [Pause] I know what you want. Yes. You want to go to the cave, don't you? Some town in the west needs your help. I've heard travelers here and there trying to get into the cave, and I've seen it myself too. I know that a challenge awaits you in the cave. [EOA] [Action] 
 		
 		*reprompt
-		Luke tells you that the stinky plant reminded him of a friend who experimented with it, but ended up miserably. Then, he mentions a challenge that awaits you in the cave. You may want to ask him more on that.
+		Luke tells you the story of  his friend who friend experimented the stinky plant but ended up failing miserably.
+		Then, he mentions a challenge that awaits you in the cave.
+		You may want to ask him more on that.
+
 		
 		*recap
 		Luke squints his eyes and puts his ears closer to you, like he didn't understand. You might want to ask him more about the challenge?
@@ -1750,7 +1754,7 @@
 		As you make yourself comfortable on the saddle, Luke calls you.
 
 		[SeedTrader]
-		Good luck. I hope you find the solution and restore it to its former glory. [EOA]
+		Good luck. I hope you find the solution and restore the town to its former glory. [EOA]
 
 		<audio src='https://koetest.s3.amazonaws.com/Act3/Slap.mp3'/>
 		He then gives your horse a big slap. The horse charges into the East, leaving Luke behind in the desert.
@@ -2094,7 +2098,7 @@
 		woman with faded purple hair showed up in your face. Oh, and she also stinks.
 		
 	*recap
-		The woman stood there like a statue. You should try say 
+		The woman stands there like a statue. You should try say 
 		something to get her attention? maybe just a "hi"?
 	*then
 		hear hi, hello, I am, I need, yes, no {
@@ -2110,7 +2114,7 @@
 		[Alchemist]
 		Um. Here. Please. [EOA]
 
-		Alchemist takes your hand suddenly and almost pulls you
+		The woman takes your hand suddenly and almost pulls you
 		towards a little hut in the cave.
 		
 		[Alchemist]
@@ -2125,8 +2129,8 @@
 		<audio src='https://koetest.s3.amazonaws.com/Act5/stoneDoor.mp3'/>
 		//(SE: something grows)
 		<audio src='https://koetest.s3.amazonaws.com/Act5/VinGrowing.mp3'/>
-		As She closes the door, you hear something filling up and
-		tying up the hinge. You try to open it, but it
+		As She closes the door, you see vines magically growing and
+		tying up the hinges. You try to open it, but it
 		didn't work. Oh no. You're locked inside.
 	*then
 		->Escape The Room
@@ -2150,8 +2154,7 @@
 		you're from the town. [EOA]
 
 		She looks at you for a moment. Then she stands up from the
-		ground, getting the dirt off of her clothes. Her clothes are
-		still dirty, though.
+		ground, getting the dirt off of her clothes. The dirt still clings to them, though.
 
 		[Alchemist]
 		Sorry, it's been a long time since
@@ -2232,11 +2235,9 @@
 	*say
 		//(SE: Miracles sounds)
 		[MiracleSound01]
-		Miraculously, from the gemstone comes out a drop of a glowing
-		substance. It's so bright that it could almost be a star in
+		Miraculously, a drop of a glowing
+		liquid emerges from the gemstone.  It's so bright that it could be a star in
 		the night.
-		Berette walks back to the cauldron, and adds in the drop of
-		citrine.
 		
 		//(SE: Miracle sounds)
 		[MiracleSound02]
@@ -2253,16 +2254,14 @@
 		and cries.
 
 		[Alchemist]
-		I don't know! Why? I thought I had it all solved. I was supposed to be
-		ready when someone arrives. What
-		ingredient am I missing? [EOA] [Action]
+		I don't know! Why? I thought I had it all solved. I was hoping it would be ready by the time someone from the town arrived. [EOA] [Action]
 
 	*reprompt 
 		Berette extracts a magical substance from the
 		citrine in the middle, and adds it into the cauldron she is
 		working on. But the content explodes and Berette's experiment
 		has failed again. Disappointed and depressed, she asks what
-		ingredient she is missing. Perhaps your seed may help?
+		ingredient she is missing. Perhaps the seed Luke gave you would help?
 		
 	*recap
 		Berette asks if she's missing anything in his potion.
@@ -2361,7 +2360,7 @@
 		hear hand her the seed, the seed {
             -> Alchemist Asks
         }
-        hear hand her the eureka seed, eureka, plant {
+        hear hand her the eureka seed, eureka {
             -> Alchemist Asks More
         }
 
@@ -2519,7 +2518,7 @@
 		[Alchemist]
 		Oh, yes. This seed, it's called the
 		Glimmerbrook Mandrake. You don't come
-		across this plant like you breathe
+		across this seed like you breathe
 		air. It's basically as precious as the
 		citrine. Not of this world. Magical.
 		Judging by its rarity, and the fact
@@ -2561,8 +2560,8 @@
 		Barette then smiles a bit. She looks down on the ground.
 
 		[Alchemist]
-		We used to shout out Eureka! To each
-		other. That was the phrase we use when
+		Our first successful experiment was with a rose. We were trying to make it transparent. We had the radio on that day, and it just so happened that when we did it, the guy in the radio yelled out Eureka! as well. perfect timing.
+		So, that became the phrase we'd cheer whenever
 		we accomplished something together. [EOA]
 
 		Barette then realizes that she went off on her own.
@@ -2624,10 +2623,10 @@
 		Then she looks at the seed in her hand.
 
 		[Alchemist]
-		If Luke gave you this precious plant
+		If Luke gave you this precious seed
 		and knows that you'll end up meeting me
 		eventually, then he probably also knows that
-		this plant must be the key ingredient
+		this seed must be the key ingredient
 		that's missing. 
 		
 		Suddenly, she looks like she realizes something.
@@ -2706,7 +2705,7 @@
 		up and looks at you with shining eyes.
 
 		[Alchemist]
-		Given the rarity of this plant... this
+		Given the rarity of this seed... this
 		could be the key ingredient to our
 		potion. 
 		
@@ -2787,17 +2786,15 @@
 		This is not called Eureka. This, is a
 		Glimmerbrook Mandrake. Eureka, on the other hand, is a
 		word we use back in the day to
-		celebrate the progress we made. Dumb
-		old friend, I'm not angry at him
-		anymore. [EOA]
+		celebrate the progress we made. [EOA]
 
 		Barette sits there quietly.
 		
 		[Alchemist]
-		This plant. you don't just come across
+		This seed. you don't just come across
 		it here. Or anywhere. It's just as
 		hard to find as the citrine is. If he
-		gave this plant to you, and didn't ask
+		gave this seed to you, and didn't ask
 		for anything in return, this could
 		only mean that it's the ingredient
 		we're missing. [EOA]
@@ -2811,7 +2808,7 @@
 
 	*reprompt 
 		Barette realized something as soon as you revealed to her the person
-		who thought the plant's name is Eureka. It turns out that Luke was
+		who thought the seed's name is Eureka. It turns out that Luke was
 		Barette's lab partner before, and the word Eureka is a word
 		that only the two would use before; no matter what happened
 		before, Barette is not angry with Luke anymore. Now, with the
@@ -2882,7 +2879,7 @@
 
 	*reprompt 
 		Barette realized something as soon as you told her
-		who named the plant Eureka. It turns out that Luke was
+		who named the seed Eureka. It turns out that Luke was
 		Barette's lab partner before, and the word Eureka is a word
 		that only the two would use before; no matter what happened
 		before, Barette is not angry with Luke anymore. Now, with the
@@ -2947,7 +2944,7 @@
 
 		The cave starts pouring rain. But it was no ordinary rain.
 		The raindrops that are supposed to hit your harshly, instead
-		felt like cool splashes of spring water.
+		feel like cool splashes of spring water.
 		As you look to Barette, you noticed something else: she no
 		longer smells.
 
@@ -3006,7 +3003,7 @@
 		fix this disaster?[EOA]
 
 		[Alchemist]
-		By this![EOA]
+		By doing this![EOA]
 
 		Barette takes out the vial containing the purple potion.
 
@@ -3125,11 +3122,9 @@
 		washed away! Everyone! Come outside!
 		The rain is washing away the stench![EOA]
 
-		More people start to come out of their heavily-locked
-		houses. No people like them has ever enjoyed the rain so
-		much.
-		By the time the rain ends, the stench is completely washed
-		away. Oh, how dear I've missed the fresh air.
+		People start to emerge from their heavily-locked
+		homes. No one has ever enjoyed the rain so
+		much as they are enjoying it now.
 
 		[Mayor]
 		I'm sorry, Barette. It's just that
