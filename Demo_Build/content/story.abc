@@ -631,7 +631,7 @@
 	*say
 		You hear a crack in the house, but still no response. Maybe we should just open the door directly and sneak in? [Action]
 	*reprompt
-		You can try to say: open the door directly
+		You can try to say: open the door directly, or you can keep trying knocking.
 	*then
 		hear knock again, again, knock {
             flag angry
@@ -649,9 +649,9 @@
         subtitle: ''
 	*say
 		<audio src='https://koetest.s3.amazonaws.com/new_demo_stereo/peopleWalkingFast.mp3'/>
+		<audio src='https://koetest.s3.amazonaws.com/new_demo_stereo/doorOpen2.mp3'/>
         [MrsChilirosa]
         Yes? What do you want?[EOA] 
-        <audio src='https://koetest.s3.amazonaws.com/new_demo_stereo/doorOpen2.mp3'/>
 	*then
 		if flower {
             unflag angry
@@ -667,9 +667,9 @@
         subtitle: ''
 	*say
 		<audio src='https://koetest.s3.amazonaws.com/new_demo_stereo/peopleWalkingFast.mp3'/>
+		<audio src='https://koetest.s3.amazonaws.com/new_demo_stereo/doorOpen2.mp3'/>
         [MrsChilirosa]
         Hey? Show some manners![EOA] 
-        <audio src='https://koetest.s3.amazonaws.com/new_demo_stereo/doorOpen2.mp3'/>
 	*then
 		if flower {
             unflag angry
@@ -721,9 +721,9 @@
 		[MrsChilirosa]
         What do you want? If you have nothing else please leave. This town is already a skunk and I would appreciate if you close the door to stop the stinky air coming in.[EOA] 
         [Conversation] 
-        Now you can ask about the hot sauce, or leave. [Action]
+        Probably a good idea to ask about the hot sauce. [Action]
 	*then
-		hear ask about the hot sauce, the sauce, hot sauce {
+		hear ask about the hot sauce, the sauce, hot sauce, super, pepper, blue, sauce {
             -> Ask about the Sauce
         }
 
@@ -805,7 +805,7 @@
 		[MrsChilirosa]
         [CHILI_HAPPY] That is an extraordinary reason. You see, I can't live without the sauce. I need it for my breakfast, lunch and supper! [EOA]
 		Misses Chilirosa lets a drop of sauce on to her index finger as she exclaims about her attachment to the sauce.
-		[MrsChilirosa] But I can't believe it! It's another freind who appreciates the sauce. Here, I only share with friends who understand true beauty. [EOA]
+		[MrsChilirosa] But I can't believe it! It's another friend who appreciates the sauce. Here, I only share with friends who understand true beauty. [EOA]
 
         She gleefully hands over the hot sauce to you. You leave the building as she happily waves goodbye to you.
 	*then
@@ -869,18 +869,35 @@
 	*say
 		You're at the mayor's office. The doors are shut tight, and they seem like locked. Somehow with the stench, it also smells very spicy. Besides knocking on the door, the office is so big that you probably need to shout to get his attention.[Conversation] Do you want to wave to the window, or shout to the his attention?[Action]
 	*reprompt
-		Wave to the window? Or shout at the mayor?
+		Wave to the window? Knock on the door? Or shout at the mayor?
 	*recap
-		Wave to the window? Or shout at the mayor?
+		Wave to the window? Knock on the door? Or shout at the mayor?
 	*then
-		hear wave to the window, wave {
-			-> Wave To the Window
+		hear Knock on the door, knock, door {
+			-> Knock Knock Knock
         }
         hear shout, shout at the mayor {
             -> Shout At the Mayor
         }
+		hear wave, window, wave at the window {
+			-> Wave at window
+		}
 
-@Wave To the Window
+
+@Wave at window
+	*say
+		You waved at the window, but no-one responded. You need to make a bigger noise. [Action]
+	*then
+		hear shout, shout at the mayor {
+			-> Shout At the Mayor
+		}
+
+		hear knock, knock on the door, door {
+			-> Knock Knock Knock
+		}
+
+
+@Knock Knock Knock
 	*say
 		You knocked the door, 
 		
