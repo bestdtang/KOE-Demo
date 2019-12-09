@@ -957,10 +957,12 @@
 @Mayor Talks About the Incident Part 2
 	*say
 		[Mayor]
-		This curse is the work by one of our own, or formerly one of our own. His name is Barette the Alchemist. That coward ran away from the town, though. Can't even face his own wrongdoings like a real man. Because of him, we have lost tourists and people don't want to come here anymore. People are even afraid to mention his name. [EOA]
+		This curse is the work by one of our own, or formerly one of our own. Her name is Barette the Alchemist. That coward ran away from the town, though. Can't even face her own wrongdoings. Because of her, we have lost tourists and people don't want to come here anymore. People are even afraid to mention her name. [EOA]
 		The mayor looks at the map on the wall.
 		[Mayor]
-		The legend out there says there's a precious gemstone called the citrine hidden in the valleys to the East, and that the precious gem is the key ingredient to lifting the curse. What the legend didn't tell, is that the cavern is guarded by a mysterious puzzle. [EOA]
+		The legend out there says there's a precious gemstone called the citrine hidden in the valleys to the East, and that the precious gem is the key ingredient to lifting the curse. 
+		What the legend didn't tell, is that the cavern is guarded by a mysterious puzzle. [EOA]
+		you can ask about: [Conversation] the cave, puzzles, eastern valleys, the town, or leave to the cave [Action]
 	*reprompt
 		you can ask about: [Conversation] the cave, puzzles, eastern valleys, the town, or leave to the cave [Action]
 	*then
@@ -3296,7 +3298,7 @@
 @chilirosa_door
 	*say
 		You hold your breath and open the door carefully. You then sneak into the hallway.
-		You can say look around at anytime to check the environment. [Action]
+		To check the environment, try saying look around. [Action]
 	*then
 		hear look around, look around the hallway, around me, look around {
 			-> chilirosa_hallway_around
@@ -3305,7 +3307,7 @@
 @chilirosa_hallway_around
 	*say
 		You are in the hallway. A vintage wood closet is next to you. Behind you is the door you just entered.
-		You can also see the living room and the kitchen. You can check the objects or rooms by saying look at the object or room name. [Action]
+		You can also see the living room and the kitchen. You can check the objects or rooms, by saying look at the object or room name. [Action]
 	*then
 		-> chilirosa_hallway_interation
 
