@@ -903,7 +903,7 @@
 		
 		<audio src='https://koetest.s3.amazonaws.com/Act2/knockDoor.mp3'/>
 		
-		but no-one respond. [Conversation] You need to make a bigger noise. [Action]
+		but no-one responds. [Conversation] You need to make a bigger noise. [Action]
 	*reprompt
 		It seems that shouting at the mayor is the only way to get his attention
 	*recap
@@ -946,7 +946,7 @@
 		[Mayor]
 		You see. I actually don't like the sauce. I use it only to block off the smell. This bothering smell has been so long that I almost forgot when it happened. [Conversation] So. why did you come? [Action] [EOA]
 	*then
-		hear smell, incident, help, yes, right {
+		hear smell, incident, help, yes, right, curse, rain, thunderstorm, stench, stinky {
 			-> Mayor Talks More About the Incident
 		}
 		hear who are you{
@@ -998,7 +998,7 @@
 		[Mayor]
 		The legend out there says there's a precious gemstone called the citrine hidden in the valleys to the East, and that the precious gem is the key ingredient to lifting the curse. 
 		What the legend didn't tell, is that the cavern is guarded by a mysterious puzzle. [EOA]
-		you can ask about: [Conversation] the cave, puzzles, eastern valleys, the town, or leave to the cave [Action]
+		you can ask about: [Conversation] the cave, puzzles, eastern valleys, the town, or leave for the cave [Action]
 
 	*then
 		-> Mayor Talks about the Incident Part 3
@@ -1152,7 +1152,7 @@
         I hope that these information are useful to you. We're all looking forward to seeing the town coming back to life some day. Good luck! [EOA]
         You leave the mayor's office, back on to the streets. The shopkeeper stands outside.
         [Man]
-        Are you leaving? If you're ready, the horse over there is ready for you; but if you are tired. take some rest. [Conversation] Would you like to leave or take some rest?[EOA] [Action]
+        Are you leaving? If you are, the horse over there is ready for you; but if you are tired. take some rest. [Conversation] Would you like to continue to the next act or take some rest?[EOA] [Action]
 	*then
 		hear rest, take some rest {
 	        >>END
