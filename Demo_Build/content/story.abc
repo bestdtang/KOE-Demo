@@ -237,7 +237,6 @@
 	*reprompt
 		The water looks ok, but it smells bad. Are you sure you want to drink it? [Action]
 
-
 @Don't Drink
 	*say
 		You hold the glass of water at your hand, but you don't drink from it. [Pause]
@@ -484,6 +483,7 @@
         hear ask again, ask {
             -> Ask more about Chilirosa
         }
+
 @Leave the Store
 	*say
         [Man]
@@ -783,7 +783,7 @@
 		hear two, second, tell her that I need it to get the mayor's attention, need, B {
 			-> Tell Mrs Chilirose Honestly
         }
-        
+
 @Tell Mrs Chilirose you like the Sauce
 	*say
 		Ok. Now make up a good reason why you like the sauce. You like the sauce because? [Action] [LongPause]
@@ -935,7 +935,6 @@
 			-> Mayor Doesn't Bring Tea To You
 		}
 
-
 @Mayor Brings Tea To You
 	*say
 		In a split second, the mayor brings you a cup of tea. You drink from the cup. You feel like a a volcano is erupting in your mouth. It's not just hot. It's spicy.
@@ -943,7 +942,7 @@
 		Ha. This tea is brewed with the spicy hot sauce! This tea makes your nose so numb that you can't smell that awful stench. [Short_Pause] Ok, where were we? Ah, yes.[EOA]
 	*then
 		-> Mayor Talks About the Incident Part 2
-		
+
 @Mayor Doesn't Bring Tea To You
 	*say
 		[Mayor] Alright then. [EOA]
@@ -963,13 +962,25 @@
 		The legend out there says there's a precious gemstone called the citrine hidden in the valleys to the East, and that the precious gem is the key ingredient to lifting the curse. 
 		What the legend didn't tell, is that the cavern is guarded by a mysterious puzzle. [EOA]
 		you can ask about: [Conversation] the cave, puzzles, eastern valleys, the town, or leave to the cave [Action]
-	*reprompt
+
+	*then
+		-> Mayor Talks about the Incident Part 3
+	
+		
+@Mayor Talks about the Incident Part 3
+    
+    *say
+    
+    *recap
+        You can not do that. you can ask about: [Conversation] the cave, puzzles, eastern valleys, the town, or leave to the cave [Action]
+    
+    *reprompt
 		you can ask about: [Conversation] the cave, puzzles, eastern valleys, the town, or leave to the cave [Action]
 	*then
 		hear cave, about the cave {
             -> Ask Mayor The Cave
         }
-        hear puzzles, challenges {
+        hear puzzles, challenges, what is the puzzle, ask about the puzzle {
             -> Ask Mayor Challenges
         }
         hear valleys, eastern valleys {
@@ -980,14 +991,16 @@
         }
         hear leave, leave to the cave {
             -> Leave the Cave
-        }
+        }	
+	
+	
 
 @Ask Mayor the valleys
 	*say
 		[Mayor]
         The Eastern valleys is a long way from here. You better bring food and water. Or else you'll not make it.[EOA]
 	*then
-		>> BACK
+		-> Mayor Talks about the Incident Part 3
 
 @Ask Mayor Challenges
 	*say
@@ -1008,16 +1021,17 @@
 		[Mayor]
         Well, there's not much to talk about the cave, other than it's hidden in the valleys to the East... wait. Ah, yes, nearly missed this: It is said that there were plant roots that lead into the cave. A real miracle since green is sparse in the desert.[EOA]
 	*then
-		>> BACK
+		-> Mayor Talks about the Incident Part 3
 
 @Ask Mayor The Town
 	*say
 		[Mayor]
         We were once a happy little town in the desert. At one point it even became a tourist spot! It's crazy to think that people would come from everywhere, just to get a taste of our famous dish, Shawarma.[EOA]
 	*then
-		>> BACK		
+		-> Mayor Talks about the Incident Part 3	
 
 //not using
+
 @Agree to Help the Mayor
 	*say
 		[Mayor]
@@ -1036,6 +1050,7 @@
 		-> Ask the Mayor
 
 //not using
+
 @Ask the Mayor
 	*say
 		[Conversation] You can ask about how he knows all this, about the cave, or about the town itself. [Action]
@@ -1053,6 +1068,7 @@
         }
 
 //not using
+
 @Ask Mayor How He knows
 	*say
 		[Mayor]
@@ -1061,6 +1077,7 @@
 		>> BACK
 
 //not using
+
 @Continue Ask Mayor The Town
 	*say
 		[Mayor]
@@ -1078,6 +1095,7 @@
         -> Ask the Mayor
 
 //not using
+
 @Before Leave For the Cave
 	*say
 		and you can also heave for the cave.[Action]
@@ -1108,9 +1126,6 @@
 
 /////////// END OF ACT 2 //////////////
 /////////// START OF ACT 3 ////////////
-
-
-
 
 @Been Walking For Days
 	*show
@@ -1814,6 +1829,7 @@
 	    hear puzzle{
 	        -> jumptopuzzle
 	    }
+
 @jumptoact
 	*say
 		which act
@@ -1830,6 +1846,7 @@
 	    hear five{
 	        -> Arrival At The Inner Cave
 	    }
+
 @jumptopuzzle
 	*say
 		which puzzle would you like play? We have four puzzles with difficulty levels from easy to hard. They are hot sauce puzzle, cow plant puzzle, leading flower puzzle, and escape the lab puzzle.
@@ -1890,6 +1907,7 @@
 		hear continue {
 		    -> TA2
 	    }
+
 @TA2
 	*say
 		
@@ -1907,6 +1925,7 @@
 		hear continue {
 			-> TA3
 		}
+
 @TA3
 	*say
 		<audio src='https://koetest.s3.amazonaws.com/Act2/footstepsTowardsYou.mp3'/>
@@ -1918,6 +1937,7 @@
 		hear continue {
 			-> TA4
 		}
+
 @TA4
 	*say
 		<audio src='https://koetest.s3.amazonaws.com/Act2/windCurtain.mp3'/>
@@ -1958,7 +1978,7 @@
 			-> TA7
 		}
 
-@TA7	
+@TA7
 	*say
 		<audio src='https://koetest.s3.amazonaws.com/Act5/magicSound03.mp3'/>
 		<audio src='https://koetest.s3.amazonaws.com/Act5/magicSound04.mp3'/>
@@ -1970,7 +1990,6 @@
 		hear continue {
 			-> TA8
 		}
-				
 
 @TA8
 	*say
@@ -2028,7 +2047,8 @@
 		
 		<audio src='https://koetest.s3.amazonaws.com/Act5/takePhoto.mp3'/>
 	*then
-		>> END	
+		>> END
+
 @Where am I
 	*say
 		Now you are in {currentLocation}.
@@ -2036,6 +2056,7 @@
 		>> BACK
 
 //TODO: update the help content
+
 @Help
 	*say
 		Here is what you can do: 
@@ -2106,7 +2127,6 @@
 		hear hi, hello, I am, I need, yes, no {
 			-> Alchemist Grabs You
 		}
-		
 
 @Alchemist Grabs You
 	*say
@@ -2612,7 +2632,6 @@
 			-> Alchemist Brews Potion
 		}
 
-
 @Alchemist Smirks And Accepts
 	*say
 		[BAR_LAUGH]
@@ -3103,7 +3122,7 @@
 	*then
 		-> After Opening the Vial
 
-@After Opening the Vial	
+@After Opening the Vial
 	*say
 		<audio src='https://koetest.s3.amazonaws.com/Act5/PouringRain.mp3'/>
 
@@ -3151,7 +3170,6 @@
             -> Luke Watches From the Distance
         }
         -> Luke Is Nowhere To Be Found
-
 
 @Luke Returns
 	*say
@@ -3929,6 +3947,7 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 		-> leading_a_position
 
 @leading_a_goto
+	
 
 @leading_a_position
 	*then
@@ -5051,7 +5070,7 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 	*then
 		hear search growth states, growth states {
 			-> cowplant_puzzle_notebook_seedtrader_states_tutorial
-		}		
+		}
 
 @cowplant_puzzle_outside_interaction
 	*say
@@ -5123,12 +5142,12 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 		}
 
 //What to do outside ---------------------------------------------------------------
+
 @cowplant_puzzle_outside_whatdo
 	*say
 		You can look around, look at specific things, go to the tent. 
 	*then 
 		-> cowplant_puzzle_outside_whatdo_turnon_stereo
-		
 
 @cowplant_puzzle_outside_whatdo_turnon_stereo
 	*then
@@ -5137,13 +5156,13 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 		}
 		-> cowplant_puzzle_outside_whatdo_turnon_stereo_N
 
-@cowplant_puzzle_outside_whatdo_turnon_stereo_Y 
+@cowplant_puzzle_outside_whatdo_turnon_stereo_Y
 	*say
 		 Turn on the stereo, 
 	*then 
 		-> cowplant_puzzle_outside_whatdo_wake_man
 
-@cowplant_puzzle_outside_whatdo_turnon_stereo_N 
+@cowplant_puzzle_outside_whatdo_turnon_stereo_N
 	*then 
 		-> cowplant_puzzle_outside_whatdo_wake_man
 
@@ -5159,7 +5178,7 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 		 wake up the man, 
 	*then 
 		-> cowplant_puzzle_outside_whatdo_look_note
-	
+
 @cowplant_puzzle_outside_whatdo_wake_man_N
 	*then 
 		-> cowplant_puzzle_outside_whatdo_look_note
@@ -5205,6 +5224,7 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 		-> cowplant_puzzle_outside_interaction
 
 // what to do tent ---------------------------------------------------------------------------
+
 @cowplant_puzzle_tent_whatdo
 	*say
 		You can look around, look at specific things, go outside.
@@ -5223,7 +5243,7 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 		 look at the notebook, 
 	*then
 		-> cowplant_puzzle_tent_whatdo_talk_man
-		
+
 @cowplant_puzzle_tent_whatdo_look_note_N
 	*then
 		-> cowplant_puzzle_tent_whatdo_talk_man
@@ -5240,7 +5260,7 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 		 talk to the man. 
 	*then
 		-> cowplant_puzzle_tent_whatdo_end
-		
+
 @cowplant_puzzle_tent_whatdo_talk_man_N
 	*then
 		-> cowplant_puzzle_tent_whatdo_end
@@ -5251,7 +5271,7 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 	*then 
 		-> cowplant_puzzle_tent_interaction	
 
-//End of what to do ------------------------------------------------------------------------------	
+//End of what to do ------------------------------------------------------------------------------
 
 @cowplant_puzzle_cowplant_interact
 	*say
@@ -5367,7 +5387,6 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 			set currentplace to 0
 			-> cowplant_puzzle_tent_pickup_notebook
 		}
-
 
 @cowplant_puzzle_tent_view_man
 	*say
@@ -5714,7 +5733,6 @@ When cow plant is hungry, it will stick its cake tongue out. You can feed them a
 			-> cowplant_puzzle_notebook_close
 		}
 
-
 @cowplant_puzzle_notebook_seedtrader_mature
 	*say
 		You searched the keyword, mature state. The page reads. In this stage, the cow plant is fully matured. You can feed it, or at some certain moment, you can milk it. When a person is swallowed for the first time, the cow plant will spit them out, and they will receive a drained mood, which will last two days. If people survive from the first swallowing, the cow plant will produce milk. I'll make more notes on the milk later in the related category.
@@ -5917,6 +5935,7 @@ When cow plant is hungry, it will stick its cake tongue out. You can feed them a
 		hear what can I do, what, can I {
 			-> escape_puzzle_whatdo
 		}
+
 @escape_puzzle_view_door
 	*say
 		You look at the door. It has been locked from outside. 
@@ -6269,6 +6288,7 @@ When cow plant is hungry, it will stick its cake tongue out. You can feed them a
 		hear flower stand, flower, flower, search flower, plant, search plants{
 			-> escape_puzzle_notebook_flowerstand
 		}
+
 @escape_puzzle_notebook_flowerstand
 	*say
 		Here is the result of what you are searching: I stored three different types of flowers on the flower stand. They are: black berry, fang flower, and mandrake. I use the dirt of these flowers to locate the position that I wanna teleport to by the portal. 
@@ -6347,6 +6367,7 @@ When cow plant is hungry, it will stick its cake tongue out. You can feed them a
 
 
 // what can I do---------------------------------------------------------------------------------------------------------------------
+
 @escape_puzzle_whatdo
 	*say
 		You can look around, or look at specific things. 
@@ -6441,3 +6462,4 @@ When cow plant is hungry, it will stick its cake tongue out. You can feed them a
 @escape_puzzle_whatdo_end
 	*then
 		-> escape_puzzle_interaction
+
