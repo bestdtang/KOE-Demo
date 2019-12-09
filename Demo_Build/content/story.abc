@@ -389,7 +389,7 @@
 	    hear ask about the mayor, about the mayor, the mayor, mayor, what about the mayor {
 	        -> Ask Shopkeeper About the Mayor
 	    }
-	    hear ask about the sauce, about the sauce, the sauce, sauce {
+	    hear ask about the sauce, about the sauce, the sauce, sauce, super, hot, blue, pepper {
 	        -> Ask Shopkeeper About the Sauce
 	    }
 	*reprompt
