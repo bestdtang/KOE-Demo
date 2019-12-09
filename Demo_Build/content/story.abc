@@ -886,7 +886,7 @@
 
 @Wave at window
 	*say
-		You waved at the window, but no-one responded. You need to make a bigger noise. [Action]
+		You wave at the window, but no-one responds. You need to make a bigger noise. [Action]
 	*then
 		hear shout, shout at the mayor {
 			-> Shout At the Mayor
@@ -899,11 +899,11 @@
 
 @Knock Knock Knock
 	*say
-		You knocked the door, 
+		You knock the door, 
 		
 		<audio src='https://koetest.s3.amazonaws.com/Act2/knockDoor.mp3'/>
 		
-		but no-one responded. [Conversation] You need to make a bigger noise. [Action]
+		but no-one respond. [Conversation] You need to make a bigger noise. [Action]
 	*reprompt
 		It seems that shouting at the mayor is the only way to get his attention
 	*recap
@@ -939,7 +939,7 @@
 
 		[DOOR_UNLOCK]
 
-		The door is unlocked. As soon as you meet the mayor,
+		The door unlocks. As soon as you meet the mayor,
 
 		You hand over the sauce. The mayor quickly jerks open the bottle cap, and walks hastily to one of the doors and pours the sauce under it. He looks at you and smiles awkwardly.
 		
