@@ -642,6 +642,11 @@
         }
 
 @Chilirosa Annoyed
+	*show
+		template: 'default'
+        background:'https://koetest.s3.amazonaws.com/visuals/Chilirosa+puzzle/Angry.png'
+        title: ''
+        subtitle: ''
 	*say
 		<audio src='https://koetest.s3.amazonaws.com/new_demo_stereo/peopleWalkingFast.mp3'/>
         [MrsChilirosa]
@@ -655,6 +660,11 @@
         -> Meet Mrs Chilirosa
 
 @Chilirosa Angered
+	*show
+		template: 'default'
+        background:'https://koetest.s3.amazonaws.com/visuals/Chilirosa+puzzle/Angry.png'
+        title: ''
+        subtitle: ''
 	*say
 		<audio src='https://koetest.s3.amazonaws.com/new_demo_stereo/peopleWalkingFast.mp3'/>
         [MrsChilirosa]
@@ -809,6 +819,11 @@
 		-> Chilirosa Give Hot Sauce
 
 @Chilirosa Give Hot Sauce
+	*show
+		template: 'default'
+        background:'https://koetest.s3.amazonaws.com/visuals/Chilirosa+puzzle/sauce.png'
+        title: ''
+        subtitle: ''
 	*say
 		[MrsChilirosa]
         Here is the hot sauce, take it.[EOA]
@@ -846,6 +861,11 @@
 		Now you can: Knock on the door, bash on the door, or open the door directly. [Action]
 
 @Get the Hot Sauce
+	*show
+		template: 'default'
+        background:'https://koetest.s3.amazonaws.com/visuals/Dessert/dessertAll.png'
+        title: ''
+        subtitle: ''
 	*say
 		You're at the mayor's office. The doors are shut tight, and they seem like locked. Somehow with the stench, it also smells very spicy. Besides knocking on the door, the office is so big that you probably need to shout to get his attention.[Conversation] Do you want to wave to the window, or shout to the his attention?[Action]
 	*reprompt
@@ -3283,6 +3303,11 @@
 // the start of Chilirosa steal puzzle -------------------------------------------------------------------------------------------
 
 @chilirosa_steal_puzzle_start
+	*show
+		template: 'default'
+        background:'https://koetest.s3.amazonaws.com/visuals/Chilirosa+puzzle/homeDefault.png'
+        title: ''
+        subtitle: ''
 	*say
 		You want to sneak into Misses Chilirosa's house to get the hot sauce, right?
 	*then
@@ -3300,6 +3325,11 @@
 		}
 
 @chilirosa_steal_puzzle_again
+	*show
+		template: 'default'
+        background:'https://koetest.s3.amazonaws.com/visuals/Chilirosa+puzzle/homeDefault.png'
+        title: ''
+        subtitle: ''
 	*say
 		You are now in front of Misses Chilirosa's house. Do you want to sneak in again?
 	*then
@@ -3452,6 +3482,11 @@
 		-> chilirosa_hallway_interation
 
 @chilirosa_living_caught
+	*show
+		template: 'default'
+        background:'https://koetest.s3.amazonaws.com/visuals/Chilirosa+puzzle/chilirosaEating.png'
+        title: ''
+        subtitle: ''
 	*say
 		You go to the living room. [Chilirosa_footstepSneaky] Misses Chilirosa is sitting right there. She is very surprised to see you but then becomes very angry. You are caught. She throws you out of the window.
 		//Make sure you observe the room first, before you go in.
@@ -3469,6 +3504,11 @@
 		-> chilirosa_living_around
 
 @chilirosa_living_around
+	*show
+		template: 'default'
+        background:'https://koetest.s3.amazonaws.com/visuals/Chilirosa+puzzle/emptyLivingRoom.png'
+        title: ''
+        subtitle: ''
 	*say
 		You are in the living room. The hot sauce, yes the super duper hot blue pepper sauce, is sitting right on the table.
 	*then
@@ -3507,6 +3547,11 @@
 		}
 
 @chilirosa_living_takesauce
+	*show
+		template: 'default'
+        background:'https://koetest.s3.amazonaws.com/visuals/Chilirosa+puzzle/sauce.png'
+        title: ''
+        subtitle: ''
 	*say
 		[Achievement] You got the hot sauce. Now, Let's go to the hallway and leave the house!
 	*then
@@ -3747,12 +3792,22 @@
 		-> chilirosa_hallway_interation
 
 @chilirosa_hallway_viewliving
+	*show
+		template: 'default'
+        background:'https://koetest.s3.amazonaws.com/visuals/Chilirosa+puzzle/chilirosaEating.png'
+        title: ''
+        subtitle: ''
 	*say
 		You look at the living room. Misses Chilirosa is sitting next to the table and having her lunch. She is sprinkling sauce on her pasta. That's it! That's the hot sauce you want.  You can go to the living room at anytime, but she is in it right now, you should do something to distract her away first.[Action]
 	*then
 		-> chilirosa_hallway_interation
 
 @chilirosa_hallway_viewliving2
+	*show
+		template: 'default'
+        background:'https://koetest.s3.amazonaws.com/visuals/Chilirosa+puzzle/emptyLivingRoom.png'
+        title: ''
+        subtitle: ''
 	*say
 		You look at the living room. That's it! That's the hot sauce you want.  You can go to the living room right now since she is still cleaning in the kitchen.[Action]
 	*then
