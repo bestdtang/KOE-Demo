@@ -562,7 +562,7 @@
 	*say
 		You bash heavily on the door,
 		<audio src='https://koetest.s3.amazonaws.com/Act2/bashDoor.mp3'/>
-		but nothing happened.
+		but nothing happens.
 	*then
 		-> Mayor's Office
 
