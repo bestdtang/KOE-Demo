@@ -15,7 +15,7 @@
 
 		"aws-profile-name": "ask_cli_default",
 
-		"skill-invocation-name": "Demo Build",
+		"skill-invocation-name": "Desert Traveler",
 
 		"dynamo-db-session-table-name": "demo-build-sessions",
 
@@ -23,7 +23,7 @@
 
 		"s3-bucket-name": "alexa-ml",
 
-		"ask-skill-directory-name": "demo-build",
+		"ask-skill-directory-name": "desert-traveler",
 
 		"publish-locales": [
 			"en-US"
