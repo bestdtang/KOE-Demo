@@ -31,12 +31,22 @@
         }
 
 @Quit Game
+	*show
+		template: 'default'
+        background:'https://koetest.s3.amazonaws.com/visuals/Dessert/dessertAll.png'
+        title: ''
+        subtitle: ''
 	*say
         OK. Bye~
     *then
         >> END
 
 @Lost in Desert
+	*show
+		template: 'default'
+        background:'https://koetest.s3.amazonaws.com/visuals/Dessert/hotBurningSun.png'
+        title: ''
+        subtitle: ''
 	*say
 		Ok then. Sit back and enjoy.
 		<audio src='https://koetest.s3.amazonaws.com/Act1/wind.mp3'/>
@@ -48,6 +58,11 @@
 		-> Tutorial 1: Direction Questions
 
 @Tutorial 1: Direction Questions
+	*show
+		template: 'default'
+        background:'https://koetest.s3.amazonaws.com/visuals/Dessert/sign.png'
+        title: ''
+        subtitle: ''
 	*say
 		Do you want to go left, or go right? [Action]
 	*then
@@ -100,7 +115,7 @@
 @Check Around the Hill
 	*show
 		template: 'default'
-        background:'https://koetest.s3.amazonaws.com/visuals/Dessert/dessertAll.png'
+        background:'https://koetest.s3.amazonaws.com/visuals/Dessert/town.png'
         title: ''
         subtitle: ''
 	*say
@@ -172,6 +187,11 @@
 		}
 
 @Store
+	*show
+		template: 'default'
+        background:'https://koetest.s3.amazonaws.com/visuals/Dessert/GeneralStore.png'
+        title: ''
+        subtitle: ''
 	*say
 		Upon approaching the general store, you see a boy. He wears a red coat, and he looks very surprised. [Pause]
 		[Kid] 
@@ -328,6 +348,11 @@
 		}
 
 @Mayor Office
+	*show
+		template: 'default'
+        background:'https://koetest.s3.amazonaws.com/visuals/Dessert/mayerOffice.png'
+        title: ''
+        subtitle: ''
 	*say
 		You arrive at the mayor's office. It's the largest building in the town, but it's doors and windows are tightly shut and locked. [Short_Pause] 
 		//When you get close to the front door, there's a sharp smell of hot pepper. 
@@ -502,6 +527,11 @@
 	}
 
 @The Cross
+	*show
+		template: 'default'
+        background:'https://koetest.s3.amazonaws.com/visuals/Dessert/sign.png'
+        title: ''
+        subtitle: ''
 	*say
 		//[Action]
 		There are a few things that you may want to check: [Conversation] The mayor's office to your left, or you can go find the beauty salon. [Action]
@@ -520,9 +550,14 @@
 		There are a few things that you may want to check: A signpost, the mayor's office to your left, or you can go find the beauty salon.
 
 @Mayor's Office
+	*show
+		template: 'default'
+        background:'https://koetest.s3.amazonaws.com/visuals/Dessert/mayerOffice.png'
+        title: ''
+        subtitle: ''
 	*say
 		You're at the mayor's office. The doors are shut tight, and they seem like locked. Somehow with the stench, it also smells very spicy.
-           You need to talk to the mayor, but how do you get his attention? Hmmm. Perhaps you can knock the door, or, you can bash hardly on it. Perhaps you can also shout something to get the mayor. What would you do?
+           You need to talk to the mayor, but how do you get his attention? Hmmm. [Conversation] Perhaps you can knock the door, or, you can bash hardly on it. Perhaps you can also shout something to get the mayor. What would you do?
 		   [Action]
 	*then
 		hear knock {
@@ -535,20 +570,6 @@
             set currentLocation as 'a cross'
             -> The Cross
         }
-
-		// TODO: What is this?
-		hear go to scene Mayor's Office_1 {									 
-			-> Mayor's Office_anotherlocation
-		}
-
-@Mayor's Office_anotherlocation
-	*say
-		There are a few other things that you may want to check: [Conversation] A signpost, or you can go find the beauty salon. [Action]
-	*then	
-		hear salon, beauty salon, go to beauty salon, go find the beauty salon {
-	    	set currentLocation as 'outside of the beauty saloon'
-			-> Beauty Salon
-		}
 
 @Knock On Mayor's Office
 	*say
@@ -567,6 +588,11 @@
 		-> Mayor's Office
 
 @Beauty Salon
+	*show
+		template: 'default'
+        background:'https://koetest.s3.amazonaws.com/visuals/Dessert/walking2.png'
+        title: ''
+        subtitle: ''
 	*say
 		You walk towards the end of the street.
 		<audio src='https://koetest.s3.amazonaws.com/Act2/windCurtain.mp3'/>
@@ -863,7 +889,7 @@
 @Get the Hot Sauce
 	*show
 		template: 'default'
-        background:'https://koetest.s3.amazonaws.com/visuals/Dessert/dessertAll.png'
+        background:'https://koetest.s3.amazonaws.com/visuals/Dessert/mayerOffice.png'
         title: ''
         subtitle: ''
 	*say
@@ -1150,7 +1176,7 @@
 @Been Walking For Days
 	*show
 		template: 'default'
-        background:'https://koetest.s3.amazonaws.com/Images/CowPlant.png'
+        background:'https://koetest.s3.amazonaws.com/visuals/Dessert/dessertAll.png'
         title: ''
         subtitle: ''
 
@@ -3005,6 +3031,16 @@
 		Quick! Pack your stuff immediately. We
 		will end this chaos once and for all.[EOA]
 
+	*then 
+		-> Go to the Town With Alchemist 
+
+@Go to the Town With Alchemist
+	*show
+		template: 'default'
+        background:'https://koetest.s3.amazonaws.com/visuals/Cave/town.png'
+        title: ''
+        subtitle: ''
+	*say		
 		//(SE: horses galloping)
 		<audio src='https://koetest.s3.amazonaws.com/Act3/horseGalloping.mp3'/>
 
@@ -3192,6 +3228,11 @@
         -> Luke Is Nowhere To Be Found
 
 @Luke Returns
+	*show
+		template: 'default'
+        background:'https://koetest.s3.amazonaws.com/visuals/Dessert/hotBurningSun.png'
+        title: ''
+        subtitle: ''
 	*say
 		[MrsChilirosa]
 		There's someone arriving from the
@@ -3238,6 +3279,11 @@
 		>>END
 
 @Luke Watches From the Distance
+	*show
+		template: 'default'
+        background:'https://koetest.s3.amazonaws.com/visuals/Dessert/hotBurningSun.png'
+        title: ''
+        subtitle: ''
 	*say
 		[Mayor]
 		Well, Let's discuss
@@ -3274,6 +3320,11 @@
 		>>END
 
 @Luke Is Nowhere To Be Found
+	*show
+		template: 'default'
+        background:'https://koetest.s3.amazonaws.com/visuals/Dessert/hotBurningSun.png'
+        title: ''
+        subtitle: ''
 	*say
 		[Mayor]
 		Well, my friend. Let's discuss
@@ -3976,6 +4027,11 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 		-> One Last Thing Plot 4
 
 @leading_puzzle_start
+	*show
+		template: 'default'
+        background:'https://koetest.s3.amazonaws.com/visuals/Forest/forestall.png'
+        title: ''
+        subtitle: ''
 	*say
 		You thank him and continut your journey. [Footsteps]A A couple of minutes later, you are standing in front of the foggy forest. You take out the leading flower. [Action]
 	*recap
@@ -5036,6 +5092,11 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 // cow plantpuzzle---------------------------------------------------------------------------------------------
 
 @cowplant_puzzle_start
+	*show
+		template: 'default'
+        background:'https://koetest.s3.amazonaws.com/visuals/Cowplant/tent.png'
+        title: ''
+        subtitle: ''
 	*say
 		You wake up after a long sleep but find youself in a tent. Maybe you want to look around first. [Action]
 	*recap
@@ -5128,6 +5189,11 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 		}
 
 @cowplant_puzzle_outside_interaction
+	*show
+		template: 'default'
+        background:'https://koetest.s3.amazonaws.com/visuals/Cowplant/cowplant.png'
+        title: ''
+        subtitle: ''
 	*say
 		
 	*recap
@@ -5353,6 +5419,11 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 		-> cowplant_puzzle_tent_interaction
 
 @cowplant_puzzle_tent_interaction
+	*show
+		template: 'default'
+        background:'https://koetest.s3.amazonaws.com/visuals/Cowplant/tent.png'
+        title: ''
+        subtitle: ''
 	*say
 		
 	*then
@@ -5563,6 +5634,11 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 		-> cowplant_puzzle_outside_interaction
 
 @cowplant_puzzle_tent_getmilk
+	*show
+		template: 'default'
+        background:'https://koetest.s3.amazonaws.com/visuals/Dessert/Milk.png'
+        title: ''
+        subtitle: ''
 	*say
 		You go back to where the man is. And you force him to drink the milk. 
 		[SeedTrader]
@@ -5598,6 +5674,11 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 		-> MysMan Introduces Himself
 
 @cowplant_puzzle_plant_milk
+	*show
+		template: 'default'
+        background:'https://koetest.s3.amazonaws.com/visuals/Dessert/Milk.png'
+        title: ''
+        subtitle: ''
 	*say
 		You milk the plant, <audio src='https://koetest.s3.amazonaws.com/Act3/milkingCowplant.mp3'/>  You get a bottle of milk, or you can call it potion. [Achievement] Maybe this is the potion to cure the man. You can go help the man directly, or take a look at the notebook and see if it's the right solution. [Conversation] Do you want to help the man to drink the milk right now, or check the notebook first?
 	*then
