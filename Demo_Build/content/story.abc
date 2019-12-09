@@ -629,11 +629,11 @@
 
 @Knock On Beauty Salon 2
 	*say
-		You hear a crank in the house, but still no response. Maybe we just open the door directly and sneak in? [Action]
+		You hear a crack in the house, but still no response. Maybe we should just open the door directly and sneak in? [Action]
 	*reprompt
 		You can try to say: open the door directly
 	*then
-		hear knock again, again {
+		hear knock again, again, knock {
             flag angry
             -> Chilirosa Annoyed
         }
