@@ -414,7 +414,7 @@
 	    hear ask about the mayor, about the mayor, the mayor, mayor, what about the mayor {
 	        -> Ask Shopkeeper About the Mayor
 	    }
-	    hear ask about the sauce, about the sauce, the sauce, sauce {
+	    hear ask about the sauce, about the sauce, the sauce, sauce, super, hot, blue, pepper {
 	        -> Ask Shopkeeper About the Sauce
 	    }
 	*reprompt
@@ -583,7 +583,7 @@
 	*say
 		You bash heavily on the door,
 		<audio src='https://koetest.s3.amazonaws.com/Act2/bashDoor.mp3'/>
-		but nothing happened.
+		but nothing happens.
 	*then
 		-> Mayor's Office
 
@@ -655,11 +655,11 @@
 
 @Knock On Beauty Salon 2
 	*say
-		You hear a crank in the house, but still no response. Maybe we just open the door directly and sneak in? [Action]
+		You hear a crack in the house, but still no response. Maybe we should just open the door directly and sneak in? [Action]
 	*reprompt
-		You can try to say: open the door directly
+		You can try to say: open the door directly, or you can keep trying knocking.
 	*then
-		hear knock again, again {
+		hear knock again, again, knock {
             flag angry
             -> Chilirosa Annoyed
         }
@@ -675,9 +675,9 @@
         subtitle: ''
 	*say
 		<audio src='https://koetest.s3.amazonaws.com/new_demo_stereo/peopleWalkingFast.mp3'/>
+		<audio src='https://koetest.s3.amazonaws.com/new_demo_stereo/doorOpen2.mp3'/>
         [MrsChilirosa]
         Yes? What do you want?[EOA] 
-        <audio src='https://koetest.s3.amazonaws.com/new_demo_stereo/doorOpen2.mp3'/>
 	*then
 		if flower {
             unflag angry
@@ -693,9 +693,9 @@
         subtitle: ''
 	*say
 		<audio src='https://koetest.s3.amazonaws.com/new_demo_stereo/peopleWalkingFast.mp3'/>
+		<audio src='https://koetest.s3.amazonaws.com/new_demo_stereo/doorOpen2.mp3'/>
         [MrsChilirosa]
         Hey? Show some manners![EOA] 
-        <audio src='https://koetest.s3.amazonaws.com/new_demo_stereo/doorOpen2.mp3'/>
 	*then
 		if flower {
             unflag angry
@@ -747,9 +747,9 @@
 		[MrsChilirosa]
         What do you want? If you have nothing else please leave. This town is already a skunk and I would appreciate if you close the door to stop the stinky air coming in.[EOA] 
         [Conversation] 
-        Now you can ask about the hot sauce, or leave. [Action]
+        Probably a good idea to ask about the hot sauce. [Action]
 	*then
-		hear ask about the hot sauce, the sauce, hot sauce {
+		hear ask about the hot sauce, the sauce, hot sauce, super, pepper, blue, sauce {
             -> Ask about the Sauce
         }
 
@@ -831,7 +831,7 @@
 		[MrsChilirosa]
         [CHILI_HAPPY] That is an extraordinary reason. You see, I can't live without the sauce. I need it for my breakfast, lunch and supper! [EOA]
 		Misses Chilirosa lets a drop of sauce on to her index finger as she exclaims about her attachment to the sauce.
-		[MrsChilirosa] But I can't believe it! It's another freind who appreciates the sauce. Here, I only share with friends who understand true beauty. [EOA]
+		[MrsChilirosa] But I can't believe it! It's another friend who appreciates the sauce. Here, I only share with friends who understand true beauty. [EOA]
 
         She gleefully hands over the hot sauce to you. You leave the building as she happily waves goodbye to you.
 	*then
@@ -895,24 +895,41 @@
 	*say
 		You're at the mayor's office. The doors are shut tight, and they seem like locked. Somehow with the stench, it also smells very spicy. Besides knocking on the door, the office is so big that you probably need to shout to get his attention.[Conversation] Do you want to wave to the window, or shout to the his attention?[Action]
 	*reprompt
-		Wave to the window? Or shout at the mayor?
+		Wave to the window? Knock on the door? Or shout at the mayor?
 	*recap
-		Wave to the window? Or shout at the mayor?
+		Wave to the window? Knock on the door? Or shout at the mayor?
 	*then
-		hear wave to the window, wave {
-			-> Wave To the Window
+		hear Knock on the door, knock, door {
+			-> Knock Knock Knock
         }
         hear shout, shout at the mayor {
             -> Shout At the Mayor
         }
+		hear wave, window, wave at the window {
+			-> Wave at window
+		}
 
-@Wave To the Window
+
+@Wave at window
 	*say
-		You knocked the door, 
+		You wave at the window, but no-one responds. You need to make a bigger noise. [Action]
+	*then
+		hear shout, shout at the mayor {
+			-> Shout At the Mayor
+		}
+
+		hear knock, knock on the door, door {
+			-> Knock Knock Knock
+		}
+
+
+@Knock Knock Knock
+	*say
+		You knock the door, 
 		
 		<audio src='https://koetest.s3.amazonaws.com/Act2/knockDoor.mp3'/>
 		
-		but no-one responded. [Conversation] You need to make a bigger noise. [Action]
+		but no-one responds. [Conversation] You need to make a bigger noise. [Action]
 	*reprompt
 		It seems that shouting at the mayor is the only way to get his attention
 	*recap
@@ -948,14 +965,14 @@
 
 		[DOOR_UNLOCK]
 
-		The door is unlocked. As soon as you meet the mayor,
+		The door unlocks. As soon as you meet the mayor,
 
 		You hand over the sauce. The mayor quickly jerks open the bottle cap, and walks hastily to one of the doors and pours the sauce under it. He looks at you and smiles awkwardly.
 		
 		[Mayor]
 		You see. I actually don't like the sauce. I use it only to block off the smell. This bothering smell has been so long that I almost forgot when it happened. [Conversation] So. why did you come? [Action] [EOA]
 	*then
-		hear smell, incident, help, yes, right {
+		hear smell, incident, help, yes, right, curse, rain, thunderstorm, stench, stinky {
 			-> Mayor Talks More About the Incident
 		}
 		hear who are you{
@@ -1007,7 +1024,7 @@
 		[Mayor]
 		The legend out there says there's a precious gemstone called the citrine hidden in the valleys to the East, and that the precious gem is the key ingredient to lifting the curse. 
 		What the legend didn't tell, is that the cavern is guarded by a mysterious puzzle. [EOA]
-		you can ask about: [Conversation] the cave, puzzles, eastern valleys, the town, or leave to the cave [Action]
+		you can ask about: [Conversation] the cave, puzzles, eastern valleys, the town, or leave for the cave [Action]
 
 	*then
 		-> Mayor Talks about the Incident Part 3
@@ -1161,7 +1178,7 @@
         I hope that these information are useful to you. We're all looking forward to seeing the town coming back to life some day. Good luck! [EOA]
         You leave the mayor's office, back on to the streets. The shopkeeper stands outside.
         [Man]
-        Are you leaving? If you're ready, the horse over there is ready for you; but if you are tired. take some rest. [Conversation] Would you like to leave or take some rest?[EOA] [Action]
+        Are you leaving? If you are, the horse over there is ready for you; but if you are tired. take some rest. [Conversation] Would you like to continue to the next act or take some rest?[EOA] [Action]
 	*then
 		hear rest, take some rest {
 	        >>END
