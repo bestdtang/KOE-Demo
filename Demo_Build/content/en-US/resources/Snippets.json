@@ -30,6 +30,7 @@
   "MAN_JOY": "<audio src='https://koetest.s3.amazonaws.com/amb/amb_happy_2.mp3'/>",
   "MAN_LAUGH": "<audio src='https://koetest.s3.amazonaws.com/amb/amb_happy1.mp3'/>",
   "CHILI_HAPPY": "<audio src='https://koetest.s3.amazonaws.com/efa/efa15_happy_2.mp3'/>",
+  "CHILI_BYE": "<audio src='https://koetest.s3.amazonaws.com/efa/efa_wave_01.mp3'/>",
   "DOOR_UNLOCK": "<audio src='https://koetest.s3.amazonaws.com/new_demo_stereo/doorOpen2.mp3'/>",
   "BAR_SURPRISED":"<audio src='https://koetest.s3.amazonaws.com/afa/afa18_suprise.mp3'/>",
   "BAR_HAPPY": "<audio src='https://koetest.s3.amazonaws.com/afa/afa16_whoah.mp3'/>",
@@ -41,8 +42,6 @@
   "BAR_LAUGH":"<audio src='https://koetest.s3.amazonaws.com/afa/afa26_bed.mp3'/>",
   "BAR_SMILE":"<audio src='https://koetest.s3.amazonaws.com/afa/afa16_whoah.mp3'/>",
   "BAR_EXCITED":"<audio src='https://koetest.s3.amazonaws.com/afa/afa16_whoah.mp3'/>",
-  "RANDOMMAN_SURPRISED":"",
-  "Chili_Surprised":"",
   "MAYOR_HAPPY":"<audio src='https://koetest.s3.amazonaws.com/ama/ama03_excited.mp3'/>",
   "Chili_Annoyed":"<audio src='https://koetest.s3.amazonaws.com/efa/efa10_shakehead_angry.mp3'/>",
   "Achievement":"<audio src='https://koetest.s3.amazonaws.com/AchievementSounds/achievement01.mp3'/>"

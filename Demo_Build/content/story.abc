@@ -150,9 +150,9 @@
 		Surely the townspeople will rush to help a thirsty traveler, [Short_Pause] but No-one came. Where is everyone?
 		Where should you go? [Action]
 	*recap
-		Try to saying, what's around me.[Action]
+		try saying, what's around me.[Action]
 	*reprompt
-		Try to saying, what's around me.[Action]
+		try saying, what's around me.[Action]
 	*then
 		hear what's around me {
 			-> Around 
@@ -296,9 +296,9 @@
         [Conversation]
 	//You should ask him.
 	*reprompt
-		You can talk to him by saying talk to the shopkeeper
+		Maybe ask him what incident?
 	*recap
-		You can talk to him by saying talk to the shopkeeper
+		Maybe ask him what incident?
 	*then
 		hear talk to the shopkeeper, what incident, incident, ask about the incident, ask, talk, talk to the shopkeeper, ask papa, ask him, tell me, more, tell me more {
 			-> Ask Shopkeeper
@@ -694,8 +694,9 @@
 	*say
 		<audio src='https://koetest.s3.amazonaws.com/new_demo_stereo/peopleWalkingFast.mp3'/>
 		<audio src='https://koetest.s3.amazonaws.com/new_demo_stereo/doorOpen2.mp3'/>
+		<audio src='https://koetest.s3.amazonaws.com/efa/efa8_throwyouout.mp3'/>
         [MrsChilirosa]
-        Hey? Show some manners![EOA] 
+        Hey! Show some manners![EOA] 
 	*then
 		if flower {
             unflag angry
@@ -757,25 +758,17 @@
 	*say
 		[MrsChilirosa]
         Why, thank you, dear... 
-        What's your name? 
-        [EOA]
-        <amazon:effect name="whispered">say your name!</amazon:effect>. [Action]
+        What's your name? [EOA]
+
+        <amazon:effect name="whispered">say your name!</amazon:effect>. [Action][LongPause]
 	
-	*recap
-		Maybe try some common names instead? For example, You can say: my name is Shawn.
-
-	*reprompt
-		Say your name to the shopkepper. For example, You can say: my name is Brian.
 	*then
-		slot playerName to 'AMAZON.US_FIRST_NAME'
-		hear {playerName}, my name is {playerName} {
-			-> Answer Your Name
-        }
-
+		-> Answer Your Name
+		
 @Answer Your Name
 	*say
 		[MrsChilirosa]
-        Oh, thank you, dear {playerName}. 
+        Oh, thank you, dear traveler. 
         What can I give you in exchange? [EOA]
 	*then
 		-> Meet Mrs Chilirosa
@@ -834,6 +827,7 @@
 		[MrsChilirosa] But I can't believe it! It's another friend who appreciates the sauce. Here, I only share with friends who understand true beauty. [EOA]
 
         She gleefully hands over the hot sauce to you. You leave the building as she happily waves goodbye to you.
+		[CHILI_BYE]
 	*then
 		-> Get the Hot Sauce
 
@@ -1571,7 +1565,7 @@
 		Both of you walk slowly outside the tent. It looks like Luke has something to tell you, but he's trying to keep it to himself.
 
 		[SeedTrader]
-		Hey, {playerName}![EOA]
+		Hey, traveler![EOA]
 
 		As you make yourself comfortable on the saddle, Luke calls you.
 
@@ -1699,7 +1693,7 @@
 		It looks like Luke has something to tell you, but he's trying to keep it to himself.
 		
 		[SeedTrader]
-		Hey! {playerName}! [EOA]
+		Hey! traveler! [EOA]
 		
 		As you make yourself comfortable on the saddle, Luke calls you.
 
@@ -1829,7 +1823,7 @@
 		Both of you walk slowly outside the tent. It looks like Luke has something to tell you, but he's trying to keep it to himself.
 
 		[SeedTrader]
-		Hey, {playerName}! [EOA]
+		Hey, traveler! [EOA]
 
 		As you make yourself comfortable on the saddle, Luke calls you.
 
@@ -3199,12 +3193,8 @@
 	*say
 		<audio src='https://koetest.s3.amazonaws.com/Act5/PouringRain.mp3'/>
 
-		[RANDOMMAN_SURPISED]
-
 		[Man]
 		Wa, what? What's going on?[EOA]
-
-		[Chili_Surprised]
 
 		[MrsChilirosa]
 		Is my nose going crazy?[EOA]
@@ -5195,7 +5185,7 @@ Listen, the leading flower is singing you the way .[EOA][DirSound_Small][SeedTra
 		You look at the notebook and flip to the introduction.
 		It reads. Cow plant is a bizarre, partly bovine form of vegetation. It usually has 4 growth states. 
 		You can search for words that you read from the notebook. Keep in mind, you want to find the clue to cure the poor man who saved you from the sandstorm.
-		[Conversation] Try to saying search growth states. [Action]
+		[Conversation] try saying search growth states. [Action]
 	*recap
 		Try to search, growth states.
 	*reprompt
@@ -5875,12 +5865,12 @@ When cow plant is hungry, it will stick its cake tongue out. You can feed them a
 	*say
 		You searched the keyword, growth states. 
 		The page reads. Cowplants usually have three growth states, and can die. They are sprout state, baby state, mature state, and death state. 
-		You can search for its different growth states later. For now, to finish searching, Try to saying, close the notebook.
+		You can search for its different growth states later. For now, to finish searching, try saying, close the notebook.
 	*recap
-		To finish searching, Try to saying close the notebook.
+		To finish searching, try saying close the notebook.
 		If you can think of any keyword that you want to search, you can look at the notebook again, at anytime.
 	*reprompt
-		To finish searching, Try to saying close the notebook.
+		To finish searching, try saying close the notebook.
 	*then
 		hear close the notebook {
 			-> cowplant_puzzle_notebook_close
